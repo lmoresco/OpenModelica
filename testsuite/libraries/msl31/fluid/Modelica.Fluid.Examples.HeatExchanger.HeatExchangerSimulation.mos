@@ -16,54 +16,14 @@ checkModel(Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation); getEr
 // ""
 // true
 // ""
-// "[HeatExchanger.mo:271:25-271:60:writable] Error: Base class HeatTransfer_1 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:261:25-261:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:261:25-261:50:writable] Error: Redeclaration of final package Medium is not allowed.
-// [HeatExchanger.mo:294:25-294:60:writable] Error: Base class HeatTransfer_2 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:284:25-284:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:284:25-284:50:writable] Error: Redeclaration of final package Medium is not allowed.
-// [HeatExchanger.mo:271:25-271:60:writable] Error: Base class HeatTransfer_1 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:261:25-261:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:261:25-261:50:writable] Error: Redeclaration of final package Medium is not allowed.
-// [HeatExchanger.mo:294:25-294:60:writable] Error: Base class HeatTransfer_2 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:284:25-284:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:284:25-284:50:writable] Error: Redeclaration of final package Medium is not allowed.
-// [HeatExchanger.mo:190:7-195:111:writable] Error: No matching function found for Medium_1.specificEnthalpy_pTX(p_a_start1 / 2.0 + p_b_start1 / 2.0, T_start_1, {})
+// "[HeatExchanger.mo:190:7-195:111:writable] Error: No matching function found for Medium_1.specificEnthalpy_pTX(p_a_start1 / 2.0 + p_b_start1 / 2.0, T_start_1, {})
 // of type
 //   .Modelica.Fluid.Examples.HeatExchanger.BaseClasses.BasicHX.Medium_1.specificEnthalpy_pTX<function>(p:Real, T:Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity="ThermodynamicTemperature", unit="K", displayUnit="degC"), X:Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[0]) => Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity="SpecificEnergy", unit="J/kg") in component HEX
 // candidates are 
 //   .Modelica.Fluid.Examples.HeatExchanger.BaseClasses.BasicHX.Medium_1.specificEnthalpy_pTX<function>(p:Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar"), T:Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity="ThermodynamicTemperature", unit="K", displayUnit="degC"), X:Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[1]) => Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity="SpecificEnergy", unit="J/kg")
 // Error: Error occured while flattening model Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation
 // "
-// "[HeatExchanger.mo:271:25-271:60:writable] Error: Base class HeatTransfer_1 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:261:25-261:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:261:25-261:50:writable] Error: Redeclaration of final package Medium is not allowed.
-// [HeatExchanger.mo:294:25-294:60:writable] Error: Base class HeatTransfer_2 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:284:25-284:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:284:25-284:50:writable] Error: Redeclaration of final package Medium is not allowed.
-// [HeatExchanger.mo:271:25-271:60:writable] Error: Base class HeatTransfer_1 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:261:25-261:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:261:25-261:50:writable] Error: Redeclaration of final package Medium is not allowed.
-// [HeatExchanger.mo:294:25-294:60:writable] Error: Base class HeatTransfer_2 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:284:25-284:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
-// [Pipes.mo:121:28-121:51:writable] Notification: From here:
-// [HeatExchanger.mo:284:25-284:50:writable] Error: Redeclaration of final package Medium is not allowed.
-// [HeatExchanger.mo:190:7-195:111:writable] Error: No matching function found for Medium_1.specificEnthalpy_pTX(p_a_start1 / 2.0 + p_b_start1 / 2.0, T_start_1, {})
+// "[HeatExchanger.mo:190:7-195:111:writable] Error: No matching function found for Medium_1.specificEnthalpy_pTX(p_a_start1 / 2.0 + p_b_start1 / 2.0, T_start_1, {})
 // of type
 //   .Modelica.Fluid.Examples.HeatExchanger.BaseClasses.BasicHX.Medium_1.specificEnthalpy_pTX<function>(p:Real, T:Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\"), X:Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[0]) => Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity=\"SpecificEnergy\", unit=\"J/kg\") in component HEX
 // candidates are 
