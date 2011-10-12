@@ -20,6 +20,7 @@ AsubCrefExpType.mos \
 ASubIfExp.mos \
 BooleanArray.mos \
 BouncingBall.mos BouncingBall2.mos BouncingBallExamples.mos \
+BouncingBallExamplesDOPRI5.mos \
 BuiltinMath.mos \
 CheckEvents.mos \
 ComplexNumbers.mos \
@@ -89,19 +90,21 @@ PreAndAliasedVar.mos \
 Random.mos \
 Reductions.mos \
 Riccati.mos \
-Sample1.mos Sample2.mos Sample3.mos	\
+Sample1.mos Sample2.mos Sample3.mos \
 SemiLinear.mos \
 Sign.mos \
 SimplePeriodicSampler.mos \
 SimResultScripting.mos \
 simulation.mos \
 SliceAssignment.mos \
+SpaceProbe.mos \
 StepAdvanced.mos \
 StringTest.mos \
 SumSeriesWhile.mos \
 SyncFilter.mos \
 Switch.mos \
 Tank.mos TankPI.mos TankPID.mos TankHybridPID.mos TankHybridPI.mos TanksConnectedPI.mos \
+TankPIDOPRI5.mos TanksConnectedPIDOPRI5.mos\
 terminal.mos \
 tempInterpol2test.mos \
 TestLapack.mos \
