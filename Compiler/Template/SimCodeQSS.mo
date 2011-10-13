@@ -371,7 +371,7 @@ algorithm
       list<SimCode.SimWhenClause> i_whenClauses;
       Integer i_modelInfo_varInfo_numStateVars;
       list<BackendDAE.ZeroCrossing> i_zeroCrossings;
-      list<SimCode.SimEqSystem> i_odeEquations;
+      list<list<SimCode.SimEqSystem>> i_odeEquations;
       Integer i_modelInfo_varInfo_numZeroCrossings;
       list<String> i_externalFunctionIncludes;
       list<SimCode.SimEqSystem> i_residualEquations;
@@ -1302,7 +1302,7 @@ end functionPreWhenCondition;
 protected function fun_50
   input Tpl.Text in_txt;
   input BackendQSS.QSSinfo in_a_qssInfo;
-  input list<SimCode.SimEqSystem> in_a_derivativEquations;
+  input list<list<SimCode.SimEqSystem>> in_a_derivativEquations;
   input list<BackendDAE.ZeroCrossing> in_a_zeroCrossings;
   input Integer in_a_nStates;
 
@@ -1312,7 +1312,7 @@ algorithm
   matchcontinue(in_txt, in_a_qssInfo, in_a_derivativEquations, in_a_zeroCrossings, in_a_nStates)
     local
       Tpl.Text txt;
-      list<SimCode.SimEqSystem> a_derivativEquations;
+      list<list<SimCode.SimEqSystem>> a_derivativEquations;
       list<BackendDAE.ZeroCrossing> a_zeroCrossings;
       Integer a_nStates;
       list<BackendDAE.Var> i_outVarLst;
@@ -1406,7 +1406,7 @@ end fun_50;
 
 public function functionQssStaticBlocks
   input Tpl.Text txt;
-  input list<SimCode.SimEqSystem> a_derivativEquations;
+  input list<list<SimCode.SimEqSystem>> a_derivativEquations;
   input list<BackendDAE.ZeroCrossing> a_zeroCrossings;
   input BackendQSS.QSSinfo a_qssInfo;
   input Integer a_nStates;
@@ -1718,7 +1718,7 @@ end lm_57;
 
 public function generateStaticFunc
   input Tpl.Text txt;
-  input list<SimCode.SimEqSystem> a_odeEq;
+  input list<list<SimCode.SimEqSystem>> a_odeEq;
   input list<BackendDAE.ZeroCrossing> a_zeroCrossings;
   input Tpl.Text a_varDecls;
   input BackendQSS.DevsStruct a_devsst;
