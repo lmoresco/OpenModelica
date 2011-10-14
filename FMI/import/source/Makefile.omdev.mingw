@@ -1,6 +1,7 @@
 # Project: Code Generator for FMU Import to OpenModelica 1.7.0
 # Author: Wuzhu Chen, TU-Clausthal
 
+AR = ar -ru
 CPP  = g++
 CC   = gcc
 RES  = 
@@ -10,17 +11,23 @@ LIBS =  -lexpat
 INCS =  -I"../../../build/include/omc"
 CXXINCS =  -I"."
 BIN  = ../../../build/bin/fmigenerator.exe
+LIB  = ../../../build/lib/omc/libfmuWrapper.a
 CXXFLAGS = $(CXXINCS)  
 CFLAGS = $(INCS)  
 RM = rm -f
 
 .PHONY: all all-before all-after clean clean-custom
 
-all: fmuModelica.h all-before $(BIN) all-after
+all: fmuModelica.h all-before $(BIN) all-after $(LIB)
+
+$(LIB): fmuWrapper.o
+	$(AR) $@ $<
 
 fmuModelica.h: fmuModelica.tmp
 	sed 's/"/\\"/g' $< | sed 's/^/"/' | sed 's/$$/\\n"/' > $@.tmp
 	mv $@.tmp $@
+
+moGenerator.o: fmuModelica.h
 
 clean: clean-custom
 	${RM} $(OBJS) $(BIN) fmuModelica.h
@@ -29,7 +36,6 @@ $(BIN): $(OBJS)
 	$(CC) -Wall -o $(BIN) $(LINKOBJS) $(LIBS)
 	
 moGenerator.o: moGenerator.c
-	echo moGenerator
 	$(CC) -Wall -c moGenerator.c -o moGenerator.o $(INCS)
 	
 fmuWrapper.o: fmuWrapper.c
