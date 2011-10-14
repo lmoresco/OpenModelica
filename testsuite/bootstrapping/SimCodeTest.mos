@@ -29,18 +29,19 @@ readFileShowLineNumbers("SimCodeC_abc.c");
 // ""
 // "1: #ifndef SimCodeC_abc__H
 // 2: #define SimCodeC_abc__H
-// 3: #include \"modelica.h\"
-// 4: #include <stdio.h>
-// 5: #include <stdlib.h>
-// 6: #include <errno.h>
-// 7: #ifdef __cplusplus
-// 8: extern \"C\" {
-// 9: #endif
-// 10: void _SimCodeC_abc();
-// 11: #ifdef __cplusplus
-// 12: }
-// 13: #endif
+// 3: #define omp_get_thread_num() 0
+// 4: #include \"modelica.h\"
+// 5: #include <stdio.h>
+// 6: #include <stdlib.h>
+// 7: #include <errno.h>
+// 8: #ifdef __cplusplus
+// 9: extern \"C\" {
+// 10: #endif
+// 11: void _SimCodeC_abc();
+// 12: #ifdef __cplusplus
+// 13: }
 // 14: #endif
+// 15: #endif
 // "
 // "1: #include \"SimCodeC_abc.h\"
 // 2: #define MODELICA_ASSERT(info,msg) { printInfo(stderr,info); fprintf(stderr,\"Modelica Assert: %s!\\n\", msg); }
