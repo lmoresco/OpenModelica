@@ -13,9 +13,94 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton); 
 // Result:
 // true
 // ""
-// ""
-// "[ControlledTankSystem.mo:483:7-484:49:writable] Error: Failed to deduce dimensions of buttonTimeTable due to missing binding equation.
-// Error: Error occured while flattening model Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton
+// "function Modelica.Blocks.Sources.BooleanTable.getFirstIndex \"Get first index of table and check table\"
+//   input Real[:] table \"Vector of time instants\";
+//   input Real simulationStartTime(quantity = \"Time\", unit = \"s\") \"Simulation start time\";
+//   input Boolean startValue \"Value of y for y < table[1]\";
+//   output Integer index \"First index to be used\";
+//   output Real nextTime(quantity = \"Time\", unit = \"s\") \"Time instant of first event\";
+//   output Boolean y \"Value of y at simulationStartTime\";
+//   protected Real t_last(quantity = \"Time\", unit = \"s\");
+//   protected Integer j;
+//   protected Integer n = size(table,1) \"Number of table points\";
+// algorithm
+//   if size(table,1) == 0 then
+//     index := 0;
+//     nextTime := -1e+60;
+//     y := startValue;
+//   elseif size(table,1) == 1 then
+//     index := 1;
+//     if table[1] > simulationStartTime then
+//       nextTime := table[1];
+//       y := startValue;
+//     else
+//       nextTime := simulationStartTime;
+//       y := startValue;
+//     end if;
+//   else
+//     t_last := table[1];
+//     for i in 2:n loop
+//       assert( table[i] > t_last, \"Time values of table not strict monotonically increasing: table[\" + String(i + -1,0,true) + \"] = \" + String(table[i + -1],0,true,6) + \"table[\" + String(i,0,true) + \"] = \" + String(table[i],0,true,6));
+//     end for;
+//     j := 1;
+//     y := startValue;
+//     while j < n and table[j] <= simulationStartTime loop
+//       y := not y;
+//       j := 1 + j;
+//     end while;
+//     if j == 1 then
+//       nextTime := table[1];
+//       y := startValue;
+//     elseif j == n and table[n] <= simulationStartTime then
+//       nextTime := simulationStartTime + -1.0;
+//       y := not y;
+//     else
+//       nextTime := table[j];
+//     end if;
+//     index := j;
+//   end if;
+// end Modelica.Blocks.Sources.BooleanTable.getFirstIndex;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// class Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton
+//   parameter Real buttonTimeTable[1](quantity = \"Time\", unit = \"s\") \"Time instants where button is pressend\";
+//   input Boolean reset[1] = false \"Reset button to false, if an element of reset becomes true\";
+//   output Boolean on;
+//   output Boolean table.y \"Connector of Boolean output signal\";
+//   parameter Boolean table.startValue = false \"Start value of y. At time = table[1], y changes to 'not startValue'\";
+//   parameter Real table.table[1](quantity = \"Time\", unit = \"s\") = buttonTimeTable[1] \"Vector of time points. At every time point, the output y gets its opposite value (e.g. table={0,1})\";
+//   protected Real table.nextTime(quantity = \"Time\", unit = \"s\");
+//   protected Integer table.index \"Index of actual table entry\";
+//   protected parameter Integer table.n = size(table.table,1) \"Number of table points\";
+// initial algorithm
+//   (table.index, table.nextTime, table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex(table.table,time,table.startValue);
+// algorithm
+//   when time >= pre(table.nextTime) and table.n > 0 then
+//     if table.index < table.n then
+//       table.index := 1 + table.index;
+//       table.nextTime := table.table[table.index];
+//       table.y := not table.y;
+//     elseif table.index == table.n then
+//       table.index := 1 + table.index;
+//       table.y := not table.y;
+//     end if;
+//   end when;
+//   when {pre(reset[1])} then
+//     on := false;
+//   end when;
+//   when change(table.y) then
+//     on := true;
+//   end when;
+// end Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton;
+// "
+// "Warning: Parameter buttonTimeTable has neither value nor start value, and is fixed during initialization (fixed=true)
+// [Sources.mo:2842:7-2843:108:writable] Warning: Failed to deduce dimensions of table due to unknown dimensions of modifier buttonTimeTable.
 // "
 // "Check of Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton completed successfully.
 // 

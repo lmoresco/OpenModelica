@@ -15,9 +15,201 @@ checkModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 // true
 // ""
 // true
-// ""
+// "function Modelica.Math.Matrices.LAPACK.dgelsx_vec
+//   input Real[:, :] A;
+//   input Real[size(A,1)] b;
+//   input Real rcond = 0.0 \"Reciprocal condition number to estimate rank\";
+//   output Real[max(nrow,ncol)] x = cat(1,b,fill(0.0,max(nrow,ncol) - nrow)) \"solution is in first size(A,2) rows\";
+//   output Integer info;
+//   output Integer rank \"Effective rank of A\";
+//   protected Integer nrow = size(A,1);
+//   protected Integer ncol = size(A,2);
+//   protected Integer nx = max(nrow,ncol);
+//   protected Integer lwork = max(min(nrow,ncol) + 3 * ncol,1 + 2 * min(nrow,ncol));
+//   protected Real[lwork] work;
+//   protected Real[nrow, ncol] Awork = A;
+//   protected Integer[ncol] jpvt = fill(0,ncol);
+// 
+//   external \"FORTRAN 77\" dgelsx(nrow, ncol, 1, Awork, nrow, x, nx, jpvt, rcond, rank, work, lwork, info);
+// end Modelica.Math.Matrices.LAPACK.dgelsx_vec;
+// 
+// function Modelica.Math.Matrices.leastSquares \"Solve overdetermined or underdetermined real system of linear equations A*x=b in a least squares sense (A may be rank deficient)\"
+//   input Real[:, :] A \"Matrix A\";
+//   input Real[size(A,1)] b \"Vector b\";
+//   output Real[size(A,2)] x \"Vector x such that min|A*x-b|^2 if size(A,1) >= size(A,2) or min|x|^2 and A*x=b, if size(A,1) < size(A,2)\";
+//   protected Integer info;
+//   protected Integer rank;
+//   protected Real[max(size(A,1),size(A,2))] xx;
+// algorithm
+//   (xx, info, rank) := Modelica.Math.Matrices.LAPACK.dgelsx_vec(A,b,1e-13);
+//   x := xx[1:size(A,2)];
+//   assert( info == 0, \"Solving an overdetermined or underdetermined linear system of
+// equations with function \\\"Matrices.leastSquares\\\" failed.\");
+// end Modelica.Math.Matrices.leastSquares;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting \"Computes the coefficients of a polynomial that fits a set of data points in a least-squares sense\"
+//   input Real[:] u \"Abscissa data values\";
+//   input Real[size(u,1)] y \"Ordinate data values\";
+//   input Integer n(min = 1) \"Order of desired polynomial that fits the data points (u,y)\";
+//   output Real[1 + n] p \"Polynomial coefficients of polynomial that fits the date points\";
+//   protected Real[size(u,1), 1 + n] V \"Vandermonde matrix\";
+// algorithm
+//   V[:,1 + n] := fill(1.0,size(u,1));
+//   for j in n:-1:1 loop
+//     V[:,j] := <reduction>array(u[i] * V[i,1 + j] for i in 1:(size(u,1)));
+//   end for;
+//   p := Modelica.Math.Matrices.leastSquares(V,y);
+// end Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting;
+// 
+// function Modelica.Media.Incompressible.Examples.Glycol47.invertTemp \"function to invert temperatures\"
+//   input Real[:] table \"table temperature data\";
+//   input Boolean Tink \"flag for Celsius or Kelvin\";
+//   output Real[size(table,1)] invTable \"inverted temperatures\";
+// algorithm
+//   for i in 1:size(table,1) loop
+//     invTable[i] := 1.0 / Modelica.SIunits.Conversions.from_degC(table[i]);
+//   end for;
+// end Modelica.Media.Incompressible.Examples.Glycol47.invertTemp;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Media.Incompressible.Examples.Glycol47
+//   constant enumeration(T, pT, ph, phX, pTX, dTX) ThermoStates = Modelica.Media.Incompressible.Examples.Glycol47.Choices.IndependentVariables.T \"Enumeration type for independent variables\";
+//   constant String mediumName = \"Glycol-Water 47%\" \"Name of the medium\";
+//   constant Boolean singleState = true \"= true, if u and d are not a function of pressure\";
+//   constant Boolean reducedX = true \"= true if medium contains the equation sum(X) = 1.0; set reducedX=true if only one substance (see docu for details)\";
+//   constant Boolean fixedX = true \"= true if medium contains the equation X = reference_X\";
+//   constant Real reference_p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 101325.0 \"Reference pressure of Medium: default 1 atmosphere\";
+//   constant Real p_default(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 101325.0 \"Default value for pressure of medium (for initialization)\";
+//   constant Real T_default(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Default value for temperature of medium (for initialization)\";
+//   constant Boolean enthalpyOfT = true \"true if enthalpy is approximated as a function of T only, (p-dependence neglected)\";
+//   constant Real T_min(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.SIunits.Conversions.from_degC(-30.0) \"Minimum temperature valid for medium model\";
+//   constant Real T_max(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.SIunits.Conversions.from_degC(100.0) \"Maximum temperature valid for medium model\";
+//   constant Real T0(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 273.15 \"reference Temperature\";
+//   constant Real h0(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = 0.0 \"reference enthalpy at T0, reference_p\";
+//   constant Integer npol = 2 \"degree of polynomial used for fitting\";
+//   constant Real tableDensity[1,1] = -30.0 \"Table for rho(T)\";
+//   constant Real tableDensity[1,2] = 1066.0 \"Table for rho(T)\";
+//   constant Real tableDensity[2,1] = -20.0 \"Table for rho(T)\";
+//   constant Real tableDensity[2,2] = 1062.0 \"Table for rho(T)\";
+//   constant Real tableDensity[3,1] = -10.0 \"Table for rho(T)\";
+//   constant Real tableDensity[3,2] = 1058.0 \"Table for rho(T)\";
+//   constant Real tableDensity[4,1] = 0.0 \"Table for rho(T)\";
+//   constant Real tableDensity[4,2] = 1054.0 \"Table for rho(T)\";
+//   constant Real tableDensity[5,1] = 20.0 \"Table for rho(T)\";
+//   constant Real tableDensity[5,2] = 1044.0 \"Table for rho(T)\";
+//   constant Real tableDensity[6,1] = 40.0 \"Table for rho(T)\";
+//   constant Real tableDensity[6,2] = 1030.0 \"Table for rho(T)\";
+//   constant Real tableDensity[7,1] = 60.0 \"Table for rho(T)\";
+//   constant Real tableDensity[7,2] = 1015.0 \"Table for rho(T)\";
+//   constant Real tableDensity[8,1] = 80.0 \"Table for rho(T)\";
+//   constant Real tableDensity[8,2] = 999.0 \"Table for rho(T)\";
+//   constant Real tableDensity[9,1] = 100.0 \"Table for rho(T)\";
+//   constant Real tableDensity[9,2] = 984.0 \"Table for rho(T)\";
+//   constant Real tableHeatCapacity[1,1] = -30.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[1,2] = 3450.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[2,1] = -20.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[2,2] = 3490.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[3,1] = -10.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[3,2] = 3520.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[4,1] = 0.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[4,2] = 3560.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[5,1] = 20.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[5,2] = 3620.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[6,1] = 40.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[6,2] = 3690.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[7,1] = 60.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[7,2] = 3760.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[8,1] = 80.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[8,2] = 3820.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[9,1] = 100.0 \"Table for Cp(T)\";
+//   constant Real tableHeatCapacity[9,2] = 3890.0 \"Table for Cp(T)\";
+//   constant Real tableViscosity[1,1] = -30.0 \"Table for eta(T)\";
+//   constant Real tableViscosity[1,2] = 0.16 \"Table for eta(T)\";
+//   constant Real tableViscosity[2,1] = -20.0 \"Table for eta(T)\";
+//   constant Real tableViscosity[2,2] = 0.0743 \"Table for eta(T)\";
+//   constant Real tableViscosity[3,1] = -10.0 \"Table for eta(T)\";
+//   constant Real tableViscosity[3,2] = 0.0317 \"Table for eta(T)\";
+//   constant Real tableViscosity[4,1] = 0.0 \"Table for eta(T)\";
+//   constant Real tableViscosity[4,2] = 0.019 \"Table for eta(T)\";
+//   constant Real tableViscosity[5,1] = 20.0 \"Table for eta(T)\";
+//   constant Real tableViscosity[5,2] = 0.00626 \"Table for eta(T)\";
+//   constant Real tableViscosity[6,1] = 40.0 \"Table for eta(T)\";
+//   constant Real tableViscosity[6,2] = 0.00299 \"Table for eta(T)\";
+//   constant Real tableViscosity[7,1] = 60.0 \"Table for eta(T)\";
+//   constant Real tableViscosity[7,2] = 0.00162 \"Table for eta(T)\";
+//   constant Real tableViscosity[8,1] = 80.0 \"Table for eta(T)\";
+//   constant Real tableViscosity[8,2] = 0.0011 \"Table for eta(T)\";
+//   constant Real tableViscosity[9,1] = 100.0 \"Table for eta(T)\";
+//   constant Real tableViscosity[9,2] = 0.00081 \"Table for eta(T)\";
+//   constant Real tableVaporPressure[1,1] = 0.0 \"Table for pVap(T)\";
+//   constant Real tableVaporPressure[1,2] = 500.0 \"Table for pVap(T)\";
+//   constant Real tableVaporPressure[2,1] = 20.0 \"Table for pVap(T)\";
+//   constant Real tableVaporPressure[2,2] = 1900.0 \"Table for pVap(T)\";
+//   constant Real tableVaporPressure[3,1] = 40.0 \"Table for pVap(T)\";
+//   constant Real tableVaporPressure[3,2] = 5300.0 \"Table for pVap(T)\";
+//   constant Real tableVaporPressure[4,1] = 60.0 \"Table for pVap(T)\";
+//   constant Real tableVaporPressure[4,2] = 16000.0 \"Table for pVap(T)\";
+//   constant Real tableVaporPressure[5,1] = 80.0 \"Table for pVap(T)\";
+//   constant Real tableVaporPressure[5,2] = 37000.0 \"Table for pVap(T)\";
+//   constant Real tableVaporPressure[6,1] = 100.0 \"Table for pVap(T)\";
+//   constant Real tableVaporPressure[6,2] = 80000.0 \"Table for pVap(T)\";
+//   constant Real tableConductivity[1,1] = -30.0 \"Table for lambda(T)\";
+//   constant Real tableConductivity[1,2] = 0.397 \"Table for lambda(T)\";
+//   constant Real tableConductivity[2,1] = -20.0 \"Table for lambda(T)\";
+//   constant Real tableConductivity[2,2] = 0.396 \"Table for lambda(T)\";
+//   constant Real tableConductivity[3,1] = -10.0 \"Table for lambda(T)\";
+//   constant Real tableConductivity[3,2] = 0.395 \"Table for lambda(T)\";
+//   constant Real tableConductivity[4,1] = 0.0 \"Table for lambda(T)\";
+//   constant Real tableConductivity[4,2] = 0.395 \"Table for lambda(T)\";
+//   constant Real tableConductivity[5,1] = 20.0 \"Table for lambda(T)\";
+//   constant Real tableConductivity[5,2] = 0.394 \"Table for lambda(T)\";
+//   constant Real tableConductivity[6,1] = 40.0 \"Table for lambda(T)\";
+//   constant Real tableConductivity[6,2] = 0.393 \"Table for lambda(T)\";
+//   constant Real tableConductivity[7,1] = 60.0 \"Table for lambda(T)\";
+//   constant Real tableConductivity[7,2] = 0.392 \"Table for lambda(T)\";
+//   constant Real tableConductivity[8,1] = 80.0 \"Table for lambda(T)\";
+//   constant Real tableConductivity[8,2] = 0.391 \"Table for lambda(T)\";
+//   constant Real tableConductivity[9,1] = 100.0 \"Table for lambda(T)\";
+//   constant Real tableConductivity[9,2] = 0.39 \"Table for lambda(T)\";
+//   constant Boolean TinK = false \"true if T[K],Kelvin used for table temperatures\";
+//   final constant Real invTK[1] = Modelica.Media.Incompressible.Examples.Glycol47.invertTemp({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},false)[1];
+//   final constant Real invTK[2] = Modelica.Media.Incompressible.Examples.Glycol47.invertTemp({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},false)[2];
+//   final constant Real invTK[3] = Modelica.Media.Incompressible.Examples.Glycol47.invertTemp({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},false)[3];
+//   final constant Real invTK[4] = Modelica.Media.Incompressible.Examples.Glycol47.invertTemp({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},false)[4];
+//   final constant Real invTK[5] = Modelica.Media.Incompressible.Examples.Glycol47.invertTemp({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},false)[5];
+//   final constant Real invTK[6] = Modelica.Media.Incompressible.Examples.Glycol47.invertTemp({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},false)[6];
+//   final constant Real invTK[7] = Modelica.Media.Incompressible.Examples.Glycol47.invertTemp({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},false)[7];
+//   final constant Real invTK[8] = Modelica.Media.Incompressible.Examples.Glycol47.invertTemp({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},false)[8];
+//   final constant Real invTK[9] = Modelica.Media.Incompressible.Examples.Glycol47.invertTemp({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},false)[9];
+//   final constant Real poly_rho[1] = Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},{1066.0,1062.0,1058.0,1054.0,1044.0,1030.0,1015.0,999.0,984.0},2)[1];
+//   final constant Real poly_Cp[1] = Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},{3450.0,3490.0,3520.0,3560.0,3620.0,3690.0,3760.0,3820.0,3890.0},2)[1];
+//   constant String substanceNames[1] = \"Glycol-Water 47%\" \"Names of the mixture substances. Set substanceNames={mediumName} if only one substance.\";
+//   constant Boolean hasDensity = true \"true if table tableDensity is present\";
+//   constant Boolean hasHeatCapacity = true \"true if table tableHeatCapacity is present\";
+//   constant Integer neta = 9 \"number of data points for viscosity\";
+//   constant Boolean hasViscosity = true \"true if table tableViscosity is present\";
+//   constant Boolean hasVaporPressure = true \"true if table tableVaporPressure is present\";
+//   final constant Integer nS = 1 \"Number of substances\";
+//   constant Integer nX = 1 \"Number of mass fractions\";
+//   constant Real reference_X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default mass fractions of medium\";
+//   constant Real X_default[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default value for mass fractions of medium (for initialization)\";
+// end Modelica.Media.Incompressible.Examples.Glycol47;
+// "
 // "[Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},{1066.0,1062.0,1058.0,1054.0,1044.0,1030.0,1015.0,999.0,984.0},2).
-// Error: Error occured while flattening model Modelica.Media.Incompressible.Examples.Glycol47
+// [Incompressible.mo:80:5-82:98:writable] Warning: Failed to deduce dimensions of poly_Cp due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},{3450.0,3490.0,3520.0,3560.0,3620.0,3690.0,3760.0,3820.0,3890.0},2).
 // "
 // "Check of Modelica.Media.Incompressible.Examples.Glycol47 completed successfully.
 // 

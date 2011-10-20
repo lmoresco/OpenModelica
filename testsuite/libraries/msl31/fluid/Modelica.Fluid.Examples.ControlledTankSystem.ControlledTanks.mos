@@ -15,7 +15,1849 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 // true
 // ""
 // true
-// ""
+// "function Modelica.Blocks.Sources.BooleanTable.getFirstIndex \"Get first index of table and check table\"
+//   input Real[:] table \"Vector of time instants\";
+//   input Real simulationStartTime(quantity = \"Time\", unit = \"s\") \"Simulation start time\";
+//   input Boolean startValue \"Value of y for y < table[1]\";
+//   output Integer index \"First index to be used\";
+//   output Real nextTime(quantity = \"Time\", unit = \"s\") \"Time instant of first event\";
+//   output Boolean y \"Value of y at simulationStartTime\";
+//   protected Real t_last(quantity = \"Time\", unit = \"s\");
+//   protected Integer j;
+//   protected Integer n = size(table,1) \"Number of table points\";
+// algorithm
+//   if size(table,1) == 0 then
+//     index := 0;
+//     nextTime := -1e+60;
+//     y := startValue;
+//   elseif size(table,1) == 1 then
+//     index := 1;
+//     if table[1] > simulationStartTime then
+//       nextTime := table[1];
+//       y := startValue;
+//     else
+//       nextTime := simulationStartTime;
+//       y := startValue;
+//     end if;
+//   else
+//     t_last := table[1];
+//     for i in 2:n loop
+//       assert( table[i] > t_last, \"Time values of table not strict monotonically increasing: table[\" + String(i + -1,0,true) + \"] = \" + String(table[i + -1],0,true,6) + \"table[\" + String(i,0,true) + \"] = \" + String(table[i],0,true,6));
+//     end for;
+//     j := 1;
+//     y := startValue;
+//     while j < n and table[j] <= simulationStartTime loop
+//       y := not y;
+//       j := 1 + j;
+//     end while;
+//     if j == 1 then
+//       nextTime := table[1];
+//       y := startValue;
+//     elseif j == n and table[n] <= simulationStartTime then
+//       nextTime := simulationStartTime + -1.0;
+//       y := not y;
+//     else
+//       nextTime := table[j];
+//     end if;
+//     index := j;
+//   end if;
+// end Modelica.Blocks.Sources.BooleanTable.getFirstIndex;
+// 
+// function Modelica.Fluid.Interfaces.FluidPort.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Fluid.Interfaces.FluidPort.Medium.ThermodynamicState state \"thermodynamic state record\";
+// end Modelica.Fluid.Interfaces.FluidPort.Medium.setState_pTX;
+// 
+// function Modelica.Fluid.Interfaces.FluidPort.Medium.specificEnthalpy \"Return specific enthalpy\"
+//   input Modelica.Fluid.Interfaces.FluidPort.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// end Modelica.Fluid.Interfaces.FluidPort.Medium.specificEnthalpy;
+// 
+// function Modelica.Fluid.Interfaces.FluidPort.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := Modelica.Fluid.Interfaces.FluidPort.Medium.specificEnthalpy(Modelica.Fluid.Interfaces.FluidPort.Medium.setState_pTX(p,T,X));
+// end Modelica.Fluid.Interfaces.FluidPort.Medium.specificEnthalpy_pTX;
+// 
+// function Modelica.Fluid.Interfaces.FluidPort_a.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Fluid.Interfaces.FluidPort_a.Medium.ThermodynamicState state \"thermodynamic state record\";
+// end Modelica.Fluid.Interfaces.FluidPort_a.Medium.setState_pTX;
+// 
+// function Modelica.Fluid.Interfaces.FluidPort_a.Medium.specificEnthalpy \"Return specific enthalpy\"
+//   input Modelica.Fluid.Interfaces.FluidPort_a.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// end Modelica.Fluid.Interfaces.FluidPort_a.Medium.specificEnthalpy;
+// 
+// function Modelica.Fluid.Interfaces.FluidPort_a.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := Modelica.Fluid.Interfaces.FluidPort_a.Medium.specificEnthalpy(Modelica.Fluid.Interfaces.FluidPort_a.Medium.setState_pTX(p,T,X));
+// end Modelica.Fluid.Interfaces.FluidPort_a.Medium.specificEnthalpy_pTX;
+// 
+// function Modelica.Fluid.Interfaces.FluidPort_b.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Fluid.Interfaces.FluidPort_b.Medium.ThermodynamicState state \"thermodynamic state record\";
+// end Modelica.Fluid.Interfaces.FluidPort_b.Medium.setState_pTX;
+// 
+// function Modelica.Fluid.Interfaces.FluidPort_b.Medium.specificEnthalpy \"Return specific enthalpy\"
+//   input Modelica.Fluid.Interfaces.FluidPort_b.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// end Modelica.Fluid.Interfaces.FluidPort_b.Medium.specificEnthalpy;
+// 
+// function Modelica.Fluid.Interfaces.FluidPort_b.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := Modelica.Fluid.Interfaces.FluidPort_b.Medium.specificEnthalpy(Modelica.Fluid.Interfaces.FluidPort_b.Medium.setState_pTX(p,T,X));
+// end Modelica.Fluid.Interfaces.FluidPort_b.Medium.specificEnthalpy_pTX;
+// 
+// function Modelica.Fluid.Interfaces.FluidPorts_b.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Fluid.Interfaces.FluidPorts_b.Medium.ThermodynamicState state \"thermodynamic state record\";
+// end Modelica.Fluid.Interfaces.FluidPorts_b.Medium.setState_pTX;
+// 
+// function Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy \"Return specific enthalpy\"
+//   input Modelica.Fluid.Interfaces.FluidPorts_b.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// end Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy;
+// 
+// function Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy(Modelica.Fluid.Interfaces.FluidPorts_b.Medium.setState_pTX(p,T,X));
+// end Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy_pTX;
+// 
+// function Modelica.Fluid.Sources.Boundary_pT.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := -1142859.6 + 4184.0 * T;
+// end Modelica.Fluid.Sources.Boundary_pT.Medium.specificEnthalpy_pTX;
+// 
+// function Modelica.Fluid.Utilities.checkBoundary \"Check whether boundary definition is correct\"
+//   input String mediumName;
+//   input String[:] substanceNames \"Names of substances\";
+//   input Boolean singleState;
+//   input Boolean define_p;
+//   input Real[:] X_boundary;
+//   input String modelName = \"??? boundary ???\";
+//   protected Integer nX = size(X_boundary,1);
+//   protected String X_str;
+// algorithm
+//   assert( not singleState or singleState and define_p, \"
+// Wrong value of parameter define_p (= false) in model \\\"\" + modelName + \"\\\":
+// The selected medium \\\"\" + mediumName + \"\\\" has Medium.singleState=true.
+// Therefore, an boundary density cannot be defined and
+// define_p = true is required.
+// \");
+//   for i in 1:nX loop
+//     assert( X_boundary[i] >= 0.0, \"
+// Wrong boundary mass fractions in medium \\\"\" + mediumName + \"\\\" in model \\\"\" + modelName + \"\\\":
+// The boundary value X_boundary(\" + String(i,0,true) + \") = \" + String(X_boundary[i],0,true,6) + \"
+// is negative. It must be positive.
+// \");
+//   end for;
+//   if nX > 0 and abs(sum(X_boundary) + -1.0) > 1e-10 then
+//     X_str := \"\";
+//     for i in 1:nX loop
+//       X_str := X_str + \"   X_boundary[\" + String(i,0,true) + \"] = \" + String(X_boundary[i],0,true,6) + \" \\\"\" + substanceNames[i] + \"\\\"
+// \";
+//     end for;
+//     Modelica.Utilities.Streams.error(\"The boundary mass fractions in medium \\\"\" + mediumName + \"\\\" in model \\\"\" + modelName + \"\\\"
+// \" + \"do not sum up to 1. Instead, sum(X_boundary) = \" + String(sum(X_boundary),0,true,6) + \":
+// \" + X_str);
+//   end if;
+// end Modelica.Fluid.Utilities.checkBoundary;
+// 
+// function Modelica.Fluid.Utilities.evaluatePoly3_derivativeAtZero \"Evaluate polynomial of order 3 that passes the origin with a predefined derivative\"
+//   input Real x \"Value for which polynomial shall be evaluated\";
+//   input Real x1 \"Abscissa value\";
+//   input Real y1 \"y1=f(x1)\";
+//   input Real y1d \"First derivative at y1\";
+//   input Real y0d \"First derivative at f(x=0)\";
+//   output Real y;
+//   protected Real a1;
+//   protected Real a2;
+//   protected Real a3;
+//   protected Real xx;
+// algorithm
+//   a1 := x1 * y0d;
+//   a2 := 3.0 * y1 + -2.0 * a1 - x1 * y1d;
+//   a3 := y1 + -a2 - a1;
+//   xx := x / x1;
+//   y := xx * (a1 + xx * (a2 + xx * a3));
+// end Modelica.Fluid.Utilities.evaluatePoly3_derivativeAtZero;
+// 
+// function Modelica.Fluid.Utilities.regSquare2 \"Anti-symmetric approximation of square with discontinuous factor so that the first derivative is non-zero and is continuous\"
+//   input Real x \"abscissa value\";
+//   input Real x_small(min = 0.0) = 0.01 \"approximation of function for |x| <= x_small\";
+//   input Real k1(min = 0.0) = 1.0 \"y = (if x>=0 then k1 else k2)*x*|x|\";
+//   input Real k2(min = 0.0) = 1.0 \"y = (if x>=0 then k1 else k2)*x*|x|\";
+//   input Boolean use_yd0 = false \"= true, if yd0 shall be used\";
+//   input Real yd0(min = 0.0) = 1.0 \"Desired derivative at x=0: dy/dx = yd0\";
+//   output Real y \"ordinate value\";
+// algorithm
+//   y := smooth(2,if x >= x_small then k1 * x ^ 2.0 else if x <= -x_small then -k2 * x ^ 2.0 else if k1 >= k2 then Modelica.Fluid.Utilities.regSquare2.regSquare2_utility(x,x_small,k1,k2,use_yd0,yd0) else -Modelica.Fluid.Utilities.regSquare2.regSquare2_utility(-x,x_small,k2,k1,use_yd0,yd0));
+// end Modelica.Fluid.Utilities.regSquare2;
+// 
+// function Modelica.Fluid.Utilities.regSquare2.regSquare2_utility \"Interpolating with two 3-order polynomials with a prescribed derivative at x=0\"
+//   input Real x;
+//   input Real x1 \"approximation of function abs(x) < x1\";
+//   input Real k1 \"y = (if x>=0 then k1 else -k2)*x*|x|; k1 >= k2\";
+//   input Real k2 \"y = (if x>=0 then k1 else -k2)*x*|x|\";
+//   input Boolean use_yd0 = false \"= true, if yd0 shall be used\";
+//   input Real yd0(min = 0.0) = 1.0 \"Desired derivative at x=0: dy/dx = yd0\";
+//   output Real y;
+//   protected Real x2;
+//   protected Real y1;
+//   protected Real y2;
+//   protected Real y1d;
+//   protected Real y2d;
+//   protected Real w;
+//   protected Real w1;
+//   protected Real w2;
+//   protected Real y0d;
+// algorithm
+//   x2 := -x1;
+//   if x <= x2 then
+//     y := -k2 * x ^ 2.0;
+//   else
+//     y1 := k1 * x1 ^ 2.0;
+//     y2 := -k2 * x2 ^ 2.0;
+//     y1d := 2.0 * k1 * x1;
+//     y2d := -2.0 * k2 * x2;
+//     if use_yd0 then
+//       y0d := yd0;
+//     else
+//       w := x2 / x1;
+//       y0d := ((3.0 * y2 - x2 * y2d) / w - (3.0 * y1 - x1 * y1d) * w) / ((1.0 - w) * x1 * 2.0);
+//     end if;
+//     w1 := 2.23606797749979 * k1 * x1;
+//     w2 := 2.23606797749979 * k2 * abs(x2);
+//     y0d := min(y0d,0.9 * min(w1,w2));
+//     y := if x >= 0.0 then Modelica.Fluid.Utilities.evaluatePoly3_derivativeAtZero(x,x1,y1,y1d,y0d) else Modelica.Fluid.Utilities.evaluatePoly3_derivativeAtZero(x,x2,y2,y2d,y0d);
+//   end if;
+// end Modelica.Fluid.Utilities.regSquare2.regSquare2_utility;
+// 
+// function Modelica.Fluid.Utilities.regStep \"Approximation of a general step, such that the characteristic is continuous and differentiable\"
+//   input Real x \"Abscissa value\";
+//   input Real y1 \"Ordinate value for x > 0\";
+//   input Real y2 \"Ordinate value for x < 0\";
+//   input Real x_small(min = 0.0) = 1e-05 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
+//   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
+// algorithm
+//   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
+// end Modelica.Fluid.Utilities.regStep;
+// 
+// function Modelica.Fluid.Valves.ValveDiscrete.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Fluid.Valves.ValveDiscrete.Medium.ThermodynamicState\"
+//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+//   output ThermodynamicState res;
+// end Modelica.Fluid.Valves.ValveDiscrete.Medium.ThermodynamicState;
+// 
+// function Modelica.Fluid.Valves.ValveDiscrete.Medium.density \"Return density\"
+//   input Modelica.Fluid.Valves.ValveDiscrete.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
+// algorithm
+//   d := 995.586;
+// end Modelica.Fluid.Valves.ValveDiscrete.Medium.density;
+// 
+// function Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Fluid.Valves.ValveDiscrete.Medium.ThermodynamicState state \"thermodynamic state record\";
+// end Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_pTX;
+// 
+// function Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX \"Return thermodynamic state from p, h, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Fluid.Valves.ValveDiscrete.Medium.ThermodynamicState state \"thermodynamic state record\";
+// algorithm
+//   state := Modelica.Fluid.Valves.ValveDiscrete.Medium.ThermodynamicState(p,273.15 + h / 4184.0);
+// end Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX;
+// 
+// function Modelica.Fluid.Valves.ValveDiscrete.Medium.specificEnthalpy \"Return specific enthalpy\"
+//   input Modelica.Fluid.Valves.ValveDiscrete.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// end Modelica.Fluid.Valves.ValveDiscrete.Medium.specificEnthalpy;
+// 
+// function Modelica.Fluid.Valves.ValveDiscrete.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := -1142859.6 + 4184.0 * T;
+// end Modelica.Fluid.Valves.ValveDiscrete.Medium.specificEnthalpy_pTX;
+// 
+// function Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature \"Return temperature\"
+//   input Modelica.Fluid.Valves.ValveDiscrete.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+// algorithm
+//   T := state.T;
+// end Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature;
+// 
+// function Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.ThermodynamicState state \"thermodynamic state record\";
+// end Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.setState_pTX;
+// 
+// function Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.specificEnthalpy \"Return specific enthalpy\"
+//   input Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// end Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.specificEnthalpy;
+// 
+// function Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.specificEnthalpy(Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.setState_pTX(p,T,X));
+// end Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.specificEnthalpy_pTX;
+// 
+// function Modelica.Fluid.Vessels.BaseClasses.VesselPortsData \"Automatically generated record constructor for Modelica.Fluid.Vessels.BaseClasses.VesselPortsData\"
+//   input Real(min=0.0, quantity=\"Length\", unit=\"m\") diameter;
+//   input Real(min=0.0, quantity=\"Length\", unit=\"m\") height = 0.0;
+//   input Real(min=0.0) zeta_out = 0.5;
+//   input Real(min=0.0) zeta_in = 1.04;
+//   output VesselPortsData res;
+// end Modelica.Fluid.Vessels.BaseClasses.VesselPortsData;
+// 
+// function Modelica.Fluid.Vessels.OpenTank.HeatTransfer.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := -1142859.6 + 4184.0 * T;
+// end Modelica.Fluid.Vessels.OpenTank.HeatTransfer.Medium.specificEnthalpy_pTX;
+// 
+// function Modelica.Fluid.Vessels.OpenTank.HeatTransfer.Medium.temperature \"Return temperature\"
+//   input Modelica.Fluid.Vessels.OpenTank.HeatTransfer.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+// algorithm
+//   T := state.T;
+// end Modelica.Fluid.Vessels.OpenTank.HeatTransfer.Medium.temperature;
+// 
+// function Modelica.Fluid.Vessels.OpenTank.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Fluid.Vessels.OpenTank.Medium.ThermodynamicState\"
+//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+//   output ThermodynamicState res;
+// end Modelica.Fluid.Vessels.OpenTank.Medium.ThermodynamicState;
+// 
+// function Modelica.Fluid.Vessels.OpenTank.Medium.density \"Return density\"
+//   input Modelica.Fluid.Vessels.OpenTank.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
+// algorithm
+//   d := 995.586;
+// end Modelica.Fluid.Vessels.OpenTank.Medium.density;
+// 
+// function Modelica.Fluid.Vessels.OpenTank.Medium.setState_phX \"Return thermodynamic state from p, h, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Fluid.Vessels.OpenTank.Medium.ThermodynamicState state \"thermodynamic state record\";
+// algorithm
+//   state := Modelica.Fluid.Vessels.OpenTank.Medium.ThermodynamicState(p,273.15 + h / 4184.0);
+// end Modelica.Fluid.Vessels.OpenTank.Medium.setState_phX;
+// 
+// function Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := -1142859.6 + 4184.0 * T;
+// end Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX;
+// 
+// function Modelica.Fluid.Vessels.OpenTank.Medium.temperature_phX \"Return temperature from p, h, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+// algorithm
+//   T := 273.15 + h / 4184.0;
+// end Modelica.Fluid.Vessels.OpenTank.Medium.temperature_phX;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.Media.Interfaces.PartialMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Media.Interfaces.PartialMedium.ThermodynamicState state \"thermodynamic state record\";
+// end Modelica.Media.Interfaces.PartialMedium.setState_pTX;
+// 
+// function Modelica.Media.Interfaces.PartialMedium.specificEnthalpy \"Return specific enthalpy\"
+//   input Modelica.Media.Interfaces.PartialMedium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// end Modelica.Media.Interfaces.PartialMedium.specificEnthalpy;
+// 
+// function Modelica.Media.Interfaces.PartialMedium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := Modelica.Media.Interfaces.PartialMedium.specificEnthalpy(Modelica.Media.Interfaces.PartialMedium.setState_pTX(p,T,X));
+// end Modelica.Media.Interfaces.PartialMedium.specificEnthalpy_pTX;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// function Modelica.SIunits.Conversions.to_bar \"Convert from Pascal to bar\"
+//   input Real Pa(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pascal value\";
+//   output Real bar(quantity = \"Pressure\", unit = \"bar\") \"bar value\";
+// algorithm
+//   bar := Pa / 100000.0;
+// end Modelica.SIunits.Conversions.to_bar;
+// 
+// function Modelica.SIunits.Conversions.to_degC \"Convert from Kelvin to °Celsius\"
+//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+//   output Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+// algorithm
+//   Celsius := -273.15 + Kelvin;
+// end Modelica.SIunits.Conversions.to_degC;
+// 
+// function Modelica.StateGraph.Temporary.anyTrue \"Returns true, if at least on element of the Boolean input vector is true\"
+//   input Boolean[:] b;
+//   output Boolean result;
+// algorithm
+//   result := false;
+//   for i in 1:size(b,1) loop
+//     result := result or b[i];
+//   end for;
+// end Modelica.StateGraph.Temporary.anyTrue;
+// 
+// function Modelica.Utilities.Streams.error
+//   input String string \"String to be printed to error message window\";
+// 
+//   external \"C\" ModelicaError(string);
+// end Modelica.Utilities.Streams.error;
+// 
+// class Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks
+//   parameter Real system.p_ambient(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 101325.0 \"Default ambient pressure\";
+//   parameter Real system.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Default ambient temperature\";
+//   parameter Real system.g(quantity = \"Acceleration\", unit = \"m/s2\") = 9.80665 \"Constant gravity acceleration\";
+//   parameter Boolean system.allowFlowReversal = true \"= false to restrict to design flow direction (port_a -> port_b)\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.energyDynamics = Modelica.Fluid.Types.Dynamics.DynamicFreeInitial \"Default formulation of energy balances\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.momentumDynamics = Modelica.Fluid.Types.Dynamics.SteadyState \"Default formulation of momentum balances, if options available\";
+//   parameter Real system.m_flow_start(quantity = \"MassFlowRate\", unit = \"kg/s\") = 0.0 \"Default start value for mass flow rates\";
+//   parameter Real system.m_flow_small(quantity = \"MassFlowRate\", unit = \"kg/s\", min = 0.0) = 0.01 \"Default small laminar mass flow rate for regularization of zero flow\";
+//   parameter Real system.dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Default small pressure drop for regularization of laminar and zero flow\";
+//   parameter Real system.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = system.p_ambient \"Default start value for pressures\";
+//   parameter Real system.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Default start value for temperatures\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.massDynamics = system.energyDynamics \"Default formulation of mass balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.substanceDynamics = system.massDynamics \"Default formulation of substance balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.traceDynamics = system.massDynamics \"Default formulation of trace substance balances\";
+//   parameter Real tankController.maxLevel(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.9 * tank1.height \"Fill level of tank 1\";
+//   parameter Real tankController.minLevel(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.01 \"Lowest level of tank 1 and 2\";
+//   parameter Real tankController.waitTime(quantity = \"Time\", unit = \"s\") = 50.0 \"Wait time, between operations\";
+//   parameter Integer tankController.s1.nIn(min = 0) = 2 \"Number of input connections\";
+//   parameter Integer tankController.s1.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean tankController.s1.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean tankController.s1.inPort[1].occupied \"true, if step is active\";
+//   input Boolean tankController.s1.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean tankController.s1.inPort[2].occupied \"true, if step is active\";
+//   input Boolean tankController.s1.inPort[2].set \"true, if transition fires and step is activated\";
+//   output Boolean tankController.s1.outPort[1].available \"true, if step is active\";
+//   input Boolean tankController.s1.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean tankController.s1.stateGraphRoot.suspend = false;
+//   output Boolean tankController.s1.stateGraphRoot.resume = false;
+//   output Boolean tankController.s1.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean tankController.s1.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.s1.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.s1.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean tankController.s1.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean tankController.s1.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.s1.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.s1.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean tankController.s1.newActive \"Value of active in the next iteration\";
+//   protected Boolean tankController.s1.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean tankController.s1.active \"= true if step is active, otherwise the step is not active\";
+//   output Boolean tankController.normal.stateGraphRoot.suspend = false;
+//   output Boolean tankController.normal.stateGraphRoot.resume = false;
+//   output Boolean tankController.normal.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean tankController.normal.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.normal.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.normal.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   output Boolean tankController.normal.stateGraphRoot.suspend = Modelica.StateGraph.Temporary.anyTrue({tankController.normal.suspend[1].reset}) or tankController.normal.outerState.subgraphStatePort.suspend;
+//   output Boolean tankController.normal.stateGraphRoot.resume = Modelica.StateGraph.Temporary.anyTrue({tankController.normal.resume[1].set}) or tankController.normal.outerState.subgraphStatePort.resume;
+//   output Boolean tankController.normal.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean tankController.normal.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.normal.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.normal.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   parameter Integer tankController.normal.nSuspend = 1 \"Number of suspend ports\";
+//   parameter Integer tankController.normal.nResume = 1 \"Number of resume ports\";
+//   output Boolean tankController.normal.active \"= true if step is active, otherwise the step is not active\";
+//   output Boolean tankController.normal.inPort.occupied \"true, if step is active\";
+//   input Boolean tankController.normal.inPort.set \"true, if transition fires and step is activated\";
+//   output Boolean tankController.normal.outPort.available \"true, if step is active\";
+//   input Boolean tankController.normal.outPort.reset \"true, if transition fires and step is deactivated\";
+//   output Boolean tankController.normal.suspend[1].available \"true, if step is active\";
+//   input Boolean tankController.normal.suspend[1].reset \"true, if transition fires and step is deactived\";
+//   output Boolean tankController.normal.resume[1].occupied \"true, if step is active\";
+//   input Boolean tankController.normal.resume[1].set \"true, if transition fires and step is activated\";
+//   input Boolean tankController.normal.outerState.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean tankController.normal.outerState.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.normal.outerState.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.normal.outerState.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean tankController.normal.newActive \"Value of active in the next iteration\";
+//   protected Integer tankController.normal.activeSteps \"Number of active steps within the CompositeStep\";
+//   parameter Real tankController.normal.maxLevel(quantity = \"Length\", unit = \"m\", min = 0.0) = tankController.maxLevel \"Fill level of tank 1\";
+//   parameter Real tankController.normal.minLevel(quantity = \"Length\", unit = \"m\", min = 0.0) = tankController.minLevel \"Lowest level of tank 1 and 2\";
+//   parameter Real tankController.normal.waitTime(quantity = \"Time\", unit = \"s\") = tankController.waitTime \"Wait time between operations\";
+//   input Real tankController.normal.level1;
+//   parameter Integer tankController.normal.fillTank1.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer tankController.normal.fillTank1.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean tankController.normal.fillTank1.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean tankController.normal.fillTank1.inPort[1].occupied \"true, if step is active\";
+//   input Boolean tankController.normal.fillTank1.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean tankController.normal.fillTank1.outPort[1].available \"true, if step is active\";
+//   input Boolean tankController.normal.fillTank1.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   input Boolean tankController.normal.fillTank1.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean tankController.normal.fillTank1.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.normal.fillTank1.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.normal.fillTank1.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean tankController.normal.fillTank1.newActive \"Value of active in the next iteration\";
+//   protected Boolean tankController.normal.fillTank1.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean tankController.normal.fillTank1.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean tankController.normal.T1.localCondition = tankController.normal.T1.condition \"= true, if transition may fire\";
+//   parameter Boolean tankController.normal.T1.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real tankController.normal.T1.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real tankController.normal.T1.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean tankController.normal.T1.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean tankController.normal.T1.fire \"= true, if transition fires\";
+//   input Boolean tankController.normal.T1.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean tankController.normal.T1.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean tankController.normal.T1.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean tankController.normal.T1.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real tankController.normal.T1.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real tankController.normal.T1.t_dummy;
+//   input Boolean tankController.normal.T1.condition = tankController.normal.level1 > tankController.normal.maxLevel \"= true, if transition may fire (time varying expression)\";
+//   parameter Integer tankController.normal.fillTank2.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer tankController.normal.fillTank2.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean tankController.normal.fillTank2.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean tankController.normal.fillTank2.inPort[1].occupied \"true, if step is active\";
+//   input Boolean tankController.normal.fillTank2.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean tankController.normal.fillTank2.outPort[1].available \"true, if step is active\";
+//   input Boolean tankController.normal.fillTank2.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   input Boolean tankController.normal.fillTank2.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean tankController.normal.fillTank2.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.normal.fillTank2.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.normal.fillTank2.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean tankController.normal.fillTank2.newActive \"Value of active in the next iteration\";
+//   protected Boolean tankController.normal.fillTank2.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean tankController.normal.fillTank2.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean tankController.normal.T3.localCondition = tankController.normal.T3.condition \"= true, if transition may fire\";
+//   parameter Boolean tankController.normal.T3.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real tankController.normal.T3.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real tankController.normal.T3.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean tankController.normal.T3.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean tankController.normal.T3.fire \"= true, if transition fires\";
+//   input Boolean tankController.normal.T3.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean tankController.normal.T3.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean tankController.normal.T3.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean tankController.normal.T3.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real tankController.normal.T3.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real tankController.normal.T3.t_dummy;
+//   input Boolean tankController.normal.T3.condition = tankController.normal.level1 < tankController.normal.minLevel \"= true, if transition may fire (time varying expression)\";
+//   parameter Integer tankController.normal.emptyTank2.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer tankController.normal.emptyTank2.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean tankController.normal.emptyTank2.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean tankController.normal.emptyTank2.inPort[1].occupied \"true, if step is active\";
+//   input Boolean tankController.normal.emptyTank2.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean tankController.normal.emptyTank2.outPort[1].available \"true, if step is active\";
+//   input Boolean tankController.normal.emptyTank2.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   input Boolean tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean tankController.normal.emptyTank2.newActive \"Value of active in the next iteration\";
+//   protected Boolean tankController.normal.emptyTank2.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean tankController.normal.emptyTank2.active \"= true if step is active, otherwise the step is not active\";
+//   parameter Integer tankController.normal.wait1.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer tankController.normal.wait1.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean tankController.normal.wait1.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean tankController.normal.wait1.inPort[1].occupied \"true, if step is active\";
+//   input Boolean tankController.normal.wait1.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean tankController.normal.wait1.outPort[1].available \"true, if step is active\";
+//   input Boolean tankController.normal.wait1.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   input Boolean tankController.normal.wait1.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean tankController.normal.wait1.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.normal.wait1.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.normal.wait1.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean tankController.normal.wait1.newActive \"Value of active in the next iteration\";
+//   protected Boolean tankController.normal.wait1.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean tankController.normal.wait1.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean tankController.normal.T2.localCondition = tankController.normal.T2.condition \"= true, if transition may fire\";
+//   parameter Boolean tankController.normal.T2.enableTimer = true \"= true, if timer is enabled\";
+//   parameter Real tankController.normal.T2.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = tankController.normal.waitTime \"Wait time before transition fires\";
+//   output Real tankController.normal.T2.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean tankController.normal.T2.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean tankController.normal.T2.fire \"= true, if transition fires\";
+//   input Boolean tankController.normal.T2.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean tankController.normal.T2.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean tankController.normal.T2.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean tankController.normal.T2.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real tankController.normal.T2.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real tankController.normal.T2.t_dummy;
+//   input Boolean tankController.normal.T2.condition = true \"= true, if transition may fire (time varying expression)\";
+//   parameter Integer tankController.normal.wait2.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer tankController.normal.wait2.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean tankController.normal.wait2.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean tankController.normal.wait2.inPort[1].occupied \"true, if step is active\";
+//   input Boolean tankController.normal.wait2.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean tankController.normal.wait2.outPort[1].available \"true, if step is active\";
+//   input Boolean tankController.normal.wait2.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   input Boolean tankController.normal.wait2.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean tankController.normal.wait2.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.normal.wait2.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.normal.wait2.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean tankController.normal.wait2.newActive \"Value of active in the next iteration\";
+//   protected Boolean tankController.normal.wait2.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean tankController.normal.wait2.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean tankController.normal.T4.localCondition = tankController.normal.T4.condition \"= true, if transition may fire\";
+//   parameter Boolean tankController.normal.T4.enableTimer = true \"= true, if timer is enabled\";
+//   parameter Real tankController.normal.T4.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = tankController.normal.waitTime \"Wait time before transition fires\";
+//   output Real tankController.normal.T4.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean tankController.normal.T4.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean tankController.normal.T4.fire \"= true, if transition fires\";
+//   input Boolean tankController.normal.T4.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean tankController.normal.T4.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean tankController.normal.T4.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean tankController.normal.T4.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real tankController.normal.T4.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real tankController.normal.T4.t_dummy;
+//   input Boolean tankController.normal.T4.condition = true \"= true, if transition may fire (time varying expression)\";
+//   input Boolean tankController.T1.localCondition = tankController.T1.condition \"= true, if transition may fire\";
+//   parameter Boolean tankController.T1.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real tankController.T1.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real tankController.T1.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean tankController.T1.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean tankController.T1.fire \"= true, if transition fires\";
+//   input Boolean tankController.T1.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean tankController.T1.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean tankController.T1.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean tankController.T1.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real tankController.T1.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real tankController.T1.t_dummy;
+//   input Boolean tankController.T1.condition = tankController.start \"= true, if transition may fire (time varying expression)\";
+//   input Boolean tankController.T2.localCondition = tankController.T2.condition \"= true, if transition may fire\";
+//   parameter Boolean tankController.T2.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real tankController.T2.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real tankController.T2.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean tankController.T2.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean tankController.T2.fire \"= true, if transition fires\";
+//   input Boolean tankController.T2.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean tankController.T2.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean tankController.T2.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean tankController.T2.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real tankController.T2.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real tankController.T2.t_dummy;
+//   input Boolean tankController.T2.condition = tankController.level2 < tankController.minLevel \"= true, if transition may fire (time varying expression)\";
+//   input Boolean tankController.T3.localCondition = tankController.T3.condition \"= true, if transition may fire\";
+//   parameter Boolean tankController.T3.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real tankController.T3.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real tankController.T3.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean tankController.T3.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean tankController.T3.fire \"= true, if transition fires\";
+//   input Boolean tankController.T3.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean tankController.T3.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean tankController.T3.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean tankController.T3.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real tankController.T3.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real tankController.T3.t_dummy;
+//   input Boolean tankController.T3.condition = tankController.stop \"= true, if transition may fire (time varying expression)\";
+//   parameter Integer tankController.s2.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer tankController.s2.nOut(min = 0) = 2 \"Number of output connections\";
+//   output Boolean tankController.s2.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean tankController.s2.inPort[1].occupied \"true, if step is active\";
+//   input Boolean tankController.s2.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean tankController.s2.outPort[1].available \"true, if step is active\";
+//   input Boolean tankController.s2.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean tankController.s2.outPort[2].available \"true, if step is active\";
+//   input Boolean tankController.s2.outPort[2].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean tankController.s2.stateGraphRoot.suspend = false;
+//   output Boolean tankController.s2.stateGraphRoot.resume = false;
+//   output Boolean tankController.s2.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean tankController.s2.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.s2.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.s2.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean tankController.s2.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean tankController.s2.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.s2.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.s2.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean tankController.s2.newActive \"Value of active in the next iteration\";
+//   protected Boolean tankController.s2.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean tankController.s2.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean tankController.T4.localCondition = tankController.T4.condition \"= true, if transition may fire\";
+//   parameter Boolean tankController.T4.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real tankController.T4.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real tankController.T4.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean tankController.T4.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean tankController.T4.fire \"= true, if transition fires\";
+//   input Boolean tankController.T4.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean tankController.T4.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean tankController.T4.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean tankController.T4.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real tankController.T4.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real tankController.T4.t_dummy;
+//   input Boolean tankController.T4.condition = tankController.start \"= true, if transition may fire (time varying expression)\";
+//   input Boolean tankController.T5.localCondition = tankController.T5.condition \"= true, if transition may fire\";
+//   parameter Boolean tankController.T5.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real tankController.T5.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real tankController.T5.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean tankController.T5.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean tankController.T5.fire \"= true, if transition fires\";
+//   input Boolean tankController.T5.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean tankController.T5.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean tankController.T5.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean tankController.T5.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real tankController.T5.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real tankController.T5.t_dummy;
+//   input Boolean tankController.T5.condition = tankController.shut \"= true, if transition may fire (time varying expression)\";
+//   parameter Integer tankController.emptyTanks.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer tankController.emptyTanks.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean tankController.emptyTanks.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean tankController.emptyTanks.inPort[1].occupied \"true, if step is active\";
+//   input Boolean tankController.emptyTanks.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean tankController.emptyTanks.outPort[1].available \"true, if step is active\";
+//   input Boolean tankController.emptyTanks.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean tankController.emptyTanks.stateGraphRoot.suspend = false;
+//   output Boolean tankController.emptyTanks.stateGraphRoot.resume = false;
+//   output Boolean tankController.emptyTanks.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean tankController.emptyTanks.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.emptyTanks.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.emptyTanks.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean tankController.emptyTanks.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean tankController.emptyTanks.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real tankController.emptyTanks.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real tankController.emptyTanks.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean tankController.emptyTanks.newActive \"Value of active in the next iteration\";
+//   protected Boolean tankController.emptyTanks.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean tankController.emptyTanks.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean tankController.T6.localCondition = tankController.T6.condition \"= true, if transition may fire\";
+//   parameter Boolean tankController.T6.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real tankController.T6.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real tankController.T6.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean tankController.T6.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean tankController.T6.fire \"= true, if transition fires\";
+//   input Boolean tankController.T6.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean tankController.T6.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean tankController.T6.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean tankController.T6.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real tankController.T6.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real tankController.T6.t_dummy;
+//   input Boolean tankController.T6.condition = tankController.level1 < tankController.minLevel and tankController.level2 < tankController.minLevel \"= true, if transition may fire (time varying expression)\";
+//   input Boolean tankController.start;
+//   input Boolean tankController.stop;
+//   input Boolean tankController.shut;
+//   input Real tankController.level1;
+//   input Real tankController.level2;
+//   output Boolean tankController.valve1;
+//   output Boolean tankController.valve2;
+//   output Boolean tankController.valve3;
+//   output Boolean tankController.setValve1.y = tankController.normal.fillTank1.active \"Value of Boolean output\";
+//   output Boolean tankController.setValve2.y = tankController.normal.fillTank2.active or tankController.emptyTanks.active and tankController.level1 > tankController.minLevel \"Value of Boolean output\";
+//   output Boolean tankController.setValve3.y = tankController.normal.emptyTank2.active or tankController.emptyTanks.active and tankController.level2 > tankController.minLevel \"Value of Boolean output\";
+//   parameter Real start.buttonTimeTable[1](quantity = \"Time\", unit = \"s\") = 20.0 \"Time instants where button is pressend\";
+//   parameter Real start.buttonTimeTable[2](quantity = \"Time\", unit = \"s\") = 280.0 \"Time instants where button is pressend\";
+//   input Boolean start.reset[1] = stop.on \"Reset button to false, if an element of reset becomes true\";
+//   input Boolean start.reset[2] = shut.on \"Reset button to false, if an element of reset becomes true\";
+//   output Boolean start.on;
+//   output Boolean start.table.y \"Connector of Boolean output signal\";
+//   parameter Boolean start.table.startValue = false \"Start value of y. At time = table[1], y changes to 'not startValue'\";
+//   parameter Real start.table.table[1](quantity = \"Time\", unit = \"s\") = start.buttonTimeTable[1] \"Vector of time points. At every time point, the output y gets its opposite value (e.g. table={0,1})\";
+//   parameter Real start.table.table[2](quantity = \"Time\", unit = \"s\") = start.buttonTimeTable[2] \"Vector of time points. At every time point, the output y gets its opposite value (e.g. table={0,1})\";
+//   protected Real start.table.nextTime(quantity = \"Time\", unit = \"s\");
+//   protected Integer start.table.index \"Index of actual table entry\";
+//   protected parameter Integer start.table.n = 2 \"Number of table points\";
+//   parameter Real stop.buttonTimeTable[1](quantity = \"Time\", unit = \"s\") = 220.0 \"Time instants where button is pressend\";
+//   parameter Real stop.buttonTimeTable[2](quantity = \"Time\", unit = \"s\") = 650.0 \"Time instants where button is pressend\";
+//   input Boolean stop.reset[1] = start.on \"Reset button to false, if an element of reset becomes true\";
+//   input Boolean stop.reset[2] = shut.on \"Reset button to false, if an element of reset becomes true\";
+//   output Boolean stop.on;
+//   output Boolean stop.table.y \"Connector of Boolean output signal\";
+//   parameter Boolean stop.table.startValue = false \"Start value of y. At time = table[1], y changes to 'not startValue'\";
+//   parameter Real stop.table.table[1](quantity = \"Time\", unit = \"s\") = stop.buttonTimeTable[1] \"Vector of time points. At every time point, the output y gets its opposite value (e.g. table={0,1})\";
+//   parameter Real stop.table.table[2](quantity = \"Time\", unit = \"s\") = stop.buttonTimeTable[2] \"Vector of time points. At every time point, the output y gets its opposite value (e.g. table={0,1})\";
+//   protected Real stop.table.nextTime(quantity = \"Time\", unit = \"s\");
+//   protected Integer stop.table.index \"Index of actual table entry\";
+//   protected parameter Integer stop.table.n = 2 \"Number of table points\";
+//   parameter Real shut.buttonTimeTable[1](quantity = \"Time\", unit = \"s\") = 700.0 \"Time instants where button is pressend\";
+//   input Boolean shut.reset[1] = start.on \"Reset button to false, if an element of reset becomes true\";
+//   input Boolean shut.reset[2] = stop.on \"Reset button to false, if an element of reset becomes true\";
+//   output Boolean shut.on;
+//   output Boolean shut.table.y \"Connector of Boolean output signal\";
+//   parameter Boolean shut.table.startValue = false \"Start value of y. At time = table[1], y changes to 'not startValue'\";
+//   parameter Real shut.table.table[1](quantity = \"Time\", unit = \"s\") = shut.buttonTimeTable[1] \"Vector of time points. At every time point, the output y gets its opposite value (e.g. table={0,1})\";
+//   protected Real shut.table.nextTime(quantity = \"Time\", unit = \"s\");
+//   protected Integer shut.table.index \"Index of actual table entry\";
+//   protected parameter Integer shut.table.n = 1 \"Number of table points\";
+//   parameter Boolean valve1.allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
+//   Real valve1.port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if valve1.allowFlowReversal then -1e+60 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real valve1.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real valve1.port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   Real valve1.port_b.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = if valve1.allowFlowReversal then 1e+60 else 0.0) \"Mass flow rate from the connection point into the component\";
+//   Real valve1.port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real valve1.port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   protected parameter Boolean valve1.port_a_exposesState = false \"= true if port_a exposes the state of a fluid volume\";
+//   protected parameter Boolean valve1.port_b_exposesState = false \"= true if port_b.p exposes the state of a fluid volume\";
+//   protected parameter Boolean valve1.showDesignFlowDirection = true \"= false to hide the arrow in the model icon\";
+//   parameter Real valve1.dp_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 0.01 * system.p_start \"Guess value of dp = port_a.p - port_b.p\";
+//   parameter Real valve1.m_flow_start(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_start \"Guess value of m_flow = port_a.m_flow\";
+//   parameter Real valve1.m_flow_small(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_small \"Small mass flow rate for regularization of zero flow\";
+//   parameter Boolean valve1.show_T = true \"= true, if temperatures at port_a and port_b are computed\";
+//   parameter Boolean valve1.show_V_flow = true \"= true, if volume flow rate at inflowing port is computed\";
+//   Real valve1.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve1.allowFlowReversal then -1e+60 else 0.0, max = 100000.0, start = valve1.m_flow_start) \"Mass flow rate in design flow direction\";
+//   Real valve1.dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = valve1.dp_start) \"Pressure difference between port_a and port_b (= port_a.p - port_b.p)\";
+//   Real valve1.state_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real valve1.state_a.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   Real valve1.state_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real valve1.state_b.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   parameter Real valve1.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = 100000.0 \"Nominal pressure drop at full opening=1\";
+//   parameter Real valve1.m_flow_nominal(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = 40.0 \"Nominal mass flowrate at full opening=1\";
+//   input Boolean valve1.open;
+//   parameter Real valve1.opening_min(min = 0.0) = 0.0 \"Remaining opening if closed, causing small leakage flow\";
+//   Real valve1.port_a_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.Fluid.Utilities.regStep(valve1.port_a.m_flow,Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature(valve1.state_a),Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature(Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX(valve1.port_a.p,valve1.port_a.h_outflow,{})),valve1.m_flow_small) \"Temperature close to port_a, if show_T = true\";
+//   Real valve1.port_b_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.Fluid.Utilities.regStep(valve1.port_b.m_flow,Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature(valve1.state_b),Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature(Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX(valve1.port_b.p,valve1.port_b.h_outflow,{})),valve1.m_flow_small) \"Temperature close to port_b, if show_T = true\";
+//   Real valve1.V_flow(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = valve1.m_flow / Modelica.Fluid.Utilities.regStep(valve1.m_flow,Modelica.Fluid.Valves.ValveDiscrete.Medium.density(valve1.state_a),Modelica.Fluid.Valves.ValveDiscrete.Medium.density(valve1.state_b),valve1.m_flow_small) \"Volume flow rate at inflowing port (positive when flow from port_a to port_b)\";
+//   final parameter Real valve1.k(quantity = \"HydraulicConductance\", unit = \"kg/(s.Pa)\") = valve1.m_flow_nominal / valve1.dp_nominal \"Hydraulic conductance at full opening=1\";
+//   input Real tank1.fluidVolume(quantity = \"Volume\", unit = \"m3\") = tank1.V \"Volume\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) tank1.energyDynamics = system.energyDynamics \"Formulation of energy balance\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) tank1.massDynamics = system.massDynamics \"Formulation of mass balance\";
+//   parameter Real tank1.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = tank1.p_ambient \"Start value of pressure\";
+//   parameter Boolean tank1.use_T_start = true \"= true, use T_start, otherwise h_start\";
+//   parameter Real tank1.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = if tank1.use_T_start then system.T_start else Modelica.Fluid.Vessels.OpenTank.Medium.temperature_phX(tank1.p_start,tank1.h_start,{tank1.X_start[1]}) \"Start value of temperature\";
+//   parameter Real tank1.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if tank1.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(tank1.p_start,tank1.T_start,{tank1.X_start[1]}) else 83680.0 \"Start value of specific enthalpy\";
+//   parameter Real tank1.X_start[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Start value of mass fractions m_i/m\";
+//   input Real tank1.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = tank1.p_start, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
+//   input Real tank1.medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", start = tank1.h_start) \"Specific enthalpy of medium\";
+//   Real tank1.medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density of medium\";
+//   Real tank1.medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = tank1.T_start, nominal = 300.0, StateSelect = StateSelect.prefer) \"Temperature of medium\";
+//   Real tank1.medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real tank1.medium.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
+//   Real tank1.medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real tank1.medium.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
+//   Real tank1.medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real tank1.medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   parameter Boolean tank1.medium.preferredMediumStates = true \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
+//   parameter Boolean tank1.medium.standardOrderComponents = true \"if true, and reducedX = true, the last element of X will be computed from the other ones\";
+//   Real tank1.medium.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(tank1.medium.T) \"Temperature of medium in [degC]\";
+//   Real tank1.medium.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(tank1.medium.p) \"Absolute pressure of medium in [bar]\";
+//   Real tank1.U(quantity = \"Energy\", unit = \"J\") \"Internal energy of fluid\";
+//   Real tank1.m(quantity = \"Mass\", unit = \"kg\", min = 0.0) \"Mass of fluid\";
+//   Real tank1.mb_flow(quantity = \"MassFlowRate\", unit = \"kg/s\") \"Mass flows across boundaries\";
+//   Real tank1.Hb_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\") \"Enthalpy flow across boundaries or energy source/sink\";
+//   Real tank1.Qb_flow(quantity = \"Power\", unit = \"W\") \"Heat flow across boundaries or energy source/sink\";
+//   Real tank1.Wb_flow(quantity = \"Power\", unit = \"W\") \"Work flow across boundaries or source term\";
+//   protected parameter Boolean tank1.initialize_p = false \"= true to set up initial equations for pressure\";
+//   parameter Integer tank1.nPorts = 2 \"Number of ports\";
+//   Real tank1.ports[1].m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real tank1.ports[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real tank1.ports[1].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   Real tank1.ports[2].m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real tank1.ports[2].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real tank1.ports[2].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   parameter Boolean tank1.use_portsData = true \"= false to neglect pressure loss and kinetic energy\";
+//   parameter Real tank1.m_flow_small(quantity = \"MassFlowRate\", unit = \"kg/s\", min = 0.0) = system.m_flow_small \"Regularization range at zero mass flow rate\";
+//   Real tank1.ports_H_flow[1](quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0);
+//   Real tank1.ports_H_flow[2](quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0);
+//   parameter Boolean tank1.use_HeatTransfer = false \"= true to use the HeatTransfer model\";
+//   parameter Integer tank1.heatTransfer.n = 1 \"Number of heat transfer segments\";
+//   input Real tank1.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   input Real tank1.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   input Real tank1.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = tank1.crossArea + 2.0 * (sqrt(3.14159265358979 * tank1.crossArea) * tank1.level) \"Heat transfer areas\";
+//   output Real tank1.heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
+//   parameter Boolean tank1.heatTransfer.use_k = tank1.use_HeatTransfer \"= true to use k value for thermal isolation\";
+//   parameter Real tank1.heatTransfer.k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
+//   parameter Real tank1.heatTransfer.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
+//   Real tank1.heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
+//   Real tank1.heatTransfer.heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
+//   Real tank1.heatTransfer.Ts[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Modelica.Fluid.Vessels.OpenTank.HeatTransfer.Medium.temperature(tank1.heatTransfer.states[1]) \"Temperatures defined by fluid states\";
+//   Real tank1.portDensities[1](quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"densites of the fluid at the device boudary\";
+//   Real tank1.portDensities[2](quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"densites of the fluid at the device boudary\";
+//   Real tank1.portVelocities[1](quantity = \"Velocity\", unit = \"m/s\") \"velocities of fluid flow at device boundary\";
+//   Real tank1.portVelocities[2](quantity = \"Velocity\", unit = \"m/s\") \"velocities of fluid flow at device boundary\";
+//   Real tank1.ports_E_flow[1](quantity = \"Power\", unit = \"W\") \"flow of kinetic and potential energy at device boundary\";
+//   Real tank1.ports_E_flow[2](quantity = \"Power\", unit = \"W\") \"flow of kinetic and potential energy at device boundary\";
+//   Real tank1.s[1](start = tank1.fluidLevel_max) \"curve parameters for port flows vs. port pressures; for further details see, Modelica Tutorial: Ideal switching devices\";
+//   Real tank1.s[2](start = tank1.fluidLevel_max) \"curve parameters for port flows vs. port pressures; for further details see, Modelica Tutorial: Ideal switching devices\";
+//   Real tank1.ports_penetration[1] \"penetration of port with fluid, depending on fluid level and port diameter\";
+//   Real tank1.ports_penetration[2] \"penetration of port with fluid, depending on fluid level and port diameter\";
+//   Real tank1.portAreas[1](quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * tank1.portsData_diameter[1] ^ 2.0;
+//   Real tank1.portAreas[2](quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * tank1.portsData_diameter[2] ^ 2.0;
+//   Real tank1.vessel_ps_static[1](quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"static pressures inside the vessel at the height of the corresponding ports, zero flow velocity\";
+//   Real tank1.vessel_ps_static[2](quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"static pressures inside the vessel at the height of the corresponding ports, zero flow velocity\";
+//   protected input Real tank1.fluidLevel(quantity = \"Length\", unit = \"m\", min = 0.0) = tank1.level \"level of fluid in the vessel for treating heights of ports\";
+//   protected parameter Real tank1.fluidLevel_max(quantity = \"Length\", unit = \"m\", min = 0.0) = tank1.height \"maximum level of fluid in the vessel\";
+//   protected parameter Real tank1.vesselArea(quantity = \"Area\", unit = \"m2\") = tank1.crossArea \"Area of the vessel used to relate to cross flow area of ports\";
+//   protected input Real tank1.portsData_diameter[1];
+//   protected input Real tank1.portsData_diameter[2];
+//   protected input Real tank1.portsData_height[1];
+//   protected input Real tank1.portsData_height[2];
+//   protected input Real tank1.portsData_zeta_in[1];
+//   protected input Real tank1.portsData_zeta_in[2];
+//   protected input Real tank1.portsData_zeta_out[1];
+//   protected input Real tank1.portsData_zeta_out[2];
+//   Real tank1.level(quantity = \"Length\", unit = \"m\", min = 0.0, start = max(tank1.level_start,1e-15), StateSelect = StateSelect.prefer) \"Level height of tank\";
+//   Real tank1.V(quantity = \"Volume\", unit = \"m3\", StateSelect = StateSelect.never) \"Actual tank volume\";
+//   parameter Real tank1.height(quantity = \"Length\", unit = \"m\", min = 0.0) = 4.0 \"Height of tank\";
+//   parameter Real tank1.crossArea(quantity = \"Area\", unit = \"m2\") = 6.0 \"Area of tank\";
+//   parameter Real tank1.p_ambient(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = system.p_ambient \"Tank surface pressure\";
+//   parameter Real tank1.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = system.T_ambient \"Tank surface Temperature\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) tank1.substanceDynamics = tank1.massDynamics \"Formulation of substance balance\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) tank1.traceDynamics = tank1.massDynamics \"Formulation of trace substance balance\";
+//   parameter Real tank1.portsData[1].diameter(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.2 \"Inner (hydraulic) diameter of inlet/outlet port\";
+//   parameter Real tank1.portsData[1].height(quantity = \"Length\", unit = \"m\", min = 0.0) = 4.0 \"Height over the bottom of the vessel\";
+//   parameter Real tank1.portsData[1].zeta_out(min = 0.0) = 0.0 \"Hydraulic resistance out of vessel, default 0.5 for small diameter mounted flush with the wall\";
+//   parameter Real tank1.portsData[1].zeta_in(min = 0.0) = 1.0 \"Hydraulic resistance into vessel, default 1.04 for small diameter mounted flush with the wall\";
+//   parameter Real tank1.portsData[2].diameter(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.2 \"Inner (hydraulic) diameter of inlet/outlet port\";
+//   parameter Real tank1.portsData[2].height(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.0 \"Height over the bottom of the vessel\";
+//   parameter Real tank1.portsData[2].zeta_out(min = 0.0) = 0.0 \"Hydraulic resistance out of vessel, default 0.5 for small diameter mounted flush with the wall\";
+//   parameter Real tank1.portsData[2].zeta_in(min = 0.0) = 1.0 \"Hydraulic resistance into vessel, default 1.04 for small diameter mounted flush with the wall\";
+//   protected input Real tank1.portsData_diameter_internal[1] = tank1.portsData[1].diameter;
+//   protected input Real tank1.portsData_diameter_internal[2] = tank1.portsData[2].diameter;
+//   protected input Real tank1.portsData_height_internal[1] = tank1.portsData[1].height;
+//   protected input Real tank1.portsData_height_internal[2] = tank1.portsData[2].height;
+//   protected input Real tank1.portsData_zeta_in_internal[1] = tank1.portsData[1].zeta_in;
+//   protected input Real tank1.portsData_zeta_in_internal[2] = tank1.portsData[2].zeta_in;
+//   protected input Real tank1.portsData_zeta_out_internal[1] = tank1.portsData[1].zeta_out;
+//   protected input Real tank1.portsData_zeta_out_internal[2] = tank1.portsData[2].zeta_out;
+//   parameter Real tank1.level_start(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.05 \"Start value of tank level\";
+//   output Real level1.y = tank1.level \"Value of Real output\";
+//   parameter Boolean valve2.allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
+//   Real valve2.port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if valve2.allowFlowReversal then -1e+60 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real valve2.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real valve2.port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   Real valve2.port_b.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = if valve2.allowFlowReversal then 1e+60 else 0.0) \"Mass flow rate from the connection point into the component\";
+//   Real valve2.port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real valve2.port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   protected parameter Boolean valve2.port_a_exposesState = false \"= true if port_a exposes the state of a fluid volume\";
+//   protected parameter Boolean valve2.port_b_exposesState = false \"= true if port_b.p exposes the state of a fluid volume\";
+//   protected parameter Boolean valve2.showDesignFlowDirection = true \"= false to hide the arrow in the model icon\";
+//   parameter Real valve2.dp_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 0.01 * system.p_start \"Guess value of dp = port_a.p - port_b.p\";
+//   parameter Real valve2.m_flow_start(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_start \"Guess value of m_flow = port_a.m_flow\";
+//   parameter Real valve2.m_flow_small(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_small \"Small mass flow rate for regularization of zero flow\";
+//   parameter Boolean valve2.show_T = true \"= true, if temperatures at port_a and port_b are computed\";
+//   parameter Boolean valve2.show_V_flow = true \"= true, if volume flow rate at inflowing port is computed\";
+//   Real valve2.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve2.allowFlowReversal then -1e+60 else 0.0, max = 100000.0, start = valve2.m_flow_start) \"Mass flow rate in design flow direction\";
+//   Real valve2.dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = valve2.dp_start) \"Pressure difference between port_a and port_b (= port_a.p - port_b.p)\";
+//   Real valve2.state_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real valve2.state_a.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   Real valve2.state_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real valve2.state_b.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   parameter Real valve2.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"Pa\") = 1.0 \"Nominal pressure drop at full opening=1\";
+//   parameter Real valve2.m_flow_nominal(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = 100.0 \"Nominal mass flowrate at full opening=1\";
+//   input Boolean valve2.open;
+//   parameter Real valve2.opening_min(min = 0.0) = 0.0 \"Remaining opening if closed, causing small leakage flow\";
+//   Real valve2.port_a_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.Fluid.Utilities.regStep(valve2.port_a.m_flow,Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature(valve2.state_a),Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature(Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX(valve2.port_a.p,valve2.port_a.h_outflow,{})),valve2.m_flow_small) \"Temperature close to port_a, if show_T = true\";
+//   Real valve2.port_b_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.Fluid.Utilities.regStep(valve2.port_b.m_flow,Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature(valve2.state_b),Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature(Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX(valve2.port_b.p,valve2.port_b.h_outflow,{})),valve2.m_flow_small) \"Temperature close to port_b, if show_T = true\";
+//   Real valve2.V_flow(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = valve2.m_flow / Modelica.Fluid.Utilities.regStep(valve2.m_flow,Modelica.Fluid.Valves.ValveDiscrete.Medium.density(valve2.state_a),Modelica.Fluid.Valves.ValveDiscrete.Medium.density(valve2.state_b),valve2.m_flow_small) \"Volume flow rate at inflowing port (positive when flow from port_a to port_b)\";
+//   final parameter Real valve2.k(quantity = \"HydraulicConductance\", unit = \"kg/(s.Pa)\") = valve2.m_flow_nominal / valve2.dp_nominal \"Hydraulic conductance at full opening=1\";
+//   parameter Boolean valve3.allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
+//   Real valve3.port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if valve3.allowFlowReversal then -1e+60 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real valve3.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real valve3.port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   Real valve3.port_b.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = if valve3.allowFlowReversal then 1e+60 else 0.0) \"Mass flow rate from the connection point into the component\";
+//   Real valve3.port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real valve3.port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   protected parameter Boolean valve3.port_a_exposesState = false \"= true if port_a exposes the state of a fluid volume\";
+//   protected parameter Boolean valve3.port_b_exposesState = false \"= true if port_b.p exposes the state of a fluid volume\";
+//   protected parameter Boolean valve3.showDesignFlowDirection = true \"= false to hide the arrow in the model icon\";
+//   parameter Real valve3.dp_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 0.01 * system.p_start \"Guess value of dp = port_a.p - port_b.p\";
+//   parameter Real valve3.m_flow_start(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_start \"Guess value of m_flow = port_a.m_flow\";
+//   parameter Real valve3.m_flow_small(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_small \"Small mass flow rate for regularization of zero flow\";
+//   parameter Boolean valve3.show_T = true \"= true, if temperatures at port_a and port_b are computed\";
+//   parameter Boolean valve3.show_V_flow = true \"= true, if volume flow rate at inflowing port is computed\";
+//   Real valve3.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve3.allowFlowReversal then -1e+60 else 0.0, max = 100000.0, start = valve3.m_flow_start) \"Mass flow rate in design flow direction\";
+//   Real valve3.dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = valve3.dp_start) \"Pressure difference between port_a and port_b (= port_a.p - port_b.p)\";
+//   Real valve3.state_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real valve3.state_a.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   Real valve3.state_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real valve3.state_b.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   parameter Real valve3.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"Pa\") = 1.0 \"Nominal pressure drop at full opening=1\";
+//   parameter Real valve3.m_flow_nominal(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = 10.0 \"Nominal mass flowrate at full opening=1\";
+//   input Boolean valve3.open;
+//   parameter Real valve3.opening_min(min = 0.0) = 0.0 \"Remaining opening if closed, causing small leakage flow\";
+//   Real valve3.port_a_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.Fluid.Utilities.regStep(valve3.port_a.m_flow,Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature(valve3.state_a),Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature(Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX(valve3.port_a.p,valve3.port_a.h_outflow,{})),valve3.m_flow_small) \"Temperature close to port_a, if show_T = true\";
+//   Real valve3.port_b_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.Fluid.Utilities.regStep(valve3.port_b.m_flow,Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature(valve3.state_b),Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature(Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX(valve3.port_b.p,valve3.port_b.h_outflow,{})),valve3.m_flow_small) \"Temperature close to port_b, if show_T = true\";
+//   Real valve3.V_flow(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = valve3.m_flow / Modelica.Fluid.Utilities.regStep(valve3.m_flow,Modelica.Fluid.Valves.ValveDiscrete.Medium.density(valve3.state_a),Modelica.Fluid.Valves.ValveDiscrete.Medium.density(valve3.state_b),valve3.m_flow_small) \"Volume flow rate at inflowing port (positive when flow from port_a to port_b)\";
+//   final parameter Real valve3.k(quantity = \"HydraulicConductance\", unit = \"kg/(s.Pa)\") = valve3.m_flow_nominal / valve3.dp_nominal \"Hydraulic conductance at full opening=1\";
+//   input Real tank2.fluidVolume(quantity = \"Volume\", unit = \"m3\") = tank2.V \"Volume\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) tank2.energyDynamics = system.energyDynamics \"Formulation of energy balance\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) tank2.massDynamics = system.massDynamics \"Formulation of mass balance\";
+//   parameter Real tank2.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = tank2.p_ambient \"Start value of pressure\";
+//   parameter Boolean tank2.use_T_start = true \"= true, use T_start, otherwise h_start\";
+//   parameter Real tank2.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = if tank2.use_T_start then system.T_start else Modelica.Fluid.Vessels.OpenTank.Medium.temperature_phX(tank2.p_start,tank2.h_start,{tank2.X_start[1]}) \"Start value of temperature\";
+//   parameter Real tank2.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if tank2.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(tank2.p_start,tank2.T_start,{tank2.X_start[1]}) else 83680.0 \"Start value of specific enthalpy\";
+//   parameter Real tank2.X_start[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Start value of mass fractions m_i/m\";
+//   input Real tank2.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = tank2.p_start, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
+//   input Real tank2.medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", start = tank2.h_start) \"Specific enthalpy of medium\";
+//   Real tank2.medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density of medium\";
+//   Real tank2.medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = tank2.T_start, nominal = 300.0, StateSelect = StateSelect.prefer) \"Temperature of medium\";
+//   Real tank2.medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real tank2.medium.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
+//   Real tank2.medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real tank2.medium.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
+//   Real tank2.medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real tank2.medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   parameter Boolean tank2.medium.preferredMediumStates = true \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
+//   parameter Boolean tank2.medium.standardOrderComponents = true \"if true, and reducedX = true, the last element of X will be computed from the other ones\";
+//   Real tank2.medium.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(tank2.medium.T) \"Temperature of medium in [degC]\";
+//   Real tank2.medium.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(tank2.medium.p) \"Absolute pressure of medium in [bar]\";
+//   Real tank2.U(quantity = \"Energy\", unit = \"J\") \"Internal energy of fluid\";
+//   Real tank2.m(quantity = \"Mass\", unit = \"kg\", min = 0.0) \"Mass of fluid\";
+//   Real tank2.mb_flow(quantity = \"MassFlowRate\", unit = \"kg/s\") \"Mass flows across boundaries\";
+//   Real tank2.Hb_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\") \"Enthalpy flow across boundaries or energy source/sink\";
+//   Real tank2.Qb_flow(quantity = \"Power\", unit = \"W\") \"Heat flow across boundaries or energy source/sink\";
+//   Real tank2.Wb_flow(quantity = \"Power\", unit = \"W\") \"Work flow across boundaries or source term\";
+//   protected parameter Boolean tank2.initialize_p = false \"= true to set up initial equations for pressure\";
+//   parameter Integer tank2.nPorts = 2 \"Number of ports\";
+//   Real tank2.ports[1].m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real tank2.ports[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real tank2.ports[1].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   Real tank2.ports[2].m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real tank2.ports[2].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real tank2.ports[2].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   parameter Boolean tank2.use_portsData = true \"= false to neglect pressure loss and kinetic energy\";
+//   parameter Real tank2.m_flow_small(quantity = \"MassFlowRate\", unit = \"kg/s\", min = 0.0) = system.m_flow_small \"Regularization range at zero mass flow rate\";
+//   Real tank2.ports_H_flow[1](quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0);
+//   Real tank2.ports_H_flow[2](quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0);
+//   parameter Boolean tank2.use_HeatTransfer = false \"= true to use the HeatTransfer model\";
+//   parameter Integer tank2.heatTransfer.n = 1 \"Number of heat transfer segments\";
+//   input Real tank2.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   input Real tank2.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   input Real tank2.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = tank2.crossArea + 2.0 * (sqrt(3.14159265358979 * tank2.crossArea) * tank2.level) \"Heat transfer areas\";
+//   output Real tank2.heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
+//   parameter Boolean tank2.heatTransfer.use_k = tank2.use_HeatTransfer \"= true to use k value for thermal isolation\";
+//   parameter Real tank2.heatTransfer.k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
+//   parameter Real tank2.heatTransfer.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
+//   Real tank2.heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
+//   Real tank2.heatTransfer.heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
+//   Real tank2.heatTransfer.Ts[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Modelica.Fluid.Vessels.OpenTank.HeatTransfer.Medium.temperature(tank2.heatTransfer.states[1]) \"Temperatures defined by fluid states\";
+//   Real tank2.portDensities[1](quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"densites of the fluid at the device boudary\";
+//   Real tank2.portDensities[2](quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"densites of the fluid at the device boudary\";
+//   Real tank2.portVelocities[1](quantity = \"Velocity\", unit = \"m/s\") \"velocities of fluid flow at device boundary\";
+//   Real tank2.portVelocities[2](quantity = \"Velocity\", unit = \"m/s\") \"velocities of fluid flow at device boundary\";
+//   Real tank2.ports_E_flow[1](quantity = \"Power\", unit = \"W\") \"flow of kinetic and potential energy at device boundary\";
+//   Real tank2.ports_E_flow[2](quantity = \"Power\", unit = \"W\") \"flow of kinetic and potential energy at device boundary\";
+//   Real tank2.s[1](start = tank2.fluidLevel_max) \"curve parameters for port flows vs. port pressures; for further details see, Modelica Tutorial: Ideal switching devices\";
+//   Real tank2.s[2](start = tank2.fluidLevel_max) \"curve parameters for port flows vs. port pressures; for further details see, Modelica Tutorial: Ideal switching devices\";
+//   Real tank2.ports_penetration[1] \"penetration of port with fluid, depending on fluid level and port diameter\";
+//   Real tank2.ports_penetration[2] \"penetration of port with fluid, depending on fluid level and port diameter\";
+//   Real tank2.portAreas[1](quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * tank2.portsData_diameter[1] ^ 2.0;
+//   Real tank2.portAreas[2](quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * tank2.portsData_diameter[2] ^ 2.0;
+//   Real tank2.vessel_ps_static[1](quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"static pressures inside the vessel at the height of the corresponding ports, zero flow velocity\";
+//   Real tank2.vessel_ps_static[2](quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"static pressures inside the vessel at the height of the corresponding ports, zero flow velocity\";
+//   protected input Real tank2.fluidLevel(quantity = \"Length\", unit = \"m\", min = 0.0) = tank2.level \"level of fluid in the vessel for treating heights of ports\";
+//   protected parameter Real tank2.fluidLevel_max(quantity = \"Length\", unit = \"m\", min = 0.0) = tank2.height \"maximum level of fluid in the vessel\";
+//   protected parameter Real tank2.vesselArea(quantity = \"Area\", unit = \"m2\") = tank2.crossArea \"Area of the vessel used to relate to cross flow area of ports\";
+//   protected input Real tank2.portsData_diameter[1];
+//   protected input Real tank2.portsData_diameter[2];
+//   protected input Real tank2.portsData_height[1];
+//   protected input Real tank2.portsData_height[2];
+//   protected input Real tank2.portsData_zeta_in[1];
+//   protected input Real tank2.portsData_zeta_in[2];
+//   protected input Real tank2.portsData_zeta_out[1];
+//   protected input Real tank2.portsData_zeta_out[2];
+//   Real tank2.level(quantity = \"Length\", unit = \"m\", min = 0.0, start = max(tank2.level_start,1e-15), StateSelect = StateSelect.prefer) \"Level height of tank\";
+//   Real tank2.V(quantity = \"Volume\", unit = \"m3\", StateSelect = StateSelect.never) \"Actual tank volume\";
+//   parameter Real tank2.height(quantity = \"Length\", unit = \"m\", min = 0.0) = 5.0 \"Height of tank\";
+//   parameter Real tank2.crossArea(quantity = \"Area\", unit = \"m2\") = 6.0 \"Area of tank\";
+//   parameter Real tank2.p_ambient(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = system.p_ambient \"Tank surface pressure\";
+//   parameter Real tank2.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = system.T_ambient \"Tank surface Temperature\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) tank2.substanceDynamics = tank2.massDynamics \"Formulation of substance balance\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) tank2.traceDynamics = tank2.massDynamics \"Formulation of trace substance balance\";
+//   parameter Real tank2.portsData[1].diameter(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.2 \"Inner (hydraulic) diameter of inlet/outlet port\";
+//   parameter Real tank2.portsData[1].height(quantity = \"Length\", unit = \"m\", min = 0.0) = 5.0 \"Height over the bottom of the vessel\";
+//   parameter Real tank2.portsData[1].zeta_out(min = 0.0) = 0.0 \"Hydraulic resistance out of vessel, default 0.5 for small diameter mounted flush with the wall\";
+//   parameter Real tank2.portsData[1].zeta_in(min = 0.0) = 1.0 \"Hydraulic resistance into vessel, default 1.04 for small diameter mounted flush with the wall\";
+//   parameter Real tank2.portsData[2].diameter(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.2 \"Inner (hydraulic) diameter of inlet/outlet port\";
+//   parameter Real tank2.portsData[2].height(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.0 \"Height over the bottom of the vessel\";
+//   parameter Real tank2.portsData[2].zeta_out(min = 0.0) = 0.0 \"Hydraulic resistance out of vessel, default 0.5 for small diameter mounted flush with the wall\";
+//   parameter Real tank2.portsData[2].zeta_in(min = 0.0) = 1.0 \"Hydraulic resistance into vessel, default 1.04 for small diameter mounted flush with the wall\";
+//   protected input Real tank2.portsData_diameter_internal[1] = tank2.portsData[1].diameter;
+//   protected input Real tank2.portsData_diameter_internal[2] = tank2.portsData[2].diameter;
+//   protected input Real tank2.portsData_height_internal[1] = tank2.portsData[1].height;
+//   protected input Real tank2.portsData_height_internal[2] = tank2.portsData[2].height;
+//   protected input Real tank2.portsData_zeta_in_internal[1] = tank2.portsData[1].zeta_in;
+//   protected input Real tank2.portsData_zeta_in_internal[2] = tank2.portsData[2].zeta_in;
+//   protected input Real tank2.portsData_zeta_out_internal[1] = tank2.portsData[1].zeta_out;
+//   protected input Real tank2.portsData_zeta_out_internal[2] = tank2.portsData[2].zeta_out;
+//   parameter Real tank2.level_start(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.05 \"Start value of tank level\";
+//   parameter Integer ambient1.nPorts = 1 \"Number of ports\";
+//   input Real ambient1.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, StateSelect = StateSelect.default) \"Absolute pressure of medium\";
+//   input Real ambient1.medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy of medium\";
+//   Real ambient1.medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density of medium\";
+//   Real ambient1.medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0, StateSelect = StateSelect.default) \"Temperature of medium\";
+//   Real ambient1.medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real ambient1.medium.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
+//   Real ambient1.medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real ambient1.medium.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
+//   Real ambient1.medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real ambient1.medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   parameter Boolean ambient1.medium.preferredMediumStates = false \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
+//   parameter Boolean ambient1.medium.standardOrderComponents = true \"if true, and reducedX = true, the last element of X will be computed from the other ones\";
+//   Real ambient1.medium.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(ambient1.medium.T) \"Temperature of medium in [degC]\";
+//   Real ambient1.medium.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(ambient1.medium.p) \"Absolute pressure of medium in [bar]\";
+//   Real ambient1.ports[1].m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if ambient1.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+60, max = if ambient1.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+60) \"Mass flow rate from the connection point into the component\";
+//   Real ambient1.ports[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real ambient1.ports[1].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   protected parameter enumeration(Entering, Leaving, Bidirectional) ambient1.flowDirection = Modelica.Fluid.Types.PortFlowDirection.Bidirectional \"Allowed flow direction\";
+//   parameter Boolean ambient1.use_p_in = false \"Get the pressure from the input connector\";
+//   parameter Boolean ambient1.use_T_in = false \"Get the temperature from the input connector\";
+//   parameter Boolean ambient1.use_X_in = false \"Get the composition from the input connector\";
+//   parameter Boolean ambient1.use_C_in = false \"Get the trace substances from the input connector\";
+//   parameter Real ambient1.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = system.p_ambient \"Fixed value of pressure\";
+//   parameter Real ambient1.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = system.T_ambient \"Fixed value of temperature\";
+//   parameter Real ambient1.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Fixed value of composition\";
+//   protected input Real ambient1.p_in_internal \"Needed to connect to conditional connector\";
+//   protected input Real ambient1.T_in_internal \"Needed to connect to conditional connector\";
+//   protected input Real ambient1.X_in_internal[1] \"Needed to connect to conditional connector\";
+//   output Real level2.y = tank2.level \"Value of Real output\";
+//   parameter Integer source.nPorts = 1 \"Number of ports\";
+//   input Real source.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, StateSelect = StateSelect.default) \"Absolute pressure of medium\";
+//   input Real source.medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy of medium\";
+//   Real source.medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density of medium\";
+//   Real source.medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0, StateSelect = StateSelect.default) \"Temperature of medium\";
+//   Real source.medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real source.medium.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
+//   Real source.medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real source.medium.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
+//   Real source.medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real source.medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   parameter Boolean source.medium.preferredMediumStates = false \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
+//   parameter Boolean source.medium.standardOrderComponents = true \"if true, and reducedX = true, the last element of X will be computed from the other ones\";
+//   Real source.medium.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(source.medium.T) \"Temperature of medium in [degC]\";
+//   Real source.medium.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(source.medium.p) \"Absolute pressure of medium in [bar]\";
+//   Real source.ports[1].m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if source.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+60, max = if source.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+60) \"Mass flow rate from the connection point into the component\";
+//   Real source.ports[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real source.ports[1].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   protected parameter enumeration(Entering, Leaving, Bidirectional) source.flowDirection = Modelica.Fluid.Types.PortFlowDirection.Bidirectional \"Allowed flow direction\";
+//   parameter Boolean source.use_p_in = false \"Get the pressure from the input connector\";
+//   parameter Boolean source.use_T_in = false \"Get the temperature from the input connector\";
+//   parameter Boolean source.use_X_in = false \"Get the composition from the input connector\";
+//   parameter Boolean source.use_C_in = false \"Get the trace substances from the input connector\";
+//   parameter Real source.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 2500000.0 \"Fixed value of pressure\";
+//   parameter Real source.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = system.T_ambient \"Fixed value of temperature\";
+//   parameter Real source.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Fixed value of composition\";
+//   protected input Real source.p_in_internal \"Needed to connect to conditional connector\";
+//   protected input Real source.T_in_internal \"Needed to connect to conditional connector\";
+//   protected input Real source.X_in_internal[1] \"Needed to connect to conditional connector\";
+// initial equation
+//   tankController.s1.active = true;
+//   pre(tankController.s1.newActive) = pre(tankController.s1.localActive);
+//   pre(tankController.s1.oldActive) = pre(tankController.s1.localActive);
+//   tankController.normal.fillTank1.active = false;
+//   pre(tankController.normal.fillTank1.newActive) = pre(tankController.normal.fillTank1.localActive);
+//   pre(tankController.normal.fillTank1.oldActive) = pre(tankController.normal.fillTank1.localActive);
+//   pre(tankController.normal.T1.enableFire) = false;
+//   tankController.normal.fillTank2.active = false;
+//   pre(tankController.normal.fillTank2.newActive) = pre(tankController.normal.fillTank2.localActive);
+//   pre(tankController.normal.fillTank2.oldActive) = pre(tankController.normal.fillTank2.localActive);
+//   pre(tankController.normal.T3.enableFire) = false;
+//   tankController.normal.emptyTank2.active = false;
+//   pre(tankController.normal.emptyTank2.newActive) = pre(tankController.normal.emptyTank2.localActive);
+//   pre(tankController.normal.emptyTank2.oldActive) = pre(tankController.normal.emptyTank2.localActive);
+//   tankController.normal.wait1.active = false;
+//   pre(tankController.normal.wait1.newActive) = pre(tankController.normal.wait1.localActive);
+//   pre(tankController.normal.wait1.oldActive) = pre(tankController.normal.wait1.localActive);
+//   pre(tankController.normal.T2.enableFire) = false;
+//   tankController.normal.wait2.active = false;
+//   pre(tankController.normal.wait2.newActive) = pre(tankController.normal.wait2.localActive);
+//   pre(tankController.normal.wait2.oldActive) = pre(tankController.normal.wait2.localActive);
+//   pre(tankController.normal.T4.enableFire) = false;
+//   pre(tankController.normal.newActive) = pre(tankController.normal.active);
+//   pre(tankController.T1.enableFire) = false;
+//   pre(tankController.T2.enableFire) = false;
+//   pre(tankController.T3.enableFire) = false;
+//   tankController.s2.active = false;
+//   pre(tankController.s2.newActive) = pre(tankController.s2.localActive);
+//   pre(tankController.s2.oldActive) = pre(tankController.s2.localActive);
+//   pre(tankController.T4.enableFire) = false;
+//   pre(tankController.T5.enableFire) = false;
+//   tankController.emptyTanks.active = false;
+//   pre(tankController.emptyTanks.newActive) = pre(tankController.emptyTanks.localActive);
+//   pre(tankController.emptyTanks.oldActive) = pre(tankController.emptyTanks.localActive);
+//   pre(tankController.T6.enableFire) = false;
+// initial algorithm
+//   (start.table.index, start.table.nextTime, start.table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({start.table.table[1],start.table.table[2]},time,start.table.startValue);
+//   (stop.table.index, stop.table.nextTime, stop.table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({stop.table.table[1],stop.table.table[2]},time,stop.table.startValue);
+//   (shut.table.index, shut.table.nextTime, shut.table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({shut.table.table[1]},time,shut.table.startValue);
+// equation
+//   tankController.s1.stateGraphRoot.suspend = tankController.s1.stateGraphRoot.subgraphStatePort.suspend;
+//   tankController.s1.stateGraphRoot.resume = tankController.s1.stateGraphRoot.subgraphStatePort.resume;
+//   tankController.s1.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   tankController.s1.active = tankController.s1.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   tankController.s1.localActive = pre(tankController.s1.newActive);
+//   tankController.s1.newActive = if tankController.s1.outerStatePort.subgraphStatePort.resume then tankController.s1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.s1.inPort[1].set,tankController.s1.inPort[2].set}) or tankController.s1.localActive and not Modelica.StateGraph.Temporary.anyTrue({tankController.s1.outPort[1].reset})) and not tankController.s1.outerStatePort.subgraphStatePort.suspend;
+//   when tankController.s1.outerStatePort.subgraphStatePort.suspend then
+//   tankController.s1.oldActive = tankController.s1.localActive;
+//   end when;
+//   tankController.s1.outerStatePort.subgraphStatePort.activeSteps = if tankController.s1.localActive then 1.0 else 0.0;
+//   tankController.s1.inPort[1].occupied = tankController.s1.localActive;
+//   tankController.s1.inPort[2].occupied = tankController.s1.inPort[1].occupied or tankController.s1.inPort[1].set;
+//   tankController.s1.outPort[1].available = tankController.s1.localActive;
+//   tankController.normal.stateGraphRoot.suspend = tankController.normal.stateGraphRoot.subgraphStatePort.suspend;
+//   tankController.normal.stateGraphRoot.resume = tankController.normal.stateGraphRoot.subgraphStatePort.resume;
+//   tankController.normal.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   tankController.normal.stateGraphRoot.suspend = tankController.normal.stateGraphRoot.subgraphStatePort.suspend;
+//   tankController.normal.stateGraphRoot.resume = tankController.normal.stateGraphRoot.subgraphStatePort.resume;
+//   tankController.normal.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   tankController.normal.fillTank1.active = tankController.normal.fillTank1.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   tankController.normal.fillTank1.localActive = pre(tankController.normal.fillTank1.newActive);
+//   tankController.normal.fillTank1.newActive = if tankController.normal.fillTank1.outerStatePort.subgraphStatePort.resume then tankController.normal.fillTank1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.normal.fillTank1.inPort[1].set}) or tankController.normal.fillTank1.localActive and not Modelica.StateGraph.Temporary.anyTrue({tankController.normal.fillTank1.outPort[1].reset})) and not tankController.normal.fillTank1.outerStatePort.subgraphStatePort.suspend;
+//   when tankController.normal.fillTank1.outerStatePort.subgraphStatePort.suspend then
+//   tankController.normal.fillTank1.oldActive = tankController.normal.fillTank1.localActive;
+//   end when;
+//   tankController.normal.fillTank1.outerStatePort.subgraphStatePort.activeSteps = if tankController.normal.fillTank1.localActive then 1.0 else 0.0;
+//   tankController.normal.fillTank1.inPort[1].occupied = tankController.normal.fillTank1.localActive;
+//   tankController.normal.fillTank1.outPort[1].available = tankController.normal.fillTank1.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   tankController.normal.T1.t_start = 0.0;
+//   tankController.normal.T1.t_dummy = 0.0;
+//   tankController.normal.T1.t = 0.0;
+//   tankController.normal.T1.fire = tankController.normal.T1.enableFire;
+//   tankController.normal.T1.enableFire = tankController.normal.T1.localCondition and tankController.normal.T1.inPort.available and not tankController.normal.T1.outPort.occupied;
+//   tankController.normal.T1.inPort.reset = tankController.normal.T1.fire;
+//   tankController.normal.T1.outPort.set = tankController.normal.T1.fire;
+//   tankController.normal.fillTank2.active = tankController.normal.fillTank2.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   tankController.normal.fillTank2.localActive = pre(tankController.normal.fillTank2.newActive);
+//   tankController.normal.fillTank2.newActive = if tankController.normal.fillTank2.outerStatePort.subgraphStatePort.resume then tankController.normal.fillTank2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.normal.fillTank2.inPort[1].set}) or tankController.normal.fillTank2.localActive and not Modelica.StateGraph.Temporary.anyTrue({tankController.normal.fillTank2.outPort[1].reset})) and not tankController.normal.fillTank2.outerStatePort.subgraphStatePort.suspend;
+//   when tankController.normal.fillTank2.outerStatePort.subgraphStatePort.suspend then
+//   tankController.normal.fillTank2.oldActive = tankController.normal.fillTank2.localActive;
+//   end when;
+//   tankController.normal.fillTank2.outerStatePort.subgraphStatePort.activeSteps = if tankController.normal.fillTank2.localActive then 1.0 else 0.0;
+//   tankController.normal.fillTank2.inPort[1].occupied = tankController.normal.fillTank2.localActive;
+//   tankController.normal.fillTank2.outPort[1].available = tankController.normal.fillTank2.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   tankController.normal.T3.t_start = 0.0;
+//   tankController.normal.T3.t_dummy = 0.0;
+//   tankController.normal.T3.t = 0.0;
+//   tankController.normal.T3.fire = tankController.normal.T3.enableFire;
+//   tankController.normal.T3.enableFire = tankController.normal.T3.localCondition and tankController.normal.T3.inPort.available and not tankController.normal.T3.outPort.occupied;
+//   tankController.normal.T3.inPort.reset = tankController.normal.T3.fire;
+//   tankController.normal.T3.outPort.set = tankController.normal.T3.fire;
+//   tankController.normal.emptyTank2.active = tankController.normal.emptyTank2.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   tankController.normal.emptyTank2.localActive = pre(tankController.normal.emptyTank2.newActive);
+//   tankController.normal.emptyTank2.newActive = if tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.resume then tankController.normal.emptyTank2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.normal.emptyTank2.inPort[1].set}) or tankController.normal.emptyTank2.localActive and not Modelica.StateGraph.Temporary.anyTrue({tankController.normal.emptyTank2.outPort[1].reset})) and not tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.suspend;
+//   when tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.suspend then
+//   tankController.normal.emptyTank2.oldActive = tankController.normal.emptyTank2.localActive;
+//   end when;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.activeSteps = if tankController.normal.emptyTank2.localActive then 1.0 else 0.0;
+//   tankController.normal.emptyTank2.inPort[1].occupied = tankController.normal.emptyTank2.localActive;
+//   tankController.normal.emptyTank2.outPort[1].available = tankController.normal.emptyTank2.localActive;
+//   tankController.normal.wait1.active = tankController.normal.wait1.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   tankController.normal.wait1.localActive = pre(tankController.normal.wait1.newActive);
+//   tankController.normal.wait1.newActive = if tankController.normal.wait1.outerStatePort.subgraphStatePort.resume then tankController.normal.wait1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.normal.wait1.inPort[1].set}) or tankController.normal.wait1.localActive and not Modelica.StateGraph.Temporary.anyTrue({tankController.normal.wait1.outPort[1].reset})) and not tankController.normal.wait1.outerStatePort.subgraphStatePort.suspend;
+//   when tankController.normal.wait1.outerStatePort.subgraphStatePort.suspend then
+//   tankController.normal.wait1.oldActive = tankController.normal.wait1.localActive;
+//   end when;
+//   tankController.normal.wait1.outerStatePort.subgraphStatePort.activeSteps = if tankController.normal.wait1.localActive then 1.0 else 0.0;
+//   tankController.normal.wait1.inPort[1].occupied = tankController.normal.wait1.localActive;
+//   tankController.normal.wait1.outPort[1].available = tankController.normal.wait1.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   when tankController.normal.T2.enableFire then
+//   tankController.normal.T2.t_start = time;
+//   end when;
+//   tankController.normal.T2.t_dummy = time - tankController.normal.T2.t_start;
+//   tankController.normal.T2.t = if tankController.normal.T2.enableFire then tankController.normal.T2.t_dummy else 0.0;
+//   tankController.normal.T2.fire = tankController.normal.T2.enableFire and time >= tankController.normal.T2.t_start + tankController.normal.T2.waitTime;
+//   tankController.normal.T2.enableFire = tankController.normal.T2.localCondition and tankController.normal.T2.inPort.available and not tankController.normal.T2.outPort.occupied;
+//   tankController.normal.T2.inPort.reset = tankController.normal.T2.fire;
+//   tankController.normal.T2.outPort.set = tankController.normal.T2.fire;
+//   tankController.normal.wait2.active = tankController.normal.wait2.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   tankController.normal.wait2.localActive = pre(tankController.normal.wait2.newActive);
+//   tankController.normal.wait2.newActive = if tankController.normal.wait2.outerStatePort.subgraphStatePort.resume then tankController.normal.wait2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.normal.wait2.inPort[1].set}) or tankController.normal.wait2.localActive and not Modelica.StateGraph.Temporary.anyTrue({tankController.normal.wait2.outPort[1].reset})) and not tankController.normal.wait2.outerStatePort.subgraphStatePort.suspend;
+//   when tankController.normal.wait2.outerStatePort.subgraphStatePort.suspend then
+//   tankController.normal.wait2.oldActive = tankController.normal.wait2.localActive;
+//   end when;
+//   tankController.normal.wait2.outerStatePort.subgraphStatePort.activeSteps = if tankController.normal.wait2.localActive then 1.0 else 0.0;
+//   tankController.normal.wait2.inPort[1].occupied = tankController.normal.wait2.localActive;
+//   tankController.normal.wait2.outPort[1].available = tankController.normal.wait2.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   when tankController.normal.T4.enableFire then
+//   tankController.normal.T4.t_start = time;
+//   end when;
+//   tankController.normal.T4.t_dummy = time - tankController.normal.T4.t_start;
+//   tankController.normal.T4.t = if tankController.normal.T4.enableFire then tankController.normal.T4.t_dummy else 0.0;
+//   tankController.normal.T4.fire = tankController.normal.T4.enableFire and time >= tankController.normal.T4.t_start + tankController.normal.T4.waitTime;
+//   tankController.normal.T4.enableFire = tankController.normal.T4.localCondition and tankController.normal.T4.inPort.available and not tankController.normal.T4.outPort.occupied;
+//   tankController.normal.T4.inPort.reset = tankController.normal.T4.fire;
+//   tankController.normal.T4.outPort.set = tankController.normal.T4.fire;
+//   tankController.normal.outerState.subgraphStatePort.activeSteps = if tankController.normal.active then 1.0 else 0.0;
+//   tankController.normal.activeSteps = -integer(tankController.normal.stateGraphRoot.subgraphStatePort.activeSteps);
+//   tankController.normal.active = pre(tankController.normal.newActive);
+//   tankController.normal.newActive = tankController.normal.activeSteps > 0 and not Modelica.StateGraph.Temporary.anyTrue({tankController.normal.suspend[1].reset}) and not tankController.normal.outerState.subgraphStatePort.suspend or Modelica.StateGraph.Temporary.anyTrue({tankController.normal.resume[1].set}) or tankController.normal.outerState.subgraphStatePort.resume;
+//   tankController.normal.resume[1].occupied = tankController.normal.active;
+//   tankController.normal.suspend[1].available = tankController.normal.active;
+//   assert(true,\"Connector suspend[1] of the CompositeStep is connected
+// to more than one transition\");
+//   assert(true,\"Connector resume[1] of the CompositeStep is connected
+// to more than one transition\");
+//   assert(true,\"Connector inPort of the CompositeStep has more than 2 connections.
+// It should have only one connection from the outside to the
+// inPort and one connection to a step inside the CompositeStep.\");
+//   assert(true,\"Connector outPort of the CompositeStep has more than 2 connections.
+// It should have only one connection from the outPort to the
+// outside to the CompositeStep and one connection from a step
+// inside the CompositeStep to the outPort connector.\");
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   tankController.T1.t_start = 0.0;
+//   tankController.T1.t_dummy = 0.0;
+//   tankController.T1.t = 0.0;
+//   tankController.T1.fire = tankController.T1.enableFire;
+//   tankController.T1.enableFire = tankController.T1.localCondition and tankController.T1.inPort.available and not tankController.T1.outPort.occupied;
+//   tankController.T1.inPort.reset = tankController.T1.fire;
+//   tankController.T1.outPort.set = tankController.T1.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   tankController.T2.t_start = 0.0;
+//   tankController.T2.t_dummy = 0.0;
+//   tankController.T2.t = 0.0;
+//   tankController.T2.fire = tankController.T2.enableFire;
+//   tankController.T2.enableFire = tankController.T2.localCondition and tankController.T2.inPort.available and not tankController.T2.outPort.occupied;
+//   tankController.T2.inPort.reset = tankController.T2.fire;
+//   tankController.T2.outPort.set = tankController.T2.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   tankController.T3.t_start = 0.0;
+//   tankController.T3.t_dummy = 0.0;
+//   tankController.T3.t = 0.0;
+//   tankController.T3.fire = tankController.T3.enableFire;
+//   tankController.T3.enableFire = tankController.T3.localCondition and tankController.T3.inPort.available and not tankController.T3.outPort.occupied;
+//   tankController.T3.inPort.reset = tankController.T3.fire;
+//   tankController.T3.outPort.set = tankController.T3.fire;
+//   tankController.s2.stateGraphRoot.suspend = tankController.s2.stateGraphRoot.subgraphStatePort.suspend;
+//   tankController.s2.stateGraphRoot.resume = tankController.s2.stateGraphRoot.subgraphStatePort.resume;
+//   tankController.s2.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   tankController.s2.active = tankController.s2.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   tankController.s2.localActive = pre(tankController.s2.newActive);
+//   tankController.s2.newActive = if tankController.s2.outerStatePort.subgraphStatePort.resume then tankController.s2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.s2.inPort[1].set}) or tankController.s2.localActive and not Modelica.StateGraph.Temporary.anyTrue({tankController.s2.outPort[1].reset,tankController.s2.outPort[2].reset})) and not tankController.s2.outerStatePort.subgraphStatePort.suspend;
+//   when tankController.s2.outerStatePort.subgraphStatePort.suspend then
+//   tankController.s2.oldActive = tankController.s2.localActive;
+//   end when;
+//   tankController.s2.outerStatePort.subgraphStatePort.activeSteps = if tankController.s2.localActive then 1.0 else 0.0;
+//   tankController.s2.inPort[1].occupied = tankController.s2.localActive;
+//   tankController.s2.outPort[1].available = tankController.s2.localActive;
+//   tankController.s2.outPort[2].available = tankController.s2.outPort[1].available and not tankController.s2.outPort[1].reset;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   tankController.T4.t_start = 0.0;
+//   tankController.T4.t_dummy = 0.0;
+//   tankController.T4.t = 0.0;
+//   tankController.T4.fire = tankController.T4.enableFire;
+//   tankController.T4.enableFire = tankController.T4.localCondition and tankController.T4.inPort.available and not tankController.T4.outPort.occupied;
+//   tankController.T4.inPort.reset = tankController.T4.fire;
+//   tankController.T4.outPort.set = tankController.T4.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   tankController.T5.t_start = 0.0;
+//   tankController.T5.t_dummy = 0.0;
+//   tankController.T5.t = 0.0;
+//   tankController.T5.fire = tankController.T5.enableFire;
+//   tankController.T5.enableFire = tankController.T5.localCondition and tankController.T5.inPort.available and not tankController.T5.outPort.occupied;
+//   tankController.T5.inPort.reset = tankController.T5.fire;
+//   tankController.T5.outPort.set = tankController.T5.fire;
+//   tankController.emptyTanks.stateGraphRoot.suspend = tankController.emptyTanks.stateGraphRoot.subgraphStatePort.suspend;
+//   tankController.emptyTanks.stateGraphRoot.resume = tankController.emptyTanks.stateGraphRoot.subgraphStatePort.resume;
+//   tankController.emptyTanks.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   tankController.emptyTanks.active = tankController.emptyTanks.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   tankController.emptyTanks.localActive = pre(tankController.emptyTanks.newActive);
+//   tankController.emptyTanks.newActive = if tankController.emptyTanks.outerStatePort.subgraphStatePort.resume then tankController.emptyTanks.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.emptyTanks.inPort[1].set}) or tankController.emptyTanks.localActive and not Modelica.StateGraph.Temporary.anyTrue({tankController.emptyTanks.outPort[1].reset})) and not tankController.emptyTanks.outerStatePort.subgraphStatePort.suspend;
+//   when tankController.emptyTanks.outerStatePort.subgraphStatePort.suspend then
+//   tankController.emptyTanks.oldActive = tankController.emptyTanks.localActive;
+//   end when;
+//   tankController.emptyTanks.outerStatePort.subgraphStatePort.activeSteps = if tankController.emptyTanks.localActive then 1.0 else 0.0;
+//   tankController.emptyTanks.inPort[1].occupied = tankController.emptyTanks.localActive;
+//   tankController.emptyTanks.outPort[1].available = tankController.emptyTanks.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   tankController.T6.t_start = 0.0;
+//   tankController.T6.t_dummy = 0.0;
+//   tankController.T6.t = 0.0;
+//   tankController.T6.fire = tankController.T6.enableFire;
+//   tankController.T6.enableFire = tankController.T6.localCondition and tankController.T6.inPort.available and not tankController.T6.outPort.occupied;
+//   tankController.T6.inPort.reset = tankController.T6.fire;
+//   tankController.T6.outPort.set = tankController.T6.fire;
+//   valve1.m_flow = if valve1.open then valve1.k * valve1.dp else valve1.opening_min * (valve1.k * valve1.dp);
+//   valve1.port_a.h_outflow = tank1.ports[1].h_outflow;
+//   valve1.port_b.h_outflow = source.ports[1].h_outflow;
+//   valve1.state_a = Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX(valve1.port_a.p,source.ports[1].h_outflow,{});
+//   valve1.state_b = Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX(valve1.port_b.p,tank1.ports[1].h_outflow,{});
+//   valve1.dp = valve1.port_a.p - valve1.port_b.p;
+//   valve1.m_flow = valve1.port_a.m_flow;
+//   assert(valve1.m_flow > -valve1.m_flow_small or valve1.allowFlowReversal,\"Reverting flow occurs even though allowFlowReversal is false\");
+//   valve1.port_a.m_flow + valve1.port_b.m_flow = 0.0;
+//   assert(tank1.medium.T >= 272.15 and tank1.medium.T <= 403.15,\"
+// Temperature T (= \" + String(tank1.medium.T,0,true,6) + \" K) is not
+// in the allowed range (\" + String(272.15,0,true,6) + \" K <= T <= \" + String(403.15,0,true,6) + \" K)
+// required from medium model \\\"\" + \"SimpleLiquidWater\" + \"\\\".
+// \");
+//   tank1.medium.h = Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(tank1.medium.p,tank1.medium.T,{tank1.medium.X[1]});
+//   tank1.medium.u = -1142859.6 + 4184.0 * tank1.medium.T;
+//   tank1.medium.d = 995.586;
+//   tank1.medium.R = 0.0;
+//   tank1.medium.MM = 0.018015268;
+//   tank1.medium.state.T = tank1.medium.T;
+//   tank1.medium.state.p = tank1.medium.p;
+//   tank1.medium.X[1] = 1.0;
+//   assert(tank1.medium.X[1] >= -1e-05 and tank1.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(tank1.medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
+// of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
+//   assert(tank1.medium.p >= 0.0,\"Pressure (= \" + String(tank1.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
+// (Temperature = \" + String(tank1.medium.T,0,true,6) + \" K)\");
+//   tank1.heatTransfer.states[1].p = tank1.medium.state.p;
+//   tank1.heatTransfer.states[1].T = tank1.medium.state.T;
+//   tank1.heatTransfer.Ts[1] = tank1.heatTransfer.heatPorts[1].T;
+//   tank1.heatTransfer.Q_flows[1] = tank1.heatTransfer.heatPorts[1].Q_flow;
+//   tank1.V = tank1.crossArea * tank1.level;
+//   tank1.medium.p = tank1.p_ambient;
+//   tank1.Wb_flow = 0.0;
+//   tank1.vessel_ps_static[1] = max(0.0,tank1.level - tank1.portsData_height[1]) * (tank1.system.g * tank1.medium.d) + tank1.p_ambient;
+//   tank1.vessel_ps_static[2] = max(0.0,tank1.level - tank1.portsData_height[2]) * (tank1.system.g * tank1.medium.d) + tank1.p_ambient;
+//   tank1.mb_flow = tank1.ports[1].m_flow + tank1.ports[2].m_flow;
+//   tank1.Hb_flow = tank1.ports_H_flow[1] + (tank1.ports_H_flow[2] + (tank1.ports_E_flow[1] + tank1.ports_E_flow[2]));
+//   tank1.Qb_flow = tank1.heatTransfer.Q_flows[1];
+//   assert(cardinality({}[1]) <= 1,\"
+// each ports[i] of volume can at most be connected to one component.
+// If two or more connections are present, ideal mixing takes
+// place with these connections, which is usually not the intention
+// of the modeller. Increase nPorts to add an additional port.
+// \");
+//   assert(cardinality({}[2]) <= 1,\"
+// each ports[i] of volume can at most be connected to one component.
+// If two or more connections are present, ideal mixing takes
+// place with these connections, which is usually not the intention
+// of the modeller. Increase nPorts to add an additional port.
+// \");
+//   assert(tank1.fluidLevel <= tank1.fluidLevel_max,\"Vessel is overflowing (fluidLevel > fluidLevel_max = \" + String(tank1.fluidLevel,0,true,6) + \")\");
+//   assert(tank1.fluidLevel > -1e-06 * tank1.fluidLevel_max,\"Fluid level (= \" + String(tank1.fluidLevel,0,true,6) + \") is below zero meaning that the solution failed.\");
+//   tank1.portDensities[1] = Modelica.Fluid.Vessels.OpenTank.Medium.density(Modelica.Fluid.Vessels.OpenTank.Medium.setState_phX(tank1.vessel_ps_static[1],if tank1.ports[1].m_flow > 0.0 then valve1.port_b.h_outflow else tank1.ports[1].h_outflow,{}));
+//   tank1.portVelocities[1] = tank1.ports[1].m_flow / (tank1.portDensities[1] * tank1.portAreas[1]);
+//   tank1.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(tank1.fluidLevel + (-0.1 * tank1.portsData_diameter[1] - tank1.portsData_height[1]),1.0,0.001,0.1 * tank1.portsData_diameter[1]);
+//   if tank1.fluidLevel >= tank1.portsData_height[1] then
+//   tank1.ports[1].p = tank1.vessel_ps_static[1] + 0.5 * (tank1.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank1.ports[1].m_flow,tank1.m_flow_small,(tank1.ports_penetration[1] * (-1.0 + (tank1.portsData_zeta_in[1] + tank1.portAreas[1] ^ 2.0 * tank1.vesselArea ^ -2.0))) / tank1.portDensities[1],(1.0 + (tank1.portsData_zeta_out[1] - tank1.portAreas[1] ^ 2.0 * tank1.vesselArea ^ -2.0)) / (tank1.ports_penetration[1] * tank1.medium.d),false,1.0));
+//   tank1.s[1] = tank1.fluidLevel - tank1.portsData_height[1];
+//   elseif tank1.s[1] > 0.0 or tank1.portsData_height[1] >= tank1.fluidLevel_max then
+//   tank1.ports[1].p = tank1.vessel_ps_static[1];
+//   tank1.s[1] = tank1.ports[1].m_flow;
+//   else
+//   tank1.ports[1].m_flow = 0.0;
+//   tank1.s[1] = (tank1.ports[1].p / 101325.0 + (-tank1.vessel_ps_static[1]) / 101325.0) * (tank1.portsData_height[1] - tank1.fluidLevel);
+//   end if;
+//   tank1.ports[1].h_outflow = tank1.medium.h;
+//   tank1.ports_H_flow[1] = tank1.ports[1].m_flow * (if tank1.ports[1].m_flow > 0.0 then valve1.port_b.h_outflow else tank1.ports[1].h_outflow);
+//   tank1.ports_E_flow[1] = tank1.ports[1].m_flow * (0.5 * tank1.portVelocities[1] ^ 2.0 + tank1.system.g * tank1.portsData_height[1]);
+//   tank1.portDensities[2] = Modelica.Fluid.Vessels.OpenTank.Medium.density(Modelica.Fluid.Vessels.OpenTank.Medium.setState_phX(tank1.vessel_ps_static[2],if tank1.ports[2].m_flow > 0.0 then valve2.port_a.h_outflow else tank1.ports[2].h_outflow,{}));
+//   tank1.portVelocities[2] = tank1.ports[2].m_flow / (tank1.portDensities[2] * tank1.portAreas[2]);
+//   tank1.ports_penetration[2] = Modelica.Fluid.Utilities.regStep(tank1.fluidLevel + (-0.1 * tank1.portsData_diameter[2] - tank1.portsData_height[2]),1.0,0.001,0.1 * tank1.portsData_diameter[2]);
+//   if tank1.fluidLevel >= tank1.portsData_height[2] then
+//   tank1.ports[2].p = tank1.vessel_ps_static[2] + 0.5 * (tank1.portAreas[2] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank1.ports[2].m_flow,tank1.m_flow_small,(tank1.ports_penetration[2] * (-1.0 + (tank1.portsData_zeta_in[2] + tank1.portAreas[2] ^ 2.0 * tank1.vesselArea ^ -2.0))) / tank1.portDensities[2],(1.0 + (tank1.portsData_zeta_out[2] - tank1.portAreas[2] ^ 2.0 * tank1.vesselArea ^ -2.0)) / (tank1.ports_penetration[2] * tank1.medium.d),false,1.0));
+//   tank1.s[2] = tank1.fluidLevel - tank1.portsData_height[2];
+//   elseif tank1.s[2] > 0.0 or tank1.portsData_height[2] >= tank1.fluidLevel_max then
+//   tank1.ports[2].p = tank1.vessel_ps_static[2];
+//   tank1.s[2] = tank1.ports[2].m_flow;
+//   else
+//   tank1.ports[2].m_flow = 0.0;
+//   tank1.s[2] = (tank1.ports[2].p / 101325.0 + (-tank1.vessel_ps_static[2]) / 101325.0) * (tank1.portsData_height[2] - tank1.fluidLevel);
+//   end if;
+//   tank1.ports[2].h_outflow = tank1.medium.h;
+//   tank1.ports_H_flow[2] = tank1.ports[2].m_flow * (if tank1.ports[2].m_flow > 0.0 then valve2.port_a.h_outflow else tank1.ports[2].h_outflow);
+//   tank1.ports_E_flow[2] = tank1.ports[2].m_flow * (0.5 * tank1.portVelocities[2] ^ 2.0 + tank1.system.g * tank1.portsData_height[2]);
+//   assert(true,\"Bad combination of dynamics options and Medium not conserving mass if fluidVolume is fixed.\");
+//   tank1.m = tank1.fluidVolume * tank1.medium.d;
+//   tank1.U = tank1.m * tank1.medium.u;
+//   der(tank1.U) = tank1.Hb_flow + (tank1.Qb_flow + tank1.Wb_flow);
+//   der(tank1.m) = tank1.mb_flow;
+//   valve2.m_flow = if valve2.open then valve2.k * valve2.dp else valve2.opening_min * (valve2.k * valve2.dp);
+//   valve2.port_a.h_outflow = tank2.ports[1].h_outflow;
+//   valve2.port_b.h_outflow = tank1.ports[2].h_outflow;
+//   valve2.state_a = Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX(valve2.port_a.p,tank1.ports[2].h_outflow,{});
+//   valve2.state_b = Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX(valve2.port_b.p,tank2.ports[1].h_outflow,{});
+//   valve2.dp = valve2.port_a.p - valve2.port_b.p;
+//   valve2.m_flow = valve2.port_a.m_flow;
+//   assert(valve2.m_flow > -valve2.m_flow_small or valve2.allowFlowReversal,\"Reverting flow occurs even though allowFlowReversal is false\");
+//   valve2.port_a.m_flow + valve2.port_b.m_flow = 0.0;
+//   valve3.m_flow = if valve3.open then valve3.k * valve3.dp else valve3.opening_min * (valve3.k * valve3.dp);
+//   valve3.port_a.h_outflow = ambient1.ports[1].h_outflow;
+//   valve3.port_b.h_outflow = tank2.ports[2].h_outflow;
+//   valve3.state_a = Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX(valve3.port_a.p,tank2.ports[2].h_outflow,{});
+//   valve3.state_b = Modelica.Fluid.Valves.ValveDiscrete.Medium.setState_phX(valve3.port_b.p,ambient1.ports[1].h_outflow,{});
+//   valve3.dp = valve3.port_a.p - valve3.port_b.p;
+//   valve3.m_flow = valve3.port_a.m_flow;
+//   assert(valve3.m_flow > -valve3.m_flow_small or valve3.allowFlowReversal,\"Reverting flow occurs even though allowFlowReversal is false\");
+//   valve3.port_a.m_flow + valve3.port_b.m_flow = 0.0;
+//   assert(tank2.medium.T >= 272.15 and tank2.medium.T <= 403.15,\"
+// Temperature T (= \" + String(tank2.medium.T,0,true,6) + \" K) is not
+// in the allowed range (\" + String(272.15,0,true,6) + \" K <= T <= \" + String(403.15,0,true,6) + \" K)
+// required from medium model \\\"\" + \"SimpleLiquidWater\" + \"\\\".
+// \");
+//   tank2.medium.h = Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(tank2.medium.p,tank2.medium.T,{tank2.medium.X[1]});
+//   tank2.medium.u = -1142859.6 + 4184.0 * tank2.medium.T;
+//   tank2.medium.d = 995.586;
+//   tank2.medium.R = 0.0;
+//   tank2.medium.MM = 0.018015268;
+//   tank2.medium.state.T = tank2.medium.T;
+//   tank2.medium.state.p = tank2.medium.p;
+//   tank2.medium.X[1] = 1.0;
+//   assert(tank2.medium.X[1] >= -1e-05 and tank2.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(tank2.medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
+// of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
+//   assert(tank2.medium.p >= 0.0,\"Pressure (= \" + String(tank2.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
+// (Temperature = \" + String(tank2.medium.T,0,true,6) + \" K)\");
+//   tank2.heatTransfer.states[1].p = tank2.medium.state.p;
+//   tank2.heatTransfer.states[1].T = tank2.medium.state.T;
+//   tank2.heatTransfer.Ts[1] = tank2.heatTransfer.heatPorts[1].T;
+//   tank2.heatTransfer.Q_flows[1] = tank2.heatTransfer.heatPorts[1].Q_flow;
+//   tank2.V = tank2.crossArea * tank2.level;
+//   tank2.medium.p = tank2.p_ambient;
+//   tank2.Wb_flow = 0.0;
+//   tank2.vessel_ps_static[1] = max(0.0,tank2.level - tank2.portsData_height[1]) * (tank2.system.g * tank2.medium.d) + tank2.p_ambient;
+//   tank2.vessel_ps_static[2] = max(0.0,tank2.level - tank2.portsData_height[2]) * (tank2.system.g * tank2.medium.d) + tank2.p_ambient;
+//   tank2.mb_flow = tank2.ports[1].m_flow + tank2.ports[2].m_flow;
+//   tank2.Hb_flow = tank2.ports_H_flow[1] + (tank2.ports_H_flow[2] + (tank2.ports_E_flow[1] + tank2.ports_E_flow[2]));
+//   tank2.Qb_flow = tank2.heatTransfer.Q_flows[1];
+//   assert(cardinality({}[1]) <= 1,\"
+// each ports[i] of volume can at most be connected to one component.
+// If two or more connections are present, ideal mixing takes
+// place with these connections, which is usually not the intention
+// of the modeller. Increase nPorts to add an additional port.
+// \");
+//   assert(cardinality({}[2]) <= 1,\"
+// each ports[i] of volume can at most be connected to one component.
+// If two or more connections are present, ideal mixing takes
+// place with these connections, which is usually not the intention
+// of the modeller. Increase nPorts to add an additional port.
+// \");
+//   assert(tank2.fluidLevel <= tank2.fluidLevel_max,\"Vessel is overflowing (fluidLevel > fluidLevel_max = \" + String(tank2.fluidLevel,0,true,6) + \")\");
+//   assert(tank2.fluidLevel > -1e-06 * tank2.fluidLevel_max,\"Fluid level (= \" + String(tank2.fluidLevel,0,true,6) + \") is below zero meaning that the solution failed.\");
+//   tank2.portDensities[1] = Modelica.Fluid.Vessels.OpenTank.Medium.density(Modelica.Fluid.Vessels.OpenTank.Medium.setState_phX(tank2.vessel_ps_static[1],if tank2.ports[1].m_flow > 0.0 then valve2.port_b.h_outflow else tank2.ports[1].h_outflow,{}));
+//   tank2.portVelocities[1] = tank2.ports[1].m_flow / (tank2.portDensities[1] * tank2.portAreas[1]);
+//   tank2.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(tank2.fluidLevel + (-0.1 * tank2.portsData_diameter[1] - tank2.portsData_height[1]),1.0,0.001,0.1 * tank2.portsData_diameter[1]);
+//   if tank2.fluidLevel >= tank2.portsData_height[1] then
+//   tank2.ports[1].p = tank2.vessel_ps_static[1] + 0.5 * (tank2.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank2.ports[1].m_flow,tank2.m_flow_small,(tank2.ports_penetration[1] * (-1.0 + (tank2.portsData_zeta_in[1] + tank2.portAreas[1] ^ 2.0 * tank2.vesselArea ^ -2.0))) / tank2.portDensities[1],(1.0 + (tank2.portsData_zeta_out[1] - tank2.portAreas[1] ^ 2.0 * tank2.vesselArea ^ -2.0)) / (tank2.ports_penetration[1] * tank2.medium.d),false,1.0));
+//   tank2.s[1] = tank2.fluidLevel - tank2.portsData_height[1];
+//   elseif tank2.s[1] > 0.0 or tank2.portsData_height[1] >= tank2.fluidLevel_max then
+//   tank2.ports[1].p = tank2.vessel_ps_static[1];
+//   tank2.s[1] = tank2.ports[1].m_flow;
+//   else
+//   tank2.ports[1].m_flow = 0.0;
+//   tank2.s[1] = (tank2.ports[1].p / 101325.0 + (-tank2.vessel_ps_static[1]) / 101325.0) * (tank2.portsData_height[1] - tank2.fluidLevel);
+//   end if;
+//   tank2.ports[1].h_outflow = tank2.medium.h;
+//   tank2.ports_H_flow[1] = tank2.ports[1].m_flow * (if tank2.ports[1].m_flow > 0.0 then valve2.port_b.h_outflow else tank2.ports[1].h_outflow);
+//   tank2.ports_E_flow[1] = tank2.ports[1].m_flow * (0.5 * tank2.portVelocities[1] ^ 2.0 + tank2.system.g * tank2.portsData_height[1]);
+//   tank2.portDensities[2] = Modelica.Fluid.Vessels.OpenTank.Medium.density(Modelica.Fluid.Vessels.OpenTank.Medium.setState_phX(tank2.vessel_ps_static[2],if tank2.ports[2].m_flow > 0.0 then valve3.port_a.h_outflow else tank2.ports[2].h_outflow,{}));
+//   tank2.portVelocities[2] = tank2.ports[2].m_flow / (tank2.portDensities[2] * tank2.portAreas[2]);
+//   tank2.ports_penetration[2] = Modelica.Fluid.Utilities.regStep(tank2.fluidLevel + (-0.1 * tank2.portsData_diameter[2] - tank2.portsData_height[2]),1.0,0.001,0.1 * tank2.portsData_diameter[2]);
+//   if tank2.fluidLevel >= tank2.portsData_height[2] then
+//   tank2.ports[2].p = tank2.vessel_ps_static[2] + 0.5 * (tank2.portAreas[2] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank2.ports[2].m_flow,tank2.m_flow_small,(tank2.ports_penetration[2] * (-1.0 + (tank2.portsData_zeta_in[2] + tank2.portAreas[2] ^ 2.0 * tank2.vesselArea ^ -2.0))) / tank2.portDensities[2],(1.0 + (tank2.portsData_zeta_out[2] - tank2.portAreas[2] ^ 2.0 * tank2.vesselArea ^ -2.0)) / (tank2.ports_penetration[2] * tank2.medium.d),false,1.0));
+//   tank2.s[2] = tank2.fluidLevel - tank2.portsData_height[2];
+//   elseif tank2.s[2] > 0.0 or tank2.portsData_height[2] >= tank2.fluidLevel_max then
+//   tank2.ports[2].p = tank2.vessel_ps_static[2];
+//   tank2.s[2] = tank2.ports[2].m_flow;
+//   else
+//   tank2.ports[2].m_flow = 0.0;
+//   tank2.s[2] = (tank2.ports[2].p / 101325.0 + (-tank2.vessel_ps_static[2]) / 101325.0) * (tank2.portsData_height[2] - tank2.fluidLevel);
+//   end if;
+//   tank2.ports[2].h_outflow = tank2.medium.h;
+//   tank2.ports_H_flow[2] = tank2.ports[2].m_flow * (if tank2.ports[2].m_flow > 0.0 then valve3.port_a.h_outflow else tank2.ports[2].h_outflow);
+//   tank2.ports_E_flow[2] = tank2.ports[2].m_flow * (0.5 * tank2.portVelocities[2] ^ 2.0 + tank2.system.g * tank2.portsData_height[2]);
+//   assert(true,\"Bad combination of dynamics options and Medium not conserving mass if fluidVolume is fixed.\");
+//   tank2.m = tank2.fluidVolume * tank2.medium.d;
+//   tank2.U = tank2.m * tank2.medium.u;
+//   der(tank2.U) = tank2.Hb_flow + (tank2.Qb_flow + tank2.Wb_flow);
+//   der(tank2.m) = tank2.mb_flow;
+//   assert(ambient1.medium.T >= 272.15 and ambient1.medium.T <= 403.15,\"
+// Temperature T (= \" + String(ambient1.medium.T,0,true,6) + \" K) is not
+// in the allowed range (\" + String(272.15,0,true,6) + \" K <= T <= \" + String(403.15,0,true,6) + \" K)
+// required from medium model \\\"\" + \"SimpleLiquidWater\" + \"\\\".
+// \");
+//   ambient1.medium.h = Modelica.Fluid.Sources.Boundary_pT.Medium.specificEnthalpy_pTX(ambient1.medium.p,ambient1.medium.T,{ambient1.medium.X[1]});
+//   ambient1.medium.u = -1142859.6 + 4184.0 * ambient1.medium.T;
+//   ambient1.medium.d = 995.586;
+//   ambient1.medium.R = 0.0;
+//   ambient1.medium.MM = 0.018015268;
+//   ambient1.medium.state.T = ambient1.medium.T;
+//   ambient1.medium.state.p = ambient1.medium.p;
+//   ambient1.medium.X[1] = 1.0;
+//   assert(ambient1.medium.X[1] >= -1e-05 and ambient1.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient1.medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
+// of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
+//   assert(ambient1.medium.p >= 0.0,\"Pressure (= \" + String(ambient1.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
+// (Temperature = \" + String(ambient1.medium.T,0,true,6) + \" K)\");
+//   .Modelica.Fluid.Utilities.checkBoundary(\"SimpleLiquidWater\",{\"SimpleLiquidWater\"},true,true,{ambient1.X_in_internal[1]},\"Boundary_pT\");
+//   ambient1.p_in_internal = ambient1.p;
+//   ambient1.T_in_internal = ambient1.T;
+//   ambient1.X_in_internal[1] = ambient1.X[1];
+//   ambient1.medium.p = ambient1.p_in_internal;
+//   ambient1.medium.T = ambient1.T_in_internal;
+//   assert(cardinality({}[1]) <= 1,\"
+// each ports[i] of boundary shall at most be connected to one component.
+// If two or more connections are present, ideal mixing takes
+// place with these connections, which is usually not the intention
+// of the modeller. Increase nPorts to add an additional port.
+// \");
+//   ambient1.ports[1].p = ambient1.medium.p;
+//   ambient1.ports[1].h_outflow = ambient1.medium.h;
+//   assert(source.medium.T >= 272.15 and source.medium.T <= 403.15,\"
+// Temperature T (= \" + String(source.medium.T,0,true,6) + \" K) is not
+// in the allowed range (\" + String(272.15,0,true,6) + \" K <= T <= \" + String(403.15,0,true,6) + \" K)
+// required from medium model \\\"\" + \"SimpleLiquidWater\" + \"\\\".
+// \");
+//   source.medium.h = Modelica.Fluid.Sources.Boundary_pT.Medium.specificEnthalpy_pTX(source.medium.p,source.medium.T,{source.medium.X[1]});
+//   source.medium.u = -1142859.6 + 4184.0 * source.medium.T;
+//   source.medium.d = 995.586;
+//   source.medium.R = 0.0;
+//   source.medium.MM = 0.018015268;
+//   source.medium.state.T = source.medium.T;
+//   source.medium.state.p = source.medium.p;
+//   source.medium.X[1] = 1.0;
+//   assert(source.medium.X[1] >= -1e-05 and source.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(source.medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
+// of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
+//   assert(source.medium.p >= 0.0,\"Pressure (= \" + String(source.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
+// (Temperature = \" + String(source.medium.T,0,true,6) + \" K)\");
+//   .Modelica.Fluid.Utilities.checkBoundary(\"SimpleLiquidWater\",{\"SimpleLiquidWater\"},true,true,{source.X_in_internal[1]},\"Boundary_pT\");
+//   source.p_in_internal = source.p;
+//   source.T_in_internal = source.T;
+//   source.X_in_internal[1] = source.X[1];
+//   source.medium.p = source.p_in_internal;
+//   source.medium.T = source.T_in_internal;
+//   assert(cardinality({}[1]) <= 1,\"
+// each ports[i] of boundary shall at most be connected to one component.
+// If two or more connections are present, ideal mixing takes
+// place with these connections, which is usually not the intention
+// of the modeller. Increase nPorts to add an additional port.
+// \");
+//   source.ports[1].p = source.medium.p;
+//   source.ports[1].h_outflow = source.medium.h;
+//   tankController.s1.stateGraphRoot.subgraphStatePort.activeSteps + tankController.s1.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   tankController.normal.stateGraphRoot.subgraphStatePort.activeSteps + tankController.normal.outerState.subgraphStatePort.activeSteps + tankController.normal.fillTank1.outerStatePort.subgraphStatePort.activeSteps + tankController.normal.fillTank2.outerStatePort.subgraphStatePort.activeSteps + tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.activeSteps + tankController.normal.wait1.outerStatePort.subgraphStatePort.activeSteps + tankController.normal.wait2.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   tankController.normal.fillTank1.inPort[1].occupied = tankController.normal.inPort.occupied;
+//   tankController.normal.fillTank1.inPort[1].set = tankController.normal.inPort.set;
+//   tankController.normal.T1.inPort.available = tankController.normal.fillTank1.outPort[1].available;
+//   tankController.normal.T1.inPort.reset = tankController.normal.fillTank1.outPort[1].reset;
+//   tankController.normal.T3.inPort.available = tankController.normal.fillTank2.outPort[1].available;
+//   tankController.normal.T3.inPort.reset = tankController.normal.fillTank2.outPort[1].reset;
+//   tankController.normal.emptyTank2.outPort[1].available = tankController.normal.outPort.available;
+//   tankController.normal.emptyTank2.outPort[1].reset = tankController.normal.outPort.reset;
+//   tankController.normal.T2.inPort.available = tankController.normal.wait1.outPort[1].available;
+//   tankController.normal.T2.inPort.reset = tankController.normal.wait1.outPort[1].reset;
+//   tankController.normal.T2.outPort.occupied = tankController.normal.fillTank2.inPort[1].occupied;
+//   tankController.normal.T2.outPort.set = tankController.normal.fillTank2.inPort[1].set;
+//   tankController.normal.T1.outPort.occupied = tankController.normal.wait1.inPort[1].occupied;
+//   tankController.normal.T1.outPort.set = tankController.normal.wait1.inPort[1].set;
+//   tankController.normal.T4.inPort.available = tankController.normal.wait2.outPort[1].available;
+//   tankController.normal.T4.inPort.reset = tankController.normal.wait2.outPort[1].reset;
+//   tankController.normal.T3.outPort.occupied = tankController.normal.wait2.inPort[1].occupied;
+//   tankController.normal.T3.outPort.set = tankController.normal.wait2.inPort[1].set;
+//   tankController.normal.T4.outPort.occupied = tankController.normal.emptyTank2.inPort[1].occupied;
+//   tankController.normal.T4.outPort.set = tankController.normal.emptyTank2.inPort[1].set;
+//   tankController.s2.stateGraphRoot.subgraphStatePort.activeSteps + tankController.s2.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   tankController.emptyTanks.stateGraphRoot.subgraphStatePort.activeSteps + tankController.emptyTanks.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   tankController.T1.inPort.available = tankController.s1.outPort[1].available;
+//   tankController.T1.inPort.reset = tankController.s1.outPort[1].reset;
+//   tankController.T1.outPort.occupied = tankController.normal.inPort.occupied;
+//   tankController.T1.outPort.set = tankController.normal.inPort.set;
+//   tankController.T2.inPort.available = tankController.normal.outPort.available;
+//   tankController.T2.inPort.reset = tankController.normal.outPort.reset;
+//   tankController.T5.outPort.occupied = tankController.emptyTanks.inPort[1].occupied;
+//   tankController.T5.outPort.set = tankController.emptyTanks.inPort[1].set;
+//   tankController.T6.inPort.available = tankController.emptyTanks.outPort[1].available;
+//   tankController.T6.inPort.reset = tankController.emptyTanks.outPort[1].reset;
+//   tankController.setValve1.y = tankController.valve1;
+//   tankController.setValve2.y = tankController.valve2;
+//   tankController.setValve3.y = tankController.valve3;
+//   tankController.T3.inPort.available = tankController.normal.suspend[1].available;
+//   tankController.T3.inPort.reset = tankController.normal.suspend[1].reset;
+//   tankController.T3.outPort.occupied = tankController.s2.inPort[1].occupied;
+//   tankController.T3.outPort.set = tankController.s2.inPort[1].set;
+//   tankController.level1 = tankController.normal.level1;
+//   tankController.T5.inPort.available = tankController.s2.outPort[1].available;
+//   tankController.T5.inPort.reset = tankController.s2.outPort[1].reset;
+//   tankController.T4.inPort.available = tankController.s2.outPort[2].available;
+//   tankController.T4.inPort.reset = tankController.s2.outPort[2].reset;
+//   tankController.T2.outPort.occupied = tankController.s1.inPort[1].occupied;
+//   tankController.T2.outPort.set = tankController.s1.inPort[1].set;
+//   tankController.T6.outPort.occupied = tankController.s1.inPort[2].occupied;
+//   tankController.T6.outPort.set = tankController.s1.inPort[2].set;
+//   tankController.T4.outPort.occupied = tankController.normal.resume[1].occupied;
+//   tankController.T4.outPort.set = tankController.normal.resume[1].set;
+//   valve1.port_a.m_flow + source.ports[1].m_flow = 0.0;
+//   valve1.port_b.m_flow + tank1.ports[1].m_flow = 0.0;
+//   tank1.ports[2].m_flow + valve2.port_a.m_flow = 0.0;
+//   tank1.heatTransfer.heatPorts[1].Q_flow = 0.0;
+//   tank1.portsData_diameter[2] = tank1.portsData_diameter_internal[2];
+//   tank1.portsData_diameter[1] = tank1.portsData_diameter_internal[1];
+//   tank1.portsData_height[2] = tank1.portsData_height_internal[2];
+//   tank1.portsData_height[1] = tank1.portsData_height_internal[1];
+//   tank1.portsData_zeta_in[2] = tank1.portsData_zeta_in_internal[2];
+//   tank1.portsData_zeta_in[1] = tank1.portsData_zeta_in_internal[1];
+//   tank1.portsData_zeta_out[2] = tank1.portsData_zeta_out_internal[2];
+//   tank1.portsData_zeta_out[1] = tank1.portsData_zeta_out_internal[1];
+//   valve2.port_b.m_flow + tank2.ports[1].m_flow = 0.0;
+//   valve3.port_a.m_flow + tank2.ports[2].m_flow = 0.0;
+//   valve3.port_b.m_flow + ambient1.ports[1].m_flow = 0.0;
+//   tank2.heatTransfer.heatPorts[1].Q_flow = 0.0;
+//   tank2.portsData_diameter[2] = tank2.portsData_diameter_internal[2];
+//   tank2.portsData_diameter[1] = tank2.portsData_diameter_internal[1];
+//   tank2.portsData_height[2] = tank2.portsData_height_internal[2];
+//   tank2.portsData_height[1] = tank2.portsData_height_internal[1];
+//   tank2.portsData_zeta_in[2] = tank2.portsData_zeta_in_internal[2];
+//   tank2.portsData_zeta_in[1] = tank2.portsData_zeta_in_internal[1];
+//   tank2.portsData_zeta_out[2] = tank2.portsData_zeta_out_internal[2];
+//   tank2.portsData_zeta_out[1] = tank2.portsData_zeta_out_internal[1];
+//   shut.on = tankController.shut;
+//   stop.on = tankController.stop;
+//   start.on = tankController.start;
+//   tankController.valve1 = valve1.open;
+//   level1.y = tankController.level1;
+//   tankController.valve2 = valve2.open;
+//   tankController.valve3 = valve3.open;
+//   level2.y = tankController.level2;
+//   source.ports[1].p = valve1.port_a.p;
+//   ambient1.ports[1].p = valve3.port_b.p;
+//   tank2.ports[2].p = valve3.port_a.p;
+//   tank2.ports[1].p = valve2.port_b.p;
+//   tank1.ports[1].p = valve1.port_b.p;
+//   tank1.ports[2].p = valve2.port_a.p;
+//   tankController.emptyTanks.outerStatePort.subgraphStatePort.suspend = tankController.emptyTanks.stateGraphRoot.subgraphStatePort.suspend;
+//   tankController.emptyTanks.outerStatePort.subgraphStatePort.resume = tankController.emptyTanks.stateGraphRoot.subgraphStatePort.resume;
+//   tankController.emptyTanks.outerStatePort.subgraphStatePort.activeStepsDummy = tankController.emptyTanks.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   tankController.s2.outerStatePort.subgraphStatePort.suspend = tankController.s2.stateGraphRoot.subgraphStatePort.suspend;
+//   tankController.s2.outerStatePort.subgraphStatePort.resume = tankController.s2.stateGraphRoot.subgraphStatePort.resume;
+//   tankController.s2.outerStatePort.subgraphStatePort.activeStepsDummy = tankController.s2.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.suspend = tankController.normal.fillTank1.outerStatePort.subgraphStatePort.suspend;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.suspend = tankController.normal.fillTank2.outerStatePort.subgraphStatePort.suspend;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.suspend = tankController.normal.outerState.subgraphStatePort.suspend;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.suspend = tankController.normal.stateGraphRoot.subgraphStatePort.suspend;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.suspend = tankController.normal.wait1.outerStatePort.subgraphStatePort.suspend;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.suspend = tankController.normal.wait2.outerStatePort.subgraphStatePort.suspend;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.resume = tankController.normal.fillTank1.outerStatePort.subgraphStatePort.resume;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.resume = tankController.normal.fillTank2.outerStatePort.subgraphStatePort.resume;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.resume = tankController.normal.outerState.subgraphStatePort.resume;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.resume = tankController.normal.stateGraphRoot.subgraphStatePort.resume;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.resume = tankController.normal.wait1.outerStatePort.subgraphStatePort.resume;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.resume = tankController.normal.wait2.outerStatePort.subgraphStatePort.resume;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.activeStepsDummy = tankController.normal.fillTank1.outerStatePort.subgraphStatePort.activeStepsDummy;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.activeStepsDummy = tankController.normal.fillTank2.outerStatePort.subgraphStatePort.activeStepsDummy;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.activeStepsDummy = tankController.normal.outerState.subgraphStatePort.activeStepsDummy;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.activeStepsDummy = tankController.normal.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.activeStepsDummy = tankController.normal.wait1.outerStatePort.subgraphStatePort.activeStepsDummy;
+//   tankController.normal.emptyTank2.outerStatePort.subgraphStatePort.activeStepsDummy = tankController.normal.wait2.outerStatePort.subgraphStatePort.activeStepsDummy;
+//   tankController.s1.outerStatePort.subgraphStatePort.suspend = tankController.s1.stateGraphRoot.subgraphStatePort.suspend;
+//   tankController.s1.outerStatePort.subgraphStatePort.resume = tankController.s1.stateGraphRoot.subgraphStatePort.resume;
+//   tankController.s1.outerStatePort.subgraphStatePort.activeStepsDummy = tankController.s1.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+// algorithm
+//   when time >= pre(start.table.nextTime) and start.table.n > 0 then
+//     if start.table.index < start.table.n then
+//       start.table.index := 1 + start.table.index;
+//       start.table.nextTime := start.table.table[start.table.index];
+//       start.table.y := not start.table.y;
+//     elseif start.table.index == start.table.n then
+//       start.table.index := 1 + start.table.index;
+//       start.table.y := not start.table.y;
+//     end if;
+//   end when;
+//   when {pre(start.reset[1]),pre(start.reset[2])} then
+//     start.on := false;
+//   end when;
+//   when change(start.table.y) then
+//     start.on := true;
+//   end when;
+//   when time >= pre(stop.table.nextTime) and stop.table.n > 0 then
+//     if stop.table.index < stop.table.n then
+//       stop.table.index := 1 + stop.table.index;
+//       stop.table.nextTime := stop.table.table[stop.table.index];
+//       stop.table.y := not stop.table.y;
+//     elseif stop.table.index == stop.table.n then
+//       stop.table.index := 1 + stop.table.index;
+//       stop.table.y := not stop.table.y;
+//     end if;
+//   end when;
+//   when {pre(stop.reset[1]),pre(stop.reset[2])} then
+//     stop.on := false;
+//   end when;
+//   when change(stop.table.y) then
+//     stop.on := true;
+//   end when;
+//   when time >= pre(shut.table.nextTime) and shut.table.n > 0 then
+//     if shut.table.index < shut.table.n then
+//       shut.table.index := 1 + shut.table.index;
+//       shut.table.nextTime := shut.table.table[shut.table.index];
+//       shut.table.y := not shut.table.y;
+//     elseif shut.table.index == shut.table.n then
+//       shut.table.index := 1 + shut.table.index;
+//       shut.table.y := not shut.table.y;
+//     end if;
+//   end when;
+//   when {pre(shut.reset[1]),pre(shut.reset[2])} then
+//     shut.on := false;
+//   end when;
+//   when change(shut.table.y) then
+//     shut.on := true;
+//   end when;
+// end Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks;
+// "
 // "Warning: No corresponding 'inner' declaration found for component tankController.s1.stateGraphRoot declared as 'outer '.
 //   The existing 'inner' components are: 
 //     .Modelica.Fluid.System system; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks. Referenced by 'outer' components: {tank1.heatTransfer.system, tank1.heatTransfer.system, tank1.medium.system, tank1.medium.system, tank1.medium.system, tank1.medium.system, tank1.system, tank1.heatTransfer.system, tank1.heatTransfer.system, tank1.heatTransfer.system, tank1.heatTransfer.system, tank1.medium.system, tank1.medium.system, tank1.medium.system, tank1.medium.system, tank1.system}
@@ -43,8 +1885,12 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
-// [ControlledTankSystem.mo:16:5-20:26:writable] Error: Variable stop.on not found in scope Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks
-// Error: Error occured while flattening model Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks
+// Warning: Parameter stop.buttonTimeTable has neither value nor start value, and is fixed during initialization (fixed=true)
+// [Sources.mo:2842:7-2843:108:writable] Warning: Failed to deduce dimensions of table due to unknown dimensions of modifier stop.buttonTimeTable.
+// Warning: Parameter start.buttonTimeTable has neither value nor start value, and is fixed during initialization (fixed=true)
+// [Sources.mo:2842:7-2843:108:writable] Warning: Failed to deduce dimensions of table due to unknown dimensions of modifier start.buttonTimeTable.
+// Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
 // "
 // "Check of Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks completed successfully.
 // 

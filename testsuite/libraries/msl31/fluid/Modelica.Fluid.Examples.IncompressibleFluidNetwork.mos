@@ -15,19 +15,6 @@ checkModel(Modelica.Fluid.Examples.IncompressibleFluidNetwork); getErrorString()
 // true
 // ""
 // true
-// ""
-// "[Incompressible.mo:302:7-302:72:writable] Error: No constant value for variable TinK in scope Modelica.Media.Incompressible.TableBased.h_T_der.
-// [Incompressible.mo:290:7-291:30:writable] Error: No constant value for variable TinK in scope Modelica.Media.Incompressible.TableBased.h_T.
-// [Incompressible.mo:315:7-319:83:writable] Error: No constant value for variable TinK in scope Modelica.Media.Incompressible.TableBased.h_pT.
-// [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Fluid.Sources.Boundary_pT.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2).
-// [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Fluid.Examples.IncompressibleFluidNetwork.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2).
-// [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2).
-// [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Fluid.Sources.Boundary_pT.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2).
-// [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Fluid.Examples.IncompressibleFluidNetwork.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2).
-// [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2).
-// [Sources.mo:100:5-103:49:writable] Error: Variable Medium.p_default not found in scope Modelica.Fluid.Sources.Boundary_pT
-// Error: Error occured while flattening model Modelica.Fluid.Examples.IncompressibleFluidNetwork
-// "
 // Lookup.lookupClassInFrame_ExitCall_Env__avlTreeGet_SC206
 // Lookup.lookupClassInEnv_ExitCall_lookupClassInFrame_SC189
 // Util.setStatefulBoolean

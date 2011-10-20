@@ -1622,4 +1622,6 @@ end BC8;
 //   PID1.D.inPort.signal[1] = PID1.inPort.signal[1];
 //   PID1.inPort.signal[1] = constant1.outPort.signal[1];
 // end BC8;
+// Warning: Parameter PID1.D.T has neither value nor start value, and is fixed during initialization (fixed=true)
+// 
 // endResult

@@ -264,7 +264,6 @@ EquationIf3.mo \
 EquationIf4.mo \
 ErrorExternalAlgorithm.mo \
 ErrorMultipleClasses.mo \
-ErrorUnknownDimension.mo \
 EventFunctions.mo \
 Exp.mo \
 Expressions.mo \
@@ -637,6 +636,7 @@ ConstrainingType3.mo \
 DeclareConstant1.mo \
 DeclareConstant2.mo \
 DisturbedResistance2.mo \
+ErrorUnknownDimension.mo \
 Faculty4.mo \
 FlatParse.mof \
 Function4.mo \

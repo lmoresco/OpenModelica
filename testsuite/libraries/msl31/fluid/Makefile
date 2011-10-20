@@ -5,7 +5,10 @@ Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TriggeredTrapezoid.mos \
+Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks.mos \
 Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation.mos \
+Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton.mos \
+Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController.mos \
 Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.mos \
 Modelica.Fluid.Examples.DrumBoiler.DrumBoiler.mos \
 Modelica.Fluid.Examples.Explanatory.MeasuringTemperature.mos \
@@ -52,9 +55,6 @@ Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe1.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe2.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.Test.TwoTanks.mos \
 Modelica.Fluid.Examples.BranchingDynamicPipes.mos \
-Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks.mos \
-Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton.mos \
-Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController.mos \
 Modelica.Fluid.Examples.Explanatory.MomentumBalanceFittings.mos \
 Modelica.Fluid.Examples.HeatExchanger.BaseClasses.BasicHX.mos \
 Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation.mos \

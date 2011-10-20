@@ -1255,4 +1255,6 @@ end BC2;
 //   assert(constant1.outPort.n == derivative1.inPort.n,"automatically generated from connect");
 //   constant1.outPort.signal[1] = derivative1.inPort.signal[1];
 // end BC2;
+// Warning: Parameter derivative1.T has neither value nor start value, and is fixed during initialization (fixed=true)
+// 
 // endResult

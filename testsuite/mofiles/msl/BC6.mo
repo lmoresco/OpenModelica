@@ -1974,4 +1974,6 @@ end BC6;
 //   limPID1.addSat.inPort1.signal[1] = limPID1.outPort.signal[1];
 //   constant1.outPort.signal[1] = limPID1.inPort_s.signal[1];
 // end BC6;
+// Warning: Parameter limPID1.D.T has neither value nor start value, and is fixed during initialization (fixed=true)
+// 
 // endResult
