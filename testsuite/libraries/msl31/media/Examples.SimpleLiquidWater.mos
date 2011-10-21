@@ -6,7 +6,6 @@
 //
 
 loadModel(Modelica,{"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
@@ -14,7 +13,6 @@ checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 // Result:
 // true
 // ""
-// true
 // "function Modelica.Math.asin
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
@@ -134,9 +132,9 @@ checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 //   Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Examples.SimpleLiquidWater.Medium.dynamicViscosity(state);
 //   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.SimpleLiquidWater.Medium.specificHeatCapacityCv(state);
 // equation
-//   assert(medium.T >= T_min and medium.T <= T_max,\"
+//   assert(medium.T >= 272.15 and medium.T <= 403.15,\"
 // Temperature T (= \" + String(medium.T,0,true,6) + \" K) is not
-// in the allowed range (\" + String(T_min,0,true,6) + \" K <= T <= \" + String(T_max,0,true,6) + \" K)
+// in the allowed range (\" + String(272.15,0,true,6) + \" K <= T <= \" + String(403.15,0,true,6) + \" K)
 // required from medium model \\\"\" + \"SimpleLiquidWater\" + \"\\\".
 // \");
 //   medium.h = Modelica.Media.Examples.SimpleLiquidWater.Medium.specificEnthalpy_pTX(medium.p,medium.T,{medium.X[1]});
@@ -151,9 +149,9 @@ checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 // of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
 //   assert(medium.p >= 0.0,\"Pressure (= \" + String(medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
 // (Temperature = \" + String(medium.T,0,true,6) + \" K)\");
-//   assert(medium2.T >= T_min and medium2.T <= T_max,\"
+//   assert(medium2.T >= 272.15 and medium2.T <= 403.15,\"
 // Temperature T (= \" + String(medium2.T,0,true,6) + \" K) is not
-// in the allowed range (\" + String(T_min,0,true,6) + \" K <= T <= \" + String(T_max,0,true,6) + \" K)
+// in the allowed range (\" + String(272.15,0,true,6) + \" K <= T <= \" + String(403.15,0,true,6) + \" K)
 // required from medium model \\\"\" + \"SimpleLiquidWater\" + \"\\\".
 // \");
 //   medium2.h = Modelica.Media.Examples.SimpleLiquidWater.Medium.specificEnthalpy_pTX(medium2.p,medium2.T,{medium2.X[1]});

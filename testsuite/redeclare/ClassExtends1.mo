@@ -3,6 +3,7 @@
 // status:   correct
 // 
 // 
+
 class Y
   replaceable model X
     Integer x;

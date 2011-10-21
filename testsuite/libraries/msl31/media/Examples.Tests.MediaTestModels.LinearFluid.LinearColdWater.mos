@@ -105,16 +105,26 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   h := Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy_pTX;
 // 
-// function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+// function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState\"
+//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+//   output ThermodynamicState res;
+// end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState;
+// 
+// function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX \"set the thermodynamic state record from p and T (X not needed)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState state \"thermodynamic state record\";
+// algorithm
+//   state := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState(p,T);
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX;
 // 
-// function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy \"Return specific enthalpy\"
+// function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy \"Return the specific enthalpy from the thermodynamic state\"
 //   input Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := -1058360.84151583 + 4181.9 * state.T + 0.000931226408404794 * state.p;
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -126,16 +136,26 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   h := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy_pTX;
 // 
-// function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+// function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState\"
+//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+//   output ThermodynamicState res;
+// end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState;
+// 
+// function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX \"set the thermodynamic state record from p and T (X not needed)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState state \"thermodynamic state record\";
+// algorithm
+//   state := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState(p,T);
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX;
 // 
-// function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy \"Return specific enthalpy\"
+// function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy \"Return the specific enthalpy from the thermodynamic state\"
 //   input Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := -1058360.84151583 + 4181.9 * state.T + 0.000931226408404794 * state.p;
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"

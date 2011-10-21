@@ -17,6 +17,7 @@ Examples.TestOnly.TestMedia.TemplateMedium.mos \
 Examples.Tests.Components.mos \
 Examples.Tests.MediaTestModels.Air.DryAirNasa.mos \
 Examples.Tests.MediaTestModels.Air.SimpleAir.mos \
+Examples.Tests.MediaTestModels.Air.MoistAir.mos \
 Examples.Tests.MediaTestModels.IdealGases.Air.mos \
 Examples.Tests.MediaTestModels.IdealGases.Nitrogen.mos \
 Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition.mos \
@@ -32,7 +33,6 @@ Examples.WaterIF97.mos \
 Incompressible.Examples.Glycol47.mos \
 Incompressible.Examples.TestGlycol.mos \
 Water.StandardWater.mos \
-Examples.Tests.MediaTestModels.Air.MoistAir.mos \
 Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas.mos \
 Examples.Tests.MediaTestModels.Incompressible.Essotherm650.mos \
 Examples.Tests.MediaTestModels.Incompressible.Glycol47.mos \

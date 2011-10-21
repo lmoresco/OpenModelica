@@ -242,16 +242,26 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   h := Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy_pTX;
 // 
-// function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+// function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState\"
+//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+//   output ThermodynamicState res;
+// end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState;
+// 
+// function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX \"set the thermodynamic state record from p and T (X not needed)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState state \"thermodynamic state record\";
+// algorithm
+//   state := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState(p,T);
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX;
 // 
-// function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy \"Return specific enthalpy\"
+// function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy \"Return the specific enthalpy from the thermodynamic state\"
 //   input Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := reference_h + (-298.15 + state.T) * cp_const + (-101325.0 + state.p * (1.0 + -298.15 * beta_const)) / reference_d;
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -263,16 +273,26 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   h := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy_pTX;
 // 
-// function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+// function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState\"
+//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+//   output ThermodynamicState res;
+// end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState;
+// 
+// function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX \"set the thermodynamic state record from p and T (X not needed)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState state \"thermodynamic state record\";
+// algorithm
+//   state := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState(p,T);
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX;
 // 
-// function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy \"Return specific enthalpy\"
+// function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy \"Return the specific enthalpy from the thermodynamic state\"
 //   input Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := reference_h + (-298.15 + state.T) * cp_const + (-101325.0 + state.p * (1.0 + -298.15 * beta_const)) / reference_d;
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -2744,6 +2764,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 // "[package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.Medium.specificEnthalpy.
 // [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT
 // [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.specificEnthalpy.
+// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy.
 // [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
 // [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
@@ -2751,6 +2772,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 // [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
 // [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
+// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy.
 // [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.specificEnthalpy.
 // [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
 // [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
@@ -2762,6 +2784,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 // [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.Medium.specificEnthalpy.
 // [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT
 // [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.specificEnthalpy.
+// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy.
 // [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
 // [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
@@ -2769,6 +2792,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 // [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
 // [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
+// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy.
 // [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.specificEnthalpy.
 // [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
 // [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
