@@ -32,11 +32,11 @@ system("rm -rf A.mo test.mo");
 // true
 // true
 // true
-// Ok
-// Ok
-// test.mo
-// A.mo
-// 
+// true
+// true
+// "test.mo"
+// "A.mo"
+// ""
 // true
 // true
 // true
