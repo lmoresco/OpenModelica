@@ -9,9 +9,9 @@ loadString("class A end A;");getErrorString();
 list();
 
 // Result:
-// {Code(A)}
+// {A}
 // ""
-// {Code(D.C.A)}
+// {D.C.A}
 // ""
 // {}
 // ""
