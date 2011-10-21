@@ -142,7 +142,7 @@ list(A);                                                                        
 // ""
 // {Line(true,{{-22.0,15.0},{32.0,15.0},{32.0,16.0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false)}
 // ""
-// Ok
+// true
 // ""
 // {"model","this is the class A","",{false,false,false},{"writable",0,0,0,0},{}}
 // ""
@@ -222,7 +222,7 @@ list(A);                                                                        
 // ""
 // {Line(true,{0.0,0.0},0,{{-22.0,15.0},{32.0,15.0},{32.0,16.0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}
 // ""
-// Ok
+// true
 // ""
 // {"model","this is the class A","",{false,false,false},{"writable",0,0,0,0},{}}
 // ""
