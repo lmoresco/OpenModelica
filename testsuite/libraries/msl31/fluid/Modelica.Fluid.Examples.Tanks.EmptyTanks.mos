@@ -16,9 +16,7 @@ checkModel(Modelica.Fluid.Examples.Tanks.EmptyTanks); getErrorString();
 // ""
 // true
 // ""
-// "Warning: Parameter diameter has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter length has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter pipe.flowModel.p_a_start has neither value nor start value, and is fixed during initialization (fixed=true)
+// "Warning: Parameter pipe.flowModel.p_a_start has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: Parameter pipe.flowModel.p_b_start has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: Parameter pipe.flowModel.nParallel has neither value nor start value, and is fixed during initialization (fixed=true)
 // [Pipes.mo:21:5-40:85:writable] Error: No matching function found for Medium.density(flowModel.states[1])
