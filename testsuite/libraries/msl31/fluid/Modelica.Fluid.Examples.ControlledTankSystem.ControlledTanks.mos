@@ -28,7 +28,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 // algorithm
 //   if size(table,1) == 0 then
 //     index := 0;
-//     nextTime := -1e+060;
+//     nextTime := -1e+60;
 //     y := startValue;
 //   elseif size(table,1) == 1 then
 //     index := 1;
@@ -102,25 +102,13 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   h := -1142859.6 + 4184.0 * T;
 // end Modelica.Fluid.Interfaces.FluidPort_b.Medium.specificEnthalpy_pTX;
 // 
-// function Modelica.Fluid.Interfaces.FluidPorts_b.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Modelica.Fluid.Interfaces.FluidPorts_b.Medium.ThermodynamicState state \"thermodynamic state record\";
-// end Modelica.Fluid.Interfaces.FluidPorts_b.Medium.setState_pTX;
-// 
-// function Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy \"Return specific enthalpy\"
-//   input Modelica.Fluid.Interfaces.FluidPorts_b.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// end Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy;
-// 
 // function Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy(Modelica.Fluid.Interfaces.FluidPorts_b.Medium.setState_pTX(p,T,X));
+//   h := -1142859.6 + 4184.0 * T;
 // end Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Fluid.Sources.Boundary_pT.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -155,7 +143,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 // is negative. It must be positive.
 // \");
 //   end for;
-//   if nX > 0 and abs(sum(X_boundary) + -1.0) > 1e-010 then
+//   if nX > 0 and abs(sum(X_boundary) + -1.0) > 1e-10 then
 //     X_str := \"\";
 //     for i in 1:nX loop
 //       X_str := X_str + \"   X_boundary[\" + String(i,0,true) + \"] = \" + String(X_boundary[i],0,true,6) + \" \\\"\" + substanceNames[i] + \"\\\"
@@ -241,7 +229,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   input Real x \"Abscissa value\";
 //   input Real y1 \"Ordinate value for x > 0\";
 //   input Real y2 \"Ordinate value for x < 0\";
-//   input Real x_small(min = 0.0) = 1e-005 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
+//   input Real x_small(min = 0.0) = 1e-05 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
 //   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
 // algorithm
 //   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
@@ -285,25 +273,13 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   T := state.T;
 // end Modelica.Fluid.Valves.ValveDiscrete.Medium.temperature;
 // 
-// function Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.ThermodynamicState state \"thermodynamic state record\";
-// end Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.setState_pTX;
-// 
-// function Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.specificEnthalpy \"Return specific enthalpy\"
-//   input Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// end Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.specificEnthalpy;
-// 
 // function Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.specificEnthalpy(Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.setState_pTX(p,T,X));
+//   h := -1142859.6 + 4184.0 * T;
 // end Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Fluid.Vessels.BaseClasses.VesselPortsData \"Automatically generated record constructor for Modelica.Fluid.Vessels.BaseClasses.VesselPortsData\"
@@ -796,10 +772,10 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   protected Integer shut.table.index \"Index of actual table entry\";
 //   protected parameter Integer shut.table.n = 1 \"Number of table points\";
 //   parameter Boolean valve1.allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
-//   Real valve1.port_a.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve1.allowFlowReversal then -1e+060 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real valve1.port_a.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve1.allowFlowReversal then -1e+60 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real valve1.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real valve1.port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
-//   Real valve1.port_b.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = if valve1.allowFlowReversal then 1e+060 else 0.0) \"Mass flow rate from the connection point into the component\";
+//   Real valve1.port_b.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = if valve1.allowFlowReversal then 1e+60 else 0.0) \"Mass flow rate from the connection point into the component\";
 //   Real valve1.port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real valve1.port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   protected parameter Boolean valve1.port_a_exposesState = false \"= true if port_a exposes the state of a fluid volume\";
@@ -810,7 +786,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   parameter Real valve1.m_flow_small(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_small \"Small mass flow rate for regularization of zero flow\";
 //   parameter Boolean valve1.show_T = true \"= true, if temperatures at port_a and port_b are computed\";
 //   parameter Boolean valve1.show_V_flow = true \"= true, if volume flow rate at inflowing port is computed\";
-//   Real valve1.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve1.allowFlowReversal then -1e+060 else 0.0, max = 100000.0, start = valve1.m_flow_start) \"Mass flow rate in design flow direction\";
+//   Real valve1.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve1.allowFlowReversal then -1e+60 else 0.0, max = 100000.0, start = valve1.m_flow_start) \"Mass flow rate in design flow direction\";
 //   Real valve1.dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = valve1.dp_start) \"Pressure difference between port_a and port_b (= port_a.p - port_b.p)\";
 //   Real valve1.state_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
 //   Real valve1.state_a.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
@@ -854,10 +830,10 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   Real tank1.Wb_flow(quantity = \"Power\", unit = \"W\") \"Work flow across boundaries or source term\";
 //   protected parameter Boolean tank1.initialize_p = false \"= true to set up initial equations for pressure\";
 //   parameter Integer tank1.nPorts = 2 \"Number of ports\";
-//   Real tank1.ports[1].m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real tank1.ports[1].m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real tank1.ports[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real tank1.ports[1].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
-//   Real tank1.ports[2].m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real tank1.ports[2].m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real tank1.ports[2].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real tank1.ports[2].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   parameter Boolean tank1.use_portsData = true \"= false to neglect pressure loss and kinetic energy\";
@@ -901,7 +877,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   protected input Real tank1.portsData_zeta_in[2];
 //   protected input Real tank1.portsData_zeta_out[1];
 //   protected input Real tank1.portsData_zeta_out[2];
-//   Real tank1.level(quantity = \"Length\", unit = \"m\", min = 0.0, start = max(tank1.level_start,1e-015), StateSelect = StateSelect.prefer) \"Level height of tank\";
+//   Real tank1.level(quantity = \"Length\", unit = \"m\", min = 0.0, start = max(tank1.level_start,1e-15), StateSelect = StateSelect.prefer) \"Level height of tank\";
 //   Real tank1.V(quantity = \"Volume\", unit = \"m3\", StateSelect = StateSelect.never) \"Actual tank volume\";
 //   parameter Real tank1.height(quantity = \"Length\", unit = \"m\", min = 0.0) = 4.0 \"Height of tank\";
 //   parameter Real tank1.crossArea(quantity = \"Area\", unit = \"m2\") = 6.0 \"Area of tank\";
@@ -928,10 +904,10 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   parameter Real tank1.level_start(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.05 \"Start value of tank level\";
 //   output Real level1.y = tank1.level \"Value of Real output\";
 //   parameter Boolean valve2.allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
-//   Real valve2.port_a.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve2.allowFlowReversal then -1e+060 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real valve2.port_a.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve2.allowFlowReversal then -1e+60 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real valve2.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real valve2.port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
-//   Real valve2.port_b.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = if valve2.allowFlowReversal then 1e+060 else 0.0) \"Mass flow rate from the connection point into the component\";
+//   Real valve2.port_b.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = if valve2.allowFlowReversal then 1e+60 else 0.0) \"Mass flow rate from the connection point into the component\";
 //   Real valve2.port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real valve2.port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   protected parameter Boolean valve2.port_a_exposesState = false \"= true if port_a exposes the state of a fluid volume\";
@@ -942,7 +918,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   parameter Real valve2.m_flow_small(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_small \"Small mass flow rate for regularization of zero flow\";
 //   parameter Boolean valve2.show_T = true \"= true, if temperatures at port_a and port_b are computed\";
 //   parameter Boolean valve2.show_V_flow = true \"= true, if volume flow rate at inflowing port is computed\";
-//   Real valve2.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve2.allowFlowReversal then -1e+060 else 0.0, max = 100000.0, start = valve2.m_flow_start) \"Mass flow rate in design flow direction\";
+//   Real valve2.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve2.allowFlowReversal then -1e+60 else 0.0, max = 100000.0, start = valve2.m_flow_start) \"Mass flow rate in design flow direction\";
 //   Real valve2.dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = valve2.dp_start) \"Pressure difference between port_a and port_b (= port_a.p - port_b.p)\";
 //   Real valve2.state_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
 //   Real valve2.state_a.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
@@ -957,10 +933,10 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   Real valve2.V_flow(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = valve2.m_flow / Modelica.Fluid.Utilities.regStep(valve2.m_flow,Modelica.Fluid.Valves.ValveDiscrete.Medium.density(valve2.state_a),Modelica.Fluid.Valves.ValveDiscrete.Medium.density(valve2.state_b),valve2.m_flow_small) \"Volume flow rate at inflowing port (positive when flow from port_a to port_b)\";
 //   final parameter Real valve2.k(quantity = \"HydraulicConductance\", unit = \"kg/(s.Pa)\") = valve2.m_flow_nominal / valve2.dp_nominal \"Hydraulic conductance at full opening=1\";
 //   parameter Boolean valve3.allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
-//   Real valve3.port_a.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve3.allowFlowReversal then -1e+060 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real valve3.port_a.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve3.allowFlowReversal then -1e+60 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real valve3.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real valve3.port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
-//   Real valve3.port_b.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = if valve3.allowFlowReversal then 1e+060 else 0.0) \"Mass flow rate from the connection point into the component\";
+//   Real valve3.port_b.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = if valve3.allowFlowReversal then 1e+60 else 0.0) \"Mass flow rate from the connection point into the component\";
 //   Real valve3.port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real valve3.port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   protected parameter Boolean valve3.port_a_exposesState = false \"= true if port_a exposes the state of a fluid volume\";
@@ -971,7 +947,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   parameter Real valve3.m_flow_small(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_small \"Small mass flow rate for regularization of zero flow\";
 //   parameter Boolean valve3.show_T = true \"= true, if temperatures at port_a and port_b are computed\";
 //   parameter Boolean valve3.show_V_flow = true \"= true, if volume flow rate at inflowing port is computed\";
-//   Real valve3.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve3.allowFlowReversal then -1e+060 else 0.0, max = 100000.0, start = valve3.m_flow_start) \"Mass flow rate in design flow direction\";
+//   Real valve3.m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if valve3.allowFlowReversal then -1e+60 else 0.0, max = 100000.0, start = valve3.m_flow_start) \"Mass flow rate in design flow direction\";
 //   Real valve3.dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = valve3.dp_start) \"Pressure difference between port_a and port_b (= port_a.p - port_b.p)\";
 //   Real valve3.state_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
 //   Real valve3.state_a.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
@@ -1015,10 +991,10 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   Real tank2.Wb_flow(quantity = \"Power\", unit = \"W\") \"Work flow across boundaries or source term\";
 //   protected parameter Boolean tank2.initialize_p = false \"= true to set up initial equations for pressure\";
 //   parameter Integer tank2.nPorts = 2 \"Number of ports\";
-//   Real tank2.ports[1].m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real tank2.ports[1].m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real tank2.ports[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real tank2.ports[1].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
-//   Real tank2.ports[2].m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real tank2.ports[2].m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real tank2.ports[2].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real tank2.ports[2].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   parameter Boolean tank2.use_portsData = true \"= false to neglect pressure loss and kinetic energy\";
@@ -1062,7 +1038,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   protected input Real tank2.portsData_zeta_in[2];
 //   protected input Real tank2.portsData_zeta_out[1];
 //   protected input Real tank2.portsData_zeta_out[2];
-//   Real tank2.level(quantity = \"Length\", unit = \"m\", min = 0.0, start = max(tank2.level_start,1e-015), StateSelect = StateSelect.prefer) \"Level height of tank\";
+//   Real tank2.level(quantity = \"Length\", unit = \"m\", min = 0.0, start = max(tank2.level_start,1e-15), StateSelect = StateSelect.prefer) \"Level height of tank\";
 //   Real tank2.V(quantity = \"Volume\", unit = \"m3\", StateSelect = StateSelect.never) \"Actual tank volume\";
 //   parameter Real tank2.height(quantity = \"Length\", unit = \"m\", min = 0.0) = 5.0 \"Height of tank\";
 //   parameter Real tank2.crossArea(quantity = \"Area\", unit = \"m2\") = 6.0 \"Area of tank\";
@@ -1102,7 +1078,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   parameter Boolean ambient1.medium.standardOrderComponents = true \"if true, and reducedX = true, the last element of X will be computed from the other ones\";
 //   Real ambient1.medium.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(ambient1.medium.T) \"Temperature of medium in [degC]\";
 //   Real ambient1.medium.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(ambient1.medium.p) \"Absolute pressure of medium in [bar]\";
-//   Real ambient1.ports[1].m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if ambient1.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+060, max = if ambient1.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+060) \"Mass flow rate from the connection point into the component\";
+//   Real ambient1.ports[1].m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if ambient1.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+60, max = if ambient1.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+60) \"Mass flow rate from the connection point into the component\";
 //   Real ambient1.ports[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real ambient1.ports[1].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   protected parameter enumeration(Entering, Leaving, Bidirectional) ambient1.flowDirection = Modelica.Fluid.Types.PortFlowDirection.Bidirectional \"Allowed flow direction\";
@@ -1132,7 +1108,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   parameter Boolean source.medium.standardOrderComponents = true \"if true, and reducedX = true, the last element of X will be computed from the other ones\";
 //   Real source.medium.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(source.medium.T) \"Temperature of medium in [degC]\";
 //   Real source.medium.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(source.medium.p) \"Absolute pressure of medium in [bar]\";
-//   Real source.ports[1].m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if source.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+060, max = if source.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+060) \"Mass flow rate from the connection point into the component\";
+//   Real source.ports[1].m_flow(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = if source.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+60, max = if source.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+60) \"Mass flow rate from the connection point into the component\";
 //   Real source.ports[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real source.ports[1].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   protected parameter enumeration(Entering, Leaving, Bidirectional) source.flowDirection = Modelica.Fluid.Types.PortFlowDirection.Bidirectional \"Allowed flow direction\";
@@ -1427,7 +1403,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   tank1.medium.state.T = tank1.medium.T;
 //   tank1.medium.state.p = tank1.medium.p;
 //   tank1.medium.X[1] = 1.0;
-//   assert(tank1.medium.X[1] >= -1e-005 and tank1.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(tank1.medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
+//   assert(tank1.medium.X[1] >= -1e-05 and tank1.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(tank1.medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
 // of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
 //   assert(tank1.medium.p >= 0.0,\"Pressure (= \" + String(tank1.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
 // (Temperature = \" + String(tank1.medium.T,0,true,6) + \" K)\");
@@ -1456,7 +1432,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 // of the modeller. Increase nPorts to add an additional port.
 // \");
 //   assert(tank1.fluidLevel <= tank1.fluidLevel_max,\"Vessel is overflowing (fluidLevel > fluidLevel_max = \" + String(tank1.fluidLevel,0,true,6) + \")\");
-//   assert(tank1.fluidLevel > -1e-006 * tank1.fluidLevel_max,\"Fluid level (= \" + String(tank1.fluidLevel,0,true,6) + \") is below zero meaning that the solution failed.\");
+//   assert(tank1.fluidLevel > -1e-06 * tank1.fluidLevel_max,\"Fluid level (= \" + String(tank1.fluidLevel,0,true,6) + \") is below zero meaning that the solution failed.\");
 //   tank1.portDensities[1] = Modelica.Fluid.Vessels.OpenTank.Medium.density(Modelica.Fluid.Vessels.OpenTank.Medium.setState_phX(tank1.vessel_ps_static[1],if tank1.ports[1].m_flow > 0.0 then valve1.port_b.h_outflow else tank1.ports[1].h_outflow,{}));
 //   tank1.portVelocities[1] = tank1.ports[1].m_flow / (tank1.portDensities[1] * tank1.portAreas[1]);
 //   tank1.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(tank1.fluidLevel + (-0.1 * tank1.portsData_diameter[1] - tank1.portsData_height[1]),1.0,0.001,0.1 * tank1.portsData_diameter[1]);
@@ -1525,7 +1501,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   tank2.medium.state.T = tank2.medium.T;
 //   tank2.medium.state.p = tank2.medium.p;
 //   tank2.medium.X[1] = 1.0;
-//   assert(tank2.medium.X[1] >= -1e-005 and tank2.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(tank2.medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
+//   assert(tank2.medium.X[1] >= -1e-05 and tank2.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(tank2.medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
 // of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
 //   assert(tank2.medium.p >= 0.0,\"Pressure (= \" + String(tank2.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
 // (Temperature = \" + String(tank2.medium.T,0,true,6) + \" K)\");
@@ -1554,7 +1530,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 // of the modeller. Increase nPorts to add an additional port.
 // \");
 //   assert(tank2.fluidLevel <= tank2.fluidLevel_max,\"Vessel is overflowing (fluidLevel > fluidLevel_max = \" + String(tank2.fluidLevel,0,true,6) + \")\");
-//   assert(tank2.fluidLevel > -1e-006 * tank2.fluidLevel_max,\"Fluid level (= \" + String(tank2.fluidLevel,0,true,6) + \") is below zero meaning that the solution failed.\");
+//   assert(tank2.fluidLevel > -1e-06 * tank2.fluidLevel_max,\"Fluid level (= \" + String(tank2.fluidLevel,0,true,6) + \") is below zero meaning that the solution failed.\");
 //   tank2.portDensities[1] = Modelica.Fluid.Vessels.OpenTank.Medium.density(Modelica.Fluid.Vessels.OpenTank.Medium.setState_phX(tank2.vessel_ps_static[1],if tank2.ports[1].m_flow > 0.0 then valve2.port_b.h_outflow else tank2.ports[1].h_outflow,{}));
 //   tank2.portVelocities[1] = tank2.ports[1].m_flow / (tank2.portDensities[1] * tank2.portAreas[1]);
 //   tank2.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(tank2.fluidLevel + (-0.1 * tank2.portsData_diameter[1] - tank2.portsData_height[1]),1.0,0.001,0.1 * tank2.portsData_diameter[1]);
@@ -1605,7 +1581,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   ambient1.medium.state.T = ambient1.medium.T;
 //   ambient1.medium.state.p = ambient1.medium.p;
 //   ambient1.medium.X[1] = 1.0;
-//   assert(ambient1.medium.X[1] >= -1e-005 and ambient1.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient1.medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
+//   assert(ambient1.medium.X[1] >= -1e-05 and ambient1.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient1.medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
 // of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
 //   assert(ambient1.medium.p >= 0.0,\"Pressure (= \" + String(ambient1.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
 // (Temperature = \" + String(ambient1.medium.T,0,true,6) + \" K)\");
@@ -1636,7 +1612,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   source.medium.state.T = source.medium.T;
 //   source.medium.state.p = source.medium.p;
 //   source.medium.X[1] = 1.0;
-//   assert(source.medium.X[1] >= -1e-005 and source.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(source.medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
+//   assert(source.medium.X[1] >= -1e-05 and source.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(source.medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
 // of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
 //   assert(source.medium.p >= 0.0,\"Pressure (= \" + String(source.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
 // (Temperature = \" + String(source.medium.T,0,true,6) + \" K)\");

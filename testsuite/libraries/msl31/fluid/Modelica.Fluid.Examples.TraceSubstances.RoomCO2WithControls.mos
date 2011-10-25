@@ -29,7 +29,16 @@ checkModel(Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls); getErro
 // 
 // [package.mo:4093:7-4094:50:writable] Warning: Variable boundary4.medium.Xi: Non-array modification 'if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
-// [Sources.mo:768:8-768:39:writable] Error: Type mismatch in equation {}={boundary4.medium.Xi[1]} of type Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[0]=Real(stateSelect=if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.01, quantity="MassFraction", unit="1")[1]
+// [package.mo:4093:7-4094:50:writable] Warning: Variable freshAir.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable freshAir.medium.Xi: Non-array modification 'if freshAir.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [Interfaces.mo:579:7-582:72:writable] Error: Array dimension mismatch, expression {0.001519} has type Real[1], expected array dimensions [0]
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [Interfaces.mo:579:7-582:72:writable] Error: Array dimension mismatch, expression {0.001519} has type Real[1], expected array dimensions [0]
 // Error: Error occured while flattening model Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls
 // "
 // "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
@@ -45,7 +54,14 @@ checkModel(Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls); getErro
 // 
 // [package.mo:4093:7-4094:50:writable] Warning: Variable boundary4.medium.Xi: Non-array modification 'if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
-// [Sources.mo:768:8-768:39:writable] Error: Type mismatch in equation {}={boundary4.medium.Xi[1]} of type Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[0]=Real(stateSelect=if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.01, quantity=\"MassFraction\", unit=\"1\")[1]
+// [package.mo:4093:7-4094:50:writable] Warning: Variable freshAir.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable freshAir.medium.Xi: Non-array modification 'if freshAir.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
 // Error: Error occured while flattening model Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls
 // "
 // ""
