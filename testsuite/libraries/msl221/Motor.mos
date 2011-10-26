@@ -190,5 +190,6 @@ getErrorString();
 //   coreLosses.Q_flow = lossTable.y[2];
 // end Modelica.Thermal.HeatTransfer.Examples.Motor;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

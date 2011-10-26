@@ -14,7 +14,8 @@ checkModel(BioChem.Examples.Glycolysis);
 getErrorString();
 // Result:
 // true
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // true
 // ""
 // "class BioChem.Examples.Glycolysis

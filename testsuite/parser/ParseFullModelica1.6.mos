@@ -11,7 +11,8 @@ list();
 
 // Result:
 // true
-// ""
+// "Notification: Modelica language version set to 1.x due to loading of MSL 1.6.
+// "
 // "package Modelica \"Modelica Standard Library\"
 //   extends Icons.Library;
 //   annotation(Window(x = 0.02, y = 0.01, width = 0.2, height = 0.57, library = 1, autolayout = 1), version = \"1.6\", versionDate = \"2004-06-30\", Dymola(checkSum = \"1560322557:4250690600\"), Documentation(info = \"<HTML>

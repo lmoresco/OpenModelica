@@ -1,6 +1,7 @@
 // name:     TransformerYY
 // keywords: instantiate 
 // status:   correct
+// cflags:   +std=2.x
 // 
 //  instantiate TranformerYY and check for error msg
 //

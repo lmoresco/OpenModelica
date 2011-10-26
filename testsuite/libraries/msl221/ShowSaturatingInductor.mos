@@ -93,5 +93,6 @@ getErrorString();
 //   Ground1.p.v = SineVoltage1.n.v;
 // end Modelica.Electrical.Analog.Examples.ShowSaturatingInductor;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

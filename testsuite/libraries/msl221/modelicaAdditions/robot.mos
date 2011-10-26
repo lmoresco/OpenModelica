@@ -1,5 +1,6 @@
 // name: ModelicaAdditions.MultiBody.Examples.Robots.r3.robot
 // keywords: MultiBody, Examples
+// cflags:   +std=2.x
 // status: correct
 
 loadFile("robotTotal.mo");

@@ -1,6 +1,7 @@
 // name:     Sample3
 // keywords: events, sample
 // status: correct
+// cflags: +std=2.x
 // teardown_command: rm -rf tst2B* output.log
 //
 // Event handling with more then one sample call outside when clause

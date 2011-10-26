@@ -1,6 +1,7 @@
 // name:     Test3PhaseStart
 // keywords: initialization, overdetermined, additial equations.
 // status:   correct
+// cflags:   +std=2.x
 // teardown_command: rm -f Test3Phase.Test3Phase* output.log
 //  Simulate models and read in data.
 //

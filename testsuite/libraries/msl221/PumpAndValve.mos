@@ -387,5 +387,6 @@ getErrorString();
 //   Convection1.Gc = G.y;
 // end Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

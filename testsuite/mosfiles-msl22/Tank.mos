@@ -1,6 +1,7 @@
 // name:     Tank
 // keywords: Simulate, readSimulationData
 // status:   correct
+// cflags:   +std=2.x
 // teardown_command: rm -f TestModels.BlockModels* output.log
 // 
 //  Simulate systems of blocks 

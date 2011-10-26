@@ -8,6 +8,7 @@
 connector Signal 
   parameter Integer n;
   Real values[n];
+  flow Real flows[n];
 end Signal; 
 
 model ArrayModification15 
@@ -22,7 +23,13 @@ end ArrayModification15;
 //   Real mySignals[1].values[1];
 //   Real mySignals[1].values[2];
 //   Real mySignals[1].values[3];
+//   Real mySignals[1].flows[1];
+//   Real mySignals[1].flows[2];
+//   Real mySignals[1].flows[3];
 // equation
 //   mySignals[1].values[2] = 1.0;
+//   mySignals[1].flows[1] = 0.0;
+//   mySignals[1].flows[2] = 0.0;
+//   mySignals[1].flows[3] = 0.0;
 // end ArrayModification15;
 // endResult

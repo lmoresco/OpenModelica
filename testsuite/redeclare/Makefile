@@ -26,6 +26,7 @@ RedeclareModifierInvalid1.mo \
 RedeclareModifierInvalid2.mo \
 RedeclareVisibility.mo \
 RedeclareVisibility2.mo \
+ReplaceableBaseClass.mo \
 BranchingDynamicPipes.mo \
 
 

@@ -138,5 +138,6 @@ getErrorString();
 //   Damper1.flange_a.s = SlidingMass1.flange_b.s;
 // end Modelica.Mechanics.Translational.Examples.Damper;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

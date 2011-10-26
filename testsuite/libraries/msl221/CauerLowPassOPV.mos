@@ -461,5 +461,6 @@ getErrorString();
 //   G.p.v = Op1.in_p.v;
 // end Modelica.Electrical.Analog.Examples.CauerLowPassOPV;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

@@ -1,5 +1,6 @@
 // name: ModelicaAdditions.MultiBody.Examples.Loops.FourBar1
 // keywords: MultiBody, Examples
+// cflags: +std=2.x
 // status: correct
 
 loadFile("FourBar1Total.mo");

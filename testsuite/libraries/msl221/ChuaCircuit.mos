@@ -98,5 +98,6 @@ getErrorString();
 //   C1.p.v = Nr.p.v;
 // end Modelica.Electrical.Analog.Examples.ChuaCircuit;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

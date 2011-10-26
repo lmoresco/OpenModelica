@@ -259,7 +259,8 @@ getErrorString();
 //   inertia2.flange_a.phi = spring.flange_b.phi;
 // end Modelica.Blocks.Examples.PID_Controller;
 // "
-// "[Sources.mo:251:5-251:97:writable] Warning: Variable kinematicPTP.qd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// [Sources.mo:251:5-251:97:writable] Warning: Variable kinematicPTP.qd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Sources.mo:252:5-252:102:writable] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 

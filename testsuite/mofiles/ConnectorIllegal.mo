@@ -7,6 +7,7 @@
 
 connector IllegalConnector
   Integer i;
+  flow Real f;
 equation
   i = 2;
 end IllegalConnector;
@@ -16,7 +17,7 @@ model ConnectorIllegal
 end ConnectorIllegal;
 // Result:
 // Error processing file: ConnectorIllegal.mo
-// [ConnectorIllegal.mo:11:3-11:8:writable] Error: Equations are not allowed in connector.
+// [ConnectorIllegal.mo:12:3-12:8:writable] Error: Equations are not allowed in connector.
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

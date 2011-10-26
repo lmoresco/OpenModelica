@@ -1690,5 +1690,6 @@ getErrorString();
 //   Ground3.p.v = Star3.pin_n.v;
 // end Modelica.Electrical.Machines.Examples.AIMS_start;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

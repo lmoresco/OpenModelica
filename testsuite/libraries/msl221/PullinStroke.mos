@@ -1,5 +1,6 @@
 // name:     PullinStroke 
 // keywords: instantiate, Magnetic 
+// cflags:   +std=2.x
 // status:   correct
 // 
 //  instantiate Magnetic example

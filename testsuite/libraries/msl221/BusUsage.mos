@@ -83,5 +83,6 @@ getErrorString();
 //   bus.realSignal2 = restBus.bus.realSignal2;
 // end Modelica.Blocks.Examples.BusUsage;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

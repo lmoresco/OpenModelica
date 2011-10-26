@@ -1,6 +1,7 @@
 // name:     AIMC_DOL
 // keywords: instantiate 
 // status:   correct
+// cflags:   +std=2.x
 // 
 //  instantiate AIMC_DOL and check for error msg
 //

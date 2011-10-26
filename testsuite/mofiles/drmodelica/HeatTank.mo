@@ -1,5 +1,6 @@
 // name:     HeatTank
 // keywords: replaceable connector
+// cflags: +std=2.x
 // status:   correct
 // 
 // Error in implementation, replaceable connector.

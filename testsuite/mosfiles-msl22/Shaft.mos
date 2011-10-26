@@ -1,6 +1,7 @@
 // name:     Shaft
 // keywords: Simulate, readSimulationData
 // status:   correct
+// cflags:   +std=2.x
 // teardown_command: rm -f TestModels.RotationalModels.SpringInertia.Shaft* output.log
 // 
 //  Simulate Rotational inertias with springs 

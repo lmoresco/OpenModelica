@@ -159,5 +159,6 @@ getErrorString();
 //   initialStep.subgraphStatePort.resume = step.subgraphStatePort.resume;
 // end Modelica.StateGraph.Examples.FirstExample_Variant3;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

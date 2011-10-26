@@ -262,5 +262,6 @@ getErrorString();
 //   DCEE1.pin_an.v = SignalVoltage1.n.v;
 // end Modelica.Electrical.Machines.Examples.DCEE_start;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

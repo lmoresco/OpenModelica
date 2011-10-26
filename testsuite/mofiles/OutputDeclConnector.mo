@@ -7,6 +7,7 @@
 
 connector OutputConnector
   Real r;
+  flow Real f;
 end OutputConnector;
 
 class OutputDeclConnector
@@ -18,7 +19,9 @@ end OutputDeclConnector;
 // Result:
 // class OutputDeclConnector
 //   output Real oc.r;
+//   output Real oc.f;
 // equation
 //   oc.r = 1.0;
+//   oc.f = 0.0;
 // end OutputDeclConnector;
 // endResult

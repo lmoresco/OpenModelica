@@ -62,5 +62,6 @@ getErrorString();
 //   G6P.n1.V = uur.s1.V;
 // end BioChem.Examples.EnzMM;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

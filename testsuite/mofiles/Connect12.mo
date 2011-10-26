@@ -1,6 +1,7 @@
 // name: Connect12
 // keywords: array, connector, extending basictype
 // status: correct
+// cflags: +std=2.x
 //
 // This test is for connectors extending a basictype.
 // New in Modelica v2.2.

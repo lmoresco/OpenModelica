@@ -1,6 +1,7 @@
 // name:     WeakAxis
 // keywords: Simulate, readSimulationData
 // status:   correct
+// cflags:   +std=2.x
 // teardown_command: rm -f TestModels.Professional.WeakAxis* output.log
 // 
 //  Simulate Rotational Systems

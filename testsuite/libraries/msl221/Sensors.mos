@@ -96,5 +96,6 @@ getErrorString();
 //   PositionSensor2.flange_a.s = SlidingMass1.flange_b.s;
 // end Modelica.Mechanics.Translational.Examples.Sensors;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

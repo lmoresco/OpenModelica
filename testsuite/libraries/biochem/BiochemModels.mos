@@ -990,7 +990,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   parameter Real iv4 = 0.148871;
 //   parameter Real iv5 = 4.34299;
 //   parameter Real iv6 = 0.00406177;
-//   parameter Real iv7 = 1.72073e-005;
+//   parameter Real iv7 = 1.72073e-05;
 //   parameter Real iv8 = 0.0695775;
 //   parameter Real iv9 = 28.2621;
 //   parameter Real iv10 = 0.000398124;
@@ -1995,7 +1995,8 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // true
 // true
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // true
 // ""
 // "Check of BioChem.Examples.InsulinSignaling_Sedaghat completed successfully.

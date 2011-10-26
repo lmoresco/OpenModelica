@@ -1010,5 +1010,6 @@ getErrorString();
 //   Ground1.p.v = Star1.pin_n.v;
 // end Modelica.Electrical.Machines.Examples.SMR_Inverter;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

@@ -1142,5 +1142,6 @@ getErrorString();
 //   IdealCloser1.plug_p.pin[3].v = SineVoltage1.plug_p.pin[3].v;
 // end Modelica.Electrical.Machines.Examples.AIMC_YD;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

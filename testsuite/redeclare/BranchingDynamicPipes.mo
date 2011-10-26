@@ -7,6 +7,7 @@ connector FluidPort
   replaceable package Medium = PartialMedium;
 
   Real[Medium.nXi] Xi_outflow;
+  flow Real[Medium.nXi] f;
 end FluidPort;
 
 model PartialSource
@@ -40,7 +41,9 @@ end BranchingDynamicPipes;
 // class BranchingDynamicPipes
 //   Real source.medium.Xi[1];
 //   Real source.port.Xi_outflow[1];
+//   Real source.port.f[1];
 // equation
 //   source.port.Xi_outflow[1] = source.medium.Xi[1];
+//   source.port.f[1] = 0.0;
 // end BranchingDynamicPipes;
 // endResult

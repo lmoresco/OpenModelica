@@ -243,5 +243,6 @@ getErrorString();
 //   DCSE1.flange_a.phi = LoadInertia.flange_a.phi;
 // end Modelica.Electrical.Machines.Examples.DCSE_start;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

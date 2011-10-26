@@ -346,5 +346,6 @@ getErrorString();
 //   clutch3.f_normalized = step2.y;
 // end Modelica.Mechanics.Rotational.Examples.CoupledClutches;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

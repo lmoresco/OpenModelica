@@ -367,7 +367,8 @@ getErrorString();
 //   Nand.Vdd.v = VDD.p.v;
 // end Modelica.Electrical.Analog.Examples.NandGate;
 // "
-// "[NandGate.mo:54:3-54:128:writable] Warning: Component Nand has the same name as its type .Modelica.Electrical.Analog.Examples.Utilities.Nand.
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// [NandGate.mo:54:3-54:128:writable] Warning: Component Nand has the same name as its type .Modelica.Electrical.Analog.Examples.Utilities.Nand.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // "
 // endResult

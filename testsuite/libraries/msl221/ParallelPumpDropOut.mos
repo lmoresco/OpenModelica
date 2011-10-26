@@ -485,5 +485,6 @@ getErrorString();
 //   Convection1.solid.T = PrescribedHeatFlow1.port.T;
 // end Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

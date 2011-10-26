@@ -255,7 +255,8 @@ getErrorString();
 //   OuterContactA.flange_b.s = SpringPlateA.flange_a.s;
 // end Modelica.Mechanics.Translational.Examples.PreLoad;
 // "
-// "[Translational.mo:448:7-448:166:writable] Warning: Component Spring has the same name as its type .Modelica.Mechanics.Translational.Spring.
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// [Translational.mo:448:7-448:166:writable] Warning: Component Spring has the same name as its type .Modelica.Mechanics.Translational.Spring.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // "
 // endResult

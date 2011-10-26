@@ -1,5 +1,6 @@
 // name:     HeatTankExpanded
 // keywords: 
+// cflags: +std=2.x
 // status:   correct
 // 
 // 

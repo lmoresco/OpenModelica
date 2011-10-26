@@ -653,5 +653,6 @@ getErrorString();
 //   RL1.plug_n.pin[3].v = StarL1.plug_p.pin[3].v;
 // end Modelica.Electrical.MultiPhase.Examples.TransformerYY;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

@@ -1019,5 +1019,6 @@ getErrorString();
 //   CurrentRMSsensor1.plug_p.pin[3].v = SignalVoltage1.plug_p.pin[3].v;
 // end Modelica.Electrical.Machines.Examples.SMPM_Inverter;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

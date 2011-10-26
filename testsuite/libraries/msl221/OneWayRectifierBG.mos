@@ -1,5 +1,6 @@
 // name:     OneWayRectifierBG 
 // keywords: instantiate, bondlib
+// cflags:   +std=2.x
 // status:   correct
 // 
 //  simulate OneWayRectifierBG BondLib Spice example

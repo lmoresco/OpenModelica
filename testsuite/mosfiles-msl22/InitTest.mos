@@ -1,6 +1,7 @@
 // name:     InitTest
 // keywords: Simulation
 // status:   correct
+// cflags:   +std=2.x
 // teardown_command: rm -f Inittest* output.log
 // 
 //  Simulate models and read in data.

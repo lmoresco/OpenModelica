@@ -1,6 +1,7 @@
 // name:     nonConstantParam
 // keywords: nonConstantParam
 // status:   correct
+// cflags:   +std=2.x
 // teardown_command: rm -rf Modelica_Electrical_Machines_Examples_DCEE_start*
 //
 //

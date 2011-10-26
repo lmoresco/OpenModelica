@@ -7,6 +7,7 @@
 
 connector DiscreteConnector
   Real r;
+  flow Real f;
 end DiscreteConnector;
 
 class DiscreteDeclConnector
@@ -18,7 +19,9 @@ end DiscreteDeclConnector;
 // Result:
 // class DiscreteDeclConnector
 //   discrete Real dc.r;
+//   discrete Real dc.f;
 // equation
 //   dc.r = 1.0;
+//   dc.f = 0.0;
 // end DiscreteDeclConnector;
 // endResult

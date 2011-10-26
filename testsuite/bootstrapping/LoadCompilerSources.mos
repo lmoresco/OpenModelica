@@ -140,6 +140,7 @@ loadFile("../../Compiler/Util/List.mo");
 loadFile("../../Compiler/Util/OptManager.mo");
 loadFile("../../Compiler/Util/Print.mo");
 loadFile("../../Compiler/Util/RTOpts.mo");
+loadFile("../../Compiler/Util/RTOptsData.mo");
 loadFile("../../Compiler/Util/Settings.mo");
 loadFile("../../Compiler/Util/SimulationResults.mo");
 loadFile("../../Compiler/Util/Socket.mo");

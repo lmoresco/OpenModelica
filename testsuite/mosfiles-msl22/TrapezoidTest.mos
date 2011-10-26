@@ -1,6 +1,7 @@
 // name:     TrapezoidTest
 // keywords: Simulation
 // status:   correct
+// cflags:   +std=2.x
 // teardown_command: rm -f Trapezoidtest* output.log
 // 
 //  Simulate models and read in data.

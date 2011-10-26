@@ -1,6 +1,7 @@
 // name:     Blocks Sources
 // keywords: Simulate, readSimulationData
 // status:   correct
+// cflags:   +std=2.x
 // teardown_command: rm -f *ConstantTest_* ExpSineTest_* *ExponentialsTest_* *SineTest_* *PulseTest_*
 //  Simulate blocks sources and simulate.
 //

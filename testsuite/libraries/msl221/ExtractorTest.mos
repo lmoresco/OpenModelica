@@ -1,5 +1,6 @@
 //name:         ExtractorTest
 //keyword:      instantiating msl221
+//cflags:       +std=2.x
 //status:       correct
 //
 // instantiate example

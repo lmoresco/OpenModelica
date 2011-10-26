@@ -1,5 +1,6 @@
 // name:     TankPI
 // keywords: <insert keywords here>
+// cflags: +std=2.x
 // status:   correct
 // 
 // <insert description here>

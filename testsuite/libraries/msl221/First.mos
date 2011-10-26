@@ -165,5 +165,6 @@ getErrorString();
 //   damper.flange_b.phi = fixed.flange_b.phi;
 // end Modelica.Mechanics.Rotational.Examples.First;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

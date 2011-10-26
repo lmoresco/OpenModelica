@@ -643,5 +643,6 @@ getErrorString();
 //   compositeStep.exitStep.subgraphStatePort.resume = compositeStep.step4a.subgraphStatePort.resume;
 // end Modelica.StateGraph.Examples.ShowCompositeStep;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

@@ -278,5 +278,6 @@ getErrorString();
 //   Pipe1.heatPort.T = ThermalConductor1.port_b.T;
 // end Modelica.Thermal.FluidHeatFlow.Examples.OneMass;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

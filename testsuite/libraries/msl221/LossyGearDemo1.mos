@@ -234,5 +234,6 @@ getErrorString();
 //   Inertia1.flange_b.phi = gear.flange_a.phi;
 // end Modelica.Mechanics.Rotational.Examples.LossyGearDemo1;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult

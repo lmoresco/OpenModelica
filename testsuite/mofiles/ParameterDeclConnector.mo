@@ -7,6 +7,7 @@
 
 connector ParameterConnector
   Real r;
+  flow Real f;
 end ParameterConnector;
 
 class ParameterDeclConnector
@@ -18,8 +19,10 @@ end ParameterDeclConnector;
 // Result:
 // class ParameterDeclConnector
 //   parameter Real pc.r;
+//   parameter Real pc.f;
 // equation
 //   pc.r = 1.0;
+//   pc.f = 0.0;
 // end ParameterDeclConnector;
 // Warning: Parameter pc.r has neither value nor start value, and is fixed during initialization (fixed=true)
 // 

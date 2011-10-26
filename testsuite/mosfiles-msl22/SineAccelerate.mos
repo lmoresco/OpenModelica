@@ -1,6 +1,7 @@
 // name:     SineAccelerate
 // keywords: Simulate, readSimulationData
 // status:   correct
+// cflags:   +std=2.x
 // teardown_command: rm -f TestModels.RotationalModels.SpringInertia.SineAccelerate* output.log
 // 
 //  Simulate Rotational inertias with springs 

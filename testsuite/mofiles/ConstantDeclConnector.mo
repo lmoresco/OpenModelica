@@ -7,6 +7,7 @@
 
 connector ConstantConnector
   Real r;
+  flow Real f;
 end ConstantConnector;
 
 model ConstantDeclConnector
@@ -16,5 +17,8 @@ end ConstantDeclConnector;
 // Result:
 // class ConstantDeclConnector
 //   constant Real cc.r = 2.0;
+//   constant Real cc.f;
+// equation
+//   cc.f = 0.0;
 // end ConstantDeclConnector;
 // endResult

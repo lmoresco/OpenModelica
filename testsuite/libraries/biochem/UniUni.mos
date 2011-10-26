@@ -1502,5 +1502,6 @@ getErrorString();
 //   sF.n1.V = uuifa.aF1.V;
 // end BioChem.Examples.MassAction.UniUni;
 // "
-// ""
+// "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// "
 // endResult
