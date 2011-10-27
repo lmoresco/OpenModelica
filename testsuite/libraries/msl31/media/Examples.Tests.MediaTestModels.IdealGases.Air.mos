@@ -416,8 +416,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air); getErr
 // 
 // class Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air
 //   parameter Real p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 101325.0 \"Initial value of pressure\";
-//   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Medium.T_default \"Initial value of temperature\";
-//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Medium.h_default \"Initial value of specific enthalpy\";
+//   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Initial value of temperature\";
+//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{1.0}) \"Initial value of specific enthalpy\";
 //   parameter Real X_start[1] = 1.0 \"Initial value of mass fractions\";
 //   parameter Real volume.V(quantity = \"Volume\", unit = \"m3\") = 0.1 \"Fixed size of junction volume\";
 //   parameter Boolean volume.use_p_start = true \"select p_start or d_start\";
@@ -591,11 +591,9 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air); getErr
 //   ambient.port.h = shortPipe.port_b.h;
 // end Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air;
 // "
-// "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air
-// "
+// ""
 // "Check of Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air completed successfully.
 // 
-// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air
 // 
 // Class Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air has 60 equation(s) and 60 variable(s).
 // 36 of these are trivial equation(s).

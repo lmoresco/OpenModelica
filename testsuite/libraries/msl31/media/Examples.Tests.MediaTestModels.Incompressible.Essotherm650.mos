@@ -78,7 +78,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
 // end Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T_der \"Compute specific enthalpy from temperature\"
@@ -86,7 +86,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real dT \"temperature derivative\";
 //   output Real dh \"derivative of Specific enthalpy at T\";
 // algorithm
-//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_Cp,Modelica.SIunits.Conversions.to_degC(T)) * dT;
+//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T)) * dT;
 // end Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T_der;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_pT \"Compute specific enthalpy from pressure and temperature\"
@@ -95,7 +95,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Boolean densityOfT = false \"include or neglect density derivative dependence of enthalpy\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T));
 // end Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_pT;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.invertTemp \"function to invert temperatures\"
@@ -157,7 +157,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
 // end Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T_der \"Compute specific enthalpy from temperature\"
@@ -165,7 +165,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real dT \"temperature derivative\";
 //   output Real dh \"derivative of Specific enthalpy at T\";
 // algorithm
-//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_Cp,Modelica.SIunits.Conversions.to_degC(T)) * dT;
+//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T)) * dT;
 // end Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T_der;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_pT \"Compute specific enthalpy from pressure and temperature\"
@@ -174,7 +174,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Boolean densityOfT = false \"include or neglect density derivative dependence of enthalpy\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T));
 // end Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_pT;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.invertTemp \"function to invert temperatures\"
@@ -257,7 +257,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.h_T;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.h_T_der \"Compute specific enthalpy from temperature\"
@@ -265,7 +265,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real dT \"temperature derivative\";
 //   output Real dh \"derivative of Specific enthalpy at T\";
 // algorithm
-//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_Cp,Modelica.SIunits.Conversions.to_degC(T)) * dT;
+//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T)) * dT;
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.h_T_der;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.h_pT \"Compute specific enthalpy from pressure and temperature\"
@@ -274,7 +274,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Boolean densityOfT = false \"include or neglect density derivative dependence of enthalpy\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.h_pT;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.invertTemp \"function to invert temperatures\"
@@ -336,7 +336,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.h_T;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.h_T_der \"Compute specific enthalpy from temperature\"
@@ -344,7 +344,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real dT \"temperature derivative\";
 //   output Real dh \"derivative of Specific enthalpy at T\";
 // algorithm
-//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_Cp,Modelica.SIunits.Conversions.to_degC(T)) * dT;
+//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T)) * dT;
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.h_T_der;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.h_pT \"Compute specific enthalpy from pressure and temperature\"
@@ -353,7 +353,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Boolean densityOfT = false \"include or neglect density derivative dependence of enthalpy\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.h_pT;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.invertTemp \"function to invert temperatures\"
@@ -415,7 +415,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
 // end Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T;
 // 
 // function Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T_der \"Compute specific enthalpy from temperature\"
@@ -423,7 +423,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real dT \"temperature derivative\";
 //   output Real dh \"derivative of Specific enthalpy at T\";
 // algorithm
-//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_Cp,Modelica.SIunits.Conversions.to_degC(T)) * dT;
+//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T)) * dT;
 // end Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T_der;
 // 
 // function Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_pT \"Compute specific enthalpy from pressure and temperature\"
@@ -432,7 +432,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Boolean densityOfT = false \"include or neglect density derivative dependence of enthalpy\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T));
 // end Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_pT;
 // 
 // function Modelica.Media.Examples.Tests.Components.PortVolume.Medium.invertTemp \"function to invert temperatures\"
@@ -494,7 +494,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
 // end Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.h_T;
 // 
 // function Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.h_T_der \"Compute specific enthalpy from temperature\"
@@ -502,7 +502,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real dT \"temperature derivative\";
 //   output Real dh \"derivative of Specific enthalpy at T\";
 // algorithm
-//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_Cp,Modelica.SIunits.Conversions.to_degC(T)) * dT;
+//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T)) * dT;
 // end Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.h_T_der;
 // 
 // function Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.h_pT \"Compute specific enthalpy from pressure and temperature\"
@@ -511,7 +511,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Boolean densityOfT = false \"include or neglect density derivative dependence of enthalpy\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T));
 // end Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.h_pT;
 // 
 // function Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.invertTemp \"function to invert temperatures\"
@@ -573,7 +573,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
 // end Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.h_T;
 // 
 // function Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.h_T_der \"Compute specific enthalpy from temperature\"
@@ -581,7 +581,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Real dT \"temperature derivative\";
 //   output Real dh \"derivative of Specific enthalpy at T\";
 // algorithm
-//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_Cp,Modelica.SIunits.Conversions.to_degC(T)) * dT;
+//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T)) * dT;
 // end Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.h_T_der;
 // 
 // function Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.h_pT \"Compute specific enthalpy from pressure and temperature\"
@@ -590,7 +590,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   input Boolean densityOfT = false \"include or neglect density derivative dependence of enthalpy\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(poly_Cp,Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,Modelica.SIunits.Conversions.to_degC(T));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),Modelica.SIunits.Conversions.to_degC(T));
 // end Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.h_pT;
 // 
 // function Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.invertTemp \"function to invert temperatures\"
@@ -836,8 +836,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 // 
 // class Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650
 //   parameter Real p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 101325.0 \"Initial value of pressure\";
-//   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Medium.T_default \"Initial value of temperature\";
-//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Medium.h_default \"Initial value of specific enthalpy\";
+//   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Initial value of temperature\";
+//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{1.0}) \"Initial value of specific enthalpy\";
 //   parameter Real X_start[1] = 1.0 \"Initial value of mass fractions\";
 //   parameter Real volume.V(quantity = \"Volume\", unit = \"m3\") = 0.1 \"Fixed size of junction volume\";
 //   parameter Boolean volume.use_p_start = true \"select p_start or d_start\";
@@ -937,12 +937,12 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   volume.medium.T = volume.T_start;
 // equation
 //   assert(true,\"Medium Essotherm 650 can not be used without assigning tableDensity.\");
-//   assert(volume.medium.T >= T_min and volume.medium.T <= T_max,\"Temperature T (= \" + String(volume.medium.T,0,true,6) + \" K) is not in the allowed range (\" + String(T_min,0,true,6) + \" K <= T <= \" + String(T_max,0,true,6) + \" K) required from medium model \\\"\" + \"Essotherm 650\" + \"\\\".\");
+//   assert(volume.medium.T >= Modelica.SIunits.Conversions.from_degC(0.0) and volume.medium.T <= Modelica.SIunits.Conversions.from_degC(320.0),\"Temperature T (= \" + String(volume.medium.T,0,true,6) + \" K) is not in the allowed range (\" + String(Modelica.SIunits.Conversions.from_degC(0.0),0,true,6) + \" K <= T <= \" + String(Modelica.SIunits.Conversions.from_degC(320.0),0,true,6) + \" K) required from medium model \\\"\" + \"Essotherm 650\" + \"\\\".\");
 //   volume.medium.R = 8.314472;
-//   volume.medium.cp = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_Cp,volume.medium.T_degC);
+//   volume.medium.cp = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),volume.medium.T_degC);
 //   volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T(volume.medium.T);
 //   volume.medium.u = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T(volume.medium.T) + -101325.0 / volume.medium.d;
-//   volume.medium.d = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,volume.medium.T_degC);
+//   volume.medium.d = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),volume.medium.T_degC);
 //   volume.medium.state.T = volume.medium.T;
 //   volume.medium.state.p = volume.medium.p;
 //   volume.medium.MM = 0.1;
@@ -958,12 +958,12 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   der(volume.m) = volume.port.m_flow;
 //   der(volume.U) = volume.port.H_flow;
 //   assert(true,\"Medium Essotherm 650 can not be used without assigning tableDensity.\");
-//   assert(fixedMassFlowRate.medium.T >= T_min and fixedMassFlowRate.medium.T <= T_max,\"Temperature T (= \" + String(fixedMassFlowRate.medium.T,0,true,6) + \" K) is not in the allowed range (\" + String(T_min,0,true,6) + \" K <= T <= \" + String(T_max,0,true,6) + \" K) required from medium model \\\"\" + \"Essotherm 650\" + \"\\\".\");
+//   assert(fixedMassFlowRate.medium.T >= Modelica.SIunits.Conversions.from_degC(0.0) and fixedMassFlowRate.medium.T <= Modelica.SIunits.Conversions.from_degC(320.0),\"Temperature T (= \" + String(fixedMassFlowRate.medium.T,0,true,6) + \" K) is not in the allowed range (\" + String(Modelica.SIunits.Conversions.from_degC(0.0),0,true,6) + \" K <= T <= \" + String(Modelica.SIunits.Conversions.from_degC(320.0),0,true,6) + \" K) required from medium model \\\"\" + \"Essotherm 650\" + \"\\\".\");
 //   fixedMassFlowRate.medium.R = 8.314472;
-//   fixedMassFlowRate.medium.cp = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_Cp,fixedMassFlowRate.medium.T_degC);
+//   fixedMassFlowRate.medium.cp = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),fixedMassFlowRate.medium.T_degC);
 //   fixedMassFlowRate.medium.h = Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T(fixedMassFlowRate.medium.T);
 //   fixedMassFlowRate.medium.u = Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T(fixedMassFlowRate.medium.T) + -101325.0 / fixedMassFlowRate.medium.d;
-//   fixedMassFlowRate.medium.d = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,fixedMassFlowRate.medium.T_degC);
+//   fixedMassFlowRate.medium.d = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),fixedMassFlowRate.medium.T_degC);
 //   fixedMassFlowRate.medium.state.T = fixedMassFlowRate.medium.T;
 //   fixedMassFlowRate.medium.state.p = fixedMassFlowRate.medium.p;
 //   fixedMassFlowRate.medium.MM = 0.1;
@@ -977,12 +977,12 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   fixedMassFlowRate.port.m_flow = -fixedMassFlowRate.m_flow;
 //   fixedMassFlowRate.port.H_flow = semiLinear(fixedMassFlowRate.port.m_flow,fixedMassFlowRate.port.h,fixedMassFlowRate.medium.h);
 //   assert(true,\"Medium Essotherm 650 can not be used without assigning tableDensity.\");
-//   assert(ambient.medium.T >= T_min and ambient.medium.T <= T_max,\"Temperature T (= \" + String(ambient.medium.T,0,true,6) + \" K) is not in the allowed range (\" + String(T_min,0,true,6) + \" K <= T <= \" + String(T_max,0,true,6) + \" K) required from medium model \\\"\" + \"Essotherm 650\" + \"\\\".\");
+//   assert(ambient.medium.T >= Modelica.SIunits.Conversions.from_degC(0.0) and ambient.medium.T <= Modelica.SIunits.Conversions.from_degC(320.0),\"Temperature T (= \" + String(ambient.medium.T,0,true,6) + \" K) is not in the allowed range (\" + String(Modelica.SIunits.Conversions.from_degC(0.0),0,true,6) + \" K <= T <= \" + String(Modelica.SIunits.Conversions.from_degC(320.0),0,true,6) + \" K) required from medium model \\\"\" + \"Essotherm 650\" + \"\\\".\");
 //   ambient.medium.R = 8.314472;
-//   ambient.medium.cp = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_Cp,ambient.medium.T_degC);
+//   ambient.medium.cp = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2),ambient.medium.T_degC);
 //   ambient.medium.h = Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T(ambient.medium.T);
 //   ambient.medium.u = Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T(ambient.medium.T) + -101325.0 / ambient.medium.d;
-//   ambient.medium.d = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(poly_rho,ambient.medium.T_degC);
+//   ambient.medium.d = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate(Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2),ambient.medium.T_degC);
 //   ambient.medium.state.T = ambient.medium.T;
 //   ambient.medium.state.p = ambient.medium.p;
 //   ambient.medium.MM = 0.1;
@@ -1018,10 +1018,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 // [Incompressible.mo:302:7-302:72:writable] Error: No constant value for variable TinK in scope Modelica.Media.Incompressible.TableBased.h_T_der.
 // [Incompressible.mo:290:7-291:30:writable] Error: No constant value for variable TinK in scope Modelica.Media.Incompressible.TableBased.h_T.
 // [Incompressible.mo:315:7-319:83:writable] Error: No constant value for variable TinK in scope Modelica.Media.Incompressible.TableBased.h_pT.
-// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650
 // [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2).
 // [Incompressible.mo:80:5-82:98:writable] Warning: Failed to deduce dimensions of poly_Cp due to unknown dimensions of modifier Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2).
-// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650
 // [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2).
 // [Incompressible.mo:80:5-82:98:writable] Warning: Failed to deduce dimensions of poly_Cp due to unknown dimensions of modifier Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2).
 // [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2).
@@ -1066,10 +1064,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 // [Incompressible.mo:302:7-302:72:writable] Error: No constant value for variable TinK in scope Modelica.Media.Incompressible.TableBased.h_T_der.
 // [Incompressible.mo:290:7-291:30:writable] Error: No constant value for variable TinK in scope Modelica.Media.Incompressible.TableBased.h_T.
 // [Incompressible.mo:315:7-319:83:writable] Error: No constant value for variable TinK in scope Modelica.Media.Incompressible.TableBased.h_pT.
-// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650
 // [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2).
 // [Incompressible.mo:80:5-82:98:writable] Warning: Failed to deduce dimensions of poly_Cp due to unknown dimensions of modifier Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2).
-// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650
 // [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2).
 // [Incompressible.mo:80:5-82:98:writable] Warning: Failed to deduce dimensions of poly_Cp due to unknown dimensions of modifier Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{1770.0,1850.0,1920.0,1990.0,2060.0,2130.0,2310.0,2490.0,2670.0,2850.0,2920.0},2).
 // [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Polynomials_Temp.fitting({0.0,20.0,40.0,60.0,80.0,100.0,150.0,200.0,250.0,300.0,320.0},{909.0,897.0,884.0,871.0,859.0,846.0,813.0,781.0,748.0,715.0,702.0},2).

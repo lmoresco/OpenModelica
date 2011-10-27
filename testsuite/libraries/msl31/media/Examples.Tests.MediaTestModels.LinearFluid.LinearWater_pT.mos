@@ -178,7 +178,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   input Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := reference_h + (-298.15 + state.T) * cp_const + (-101325.0 + state.p * (1.0 + -298.15 * beta_const)) / reference_d;
+//   h := Modelica.Media.Water.StandardWater.specificEnthalpy(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-298.15 + state.T) * Modelica.Media.Water.StandardWater.specificHeatCapacityCp(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-101325.0 + state.p * (1.0 + -298.15 * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) / Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
 // end Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -209,7 +209,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   input Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := reference_h + (-298.15 + state.T) * cp_const + (-101325.0 + state.p * (1.0 + -298.15 * beta_const)) / reference_d;
+//   h := Modelica.Media.Water.StandardWater.specificEnthalpy(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-298.15 + state.T) * Modelica.Media.Water.StandardWater.specificHeatCapacityCp(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-101325.0 + state.p * (1.0 + -298.15 * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) / Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
 // end Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -261,7 +261,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   input Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := reference_h + (-298.15 + state.T) * cp_const + (-101325.0 + state.p * (1.0 + -298.15 * beta_const)) / reference_d;
+//   h := Modelica.Media.Water.StandardWater.specificEnthalpy(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-298.15 + state.T) * Modelica.Media.Water.StandardWater.specificHeatCapacityCp(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-101325.0 + state.p * (1.0 + -298.15 * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) / Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -292,7 +292,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   input Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := reference_h + (-298.15 + state.T) * cp_const + (-101325.0 + state.p * (1.0 + -298.15 * beta_const)) / reference_d;
+//   h := Modelica.Media.Water.StandardWater.specificEnthalpy(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-298.15 + state.T) * Modelica.Media.Water.StandardWater.specificHeatCapacityCp(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-101325.0 + state.p * (1.0 + -298.15 * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) / Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -323,7 +323,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   input Modelica.Media.Examples.Tests.Components.PortVolume.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := reference_h + (-298.15 + state.T) * cp_const + (-101325.0 + state.p * (1.0 + -298.15 * beta_const)) / reference_d;
+//   h := Modelica.Media.Water.StandardWater.specificEnthalpy(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-298.15 + state.T) * Modelica.Media.Water.StandardWater.specificHeatCapacityCp(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-101325.0 + state.p * (1.0 + -298.15 * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) / Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
 // end Modelica.Media.Examples.Tests.Components.PortVolume.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.PortVolume.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -354,7 +354,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   input Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := reference_h + (-298.15 + state.T) * cp_const + (-101325.0 + state.p * (1.0 + -298.15 * beta_const)) / reference_d;
+//   h := Modelica.Media.Water.StandardWater.specificEnthalpy(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-298.15 + state.T) * Modelica.Media.Water.StandardWater.specificHeatCapacityCp(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-101325.0 + state.p * (1.0 + -298.15 * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) / Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
 // end Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -385,7 +385,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   input Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := reference_h + (-298.15 + state.T) * cp_const + (-101325.0 + state.p * (1.0 + -298.15 * beta_const)) / reference_d;
+//   h := Modelica.Media.Water.StandardWater.specificEnthalpy(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-298.15 + state.T) * Modelica.Media.Water.StandardWater.specificHeatCapacityCp(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + (-101325.0 + state.p * (1.0 + -298.15 * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) / Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
 // end Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -2598,8 +2598,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 // 
 // class Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT
 //   parameter Real p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 101325.0 \"Initial value of pressure\";
-//   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Medium.T_default \"Initial value of temperature\";
-//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Medium.h_default \"Initial value of specific enthalpy\";
+//   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Initial value of temperature\";
+//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{1.0}) \"Initial value of specific enthalpy\";
 //   parameter Real X_start[1] = 1.0 \"Initial value of mass fractions\";
 //   parameter Real volume.V(quantity = \"Volume\", unit = \"m3\") = 0.1 \"Fixed size of junction volume\";
 //   parameter Boolean volume.use_p_start = true \"select p_start or d_start\";
@@ -2693,12 +2693,12 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   volume.medium.p = volume.p_start;
 //   volume.medium.T = volume.T_start;
 // equation
-//   volume.medium.d = (1.0 + ((-101325.0 + volume.medium.p) * kappa_const - (-298.15 + volume.medium.T) * beta_const)) * reference_d;
-//   volume.medium.h = reference_h + ((-298.15 + volume.medium.T) * cp_const + ((-101325.0 + volume.medium.p) * (1.0 + -298.15 * beta_const)) / reference_d);
+//   volume.medium.d = (1.0 + ((-101325.0 + volume.medium.p) * Modelica.Media.Water.StandardWater.isothermalCompressibility(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) - (-298.15 + volume.medium.T) * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) * Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
+//   volume.medium.h = Modelica.Media.Water.StandardWater.specificEnthalpy(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + ((-298.15 + volume.medium.T) * Modelica.Media.Water.StandardWater.specificHeatCapacityCp(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + ((-101325.0 + volume.medium.p) * (1.0 + -298.15 * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) / Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)));
 //   volume.medium.u = volume.medium.h + (-volume.medium.p) / volume.medium.d;
 //   volume.medium.p = volume.medium.state.p;
 //   volume.medium.T = volume.medium.state.T;
-//   volume.medium.MM = MM_const;
+//   volume.medium.MM = Modelica.Media.Water.StandardWater.molarMass(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
 //   volume.medium.R = 8.3144 / volume.medium.MM;
 //   volume.medium.X[1] = 1.0;
 //   assert(volume.medium.X[1] >= -1e-005 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"unusablePartialMedium\" + \"
@@ -2711,12 +2711,12 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   volume.U = volume.m * volume.medium.u;
 //   der(volume.m) = volume.port.m_flow;
 //   der(volume.U) = volume.port.H_flow;
-//   fixedMassFlowRate.medium.d = (1.0 + ((-101325.0 + fixedMassFlowRate.medium.p) * kappa_const - (-298.15 + fixedMassFlowRate.medium.T) * beta_const)) * reference_d;
-//   fixedMassFlowRate.medium.h = reference_h + ((-298.15 + fixedMassFlowRate.medium.T) * cp_const + ((-101325.0 + fixedMassFlowRate.medium.p) * (1.0 + -298.15 * beta_const)) / reference_d);
+//   fixedMassFlowRate.medium.d = (1.0 + ((-101325.0 + fixedMassFlowRate.medium.p) * Modelica.Media.Water.StandardWater.isothermalCompressibility(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) - (-298.15 + fixedMassFlowRate.medium.T) * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) * Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
+//   fixedMassFlowRate.medium.h = Modelica.Media.Water.StandardWater.specificEnthalpy(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + ((-298.15 + fixedMassFlowRate.medium.T) * Modelica.Media.Water.StandardWater.specificHeatCapacityCp(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + ((-101325.0 + fixedMassFlowRate.medium.p) * (1.0 + -298.15 * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) / Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)));
 //   fixedMassFlowRate.medium.u = fixedMassFlowRate.medium.h + (-fixedMassFlowRate.medium.p) / fixedMassFlowRate.medium.d;
 //   fixedMassFlowRate.medium.p = fixedMassFlowRate.medium.state.p;
 //   fixedMassFlowRate.medium.T = fixedMassFlowRate.medium.state.T;
-//   fixedMassFlowRate.medium.MM = MM_const;
+//   fixedMassFlowRate.medium.MM = Modelica.Media.Water.StandardWater.molarMass(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
 //   fixedMassFlowRate.medium.R = 8.3144 / fixedMassFlowRate.medium.MM;
 //   fixedMassFlowRate.medium.X[1] = 1.0;
 //   assert(fixedMassFlowRate.medium.X[1] >= -1e-005 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"unusablePartialMedium\" + \"
@@ -2727,12 +2727,12 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   fixedMassFlowRate.medium.p = fixedMassFlowRate.port.p;
 //   fixedMassFlowRate.port.m_flow = -fixedMassFlowRate.m_flow;
 //   fixedMassFlowRate.port.H_flow = semiLinear(fixedMassFlowRate.port.m_flow,fixedMassFlowRate.port.h,fixedMassFlowRate.medium.h);
-//   ambient.medium.d = (1.0 + ((-101325.0 + ambient.medium.p) * kappa_const - (-298.15 + ambient.medium.T) * beta_const)) * reference_d;
-//   ambient.medium.h = reference_h + ((-298.15 + ambient.medium.T) * cp_const + ((-101325.0 + ambient.medium.p) * (1.0 + -298.15 * beta_const)) / reference_d);
+//   ambient.medium.d = (1.0 + ((-101325.0 + ambient.medium.p) * Modelica.Media.Water.StandardWater.isothermalCompressibility(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) - (-298.15 + ambient.medium.T) * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) * Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
+//   ambient.medium.h = Modelica.Media.Water.StandardWater.specificEnthalpy(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + ((-298.15 + ambient.medium.T) * Modelica.Media.Water.StandardWater.specificHeatCapacityCp(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)) + ((-101325.0 + ambient.medium.p) * (1.0 + -298.15 * Modelica.Media.Water.StandardWater.isobaricExpansionCoefficient(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)))) / Modelica.Media.Water.StandardWater.density(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0)));
 //   ambient.medium.u = ambient.medium.h + (-ambient.medium.p) / ambient.medium.d;
 //   ambient.medium.p = ambient.medium.state.p;
 //   ambient.medium.T = ambient.medium.state.T;
-//   ambient.medium.MM = MM_const;
+//   ambient.medium.MM = Modelica.Media.Water.StandardWater.molarMass(Modelica.Media.Water.StandardWater.setState_pT(101325.0,298.15,0));
 //   ambient.medium.R = 8.3144 / ambient.medium.MM;
 //   ambient.medium.X[1] = 1.0;
 //   assert(ambient.medium.X[1] >= -1e-005 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"unusablePartialMedium\" + \"
@@ -2761,43 +2761,9 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   ambient.port.h = shortPipe.port_b.h;
 // end Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT;
 // "
-// "[package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.Medium.specificEnthalpy.
-// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.specificEnthalpy.
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy.
-// [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
-// [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
-// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy.
-// [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
-// [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
-// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy.
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.specificEnthalpy.
-// [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
-// [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
-// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.specificEnthalpy.
-// "
+// ""
 // "Check of Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT completed successfully.
 // 
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.Medium.specificEnthalpy.
-// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.specificEnthalpy.
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy.
-// [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
-// [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
-// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy.
-// [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
-// [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
-// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy.
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.specificEnthalpy.
-// [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
-// [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
-// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
-// [package.mo:5061:7-5063:71:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.specificEnthalpy.
 // 
 // Class Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT has 60 equation(s) and 60 variable(s).
 // 33 of these are trivial equation(s).

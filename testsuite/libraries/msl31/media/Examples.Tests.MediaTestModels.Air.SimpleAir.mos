@@ -150,8 +150,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 // 
 // class Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir
 //   parameter Real p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 101325.0 \"Initial value of pressure\";
-//   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Medium.T_default \"Initial value of temperature\";
-//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Medium.h_default \"Initial value of specific enthalpy\";
+//   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Initial value of temperature\";
+//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{1.0}) \"Initial value of specific enthalpy\";
 //   parameter Real X_start[1] = 1.0 \"Initial value of mass fractions\";
 //   parameter Real volume.V(quantity = \"Volume\", unit = \"m3\") = 0.1 \"Fixed size of junction volume\";
 //   parameter Boolean volume.use_p_start = true \"select p_start or d_start\";
@@ -245,9 +245,9 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   volume.medium.p = volume.p_start;
 //   volume.medium.T = volume.T_start;
 // equation
-//   assert(volume.medium.T >= T_min and volume.medium.T <= T_max,\"
+//   assert(volume.medium.T >= Modelica.SIunits.Conversions.from_degC(0.0) and volume.medium.T <= Modelica.SIunits.Conversions.from_degC(100.0),\"
 // Temperature T (= \" + String(volume.medium.T,0,true,6) + \" K) is not
-// in the allowed range (\" + String(T_min,0,true,6) + \" K <= T <= \" + String(T_max,0,true,6) + \" K)
+// in the allowed range (\" + String(Modelica.SIunits.Conversions.from_degC(0.0),0,true,6) + \" K <= T <= \" + String(Modelica.SIunits.Conversions.from_degC(100.0),0,true,6) + \" K)
 // required from medium model \\\"\" + \"SimpleAir\" + \"\\\".
 // \");
 //   volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.specificEnthalpy_pTX(volume.medium.p,volume.medium.T,{volume.medium.X[1]});
@@ -268,9 +268,9 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   volume.U = volume.m * volume.medium.u;
 //   der(volume.m) = volume.port.m_flow;
 //   der(volume.U) = volume.port.H_flow;
-//   assert(fixedMassFlowRate.medium.T >= T_min and fixedMassFlowRate.medium.T <= T_max,\"
+//   assert(fixedMassFlowRate.medium.T >= Modelica.SIunits.Conversions.from_degC(0.0) and fixedMassFlowRate.medium.T <= Modelica.SIunits.Conversions.from_degC(100.0),\"
 // Temperature T (= \" + String(fixedMassFlowRate.medium.T,0,true,6) + \" K) is not
-// in the allowed range (\" + String(T_min,0,true,6) + \" K <= T <= \" + String(T_max,0,true,6) + \" K)
+// in the allowed range (\" + String(Modelica.SIunits.Conversions.from_degC(0.0),0,true,6) + \" K <= T <= \" + String(Modelica.SIunits.Conversions.from_degC(100.0),0,true,6) + \" K)
 // required from medium model \\\"\" + \"SimpleAir\" + \"\\\".
 // \");
 //   fixedMassFlowRate.medium.h = Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy_pTX(fixedMassFlowRate.medium.p,fixedMassFlowRate.medium.T,{fixedMassFlowRate.medium.X[1]});
@@ -289,9 +289,9 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   fixedMassFlowRate.medium.p = fixedMassFlowRate.port.p;
 //   fixedMassFlowRate.port.m_flow = -fixedMassFlowRate.m_flow;
 //   fixedMassFlowRate.port.H_flow = semiLinear(fixedMassFlowRate.port.m_flow,fixedMassFlowRate.port.h,fixedMassFlowRate.medium.h);
-//   assert(ambient.medium.T >= T_min and ambient.medium.T <= T_max,\"
+//   assert(ambient.medium.T >= Modelica.SIunits.Conversions.from_degC(0.0) and ambient.medium.T <= Modelica.SIunits.Conversions.from_degC(100.0),\"
 // Temperature T (= \" + String(ambient.medium.T,0,true,6) + \" K) is not
-// in the allowed range (\" + String(T_min,0,true,6) + \" K <= T <= \" + String(T_max,0,true,6) + \" K)
+// in the allowed range (\" + String(Modelica.SIunits.Conversions.from_degC(0.0),0,true,6) + \" K <= T <= \" + String(Modelica.SIunits.Conversions.from_degC(100.0),0,true,6) + \" K)
 // required from medium model \\\"\" + \"SimpleAir\" + \"\\\".
 // \");
 //   ambient.medium.h = Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.specificEnthalpy_pTX(ambient.medium.p,ambient.medium.T,{ambient.medium.X[1]});
@@ -328,11 +328,9 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   ambient.port.h = shortPipe.port_b.h;
 // end Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir;
 // "
-// "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir
-// "
+// ""
 // "Check of Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir completed successfully.
 // 
-// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir
 // 
 // Class Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir has 60 equation(s) and 60 variable(s).
 // 36 of these are trivial equation(s).
