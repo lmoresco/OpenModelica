@@ -16593,15 +16593,15 @@ algorithm
 
     case ( txt,
            false,
-           a_stateVar )
-      equation
-        txt = Tpl.writeText(txt, a_stateVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = get_memory_state();"));
+           _ )
       then txt;
 
     case ( txt,
            _,
-           _ )
+           a_stateVar )
+      equation
+        txt = Tpl.writeText(txt, a_stateVar);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = get_memory_state();"));
       then txt;
   end matchcontinue;
 end fun_438;
@@ -16621,16 +16621,16 @@ algorithm
 
     case ( txt,
            false,
+           _ )
+      then txt;
+
+    case ( txt,
+           _,
            a_stateVar )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("restore_memory_state("));
         txt = Tpl.writeText(txt, a_stateVar);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(");"));
-      then txt;
-
-    case ( txt,
-           _,
-           _ )
       then txt;
   end matchcontinue;
 end fun_439;
@@ -16929,8 +16929,6 @@ algorithm
       SimCode.Function i_efn;
       list<SimCode.Variable> i_outVars;
       Absyn.Path i_name;
-      Boolean ret_14;
-      Boolean ret_13;
       Tpl.Text l_fnBody;
       Boolean ret_11;
       Tpl.Text l_boxedFn;
@@ -16980,8 +16978,7 @@ algorithm
         l_fnBody = Tpl.writeText(l_fnBody, l_varDecls);
         l_fnBody = Tpl.softNewLine(l_fnBody);
         l_fnBody = Tpl.writeTok(l_fnBody, Tpl.ST_LINE("/* functionBodyExternalFunction: state in */\n"));
-        ret_13 = RTOpts.acceptMetaModelicaGrammar();
-        l_fnBody = fun_438(l_fnBody, ret_13, l_stateVar);
+        l_fnBody = fun_438(l_fnBody, false, l_stateVar);
         l_fnBody = Tpl.softNewLine(l_fnBody);
         l_fnBody = Tpl.writeTok(l_fnBody, Tpl.ST_LINE("/* functionBodyExternalFunction: preExp */\n"));
         l_fnBody = Tpl.writeText(l_fnBody, l_preExp);
@@ -16993,8 +16990,7 @@ algorithm
         l_fnBody = Tpl.writeText(l_fnBody, l_callPart);
         l_fnBody = Tpl.softNewLine(l_fnBody);
         l_fnBody = Tpl.writeTok(l_fnBody, Tpl.ST_LINE("/* functionBodyExternalFunction: state out */\n"));
-        ret_14 = RTOpts.acceptMetaModelicaGrammar();
-        l_fnBody = fun_439(l_fnBody, ret_14, l_stateVar);
+        l_fnBody = fun_439(l_fnBody, false, l_stateVar);
         l_fnBody = Tpl.softNewLine(l_fnBody);
         l_fnBody = Tpl.writeTok(l_fnBody, Tpl.ST_STRING_LIST({
                                               "/* functionBodyExternalFunction: return */\n",

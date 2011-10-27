@@ -288,6 +288,7 @@ ExternalFunction6.mo \
 ExternalFunction7.mo \
 ExternalFunction8.mo \
 ExternalFunctionAnno.mo \
+ExternalFunctionArray.mo \
 ExternalFunctionBuiltin.mo \
 ExternalFunctionExtends.mo \
 ExtObjError.mo \
