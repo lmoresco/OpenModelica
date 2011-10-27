@@ -39,7 +39,9 @@ checkModel(Modelica.Fluid.Machines.ControlledPump); getErrorString();
 // [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
 // Error: Error occured while flattening model Modelica.Fluid.Machines.ControlledPump
 // "
-// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+// "Check of Modelica.Fluid.Machines.ControlledPump completed successfully.
+// 
+// Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
 //   The existing 'inner' components are: 
 //     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Machines.ControlledPump.
 //   Check if you have not misspelled the 'outer' component name.
@@ -56,15 +58,14 @@ checkModel(Modelica.Fluid.Machines.ControlledPump); getErrorString();
 // [Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.ControlledPump.
 // Warning: No corresponding 'inner' declaration found for component heatTransfer.system declared as 'outer '.
 //   The existing 'inner' components are: 
-//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Machines.ControlledPump.HeatTransfer.
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.HeatTransfer.
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
-// Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
-// [Machines.mo:620:7-622:87:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
-// Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
-// [Machines.mo:148:29-151:50:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
-// Error: Error occured while flattening model Modelica.Fluid.Machines.ControlledPump
+// [Interfaces.mo:613:7-614:108:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.ControlledPump.
+// 
+// Class Modelica.Fluid.Machines.ControlledPump has 36 equation(s) and 39 variable(s).
+// 17 of these are trivial equation(s).
 // "
 // ""
 // endResult

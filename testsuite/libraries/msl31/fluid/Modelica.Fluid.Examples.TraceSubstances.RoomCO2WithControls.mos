@@ -33,12 +33,31 @@ checkModel(Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls); getErro
 // 
 // [package.mo:4093:7-4094:50:writable] Warning: Variable freshAir.medium.Xi: Non-array modification 'if freshAir.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
-// [Interfaces.mo:579:7-582:72:writable] Error: Array dimension mismatch, expression {0.001519} has type Real[1], expected array dimensions [0]
 // [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
 // [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
-// [Interfaces.mo:579:7-582:72:writable] Error: Array dimension mismatch, expression {0.001519} has type Real[1], expected array dimensions [0]
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// Warning: Parameter pipe.flowModel.p_a_start has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter pipe.flowModel.p_b_start has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter pipe.flowModel.nParallel has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter diameter has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter length has neither value nor start value, and is fixed during initialization (fixed=true)
+// [package.mo:8285:8-8285:71:writable] Error: No matching function found for Modelica.Fluid.Pipes.StaticPipe.Medium.T_phX.Internal.f_nonlinear in component <NO COMPONENT>
+// [Air.mo:640:5-640:57:writable] Error: Class Internal.solve not found in scope Modelica.Fluid.Pipes.StaticPipe.Medium.T_phX (looking for a function or record).
+// [Pipes.mo:21:5-40:85:writable] Error: No matching function found for Medium.density(flowModel.states[1])
+// of type
+//   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState
+// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity="Density", unit="kg/m3", displayUnit="g/cm3") in component pipe
+// candidates are 
+//   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.StaticPipe.Medium.ThermodynamicState
+// Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar") p;
+// Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity="ThermodynamicTemperature", unit="K", displayUnit="degC") T;
+// Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[2] X;
+// end Modelica.Fluid.Pipes.StaticPipe.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity="Density", unit="kg/m3", displayUnit="g/cm3")
 // Error: Error occured while flattening model Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls
 // "
 // "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
@@ -62,6 +81,22 @@ checkModel(Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls); getErro
 // 
 // [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:8285:8-8285:71:writable] Error: No matching function found for Modelica.Fluid.Pipes.StaticPipe.Medium.T_phX.Internal.f_nonlinear in component <NO COMPONENT>
+// [Air.mo:640:5-640:57:writable] Error: Class Internal.solve not found in scope Modelica.Fluid.Pipes.StaticPipe.Medium.T_phX (looking for a function or record).
+// [Pipes.mo:21:5-40:85:writable] Error: No matching function found for Medium.density(flowModel.states[1])
+// of type
+//   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState
+// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\") in component pipe
+// candidates are 
+//   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.StaticPipe.Medium.ThermodynamicState
+// Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+// Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+// Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[2] X;
+// end Modelica.Fluid.Pipes.StaticPipe.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\")
 // Error: Error occured while flattening model Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls
 // "
 // ""

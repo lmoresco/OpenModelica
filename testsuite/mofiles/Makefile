@@ -452,6 +452,7 @@ ModifierVariable.mo \
 ModifyConstant4.mo \
 ModifyConstant5.mo \
 ModifyConstant6.mo \
+ModifyFunction1.mo \
 modifyOuter2.mo \
 modifyOuter.mo \
 ModifyUnknown1.mo \

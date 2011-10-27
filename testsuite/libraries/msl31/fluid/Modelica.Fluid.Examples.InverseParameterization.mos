@@ -20,17 +20,15 @@ checkModel(Modelica.Fluid.Examples.InverseParameterization); getErrorString();
 // Warning: Parameter p_b_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: Parameter p_a_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
-// [Machines.mo:620:7-622:87:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
-// Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
-// [Machines.mo:148:29-151:50:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
+// [Interfaces.mo:725:9-730:39:writable] Error: Duplicate elements (due to inherited elements) not identical:
+// 	first element is:  Medium.MassFlowRate m_flow(min = if allowFlowReversal then -Modelica.Constants.inf else 0, start = m_flow_start, stateSelect = if momentumDynamics == Modelica.Fluid.Types.Dynamics.SteadyState then StateSelect.default else StateSelect.prefer)
+// 	second element is: Medium.MassFlowRate m_flow(min = if allowFlowReversal then -Modelica.Constants.inf else 0, start = m_flow_start)
 // Error: Error occured while flattening model Modelica.Fluid.Examples.InverseParameterization
 // "
 // "[Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.ControlledPump.
-// Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
-// [Machines.mo:620:7-622:87:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
-// Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
-// [Machines.mo:148:29-151:50:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
+// [Interfaces.mo:725:9-730:39:writable] Error: Duplicate elements (due to inherited elements) not identical:
+// 	first element is:  Medium.MassFlowRate m_flow(min = if allowFlowReversal then -Modelica.Constants.inf else 0, start = m_flow_start, stateSelect = if momentumDynamics == Modelica.Fluid.Types.Dynamics.SteadyState then StateSelect.default else StateSelect.prefer)
+// 	second element is: Medium.MassFlowRate m_flow(min = if allowFlowReversal then -Modelica.Constants.inf else 0, start = m_flow_start)
 // Error: Error occured while flattening model Modelica.Fluid.Examples.InverseParameterization
 // "
 // ""

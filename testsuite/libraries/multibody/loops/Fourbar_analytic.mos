@@ -4426,11 +4426,17 @@ getErrorString();
 //   b2.frame_a.R.w[1] = jointSSP.frame_ib.R.w[1];
 // end Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic;
 // "
-// "Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true), using available start value (start=1.0) as default value
+// "[_LoopsTotal.mo:2632:11-2633:249:writable] Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true), using available start value (start=1.0) as default value
+// [_LoopsTotal.mo:2659:11-2669:64:writable] Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true), using available start value (start=1.0) as default value
+// [_LoopsTotal.mo:2682:11-2693:64:writable] Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true), using available start value (start=1.0) as default value
+// [_LoopsTotal.mo:2717:11-2717:36:writable] Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true), using available start value (start=1.0) as default value
 // "
 // "Check of Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic completed successfully.
 // 
-// Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true), using available start value (start=1.0) as default value
+// [_LoopsTotal.mo:2632:11-2633:249:writable] Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true), using available start value (start=1.0) as default value
+// [_LoopsTotal.mo:2659:11-2669:64:writable] Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true), using available start value (start=1.0) as default value
+// [_LoopsTotal.mo:2682:11-2693:64:writable] Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true), using available start value (start=1.0) as default value
+// [_LoopsTotal.mo:2717:11-2717:36:writable] Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true), using available start value (start=1.0) as default value
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic has 2238 equation(s) and 2238 variable(s).
 // 1499 of these are trivial equation(s).

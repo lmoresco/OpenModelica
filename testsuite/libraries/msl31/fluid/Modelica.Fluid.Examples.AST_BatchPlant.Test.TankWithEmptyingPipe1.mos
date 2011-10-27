@@ -21,8 +21,8 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe1); g
 // Warning: Parameter pipe.flowModel.nParallel has neither value nor start value, and is fixed during initialization (fixed=true)
 // [Pipes.mo:21:5-40:85:writable] Error: No matching function found for Medium.density(flowModel.states[1])
 // of type
-//   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState
-// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity="Density", unit="kg/m3", displayUnit="g/cm3") in component pipe
+//   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState
+// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity="Density", unit="kg/m3", displayUnit="g/cm3") in component pipe
 // candidates are 
 //   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.StaticPipe.Medium.ThermodynamicState
 // Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar") p;
@@ -32,8 +32,8 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe1); g
 // "
 // "[Pipes.mo:21:5-40:85:writable] Error: No matching function found for Medium.density(flowModel.states[1])
 // of type
-//   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState
-// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\") in component pipe
+//   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState
+// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\") in component pipe
 // candidates are 
 //   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.StaticPipe.Medium.ThermodynamicState
 // Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;

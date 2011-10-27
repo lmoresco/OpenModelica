@@ -15,23 +15,37 @@ checkModel(Modelica.Fluid.Examples.HeatingSystem); getErrorString();
 // true
 // ""
 // true
-// ""
-// "[Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.ControlledPump.
-// Warning: Parameter p_b_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter p_a_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
-// [Machines.mo:620:7-622:87:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
-// Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
-// [Machines.mo:148:29-151:50:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
-// Error: Error occured while flattening model Modelica.Fluid.Examples.HeatingSystem
-// "
-// "[Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.ControlledPump.
-// Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
-// [Machines.mo:620:7-622:87:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
-// Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
-// [Machines.mo:148:29-151:50:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
-// Error: Error occured while flattening model Modelica.Fluid.Examples.HeatingSystem
-// "
-// ""
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Static.buildExpList
+// Stack overflow!
 // endResult
