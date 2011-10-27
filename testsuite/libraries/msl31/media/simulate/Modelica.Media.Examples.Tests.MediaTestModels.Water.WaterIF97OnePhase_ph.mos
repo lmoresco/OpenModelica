@@ -1,0 +1,81 @@
+//name:        simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph)
+//keyword:     simulation
+//status:      correct
+//teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("showStatement");
+
+simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph);
+
+// Result:
+// true
+// ""
+// true
+// Evaluating: simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph)
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = "Simulation failed for model: Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1) is non-existent
+// [package.mo:215:7-215:34:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2937:12-2937:29:writable] Error: Model is structurally singular, error found sorting equations volume.m = volume.V * volume.medium.state.d;
+// volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1);
+//  for variables volume.medium.state.d(6), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1) is non-existent
+// [package.mo:215:7-215:34:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2937:12-2937:29:writable] Error: Model is structurally singular, error found sorting equations volume.m = volume.V * volume.medium.state.d;
+// volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1);
+//  for variables volume.medium.state.d(6), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1) is non-existent
+// [package.mo:215:7-215:34:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2937:12-2937:29:writable] Error: Model is structurally singular, error found sorting equations volume.m = volume.V * volume.medium.state.d;
+// volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1);
+//  for variables volume.medium.state.d(6), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1) is non-existent
+// [package.mo:215:7-215:34:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2937:12-2937:29:writable] Error: Model is structurally singular, error found sorting equations volume.m = volume.V * volume.medium.state.d;
+// volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1);
+//  for variables volume.medium.state.d(6), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1) is non-existent
+// [package.mo:215:7-215:34:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2937:12-2937:29:writable] Error: Model is structurally singular, error found sorting equations volume.m = volume.V * volume.medium.state.d;
+// volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1);
+//  for variables volume.medium.state.d(6), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1) is non-existent
+// [package.mo:215:7-215:34:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2937:12-2937:29:writable] Error: Model is structurally singular, error found sorting equations volume.m = volume.V * volume.medium.state.d;
+// volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1);
+//  for variables volume.medium.state.d(6), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1) is non-existent
+// [package.mo:215:7-215:34:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2937:12-2937:29:writable] Error: Model is structurally singular, error found sorting equations volume.m = volume.V * volume.medium.state.d;
+// volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,1);
+//  for variables volume.medium.state.d(6), 
+// Error: Internal error Transformation Module failed!
+// "
+// end SimulationResult;
+// endResult

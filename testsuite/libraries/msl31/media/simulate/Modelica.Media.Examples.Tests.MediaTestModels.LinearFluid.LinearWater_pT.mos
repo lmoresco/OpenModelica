@@ -1,0 +1,182 @@
+//name:        simulate(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT)
+//keyword:     simulation
+//status:      correct
+ //teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("showStatement");
+
+simulate(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT);
+
+// Result:
+// true
+// ""
+// true
+// Evaluating: simulate(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT)
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// [IF97_Utilities.mo:6228:7-6229:58:writable]Modelica Assert: error in region computation of IF97 steam tables(p = 101325, h = 0)!
+// eqns =6, 5, 4, 2
+// eqns =6, 5, 4, 2
+// eqns =6, 5, 4, 2
+// eqns =6, 5, 4, 2
+// eqns =6, 5, 4, 2
+// eqns =6, 5, 4, 2
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = "Simulation failed for model: Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT
+// Error: Derivative of expression semiLinear(fixedMassFlowRate.m_flow,volume.medium.h,shortPipe.port_b.h) is non-existent
+// [package.mo:3183:9-3183:74:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:3183:9-3183:74:writable] Error: Model is structurally singular, error found sorting equations -shortPipe.port_b.H_flow = semiLinear(fixedMassFlowRate.m_flow,volume.medium.h,shortPipe.port_b.h);
+// -shortPipe.port_b.H_flow = semiLinear(fixedMassFlowRate.m_flow,shortPipe.port_b.h,ambient.medium.h);
+// shortPipe.port_b.H_flow = semiLinear(-fixedMassFlowRate.m_flow,volume.medium.h,fixedMassFlowRate.medium.h);
+// volume.medium.h = -6.53784147644511e+269 + (-101325.0 / 0.0 + (2.19280277593329e+267 * volume.medium.T + volume.medium.p / 0.0));
+//  for variables shortPipe.port_b.H_flow(6), shortPipe.port_b.h(5), volume.medium.h(1), 
+// Error: Derivative of expression semiLinear(fixedMassFlowRate.m_flow,volume.medium.h,shortPipe.port_b.h) is non-existent
+// [package.mo:3183:9-3183:74:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:3183:9-3183:74:writable] Error: Model is structurally singular, error found sorting equations -shortPipe.port_b.H_flow = semiLinear(fixedMassFlowRate.m_flow,volume.medium.h,shortPipe.port_b.h);
+// -shortPipe.port_b.H_flow = semiLinear(fixedMassFlowRate.m_flow,shortPipe.port_b.h,ambient.medium.h);
+// shortPipe.port_b.H_flow = semiLinear(-fixedMassFlowRate.m_flow,volume.medium.h,fixedMassFlowRate.medium.h);
+// volume.medium.h = -6.53784147644511e+269 + (-101325.0 / 0.0 + (2.19280277593329e+267 * volume.medium.T + volume.medium.p / 0.0));
+//  for variables shortPipe.port_b.H_flow(6), shortPipe.port_b.h(5), volume.medium.h(1), 
+// Error: Derivative of expression semiLinear(fixedMassFlowRate.m_flow,volume.medium.h,shortPipe.port_b.h) is non-existent
+// [package.mo:3183:9-3183:74:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:3183:9-3183:74:writable] Error: Model is structurally singular, error found sorting equations -shortPipe.port_b.H_flow = semiLinear(fixedMassFlowRate.m_flow,volume.medium.h,shortPipe.port_b.h);
+// -shortPipe.port_b.H_flow = semiLinear(fixedMassFlowRate.m_flow,shortPipe.port_b.h,ambient.medium.h);
+// shortPipe.port_b.H_flow = semiLinear(-fixedMassFlowRate.m_flow,volume.medium.h,fixedMassFlowRate.medium.h);
+// volume.medium.h = -6.53784147644511e+269 + (-101325.0 / 0.0 + (2.19280277593329e+267 * volume.medium.T + volume.medium.p / 0.0));
+//  for variables shortPipe.port_b.H_flow(6), shortPipe.port_b.h(5), volume.medium.h(1), 
+// Error: Derivative of expression semiLinear(fixedMassFlowRate.m_flow,volume.medium.h,shortPipe.port_b.h) is non-existent
+// [package.mo:3183:9-3183:74:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:3183:9-3183:74:writable] Error: Model is structurally singular, error found sorting equations -shortPipe.port_b.H_flow = semiLinear(fixedMassFlowRate.m_flow,volume.medium.h,shortPipe.port_b.h);
+// -shortPipe.port_b.H_flow = semiLinear(fixedMassFlowRate.m_flow,shortPipe.port_b.h,ambient.medium.h);
+// shortPipe.port_b.H_flow = semiLinear(-fixedMassFlowRate.m_flow,volume.medium.h,fixedMassFlowRate.medium.h);
+// volume.medium.h = -6.53784147644511e+269 + (-101325.0 / 0.0 + (2.19280277593329e+267 * volume.medium.T + volume.medium.p / 0.0));
+//  for variables shortPipe.port_b.H_flow(6), shortPipe.port_b.h(5), volume.medium.h(1), 
+// Error: Derivative of expression semiLinear(fixedMassFlowRate.m_flow,volume.medium.h,shortPipe.port_b.h) is non-existent
+// [package.mo:3183:9-3183:74:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:3183:9-3183:74:writable] Error: Model is structurally singular, error found sorting equations -shortPipe.port_b.H_flow = semiLinear(fixedMassFlowRate.m_flow,volume.medium.h,shortPipe.port_b.h);
+// -shortPipe.port_b.H_flow = semiLinear(fixedMassFlowRate.m_flow,shortPipe.port_b.h,ambient.medium.h);
+// shortPipe.port_b.H_flow = semiLinear(-fixedMassFlowRate.m_flow,volume.medium.h,fixedMassFlowRate.medium.h);
+// volume.medium.h = -6.53784147644511e+269 + (-101325.0 / 0.0 + (2.19280277593329e+267 * volume.medium.T + volume.medium.p / 0.0));
+//  for variables shortPipe.port_b.H_flow(6), shortPipe.port_b.h(5), volume.medium.h(1), 
+// Error: Derivative of expression semiLinear(fixedMassFlowRate.m_flow,volume.medium.h,shortPipe.port_b.h) is non-existent
+// [package.mo:3183:9-3183:74:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:3183:9-3183:74:writable] Error: Model is structurally singular, error found sorting equations -shortPipe.port_b.H_flow = semiLinear(fixedMassFlowRate.m_flow,volume.medium.h,shortPipe.port_b.h);
+// -shortPipe.port_b.H_flow = semiLinear(fixedMassFlowRate.m_flow,shortPipe.port_b.h,ambient.medium.h);
+// shortPipe.port_b.H_flow = semiLinear(-fixedMassFlowRate.m_flow,volume.medium.h,fixedMassFlowRate.medium.h);
+// volume.medium.h = -6.53784147644511e+269 + (-101325.0 / 0.0 + (2.19280277593329e+267 * volume.medium.T + volume.medium.p / 0.0));
+//  for variables shortPipe.port_b.H_flow(6), shortPipe.port_b.h(5), volume.medium.h(1), 
+// Error: Internal error Transformation Module failed!
+// Error: Internal error Optimisation Module removeSimpleEquations failed.
+// "
+// end SimulationResult;
+// endResult

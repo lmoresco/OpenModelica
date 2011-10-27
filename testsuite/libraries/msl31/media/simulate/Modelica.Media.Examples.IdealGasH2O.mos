@@ -1,0 +1,83 @@
+//name:        simulate(Modelica.Media.Examples.IdealGasH2O)
+//keyword:     simulation
+//status:      correct
+//teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("showStatement");
+
+simulate(Modelica.Media.Examples.IdealGasH2O);
+
+// Result:
+// true
+// ""
+// true
+// Evaluating: simulate(Modelica.Media.Examples.IdealGasH2O)
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.IdealGasH2O', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = "Simulation failed for model: Modelica.Media.Examples.IdealGasH2O
+// Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
+
+// gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.IdealGasH2O.o Modelica.Media.Examples.IdealGasH2O.c
+
+// In file included from Modelica.Media.Examples.IdealGasH2O.c:10:
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c: In function '_Modelica_Media_Examples_IdealGasH2O_Medium_isentropicEnthalpyApproximation':
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:448: error: 'Modelica_Media_IdealGases_Common_DataRecord_rettype' undeclared (first use in this function)
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:448: error: (Each undeclared identifier is reported only once
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:448: error: for each function it appears in.)
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:448: error: expected ';' before 'tmp4'
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:463: error: 'tmp4' undeclared (first use in this function)
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c: In function '_Modelica_Media_Examples_IdealGasH2O_Medium_specificHeatCapacityCp':
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:582: error: 'Modelica_Media_IdealGases_Common_DataRecord_rettype' undeclared (first use in this function)
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:582: error: expected ';' before 'tmp3'
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:594: error: 'tmp3' undeclared (first use in this function)
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c: In function '_Modelica_Media_Examples_IdealGasH2O_Medium_specificEntropy':
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:628: error: 'Modelica_Media_IdealGases_Common_DataRecord_rettype' undeclared (first use in this function)
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:628: error: expected ';' before 'tmp3'
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:641: error: 'tmp3' undeclared (first use in this function)
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c: In function '_Modelica_Media_Examples_IdealGasH2O_Medium_velocityOfSound':
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:724: error: 'Modelica_Media_IdealGases_Common_DataRecord_rettype' undeclared (first use in this function)
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:724: error: expected ';' before 'tmp3'
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:727: error: expected ';' before 'tmp6'
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:740: error: 'tmp6' undeclared (first use in this function)
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:743: error: 'tmp3' undeclared (first use in this function)
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c: In function '_Modelica_Media_Examples_IdealGasH2O_Medium_specificHeatCapacityCv':
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:782: error: 'Modelica_Media_IdealGases_Common_DataRecord_rettype' undeclared (first use in this function)
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:782: error: expected ';' before 'tmp3'
+
+// Modelica.Media.Examples.IdealGasH2O_functions.c:794: error: 'tmp3' undeclared (first use in this function)
+
+// mingw32-make[1]: *** [Modelica.Media.Examples.IdealGasH2O.o] Error 1
+
+// mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
+
+// 
+// "
+// end SimulationResult;
+// endResult

@@ -1,0 +1,157 @@
+//name:        simulate(Modelica.Media.Examples.TestOnly.IdealGasN2)
+//keyword:     simulation
+//status:      correct
+//teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("showStatement");
+
+simulate(Modelica.Media.Examples.TestOnly.IdealGasN2);
+
+// Result:
+// true
+// ""
+// true
+// Evaluating: simulate(Modelica.Media.Examples.TestOnly.IdealGasN2)
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// eqns =3
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.TestOnly.IdealGasN2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = "Simulation failed for model: Modelica.Media.Examples.TestOnly.IdealGasN2
+// Error: Derivative of expression Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:96:5-96:76:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2677:7-2677:21:writable] Error: Model is structurally singular, error found sorting equations U = m * medium.u;
+// m = medium.d * V;
+// medium.d = medium.p / (medium.T * 296.803386950531);
+// medium.u = medium.h + -296.803386950531 * medium.T;
+// medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m(8), medium.u(5), medium.d(3), medium.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:96:5-96:76:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2677:7-2677:21:writable] Error: Model is structurally singular, error found sorting equations U = m * medium.u;
+// m = medium.d * V;
+// medium.d = medium.p / (medium.T * 296.803386950531);
+// medium.u = medium.h + -296.803386950531 * medium.T;
+// medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m(8), medium.u(5), medium.d(3), medium.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:96:5-96:76:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2677:7-2677:21:writable] Error: Model is structurally singular, error found sorting equations U = m * medium.u;
+// m = medium.d * V;
+// medium.d = medium.p / (medium.T * 296.803386950531);
+// medium.u = medium.h + -296.803386950531 * medium.T;
+// medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m(8), medium.u(5), medium.d(3), medium.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:96:5-96:76:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2677:7-2677:21:writable] Error: Model is structurally singular, error found sorting equations U = m * medium.u;
+// m = medium.d * V;
+// medium.d = medium.p / (medium.T * 296.803386950531);
+// medium.u = medium.h + -296.803386950531 * medium.T;
+// medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m(8), medium.u(5), medium.d(3), medium.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:96:5-96:76:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2677:7-2677:21:writable] Error: Model is structurally singular, error found sorting equations U = m * medium.u;
+// m = medium.d * V;
+// medium.d = medium.p / (medium.T * 296.803386950531);
+// medium.u = medium.h + -296.803386950531 * medium.T;
+// medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m(8), medium.u(5), medium.d(3), medium.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:96:5-96:76:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2677:7-2677:21:writable] Error: Model is structurally singular, error found sorting equations U = m * medium.u;
+// m = medium.d * V;
+// medium.d = medium.p / (medium.T * 296.803386950531);
+// medium.u = medium.h + -296.803386950531 * medium.T;
+// medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m(8), medium.u(5), medium.d(3), medium.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:96:5-96:76:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2677:7-2677:21:writable] Error: Model is structurally singular, error found sorting equations U = m * medium.u;
+// m = medium.d * V;
+// medium.d = medium.p / (medium.T * 296.803386950531);
+// medium.u = medium.h + -296.803386950531 * medium.T;
+// medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m(8), medium.u(5), medium.d(3), medium.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:96:5-96:76:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2677:7-2677:21:writable] Error: Model is structurally singular, error found sorting equations U = m * medium.u;
+// m = medium.d * V;
+// medium.d = medium.p / (medium.T * 296.803386950531);
+// medium.u = medium.h + -296.803386950531 * medium.T;
+// medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m(8), medium.u(5), medium.d(3), medium.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:96:5-96:76:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2677:7-2677:21:writable] Error: Model is structurally singular, error found sorting equations U = m * medium.u;
+// m = medium.d * V;
+// medium.d = medium.p / (medium.T * 296.803386950531);
+// medium.u = medium.h + -296.803386950531 * medium.T;
+// medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m(8), medium.u(5), medium.d(3), medium.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:96:5-96:76:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2677:7-2677:21:writable] Error: Model is structurally singular, error found sorting equations U = m * medium.u;
+// m = medium.d * V;
+// medium.d = medium.p / (medium.T * 296.803386950531);
+// medium.u = medium.h + -296.803386950531 * medium.T;
+// medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m(8), medium.u(5), medium.d(3), medium.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:96:5-96:76:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2677:7-2677:21:writable] Error: Model is structurally singular, error found sorting equations U = m * medium.u;
+// m = medium.d * V;
+// medium.d = medium.p / (medium.T * 296.803386950531);
+// medium.u = medium.h + -296.803386950531 * medium.T;
+// medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m(8), medium.u(5), medium.d(3), medium.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:96:5-96:76:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2677:7-2677:21:writable] Error: Model is structurally singular, error found sorting equations U = m * medium.u;
+// m = medium.d * V;
+// medium.d = medium.p / (medium.T * 296.803386950531);
+// medium.u = medium.h + -296.803386950531 * medium.T;
+// medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m(8), medium.u(5), medium.d(3), medium.h(2), 
+// Error: Internal error Transformation Module failed!
+// "
+// end SimulationResult;
+// endResult

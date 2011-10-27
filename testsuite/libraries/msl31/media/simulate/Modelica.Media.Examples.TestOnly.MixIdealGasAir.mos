@@ -1,0 +1,129 @@
+//name:        simulate(Modelica.Media.Examples.TestOnly.MixIdealGasAir)
+//keyword:     simulation
+//status:      correct
+//teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("showStatement");
+
+simulate(Modelica.Media.Examples.TestOnly.MixIdealGasAir);
+
+// Result:
+// true
+// ""
+// true
+// Evaluating: simulate(Modelica.Media.Examples.TestOnly.MixIdealGasAir)
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.TestOnly.MixIdealGasAir', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = "Simulation failed for model: Modelica.Media.Examples.TestOnly.MixIdealGasAir
+// [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:985:5-985:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
+// 	first element is:  input ThermodynamicState state	second element is: input .Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.ThermodynamicState state	Modelica specification requires that elements are exactly identical.
+// [package.mo:534:5-535:65:writable] Error: No constant value for variable data.R in scope Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate.
+// Warning: Alias variables medium2.p = medium2.state.p have start values 200000.0 != 100000.0. Use value from medium2.p.
+// 
+// Warning: Alias variables medium2.X[1] = medium2.Xi[1] have start values 0.2 != 0.768. Use value from medium2.X[1].
+// 
+// Warning: Alias variables medium2.X[2] = medium2.Xi[2] have start values 0.8 != 0.232. Use value from medium2.X[2].
+// 
+// Warning: Alias variables medium.T = medium.state.T have start values 200.0 != 300.0. Use value from medium.T.
+// 
+// Warning: Alias variables medium.X[1] = medium.Xi[1] have start values 0.2 != 0.768. Use value from medium.X[1].
+// 
+// Warning: Alias variables medium.X[2] = medium.Xi[2] have start values 0.8 != 0.232. Use value from medium.X[2].
+// 
+// Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
+
+// gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.TestOnly.MixIdealGasAir.o Modelica.Media.Examples.TestOnly.MixIdealGasAir.c
+
+// In file included from Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:10:
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_h__TX':
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:270: error: expected expression before 'struct'
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:271: error: expected expression before 'struct'
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_dynamicViscosity':
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:393: error: '_fluidConstants' undeclared (first use in this function)
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:393: error: (Each undeclared identifier is reported only once
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:393: error: for each function it appears in.)
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:393: error: 'UNKNOWN_SUBSCRIPT' undeclared (first use in this function)
+
+// In file included from Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:10:
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_gasMixtureViscosity':
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:481: error: '_fluidConstants' undeclared (first use in this function)
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:482: error: 'UNKNOWN_SUBSCRIPT' undeclared (first use in this function)
+
+// In file included from Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:10:
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_isentropicEnthalpyApproximation':
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:692: error: expected expression before 'struct'
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:693: error: expected expression before 'struct'
+
+// In file included from Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:10:
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_specificHeatCapacityCp':
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1232: error: expected expression before 'struct'
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1233: error: expected expression before 'struct'
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_specificEntropy':
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1307: error: '_MMX' undeclared (first use in this function)
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_s__TX':
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1351: error: expected expression before 'struct'
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1352: error: expected expression before 'struct'
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_thermalConductivity':
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1423: error: '_fluidConstants' undeclared (first use in this function)
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1424: error: 'UNKNOWN_SUBSCRIPT' undeclared (first use in this function)
+
+// In file included from Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:10:
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1435: error: expected expression before 'struct'
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_specificHeatCapacityCv':
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1495: error: expected expression before 'struct'
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1496: error: expected expression before 'struct'
+
+// In file included from Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:10:
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_IdealGases_Common_SingleGasNasa_thermalConductivityEstimate':
+
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1763: error: '_data' undeclared (first use in this function)
+
+// mingw32-make[1]: *** [Modelica.Media.Examples.TestOnly.MixIdealGasAir.o] Error 1
+
+// mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
+
+// 
+// "
+// end SimulationResult;
+// endResult

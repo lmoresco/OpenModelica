@@ -1,0 +1,109 @@
+//name:        simulate(Modelica.Media.Examples.WaterIF97)
+//keyword:     simulation
+//status:      correct
+//teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("showStatement");
+
+simulate(Modelica.Media.Examples.WaterIF97);
+
+// Result:
+// true
+// ""
+// true
+// Evaluating: simulate(Modelica.Media.Examples.WaterIF97)
+// eqns =6, 4, 3
+// eqns =6, 4, 3
+// eqns =6, 4, 3
+// eqns =6, 4, 3
+// eqns =6, 4, 3
+// eqns =6, 4, 3
+// eqns =6, 4, 3
+// eqns =6, 4, 3
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.WaterIF97', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = "Simulation failed for model: Modelica.Media.Examples.WaterIF97
+// Warning: Alias variables medium.state.T = medium.T have start values 300.0 != 275.0. Use value from medium.state.T.
+// 
+// Warning: Alias variables medium.state.d = medium.d have start values 1.0 != 999.0. Use value from medium.state.d.
+// 
+// Error: Derivative of expression Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p) is non-existent
+// [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2294:5-2294:19:writable] Error: Model is structurally singular, error found sorting equations m = medium.state.d * V;
+// medium.sat.Tsat = Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p);
+// medium.state.d = Modelica.Media.Examples.WaterIF97.Medium.density_ph(medium.p,medium.h,medium.state.phase);
+// medium.state.phase = if medium.h < Modelica.Media.Examples.WaterIF97.Medium.bubbleEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.h > Modelica.Media.Examples.WaterIF97.Medium.dewEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.p > 22064000.0 then 1 else 2;
+//  for variables medium.sat.Tsat(9), medium.state.d(5), medium.state.phase(4), 
+// Error: Derivative of expression Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p) is non-existent
+// [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2294:5-2294:19:writable] Error: Model is structurally singular, error found sorting equations m = medium.state.d * V;
+// medium.sat.Tsat = Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p);
+// medium.state.d = Modelica.Media.Examples.WaterIF97.Medium.density_ph(medium.p,medium.h,medium.state.phase);
+// medium.state.phase = if medium.h < Modelica.Media.Examples.WaterIF97.Medium.bubbleEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.h > Modelica.Media.Examples.WaterIF97.Medium.dewEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.p > 22064000.0 then 1 else 2;
+//  for variables medium.sat.Tsat(9), medium.state.d(5), medium.state.phase(4), 
+// Error: Derivative of expression Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p) is non-existent
+// [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2294:5-2294:19:writable] Error: Model is structurally singular, error found sorting equations m = medium.state.d * V;
+// medium.sat.Tsat = Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p);
+// medium.state.d = Modelica.Media.Examples.WaterIF97.Medium.density_ph(medium.p,medium.h,medium.state.phase);
+// medium.state.phase = if medium.h < Modelica.Media.Examples.WaterIF97.Medium.bubbleEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.h > Modelica.Media.Examples.WaterIF97.Medium.dewEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.p > 22064000.0 then 1 else 2;
+//  for variables medium.sat.Tsat(9), medium.state.d(5), medium.state.phase(4), 
+// Error: Derivative of expression Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p) is non-existent
+// [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2294:5-2294:19:writable] Error: Model is structurally singular, error found sorting equations m = medium.state.d * V;
+// medium.sat.Tsat = Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p);
+// medium.state.d = Modelica.Media.Examples.WaterIF97.Medium.density_ph(medium.p,medium.h,medium.state.phase);
+// medium.state.phase = if medium.h < Modelica.Media.Examples.WaterIF97.Medium.bubbleEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.h > Modelica.Media.Examples.WaterIF97.Medium.dewEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.p > 22064000.0 then 1 else 2;
+//  for variables medium.sat.Tsat(9), medium.state.d(5), medium.state.phase(4), 
+// Error: Derivative of expression Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p) is non-existent
+// [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2294:5-2294:19:writable] Error: Model is structurally singular, error found sorting equations m = medium.state.d * V;
+// medium.sat.Tsat = Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p);
+// medium.state.d = Modelica.Media.Examples.WaterIF97.Medium.density_ph(medium.p,medium.h,medium.state.phase);
+// medium.state.phase = if medium.h < Modelica.Media.Examples.WaterIF97.Medium.bubbleEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.h > Modelica.Media.Examples.WaterIF97.Medium.dewEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.p > 22064000.0 then 1 else 2;
+//  for variables medium.sat.Tsat(9), medium.state.d(5), medium.state.phase(4), 
+// Error: Derivative of expression Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p) is non-existent
+// [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2294:5-2294:19:writable] Error: Model is structurally singular, error found sorting equations m = medium.state.d * V;
+// medium.sat.Tsat = Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p);
+// medium.state.d = Modelica.Media.Examples.WaterIF97.Medium.density_ph(medium.p,medium.h,medium.state.phase);
+// medium.state.phase = if medium.h < Modelica.Media.Examples.WaterIF97.Medium.bubbleEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.h > Modelica.Media.Examples.WaterIF97.Medium.dewEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.p > 22064000.0 then 1 else 2;
+//  for variables medium.sat.Tsat(9), medium.state.d(5), medium.state.phase(4), 
+// Error: Derivative of expression Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p) is non-existent
+// [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2294:5-2294:19:writable] Error: Model is structurally singular, error found sorting equations m = medium.state.d * V;
+// medium.sat.Tsat = Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p);
+// medium.state.d = Modelica.Media.Examples.WaterIF97.Medium.density_ph(medium.p,medium.h,medium.state.phase);
+// medium.state.phase = if medium.h < Modelica.Media.Examples.WaterIF97.Medium.bubbleEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.h > Modelica.Media.Examples.WaterIF97.Medium.dewEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.p > 22064000.0 then 1 else 2;
+//  for variables medium.sat.Tsat(9), medium.state.d(5), medium.state.phase(4), 
+// Error: Derivative of expression Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p) is non-existent
+// [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2294:5-2294:19:writable] Error: Model is structurally singular, error found sorting equations m = medium.state.d * V;
+// medium.sat.Tsat = Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature(medium.p);
+// medium.state.d = Modelica.Media.Examples.WaterIF97.Medium.density_ph(medium.p,medium.h,medium.state.phase);
+// medium.state.phase = if medium.h < Modelica.Media.Examples.WaterIF97.Medium.bubbleEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.h > Modelica.Media.Examples.WaterIF97.Medium.dewEnthalpy(Modelica.Media.Examples.WaterIF97.Medium.SaturationProperties(medium.p,medium.sat.Tsat)) or medium.p > 22064000.0 then 1 else 2;
+//  for variables medium.sat.Tsat(9), medium.state.d(5), medium.state.phase(4), 
+// Error: Internal error Transformation Module failed!
+// "
+// end SimulationResult;
+// endResult

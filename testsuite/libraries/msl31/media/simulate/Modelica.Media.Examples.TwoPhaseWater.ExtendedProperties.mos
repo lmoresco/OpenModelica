@@ -1,0 +1,43 @@
+//name:        simulate(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties)
+//keyword:     simulation
+//status:      correct
+//teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("showStatement");
+
+simulate(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties);
+
+// Result:
+// true
+// ""
+// true
+// Evaluating: simulate(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties)
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = "Simulation failed for model: Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties
+// Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
+
+// gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.o Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c
+
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c: In function 'bound_parameters':
+
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1130: error: '$Pbpro$Pd' undeclared (first use in this function)
+
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1130: error: (Each undeclared identifier is reported only once
+
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1130: error: for each function it appears in.)
+
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1131: error: '$Pbpro$Ph' undeclared (first use in this function)
+
+// mingw32-make[1]: *** [Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.o] Error 1
+
+// mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
+
+// 
+// "
+// end SimulationResult;
+// endResult

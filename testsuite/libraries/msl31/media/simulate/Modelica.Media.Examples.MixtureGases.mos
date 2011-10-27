@@ -1,0 +1,170 @@
+//name:        simulate(Modelica.Media.Examples.MixtureGases)
+//keyword:     simulation
+//status:      correct
+//teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("showStatement");
+
+simulate(Modelica.Media.Examples.MixtureGases);
+
+// Result:
+// true
+// ""
+// true
+// Evaluating: simulate(Modelica.Media.Examples.MixtureGases)
+// eqns =4
+// eqns =4
+// eqns =4
+// eqns =4
+// eqns =4
+// eqns =4
+// eqns =4
+// eqns =4
+// eqns =4
+// eqns =4
+// eqns =4
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.MixtureGases', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = "Simulation failed for model: Modelica.Media.Examples.MixtureGases
+// [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:534:5-535:65:writable] Error: No constant value for variable data.R in scope Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate.
+// Warning: Alias variables medium2.X[1] = medium2.Xi[1] have start values 0.1 != 0.92. Use value from medium2.X[1].
+// 
+// Warning: Alias variables medium2.X[2] = medium2.Xi[2] have start values 0.1 != 0.048. Use value from medium2.X[2].
+// 
+// Warning: Alias variables medium2.X[3] = medium2.Xi[3] have start values 0.1 != 0.005. Use value from medium2.X[3].
+// 
+// Warning: Alias variables medium2.X[4] = medium2.Xi[4] have start values 0.2 != 0.002. Use value from medium2.X[4].
+// 
+// Warning: Alias variables medium2.X[5] = medium2.Xi[5] have start values 0.2 != 0.015. Use value from medium2.X[5].
+// 
+// Warning: Alias variables medium2.X[6] = medium2.Xi[6] have start values 0.3 != 0.01. Use value from medium2.X[6].
+// 
+// Warning: Alias variables medium1.X[1] = medium1.Xi[1] have start values 0.8 != 0.768. Use value from medium1.X[1].
+// 
+// Warning: Alias variables medium1.X[2] = medium1.Xi[2] have start values 0.2 != 0.232. Use value from medium1.X[2].
+// 
+// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
+// m2 = medium2.d * V;
+// medium2.d = medium2.p / (medium2.T * 518.279116793808);
+// medium2.u = medium2.h + -518.279116793808 * medium2.T;
+// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
+// m2 = medium2.d * V;
+// medium2.d = medium2.p / (medium2.T * 518.279116793808);
+// medium2.u = medium2.h + -518.279116793808 * medium2.T;
+// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
+// m2 = medium2.d * V;
+// medium2.d = medium2.p / (medium2.T * 518.279116793808);
+// medium2.u = medium2.h + -518.279116793808 * medium2.T;
+// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
+// m2 = medium2.d * V;
+// medium2.d = medium2.p / (medium2.T * 518.279116793808);
+// medium2.u = medium2.h + -518.279116793808 * medium2.T;
+// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
+// m2 = medium2.d * V;
+// medium2.d = medium2.p / (medium2.T * 518.279116793808);
+// medium2.u = medium2.h + -518.279116793808 * medium2.T;
+// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
+// m2 = medium2.d * V;
+// medium2.d = medium2.p / (medium2.T * 518.279116793808);
+// medium2.u = medium2.h + -518.279116793808 * medium2.T;
+// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
+// m2 = medium2.d * V;
+// medium2.d = medium2.p / (medium2.T * 518.279116793808);
+// medium2.u = medium2.h + -518.279116793808 * medium2.T;
+// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
+// m2 = medium2.d * V;
+// medium2.d = medium2.p / (medium2.T * 518.279116793808);
+// medium2.u = medium2.h + -518.279116793808 * medium2.T;
+// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
+// m2 = medium2.d * V;
+// medium2.d = medium2.p / (medium2.T * 518.279116793808);
+// medium2.u = medium2.h + -518.279116793808 * medium2.T;
+// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
+// m2 = medium2.d * V;
+// medium2.d = medium2.p / (medium2.T * 518.279116793808);
+// medium2.u = medium2.h + -518.279116793808 * medium2.T;
+// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
+// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
+// m2 = medium2.d * V;
+// medium2.d = medium2.p / (medium2.T * 518.279116793808);
+// medium2.u = medium2.h + -518.279116793808 * medium2.T;
+// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
+// Error: Internal error Transformation Module failed!
+// "
+// end SimulationResult;
+// endResult

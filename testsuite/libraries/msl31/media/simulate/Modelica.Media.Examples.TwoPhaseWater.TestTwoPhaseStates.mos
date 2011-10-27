@@ -1,0 +1,47 @@
+//name:        simulate(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates)
+//keyword:     simulation
+//status:      correct
+//teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("showStatement");
+
+simulate(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates);
+
+// Result:
+// true
+// ""
+// true
+// Evaluating: simulate(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates)
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 22.0, numberOfIntervals = 2500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = "Simulation failed for model: Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates
+// Warning: Alias variables medium.p = medium.sat.psat have start values 700.0 != 100000.0. Use value from medium.p.
+// 
+// Warning: Alias variables medium.p = medium.state.p have start values 700.0 != 100000.0. Use value from medium.p.
+// 
+// Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
+
+// gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.o Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c
+
+// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c: In function 'bound_parameters':
+
+// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:1117: error: '$Pbpro$Pd' undeclared (first use in this function)
+
+// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:1117: error: (Each undeclared identifier is reported only once
+
+// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:1117: error: for each function it appears in.)
+
+// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:1118: error: '$Pbpro$Ph' undeclared (first use in this function)
+
+// mingw32-make[1]: *** [Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.o] Error 1
+
+// mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
+
+// 
+// "
+// end SimulationResult;
+// endResult
