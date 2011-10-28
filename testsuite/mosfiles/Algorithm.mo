@@ -35,4 +35,37 @@ algorithm
   x:=y+1;
 end Alg4;
 
-  
+model Alg5 "continues variables in algorithm"
+  Real x1,x2,y1,y2,f,x3,x4;
+function fak
+ input Real n;
+ output Real f;
+algorithm
+  f :=1;
+  for i in 1:n loop
+    f := f*i;
+  end for;
+end fak;
+algorithm
+  // approximation of sin(time)
+  y1 := 0;
+  for i in 0:5 loop
+    f := fak(2*i+1);
+		y1 := y1 + ((-1)^(i)/f)*time^(2*i+1);
+  end for;
+  y2 := sin(time);
+  x4 := x3;
+  x3 := x3+1+time;
+equation
+  der(x1) = y1;
+  der(x2) = y2;
+end Alg5;
+/*
+model Alg7
+  Real x,y(start=1),z;
+algorithm
+  z := y;
+  y := y + sin(time);
+  der(x) := y;
+end Alg7;
+*/

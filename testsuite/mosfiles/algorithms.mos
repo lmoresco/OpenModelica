@@ -9,11 +9,12 @@ loadFile("Algorithm.mo");
 
 // Alg1 - an algorithm for a single variable.
 simulate(Alg1, numberOfIntervals=10, tolerance=1e-5);
-val(x,0.0);
+val(x,1.0);
 
 // Alg2 - two variables in an algorithm
 simulate(Alg2);
-val(x,0.0);
+//val(x,1.0);
+val(y,1.0);
 
 // Alg3 - mixed algorithm and equation sections
 simulate(Alg3);
@@ -24,6 +25,35 @@ val(u,0.0);
 // Alg4 - single algorithm with wrong causality
 simulate(Alg4);
 
+// Alg5 - continues algorithms
+simulate(Alg5);
+val(x1,0.0);
+val(x1,0.5);
+val(x1,1.0);
+val(x2,0.0);
+val(x2,0.5);
+val(x2,1.0);
+val(x1,0.0);
+val(y1,0.5);
+val(y1,1.0);
+val(y2,0.0);
+val(y2,0.5);
+val(y2,1.0);
+val(x3,0.0);
+val(x3,0.5);
+val(x3,1.0);
+val(x4,0.0);
+val(x4,0.5);
+val(x4,1.0);
+/*
+simulate(Alg7);
+val(y,0.0);
+val(y,0.5);
+val(y,1.0);
+val(x,0.0);
+val(x,0.5);
+val(x,1.0);
+*/
 // Result:
 // true
 // record SimulationResult
@@ -37,7 +67,7 @@ simulate(Alg4);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Alg2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 1.0
+// 2.0
 // record SimulationResult
 //     resultFile = "Alg3_res.mat",
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Alg3', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
@@ -58,4 +88,28 @@ simulate(Alg4);
 // Error: Internal error Transformation from optimised DAE to simulation code structure failed
 // "
 // end SimulationResult;
+// record SimulationResult
+//     resultFile = "Alg5_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Alg5', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//    messages = ""
+// end SimulationResult;
+// 0.0
+// 0.122409089529047
+// 0.459692200904518
+// 0.0
+// 0.122409089529048
+// 0.459692200916743
+// 0.0
+// 0.479425538604183
+// 0.841470984648068
+// 0.0
+// 0.479425538604203
+// 0.841470984807897
+// 2.0
+// 398.475576799907
+// 864.607635352923
+// 1.0
+// 396.975576799907
+// 862.607635352923
 // endResult
+
