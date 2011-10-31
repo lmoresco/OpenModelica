@@ -148,6 +148,8 @@ ConnectInnerOuter.mo \
 ConnectorComponents.mo \
 ConnectorIllegal.mo \
 ConnectorIllegal2.mo \
+ConnectorIllegal3.mo \
+ConnectorIllegal4.mo \
 ConnectorInheritance1.mo \
 ConnectorSimple.mo \
 ConnectTypes.mo \
