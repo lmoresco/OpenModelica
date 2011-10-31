@@ -24,6 +24,7 @@ Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfer.mos \
 Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.IdealFlowHeatTransfer.mos \
 Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.mos \
 Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.mos \
+Modelica.Fluid.Pipes.StaticPipe.mos \
 Modelica.Fluid.Sensors.Density.mos \
 Modelica.Fluid.Sensors.DensityTwoPort.mos \
 Modelica.Fluid.Sensors.Pressure.mos \
@@ -77,7 +78,6 @@ Modelica.Fluid.Machines.PrescribedPump.mos \
 Modelica.Fluid.Machines.Pump.mos \
 Modelica.Fluid.Machines.SweptVolume.mos \
 Modelica.Fluid.Pipes.DynamicPipe.mos \
-Modelica.Fluid.Pipes.StaticPipe.mos \
 Modelica.Fluid.Sources.Boundary_ph.mos \
 Modelica.Fluid.Sources.Boundary_pT.mos \
 Modelica.Fluid.Sources.FixedBoundary.mos \

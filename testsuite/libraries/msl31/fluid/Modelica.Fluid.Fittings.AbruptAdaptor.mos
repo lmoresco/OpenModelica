@@ -4,6 +4,9 @@
 //
 // instantiate/check model example
 //
+// This model has issues due to Modelica bug #627:
+// https://trac.modelica.org/Modelica/ticket/627
+//
 
 loadModel(Modelica, {"3.1"}); getErrorString();
 
