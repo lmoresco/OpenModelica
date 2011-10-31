@@ -10,7 +10,7 @@ class Concat3
 	Real[2, 3] r1 = cat(1, {{1.0, 2.0, 3}}, {{4, 5, 6}});
 	Real[2, 6] r2 = cat(2, r1, r1);
 	Real[2, 3] r3 = cat(2, r1);
-	Real[2, 3] r4 = cat(1, r1, r1);
+	Real[4, 3] r4 = cat(1, r1, r1);
 	Real[:] r5 = cat(1, {1,2,3}, {4,time,6});
 end Concat3;
 
@@ -46,6 +46,12 @@ end Concat3;
 //   Real r4[2,1] = r1[2,1];
 //   Real r4[2,2] = r1[2,2];
 //   Real r4[2,3] = r1[2,3];
+//   Real r4[3,1] = r1[1,1];
+//   Real r4[3,2] = r1[1,2];
+//   Real r4[3,3] = r1[1,3];
+//   Real r4[4,1] = r1[2,1];
+//   Real r4[4,2] = r1[2,2];
+//   Real r4[4,3] = r1[2,3];
 //   Real r5[1] = 1.0;
 //   Real r5[2] = 2.0;
 //   Real r5[3] = 3.0;

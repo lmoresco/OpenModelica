@@ -107,6 +107,7 @@ BooleanLiterals.mo \
 BooleanRanges.mo \
 Break.mo \
 Cardinality.mo \
+Cat1.mo \
 Ceil.mo \
 Circle.mo \
 Circuit1.mo \
