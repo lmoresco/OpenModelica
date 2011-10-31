@@ -16,17 +16,13 @@ checkModel(Modelica.Fluid.Examples.Tanks.ThreeTanks); getErrorString();
 // ""
 // true
 // ""
-// "Warning: Parameter height has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter crossArea has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Vessels.OpenTank.
-// Warning: Parameter height has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter pipe1.flowModel.p_a_start has neither value nor start value, and is fixed during initialization (fixed=true)
+// "Warning: Parameter pipe1.flowModel.p_a_start has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: Parameter pipe1.flowModel.p_b_start has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: Parameter pipe1.flowModel.nParallel has neither value nor start value, and is fixed during initialization (fixed=true)
 // [Pipes.mo:21:5-40:85:writable] Error: No matching function found for Medium.density(flowModel.states[1])
 // of type
-//   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState
-// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity="Density", unit="kg/m3", displayUnit="g/cm3") in component pipe1
+//   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState
+// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity="Density", unit="kg/m3", displayUnit="g/cm3") in component pipe1
 // candidates are 
 //   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.StaticPipe.Medium.ThermodynamicState
 // Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar") p;
@@ -34,11 +30,10 @@ checkModel(Modelica.Fluid.Examples.Tanks.ThreeTanks); getErrorString();
 // end Modelica.Fluid.Pipes.StaticPipe.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity="Density", unit="kg/m3", displayUnit="g/cm3")
 // Error: Error occured while flattening model Modelica.Fluid.Examples.Tanks.ThreeTanks
 // "
-// "[Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Vessels.OpenTank.
-// [Pipes.mo:21:5-40:85:writable] Error: No matching function found for Medium.density(flowModel.states[1])
+// "[Pipes.mo:21:5-40:85:writable] Error: No matching function found for Medium.density(flowModel.states[1])
 // of type
-//   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState
-// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\") in component pipe1
+//   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState
+// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\") in component pipe1
 // candidates are 
 //   .Modelica.Fluid.Pipes.StaticPipe.Medium.density<function>(state:record Modelica.Fluid.Pipes.StaticPipe.Medium.ThermodynamicState
 // Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;

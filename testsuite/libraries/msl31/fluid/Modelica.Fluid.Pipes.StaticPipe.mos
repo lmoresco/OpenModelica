@@ -15,42 +15,42 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 // true
 // ""
 // true
-// "function Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState\"
+// "function Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState\"
 //   output ThermodynamicState res;
-// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState;
+// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState;
 // 
-// function Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.density \"Return density\"
-//   input Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState state \"thermodynamic state record\";
+// function Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.density \"Return density\"
+//   input Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
-// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.density;
+// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.density;
 // 
-// function Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.density_pTX \"Return density from p, T, and X or Xi\"
+// function Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.density_pTX \"Return density from p, T, and X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions\";
 //   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
 // algorithm
-//   d := Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.density(Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.setState_pTX(p,T,X));
-// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.density_pTX;
+//   d := Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.density(Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.setState_pTX(p,T,X));
+// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.density_pTX;
 // 
-// function Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.dynamicViscosity \"Return dynamic viscosity\"
-//   input Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState state \"thermodynamic state record\";
+// function Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.dynamicViscosity \"Return dynamic viscosity\"
+//   input Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosity\";
-// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.dynamicViscosity;
+// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.dynamicViscosity;
 // 
-// function Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.pressure \"Return pressure\"
-//   input Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState state \"thermodynamic state record\";
+// function Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.pressure \"Return pressure\"
+//   input Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.pressure;
+// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.pressure;
 // 
-// function Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+// function Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.ThermodynamicState state \"thermodynamic state record\";
-// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.setState_pTX;
+//   output Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.ThermodynamicState state \"thermodynamic state record\";
+// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.setState_pTX;
 // 
-// function Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.WallFriction.Internal.m_flow_of_dp_fric \"Calculate mass flow rate as function of pressure drop due to friction\"
+// function Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.Internal.m_flow_of_dp_fric \"Calculate mass flow rate as function of pressure drop due to friction\"
 //   input Real dp_fric(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure loss due to friction (dp = port_a.p - port_b.p)\";
 //   input Real rho_a(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"Density at port_a\";
 //   input Real rho_b(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"Density at port_b\";
@@ -87,14 +87,14 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //     aux2 := sqrt(aux1 * abs(dp_fric));
 //     dRe_ddp := 0.434294481903252 * ((-2.0 * log(2.51 / aux2 + 0.27 * Delta) * aux1) / (aux2 * 2.0) + 5.02 / ((2.51 / aux2 + 0.27 * Delta) * abs(dp_fric) * 2.0));
 //     if Re < Re2 then
-//       (Re, dRe_ddp) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.WallFriction.Internal.m_flow_of_dp_fric.interpolateInRegion2_withDerivative(lambda2,Re1,Re2,Delta,dp_fric);
+//       (Re, dRe_ddp) := Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.Internal.m_flow_of_dp_fric.interpolateInRegion2_withDerivative(lambda2,Re1,Re2,Delta,dp_fric);
 //     end if;
 //   end if;
 //   m_flow := 0.785398163397448 * diameter * mu * if dp_fric >= 0.0 then Re else -Re;
 //   dm_flow_ddp_fric := 0.785398163397448 * diameter * mu * dRe_ddp;
-// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.WallFriction.Internal.m_flow_of_dp_fric;
+// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.Internal.m_flow_of_dp_fric;
 // 
-// function Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.WallFriction.Internal.m_flow_of_dp_fric.interpolateInRegion2_withDerivative \"Interpolation in log-log space using a cubic Hermite polynomial, where x=log10(lambda2), y=log10(Re)\"
+// function Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.Internal.m_flow_of_dp_fric.interpolateInRegion2_withDerivative \"Interpolation in log-log space using a cubic Hermite polynomial, where x=log10(lambda2), y=log10(Re)\"
 //   input Real lambda2 \"Known independent variable\";
 //   input Real Re1(quantity = \"ReynoldsNumber\", unit = \"1\") \"Boundary between laminar regime and transition\";
 //   input Real Re2(quantity = \"ReynoldsNumber\", unit = \"1\") \"Boundary between transition and turbulent regime\";
@@ -120,9 +120,9 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //   (y, dy_dx) := Modelica.Fluid.Utilities.cubicHermite_withDerivative(x,x1,x2,y1,y2,y1d,y2d);
 //   Re := 10.0 ^ y;
 //   dRe_ddp := (dy_dx * Re) / abs(dp_fric);
-// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.WallFriction.Internal.m_flow_of_dp_fric.interpolateInRegion2_withDerivative;
+// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.Internal.m_flow_of_dp_fric.interpolateInRegion2_withDerivative;
 // 
-// function Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.WallFriction.massFlowRate_dp_staticHead \"Return mass flow rate m_flow as function of pressure loss dp, i.e., m_flow = f(dp), due to wall friction and static head\"
+// function Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.massFlowRate_dp_staticHead \"Return mass flow rate m_flow as function of pressure loss dp, i.e., m_flow = f(dp), due to wall friction and static head\"
 //   input Real dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure loss (dp = port_a.p - port_b.p)\";
 //   input Real rho_a(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"Density at port_a\";
 //   input Real rho_b(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"Density at port_b\";
@@ -153,12 +153,12 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //   dp_a := max(dp_grav_a,dp_grav_b) + dp_small;
 //   dp_b := min(dp_grav_a,dp_grav_b) - dp_small;
 //   if dp >= dp_a then
-//     (m_flow, _) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.WallFriction.Internal.m_flow_of_dp_fric(dp - dp_grav_a,rho_a,rho_b,mu_a,mu_b,length,diameter,Re1,4000.0,Delta);
+//     (m_flow, _) := Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.Internal.m_flow_of_dp_fric(dp - dp_grav_a,rho_a,rho_b,mu_a,mu_b,length,diameter,Re1,4000.0,Delta);
 //   elseif dp <= dp_b then
-//     (m_flow, _) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.WallFriction.Internal.m_flow_of_dp_fric(dp - dp_grav_b,rho_a,rho_b,mu_a,mu_b,length,diameter,Re1,4000.0,Delta);
+//     (m_flow, _) := Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.Internal.m_flow_of_dp_fric(dp - dp_grav_b,rho_a,rho_b,mu_a,mu_b,length,diameter,Re1,4000.0,Delta);
 //   else
-//     (m_flow_a, dm_flow_ddp_fric_a) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.WallFriction.Internal.m_flow_of_dp_fric(dp_a - dp_grav_a,rho_a,rho_b,mu_a,mu_b,length,diameter,Re1,4000.0,Delta);
-//     (m_flow_b, dm_flow_ddp_fric_b) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.WallFriction.Internal.m_flow_of_dp_fric(dp_b - dp_grav_b,rho_a,rho_b,mu_a,mu_b,length,diameter,Re1,4000.0,Delta);
+//     (m_flow_a, dm_flow_ddp_fric_a) := Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.Internal.m_flow_of_dp_fric(dp_a - dp_grav_a,rho_a,rho_b,mu_a,mu_b,length,diameter,Re1,4000.0,Delta);
+//     (m_flow_b, dm_flow_ddp_fric_b) := Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.Internal.m_flow_of_dp_fric(dp_b - dp_grav_b,rho_a,rho_b,mu_a,mu_b,length,diameter,Re1,4000.0,Delta);
 //     (m_flow, dm_flow_ddp_fric_zero) := Modelica.Fluid.Utilities.regFun3(dp_zero,dp_b,dp_a,m_flow_b,m_flow_a,dm_flow_ddp_fric_b,dm_flow_ddp_fric_a);
 //     if dp > dp_zero then
 //       (m_flow, _) := Modelica.Fluid.Utilities.regFun3(dp,dp_zero,dp_a,m_flow_zero,m_flow_a,dm_flow_ddp_fric_zero,dm_flow_ddp_fric_a);
@@ -166,7 +166,7 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //       (m_flow, _) := Modelica.Fluid.Utilities.regFun3(dp,dp_b,dp_zero,m_flow_b,m_flow_zero,dm_flow_ddp_fric_b,dm_flow_ddp_fric_zero);
 //     end if;
 //   end if;
-// end Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.WallFriction.massFlowRate_dp_staticHead;
+// end Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.massFlowRate_dp_staticHead;
 // 
 // function Modelica.Fluid.Pipes.StaticPipe.Medium.density \"Return density\"
 //   input Modelica.Fluid.Pipes.StaticPipe.Medium.ThermodynamicState state \"thermodynamic state record\";
@@ -422,19 +422,19 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //   Real flowModel.Fs_p[1](quantity = \"Force\", unit = \"N\") \"Pressure forces\";
 //   Real flowModel.Fs_fg[1](quantity = \"Force\", unit = \"N\") \"Friction and gravity forces\";
 //   parameter Boolean flowModel.useUpstreamScheme = true \"= false to average upstream and downstream properties across flow segments\";
-//   Real flowModel.rhos[1](quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) = if flowModel.use_rho_nominal then flowModel.rho_nominal else Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.density(flowModel.states[1]);
-//   Real flowModel.rhos[2](quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) = if flowModel.use_rho_nominal then flowModel.rho_nominal else Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.density(flowModel.states[2]);
+//   Real flowModel.rhos[1](quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) = if flowModel.use_rho_nominal then flowModel.rho_nominal else Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.density(flowModel.states[1]);
+//   Real flowModel.rhos[2](quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) = if flowModel.use_rho_nominal then flowModel.rho_nominal else Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.density(flowModel.states[2]);
 //   Real flowModel.rhos_act[1](quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"Actual density per segment\";
-//   Real flowModel.mus[1](quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0) = if flowModel.use_mu_nominal then flowModel.mu_nominal else Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.dynamicViscosity(flowModel.states[1]);
-//   Real flowModel.mus[2](quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0) = if flowModel.use_mu_nominal then flowModel.mu_nominal else Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.dynamicViscosity(flowModel.states[2]);
+//   Real flowModel.mus[1](quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0) = if flowModel.use_mu_nominal then flowModel.mu_nominal else Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.dynamicViscosity(flowModel.states[1]);
+//   Real flowModel.mus[2](quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0) = if flowModel.use_mu_nominal then flowModel.mu_nominal else Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.dynamicViscosity(flowModel.states[2]);
 //   Real flowModel.mus_act[1](quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0) \"Actual viscosity per segment\";
 //   Real flowModel.dps_fg[1](quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = (flowModel.p_a_start - flowModel.p_b_start) / Real(flowModel.n + -1)) \"pressure drop between states\";
 //   parameter Real flowModel.Re_turbulent(quantity = \"ReynoldsNumber\", unit = \"1\") = 4000.0 \"Start of turbulent regime, depending on type of flow device\";
 //   parameter Boolean flowModel.show_Res = false \"= true, if Reynolds numbers are included for plotting\";
 //   protected parameter Boolean flowModel.use_rho_nominal = false \"= true, if rho_nominal is used, otherwise computed from medium\";
-//   protected parameter Real flowModel.rho_nominal(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) = Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.density_pTX(101325.0,293.15,{1.0}) \"Nominal density (e.g. rho_liquidWater = 995, rho_air = 1.2)\";
+//   protected parameter Real flowModel.rho_nominal(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) = Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.density_pTX(101325.0,293.15,{1.0}) \"Nominal density (e.g. rho_liquidWater = 995, rho_air = 1.2)\";
 //   protected parameter Boolean flowModel.use_mu_nominal = false \"= true, if mu_nominal is used, otherwise computed from medium\";
-//   protected parameter Real flowModel.mu_nominal(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0) = Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.dynamicViscosity(Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.setState_pTX(101325.0,293.15,{1.0})) \"Nominal dynamic viscosity (e.g. mu_liquidWater = 1e-3, mu_air = 1.8e-5)\";
+//   protected parameter Real flowModel.mu_nominal(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0) = Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.dynamicViscosity(Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.setState_pTX(101325.0,293.15,{1.0})) \"Nominal dynamic viscosity (e.g. mu_liquidWater = 1e-3, mu_air = 1.8e-5)\";
 //   input Real flowModel.pathLengths_internal[1](quantity = \"Length\", unit = \"m\") = flowModel.pathLengths[1] \"pathLengths used internally; to be defined by extending class\";
 //   parameter Real flowModel.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0) = 1000.0 * flowModel.dp_small \"Nominal pressure loss (for nominal models)\";
 //   parameter Real flowModel.m_flow_nominal(quantity = \"MassFlowRate\", unit = \"kg/s\") = 100.0 * flowModel.m_flow_small \"Mass flow rate for dp_nominal (for nominal models)\";
@@ -451,11 +451,11 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //   final parameter Real V(quantity = \"Volume\", unit = \"m3\") = crossArea * (length * nParallel) \"volume size\";
 // equation
 //   assert(flowModel.m_flows[1] > -flowModel.m_flow_small or flowModel.allowFlowReversal,\"Reverting flow occurs even though allowFlowReversal is false\");
-//   flowModel.m_flows[1] = flowModel.nParallel * Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.WallFriction.massFlowRate_dp_staticHead(flowModel.dps_fg[1],flowModel.rhos[1],flowModel.rhos[2],flowModel.mus[1],flowModel.mus[2],flowModel.pathLengths_internal[1],flowModel.diameters[1],flowModel.g * flowModel.dheights[1],flowModel.roughnesses[1] / 2.0 + flowModel.roughnesses[2] / 2.0,flowModel.dp_small / Real(flowModel.n));
+//   flowModel.m_flows[1] = flowModel.nParallel * Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.massFlowRate_dp_staticHead(flowModel.dps_fg[1],flowModel.rhos[1],flowModel.rhos[2],flowModel.mus[1],flowModel.mus[2],flowModel.pathLengths_internal[1],flowModel.diameters[1],flowModel.g * flowModel.dheights[1],flowModel.roughnesses[1] / 2.0 + flowModel.roughnesses[2] / 2.0,flowModel.dp_small / Real(flowModel.n));
 //   flowModel.rhos_act[1] = if noEvent(flowModel.m_flows[1] > 0.0) then flowModel.rhos[1] else flowModel.rhos[2];
 //   flowModel.mus_act[1] = if noEvent(flowModel.m_flows[1] > 0.0) then flowModel.mus[1] else flowModel.mus[2];
 //   flowModel.Ib_flows[1] = 0.0;
-//   flowModel.Fs_p[1] = flowModel.nParallel * (0.5 * ((flowModel.crossAreas[1] + flowModel.crossAreas[2]) * (Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.pressure(flowModel.states[2]) - Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.Medium.pressure(flowModel.states[1]))));
+//   flowModel.Fs_p[1] = flowModel.nParallel * (0.5 * ((flowModel.crossAreas[1] + flowModel.crossAreas[2]) * (Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.pressure(flowModel.states[2]) - Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.pressure(flowModel.states[1]))));
 //   flowModel.dps_fg[1] = (2.0 * flowModel.Fs_fg[1]) / ((flowModel.crossAreas[1] + flowModel.crossAreas[2]) * flowModel.nParallel);
 //   flowModel.Is[1] = flowModel.m_flows[1] * flowModel.pathLengths[1];
 //   0.0 = flowModel.Ib_flows[1] - flowModel.Fs_p[1] - flowModel.Fs_fg[1];
@@ -478,7 +478,7 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 // Warning: Parameter length has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: No corresponding 'inner' declaration found for component flowModel.system declared as 'outer '.
 //   The existing 'inner' components are: 
-//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.StaticPipe.FlowModel.
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
@@ -488,7 +488,7 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 // Warning: Parameter length has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: No corresponding 'inner' declaration found for component flowModel.system declared as 'outer '.
 //   The existing 'inner' components are: 
-//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.StaticPipe.FlowModel.
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
@@ -505,7 +505,7 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //   Continuing flattening by only considering the 'outer' component declaration.
 // Warning: No corresponding 'inner' declaration found for component flowModel.system declared as 'outer '.
 //   The existing 'inner' components are: 
-//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.BaseClasses.FlowModels.FlowModel.
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.StaticPipe.FlowModel.
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.

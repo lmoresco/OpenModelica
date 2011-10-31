@@ -13,6 +13,7 @@ Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.mos \
 Modelica.Fluid.Examples.DrumBoiler.DrumBoiler.mos \
 Modelica.Fluid.Examples.Explanatory.MeasuringTemperature.mos \
 Modelica.Fluid.Examples.HeatExchanger.BaseClasses.WallConstProps.mos \
+Modelica.Fluid.Examples.HeatingSystem.mos \
 Modelica.Fluid.Fittings.MultiPort.mos \
 Modelica.Fluid.Fittings.TeeJunctionIdeal.mos \
 Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.mos \
@@ -58,7 +59,6 @@ Modelica.Fluid.Examples.BranchingDynamicPipes.mos \
 Modelica.Fluid.Examples.Explanatory.MomentumBalanceFittings.mos \
 Modelica.Fluid.Examples.HeatExchanger.BaseClasses.BasicHX.mos \
 Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation.mos \
-Modelica.Fluid.Examples.HeatingSystem.mos \
 Modelica.Fluid.Examples.IncompressibleFluidNetwork.mos \
 Modelica.Fluid.Examples.InverseParameterization.mos \
 Modelica.Fluid.Examples.PumpingSystem.mos \
