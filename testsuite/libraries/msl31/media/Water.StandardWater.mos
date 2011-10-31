@@ -24,7 +24,7 @@ checkModel(Modelica.Media.Water.StandardWater); getErrorString();
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
-//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
 // algorithm
 //   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
@@ -35,8 +35,8 @@ checkModel(Modelica.Media.Water.StandardWater); getErrorString();
 //   constant Boolean singleState = false \"= true, if u and d are not a function of pressure\";
 //   constant Boolean reducedX = true \"= true if medium contains the equation sum(X) = 1.0; set reducedX=true if only one substance (see docu for details)\";
 //   constant Boolean fixedX = true \"= true if medium contains the equation X = reference_X\";
-//   constant Real p_default(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 101325.0 \"Default value for pressure of medium (for initialization)\";
-//   constant Real T_default(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Default value for temperature of medium (for initialization)\";
+//   constant Real p_default(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 101325.0 \"Default value for pressure of medium (for initialization)\";
+//   constant Real T_default(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) = Modelica.SIunits.Conversions.from_degC(20.0) \"Default value for temperature of medium (for initialization)\";
 //   constant Boolean smoothModel = false \"true if the (derived) model should not generate state events\";
 //   constant Boolean onePhase = false \"true if the (derived) model should never be called with two-phase inputs\";
 //   constant String fluidConstants[1].iupacName = \"oxidane\" \"complete IUPAC name (or common name, if non-existent)\";
@@ -44,14 +44,14 @@ checkModel(Modelica.Media.Water.StandardWater); getErrorString();
 //   constant String fluidConstants[1].chemicalFormula = \"H2O\" \"Chemical formula, (brutto, nomenclature according to Hill\";
 //   constant String fluidConstants[1].structureFormula = \"H2O\" \"Chemical structure formula\";
 //   constant Real fluidConstants[1].molarMass(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) = 0.018015268 \"molar mass\";
-//   constant Real fluidConstants[1].criticalTemperature(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 647.096 \"critical temperature\";
-//   constant Real fluidConstants[1].criticalPressure(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 22064000.0 \"critical pressure\";
+//   constant Real fluidConstants[1].criticalTemperature(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) = 647.096 \"critical temperature\";
+//   constant Real fluidConstants[1].criticalPressure(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 22064000.0 \"critical pressure\";
 //   constant Real fluidConstants[1].criticalMolarVolume(quantity = \"MolarVolume\", unit = \"m3/mol\", min = 1e-006, max = 1000000.0, nominal = 1.0) = 5.59480372670807e-005 \"critical molar Volume\";
 //   constant Real fluidConstants[1].acentricFactor = 0.344 \"Pitzer acentric factor\";
-//   constant Real fluidConstants[1].triplePointTemperature(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 273.16 \"triple point temperature\";
-//   constant Real fluidConstants[1].triplePointPressure(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 611.657 \"triple point pressure\";
-//   constant Real fluidConstants[1].meltingPoint(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 273.15 \"melting point at 101325 Pa\";
-//   constant Real fluidConstants[1].normalBoilingPoint(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 373.124 \"normal boiling point (at 101325 Pa)\";
+//   constant Real fluidConstants[1].triplePointTemperature(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) = 273.16 \"triple point temperature\";
+//   constant Real fluidConstants[1].triplePointPressure(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 611.657 \"triple point pressure\";
+//   constant Real fluidConstants[1].meltingPoint(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) = 273.15 \"melting point at 101325 Pa\";
+//   constant Real fluidConstants[1].normalBoilingPoint(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) = 373.124 \"normal boiling point (at 101325 Pa)\";
 //   constant Real fluidConstants[1].dipoleMoment(quantity = \"ElectricDipoleMoment\", unit = \"debye\", min = 0.0, max = 2.0) = 1.8 \"dipole moment of molecule in Debye (1 debye = 3.33564e10-30 C.m)\";
 //   constant Boolean fluidConstants[1].hasIdealGasHeatCapacity = false \"true if ideal gas heat capacity is available\";
 //   constant Boolean fluidConstants[1].hasCriticalData = true \"true if critical data are known\";
@@ -73,8 +73,8 @@ checkModel(Modelica.Media.Water.StandardWater); getErrorString();
 //   constant String substanceNames[1] = \"water\" \"Names of the mixture substances. Set substanceNames={mediumName} if only one substance.\";
 //   final constant Integer nS = 1 \"Number of substances\";
 //   constant Integer nX = 1 \"Number of mass fractions\";
-//   constant Real reference_X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default mass fractions of medium\";
-//   constant Real X_default[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default value for mass fractions of medium (for initialization)\";
+//   constant Real reference_X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = 1.0 \"Default mass fractions of medium\";
+//   constant Real X_default[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = 1.0 \"Default value for mass fractions of medium (for initialization)\";
 // end Modelica.Media.Water.StandardWater;
 // "
 // ""

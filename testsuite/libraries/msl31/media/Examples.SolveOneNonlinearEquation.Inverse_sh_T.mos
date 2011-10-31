@@ -31,7 +31,7 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h \"Compute temperature from specific enthalpy\"
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
 // algorithm
 //   T := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.solve(h,200.0,6000.0,100000.0,{1.0},Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),1e-013);
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h;
@@ -149,9 +149,9 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.solve;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps \"Compute temperature from pressure and specific entropy\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
 // algorithm
 //   T := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.solve(s,200.0,6000.0,p,{1.0},Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),1e-013);
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps;
@@ -277,7 +277,7 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.h_T \"Compute specific enthalpy from temperature and gas data; reference is decided by the
 //     refChoice input, or by the referenceChoice package constant by default\"
 //   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
 //   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
 //   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
@@ -288,42 +288,42 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.s0_T \"Compute specific entropy from temperature and gas data\"
 //   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Specific entropy at temperature T\";
 // algorithm
 //   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + -0.5 * data.alow[1] * T ^ -2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + -0.5 * data.ahigh[1] * T ^ -2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.s0_T;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_pT \"Return thermodynamic state from p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
 //   output Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.ThermodynamicState state \"thermodynamic state record\";
 // algorithm
 //   state := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_pTX(p,T,{});
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_pT;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.ThermodynamicState state;
 // algorithm
 //   state := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.ThermodynamicState(p,T);
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_pTX;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_phX \"Return thermodynamic state as function of p, h and composition X\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.ThermodynamicState state;
 // algorithm
 //   state := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.ThermodynamicState(p,Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h(h));
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_phX;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_psX \"Return thermodynamic state as function of p, s and composition X\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.ThermodynamicState state;
 // algorithm
 //   state := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.ThermodynamicState(p,Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps(p,s));
@@ -337,9 +337,9 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
 //   h := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.specificEnthalpy(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_pTX(p,T,X));
@@ -354,32 +354,32 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.temperature \"return temperature of ideal gas\"
 //   input Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
 // algorithm
 //   T := state.T;
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.temperature;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.temperature_phX \"Return temperature from p, h, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
 // algorithm
 //   T := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.temperature(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_phX(p,h,X));
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.temperature_phX;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.temperature_psX \"Return temperature from p,s, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
 // algorithm
 //   T := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.temperature(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_psX(p,s,X));
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.temperature_psX;
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
-//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
 // algorithm
 //   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
@@ -391,15 +391,15 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 // end Modelica.Utilities.Streams.error;
 // 
 // class Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T
-//   parameter Real T_min(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 300.0 \"Vary temperature linearly from T_min (time=0) upto T_max (time=1)\";
-//   parameter Real T_max(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 500.0 \"Vary temperature linearly from T_min (time=0) upto T_max (time=1)\";
+//   parameter Real T_min(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = 300.0 \"Vary temperature linearly from T_min (time=0) upto T_max (time=1)\";
+//   parameter Real T_max(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = 500.0 \"Vary temperature linearly from T_min (time=0) upto T_max (time=1)\";
 //   parameter Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = 100000.0 \"Fixed pressure in model\";
 //   Real h1(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Pre-defined specific enthalpy\";
 //   Real h2(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy computed from T (= h1 required)\";
 //   Real s1(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Pre-defined specific entropy\";
 //   Real s2(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Specific entropy computed from T (= h1 required)\";
-//   Real Th(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature computed from h1\";
-//   Real Ts(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature computed from s1\";
+//   Real Th(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature computed from h1\";
+//   Real Ts(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature computed from s1\";
 //   protected constant Real timeUnit(quantity = \"Time\", unit = \"s\") = 1.0;
 //   final parameter Real h_min(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T_min,true,Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) \"Specific enthalpy at T_min\";
 //   final parameter Real h_max(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T_max,true,Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) \"Specific enthalpy at T_max\";

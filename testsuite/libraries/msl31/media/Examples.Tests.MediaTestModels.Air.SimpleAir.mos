@@ -22,15 +22,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
-// function Modelica.Media.Air.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy at p, T, X\";
-// algorithm
-//   h := -299774.9175 + 1005.45 * T;
-// end Modelica.Media.Air.Medium.specificEnthalpy_pTX;
-// 
 // function Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
@@ -115,27 +106,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   h := -299774.9175 + 1005.45 * T;
 // end Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir.Medium.specificEnthalpy_pTX;
 // 
-// function Modelica.Media.Interfaces.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Modelica.Media.Interfaces.Medium.ThermodynamicState state \"thermodynamic state record\";
-// end Modelica.Media.Interfaces.Medium.setState_pTX;
-// 
-// function Modelica.Media.Interfaces.Medium.specificEnthalpy \"Return specific enthalpy\"
-//   input Modelica.Media.Interfaces.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// end Modelica.Media.Interfaces.Medium.specificEnthalpy;
-// 
-// function Modelica.Media.Interfaces.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.Interfaces.Medium.specificEnthalpy(Modelica.Media.Interfaces.Medium.setState_pTX(p,T,X));
-// end Modelica.Media.Interfaces.Medium.specificEnthalpy_pTX;
-// 
 // function Modelica.Media.Interfaces.PartialMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
@@ -181,7 +151,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 // class Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir
 //   parameter Real p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0) = 101325.0 \"Initial value of pressure\";
 //   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Initial value of temperature\";
-//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Air.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{1.0}) \"Initial value of specific enthalpy\";
+//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{1.0}) \"Initial value of specific enthalpy\";
 //   parameter Real X_start[1] = 1.0 \"Initial value of mass fractions\";
 //   parameter Real volume.V(quantity = \"Volume\", unit = \"m3\") = 0.1 \"Fixed size of junction volume\";
 //   parameter Boolean volume.use_p_start = true \"select p_start or d_start\";
@@ -259,8 +229,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   Real ambient.port.m_flow(quantity = \"MassFlowRate.SimpleAir\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real ambient.port.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
 //   Real ambient.port.H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
-//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-10, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
-//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.SimpleAir\", unit = \"kg/s\", min = 1e-10, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
+//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-010, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
+//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.SimpleAir\", unit = \"kg/s\", min = 1e-010, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
 //   Real shortPipe.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real shortPipe.port_a.m_flow(quantity = \"MassFlowRate.SimpleAir\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real shortPipe.port_a.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
@@ -288,7 +258,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   volume.medium.state.T = volume.medium.T;
 //   volume.medium.state.p = volume.medium.p;
 //   volume.medium.X[1] = 1.0;
-//   assert(volume.medium.X[1] >= -1e-05 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"SimpleAir\" + \"
+//   assert(volume.medium.X[1] >= -1e-005 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"SimpleAir\" + \"
 // of medium \" + \"SimpleAir\" + \" is not in the range 0..1\");
 //   assert(volume.medium.p >= 0.0,\"Pressure (= \" + String(volume.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleAir\" + \"\\\" is negative
 // (Temperature = \" + String(volume.medium.T,0,true,6) + \" K)\");
@@ -311,7 +281,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   fixedMassFlowRate.medium.state.T = fixedMassFlowRate.medium.T;
 //   fixedMassFlowRate.medium.state.p = fixedMassFlowRate.medium.p;
 //   fixedMassFlowRate.medium.X[1] = 1.0;
-//   assert(fixedMassFlowRate.medium.X[1] >= -1e-05 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"SimpleAir\" + \"
+//   assert(fixedMassFlowRate.medium.X[1] >= -1e-005 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"SimpleAir\" + \"
 // of medium \" + \"SimpleAir\" + \" is not in the range 0..1\");
 //   assert(fixedMassFlowRate.medium.p >= 0.0,\"Pressure (= \" + String(fixedMassFlowRate.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleAir\" + \"\\\" is negative
 // (Temperature = \" + String(fixedMassFlowRate.medium.T,0,true,6) + \" K)\");
@@ -332,7 +302,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   ambient.medium.state.T = ambient.medium.T;
 //   ambient.medium.state.p = ambient.medium.p;
 //   ambient.medium.X[1] = 1.0;
-//   assert(ambient.medium.X[1] >= -1e-05 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"SimpleAir\" + \"
+//   assert(ambient.medium.X[1] >= -1e-005 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"SimpleAir\" + \"
 // of medium \" + \"SimpleAir\" + \" is not in the range 0..1\");
 //   assert(ambient.medium.p >= 0.0,\"Pressure (= \" + String(ambient.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleAir\" + \"\\\" is negative
 // (Temperature = \" + String(ambient.medium.T,0,true,6) + \" K)\");

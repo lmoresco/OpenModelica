@@ -64,204 +64,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   external \"C\" y = tanh(u);
 // end Modelica.Math.tanh;
 // 
-// function Modelica.Media.Air.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Air.Medium.ThermodynamicState\"
-//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
-//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
-//   input Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[2] X;
-//   output ThermodynamicState res;
-// end Modelica.Media.Air.Medium.ThermodynamicState;
-// 
-// function Modelica.Media.Air.Medium.Utilities.spliceFunction \"Spline interpolation of two functions\"
-//   input Real pos \"Returned value for x-deltax >= 0\";
-//   input Real neg \"Returned value for x+deltax <= 0\";
-//   input Real x \"Function argument\";
-//   input Real deltax = 1.0 \"Region around x with spline interpolation\";
-//   output Real out;
-//   protected Real scaledX;
-//   protected Real scaledX1;
-//   protected Real y;
-// algorithm
-//   scaledX1 := x / deltax;
-//   scaledX := scaledX1 * asin(1.0);
-//   if scaledX1 <= -0.999999999 then
-//     y := 0.0;
-//   elseif scaledX1 >= 0.999999999 then
-//     y := 1.0;
-//   else
-//     y := 0.5 + tanh(tan(scaledX)) / 2.0;
-//   end if;
-//   out := pos * y + (1.0 - y) * neg;
-// end Modelica.Media.Air.Medium.Utilities.spliceFunction;
-// 
-// function Modelica.Media.Air.Medium.Utilities.spliceFunction_der \"Derivative of spliceFunction\"
-//   input Real pos;
-//   input Real neg;
-//   input Real x;
-//   input Real deltax = 1.0;
-//   input Real dpos;
-//   input Real dneg;
-//   input Real dx;
-//   input Real ddeltax = 0.0;
-//   output Real out;
-//   protected Real scaledX;
-//   protected Real scaledX1;
-//   protected Real dscaledX1;
-//   protected Real y;
-// algorithm
-//   scaledX1 := x / deltax;
-//   scaledX := scaledX1 * asin(1.0);
-//   dscaledX1 := (dx - scaledX1 * ddeltax) / deltax;
-//   if scaledX1 <= -0.99999999999 then
-//     y := 0.0;
-//   elseif scaledX1 >= 0.9999999999 then
-//     y := 1.0;
-//   else
-//     y := 0.5 + tanh(tan(scaledX)) / 2.0;
-//   end if;
-//   out := dpos * y + (1.0 - y) * dneg;
-//   if abs(scaledX1) < 1.0 then
-//     out := out + (pos - neg * dscaledX1 * asin(1.0) * (cosh(tan(scaledX)) * cos(scaledX)) ^ -2.0) / 2.0;
-//   end if;
-// end Modelica.Media.Air.Medium.Utilities.spliceFunction_der;
-// 
-// function Modelica.Media.Air.Medium.enthalpyOfWater \"Computes specific enthalpy of water (solid/liquid) near atmospheric pressure from temperature T\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy of water\";
-// algorithm
-//   h := Modelica.Media.Air.Medium.Utilities.spliceFunction(-1147230.0 + 4200.0 * T,-559957.5 + 2050.0 * T + -333000.0,T + -273.16,0.1);
-// end Modelica.Media.Air.Medium.enthalpyOfWater;
-// 
-// function Modelica.Media.Air.Medium.enthalpyOfWater_der \"Derivative function of enthalpyOfWater\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
-//   input Real dT(unit = \"K/s\") \"Time derivative of temperature\";
-//   output Real dh(unit = \"J/(kg.s)\") \"Time derivative of specific enthalpy\";
-// algorithm
-//   dh := Modelica.Media.Air.Medium.Utilities.spliceFunction_der(-1147230.0 + 4200.0 * T,-559957.5 + 2050.0 * T + -333000.0,T + -273.16,0.1,4200.0 * dT,2050.0 * dT,dT,0.0);
-// end Modelica.Media.Air.Medium.enthalpyOfWater_der;
-// 
-// function Modelica.Media.Air.Medium.h_pTX \"Return specific enthalpy of moist air as a function of pressure p, temperature T and composition X\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"1\") \"Mass fractions of moist air\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T, X\";
-//   protected Real p_steam_sat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0) \"Partial saturation pressure of steam\";
-//   protected Real X_sat(quantity = \"MassFraction\", unit = \"1\") \"Absolute humidity per unit mass of moist air\";
-//   protected Real X_liquid(quantity = \"MassFraction\", unit = \"1\") \"mass fraction of liquid water\";
-//   protected Real X_steam(quantity = \"MassFraction\", unit = \"1\") \"mass fraction of steam water\";
-//   protected Real X_air(quantity = \"MassFraction\", unit = \"1\") \"mass fraction of air\";
-// algorithm
-//   p_steam_sat := Modelica.Media.Air.Medium.saturationPressure(T);
-//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-13,p - p_steam_sat),1.0);
-//   X_liquid := max(X[1] - X_sat,0.0);
-//   X_steam := X[1] - X_liquid;
-//   X_air := 1.0 - X[1];
-//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Air.Medium.enthalpyOfWater(T) * X_liquid;
-// end Modelica.Media.Air.Medium.h_pTX;
-// 
-// function Modelica.Media.Air.Medium.h_pTX_der \"Derivative function of h_pTX\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"1\") \"Mass fractions of moist air\";
-//   input Real dp(unit = \"Pa/s\") \"Pressure derivative\";
-//   input Real dT(unit = \"K/s\") \"Temperature derivative\";
-//   input Real[:] dX(unit = \"1/s\") \"Composition derivative\";
-//   output Real h_der(unit = \"J/(kg.s)\") \"Time derivative of specific enthalpy\";
-//   protected Real p_steam_sat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0) \"Partial saturation pressure of steam\";
-//   protected Real X_sat(quantity = \"MassFraction\", unit = \"1\") \"Absolute humidity per unit mass of moist air\";
-//   protected Real X_liquid(quantity = \"MassFraction\", unit = \"1\") \"Mass fraction of liquid water\";
-//   protected Real X_steam(quantity = \"MassFraction\", unit = \"1\") \"Mass fraction of steam water\";
-//   protected Real X_air(quantity = \"MassFraction\", unit = \"1\") \"Mass fraction of air\";
-//   protected Real x_sat(quantity = \"MassFraction\", unit = \"1\") \"Absolute humidity per unit mass of dry air at saturation\";
-//   protected Real dX_steam(unit = \"1/s\") \"Time deriveative of steam mass fraction\";
-//   protected Real dX_air(unit = \"1/s\") \"Time derivative of dry air mass fraction\";
-//   protected Real dX_liq(unit = \"1/s\") \"Time derivative of liquid/solid water mass fraction\";
-//   protected Real dps(unit = \"Pa/s\") \"Time derivative of saturation pressure\";
-//   protected Real dx_sat(unit = \"1/s\") \"Time derivative of abolute humidity per unit mass of dry air\";
-// algorithm
-//   p_steam_sat := Modelica.Media.Air.Medium.saturationPressure(T);
-//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-13,p - p_steam_sat);
-//   X_sat := min(x_sat * (1.0 - X[1]),1.0);
-//   X_liquid := Modelica.Media.Air.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-06);
-//   X_steam := X[1] - X_liquid;
-//   X_air := 1.0 - X[1];
-//   dX_air := -dX[1];
-//   dps := Modelica.Media.Air.Medium.saturationPressure_der(T,dT);
-//   dx_sat := 0.621964713077499 * (dps * (p - p_steam_sat) - p_steam_sat * (dp - dps)) * (p - p_steam_sat) ^ -2.0;
-//   dX_liq := Modelica.Media.Air.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-06,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
-//   dX_steam := dX[1] - dX_liq;
-//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Air.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Air.Medium.enthalpyOfWater(T);
-// end Modelica.Media.Air.Medium.h_pTX_der;
-// 
-// function Modelica.Media.Air.Medium.saturationPressure \"Return saturation pressure of water as a function of temperature T between 223.16 and 373.16 K\"
-//   input Real Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"saturation temperature\";
-//   output Real psat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"saturation pressure\";
-// algorithm
-//   psat := Modelica.Media.Air.Medium.Utilities.spliceFunction(Modelica.Media.Air.Medium.saturationPressureLiquid(Tsat),Modelica.Media.Air.Medium.sublimationPressureIce(Tsat),Tsat + -273.16,1.0);
-// end Modelica.Media.Air.Medium.saturationPressure;
-// 
-// function Modelica.Media.Air.Medium.saturationPressureLiquid \"Return saturation pressure of water as a function of temperature T in the range of 273.16 to 373.16 K\"
-//   input Real Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"saturation temperature\";
-//   output Real psat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0) \"saturation pressure\";
-// algorithm
-//   psat := 611.657 * exp(17.2799 + -4102.99 / (-35.719 + Tsat));
-// end Modelica.Media.Air.Medium.saturationPressureLiquid;
-// 
-// function Modelica.Media.Air.Medium.saturationPressureLiquid_der \"Time derivative of saturationPressureLiquid\"
-//   input Real Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Saturation temperature\";
-//   input Real dTsat(unit = \"K/s\") \"Saturation temperature derivative\";
-//   output Real psat_der(unit = \"Pa/s\") \"Saturation pressure\";
-// algorithm
-//   psat_der := 2509622.55443 * exp(17.2799 + -4102.99 / (-35.719 + Tsat)) * dTsat * (-35.719 + Tsat) ^ -2.0;
-// end Modelica.Media.Air.Medium.saturationPressureLiquid_der;
-// 
-// function Modelica.Media.Air.Medium.saturationPressure_der \"Derivative function for 'saturationPressure'\"
-//   input Real Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Saturation temperature\";
-//   input Real dTsat(unit = \"K/s\") \"Time derivative of saturation temperature\";
-//   output Real psat_der(unit = \"Pa/s\") \"Saturation pressure\";
-// algorithm
-//   psat_der := Modelica.Media.Air.Medium.Utilities.spliceFunction_der(Modelica.Media.Air.Medium.saturationPressureLiquid(Tsat),Modelica.Media.Air.Medium.sublimationPressureIce(Tsat),Tsat + -273.16,1.0,Modelica.Media.Air.Medium.saturationPressureLiquid_der(Tsat,dTsat),Modelica.Media.Air.Medium.sublimationPressureIce_der(Tsat,dTsat),dTsat,0.0);
-// end Modelica.Media.Air.Medium.saturationPressure_der;
-// 
-// function Modelica.Media.Air.Medium.setState_pTX \"Return thermodynamic state as function of pressure p, temperature T and composition X\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {0.01,0.99} \"Mass fractions\";
-//   output Modelica.Media.Air.Medium.ThermodynamicState state \"Thermodynamic state\";
-// algorithm
-//   state := if size(X,1) == 2 then Modelica.Media.Air.Medium.ThermodynamicState(p,T,X) else Modelica.Media.Air.Medium.ThermodynamicState(p,T,cat(1,X,{1.0 - sum(X)}));
-// end Modelica.Media.Air.Medium.setState_pTX;
-// 
-// function Modelica.Media.Air.Medium.specificEnthalpy \"Return specific enthalpy of moist air as a function of the thermodynamic state record\"
-//   input Modelica.Media.Air.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.Air.Medium.h_pTX(state.p,state.T,{state.X[1],state.X[2]});
-// end Modelica.Media.Air.Medium.specificEnthalpy;
-// 
-// function Modelica.Media.Air.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {0.01,0.99} \"Mass fractions\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.Air.Medium.specificEnthalpy(Modelica.Media.Air.Medium.setState_pTX(p,T,X));
-// end Modelica.Media.Air.Medium.specificEnthalpy_pTX;
-// 
-// function Modelica.Media.Air.Medium.sublimationPressureIce \"Return sublimation pressure of water as a function of temperature T between 223.16 and 273.16 K\"
-//   input Real Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"sublimation temperature\";
-//   output Real psat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0) \"sublimation pressure\";
-// algorithm
-//   psat := 611.657 * exp(22.5159 + -6150.443244 / Tsat);
-// end Modelica.Media.Air.Medium.sublimationPressureIce;
-// 
-// function Modelica.Media.Air.Medium.sublimationPressureIce_der \"Derivative function for 'sublimationPressureIce'\"
-//   input Real Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Sublimation temperature\";
-//   input Real dTsat(unit = \"K/s\") \"Time derivative of sublimation temperature\";
-//   output Real psat_der(unit = \"Pa/s\") \"Sublimation pressure\";
-// algorithm
-//   psat_der := 3761961.66329531 * exp(22.5159 + -6150.443244 / Tsat) * dTsat * Tsat ^ -2.0;
-// end Modelica.Media.Air.Medium.sublimationPressureIce_der;
-// 
 // function Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.ThermodynamicState\"
 //   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
 //   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
@@ -349,11 +151,11 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real X_air(quantity = \"MassFraction\", unit = \"1\") \"mass fraction of air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.saturationPressure(T);
-//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-13,p - p_steam_sat),1.0);
+//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-013,p - p_steam_sat),1.0);
 //   X_liquid := max(X[1] - X_sat,0.0);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
-//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.enthalpyOfWater(T) * X_liquid;
+//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.enthalpyOfWater(T) * X_liquid;
 // end Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_pTX_der \"Derivative function of h_pTX\"
@@ -377,17 +179,17 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real dx_sat(unit = \"1/s\") \"Time derivative of abolute humidity per unit mass of dry air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.saturationPressure(T);
-//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-13,p - p_steam_sat);
+//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-013,p - p_steam_sat);
 //   X_sat := min(x_sat * (1.0 - X[1]),1.0);
-//   X_liquid := Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-06);
+//   X_liquid := Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-006);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
 //   dX_air := -dX[1];
 //   dps := Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.saturationPressure_der(T,dT);
 //   dx_sat := 0.621964713077499 * (dps * (p - p_steam_sat) - p_steam_sat * (dp - dps)) * (p - p_steam_sat) ^ -2.0;
-//   dX_liq := Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-06,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
+//   dX_liq := Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-006,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
 //   dX_steam := dX[1] - dX_liq;
-//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.enthalpyOfWater(T);
+//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.enthalpyOfWater(T);
 // end Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_pTX_der;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.saturationPressure \"Return saturation pressure of water as a function of temperature T between 223.16 and 373.16 K\"
@@ -547,11 +349,11 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real X_air(quantity = \"MassFraction\", unit = \"1\") \"mass fraction of air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.saturationPressure(T);
-//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-13,p - p_steam_sat),1.0);
+//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-013,p - p_steam_sat),1.0);
 //   X_liquid := max(X[1] - X_sat,0.0);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
-//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.enthalpyOfWater(T) * X_liquid;
+//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.enthalpyOfWater(T) * X_liquid;
 // end Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_pTX_der \"Derivative function of h_pTX\"
@@ -575,17 +377,17 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real dx_sat(unit = \"1/s\") \"Time derivative of abolute humidity per unit mass of dry air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.saturationPressure(T);
-//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-13,p - p_steam_sat);
+//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-013,p - p_steam_sat);
 //   X_sat := min(x_sat * (1.0 - X[1]),1.0);
-//   X_liquid := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-06);
+//   X_liquid := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-006);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
 //   dX_air := -dX[1];
 //   dps := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.saturationPressure_der(T,dT);
 //   dx_sat := 0.621964713077499 * (dps * (p - p_steam_sat) - p_steam_sat * (dp - dps)) * (p - p_steam_sat) ^ -2.0;
-//   dX_liq := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-06,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
+//   dX_liq := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-006,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
 //   dX_steam := dX[1] - dX_liq;
-//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.enthalpyOfWater(T);
+//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.enthalpyOfWater(T);
 // end Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_pTX_der;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.saturationPressure \"Return saturation pressure of water as a function of temperature T between 223.16 and 373.16 K\"
@@ -766,11 +568,11 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real X_air(quantity = \"MassFraction\", unit = \"1\") \"mass fraction of air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.saturationPressure(T);
-//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-13,p - p_steam_sat),1.0);
+//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-013,p - p_steam_sat),1.0);
 //   X_liquid := max(X[1] - X_sat,0.0);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
-//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.enthalpyOfWater(T) * X_liquid;
+//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.enthalpyOfWater(T) * X_liquid;
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.h_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.h_pTX_der \"Derivative function of h_pTX\"
@@ -794,17 +596,17 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real dx_sat(unit = \"1/s\") \"Time derivative of abolute humidity per unit mass of dry air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.saturationPressure(T);
-//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-13,p - p_steam_sat);
+//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-013,p - p_steam_sat);
 //   X_sat := min(x_sat * (1.0 - X[1]),1.0);
-//   X_liquid := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-06);
+//   X_liquid := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-006);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
 //   dX_air := -dX[1];
 //   dps := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.saturationPressure_der(T,dT);
 //   dx_sat := 0.621964713077499 * (dps * (p - p_steam_sat) - p_steam_sat * (dp - dps)) * (p - p_steam_sat) ^ -2.0;
-//   dX_liq := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-06,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
+//   dX_liq := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-006,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
 //   dX_steam := dX[1] - dX_liq;
-//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.enthalpyOfWater(T);
+//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.enthalpyOfWater(T);
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.h_pTX_der;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.saturationPressure \"Return saturation pressure of water as a function of temperature T between 223.16 and 373.16 K\"
@@ -964,11 +766,11 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real X_air(quantity = \"MassFraction\", unit = \"1\") \"mass fraction of air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.saturationPressure(T);
-//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-13,p - p_steam_sat),1.0);
+//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-013,p - p_steam_sat),1.0);
 //   X_liquid := max(X[1] - X_sat,0.0);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
-//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.enthalpyOfWater(T) * X_liquid;
+//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.enthalpyOfWater(T) * X_liquid;
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.h_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.h_pTX_der \"Derivative function of h_pTX\"
@@ -992,17 +794,17 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real dx_sat(unit = \"1/s\") \"Time derivative of abolute humidity per unit mass of dry air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.saturationPressure(T);
-//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-13,p - p_steam_sat);
+//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-013,p - p_steam_sat);
 //   X_sat := min(x_sat * (1.0 - X[1]),1.0);
-//   X_liquid := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-06);
+//   X_liquid := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-006);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
 //   dX_air := -dX[1];
 //   dps := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.saturationPressure_der(T,dT);
 //   dx_sat := 0.621964713077499 * (dps * (p - p_steam_sat) - p_steam_sat * (dp - dps)) * (p - p_steam_sat) ^ -2.0;
-//   dX_liq := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-06,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
+//   dX_liq := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-006,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
 //   dX_steam := dX[1] - dX_liq;
-//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.enthalpyOfWater(T);
+//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.enthalpyOfWater(T);
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.h_pTX_der;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.saturationPressure \"Return saturation pressure of water as a function of temperature T between 223.16 and 373.16 K\"
@@ -1162,11 +964,11 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real X_air(quantity = \"MassFraction\", unit = \"1\") \"mass fraction of air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationPressure(T);
-//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-13,p - p_steam_sat),1.0);
+//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-013,p - p_steam_sat),1.0);
 //   X_liquid := max(X[1] - X_sat,0.0);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
-//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.Components.PortVolume.Medium.enthalpyOfWater(T) * X_liquid;
+//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.Components.PortVolume.Medium.enthalpyOfWater(T) * X_liquid;
 // end Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_pTX_der \"Derivative function of h_pTX\"
@@ -1190,17 +992,17 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real dx_sat(unit = \"1/s\") \"Time derivative of abolute humidity per unit mass of dry air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationPressure(T);
-//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-13,p - p_steam_sat);
+//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-013,p - p_steam_sat);
 //   X_sat := min(x_sat * (1.0 - X[1]),1.0);
-//   X_liquid := Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-06);
+//   X_liquid := Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-006);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
 //   dX_air := -dX[1];
 //   dps := Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationPressure_der(T,dT);
 //   dx_sat := 0.621964713077499 * (dps * (p - p_steam_sat) - p_steam_sat * (dp - dps)) * (p - p_steam_sat) ^ -2.0;
-//   dX_liq := Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-06,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
+//   dX_liq := Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-006,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
 //   dX_steam := dX[1] - dX_liq;
-//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.Components.PortVolume.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.Components.PortVolume.Medium.enthalpyOfWater(T);
+//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.Components.PortVolume.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.Components.PortVolume.Medium.enthalpyOfWater(T);
 // end Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_pTX_der;
 // 
 // function Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationPressure \"Return saturation pressure of water as a function of temperature T between 223.16 and 373.16 K\"
@@ -1360,11 +1162,11 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real X_air(quantity = \"MassFraction\", unit = \"1\") \"mass fraction of air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.saturationPressure(T);
-//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-13,p - p_steam_sat),1.0);
+//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-013,p - p_steam_sat),1.0);
 //   X_liquid := max(X[1] - X_sat,0.0);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
-//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.enthalpyOfWater(T) * X_liquid;
+//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.enthalpyOfWater(T) * X_liquid;
 // end Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.h_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.h_pTX_der \"Derivative function of h_pTX\"
@@ -1388,17 +1190,17 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real dx_sat(unit = \"1/s\") \"Time derivative of abolute humidity per unit mass of dry air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.saturationPressure(T);
-//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-13,p - p_steam_sat);
+//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-013,p - p_steam_sat);
 //   X_sat := min(x_sat * (1.0 - X[1]),1.0);
-//   X_liquid := Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-06);
+//   X_liquid := Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-006);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
 //   dX_air := -dX[1];
 //   dps := Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.saturationPressure_der(T,dT);
 //   dx_sat := 0.621964713077499 * (dps * (p - p_steam_sat) - p_steam_sat * (dp - dps)) * (p - p_steam_sat) ^ -2.0;
-//   dX_liq := Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-06,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
+//   dX_liq := Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-006,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
 //   dX_steam := dX[1] - dX_liq;
-//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.enthalpyOfWater(T);
+//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.enthalpyOfWater(T);
 // end Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.h_pTX_der;
 // 
 // function Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.saturationPressure \"Return saturation pressure of water as a function of temperature T between 223.16 and 373.16 K\"
@@ -1558,11 +1360,11 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real X_air(quantity = \"MassFraction\", unit = \"1\") \"mass fraction of air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.saturationPressure(T);
-//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-13,p - p_steam_sat),1.0);
+//   X_sat := min((0.621964713077499 * (1.0 - X[1]) * p_steam_sat) / max(1e-013,p - p_steam_sat),1.0);
 //   X_liquid := max(X[1] - X_sat,0.0);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
-//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.enthalpyOfWater(T) * X_liquid;
+//   h := Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) * X_steam + Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) * X_air + Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.enthalpyOfWater(T) * X_liquid;
 // end Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.h_pTX;
 // 
 // function Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.h_pTX_der \"Derivative function of h_pTX\"
@@ -1586,17 +1388,17 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   protected Real dx_sat(unit = \"1/s\") \"Time derivative of abolute humidity per unit mass of dry air\";
 // algorithm
 //   p_steam_sat := Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.saturationPressure(T);
-//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-13,p - p_steam_sat);
+//   x_sat := (0.621964713077499 * p_steam_sat) / max(1e-013,p - p_steam_sat);
 //   X_sat := min(x_sat * (1.0 - X[1]),1.0);
-//   X_liquid := Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-06);
+//   X_liquid := Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.Utilities.spliceFunction(X[1] - X_sat,0.0,X[1] - X_sat,1e-006);
 //   X_steam := X[1] - X_liquid;
 //   X_air := 1.0 - X[1];
 //   dX_air := -dX[1];
 //   dps := Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.saturationPressure_der(T,dT);
 //   dx_sat := 0.621964713077499 * (dps * (p - p_steam_sat) - p_steam_sat * (dp - dps)) * (p - p_steam_sat) ^ -2.0;
-//   dX_liq := Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-06,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
+//   dX_liq := Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.Utilities.spliceFunction_der(X[1] - X_sat,0.0,X[1] - X_sat,1e-006,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0,(1.0 + x_sat) * dX[1] - (1.0 - X[1]) * dx_sat,0.0);
 //   dX_steam := dX[1] - dX_liq;
-//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.enthalpyOfWater(T);
+//   h_der := X_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319,dT) + dX_steam * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,2547494.319) + X_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow_der(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684,dT) + dX_air * Modelica.Media.IdealGases.Common.SingleGasNasa.h_Tlow(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined,25104.684) + X_liquid * Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.enthalpyOfWater_der(T,dT) + dX_liq * Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.enthalpyOfWater(T);
 // end Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.h_pTX_der;
 // 
 // function Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.saturationPressure \"Return saturation pressure of water as a function of temperature T between 223.16 and 373.16 K\"
@@ -1760,27 +1562,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   h := Modelica.Media.IdealGases.Common.SingleGasNasa.specificEnthalpy(Modelica.Media.IdealGases.Common.SingleGasNasa.setState_pTX(p,T,X));
 // end Modelica.Media.IdealGases.Common.SingleGasNasa.specificEnthalpy_pTX;
 // 
-// function Modelica.Media.Interfaces.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Modelica.Media.Interfaces.Medium.ThermodynamicState state \"thermodynamic state record\";
-// end Modelica.Media.Interfaces.Medium.setState_pTX;
-// 
-// function Modelica.Media.Interfaces.Medium.specificEnthalpy \"Return specific enthalpy\"
-//   input Modelica.Media.Interfaces.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// end Modelica.Media.Interfaces.Medium.specificEnthalpy;
-// 
-// function Modelica.Media.Interfaces.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.Interfaces.Medium.specificEnthalpy(Modelica.Media.Interfaces.Medium.setState_pTX(p,T,X));
-// end Modelica.Media.Interfaces.Medium.specificEnthalpy_pTX;
-// 
 // function Modelica.Media.Interfaces.PartialMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
@@ -1847,7 +1628,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 // class Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir
 //   parameter Real p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0) = 101325.0 \"Initial value of pressure\";
 //   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Initial value of temperature\";
-//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Air.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{0.01,0.99}) \"Initial value of specific enthalpy\";
+//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{0.01,0.99}) \"Initial value of specific enthalpy\";
 //   parameter Real X_start[1] = 0.01 \"Initial value of mass fractions\";
 //   parameter Real X_start[2] = 0.99 \"Initial value of mass fractions\";
 //   parameter Real volume.V(quantity = \"Volume\", unit = \"m3\") = 0.1 \"Fixed size of junction volume\";
@@ -1972,8 +1753,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   Real ambient.port.H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
 //   Real ambient.port.Xi[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Independent mixture mass fractions m_i/m in the connection point\";
 //   Real ambient.port.mXi_flow[1](quantity = \"MassFlowRate.Moist air\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rates of the independent substances from the connection point into the component (if m_flow > 0, mX_flow = m_flow*X)\";
-//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-10, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
-//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.Moist air\", unit = \"kg/s\", min = 1e-10, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
+//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-010, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
+//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.Moist air\", unit = \"kg/s\", min = 1e-010, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
 //   Real shortPipe.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real shortPipe.port_a.m_flow(quantity = \"MassFlowRate.Moist air\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real shortPipe.port_a.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
@@ -1999,7 +1780,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 // required from medium model \\\"\" + \"Moist air\" + \"\\\".\");
 //   volume.medium.MM = 1.0 / (34.5242878865884 + (volume.medium.Xi[1] / 0.01801528 + (-volume.medium.Xi[1]) / 0.0289651159));
 //   volume.medium.p_steam_sat = min(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationPressure(volume.medium.T),0.999 * volume.medium.p);
-//   volume.medium.X_sat = min((0.621964713077499 * ((1.0 - volume.medium.Xi[1]) * volume.medium.p_steam_sat)) / max(1e-13,volume.medium.p - volume.medium.p_steam_sat),1.0);
+//   volume.medium.X_sat = min((0.621964713077499 * ((1.0 - volume.medium.Xi[1]) * volume.medium.p_steam_sat)) / max(1e-013,volume.medium.p - volume.medium.p_steam_sat),1.0);
 //   volume.medium.X_liquid = max(volume.medium.Xi[1] - volume.medium.X_sat,0.0);
 //   volume.medium.X_steam = volume.medium.Xi[1] - volume.medium.X_liquid;
 //   volume.medium.X_air = 1.0 - volume.medium.Xi[1];
@@ -2011,14 +1792,14 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   volume.medium.state.T = volume.medium.T;
 //   volume.medium.state.X[1] = volume.medium.X[1];
 //   volume.medium.state.X[2] = volume.medium.X[2];
-//   volume.medium.x_sat = (0.621964713077499 * volume.medium.p_steam_sat) / max(1e-13,volume.medium.p - volume.medium.p_steam_sat);
-//   volume.medium.x_water = volume.medium.Xi[1] / max(volume.medium.X_air,1e-13);
+//   volume.medium.x_sat = (0.621964713077499 * volume.medium.p_steam_sat) / max(1e-013,volume.medium.p - volume.medium.p_steam_sat);
+//   volume.medium.x_water = volume.medium.Xi[1] / max(volume.medium.X_air,1e-013);
 //   volume.medium.phi = (volume.medium.Xi[1] * volume.medium.p) / ((volume.medium.Xi[1] + 0.621964713077499 * volume.medium.X_air) * volume.medium.p_steam_sat);
 //   volume.medium.Xi[1] = volume.medium.X[1];
 //   volume.medium.X[2] = 1.0 - volume.medium.Xi[1];
-//   assert(volume.medium.X[1] >= -1e-05 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"water\" + \"
+//   assert(volume.medium.X[1] >= -1e-005 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"water\" + \"
 // of medium \" + \"Moist air\" + \" is not in the range 0..1\");
-//   assert(volume.medium.X[2] >= -1e-05 and volume.medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(volume.medium.X[2],0,true,6) + \"of substance \" + \"air\" + \"
+//   assert(volume.medium.X[2] >= -1e-005 and volume.medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(volume.medium.X[2],0,true,6) + \"of substance \" + \"air\" + \"
 // of medium \" + \"Moist air\" + \" is not in the range 0..1\");
 //   assert(volume.medium.p >= 0.0,\"Pressure (= \" + String(volume.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Moist air\" + \"\\\" is negative
 // (Temperature = \" + String(volume.medium.T,0,true,6) + \" K)\");
@@ -2037,7 +1818,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 // required from medium model \\\"\" + \"Moist air\" + \"\\\".\");
 //   fixedMassFlowRate.medium.MM = 1.0 / (34.5242878865884 + (fixedMassFlowRate.medium.Xi[1] / 0.01801528 + (-fixedMassFlowRate.medium.Xi[1]) / 0.0289651159));
 //   fixedMassFlowRate.medium.p_steam_sat = min(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.saturationPressure(fixedMassFlowRate.medium.T),0.999 * fixedMassFlowRate.medium.p);
-//   fixedMassFlowRate.medium.X_sat = min((0.621964713077499 * ((1.0 - fixedMassFlowRate.medium.Xi[1]) * fixedMassFlowRate.medium.p_steam_sat)) / max(1e-13,fixedMassFlowRate.medium.p - fixedMassFlowRate.medium.p_steam_sat),1.0);
+//   fixedMassFlowRate.medium.X_sat = min((0.621964713077499 * ((1.0 - fixedMassFlowRate.medium.Xi[1]) * fixedMassFlowRate.medium.p_steam_sat)) / max(1e-013,fixedMassFlowRate.medium.p - fixedMassFlowRate.medium.p_steam_sat),1.0);
 //   fixedMassFlowRate.medium.X_liquid = max(fixedMassFlowRate.medium.Xi[1] - fixedMassFlowRate.medium.X_sat,0.0);
 //   fixedMassFlowRate.medium.X_steam = fixedMassFlowRate.medium.Xi[1] - fixedMassFlowRate.medium.X_liquid;
 //   fixedMassFlowRate.medium.X_air = 1.0 - fixedMassFlowRate.medium.Xi[1];
@@ -2049,14 +1830,14 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   fixedMassFlowRate.medium.state.T = fixedMassFlowRate.medium.T;
 //   fixedMassFlowRate.medium.state.X[1] = fixedMassFlowRate.medium.X[1];
 //   fixedMassFlowRate.medium.state.X[2] = fixedMassFlowRate.medium.X[2];
-//   fixedMassFlowRate.medium.x_sat = (0.621964713077499 * fixedMassFlowRate.medium.p_steam_sat) / max(1e-13,fixedMassFlowRate.medium.p - fixedMassFlowRate.medium.p_steam_sat);
-//   fixedMassFlowRate.medium.x_water = fixedMassFlowRate.medium.Xi[1] / max(fixedMassFlowRate.medium.X_air,1e-13);
+//   fixedMassFlowRate.medium.x_sat = (0.621964713077499 * fixedMassFlowRate.medium.p_steam_sat) / max(1e-013,fixedMassFlowRate.medium.p - fixedMassFlowRate.medium.p_steam_sat);
+//   fixedMassFlowRate.medium.x_water = fixedMassFlowRate.medium.Xi[1] / max(fixedMassFlowRate.medium.X_air,1e-013);
 //   fixedMassFlowRate.medium.phi = (fixedMassFlowRate.medium.Xi[1] * fixedMassFlowRate.medium.p) / ((fixedMassFlowRate.medium.Xi[1] + 0.621964713077499 * fixedMassFlowRate.medium.X_air) * fixedMassFlowRate.medium.p_steam_sat);
 //   fixedMassFlowRate.medium.Xi[1] = fixedMassFlowRate.medium.X[1];
 //   fixedMassFlowRate.medium.X[2] = 1.0 - fixedMassFlowRate.medium.Xi[1];
-//   assert(fixedMassFlowRate.medium.X[1] >= -1e-05 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"water\" + \"
+//   assert(fixedMassFlowRate.medium.X[1] >= -1e-005 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"water\" + \"
 // of medium \" + \"Moist air\" + \" is not in the range 0..1\");
-//   assert(fixedMassFlowRate.medium.X[2] >= -1e-05 and fixedMassFlowRate.medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(fixedMassFlowRate.medium.X[2],0,true,6) + \"of substance \" + \"air\" + \"
+//   assert(fixedMassFlowRate.medium.X[2] >= -1e-005 and fixedMassFlowRate.medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(fixedMassFlowRate.medium.X[2],0,true,6) + \"of substance \" + \"air\" + \"
 // of medium \" + \"Moist air\" + \" is not in the range 0..1\");
 //   assert(fixedMassFlowRate.medium.p >= 0.0,\"Pressure (= \" + String(fixedMassFlowRate.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Moist air\" + \"\\\" is negative
 // (Temperature = \" + String(fixedMassFlowRate.medium.T,0,true,6) + \" K)\");
@@ -2072,7 +1853,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 // required from medium model \\\"\" + \"Moist air\" + \"\\\".\");
 //   ambient.medium.MM = 1.0 / (34.5242878865884 + (ambient.medium.Xi[1] / 0.01801528 + (-ambient.medium.Xi[1]) / 0.0289651159));
 //   ambient.medium.p_steam_sat = min(Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.saturationPressure(ambient.medium.T),0.999 * ambient.medium.p);
-//   ambient.medium.X_sat = min((0.621964713077499 * ((1.0 - ambient.medium.Xi[1]) * ambient.medium.p_steam_sat)) / max(1e-13,ambient.medium.p - ambient.medium.p_steam_sat),1.0);
+//   ambient.medium.X_sat = min((0.621964713077499 * ((1.0 - ambient.medium.Xi[1]) * ambient.medium.p_steam_sat)) / max(1e-013,ambient.medium.p - ambient.medium.p_steam_sat),1.0);
 //   ambient.medium.X_liquid = max(ambient.medium.Xi[1] - ambient.medium.X_sat,0.0);
 //   ambient.medium.X_steam = ambient.medium.Xi[1] - ambient.medium.X_liquid;
 //   ambient.medium.X_air = 1.0 - ambient.medium.Xi[1];
@@ -2084,14 +1865,14 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 //   ambient.medium.state.T = ambient.medium.T;
 //   ambient.medium.state.X[1] = ambient.medium.X[1];
 //   ambient.medium.state.X[2] = ambient.medium.X[2];
-//   ambient.medium.x_sat = (0.621964713077499 * ambient.medium.p_steam_sat) / max(1e-13,ambient.medium.p - ambient.medium.p_steam_sat);
-//   ambient.medium.x_water = ambient.medium.Xi[1] / max(ambient.medium.X_air,1e-13);
+//   ambient.medium.x_sat = (0.621964713077499 * ambient.medium.p_steam_sat) / max(1e-013,ambient.medium.p - ambient.medium.p_steam_sat);
+//   ambient.medium.x_water = ambient.medium.Xi[1] / max(ambient.medium.X_air,1e-013);
 //   ambient.medium.phi = (ambient.medium.Xi[1] * ambient.medium.p) / ((ambient.medium.Xi[1] + 0.621964713077499 * ambient.medium.X_air) * ambient.medium.p_steam_sat);
 //   ambient.medium.Xi[1] = ambient.medium.X[1];
 //   ambient.medium.X[2] = 1.0 - ambient.medium.Xi[1];
-//   assert(ambient.medium.X[1] >= -1e-05 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"water\" + \"
+//   assert(ambient.medium.X[1] >= -1e-005 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"water\" + \"
 // of medium \" + \"Moist air\" + \" is not in the range 0..1\");
-//   assert(ambient.medium.X[2] >= -1e-05 and ambient.medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(ambient.medium.X[2],0,true,6) + \"of substance \" + \"air\" + \"
+//   assert(ambient.medium.X[2] >= -1e-005 and ambient.medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(ambient.medium.X[2],0,true,6) + \"of substance \" + \"air\" + \"
 // of medium \" + \"Moist air\" + \" is not in the range 0..1\");
 //   assert(ambient.medium.p >= 0.0,\"Pressure (= \" + String(ambient.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Moist air\" + \"\\\" is negative
 // (Temperature = \" + String(ambient.medium.T,0,true,6) + \" K)\");

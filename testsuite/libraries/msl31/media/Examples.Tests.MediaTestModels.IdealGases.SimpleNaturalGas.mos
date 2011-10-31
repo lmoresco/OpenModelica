@@ -419,70 +419,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 //   h := Modelica.Media.IdealGases.Common.SingleGasNasa.specificEnthalpy(Modelica.Media.IdealGases.Common.SingleGasNasa.setState_pTX(p,T,X));
 // end Modelica.Media.IdealGases.Common.SingleGasNasa.specificEnthalpy_pTX;
 // 
-// function Modelica.Media.IdealGases.MixtureGases.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.IdealGases.MixtureGases.Medium.ThermodynamicState\"
-//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
-//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
-//   input Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[6] X;
-//   output ThermodynamicState res;
-// end Modelica.Media.IdealGases.MixtureGases.Medium.ThermodynamicState;
-// 
-// function Modelica.Media.IdealGases.MixtureGases.Medium.h_TX \"Return specific enthalpy\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {0.92,0.048,0.005,0.002,0.015,0.01} \"Independent Mass fractions of gas mixture\";
-//   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
-//   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
-//   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at temperature T\";
-// algorithm
-//   h := X * {Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[1],T,exclEnthForm,refChoice,h_off),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[2],T,exclEnthForm,refChoice,h_off),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[3],T,exclEnthForm,refChoice,h_off),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[4],T,exclEnthForm,refChoice,h_off),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[5],T,exclEnthForm,refChoice,h_off),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[6],T,exclEnthForm,refChoice,h_off)};
-// end Modelica.Media.IdealGases.MixtureGases.Medium.h_TX;
-// 
-// function Modelica.Media.IdealGases.MixtureGases.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {0.92,0.048,0.005,0.002,0.015,0.01} \"Mass fractions\";
-//   output Modelica.Media.IdealGases.MixtureGases.Medium.ThermodynamicState state;
-// algorithm
-//   state := if size(X,1) == 6 then Modelica.Media.IdealGases.MixtureGases.Medium.ThermodynamicState(p,T,X) else Modelica.Media.IdealGases.MixtureGases.Medium.ThermodynamicState(p,T,cat(1,X,{1.0 - sum(X)}));
-// end Modelica.Media.IdealGases.MixtureGases.Medium.setState_pTX;
-// 
-// function Modelica.Media.IdealGases.MixtureGases.Medium.specificEnthalpy \"Return specific enthalpy\"
-//   input Modelica.Media.IdealGases.MixtureGases.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.IdealGases.MixtureGases.Medium.h_TX(state.T,{state.X[1],state.X[2],state.X[3],state.X[4],state.X[5],state.X[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-// end Modelica.Media.IdealGases.MixtureGases.Medium.specificEnthalpy;
-// 
-// function Modelica.Media.IdealGases.MixtureGases.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {0.92,0.048,0.005,0.002,0.015,0.01} \"Mass fractions\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.IdealGases.MixtureGases.Medium.specificEnthalpy(Modelica.Media.IdealGases.MixtureGases.Medium.setState_pTX(p,T,X));
-// end Modelica.Media.IdealGases.MixtureGases.Medium.specificEnthalpy_pTX;
-// 
-// function Modelica.Media.Interfaces.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Modelica.Media.Interfaces.Medium.ThermodynamicState state \"thermodynamic state record\";
-// end Modelica.Media.Interfaces.Medium.setState_pTX;
-// 
-// function Modelica.Media.Interfaces.Medium.specificEnthalpy \"Return specific enthalpy\"
-//   input Modelica.Media.Interfaces.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// end Modelica.Media.Interfaces.Medium.specificEnthalpy;
-// 
-// function Modelica.Media.Interfaces.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.Interfaces.Medium.specificEnthalpy(Modelica.Media.Interfaces.Medium.setState_pTX(p,T,X));
-// end Modelica.Media.Interfaces.Medium.specificEnthalpy_pTX;
-// 
 // function Modelica.Media.Interfaces.PartialMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
@@ -549,7 +485,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 // class Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas
 //   parameter Real p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0) = 101325.0 \"Initial value of pressure\";
 //   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Initial value of temperature\";
-//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.IdealGases.MixtureGases.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{0.92,0.048,0.005,0.002,0.015,0.01}) \"Initial value of specific enthalpy\";
+//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{0.92,0.048,0.005,0.002,0.015,0.01}) \"Initial value of specific enthalpy\";
 //   parameter Real X_start[1] = 0.92 \"Initial value of mass fractions\";
 //   parameter Real X_start[2] = 0.048 \"Initial value of mass fractions\";
 //   parameter Real X_start[3] = 0.005 \"Initial value of mass fractions\";
@@ -740,8 +676,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 //   Real ambient.port.mXi_flow[4](quantity = \"MassFlowRate.SimpleNaturalGas\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rates of the independent substances from the connection point into the component (if m_flow > 0, mX_flow = m_flow*X)\";
 //   Real ambient.port.mXi_flow[5](quantity = \"MassFlowRate.SimpleNaturalGas\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rates of the independent substances from the connection point into the component (if m_flow > 0, mX_flow = m_flow*X)\";
 //   Real ambient.port.mXi_flow[6](quantity = \"MassFlowRate.SimpleNaturalGas\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rates of the independent substances from the connection point into the component (if m_flow > 0, mX_flow = m_flow*X)\";
-//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-10, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
-//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.SimpleNaturalGas\", unit = \"kg/s\", min = 1e-10, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
+//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-010, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
+//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.SimpleNaturalGas\", unit = \"kg/s\", min = 1e-010, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
 //   Real shortPipe.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real shortPipe.port_a.m_flow(quantity = \"MassFlowRate.SimpleNaturalGas\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real shortPipe.port_a.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
@@ -809,17 +745,17 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 //   volume.medium.Xi[4] = volume.medium.X[4];
 //   volume.medium.Xi[5] = volume.medium.X[5];
 //   volume.medium.Xi[6] = volume.medium.X[6];
-//   assert(volume.medium.X[1] >= -1e-05 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
+//   assert(volume.medium.X[1] >= -1e-005 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(volume.medium.X[2] >= -1e-05 and volume.medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(volume.medium.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
+//   assert(volume.medium.X[2] >= -1e-005 and volume.medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(volume.medium.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(volume.medium.X[3] >= -1e-05 and volume.medium.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(volume.medium.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
+//   assert(volume.medium.X[3] >= -1e-005 and volume.medium.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(volume.medium.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(volume.medium.X[4] >= -1e-05 and volume.medium.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(volume.medium.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
+//   assert(volume.medium.X[4] >= -1e-005 and volume.medium.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(volume.medium.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(volume.medium.X[5] >= -1e-05 and volume.medium.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(volume.medium.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(volume.medium.X[5] >= -1e-005 and volume.medium.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(volume.medium.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(volume.medium.X[6] >= -1e-05 and volume.medium.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(volume.medium.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
+//   assert(volume.medium.X[6] >= -1e-005 and volume.medium.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(volume.medium.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
 //   assert(volume.medium.p >= 0.0,\"Pressure (= \" + String(volume.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleNaturalGas\" + \"\\\" is negative
 // (Temperature = \" + String(volume.medium.T,0,true,6) + \" K)\");
@@ -870,17 +806,17 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 //   fixedMassFlowRate.medium.Xi[4] = fixedMassFlowRate.medium.X[4];
 //   fixedMassFlowRate.medium.Xi[5] = fixedMassFlowRate.medium.X[5];
 //   fixedMassFlowRate.medium.Xi[6] = fixedMassFlowRate.medium.X[6];
-//   assert(fixedMassFlowRate.medium.X[1] >= -1e-05 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
+//   assert(fixedMassFlowRate.medium.X[1] >= -1e-005 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(fixedMassFlowRate.medium.X[2] >= -1e-05 and fixedMassFlowRate.medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(fixedMassFlowRate.medium.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
+//   assert(fixedMassFlowRate.medium.X[2] >= -1e-005 and fixedMassFlowRate.medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(fixedMassFlowRate.medium.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(fixedMassFlowRate.medium.X[3] >= -1e-05 and fixedMassFlowRate.medium.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(fixedMassFlowRate.medium.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
+//   assert(fixedMassFlowRate.medium.X[3] >= -1e-005 and fixedMassFlowRate.medium.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(fixedMassFlowRate.medium.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(fixedMassFlowRate.medium.X[4] >= -1e-05 and fixedMassFlowRate.medium.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(fixedMassFlowRate.medium.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
+//   assert(fixedMassFlowRate.medium.X[4] >= -1e-005 and fixedMassFlowRate.medium.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(fixedMassFlowRate.medium.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(fixedMassFlowRate.medium.X[5] >= -1e-05 and fixedMassFlowRate.medium.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(fixedMassFlowRate.medium.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(fixedMassFlowRate.medium.X[5] >= -1e-005 and fixedMassFlowRate.medium.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(fixedMassFlowRate.medium.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(fixedMassFlowRate.medium.X[6] >= -1e-05 and fixedMassFlowRate.medium.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(fixedMassFlowRate.medium.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
+//   assert(fixedMassFlowRate.medium.X[6] >= -1e-005 and fixedMassFlowRate.medium.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(fixedMassFlowRate.medium.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
 //   assert(fixedMassFlowRate.medium.p >= 0.0,\"Pressure (= \" + String(fixedMassFlowRate.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleNaturalGas\" + \"\\\" is negative
 // (Temperature = \" + String(fixedMassFlowRate.medium.T,0,true,6) + \" K)\");
@@ -923,17 +859,17 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 //   ambient.medium.Xi[4] = ambient.medium.X[4];
 //   ambient.medium.Xi[5] = ambient.medium.X[5];
 //   ambient.medium.Xi[6] = ambient.medium.X[6];
-//   assert(ambient.medium.X[1] >= -1e-05 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
+//   assert(ambient.medium.X[1] >= -1e-005 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(ambient.medium.X[2] >= -1e-05 and ambient.medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(ambient.medium.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
+//   assert(ambient.medium.X[2] >= -1e-005 and ambient.medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(ambient.medium.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(ambient.medium.X[3] >= -1e-05 and ambient.medium.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(ambient.medium.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
+//   assert(ambient.medium.X[3] >= -1e-005 and ambient.medium.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(ambient.medium.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(ambient.medium.X[4] >= -1e-05 and ambient.medium.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(ambient.medium.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
+//   assert(ambient.medium.X[4] >= -1e-005 and ambient.medium.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(ambient.medium.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(ambient.medium.X[5] >= -1e-05 and ambient.medium.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(ambient.medium.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(ambient.medium.X[5] >= -1e-005 and ambient.medium.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(ambient.medium.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(ambient.medium.X[6] >= -1e-05 and ambient.medium.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(ambient.medium.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
+//   assert(ambient.medium.X[6] >= -1e-005 and ambient.medium.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(ambient.medium.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
 //   assert(ambient.medium.p >= 0.0,\"Pressure (= \" + String(ambient.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleNaturalGas\" + \"\\\" is negative
 // (Temperature = \" + String(ambient.medium.T,0,true,6) + \" K)\");

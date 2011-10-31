@@ -30,14 +30,14 @@ checkModel(Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium); getErrorS
 // 
 // function Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.dynamicViscosity \"Return dynamic viscosity\"
 //   input Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosity\";
+//   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosity\";
 // algorithm
 //   eta := 10.0 + -0.3 * state.T + 0.2 * state.p;
 // end Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.dynamicViscosity;
 // 
 // function Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.isentropicExponent \"Return isentropic exponent\"
 //   input Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1.0, max = 500000.0, start = 1.2, nominal = 1.2) \"Isentropic exponent\";
+//   output Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1, max = 500000, start = 1.2, nominal = 1.2) \"Isentropic exponent\";
 // algorithm
 //   gamma := 1.0;
 // end Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.isentropicExponent;
@@ -51,49 +51,49 @@ checkModel(Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium); getErrorS
 // 
 // function Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
 //   input Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
+//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
 // algorithm
 //   cp := 0.0;
 // end Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.specificHeatCapacityCp;
 // 
 // function Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.specificHeatCapacityCv \"Return specific heat capacity at constant volume\"
 //   input Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
+//   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
 // algorithm
 //   cv := 0.0;
 // end Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.specificHeatCapacityCv;
 // 
 // function Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.thermalConductivity \"Return thermal conductivity\"
 //   input Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivity\";
+//   output Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) \"Thermal conductivity\";
 // algorithm
 //   lambda := 0.0;
 // end Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.thermalConductivity;
 // 
 // function Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.velocityOfSound \"Return velocity of sound\"
 //   input Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0.0, max = 100000.0, start = 1000.0, nominal = 1000.0) \"Velocity of sound\";
+//   output Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0, max = 100000.0, start = 1000, nominal = 1000) \"Velocity of sound\";
 // algorithm
 //   a := 0.0;
 // end Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.velocityOfSound;
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
-//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
 // algorithm
 //   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium
-//   Real state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
-//   Real state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
-//   Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.dynamicViscosity(state);
-//   Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.thermalConductivity(state);
+//   Real state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature of medium\";
+//   Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.dynamicViscosity(state);
+//   Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.thermalConductivity(state);
 //   Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.specificEntropy(state);
-//   Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.specificHeatCapacityCp(state);
-//   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.specificHeatCapacityCv(state);
-//   Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1.0, max = 500000.0, start = 1.2, nominal = 1.2) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.isentropicExponent(state);
-//   Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0.0, max = 100000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.velocityOfSound(state);
+//   Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.specificHeatCapacityCp(state);
+//   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.specificHeatCapacityCv(state);
+//   Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1, max = 500000, start = 1.2, nominal = 1.2) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.isentropicExponent(state);
+//   Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0, max = 100000.0, start = 1000, nominal = 1000) = Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.velocityOfSound(state);
 // equation
 //   state.p = 100000.0;
 //   state.T = 300.0 + time / 1000.0;

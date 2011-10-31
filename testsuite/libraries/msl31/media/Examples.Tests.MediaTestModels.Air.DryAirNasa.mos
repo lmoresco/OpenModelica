@@ -29,49 +29,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 //   external \"C\" y = log(u);
 // end Modelica.Math.log;
 // 
-// function Modelica.Media.Air.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Air.Medium.ThermodynamicState\"
-//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
-//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
-//   output ThermodynamicState res;
-// end Modelica.Media.Air.Medium.ThermodynamicState;
-// 
-// function Modelica.Media.Air.Medium.h_T \"Compute specific enthalpy from temperature and gas data; reference is decided by the
-//     refChoice input, or by the referenceChoice package constant by default\"
-//   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
-//   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
-//   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.Air.Medium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
-//   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at temperature T\";
-// algorithm
-//   h := if T < data.Tlimit then (data.R * (T * (data.blow[1] + data.alow[2] * log(T) + T * (data.alow[3] + T * (0.5 * data.alow[4] + T * (0.333333333333333 * data.alow[5] + T * (0.25 * data.alow[6] + 0.2 * data.alow[7] * T))))) - data.alow[1])) / T else (data.R * (T * (data.bhigh[1] + data.ahigh[2] * log(T) + T * (data.ahigh[3] + T * (0.5 * data.ahigh[4] + T * (0.333333333333333 * data.ahigh[5] + T * (0.25 * data.ahigh[6] + 0.2 * data.ahigh[7] * T))))) - data.ahigh[1])) / T + if exclEnthForm then -data.Hf else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K then data.H0 else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_off else 0.0;
-// end Modelica.Media.Air.Medium.h_T;
-// 
-// function Modelica.Media.Air.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Modelica.Media.Air.Medium.ThermodynamicState state;
-// algorithm
-//   state := Modelica.Media.Air.Medium.ThermodynamicState(p,T);
-// end Modelica.Media.Air.Medium.setState_pTX;
-// 
-// function Modelica.Media.Air.Medium.specificEnthalpy \"Return specific enthalpy\"
-//   input Modelica.Media.Air.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.Air.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Air.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-// end Modelica.Media.Air.Medium.specificEnthalpy;
-// 
-// function Modelica.Media.Air.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.Air.Medium.specificEnthalpy(Modelica.Media.Air.Medium.setState_pTX(p,T,X));
-// end Modelica.Media.Air.Medium.specificEnthalpy_pTX;
-// 
 // function Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.ThermodynamicState\"
 //   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
 //   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
@@ -103,7 +60,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 //   input Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -146,7 +103,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 //   input Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -210,7 +167,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 //   input Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -253,7 +210,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 //   input Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -296,7 +253,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 //   input Modelica.Media.Examples.Tests.Components.PortVolume.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.Tests.Components.PortVolume.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.PortVolume.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -339,7 +296,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 //   input Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -382,7 +339,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 //   input Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -393,27 +350,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 // algorithm
 //   h := Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa.Medium.specificEnthalpy_pTX;
-// 
-// function Modelica.Media.Interfaces.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Modelica.Media.Interfaces.Medium.ThermodynamicState state \"thermodynamic state record\";
-// end Modelica.Media.Interfaces.Medium.setState_pTX;
-// 
-// function Modelica.Media.Interfaces.Medium.specificEnthalpy \"Return specific enthalpy\"
-//   input Modelica.Media.Interfaces.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// end Modelica.Media.Interfaces.Medium.specificEnthalpy;
-// 
-// function Modelica.Media.Interfaces.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.Interfaces.Medium.specificEnthalpy(Modelica.Media.Interfaces.Medium.setState_pTX(p,T,X));
-// end Modelica.Media.Interfaces.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Interfaces.PartialMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
@@ -481,7 +417,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 // class Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa
 //   parameter Real p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0) = 101325.0 \"Initial value of pressure\";
 //   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Initial value of temperature\";
-//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Air.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{1.0}) \"Initial value of specific enthalpy\";
+//   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{1.0}) \"Initial value of specific enthalpy\";
 //   parameter Real X_start[1] = 1.0 \"Initial value of mass fractions\";
 //   parameter Real volume.V(quantity = \"Volume\", unit = \"m3\") = 0.1 \"Fixed size of junction volume\";
 //   parameter Boolean volume.use_p_start = true \"select p_start or d_start\";
@@ -559,8 +495,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 //   Real ambient.port.m_flow(quantity = \"MassFlowRate.Air\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real ambient.port.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
 //   Real ambient.port.H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
-//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-10, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
-//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.Air\", unit = \"kg/s\", min = 1e-10, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
+//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-010, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
+//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.Air\", unit = \"kg/s\", min = 1e-010, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
 //   Real shortPipe.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real shortPipe.port_a.m_flow(quantity = \"MassFlowRate.Air\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real shortPipe.port_a.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
@@ -581,13 +517,13 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 // \");
 //   volume.medium.MM = 0.0289651159;
 //   volume.medium.R = 287.051224952979;
-//   volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),volume.medium.T,true,Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),volume.medium.T,true,Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 //   volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 //   volume.medium.d = volume.medium.p / (volume.medium.T * volume.medium.R);
 //   volume.medium.state.T = volume.medium.T;
 //   volume.medium.state.p = volume.medium.p;
 //   volume.medium.X[1] = 1.0;
-//   assert(volume.medium.X[1] >= -1e-05 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"Air\" + \"
+//   assert(volume.medium.X[1] >= -1e-005 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"Air\" + \"
 // of medium \" + \"Air\" + \" is not in the range 0..1\");
 //   assert(volume.medium.p >= 0.0,\"Pressure (= \" + String(volume.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Air\" + \"\\\" is negative
 // (Temperature = \" + String(volume.medium.T,0,true,6) + \" K)\");
@@ -603,13 +539,13 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 // \");
 //   fixedMassFlowRate.medium.MM = 0.0289651159;
 //   fixedMassFlowRate.medium.R = 287.051224952979;
-//   fixedMassFlowRate.medium.h = Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),fixedMassFlowRate.medium.T,true,Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   fixedMassFlowRate.medium.h = Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),fixedMassFlowRate.medium.T,true,Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 //   fixedMassFlowRate.medium.u = fixedMassFlowRate.medium.h - fixedMassFlowRate.medium.R * fixedMassFlowRate.medium.T;
 //   fixedMassFlowRate.medium.d = fixedMassFlowRate.medium.p / (fixedMassFlowRate.medium.T * fixedMassFlowRate.medium.R);
 //   fixedMassFlowRate.medium.state.T = fixedMassFlowRate.medium.T;
 //   fixedMassFlowRate.medium.state.p = fixedMassFlowRate.medium.p;
 //   fixedMassFlowRate.medium.X[1] = 1.0;
-//   assert(fixedMassFlowRate.medium.X[1] >= -1e-05 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"Air\" + \"
+//   assert(fixedMassFlowRate.medium.X[1] >= -1e-005 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"Air\" + \"
 // of medium \" + \"Air\" + \" is not in the range 0..1\");
 //   assert(fixedMassFlowRate.medium.p >= 0.0,\"Pressure (= \" + String(fixedMassFlowRate.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Air\" + \"\\\" is negative
 // (Temperature = \" + String(fixedMassFlowRate.medium.T,0,true,6) + \" K)\");
@@ -623,13 +559,13 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 // \");
 //   ambient.medium.MM = 0.0289651159;
 //   ambient.medium.R = 287.051224952979;
-//   ambient.medium.h = Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),ambient.medium.T,true,Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   ambient.medium.h = Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),ambient.medium.T,true,Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 //   ambient.medium.u = ambient.medium.h - ambient.medium.R * ambient.medium.T;
 //   ambient.medium.d = ambient.medium.p / (ambient.medium.T * ambient.medium.R);
 //   ambient.medium.state.T = ambient.medium.T;
 //   ambient.medium.state.p = ambient.medium.p;
 //   ambient.medium.X[1] = 1.0;
-//   assert(ambient.medium.X[1] >= -1e-05 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"Air\" + \"
+//   assert(ambient.medium.X[1] >= -1e-005 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"Air\" + \"
 // of medium \" + \"Air\" + \" is not in the range 0..1\");
 //   assert(ambient.medium.p >= 0.0,\"Pressure (= \" + String(ambient.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Air\" + \"\\\" is negative
 // (Temperature = \" + String(ambient.medium.T,0,true,6) + \" K)\");
