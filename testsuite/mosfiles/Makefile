@@ -26,6 +26,7 @@ CheckEvents.mos \
 ComplexNumbers.mos \
 ComplexTypeEquationCount.mos \
 ConstructFunc.mos \
+constantLinSys.mos \
 Cross.mos \
 CyclicPerm.mos \
 Delay.mos \
