@@ -1157,6 +1157,9 @@ algorithm
       Absyn.Info a_info;
       list<DAE.ComponentRef> i_op_candidates;
       DAE.ComponentRef i_op_chosen;
+      DAE.Exp i_e;
+      DAE.Exp i_e2;
+      DAE.Exp i_e1;
       list<DAE.Exp> i_op_assertConds;
       DAE.Exp i_op_res;
       DAE.Exp i_op_exp2;
@@ -1173,6 +1176,9 @@ algorithm
       DAE.Exp i_source;
       DAE.Exp i_after;
       DAE.Exp i_before;
+      String ret_14;
+      String ret_13;
+      String ret_12;
       String ret_11;
       String ret_10;
       String ret_9;
@@ -1344,6 +1350,30 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("=>\n"));
         ret_11 = ExpressionDump.printExpStr(i_op_after);
         txt = Tpl.writeStr(txt, ret_11);
+        txt = Tpl.popBlock(txt);
+      then txt;
+
+    case ( txt,
+           DAE.OP_RESIDUAL(e1 = i_e1, e2 = i_e2, e = i_e),
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
+                                    "  residual:\n"
+                                }, true));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
+        ret_12 = ExpressionDump.printExpStr(i_e1);
+        txt = Tpl.writeStr(txt, ret_12);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
+        ret_13 = ExpressionDump.printExpStr(i_e2);
+        txt = Tpl.writeStr(txt, ret_13);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "=>\n",
+                                    "0.0 = "
+                                }, false));
+        ret_14 = ExpressionDump.printExpStr(i_e);
+        txt = Tpl.writeStr(txt, ret_14);
         txt = Tpl.popBlock(txt);
       then txt;
 
