@@ -83,6 +83,7 @@ val(x,1.0);
 // Error: Internal error Inverse Algorithm needs to be solved for in   x := 1.0 + y;
 // . This is not implemented yet.
 // 
+// Error: Internal error SimCode.createSingleAlgorithmCode failed!
 // Error: Internal error createOdeSystem failed
 // Error: Internal error createEquations failed
 // Error: Internal error Transformation from optimised DAE to simulation code structure failed

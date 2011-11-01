@@ -36,10 +36,13 @@ msl31fluid.log
 
 
 SIMULATIONLOGS = \
-initialization.log \
+linearize.log \
+modelicaML.log \
+nitialization.log \
 mosfiles.log \
 mosfiles-msl22.log \
 msl221simulation.log  \
+msl31mediasimulation.log \
 msl31simulation.log
 
 .PHONY : all omc-diff failingtest test fast fast.logs $(FASTLOGS) $(SLOWLOGS) $(SIMULATIONLOGS) slow.logs
