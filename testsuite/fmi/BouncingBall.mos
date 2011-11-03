@@ -8,6 +8,10 @@
 loadFile("BouncingBall.mo");
 translateModelFMU(BouncingBall);
 getErrorString();
+system("fmigenerator.exe --fmufile=./BouncingBall.fmu --outputdir=./");
+loadFile("BouncingBallFMUImport.mo");
+getErrorString();
+simulate(FMUImport_BouncingBall.FMUBlock);
 
 // Result:
 // true

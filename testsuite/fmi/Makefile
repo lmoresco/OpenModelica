@@ -1,7 +1,8 @@
 TEST = ../rtest -v
 
 TESTFILES = \
-BouncingBall.mos 
+BouncingBall.mos \
+HelloFMIWorld.mos
 
 
 # test that currently fail. Move up when fixed. 
