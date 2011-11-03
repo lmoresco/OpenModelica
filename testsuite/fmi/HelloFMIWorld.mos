@@ -1,14 +1,14 @@
 // name:     HelloFMIWorld
 // keywords: fmu export
 // status: correct
-// teardown_command: rm -rf HelloFMIWorld_* HelloFMIWorld.log HelloFMIWorld.libs HelloFMIWorld HelloFMIWorld.exe HelloFMIWorld.cpp HelloFMIWorld.makefile output.log HelloFMIWorld/*
+// teardown_command: rm -rf HelloFMIWorld.fmu binaries sources modelDescription.xml HelloFMIWorldFMUImport.mo fmu*.log FMUImport_* HelloFMIWorld_* HelloFMIWorld.log HelloFMIWorld.libs HelloFMIWorld HelloFMIWorld.exe HelloFMIWorld.cpp HelloFMIWorld.makefile output.log HelloFMIWorld/*
 //
 // Event handling
 //
 loadFile("HelloFMIWorld.mo");
 translateModelFMU(HelloFMIWorld);
 getErrorString();
-system("fmigenerator.exe --fmufile=./HelloFMIWorld.fmu --outputdir=./");
+system("%OPENMODELICAHOME%/bin/fmigenerator.exe --fmufile=./HelloFMIWorld.fmu --outputdir=./");
 loadFile("HelloFMIWorldFMUImport.mo");
 getErrorString();
 simulate(FMUImport_HelloFMIWorld.FMUBlock,stopTime=1);
@@ -20,23 +20,26 @@ val(x,1);
 // "SimCode: The model HelloFMIWorld has been translated to FMU"
 // ""
 // Archive:  ./HelloFMIWorld.fmu
-//   inflating: .//binaries/win32/HelloFMIWorld.dll 
-//   inflating: .//binaries/win32/HelloFMIWorld.lib 
-//   inflating: .//binaries/win32/libexpat-1.dll 
-//   inflating: .//modelDescription.xml 
-//   inflating: .//sources/HelloFMIWorld.c 
-//   inflating: .//sources/HelloFMIWorld_FMU.c 
-//   inflating: .//sources/HelloFMIWorld_functions.c 
-//   inflating: .//sources/HelloFMIWorld_functions.h 
-//   inflating: .//sources/HelloFMIWorld_records.c 
+//    creating: .//binaries/          
+//    creating: .//binaries/win32/    
+//   inflating: .//binaries/win32/HelloFMIWorld.dll  
+//   inflating: .//binaries/win32/HelloFMIWorld.lib  
+//   inflating: .//binaries/win32/libexpat-1.dll  
+//   inflating: .//modelDescription.xml  
+//    creating: .//sources/           
+//   inflating: .//sources/HelloFMIWorld.c  
+//   inflating: .//sources/HelloFMIWorld_FMU.c  
+//   inflating: .//sources/HelloFMIWorld_functions.c  
+//   inflating: .//sources/HelloFMIWorld_functions.h  
+//   inflating: .//sources/HelloFMIWorld_records.c  
 // 
 // 
 // 1
 // true
 // ""
 // record SimulationResult
-//   resultFile = "FMUImport_HelloFMIWorld.FMUBlock_res.mat",
-//    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'FMUImport_HelloFMIWorld.FMUBlock', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     resultFile = "FMUImport_HelloFMIWorld.FMUBlock_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'FMUImport_HelloFMIWorld.FMUBlock', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 1.0
