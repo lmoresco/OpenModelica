@@ -146,16 +146,16 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // ""
 // ""
 // "[package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
-// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.PortVolume
+// Error: Error occurred while flattening model Modelica.Media.Examples.Tests.Components.PortVolume
 // "
 // "[package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
 // [package.mo:2915:9-2921:15:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Media.Examples.Tests.Components.PortVolume.
-// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.PortVolume
+// Error: Error occurred while flattening model Modelica.Media.Examples.Tests.Components.PortVolume
 // "
 // ""
 // ""
 // "[package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
-// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.FixedMassFlowRate
+// Error: Error occurred while flattening model Modelica.Media.Examples.Tests.Components.FixedMassFlowRate
 // "
 // "Check of Modelica.Media.Examples.Tests.Components.FixedMassFlowRate completed successfully.
 // 
@@ -167,7 +167,7 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // ""
 // ""
 // "[package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
-// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.FixedAmbient
+// Error: Error occurred while flattening model Modelica.Media.Examples.Tests.Components.FixedAmbient
 // "
 // "Check of Modelica.Media.Examples.Tests.Components.FixedAmbient completed successfully.
 // 
@@ -193,8 +193,8 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Examples.Tests.Components.ShortPipe
-//   parameter Real dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-010, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Nominal pressure drop\";
-//   parameter Real m_flow_nominal(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 1e-010, max = 100000.0) \"Nominal mass flow rate at nominal pressure drop\";
+//   parameter Real dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-10, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Nominal pressure drop\";
+//   parameter Real m_flow_nominal(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 1e-10, max = 100000.0) \"Nominal mass flow rate at nominal pressure drop\";
 //   Real port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real port_a.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
@@ -232,14 +232,14 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
 // [package.mo:2915:9-2921:15:writable] Error: No constant value for variable volume.Medium.singleState in scope Modelica.Media.Examples.Tests.Components.PortVolume.
 // [package.mo:3227:7-3289:27:writable] Error: Illegal to instantiate partial class PartialTestModel
-// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.PartialTestModel
+// Error: Error occurred while flattening model Modelica.Media.Examples.Tests.Components.PartialTestModel
 // "
 // ""
 // "[package.mo:3291:7-3364:28:writable] Warning: Forcing full instantiation of partial class PartialTestModel2 during checkModel.
 // [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
 // [package.mo:2915:9-2921:15:writable] Error: No constant value for variable volume.Medium.singleState in scope Modelica.Media.Examples.Tests.Components.PortVolume.
 // [package.mo:3291:7-3364:28:writable] Error: Illegal to instantiate partial class PartialTestModel2
-// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.PartialTestModel2
+// Error: Error occurred while flattening model Modelica.Media.Examples.Tests.Components.PartialTestModel2
 // "
 // ""
 // endResult
