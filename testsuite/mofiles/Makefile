@@ -109,6 +109,7 @@ Break.mo \
 Cardinality.mo \
 Cat1.mo \
 Ceil.mo \
+CheckInstantiationLimit.mo \
 Circle.mo \
 Circuit1.mo \
 Class1.mo \
