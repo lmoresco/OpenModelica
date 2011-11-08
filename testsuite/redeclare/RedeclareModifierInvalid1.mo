@@ -15,7 +15,7 @@ end RedeclareModifierInvalid1;
 
 // Result:
 // Error processing file: RedeclareModifierInvalid1.mo
-// [RedeclareModifierInvalid1.mo:13:13-13:37:writable] Notification: From here:
+// [RedeclareModifierInvalid1.mo:13:3-13:38:writable] Notification: From here:
 // [RedeclareModifierInvalid1.mo:9:3-9:9:writable] Error: Trying to redeclare component x but component not declared as replaceable
 // 
 // # Error encountered! Exiting...

@@ -15,7 +15,7 @@ end FinalRedeclareModifier;
 
 // Result:
 // Error processing file: FinalRedeclareModifier.mo
-// [FinalRedeclareModifier.mo:13:13-13:37:writable] Notification: From here:
+// [FinalRedeclareModifier.mo:13:3-13:38:writable] Notification: From here:
 // [FinalRedeclareModifier.mo:9:3-9:27:writable] Error: Redeclaration of final component x is not allowed.
 // 
 // # Error encountered! Exiting...

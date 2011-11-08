@@ -15,7 +15,7 @@ end RedeclareVisibility;
 
 // Result:
 // Error processing file: RedeclareVisibility.mo
-// [RedeclareVisibility.mo:13:13-13:37:writable] Notification: From here:
+// [RedeclareVisibility.mo:13:3-13:38:writable] Notification: From here:
 // [RedeclareVisibility.mo:9:13-9:31:writable] Error: Redeclaration of protected component x is not allowed.
 // 
 // # Error encountered! Exiting...

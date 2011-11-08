@@ -16,7 +16,7 @@ end RedeclareModifierInvalid2;
 
 // Result:
 // Error processing file: RedeclareModifierInvalid2.mo
-// [RedeclareModifierInvalid2.mo:14:23-14:36:writable] Notification: From here:
+// [RedeclareModifierInvalid2.mo:14:3-14:37:writable] Notification: From here:
 // [RedeclareModifierInvalid2.mo:9:3-9:18:writable] Error: Trying to redeclare model m2 but model not declared as replaceable
 // 
 // # Error encountered! Exiting...
