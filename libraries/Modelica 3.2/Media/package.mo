@@ -4109,7 +4109,7 @@ Modelica source.
       parameter Boolean preferredMediumStates=false
         "= true if StateSelect.prefer shall be used for the independent property variables of the medium"
         annotation (Evaluate=true, Dialog(tab="Advanced"));
-      parameter Boolean standardOrderComponents = true
+      replaceable parameter Boolean standardOrderComponents = true
         "if true, and reducedX = true, the last element of X will be computed from the other ones";
       SI.Conversions.NonSIunits.Temperature_degC T_degC=
           Modelica.SIunits.Conversions.to_degC(T)
