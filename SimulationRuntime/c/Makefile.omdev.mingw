@@ -15,14 +15,11 @@ CC = gcc
 FC = g77
 CFLAGS = -O3 -falign-functions -msse2 -mfpmath=sse
 
-LIBF2CMAKEFILE = makefile.mingw
-JAVAMAKEFILE = Makefile.omdev.mingw
-INTERACTIVEMAKEFILE = Makefile.mingw
-EXTERNALCMAKEFILE = Makefile.omdev.mingw
+LIBMAKEFILE = Makefile.omdev.mingw
 INTERACTIVELIBS = 
 LIBSENDDATA = libsendData.a
 CONFIG_H=$(top_builddir)/Compiler/runtime/config.h
-LIBF2C=libf2c/libf2c.a
+LIBF2C=simulation/libf2c/libf2c.a
 
 include Makefile.common
 
