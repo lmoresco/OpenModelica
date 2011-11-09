@@ -52,5 +52,3 @@ clean :
 	rm -f libmeta.a
 	rm -f $(META_OBJS)
 
-Makefile: Makefile.in
-	cd ../../../; ./config.status
