@@ -28,6 +28,6 @@ end Subscript3;
 //   Integer b.r[2];
 // equation
 //   b.r[1] = b.r[b.a];
-//   b.r[2] = A.i[b.a];
+//   b.r[2] = {0,1}[b.a];
 // end Subscript3;
 // endResult

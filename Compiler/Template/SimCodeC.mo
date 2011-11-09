@@ -42559,6 +42559,7 @@ algorithm
       Tpl.Text txt;
       DAE.Exp i_lit;
       Integer i_lit_index;
+      Integer i_index;
       Real i_real;
       Boolean i_lit_bool;
       Integer i_integer;
@@ -42584,6 +42585,12 @@ algorithm
       then txt;
 
     case ( txt,
+           DAE.ENUM_LITERAL(index = i_index) )
+      equation
+        txt = Tpl.writeStr(txt, intString(i_index));
+      then txt;
+
+    case ( txt,
            DAE.SHARED_LITERAL(index = i_lit_index) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_OMC_LIT"));
@@ -42596,7 +42603,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstArrayVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6653, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6654, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstArrayVal;
