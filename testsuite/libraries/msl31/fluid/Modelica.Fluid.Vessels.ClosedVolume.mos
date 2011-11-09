@@ -3,6 +3,8 @@
 //status:      correct
 //
 // instantiate/check model example
+// This model has issues due to Modelica bug #575:
+// https://trac.modelica.org/Modelica/ticket/575
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
