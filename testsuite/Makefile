@@ -38,7 +38,7 @@ msl31fluid.log
 SIMULATIONLOGS = \
 linearize.log \
 modelicaML.log \
-nitialization.log \
+initialization.log \
 mosfiles.log \
 mosfiles-msl22.log \
 msl221simulation.log  \
