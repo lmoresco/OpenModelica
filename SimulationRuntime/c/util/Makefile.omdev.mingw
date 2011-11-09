@@ -40,8 +40,5 @@ libutil.a : $(OBJS) $(HFILES)
 	ranlib $@
 
 clean :
-	rm -f libutils.a 
+	rm -f libutil.a 
 	rm -f $(OBJS)
-
-Makefile: Makefile.in
-	cd ../../../; ./config.status
