@@ -6,10 +6,10 @@
 #OMDEV=$OMDEV
 # Test if the needed variables are there...
 
-top_builddir = ..
+top_builddir = ../..
 builddir_bin=$(top_builddir)/build/bin
-builddir_lib=$(top_builddir)/build/lib/omc
-builddir_inc=$(top_builddir)/build/include/omc
+builddir_lib=$(top_builddir)/build/lib/omc2
+builddir_inc=$(top_builddir)/build/include/omc2
 
 CC = gcc
 FC = g77
@@ -28,3 +28,13 @@ libsendData.a : sendData/sendData.cpp sendData/sendData.h sendData/sendData.pro
 
 omdevinstall:
 	cp omdev_qtdeps/*.a ${builddir_lib}
+	
+install: libSimulationCRuntime.a
+	cp libSimulationCRuntime.a $(builddir_lib)
+	cp openmodelica.h $(builddir_inc)
+	cp meta/*.h $(builddir_inc)
+	cp util/*.h $(builddir_inc)
+	cp simulation/*.h $(builddir_inc)
+	cp simulation/math-support/*.h $(builddir_inc)
+	cp simulation/results/*.h $(builddir_inc)
+	cp simulation/solver/*.h $(builddir_inc)
