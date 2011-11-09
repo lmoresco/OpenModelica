@@ -68,7 +68,7 @@ checkModel(Modelica.Fluid.Valves.ValveCompressible); getErrorString();
 // [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
 // [Interfaces.mo:230:45-230:68:writable] Error: Class .Modelica.Fluid.Valves.ValveCompressible.Medium not found in scope Modelica.Fluid.Interfaces.FluidPort_a.Medium.
 // [Interfaces.mo:13:5-14:68:writable] Error: Class Medium.MassFlowRate not found in scope Modelica.Fluid.Interfaces.FluidPort_a while instantiating port_a.m_flow.
-// Error: Error occured while flattening model Modelica.Fluid.Valves.ValveCompressible
+// Error: Error occurred while flattening model Modelica.Fluid.Valves.ValveCompressible
 // "
 // "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
 //   The existing 'inner' components are: 
@@ -83,7 +83,7 @@ checkModel(Modelica.Fluid.Valves.ValveCompressible); getErrorString();
 // [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
 // [Interfaces.mo:230:45-230:68:writable] Error: Class .Modelica.Fluid.Valves.ValveCompressible.Medium not found in scope Modelica.Fluid.Interfaces.FluidPort_a.Medium.
 // [Interfaces.mo:13:5-14:68:writable] Error: Class Medium.MassFlowRate not found in scope Modelica.Fluid.Interfaces.FluidPort_a while instantiating port_a.m_flow.
-// Error: Error occured while flattening model Modelica.Fluid.Valves.ValveCompressible
+// Error: Error occurred while flattening model Modelica.Fluid.Valves.ValveCompressible
 // "
 // ""
 // endResult

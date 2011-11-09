@@ -17,7 +17,7 @@ checkModel(Modelica.Fluid.Sources.Boundary_ph); getErrorString();
 // true
 // ""
 // "[package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
-// Error: Error occured while flattening model Modelica.Fluid.Sources.Boundary_ph
+// Error: Error occurred while flattening model Modelica.Fluid.Sources.Boundary_ph
 // "
 // "Check of Modelica.Fluid.Sources.Boundary_ph completed successfully.
 // 

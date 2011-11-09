@@ -32,7 +32,7 @@ checkModel(Modelica.Fluid.Machines.SweptVolume); getErrorString();
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
 // [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
-// Error: Error occured while flattening model Modelica.Fluid.Machines.SweptVolume
+// Error: Error occurred while flattening model Modelica.Fluid.Machines.SweptVolume
 // "
 // "Check of Modelica.Fluid.Machines.SweptVolume completed successfully.
 // 

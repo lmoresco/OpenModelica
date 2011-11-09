@@ -31,7 +31,7 @@ checkModel(Modelica.Fluid.Vessels.ClosedVolume); getErrorString();
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
 // [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
-// Error: Error occured while flattening model Modelica.Fluid.Vessels.ClosedVolume
+// Error: Error occurred while flattening model Modelica.Fluid.Vessels.ClosedVolume
 // "
 // "Check of Modelica.Fluid.Vessels.ClosedVolume completed successfully.
 // 

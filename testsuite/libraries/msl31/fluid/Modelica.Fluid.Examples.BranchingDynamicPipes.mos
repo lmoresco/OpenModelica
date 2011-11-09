@@ -50,7 +50,7 @@ checkModel(Modelica.Fluid.Examples.BranchingDynamicPipes); getErrorString();
 // [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[5].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
 // [Pipes.mo:3110:11-3112:25:writable] Error: Failed to elaborate expression: Internal.m_flow_of_dp_fric(dp_grav_b - dp_grav_a, rho_a, rho_b, mu_a, mu_b, length, diameter, Re1, Re2, Delta) + m_flow_small
-// Error: Error occured while flattening model Modelica.Fluid.Examples.BranchingDynamicPipes
+// Error: Error occurred while flattening model Modelica.Fluid.Examples.BranchingDynamicPipes
 // "
 // "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.

@@ -26,13 +26,13 @@ checkModel(Modelica.Fluid.Examples.InverseParameterization); getErrorString();
 // [Interfaces.mo:725:9-730:39:writable] Error: Duplicate elements (due to inherited elements) not identical:
 // 	first element is:  Medium.MassFlowRate m_flow(min = if allowFlowReversal then -Modelica.Constants.inf else 0, start = m_flow_start, stateSelect = if momentumDynamics == Modelica.Fluid.Types.Dynamics.SteadyState then StateSelect.default else StateSelect.prefer)
 // 	second element is: Medium.MassFlowRate m_flow(min = if allowFlowReversal then -Modelica.Constants.inf else 0, start = m_flow_start)
-// Error: Error occured while flattening model Modelica.Fluid.Examples.InverseParameterization
+// Error: Error occurred while flattening model Modelica.Fluid.Examples.InverseParameterization
 // "
 // "[Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.ControlledPump.
 // [Interfaces.mo:725:9-730:39:writable] Error: Duplicate elements (due to inherited elements) not identical:
 // 	first element is:  Medium.MassFlowRate m_flow(min = if allowFlowReversal then -Modelica.Constants.inf else 0, start = m_flow_start, stateSelect = if momentumDynamics == Modelica.Fluid.Types.Dynamics.SteadyState then StateSelect.default else StateSelect.prefer)
 // 	second element is: Medium.MassFlowRate m_flow(min = if allowFlowReversal then -Modelica.Constants.inf else 0, start = m_flow_start)
-// Error: Error occured while flattening model Modelica.Fluid.Examples.InverseParameterization
+// Error: Error occurred while flattening model Modelica.Fluid.Examples.InverseParameterization
 // "
 // ""
 // endResult

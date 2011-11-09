@@ -39,7 +39,7 @@ checkModel(Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls); getErro
 // [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
 // [Interfaces.mo:579:7-582:72:writable] Error: Array dimension mismatch, expression {0.001519} has type Real[1], expected array dimensions [0]
-// Error: Error occured while flattening model Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls
+// Error: Error occurred while flattening model Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls
 // "
 // "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
@@ -62,7 +62,7 @@ checkModel(Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls); getErro
 // 
 // [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
-// Error: Error occured while flattening model Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls
+// Error: Error occurred while flattening model Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls
 // "
 // ""
 // endResult

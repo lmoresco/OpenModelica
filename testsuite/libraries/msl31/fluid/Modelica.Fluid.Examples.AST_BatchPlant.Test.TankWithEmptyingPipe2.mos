@@ -28,7 +28,7 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe2); g
 // Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar") p;
 // Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity="ThermodynamicTemperature", unit="K", displayUnit="degC") T;
 // end Modelica.Fluid.Pipes.StaticPipe.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity="Density", unit="kg/m3", displayUnit="g/cm3")
-// Error: Error occured while flattening model Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe2
+// Error: Error occurred while flattening model Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe2
 // "
 // "[Pipes.mo:21:5-40:85:writable] Error: No matching function found for Medium.density(flowModel.states[1])
 // of type
@@ -39,7 +39,7 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe2); g
 // Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
 // Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
 // end Modelica.Fluid.Pipes.StaticPipe.Medium.ThermodynamicState;) => Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\")
-// Error: Error occured while flattening model Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe2
+// Error: Error occurred while flattening model Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe2
 // "
 // ""
 // endResult
