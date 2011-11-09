@@ -35,7 +35,3 @@ libsim.a : $(OBJS) $(HFILES)
 clean :
 	rm -f libsim.a
 	rm -f $(OBJS)
-
-Makefile: Makefile.in
-	cd ../../..; ./config.status
-
