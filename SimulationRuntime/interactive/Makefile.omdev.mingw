@@ -1,5 +1,5 @@
 #
-# Makefile for c_runtime/interactive
+# Makefile for interactive
 #
 
 top_builddir= ../..
@@ -9,16 +9,16 @@ CPPSRC = omi_Calculation.cpp omi_Control.cpp omi_ResultManager.cpp \
 
 SHELL	= /bin/sh
 CC	= gcc
-CFLAGS	+= -O3 -I$(top_builddir)/c_runtime -I.
+CFLAGS	+= -O3 -I. -I../c/simulation/results/ -I../c/linearization -I../c/simulation/solver/ -I../c/util/ -I../c/ -I../c/simulation/ -I../c/simulation/math-support
 CXXFLAGS = $(CFLAGS)
 
 OBJ = $(CPPSRC:.cpp=.o)
 
-all: libinteractive.a client
+all: libinteractive.a client install
 
 omc_ServiceInterface.o: omi_ServiceInterface.h omi_Control.h omi_Transfer.h \
-  ../simulation_runtime.h ../simulation_input.h ../solver_dasrt.h \
-  ../solver_main.h ../options.h
+  ../c/simulation/simulation_runtime.h ../c/simulation/simulation_input_xml.h ../c/simulation/solver/solver_dasrt.h \
+  ../c/simulation/solver/solver_main.h ../c/simulation/options.h
 
 libinteractive.a : $(OBJ)
 	$(AR) -s -r $@ $(OBJ)
@@ -29,3 +29,6 @@ client : client.cpp socket.h socket.cpp socket_win.cpp socket_unix.cpp thread.h 
 
 clean:
 	$(RM) -rf *.o *.a SampleClient/client*
+
+install: libinteractive.a
+	cp libinteractive.a $(top_builddir)/build/lib/omc2/
