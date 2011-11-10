@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -O3 -I.. -D_POSIX_ -Dstatic=
-OBJS = ModelicaInternal.o ModelicaStrings.o ModelicaTablesImpl.o 
+OBJS = ModelicaInternal.o ModelicaStrings.o ModelicaTablesImpl.o tables.o
 AR = ar -ru
 
 all: libModelicaExternalC.a
@@ -13,4 +13,4 @@ libModelicaExternalC.a : $(OBJS)
 	$(CC) $(CFLAGS) -c $^
 
 clean:
-	rm -f libModelicaExternalC.a $(OBJS)
+	rm -f libModelicaExternalC.a $(OBJS) 
