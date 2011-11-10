@@ -1,4 +1,4 @@
-TEST = ../rtest +simCodeTarget=c -v
+TEST = ../rtest -v
 
 TESTFILES = \
 ABCDsystem.plt.mos \
