@@ -29,7 +29,7 @@ libsendData.a : sendData/sendData.cpp sendData/sendData.h sendData/sendData.pro
 omdevinstall:
 	cp omdev_qtdeps/*.a ${builddir_lib}
 	
-install: libSimulationCRuntime.a
+install: libSimulationCRuntime.a omdevinstall
 	cp libSimulationCRuntime.a $(builddir_lib)
 	cp openmodelica.h $(builddir_inc)
 	cp meta/*.h $(builddir_inc)
@@ -38,3 +38,8 @@ install: libSimulationCRuntime.a
 	cp simulation/math-support/*.h $(builddir_inc)
 	cp simulation/results/*.h $(builddir_inc)
 	cp simulation/solver/*.h $(builddir_inc)
+	test -z "$(LIBF2C)" || cp simulation/libf2c/libf2c.* $(builddir_lib)/
+	test -z "$(LIBSENDDATA)" || cp sendData/release/$(LIBSENDDATA) $(builddir_lib)/
+	@$(MAKE) -C util/java_interface -f $(LIBMAKEFILE) && \
+	$(MAKE) -C util/java_interface -f $(LIBMAKEFILE) install || \
+	$(MAKE) -C util/java_interface -f $(LIBMAKEFILE) install-nomodelica	
