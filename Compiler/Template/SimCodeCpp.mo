@@ -4793,7 +4793,6 @@ algorithm
       Integer i_outputIndex;
       DAE.ExpType i_type__;
       DAE.Exp i_exp;
-      Boolean i_isInput;
       DAE.ExpType i_t;
       DAE.ComponentRef i_c;
       Integer i_oi;
@@ -4805,20 +4804,17 @@ algorithm
       Tpl.Text l_name;
 
     case ( txt,
-           SimCode.SIMEXTARG(cref = i_c, outputIndex = i_oi, isArray = true, type_ = i_t, isInput = i_isInput),
+           SimCode.SIMEXTARG(cref = i_c, outputIndex = i_oi, isArray = true, type_ = i_t),
            a_preExp,
            a_varDecls,
            _ )
       equation
         l_name = fun_137(Tpl.emptyTxt, i_oi, i_c);
         l_shortTypeStr = expTypeShort(Tpl.emptyTxt, i_t);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
-        txt = extType2(txt, i_t, i_isInput, true);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(") data_of_"));
-        txt = Tpl.writeText(txt, l_shortTypeStr);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_array(&("));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
         txt = Tpl.writeText(txt, l_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("))"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".data()"));
+        txt = Tpl.popBlock(txt);
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
