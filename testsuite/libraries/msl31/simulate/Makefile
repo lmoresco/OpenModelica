@@ -39,7 +39,6 @@ $(WRONGRESULTTEST)
 
 NOTCOMPILETEST= \
 Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed.mos \
-Modelica.Electrical.Digital.Examples.Adder4.mos \
 Modelica.Electrical.Digital.Examples.Counter.mos \
 Modelica.Electrical.Digital.Examples.Counter3.mos \
 Modelica.Electrical.Digital.Examples.FlipFlop.mos \
@@ -148,8 +147,8 @@ Modelica.StateGraph.Examples.ShowCompositeStep.mos \
 Modelica.StateGraph.Examples.ShowExceptions.mos \
 Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.mos \
 Modelica.Thermal.HeatTransfer.Examples.TwoMasses.mos \
-Modelica.Utilities.Examples.readRealParameterModel.mos 
-
+Modelica.Utilities.Examples.readRealParameterModel.mos \
+Modelica.Electrical.Digital.Examples.Adder4.mos
 
 .PHONY : test
 
