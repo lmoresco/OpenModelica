@@ -11,7 +11,7 @@ CPPFLAGS :=  -Wall $(ANSI) $(EXTRA_CFLAGS) -I. -I.. -I../../ -I../../util -I../.
 AR = ar -ru
 FFLAGS  = -O -fexceptions
 
-OBJS = daux.o ddasrt.o ddassl.o dlamch.o dlinpk.o solver_main.o  
+include ../../Makefile.objs
 
 HFILES = \
 simulation_inline_solver.h \
