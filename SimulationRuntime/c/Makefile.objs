@@ -1,0 +1,33 @@
+MATH_OBJS = bigden.o enorm.o hybrd1.o nelmead.o qform.o r1updt.o biglag.o dogleg.o fdjac1.o hybrj.o newuoa.o qrfac.o trsapp.o dpmpar.o hybrd.o lsame.o newuob.o r1mpyq.o update.o simulation_events.o ringbuffer.o simulation_delay.o simulation_init.o dgesv_aux.o list.o
+
+SOLVER_OBJS = daux.o ddasrt.o ddassl.o dlamch.o dlinpk.o solver_main.o
+
+RESULTS_OBJS =  read_csv.o read_matlab4.o simulation_result_csv.o simulation_result_mat.o  simulation_result_plt.o
+
+SIM_OBJS = options.o simulation_input_xml.o simulation_modelinfo.o simulation_runtime.o  simulation_varinfo.o
+
+UTIL_OBJS = boolean_array.o index_spec.o integer_array.o memory_pool.o base_array.o real_array.o string_array.o utility.o modelica_string.o division.o java_interface.o rtclock.o
+
+META_OBJS = meta_modelica_builtin.o meta_modelica_gc_pages.o meta_modelica_gc_stats.o meta_modelica_catch.o meta_modelica_gc_roots.o meta_modelica.o meta_modelica_gc_list.o  meta_modelica_gc_settings.o  meta_modelica_real.o meta_modelica_gc.o meta_modelica_gc_stack.o meta_modelica_string_lit.o
+
+MATHPATH = ./simulation/math-support/
+MATHOBJSPATH = $(MATH_OBJS:%=$(MATHPATH)%)
+
+SOLVERPATH = ./simulation/solver/
+SOLVEROBJSPATH = $(SOLVER_OBJS:%=$(SOLVERPATH)%)
+
+RESULTSPATH = ./simulation/results/
+RESULTSOBJSPATH = $(RESULTS_OBJS:%=$(RESULTSPATH)%)
+
+SIMPATH = ./simulation/
+SIMOBJSPATH = $(SIM_OBJS:%=$(SIMPATH)%)
+
+UTILPATH = ./util/
+UTILOBJSPATH = $(UTIL_OBJS:%=$(UTILPATH)%)
+
+METAPATH = ./meta/
+MATAOBJSPATH = $(META_OBJS:%=$(METAPATH)%)
+
+ALL_OBJS = $(MATHOBJSPATH) $(SOLVEROBJSPATH) $(RESULTSOBJSPATH) $(SIMOBJSPATH) $(UTILOBJSPATH) $(MATAOBJSPATH)
+
+
