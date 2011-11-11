@@ -9,6 +9,7 @@ Modelica.Blocks.Examples.ShowLogicalSources.mos \
 Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.mos \
 Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
 Modelica.Electrical.Analog.Examples.NandGate.mos \
+Modelica.Electrical.Digital.Examples.Adder4.mos \
 Modelica.Electrical.Machines.Examples.TransformerTestbench.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant.mos \
@@ -147,8 +148,7 @@ Modelica.StateGraph.Examples.ShowCompositeStep.mos \
 Modelica.StateGraph.Examples.ShowExceptions.mos \
 Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.mos \
 Modelica.Thermal.HeatTransfer.Examples.TwoMasses.mos \
-Modelica.Utilities.Examples.readRealParameterModel.mos \
-Modelica.Electrical.Digital.Examples.Adder4.mos
+Modelica.Utilities.Examples.readRealParameterModel.mos 
 
 .PHONY : test
 
