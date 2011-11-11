@@ -4,7 +4,7 @@ SOLVER_OBJS = daux.o ddasrt.o ddassl.o dlamch.o dlinpk.o solver_main.o
 
 RESULTS_OBJS =  read_csv.o read_matlab4.o simulation_result_csv.o simulation_result_mat.o  simulation_result_plt.o
 
-SIM_OBJS = options.o simulation_input_xml.o simulation_modelinfo.o simulation_runtime.o  simulation_varinfo.o simulation_data.o
+SIM_OBJS = options.o simulation_input_xml.o simulation_modelinfo.o simulation_runtime.o  simulation_varinfo.o simulation_data.o ../linearization/linearize.o
 
 UTIL_OBJS = boolean_array.o index_spec.o integer_array.o memory_pool.o base_array.o real_array.o string_array.o utility.o modelica_string.o division.o java_interface.o rtclock.o error.o
 
