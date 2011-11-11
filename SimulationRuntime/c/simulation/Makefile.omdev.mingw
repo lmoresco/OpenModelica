@@ -7,7 +7,7 @@
 CC = gcc
 ANSI= #-ansi
 CFLAGS   := -O3 -march=native -fPIC -Wall $(ANSI) -pedantic $(EXTRA_CFLAGS) -mfpmath=sse -c
-CPPFLAGS :=  -Wall $(ANSI) $(EXTRA_CFLAGS) -I. -I.. -I../util -I../linearization -I./results -I./math-support/ -I./solver
+CPPFLAGS :=  -Wall $(ANSI) $(EXTRA_CFLAGS) -I. -I.. -I../util -I../linearization -I./results -I../math-support/ -I./solver
 AR = ar -ru
 FFLAGS  = -O -fexceptions
 
