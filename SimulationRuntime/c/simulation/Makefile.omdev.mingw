@@ -11,26 +11,5 @@ CPPFLAGS :=  -Wall $(ANSI) $(EXTRA_CFLAGS) -I. -I.. -I../util -I../linearization
 AR = ar -ru
 FFLAGS  = -O -fexceptions
 
-include ../Makefile.objs
+include Makefile.common
 
-HFILES = \
-simulation_input_xml.h \
-simulation_runtime.h \
-simulation_modelinfo.h \
-simulation_varinfo.h \
-options.h \
-../linearization/linearize.h \
-
-LIBS = libsim.a
-
-.PHONY : libsim.a clean
-
-all : libsim.a
-
-libsim.a : $(SIM_OBJS) $(HFILES)
-	$(AR) $@ $(SIM_OBJS)
-	ranlib $@
-
-clean :
-	rm -f libsim.a
-	rm -f $(SIM_OBJS)
