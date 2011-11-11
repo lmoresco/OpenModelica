@@ -4728,7 +4728,7 @@ algorithm
         txt = Tpl.writeStr(txt, intString(i_id));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
         txt = Tpl.writeText(txt, l_eRes);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(");"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", time);"));
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         (txt, a_varDecls) = lm_142(txt, rest, a_varDecls);
       then (txt, a_varDecls);
