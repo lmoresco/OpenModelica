@@ -7,30 +7,8 @@
 CC = gcc
 ANSI= #-ansi
 CFLAGS   := -O3 -march=native -fPIC -Wall $(ANSI) -pedantic $(EXTRA_CFLAGS) -mfpmath=sse -c -I..
-CPPFLAGS :=  -Wall $(ANSI) $(EXTRA_CFLAGS) -I. -I.. -I../../ -I../../util -I../../linearization -I../results -I../math-support/
+CPPFLAGS :=  -Wall $(ANSI) $(EXTRA_CFLAGS) -I. -I.. -I../../ -I../../util -I../../linearization -I../results -I../../math-support/
 AR = ar -ru
 FFLAGS  = -O -fexceptions
 
-include ../../Makefile.objs
-
-HFILES = \
-simulation_inline_solver.h \
-solver_main.h \
-
-LIBS = libsolver.a
-
-.PHONY : libsolver.a clean
-
-all : libsolver.a
-
-libsolver.a : $(OBJS) $(HFILES)
-	$(AR) $@ $(OBJS)
-	ranlib $@
-
-clean :
-	rm -f libsolver.a
-	rm -f $(OBJS)
-
-Makefile: Makefile.in
-	cd ../../../../; ./config.status
-
+include Makefile.common

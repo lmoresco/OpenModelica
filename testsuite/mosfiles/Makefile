@@ -20,7 +20,6 @@ AsubCrefExpType.mos \
 ASubIfExp.mos \
 BooleanArray.mos \
 BouncingBall.mos BouncingBall2.mos BouncingBallExamples.mos \
-BouncingBallExamplesDOPRI5.mos \
 BuiltinMath.mos \
 CheckEvents.mos \
 ComplexNumbers.mos \
@@ -98,14 +97,12 @@ SimplePeriodicSampler.mos \
 SimResultScripting.mos \
 simulation.mos \
 SliceAssignment.mos \
-SpaceProbe.mos \
 StepAdvanced.mos \
 StringTest.mos \
 SumSeriesWhile.mos \
 SyncFilter.mos \
 Switch.mos \
 Tank.mos TankPI.mos TankPID.mos TankHybridPID.mos TankHybridPI.mos TanksConnectedPI.mos \
-TankPIDOPRI5.mos TanksConnectedPIDOPRI5.mos\
 terminal.mos \
 tempInterpol2test.mos \
 TestLapack.mos \
@@ -133,6 +130,9 @@ ArrayFieldSlice.mos \
 AppendElement.mos \
 ActivateWhenEquation.mos Enum8.mos  \
 ForIterator2.mos \
+TankPIDOPRI5.mos TanksConnectedPIDOPRI5.mos\
+SpaceProbe.mos \
+BouncingBallExamplesDOPRI5.mos \
 
 .PHONY : test
 

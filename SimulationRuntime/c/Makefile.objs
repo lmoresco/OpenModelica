@@ -1,6 +1,6 @@
 MATH_OBJS = bigden.o enorm.o hybrd1.o nelmead.o qform.o r1updt.o biglag.o dogleg.o fdjac1.o hybrj.o newuoa.o qrfac.o trsapp.o dpmpar.o hybrd.o lsame.o newuob.o r1mpyq.o update.o events.o ringbuffer.o delay.o initialization.o dgesv_aux.o list.o
 
-SOLVER_OBJS = daux.o ddasrt.o ddassl.o dlamch.o dlinpk.o solver_main.o
+SOLVER_OBJS = daux.o ddasrt.o ddassl.o dlamch.o dlinpk.o solver_main.o dopri45.o
 
 RESULTS_OBJS =  read_csv.o read_matlab4.o simulation_result_csv.o simulation_result_mat.o  simulation_result_plt.o
 
@@ -9,6 +9,8 @@ SIM_OBJS = options.o simulation_input_xml.o simulation_modelinfo.o simulation_ru
 UTIL_OBJS = boolean_array.o index_spec.o integer_array.o memory_pool.o base_array.o real_array.o string_array.o utility.o modelica_string.o division.o java_interface.o rtclock.o error.o
 
 META_OBJS = meta_modelica_builtin.o meta_modelica_gc_pages.o meta_modelica_gc_stats.o meta_modelica_catch.o meta_modelica_gc_roots.o meta_modelica.o meta_modelica_gc_list.o  meta_modelica_gc_settings.o  meta_modelica_real.o meta_modelica_gc.o meta_modelica_gc_stack.o meta_modelica_string_lit.o
+
+MOEXTC_OBJS = ModelicaInternal.o ModelicaStrings.o ModelicaTablesImpl.o ModelicaUtilities.o tables.o
 
 MATHPATH = ./math-support/
 MATHOBJSPATH = $(MATH_OBJS:%=$(MATHPATH)%)
@@ -28,6 +30,9 @@ UTILOBJSPATH = $(UTIL_OBJS:%=$(UTILPATH)%)
 METAPATH = ./meta/
 MATAOBJSPATH = $(META_OBJS:%=$(METAPATH)%)
 
-ALL_OBJS = $(MATHOBJSPATH) $(SOLVEROBJSPATH) $(RESULTSOBJSPATH) $(SIMOBJSPATH) $(UTILOBJSPATH) $(MATAOBJSPATH)
+MOEXTCPATH = ./ModelicaExternalC/
+MOEXTCOBJSPATH = $(MOEXTC_OBJS:%=$(MOEXTCPATH)%)
+
+ALL_OBJS = $(MATHOBJSPATH) $(SOLVEROBJSPATH) $(RESULTSOBJSPATH) $(SIMOBJSPATH) $(UTILOBJSPATH) $(MATAOBJSPATH) $(MOEXTCOBJSPATH)
 
 
