@@ -823,7 +823,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = globalDataParDefine_X_(txt, i_var, "realData");
+        txt = globalDataParDefine_X_(txt, i_var, "realParameter");
         txt = Tpl.nextIter(txt);
         txt = lm_37(txt, rest);
       then txt;
@@ -922,7 +922,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = globalDataParDefine_X_(txt, i_var, "integerData");
+        txt = globalDataParDefine_X_(txt, i_var, "integerParameter");
         txt = Tpl.nextIter(txt);
         txt = lm_40(txt, rest);
       then txt;
@@ -988,7 +988,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = globalDataParDefine_X_(txt, i_var, "booleanData");
+        txt = globalDataParDefine_X_(txt, i_var, "booleanParameter");
         txt = Tpl.nextIter(txt);
         txt = lm_42(txt, rest);
       then txt;
@@ -1054,7 +1054,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = globalDataParDefine_X_(txt, i_var, "stringData");
+        txt = globalDataParDefine_X_(txt, i_var, "stringParameter");
         txt = Tpl.nextIter(txt);
         txt = lm_44(txt, rest);
       then txt;
@@ -3788,7 +3788,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "]\n",
+                                    "].attribute.initial\n",
                                     "#define "
                                 }, false));
         txt = cref(txt, i_name);
@@ -3796,7 +3796,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_arrayName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.writeStr(txt, intString(i_index));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("].attribute.initial"));
       then txt;
 
     case ( txt,
@@ -3809,7 +3809,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_arrayName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.writeStr(txt, intString(i_index));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("].attribute.initial"));
       then txt;
 
     case ( txt,
