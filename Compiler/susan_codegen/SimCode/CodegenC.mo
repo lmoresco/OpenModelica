@@ -569,7 +569,7 @@ algorithm
         txt = Tpl.writeStr(txt, intString(i_varInfo_numBoolParams));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ";\n",
-                                    "data.modelData.nParametersStrings = "
+                                    "data.modelData.nParametersString = "
                                 }, false));
         txt = Tpl.writeStr(txt, intString(i_varInfo_numStringParamVars));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
