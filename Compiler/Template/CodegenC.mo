@@ -350,8 +350,6 @@ algorithm
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "_functions.c\"\n",
-                                    "#define _OMC_SEED_HACK\n",
-                                    "#define _OMC_SEED_HACK_2\n",
                                     "#ifdef __cplusplus\n",
                                     "extern \"C\" {\n",
                                     "#endif\n",
@@ -3844,14 +3842,21 @@ algorithm
            a_offset,
            a_arrayName )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define _"));
         txt = cref(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" localData->"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(i) data->localData[i]->"));
         txt = Tpl.writeStr(txt, a_arrayName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         ret_0 = intAdd(a_offset, i_index);
         txt = Tpl.writeStr(txt, intString(ret_0));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "]\n",
+                                    "#define "
+                                }, false));
+        txt = cref(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" _"));
+        txt = cref(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(0)"));
       then txt;
 
     case ( txt,
@@ -3879,11 +3884,6 @@ algorithm
       DAE.ComponentRef i_name;
       Integer i_index;
       DAE.ComponentRef i_c;
-      Integer ret_9;
-      Integer ret_8;
-      Integer ret_7;
-      Integer ret_6;
-      Integer ret_5;
       Integer ret_4;
       Integer ret_3;
       Integer ret_2;
@@ -3895,21 +3895,28 @@ algorithm
            a_offset,
            a_arrayName )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define _"));
         txt = cref(txt, i_c);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" localData->"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(i) data->localData[i]->"));
         txt = Tpl.writeStr(txt, a_arrayName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         ret_0 = intAdd(a_offset, i_index);
         txt = Tpl.writeStr(txt, intString(ret_0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "]\n",
-                                    "#define $P$PRE"
+                                    "#define "
                                 }, false));
         txt = cref(txt, i_c);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" localData->"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" _"));
+        txt = cref(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "(0)\n",
+                                    "#define _"
+                                }, false));
+        txt = cref(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(i) data->localData[i]->"));
         txt = Tpl.writeStr(txt, a_arrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("Pre["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         ret_1 = intAdd(a_offset, i_index);
         txt = Tpl.writeStr(txt, intString(ret_1));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
@@ -3917,42 +3924,26 @@ algorithm
                                     "#define "
                                 }, false));
         txt = cref(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" localData->"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" _"));
+        txt = cref(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "(0)\n",
+                                    "#define _$P$PRE"
+                                }, false));
+        txt = cref(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(i) data->localData[i]->"));
         txt = Tpl.writeStr(txt, a_arrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("Pre["));
         ret_2 = intAdd(a_offset, i_index);
         txt = Tpl.writeStr(txt, intString(ret_2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "]\n",
-                                    "#define $P$old"
-                                }, false));
-        txt = cref(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" oldlocalData->"));
-        txt = Tpl.writeStr(txt, a_arrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        ret_3 = intAdd(a_offset, i_index);
-        txt = Tpl.writeStr(txt, intString(ret_3));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "]\n",
-                                    "#define $P$old2"
-                                }, false));
-        txt = cref(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" old2localData->"));
-        txt = Tpl.writeStr(txt, a_arrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        ret_4 = intAdd(a_offset, i_index);
-        txt = Tpl.writeStr(txt, intString(ret_4));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "]\n",
                                     "#define $P$PRE"
                                 }, false));
         txt = cref(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" localData->"));
-        txt = Tpl.writeStr(txt, a_arrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("Pre["));
-        ret_5 = intAdd(a_offset, i_index);
-        txt = Tpl.writeStr(txt, intString(ret_5));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" _$P$PRE"));
+        txt = cref(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(0)"));
       then txt;
 
     case ( txt,
@@ -3960,44 +3951,38 @@ algorithm
            a_offset,
            a_arrayName )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define _"));
         txt = cref(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" localData->"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(i) data->localData[i]->"));
         txt = Tpl.writeStr(txt, a_arrayName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        ret_6 = intAdd(a_offset, i_index);
-        txt = Tpl.writeStr(txt, intString(ret_6));
+        ret_3 = intAdd(a_offset, i_index);
+        txt = Tpl.writeStr(txt, intString(ret_3));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "]\n",
-                                    "#define $P$old"
+                                    "#define "
                                 }, false));
         txt = cref(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" oldlocalData->"));
-        txt = Tpl.writeStr(txt, a_arrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        ret_7 = intAdd(a_offset, i_index);
-        txt = Tpl.writeStr(txt, intString(ret_7));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" _"));
+        txt = cref(txt, i_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "]\n",
-                                    "#define $P$old2"
+                                    "(0)\n",
+                                    "#define _$P$PRE"
                                 }, false));
         txt = cref(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" old2localData->"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(i) data->localData[i]->"));
         txt = Tpl.writeStr(txt, a_arrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        ret_8 = intAdd(a_offset, i_index);
-        txt = Tpl.writeStr(txt, intString(ret_8));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("Pre["));
+        ret_4 = intAdd(a_offset, i_index);
+        txt = Tpl.writeStr(txt, intString(ret_4));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "]\n",
                                     "#define $P$PRE"
                                 }, false));
         txt = cref(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" localData->"));
-        txt = Tpl.writeStr(txt, a_arrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("Pre["));
-        ret_9 = intAdd(a_offset, i_index);
-        txt = Tpl.writeStr(txt, intString(ret_9));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" _$P$PRE"));
+        txt = cref(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(0)"));
       then txt;
 
     case ( txt,
@@ -4778,11 +4763,7 @@ algorithm
         l_ctorCalls = Tpl.popIter(l_ctorCalls);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "/* Has to be performed after _init.xml file has been read */\n",
-                                    "#ifndef OLD_DATA\n",
-                                    "void callExternalObjectConstructors(_X_DATA *data)\n",
-                                    "#else\n",
-                                    "void callExternalObjectConstructors(DATA *data)\n",
-                                    "#endif\n",
+                                    "void callExternalObjectConstructors(_X_DATA *_data, DATA *data)\n",
                                     "{\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
@@ -4862,11 +4843,7 @@ algorithm
            SimCode.EXTOBJINFO(vars = i_extObjInfo_vars) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "#ifndef OLD_DATA\n",
-                                    "void callExternalObjectDestructors(_X_DATA *data)\n",
-                                    "#else\n",
-                                    "void callExternalObjectDestructors(DATA *data)\n",
-                                    "#endif\n",
+                                    "void callExternalObjectDestructors(_X_DATA *_data, DATA *data)\n",
                                     "{\n",
                                     "  if (data->extObjs) {\n"
                                 }, true));
@@ -4946,11 +4923,7 @@ algorithm
            SimCode.MODELINFO(vars = SimCode.SIMVARS(inputVars = i_vars_inputVars)) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "#ifndef OLD_DATA\n",
                                     "int input_function(_X_DATA *data)\n",
-                                    "#else\n",
-                                    "int input_function()\n",
-                                    "#endif\n",
                                     "{\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
@@ -5024,7 +4997,7 @@ algorithm
            SimCode.MODELINFO(vars = SimCode.SIMVARS(outputVars = i_vars_outputVars)) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "int output_function()\n",
+                                    "int output_function(_X_DATA *data)\n",
                                     "{\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
@@ -5080,7 +5053,7 @@ algorithm
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                    "/* Initializes the raw time events of the simulation using the now\n",
                                    "   calcualted parameters. */\n",
-                                   "void function_sampleInit()\n",
+                                   "void function_sampleInit(_X_DATA *data)\n",
                                    "{\n"
                                }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
@@ -5155,7 +5128,7 @@ algorithm
   out_txt := Tpl.writeText(txt, l_tmp);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "int function_updateSample()\n",
+                                       "int function_updateSample(_X_DATA *data)\n",
                                        "{\n",
                                        "  state mem_state;\n"
                                    }, true));
@@ -5279,11 +5252,7 @@ algorithm
   out_txt := Tpl.writeText(txt, l_tmp);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "#ifndef OLD_DATA\n",
                                        "int initial_function(_X_DATA *data)\n",
-                                       "#else\n",
-                                       "int initial_function()\n",
-                                       "#endif\n",
                                        "{\n"
                                    }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
@@ -5403,11 +5372,7 @@ algorithm
   (l_body, l_varDecls) := lm_153(l_body, a_residualEquations, l_varDecls);
   l_body := Tpl.popIter(l_body);
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                   "#ifndef OLD_DATA\n",
                                    "int initial_residual(_X_DATA *data, double $P$_lambda)\n",
-                                   "#else\n",
-                                   "int initial_residual(double $P$_lambda)\n",
-                                   "#endif\n",
                                    "{\n",
                                    "  int i = 0;\n",
                                    "  state mem_state;\n"
@@ -5810,11 +5775,7 @@ algorithm
   out_txt := Tpl.writeText(txt, l_tmp);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "#ifndef OLD_DATA\n",
                                        "int bound_parameters(_X_DATA *data)\n",
-                                       "#else\n",
-                                       "int bound_parameters()\n",
-                                       "#endif\n",
                                        "{\n",
                                        "  state mem_state;\n"
                                    }, true));
@@ -5956,7 +5917,7 @@ algorithm
   out_txt := fun_166(out_txt, a_delayed);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
                                        ";\n",
-                                       "int function_storeDelayed()\n",
+                                       "int function_storeDelayed(_X_DATA *data)\n",
                                        "{\n",
                                        "  state mem_state;\n"
                                    }, true));
@@ -6507,7 +6468,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("static void functionODE_system"));
   out_txt := Tpl.writeStr(out_txt, intString(a_n));
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "(int omc_thread_number)\n",
+                                       "(_X_DATA *data,int omc_thread_number)\n",
                                        "{\n"
                                    }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
@@ -6893,7 +6854,7 @@ algorithm
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("static void (*functionODE_systems["));
   out_txt := Tpl.writeText(out_txt, l_nFuncs);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE("])(int) = {\n"));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE("])(_X_DATA *, int) = {\n"));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
   out_txt := Tpl.writeText(out_txt, l_funcNames);
   out_txt := Tpl.softNewLine(out_txt);
@@ -6913,7 +6874,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
                                        "}\n",
                                        "\n",
-                                       "int functionODE()\n",
+                                       "int functionODE(_X_DATA *data)\n",
                                        "{\n",
                                        "  int id,th_id;\n",
                                        "  state mem_state; /* We need to have separate memory pools for separate systems... */\n",
@@ -6928,7 +6889,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
                                        "; id++) {\n",
                                        "  th_id = omp_get_thread_num();\n",
-                                       "  functionODE_systems[id](th_id);\n",
+                                       "  functionODE_systems[id](data,th_id);\n",
                                        "}\n",
                                        "restore_memory_state(mem_state);\n",
                                        "\n",
@@ -7010,7 +6971,7 @@ algorithm
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
                                        "/* for continuous time variables */\n",
-                                       "int functionAlgebraics()\n",
+                                       "int functionAlgebraics(_X_DATA *data)\n",
                                        "{\n",
                                        "  state mem_state;\n"
                                    }, true));
@@ -7096,7 +7057,7 @@ algorithm
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
                                        "/* for continuous time variables */\n",
-                                       "int functionAliasEquations()\n",
+                                       "int functionAliasEquations(_X_DATA *data)\n",
                                        "{\n",
                                        "  state mem_state;\n"
                                    }, true));
@@ -7215,12 +7176,9 @@ protected
   Tpl.Text l_reinit;
   Tpl.Text l_eqs;
   Tpl.Text l_tmp;
-  Tpl.Text l_jens;
   Tpl.Text l_varDecls;
 algorithm
   l_varDecls := Tpl.emptyTxt;
-  System.tmpTickReset(0);
-  l_jens := Tpl.emptyTxt;
   l_tmp := Tpl.emptyTxt;
   l_eqs := Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
   (l_eqs, l_tmp, l_varDecls) := lm_193(l_eqs, a_allEquationsPlusWhen, l_tmp, l_varDecls);
@@ -7231,7 +7189,7 @@ algorithm
   out_txt := Tpl.writeText(txt, l_tmp);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "int functionDAE(int *needToIterate)\n",
+                                       "int functionDAE(_X_DATA *data, int *needToIterate)\n",
                                        "{\n",
                                        "  state mem_state;\n"
                                    }, true));
@@ -7271,7 +7229,7 @@ algorithm
   l_varDecls := Tpl.emptyTxt;
   (l_zeroCrossingsCode, l_varDecls) := zeroCrossingsTpl2(Tpl.emptyTxt, a_zeroCrossings, l_varDecls);
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                   "int function_onlyZeroCrossings(double *gout,double *t)\n",
+                                   "int function_onlyZeroCrossings(_X_DATA *data, double *gout,double *t)\n",
                                    "{\n",
                                    "  state mem_state;\n"
                                }, true));
@@ -7396,7 +7354,7 @@ algorithm
   l_changediscreteVars := lm_198(l_changediscreteVars, a_discreteModelVars);
   l_changediscreteVars := Tpl.popIter(l_changediscreteVars);
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                   "int checkForDiscreteChanges()\n",
+                                   "int checkForDiscreteChanges(_X_DATA *data)\n",
                                    "{\n",
                                    "  int needToIterate = 0;\n",
                                    "\n"
@@ -7460,7 +7418,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Do not know what printf argument to give "));
         txt_0 = crefStr(txt_0, a_cr);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 1440, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 1414, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_200;
@@ -7567,7 +7525,7 @@ algorithm
   l_algAndEqAssertsPart := Tpl.popIter(l_algAndEqAssertsPart);
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                    "/* for continuous time variables */\n",
-                                   "int checkForAsserts()\n",
+                                   "int checkForAsserts(_X_DATA *data)\n",
                                    "{\n"
                                }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
@@ -8467,10 +8425,6 @@ algorithm
         l_writeJac__ = Tpl.popIter(l_writeJac__);
         ret_4 = listLength(i_seedVars);
         l_index__ = Tpl.writeStr(Tpl.emptyTxt, intString(ret_4));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "#define _OMC_SEED_HACK double *seed\n",
-                                    "#define _OMC_SEED_HACK_2 seed\n"
-                                }, true));
         txt = Tpl.writeText(txt, l_writeJac__);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeText(txt, l_jacMats);
@@ -9178,7 +9132,7 @@ algorithm
                                         "void eqFunction_"
                                     }, false));
         a_eqs = Tpl.writeText(a_eqs, l_ix);
-        a_eqs = Tpl.writeTok(a_eqs, Tpl.ST_LINE("(_OMC_SEED_HACK) {\n"));
+        a_eqs = Tpl.writeTok(a_eqs, Tpl.ST_LINE("(_X_DATA *data, double *seed) {\n"));
         a_eqs = Tpl.pushBlock(a_eqs, Tpl.BT_INDENT(2));
         a_eqs = Tpl.writeText(a_eqs, l_varD);
         a_eqs = Tpl.softNewLine(a_eqs);
@@ -9191,7 +9145,7 @@ algorithm
                                     }, true));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("eqFunction_"));
         txt = Tpl.writeText(txt, l_ix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(_OMC_SEED_HACK_2);"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(data, NULL);"));
       then (txt, a_eqs, a_varDecls);
   end matchcontinue;
 end fun_244;
@@ -9987,7 +9941,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("No runtime support for this sort of array call: "));
         ret_1 = ExpressionDump.printExpStr(a_eqn_exp);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2036, 14), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2008, 14), Tpl.textString(txt_1));
       then (txt, a_varDecls);
   end matchcontinue;
 end fun_263;
@@ -12680,7 +12634,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("initial value of unknown type: "));
         ret_1 = ExpressionDump.printExpStr(i_initialValue);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2455, 14), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2427, 14), Tpl.textString(txt_1));
       then txt;
   end matchcontinue;
 end initVal;
@@ -12771,7 +12725,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("initial value of unknown type: "));
         ret_1 = ExpressionDump.printExpStr(i_initialValue);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2466, 14), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2438, 14), Tpl.textString(txt_1));
       then txt;
   end matchcontinue;
 end initValXml;
@@ -15817,7 +15771,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3003, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2975, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_405;
@@ -15937,7 +15891,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3011, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2983, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_409;
@@ -15985,13 +15939,13 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Expression types are unsupported as return arguments "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3020, 36), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2992, 36), Tpl.textString(txt_0));
       then txt;
 
     case ( txt,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3021, 14), "Unsupported return argument");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2993, 14), "Unsupported return argument");
       then txt;
   end matchcontinue;
 end extReturnType;
@@ -16092,7 +16046,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external C type "));
         ret_0 = ExpressionDump.typeString(i_type);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3040, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3012, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_412;
@@ -16321,7 +16275,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external F77 type "));
         ret_0 = ExpressionDump.typeString(i_type);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3059, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3031, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_418;
@@ -20984,7 +20938,7 @@ algorithm
            a_varDecls,
            a_varInits )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3609, 12), "Unknown local variable type");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3581, 12), "Unknown local variable type");
       then (txt, a_varDecls, a_varInits);
   end matchcontinue;
 end varInit;
@@ -24952,7 +24906,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4042, 14), "ALG_STATEMENT NYI");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4014, 14), "ALG_STATEMENT NYI");
       then (txt, a_varDecls);
   end matchcontinue;
 end fun_626;
@@ -25842,7 +25796,7 @@ algorithm
            _,
            a_varDecls )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4209, 12), "algStmtTupleAssign failed");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4181, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
@@ -28802,7 +28756,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown expression: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4733, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4705, 14), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExp;
@@ -29170,7 +29124,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Indexing non-array "));
         ret_1 = ExpressionDump.printExpStr(a_ecr);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4827, 28), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4799, 28), Tpl.textString(txt_1));
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
 end fun_710;
@@ -29582,7 +29536,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("daeExpCrefRhs2: UNHANDLED EXPRESSION: "));
         ret_1 = ExpressionDump.printExpStr(i_ecr);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4840, 11), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4812, 11), Tpl.textString(txt_1));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpCrefRhs2;
@@ -29617,7 +29571,7 @@ algorithm
     case ( txt,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4859, 22), "Non-constant dimension in simulation context");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4831, 22), "Non-constant dimension in simulation context");
       then txt;
   end matchcontinue;
 end fun_718;
@@ -29747,7 +29701,7 @@ algorithm
            _,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4861, 18), "Less subscripts that dimensions in indexing cref? That\'s odd!");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4833, 18), "Less subscripts that dimensions in indexing cref? That\'s odd!");
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
 end fun_721;
@@ -29782,7 +29736,7 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4847, 22), "Empty dimensions in indexing cref?");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4819, 22), "Empty dimensions in indexing cref?");
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -29802,7 +29756,7 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4862, 14), "Non-index subscript in indexing cref? That\'s odd!");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4834, 14), "Non-index subscript in indexing cref? That\'s odd!");
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_722;
@@ -34786,7 +34740,7 @@ algorithm
         ret_7 = ExpressionDump.printExpStr(i_exp);
         txt_7 = Tpl.writeStr(txt_7, ret_7);
         txt_7 = Tpl.writeTok(txt_7, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5443, 11), Tpl.textString(txt_7));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5415, 11), Tpl.textString(txt_7));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -34821,7 +34775,7 @@ algorithm
         ret_9 = ExpressionDump.printExpStr(i_exp);
         txt_9 = Tpl.writeStr(txt_9, ret_9);
         txt_9 = Tpl.writeTok(txt_9, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5449, 11), Tpl.textString(txt_9));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5421, 11), Tpl.textString(txt_9));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -34847,7 +34801,7 @@ algorithm
         ret_11 = ExpressionDump.printExpStr(i_exp);
         txt_11 = Tpl.writeStr(txt_11, ret_11);
         txt_11 = Tpl.writeTok(txt_11, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5453, 11), Tpl.textString(txt_11));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5425, 11), Tpl.textString(txt_11));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -35100,7 +35054,7 @@ algorithm
         txt_28 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("vector() call does not have a C implementation "));
         ret_28 = ExpressionDump.printExpStr(i_call);
         txt_28 = Tpl.writeStr(txt_28, ret_28);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5538, 11), Tpl.textString(txt_28));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5510, 11), Tpl.textString(txt_28));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -36630,7 +36584,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Nested array subscripting *should* have been handled by the routine creating the asub, but for some reason it was not: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5835, 11), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5807, 11), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -36667,7 +36621,7 @@ algorithm
         txt_6 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("ASUB_EASY_CASE "));
         ret_6 = ExpressionDump.printExpStr(i_exp);
         txt_6 = Tpl.writeStr(txt_6, ret_6);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5864, 11), Tpl.textString(txt_6));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5836, 11), Tpl.textString(txt_6));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -36712,7 +36666,7 @@ algorithm
         txt_14 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("OTHER_ASUB "));
         ret_14 = ExpressionDump.printExpStr(i_exp);
         txt_14 = Tpl.writeStr(txt_14, ret_14);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5881, 11), Tpl.textString(txt_14));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5853, 11), Tpl.textString(txt_14));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_824;
@@ -36895,7 +36849,7 @@ algorithm
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
         txt_2 = Tpl.writeTok(txt_2, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5904, 11), Tpl.textString(txt_2));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5876, 11), Tpl.textString(txt_2));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpCallPre;
@@ -38174,7 +38128,7 @@ algorithm
         txt_40 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Code generation does not support multiple iterators: "));
         ret_40 = ExpressionDump.printExpStr(i_exp);
         txt_40 = Tpl.writeStr(txt_40, ret_40);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6041, 14), Tpl.textString(txt_40));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6013, 14), Tpl.textString(txt_40));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpReduction;
@@ -38511,7 +38465,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown switch: "));
         ret_0 = ExpressionDump.printExpStr(a_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6086, 13), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6058, 13), Tpl.textString(txt_0));
       then (txt, a_varDeclsInner);
 
     case ( txt,
@@ -40886,7 +40840,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeShort:"));
         ret_1 = ExpressionDump.typeString(i_type);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6428, 14), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6400, 14), Tpl.textString(txt_1));
       then txt;
   end matchcontinue;
 end expTypeShort;
@@ -41819,7 +41773,7 @@ algorithm
         txt_7 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeFromExpFlag:"));
         ret_7 = ExpressionDump.printExpStr(i_exp);
         txt_7 = Tpl.writeStr(txt_7, ret_7);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6577, 14), Tpl.textString(txt_7));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6549, 14), Tpl.textString(txt_7));
       then txt;
   end matchcontinue;
 end expTypeFromExpFlag;
@@ -43749,7 +43703,7 @@ algorithm
         txt_16 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConst failed: "));
         ret_16 = ExpressionDump.printExpStr(i_lit);
         txt_16 = Tpl.writeStr(txt_16, ret_16);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6836, 14), Tpl.textString(txt_16));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6808, 14), Tpl.textString(txt_16));
       then txt;
   end matchcontinue;
 end fun_968;
@@ -43864,7 +43818,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstBoxedVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6854, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6826, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstBoxedVal;
@@ -43950,7 +43904,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstArrayVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6865, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6837, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstArrayVal;
