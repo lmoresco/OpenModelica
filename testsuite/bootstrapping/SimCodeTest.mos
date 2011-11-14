@@ -78,13 +78,14 @@ readFileShowLineNumbers("SimCodeC_abc.c");
 // 33: }
 // 34: int in_SimCodeC_abc(type_description * inArgs, type_description * outVar)
 // 35: {
-// 36:   MMC_TRY_TOP()
-// 37:   _SimCodeC_abc();
-// 38:   MMC_CATCH_TOP(return 1)
-// 39:   write_noretcall(outVar);
-// 40:   fflush(NULL);
-// 41:   
-// 42:   return 0;
-// 43: }
+// 36:   void* states = push_memory_states(1);
+// 37:   MMC_TRY_TOP()
+// 38:   _SimCodeC_abc();
+// 39:   MMC_CATCH_TOP(return 1)
+// 40:   write_noretcall(outVar);
+// 41:   fflush(NULL);
+// 42:   pop_memory_states(states);
+// 43:   return 0;
+// 44: }
 // "
 // endResult
