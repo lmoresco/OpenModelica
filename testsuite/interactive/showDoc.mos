@@ -11,7 +11,7 @@ getDocumentationAnnotation(Modelica.Math.Matrices.LAPACK.dgeev);
 
 // Result:
 // true
-// {"<html>
+// {info("<html>
 // <p>
 // This package contains external Modelica functions as interface to the
 // LAPACK library
@@ -39,8 +39,8 @@ getDocumentationAnnotation(Modelica.Math.Matrices.LAPACK.dgeev);
 // This package contains a direct interface to the LAPACK subroutines
 // </p>
 // 
-// </html>"}
-// {"Lapack documentation
+// </html>")}
+// {info("Lapack documentation
 //     Purpose
 //     =======
 //     DGEEV computes for an N-by-N real nonsymmetric matrix A, the
@@ -115,5 +115,5 @@ getDocumentationAnnotation(Modelica.Math.Matrices.LAPACK.dgeev);
 //                   eigenvalues, and no eigenvectors have been computed;
 //                   elements i+1:N of WR and WI contain eigenvalues which
 //                   have converged.
-// "}
+// ")}
 // endResult

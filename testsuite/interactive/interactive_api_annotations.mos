@@ -7893,7 +7893,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Package <b>Modelica</b> is a <b>standardized</b> and <b>pre-defined</b> package
 // that is developed together with the Modelica language from the
@@ -7954,7 +7954,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </tr>
 // </table>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {{Dialog("General","Time varying output signal",true), Placement(true,0.0,0.0,100.0,-10.0,120.0,10.0,0.0,0.0,0.0,-,-,-,-,0.0)}}
 // ""
@@ -7970,7 +7970,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-60,-15},{-30,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-30,-15},{0,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,-15},{30,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{30,-15},{60,15}},0,360),Rectangle(true,{0.0,0.0},0,{255,255,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,-20},{62,0}},0),Line(true,{0.0,0.0},0,{{60,0},{96,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-96,0},{-60,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,255},LinePattern.Solid,FillPattern.Sphere,0.25,BorderPattern.None,{{-60,-10},{60,-20}},0)}}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This model approximates the behaviour of an inductor with the influence of saturation,
 // i.e. the value of the inductance depends on the current flowing through the inductor.
@@ -7984,7 +7984,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </ul>
 // </p>
 // </HTML>
-// ","<html>
+// "),revisions("<html>
 // <dl>
 // <p>
 //   <dt><b>Main Author:</b></dt>
@@ -8003,20 +8003,20 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //   </ul>
 //   </dd>
 // </dl>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Line(true,{0.0,0.0},0,{{-90,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-144,-40},{142,-72}},"R=%R",0,TextAlignment.Center),Line(false,{0.0,0.0},0,{{0,-100},{0,-30}},{127,0,0},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-152,87},{148,47}},"%name",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Line(true,{0.0,0.0},0,{{-96,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{96,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <P>
 // The linear resistor connects the branch voltage <i>v</i> with the
 // branch current <i>i</i> by <i>i*R = v</i>.
 // The Resistance <i>R</i> is allowed to be positive, zero, or negative.
 // </P>
 // </HTML>
-// ","<html>
+// "),revisions("<html>
 // <ul>
 // <li><i> August 07, 2009   </i>
 //        by Anton Haumer<br> temperature dependency of resistance added<br>
@@ -8028,13 +8028,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //        by Christoph Clauss<br> initially implemented<br>
 //        </li>
 // </ul>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{-90,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Line(true,{0.0,0.0},0,{{-52,-50},{48,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{40,52},{50,42},{54,56},{40,52}},Smooth.None),Line(true,{0.0,0.0},0,{{0,-100},{0,-30}},{127,0,0},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-156,109},{144,69}},"%name",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{-110,20},{-85,20}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{160,160,164},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{-95,23},{-85,20},{-95,17},{-95,23}},Smooth.None),Line(true,{0.0,0.0},0,{{90,20},{115,20}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-125,0},{-115,0}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-120,-5},{-120,5}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-110,25},{-90,45}},"i",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{160,160,164},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{105,23},{115,20},{105,17},{105,23}},Smooth.None),Line(true,{0.0,0.0},0,{{115,0},{125,0}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{90,45},{110,25}},"i",0,TextAlignment.Center)}}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>This is a model for an electrical resistor where the generated heat
 // is dissipated to the environment via connector <b>heatPort</b> and where
 // the resistance R is temperature dependent according to the following
@@ -8055,7 +8055,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // 
 // </HTML>
-// ","<html>
+// "),revisions("<html>
 // <ul>
 // <li><i> August 07, 2009   </i>
 //        by Anton Haumer<br> temperature dependency of resistance added<br>
@@ -8067,34 +8067,34 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //        by Anton Haumer<br> initially implemented<br>
 //        </li>
 // </ul>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{-85,10},{-36,-10}},0),Line(true,{0.0,0.0},0,{{0,90},{0,40}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{35,10},{100,-10}},0),Ellipse(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-40,40},{40,-40}},0,360),Line(true,{0.0,0.0},0,{{0,-90},{0,-40}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,-50},{199,-90}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,80},{189,46}},"k=%k",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-100,-30},{-40,-30}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-100,-50},{-80,-30}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-80,-50},{-60,-30}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-60,-50},{-40,-30}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-70,-30},{-70,-10}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true,{0.0,0.0},0,{160,160,164},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{-17,95},{-20,85},{-23,95},{-17,95}},Smooth.None),Line(true,{0.0,0.0},0,{{-20,110},{-20,85}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-40,110},{-30,90}},"i",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{9,75},{19,75}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-20,-110},{-20,-85}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{160,160,164},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{-17,-100},{-20,-110},{-23,-100},{-17,-100}},Smooth.None),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-40,-110},{-30,-90}},"i",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{8,-79},{18,-79}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{14,80},{14,70}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
-// {"<html>
+// {info("<html>
 // <p>EMF transforms electrical energy into rotational mechanical energy. It is used as basic building block of an electrical motor. The mechanical connector flange can be connected to elements of the Modelica.Mechanics.Rotational library. flange.tau is the cut-torque, flange.phi is the angle at the rotational connection. </p>
-// </html>","<html>
+// </html>"),revisions("<html>
 // <ul>
 // <li><i> 1998   </i>
 //        by Martin Otter<br> initially implemented<br>
 //        </li>
 // </ul>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Line(true,{0.0,0.0},0,{{-90,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.None,FillPattern.None,0.25,{{-136,-42},{142,-74}},"G=%G",0,TextAlignment.Center),Line(false,{0.0,0.0},0,{{0,-100},{0,-30}},{127,0,0},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-152,87},{148,47}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-144,-40},{142,-72}},"G=%G",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true,{0.0,0.0},0,{{-96,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{96,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-70,30},{70,-30}},0)}}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <P>
 // The linear conductor connects the branch voltage <i>v</i> with the
 // branch current <i>i</i> by <i>i = v*G</i>.
 // The Conductance <i>G</i> is allowed to be positive, zero, or negative.
 // </P>
 // </HTML>
-// ","<html>
+// "),revisions("<html>
 // <ul>
 // <li><i> August 07, 2009   </i>
 //        by Anton Haumer<br> temperature dependency of conductance added<br>
@@ -8106,7 +8106,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //        by Christoph Clauss<br> initially implemented<br>
 //        </li>
 // </ul>
-// </html>"}
+// </html>")}
 // ""
 // "I am using MSL31"
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true,{0.0,0.0},0,{{-60,50},{60,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-40,30},{40,30}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-20,10},{20,10}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,90},{0,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-144,-19},{156,-59}},"%name",0,TextAlignment.Center)}}
@@ -8129,21 +8129,21 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This package contains basic components 1D mechanical rotational drive trains.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This package contains basic analog electrical components.
 // </p>
 // 
 // </HTML>
-// ","<html>
+// "),revisions("<html>
 // <dl>
 // <dt>
 // <b>Main Authors:</b>
@@ -8158,23 +8158,23 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //     D-01069 Dresden<br>
 // <p>
 // </dl>
-// </html>"}
+// </html>")}
 // ""
-// {"<html>
+// {info("<html>
 // <p>EMF transforms electrical energy into rotational mechanical energy. It is used as basic building block of an electrical motor. The mechanical connector flange can be connected to elements of the Modelica.Mechanics.Rotational library. flange.tau is the cut-torque, flange.phi is the angle at the rotational connection. </p>
-// </html>","<html>
+// </html>"),revisions("<html>
 // <ul>
 // <li><i> 1998   </i>
 //        by Martin Otter<br> initially implemented<br>
 //        </li>
 // </ul>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // In this section, an overview of the most important features
 // of this library is given.
@@ -8498,24 +8498,24 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // be aborted due to different transitions).
 // </p>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // A first example will be given here (not yet done).
 // </p>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // In this section a more realistic, still simple, application example
 // is given, to demonstrate various features of the StateGraph library.
@@ -8616,13 +8616,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // step \"emptyTanks\" is active. Otherwise, valve2 is closed.
 // </p>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Version 0.87, 2004-06-23</h4>
 // <ul>
 // <li> Included in Modelica standard library 2.0 Beta 1 with the new block connectors.
@@ -8677,13 +8677,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Implemented a first version that is provided to other people.
 // </p>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // The StateGraph library is based on the following references:
 // </p>
@@ -8709,13 +8709,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //      </dd>
 // </dl>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <dl>
 // <dt><b>Main Author:</b>
 // <dd><a href=\"http://www.robotic.dlr.de/Martin.Otter/\">Martin Otter</a><br>
@@ -8750,37 +8750,37 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //      see <a href=\"Modelica://Modelica.StateGraph.UsersGuide.Literature\">literature</a></li>
 // </ul>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-160.0,-160.0,160.0,160.0,true,0.1,2.0,2.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This is an example to demonstrate in which way <b>parallel</b> activities
 // can be modelled by a StateGraph. When transition1 fires
@@ -8795,25 +8795,25 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // has a higher priority to fire as alternative.split[2]).
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This is the same example as \"ExecutionPaths\". The only difference
 // is that the alternative paths are included in a \"CompositeStep\".
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // CompositeStep \"compositeStep\" is a hierarchical StateGraph consisting of
 // two other subgraphs. Whenever component \"compositeStep\" is suspended,
@@ -8823,13 +8823,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // \"suspend\" port.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,0.5,0.5}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // With this example the controller of a tank filling/emptying system
 // is demonstrated. This example is from Dressler (2004),
@@ -8865,7 +8865,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //      Clicking on \"start\", restarts the process.</li>
 // </ul>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,68},{-32,54}},"start",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,6},{-32,-8}},"stop",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,-54},{-32,-68}},"shut",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-94,-82},{-18,-96}},"level1",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{24,-84},{96,-98}},"level2",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{31,68},{99,54}},"valve1",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{33,9},{101,-5}},"valve2",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{34,-53},{102,-67}},"valve3",0,TextAlignment.Center)}}
 // ""
@@ -8943,55 +8943,55 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{160,110},{-160,150}},"%name",0,TextAlignment.Center)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,110},{200,150}},"%name",0,TextAlignment.Center),Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-92,78},{96,34}},"root",0,TextAlignment.Center),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-82,-6},{-44,-40}},0),Line(true,{0.0,0.0},0,{{0,10},{0,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{48,-6},{86,-40}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-12,-16},{0,-22},{-12,-28},{-12,-16}},Smooth.None),Line(true,{0.0,0.0},0,{{-44,-22},{-12,-22}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{36,-16},{48,-22},{36,-28},{36,-16}},Smooth.None),Line(true,{0.0,0.0},0,{{0,-22},{36,-22}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // On the highest level of a StateGraph, an instance of StateGraphRoot
 // has to be present. If it is not within in a model, it is automatically
@@ -9007,13 +9007,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // on highest level a corresponding \"inner\" definition is needed
 // and is provided by the StateGraphRoot object.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{245,245,245},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.Raised,{{-100,40},{100,-40}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,90},{150,50}},"%name =",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-96,15},{96,-15}},"%value",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This is an <b>experimental component</b> to define a
 // <b>Real parameter</b>
@@ -9043,53 +9043,53 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // effect. Changing parameter properties, such as the default
 // value, still requires to go in to the text layer.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{128,128,128},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.5,BorderPattern.None,{{-100,-100},{100,100}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-80,-40},{80,40}},"%name",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{236,233,216},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.Raised,{{100,50},{-100,-50}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-90,-46},{90,34}}," ",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,0},{235,235,235},LinePattern.None,FillPattern.Sphere,0.25,{{-100,-100},{100,100}},0,360),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,110}},"%name",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // When implementing a Modelica model, every variable needs to
 // be declared. Physical variables should be declared with a unit.
@@ -9197,13 +9197,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // in the declaration as in the example at the beginning.
 // </p>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>The following conventions are used in package SIunits:</p>
 // <ul>
 // <li>Modelica quantity names are defined according to the recommendations
@@ -9241,13 +9241,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <li>Conversion functions between SI and non-SI units are available in subpackage
 //     <b>Conversions</b>.</li>
 // </ul>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p> This package is based on the following references
 // </p>
 // 
@@ -9266,13 +9266,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </dl>
 // 
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <dl>
 // <dt><b>Main Author:</b>
 // <dd><a href=\"http://www.robotic.dlr.de/Martin.Otter/\">Martin Otter</a><br>
@@ -9292,7 +9292,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //      contributed to the implementation of this package.</li>
 // </ul>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
@@ -9322,10 +9322,10 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
@@ -12469,130 +12469,130 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This icon is designed for an <b>Example package</b>,
 // i.e. a package containing executable demo models.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-140,162},{136,102}},"%name",0,TextAlignment.Center),Ellipse(true,{0.0,0.0},0,{255,127,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-100,100},{100,-100}},0,360),Text(true,{0.0,0.0},0,{255,127,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,100},{100,-100}},"f",0,TextAlignment.Center)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This icon is designed for a <b>function</b>
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,127},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,50},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-127,115},{127,55}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-100,-50},{100,-50}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-100,0},{100,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,50},{0,-100}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This icon is designed for a <b>record</b>
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{181,181,181},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-94,94},{94,-94}},"R",0,TextAlignment.Center)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This icon is designed for a <b>Real</b> type.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{181,181,181},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-94,94},{94,-94}},"I",0,TextAlignment.Center)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This icon is designed for an <b>Integer</b> type.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{181,181,181},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-94,94},{94,-94}},"B",0,TextAlignment.Center)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This icon is designed for a <b>Boolean</b> type.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{181,181,181},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-94,94},{94,-94}},"S",0,TextAlignment.Center)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This icon is designed for a <b>String</b> type.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-70,-60},{70,20}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{0,-40},{-10,-16},{10,-16},{0,-40}},Smooth.None),Line(true,{0.0,0.0},0,{{0,0},{0,-16}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-70,0},{0,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-50,-40},{-50,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-30,-40},{-30,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-10,-40},{-10,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{10,-40},{10,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{30,-40},{30,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{50,-40},{50,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This icon is designed for a <b>translational sensor</b> model.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-70,70},{70,-70}},0,360),Line(true,{0.0,0.0},0,{{0,70},{0,40}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{22.9,32.8},{40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-22.9,32.8},{-40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{37.6,13.7},{65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-37.6,13.7},{-65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0.0,0.0},{9.02,28.6}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-0.48,31.6},{18.0,26.0},{18.0,57.2},{-0.48,31.6}},Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-5,5},{5,-5}},0,360)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This icon is designed for a <b>rotational sensor</b> model.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{-90,10},{-60,-10}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{128,128,128},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,{{-60,10},{-60,20},{-40,40},{-40,-40},{-60,-20},{-60,10}},Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{-40,60},{40,-60}},0),Polygon(true,{0.0,0.0},0,{128,128,128},{128,128,128},LinePattern.Solid,FillPattern.Solid,0.25,{{60,20},{40,40},{40,-40},{60,-20},{60,20}},Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{60,10},{90,-10}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-60,-90},{-50,-90},{-20,-30},{20,-30},{48,-90},{60,-90},{60,-100},{-60,-100},{-60,-90}},Smooth.None)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This icon is designed for a <b>gearbox</b> model.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,0,0},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{-100,50},{30,-50}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-100,-90},{-90,-90},{-60,-20},{-10,-20},{20,-90},{30,-90},{30,-100},{-100,-100},{-100,-90}},Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{30,10},{90,-10}},0)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This icon is designed for an <b>electrical motor</b> model.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Dash,FillPattern.None,0.5,BorderPattern.None,{{-102,102},{102,-102}},0)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This partial model is intended to provide a <u>default icon
 // for an obsolete model</u> that will be removed from the
 // corresponding library in a future release.
 // <p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Below the major design decisions of this library are summarized.
 // <p>
@@ -12665,25 +12665,25 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //      by the tool.</li>
 // </ul>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <h4>Version 1.0, 2004-09-29</h4>
 // <p>
 // First version implemented.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <dl>
 // <dt><b>Responsible for Library:</b>
 // <dd>Dag Br&uuml;ck, Dynasim AB, Sweden.<br>
@@ -12707,13 +12707,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //      Modelica Design Meetings in Vienna, Link&ouml;ping, and Dresden. </li>
 // </ul>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // result = <b>calculator</b>(expression);
@@ -12743,13 +12743,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //   calculator(\"2+3*(4-1)\");  // returns 11
 //   calculator(\"sin(pi/6)\");  // returns 0.5
 // </pre></blockquote>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 //              result = <b>expression</b>(string);
@@ -12820,13 +12820,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //   expression(\"2+3*(4-1)\");  // returns 11
 //   expression(\"sin(pi/6)\");  // returns 0.5
 // </pre></blockquote>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // result = <b>readRealParameter</b>(fileName, name);
@@ -12865,25 +12865,25 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <blockquote><pre>
 // readRealParameter(\"test.txt\", \"w_rel0\")
 // </pre></blockquote>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Model that shows the usage of Examples.readRealParameter and Examples.expression.
 // The model has 3 parameters and the values of these parameters are read
 // from a file.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Files.<b>list</b>(name);
@@ -12897,13 +12897,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // If \"name\" is a directory, the directory and file names
 // in the \"name\" directory are printed in sorted order.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Files.<b>copy</b>(oldName, newName);
@@ -12935,13 +12935,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //      -> make a copy of file \"test1.txt\" with the name \"test2.txt\"
 //         in the current directory
 // </pre></blockquote>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Files.<b>move</b>(oldName, newName);
@@ -12974,13 +12974,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //      -> rename file \"test1.txt\" into \"test2.txt\"
 //         within the current directory
 // </pre></blockquote>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Files.<b>remove</b>(name);
@@ -12995,13 +12995,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // This function is silent, i.e., it does not print a message.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Files.<b>removeFile</b>(fileName);
@@ -13016,13 +13016,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // This function is silent, i.e., it does not print a message.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Files.<b>createDirectory</b>(directoryName);
@@ -13042,13 +13042,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // In case of error (e.g., \"directoryName\" is an existing regular
 // file), an assert is triggered.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // result = Files.<b>exist</b>(name);
@@ -13058,13 +13058,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Returns true, if \"name\" is an existing file or directory.
 // If this is not the case, the function returns false.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Files.<b>assertNew</b>(name);
@@ -13080,13 +13080,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //   &lt;message&gt;
 // </pre>
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // fullName = Files.<b>fullPathName</b>(name);
@@ -13095,13 +13095,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // Returns the full path name of a file or directory \"name\".
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // fullName = Files.<b>fullPathName</b>(name);
@@ -13110,13 +13110,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // Returns the full path name of a file or directory \"name\".
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // (directory, name, extension) = Files.<b>splitPathName</b>(pathName);
@@ -13133,13 +13133,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //      name      = \"input\"
 //      extension = \".txt\"
 // </pre>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // fileName = Files.<b>temporaryFileName</b>();
@@ -13150,13 +13150,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // and is in a directory where access rights allow to
 // write to this file (useful for temporary output of files).
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,-100},{80,60}},0),Polygon(true,{0.0,0.0},0,{0,0,255},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-100,60},{-80,100},{100,100},{80,60},{-100,60}},Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,255},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{100,100},{100,-60},{80,-100},{80,60},{100,100}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,-100},{80,60}},"%shapeType",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-132,160},{128,100}},"%name",0,TextAlignment.Center)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p>
 // This model is documented at
@@ -13164,13 +13164,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // 
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Streams.<b>print</b>(string);
@@ -13200,13 +13200,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <a href=\"Modelica://Modelica.Utilities.Streams.error\">Streams.error</a>,
 // <a href=\"Modelica://ModelicaReference.Operators.string\">String</a>
 // </p>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // stringVector = Streams.<b>readFile</b>(fileName)
@@ -13216,13 +13216,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Function <b>readFile</b>(..) opens the given file, reads the complete
 // content, closes the file and returns the content as a vector of strings. Lines are separated by LF or CR-LF; the returned strings do not contain the line separators.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // (string, endOfFile) = Streams.<b>readLine</b>(fileName, lineNumber)
@@ -13239,13 +13239,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // If lineNumber > countLines(fileName), an empty string is returned
 // and endOfFile=true. Otherwise endOfFile=false.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // numberOfLines = Streams.<b>countLines</b>(fileName)
@@ -13256,13 +13256,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // content, closes the file and returns the number of lines. Lines are
 // separated by LF or CR-LF.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Streams.<b>error</b>(string);
@@ -13283,13 +13283,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <a href=\"Modelica://Modelica.Utilities.Streams.print\">Streams.print</a>,
 // <a href=\"Modelica://ModelicaReference.Operators.string\">String</a>
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Streams.<b>close</b>(fileName)
@@ -13299,13 +13299,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Close file if it is open. Ignore call if
 // file is already closed or does not exist.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Strings.<b>length</b>(string);
@@ -13314,13 +13314,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // Returns the number of characters of \"string\".
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // string2 = Strings.<b>substring</b>(string, startIndex, endIndex);
@@ -13340,13 +13340,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //   string1 := \"This is line 111\";
 //   string2 := Strings.substring(string1,9,12); // string2 = \"line\"
 // </pre></blockquote>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // string2 = Strings.<b>repeat</b>(n);
@@ -13360,13 +13360,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // The second form returns a string consisting of n substrings
 // defined by the optional argument \"string\".
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // result = Strings.<b>compare</b>(string1, string2);
@@ -13387,13 +13387,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Comparison is with regards to lexicographical order,
 // e.g., \"a\" &lt; \"b\";
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Strings.<b>isEqual</b>(string1, string2);
@@ -13404,13 +13404,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Compare whether two strings are identical,
 // optionally ignoring case.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Strings.<b>count</b>(string, searchString)
@@ -13425,13 +13425,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // for the counting it does not matter whether a letter is upper
 // or lower case.
 // /p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // index = Strings.<b>find</b>(string, searchString);
@@ -13448,13 +13448,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // If \"searchString\" is not found, a value of \"0\" is returned.
 // </p>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // index = Strings.<b>findLast</b>(string, searchString);
@@ -13472,13 +13472,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // If \"searchString\" is not found, a value of \"0\" is returned.
 // </p>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Strings.<b>replace</b>(string, searchString, replaceString);
@@ -13508,13 +13508,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // The function returns the \"string\" with the
 // performed replacements.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // stringVector2 = Streams.<b>sort</b>(stringVector1);
@@ -13533,13 +13533,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //   s2 = Strings.sort(s1);
 //        -> s2 = {\"angle\", \"force\", \"pressure\"};
 // </pre></blockquote>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // (token, nextIndex) = Strings.<b>scanToken</b>(string, startIndex, unsigned=false);
@@ -13611,13 +13611,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //      syntaxError(string,index,\"Expected Real, Integer, Boolean or identifier token\");
 //   <b>end if</b>;
 // </pre></blockquote>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 //              number = Strings.<b>scanReal</b>(string);
@@ -13642,13 +13642,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // If the required Real number with leading white space
 // is not present in \"string\",  an assert is triggered.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 //              number = Strings.<b>scanInteger</b>(string);
@@ -13664,13 +13664,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // if the scanned string does not contain an Integer literal with optional
 // leading white space.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 //              number = Strings.<b>scanBoolean</b>(string);
@@ -13686,13 +13686,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // if the scanned string does not contain a Boolean literal with optional
 // leading white space.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 //              string2 = Strings.<b>scanString</b>(string);
@@ -13707,13 +13707,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // if the scanned string does not contain a String literal with optional
 // leading white space.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 //              identifier = Strings.<b>scanIdentifier</b>(string);
@@ -13728,13 +13728,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // if the scanned string does not contain an Identifier with optional
 // leading white space.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 //              delimiter = Strings.<b>scanDelimiter</b>(string);
@@ -13754,13 +13754,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // is treated as delimiter. The function returns delimiter=\"\" and nextIndex
 // is the index of the first non white space character.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Strings.<b>scanNoToken</b>(string, startIndex=1, message=\"\");
@@ -13773,13 +13773,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // using the \"message\" argument as additional explanation in
 // the error text.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // Strings.<b>syntaxError</b>(string, index, message);
@@ -13803,13 +13803,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // If the given string is too long, only a relevant
 // part of the string is printed.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // (nextIndex, realNumber) = <b>scanReal</b>(string, startIndex=1, unsigned=false);
@@ -13844,13 +13844,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <h4>See also</h4>
 // <a href=\"Modelica://Modelica.Utilities.Strings.Advanced\">Strings.Advanced</a>.
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // (nextIndex, integerNumber) = <b>scanInteger</b>(string, startIndex=1, unsigned=false);
@@ -13884,13 +13884,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <h4>See also</h4>
 // <a href=\"Modelica://Modelica.Utilities.Strings.Advanced\">Strings.Advanced</a>.
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // (nextIndex, string2) = <b>scanString</b>(string, startIndex=1);
@@ -13914,13 +13914,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <h4>See also</h4>
 // <a href=\"Modelica://Modelica.Utilities.Strings.Advanced\">Strings.Advanced</a>.
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // (nextIndex, identifier) = <b>scanIdentifier</b>(string, startIndex=1);
@@ -13945,13 +13945,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <h4>See also</h4>
 // <a href=\"Modelica://Modelica.Utilities.Strings.Advanced\">Strings.Advanced</a>.
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // nextIndex = <b>skipWhiteSpace</b>(string, startIndex);
@@ -13965,13 +13965,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <h4>See also</h4>
 // <a href=\"Modelica://Modelica.Utilities.Strings.Advanced\">Strings.Advanced</a>.
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // nextIndex = <b>skipLineComments</b>(string, startIndex);
@@ -13997,47 +13997,47 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <h4>See also</h4>
 // <a href=\"Modelica://Modelica.Utilities.Strings.Advanced\">Strings.Advanced</a>.
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
@@ -14071,7 +14071,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // 1st test example: SimpleCooling
 // </p>
@@ -14103,13 +14103,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <td valign=\"top\">10 K</td>
 // </tr>
 // </table>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // 2nd test example: ParallelCooling
 // </p>
@@ -14165,13 +14165,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <td valign=\"top\">15 K</td>
 // </tr>
 // </table>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // 3rd test example: IndirectCooling
 // </p>
@@ -14216,13 +14216,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <td valign=\"top\">10 K</td>
 // </tr>
 // </table>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // 4th test example: PumpAndValve
 // </p>
@@ -14236,84 +14236,84 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <li>drive the pump with constant speed and throttle the valve
 //     to regulate the volume flow rate of coolant</li>
 // </ul>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // 5th test example: PumpDropOut
 // </p>
 // Same as 1st test example, but with a drop out of the pump:<br>
 // The pump is running for 0.2 s, then shut down (using a ramp of 0.2 s) for 0.2 s,
 // then started again (using a ramp of 0.2 s).
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // 6th test example: ParallelPumpDropOut
 // </p>
 // Same as 2nd test example, but with a drop out of the pump:<br>
 // The pump is running for 0.2 s, then shut down (using a ramp of 0.2 s) for 0.2 s,
 // then started again (using a ramp of 0.2 s).
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // 7th test example: OneMass
 // </p>
 // A thermal capacity is coupled with a coolant flow.
 // Different inital temperatures of thermal capacity and pipe's coolant get ambient's temperature,
 // the time behaviour depending on coolant flow.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // 8th test example: TwoMass
 // </p>
 // Two thermal capacities are coupled with two parallel coolant flow.
 // Different inital temperatures of thermal capacities and pipe's coolants get ambient's temperature,
 // the time behaviour depending on coolant flow.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Block generating the sum of two ramps.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,0,0},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-90,20},{90,-20}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,100},{150,40}},"%name",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Pipe without heat exchange.<br>
 // Thermodynamic equations are defined by Partials.TwoPortMass(Q_flow = 0).<br>
 // <b>Note:</b> Setting parameter m (mass of medium within pipe) to zero
 // leads to neglection of temperature transient cv*m*der(T).
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,0,0},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-90,20},{90,-20}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,100},{150,40}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-10,-90},{-10,-40},{0,-20},{10,-40},{10,-90},{-10,-90}},Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Pipe with heat exchange.<br>
 // Thermodynamic equations are defined by Partials.TwoPort.<br>
 // Q_flow is defined by heatPort.Q_flow.<br>
@@ -14321,13 +14321,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // leads to neglection of temperature transient cv*m*der(T).<br>
 // <b>Note:</b> Injecting heat into a pipe with zero massflow causes
 // temperature rise defined by storing heat in medium's mass.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,-60},{150,-120}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{255,0,0},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-90,10},{-60,10},{-60,60},{0,0},{60,60},{60,10},{90,10},{90,-10},{60,-10},{60,-60},{0,0},{-60,-60},{-60,-10},{-90,-10},{-90,10}},Smooth.None),Line(true,{0.0,0.0},0,{{0,80},{0,0}},{0,0,127},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Simple controlled valve.<br>
 // Standard characteristic Kv=<i>f </i>(y) is given at standard conditions (dp0, rho0),<br>
 // <tt>
@@ -14344,87 +14344,87 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </tt>
 // Flow resistance under real conditions is calculated by<br>
 // <tt>V_flow**2 * rho / dp = Kv(y)**2 * rho0 / dp0</tt>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // Record containing (constant) medium properties.
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // Medium: properties of air at 30 degC
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // Medium: properties of air at 70 degC
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // Medium: properties of water
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{20,80},{80,20}},"p",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{20,-20},{80,-80}},"T",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // (Infinite) ambient with constant pressure and temperature.<br>
 // Thermodynamic equations are defined by Partials.Ambient.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,90}},"%name",0,TextAlignment.Center),Ellipse(true,{0.0,0.0},0,{255,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-90,90},{90,-90}},0,360)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // AbsolutePressure to define pressure level of a closed cooling cycle.
 // Coolant's mass flow, temperature and enthalpy flow are not affected.<br>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{255,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-90,90},{90,-90}},0,360),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,-90},{150,-150}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{255,0,0},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-60,68},{90,10},{90,-10},{-60,-68},{-60,68}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-40,20},{0,-20}},"V",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Fan resp. pump with constant volume flow rate. Pressure increase is the response of the whole system.
 // Coolant's temperature and enthalpy flow are not affected.<br>
 // Setting parameter m (mass of medium within fan/pump) to zero
 // leads to neglection of temperature transient cv*m*der(T).<br>
 // Thermodynamic equations are defined by Partials.TwoPort.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{255,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-90,90},{90,-90}},0,360),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,-90},{150,-150}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{0,0,255},{255,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-60,68},{90,10},{90,-10},{-60,-68},{-60,68}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-40,20},{0,-20}},"dp",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Fan resp. pump with constant pressure increase. Mass resp. volume flow is the response of the whole system.
 // Coolant's temperature and enthalpy flow are not affected.<br>
 // Setting parameter m (mass of medium within fan/pump) to zero
 // leads to neglection of temperature transient cv*m*der(T).<br>
 // Thermodynamic equations are defined by Partials.TwoPort.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{255,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-90,90},{90,-90}},0,360),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,90}},"%name",0,TextAlignment.Center),Rectangle(true,{0.0,0.0},0,{0,0,0},{175,175,175},LinePattern.Solid,FillPattern.VerticalCylinder,0.25,BorderPattern.None,{{-10,-40},{10,-100}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,255},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,{{-60,68},{90,10},{90,-10},{-60,-68},{-60,68}},Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Simple fan resp. pump where characteristic is dependent on shaft's speed, <br>
 // torque * speed = pressure increase * volume flow (without losses)<br>
 // Pressure increase versus volume flow is defined by a linear function,
@@ -14438,79 +14438,79 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Setting parameter m (mass of medium within fan/pump) to zero
 // leads to neglection of temperature transient cv*m*der(T).<br>
 // Thermodynamic equations are defined by Partials.TwoPort.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"p",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // pSensor measures the absolute pressure.<br>
 // Thermodynamic equations are defined by Partials.AbsoluteSensor.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"T",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // TSensor measures the absolute temperature (Kelvin).<br>
 // Thermodynamic equations are defined by Partials.AbsoluteSensor.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"dp",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // dpSensor measures the pressure drop between flowPort_a and flowPort_b.<br>
 // Thermodynamic equations are defined by Partials.RelativeSensor.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"dT",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // dTSensor measures the temperature difference between flowPort_a and flowPort_b.<br>
 // Thermodynamic equations are defined by Partials.RelativeSensor.<br>
 // <b>Note:</b> Connected flowPorts have the same temperature (mixing temperature)!<br>
 // Since mixing my occur, the outlet temperature of a component may be different from the connector's temperature.<br>
 // Outlet temperature is defined by variable T of the corresponding component.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"m",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // m_flowSensor measures the mass flow rate.<br>
 // Thermodynamic equations are defined by Partials.FlowSensor.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"V",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // V_flowSensor measures the volume flow rate.<br>
 // Thermodynamic equations are defined by Partials.FlowSensor.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"H",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // H_flowSensor measures the enthalpy flow rate.<br>
 // Thermodynamic equations are defined by Partials.FlowSensor.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Basic definition of the connector.<br>
 // <b>Variables:</b>
 // <ul>
@@ -14520,76 +14520,76 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <li>flow EnthaplyFlowRate H_flow</li>
 // </ul>
 // If ports with different media are connected, the simulation is asserted due to the check of parameter.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{-80,0},{80,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,80},{0,-80}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-40,-20},{40,20}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{40,20},{60,40},{70,60},{74,80}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-40,-20},{-60,-40},{-70,-60},{-74,-80}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{40,20},{40,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{60,40},{60,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{40,20},{0,20}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{60,40},{0,40}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{18,0},{48,-20}},"V_flowLaminar",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{50,0},{80,-20}},"V_flowNominal",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-30,30},{-4,10}},"dpLaminar",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-30,50},{-4,30}},"dpNominal",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,20},{30,0}},"dp ~ V_flow",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{30,60},{60,40}},"dp ~ V_flow²",0,TextAlignment.Center)}}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Definition of relationship between pressure drop and volume flow rate:<br>
 // -V_flowLaminar &lt; VolumeFlow &lt; +V_flowLaminar: laminar i.e. linear dependency of pressure drop on volume flow.<br>
 // -V_flowLaminar &gt; VolumeFlow or VolumeFlow &lt; +V_flowLaminar: turbulent i.e. quadratic dependency of pressure drop on volume flow.<br>
 // Linear and quadratic dependency are coupled smoothly at V_flowLaminar / dpLaminar.<br>
 // Quadratic dependency is defined by nominal volume flow and pressure drop (V_flowNominal / dpNominal).<br>
 // See also sketch at diagram layer.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Partial model with two flowPorts.<br>
 // Possible heat exchange with the ambient is defined by Q_flow; setting this = 0 means no energy exchange.<br>
 // Setting parameter m (mass of medium within pipe) to zero
 // leads to neglection of temperature transient cv*m*der(T).<br>
 // Mixing rule is applied.<br>
 // Parameter 0 &lt; tapT &lt; 1 defines temperature of heatPort between medium's inlet and outlet temperature.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{255,0,0},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-90,90},{90,-90}},0,360),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,90}},"%name",0,TextAlignment.Center)}}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // Partial model of (Infinite) ambient, defines pressure and temperature.
 // </p>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-70,70},{70,-70}},0,360),Line(true,{0.0,0.0},0,{{0,70},{0,40}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{22.9,32.8},{40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-22.9,32.8},{-40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{37.6,13.7},{65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-37.6,13.7},{-65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0.0,0.0},{9.02,28.6}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-0.48,31.6},{18.0,26.0},{18.0,57.2},{-0.48,31.6}},Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-5,5},{5,-5}},0,360),Line(true,{0.0,0.0},0,{{-70,0},{-90,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{100,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,130},{150,70}},"%name",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Partial model for an absolute sensor (pressure/temperature).<br>
 // Pressure, mass flow, temperature and enthalpy flow of medium are not affected.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-70,70},{70,-70}},0,360),Line(true,{0.0,0.0},0,{{0,70},{0,40}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{22.9,32.8},{40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-22.9,32.8},{-40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{37.6,13.7},{65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-37.6,13.7},{-65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0.0,0.0},{9.02,28.6}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-0.48,31.6},{18.0,26.0},{18.0,57.2},{-0.48,31.6}},Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-5,5},{5,-5}},0,360),Line(true,{0.0,0.0},0,{{-70,0},{-90,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,-100},{0,-70}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,130},{150,70}},"%name",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Partial model for a relative sensor (pressure drop/temperature difference).<br>
 // Pressure, mass flow, temperature and enthalpy flow of medium are not affected.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-70,70},{70,-70}},0,360),Line(true,{0.0,0.0},0,{{0,70},{0,40}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{22.9,32.8},{40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-22.9,32.8},{-40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{37.6,13.7},{65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-37.6,13.7},{-65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0.0,0.0},{9.02,28.6}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-0.48,31.6},{18.0,26.0},{18.0,57.2},{-0.48,31.6}},Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-5,5},{5,-5}},0,360),Line(true,{0.0,0.0},0,{{-70,0},{-90,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,-100},{0,-70}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,130},{150,70}},"%name",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // Partial model for a flow sensor (mass flow/heat flow).<br>
 // Pressure, mass flow, temperature and enthalpy flow of medium are not affected, but mixing rule is applied.
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This example demonstrates the thermal response of two masses connected by
 // a conducting element. The two masses have the same heat capacity but different
@@ -14605,13 +14605,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Tsensor1.T, Tsensor2.T, T_final_degC
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <P>
 // A constant voltage of 10 V is applied to a
 // temperature dependent resistor of 10*(1+(T-20C)/(235+20C)) Ohms,
@@ -14627,13 +14627,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // An approppriate simulating time would be 10 seconds.
 // </P>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This example contains a simple second order thermal model of a motor.
 // The periodic power losses are described by table \"lossTable\":<br>
@@ -14662,31 +14662,31 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Simulate for 7200 s; plot Twinding.T and Tcore.T.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true,{0.0,0.0},0,{95,95,95},{175,175,175},LinePattern.Solid,FillPattern.Solid,0.25,{{-10,-90},{-10,0},{-100,90},{-80,90},{0,20},{80,90},{100,90},{10,0},{10,-90},{-10,-90}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,-20},{100,-80}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,80},{100,40}},"m=%m",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This is a model to collect the heat flows from <i>m</i> heatports to one single heatport.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This partial model contains the basic connectors and variables to
 // allow heat transfer models to be created that <b>do not store energy</b>,
@@ -14699,13 +14699,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // constitutive equations for many types of heat transfer components.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // Library <b>MultiBody</b> is a <b>free</b> Modelica package providing
 // 3-dimensional mechanical components to model in a convenient way
@@ -14828,13 +14828,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //     it might be necessary to differentiate equations several times.</li>
 // </ul>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // As a first example it shall be demonstrated how to build up, simulate
 // and animate a <b>simple pendulum</b>.
@@ -14919,13 +14919,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // in the middle of the light blue sphere.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // In principal, now special action is needed, if
 // loop structures occur (contrary to the ModelicaAdditions.MultiBody library).
@@ -14981,13 +14981,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // is described in section
 // \"<a href=\"Modelica://Modelica.Mechanics.MultiBody.UsersGuide.Tutorial.LoopStructures.AnalyticLoopHandling\">Analytic loop handling</a>\".
 // </p>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // In the figure below, the model of a V6 engine is
 // shown that has a simple combustion model. It is available as
@@ -15070,13 +15070,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // \"<a href=\"Modelica://Modelica.Mechanics.MultiBody.UsersGuide.Tutorial.LoopStructures.AnalyticLoopHandling\">Analytic loop handling</a>\"
 // for such systems.
 // </p>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // It is well known that the non-linear
 // algebraic equations of most mechanical loops in technical devices can be
 // solved analytically. It is, however, difficult to perform this fully
@@ -15329,13 +15329,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // The simulation time is about 5 times faster with the analytic loop handling.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // If different versions of the MultiBody library are not
 // compatible to each other, corresponding conversion scripts are
@@ -15448,13 +15448,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //    Frames.from_T(T)                  -> Frames.from_T2(T,der(T))
 // </pre>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <ul>
 // <li>
 // Technical details of this library are described in the
@@ -15501,13 +15501,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </li>
 // </ul>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <dl>
 // <dt><b>Library Officer:</b>
 // <dd><a href=\"http://www.robotic.dlr.de/Martin.Otter/\">Martin Otter</a><br>
@@ -15544,13 +15544,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //      </li>
 // </ul>
 // </html>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Line(true,{0.0,0.0},0,{{-100,-118},{-100,61}},{0,0,0},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-100,100},{-120,60},{-80,60},{-100,100},{-100,100}},Smooth.None),Line(true,{0.0,0.0},0,{{-119,-100},{59,-100}},{0,0,0},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{99,-100},{59,-80},{59,-120},{99,-100}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-140,165},{140,103}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{95,-113},{144,-162}},"%label1",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-170,127},{-119,77}},"%label2",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-56,78},{-56,-26}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-68,-26},{-56,-66},{-44,-26},{-68,-26}},Smooth.None),Line(true,{0.0,0.0},0,{{2,78},{2,-26}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-10,-26},{2,-66},{14,-26},{-10,-26}},Smooth.None),Line(true,{0.0,0.0},0,{{66,80},{66,-26}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{54,-26},{66,-66},{78,-26},{54,-26}},Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // Model <b>World</b> represents a global coordinate system fixed in
 // ground. This model serves several purposes:
@@ -15608,13 +15608,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // of these axes can be set via parameters.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This example demonstrates that by using joint and body
 // elements animation is automatically available. Also the revolute
@@ -15629,13 +15629,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ALT=\"model Examples.Elementary.DoublePendulum\">
 // </td></tr></table>
 // 
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // In this example the usage of the general force element
 // \"<a href=\"Modelica://Modelica.Mechanics.MultiBody.Forces.ForceAndTorque\">ForceAndTorque</a>\"
 // is shown. A \"ForceAndTorque\" element is connected
@@ -15656,13 +15656,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/ForceAndTorque.png\">
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This example demonstrates:
 // </p>
@@ -15680,13 +15680,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/FreeBody.png\"
 // ALT=\"model Examples.Elementary.FreeBody\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This example demonstrates a non-standard type of initialization
 // by calculating a spring constant such
@@ -15721,13 +15721,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/InitSpringConstant.png\"
 // ALT=\"model Examples.Elementary.InitSpringConstant\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // It is demonstrated how to implement line force components
 // that shall have mass properties. Two alternative implementations
@@ -15774,13 +15774,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p align=\"center\">
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/LineForceWithTwoMasses2.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This simple model demonstrates that by just dragging components
 // default animation is defined that shows the structure of the
@@ -15789,13 +15789,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/Pendulum.png\"
 // ALT=\"model Examples.Elementary.Pendulum\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // A body is attached on a revolute and prismatic joint.
 // A 3-dim. spring and a 3-dim. damper are connected between the body
@@ -15805,13 +15805,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/PendulumWithSpringDamper.png\"
 // ALT=\"model Examples.Elementary.PendulumWithSpringDamper\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This model demonstrates a point gravity field. Two bodies
 // are placed in the gravity field. The initial positions and velocities of
@@ -15823,13 +15823,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/PointGravity.png\"
 // ALT=\"model Examples.Elementary.PointGravity\">
 // </p>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This model demonstrates the usage of model Parts.PointMass in a
 // point gravity field. The PointMass model has the feature that
@@ -15846,13 +15846,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p align=\"center\">
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/PointGravityWithPointMasses.png\">
 // </p>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This model demonstrates the usage of model Parts.PointMass in a
 // point gravity field. 6 point masses are connected rigidly together.
@@ -15879,37 +15879,37 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p align=\"center\">
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/PointGravityWithPointMasses2.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This example demonstrates:
 // </p>
@@ -15927,13 +15927,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/SpringDamperSystem.png\"
 // ALT=\"model Examples.Elementary.SpringDamperSystem\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This example shows the two different ways how force laws
 // can be utilized:
@@ -15958,13 +15958,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/SpringMassSystem.png\"
 // ALT=\"model Examples.Elementary.SpringMassSystem\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This example shows that a force component may have a mass.
 // The 3-dimensional spring as used in this example, has an optional
@@ -15976,13 +15976,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/SpringWithMass.png\"
 // ALT=\"model Examples.Elementary.SpringWithMass\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This example demonstrates that <b>3-dimensional line force</b> elements
 // (here: Modelica.Mechanics.MultiBody.Forces.Spring elements) can be connected together
@@ -15995,13 +15995,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Examples/Elementary/ThreeSprings.png\"
 // ALT=\"model Examples.Elementary.ThreeSprings\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-120.0,150.0,120.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This is a model of the mechanical part of one cylinder of an engine.
 // The combustion is not modelled. The \"inertia\" component at the lower
@@ -16027,13 +16027,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p align=\"center\">
 // <IMG SRC=\"../Images/MultiBody/Examples/Loops/Engine.png\" ALT=\"model Examples.Loops.Engine\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-120.0,150.0,120.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{3,117},{88,-23}},0),Text(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,{{65,-30},{145,-39}},"jointRRP in model",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,{{66,-34},{141,-52}},"Loops.Engine1b_analytic",0,TextAlignment.Center)}}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This is a model of the mechanical part of one cylinder of an engine.
 // It is similiar to
@@ -16055,13 +16055,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p align=\"center\">
 // <IMG SRC=\"../Images/MultiBody/Examples/Loops/Engine.png\" ALT=\"model Examples.Loops.Engine\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-120.0,150.0,120.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This is the same model as
 // <a href=\"Modelica://Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b#diagram\">Loops.Engine1b</a>.
@@ -16079,13 +16079,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p align=\"center\">
 // <IMG SRC=\"../Images/MultiBody/Examples/Loops/Engine.png\" ALT=\"model Examples.Loops.Engine\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-120.0,-100.0,120.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This is a V6 engine with 6 cylinders. It is hierarchically built
 // up by using instances of one cylinder. For more details on the
@@ -16103,13 +16103,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // a size of about 50 Mbyte (for 5000 output intervalls).
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This is a similar model as the example \"EngineV6\". However, the cylinders
 // have been built up with component Modelica.Mechanics.MultiBody.Joints.Assemblies.JointRRR that
@@ -16134,13 +16134,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // a size of about 50 Mbyte (for 5000 output intervalls).
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This is a simple kinematic loop consisting of 6 revolute joints, 1 prismatic joint
 // and 4 bars that is often used as basic constructing unit in mechanisms.
@@ -16155,13 +16155,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Examples/Loops/Fourbar1.png\" ALT=\"model Examples.Loops.Fourbar1\">
 // </p>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This is a second version of the \"four-bar\" mechanism, see figure:
 // </p>
@@ -16200,13 +16200,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <pre>
 //    rodLength*rodLength = f(angle of revolute joint, distance of prismatic joint)
 // </pre>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This is a third version of the \"four-bar\" mechanism, see figure:
 // </p>
@@ -16226,13 +16226,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <a href=\"Modelica://Modelica.Mechanics.MultiBody.UsersGuide.Tutorial.LoopStructures.AnalyticLoopHandling\">
 // MultiBody.UsersGuide.Tutorial.LoopStructures.AnalyticLoopHandling</a>.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // It is demonstrated how the Modelica.Mechanics.MultiBody.Joints.Assemblies.JointRRR joint can be
 // used to solve the non-linear equations of coupled planar loops analytically.
@@ -16252,7 +16252,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Examples/Loops/PlanarLoops2.png\" ALT=\"model Examples.Loops.PlanarLoops2\">
 // </p>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-150.0,100.0,150.0,true,0.1,1.0,1.0,{Polygon(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-60,-50},{-60,100},{60,100},{60,-52},{100,-52},{100,150},{-100,150},{-100,-50},{-60,-50}},Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.VerticalCylinder,0.25,BorderPattern.None,{{-58,89},{58,13}},0),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,81},{60,75}},0),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,67},{60,61}},0),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,55},{60,49}},0),Polygon(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.None,FillPattern.Solid,0.25,{{-60,11},{-42,23},{38,23},{56,11},{-60,11}},Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-6,41},{2,33}},0,360),Ellipse(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-40,-129},{40,-49}},0,360),Line(true,{0.0,0.0},0,{{0,-90},{26,-58},{-2,37}},{0,0,0},LinePattern.Solid,1,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,-124},{164,-186}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-100,-90},{100,-91}},{0,0,0},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
@@ -16288,7 +16288,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {-100.0,-120.0,150.0,120.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This is a model of the mechanical part of one cylinder of an engine.
 // The combustion is not modelled. The \"inertia\" component at the lower
@@ -16314,26 +16314,26 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p align=\"center\">
 // <IMG SRC=\"../Images/MultiBody/Examples/Loops/Engine.png\" ALT=\"model Examples.Loops.Engine\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // With this model one axis of the r3 robot is checked.
 // The mechanical structure is replaced by a simple
 // load inertia.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,0.5,0.5,{Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-99.5,100.0},{100.0,-100.0}},0),Bitmap(true,{0.0,0.0},0,{{-75.5,98.25},{87.0,-96.75}},"../../../../Images/MultiBody/Examples/Systems/robot_kr15.bmp"),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-111.5,130.0},{108.5,100.0}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-104.5,-104.0},{115.0,-128.0}},"mLoad=%mLoad",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,0.5,0.5}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This is a detailed model of the robot. For animation CAD data
 // is used. Translate and simulate with the default settings
@@ -16343,13 +16343,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p align=\"center\">
 // <IMG SRC=\"../Images/MultiBody/Examples/Systems/r3_fullRobot.png\" ALT=\"model Examples.Loops.Systems.RobotR3.fullRobot\">
 // </p>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,204,51},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{-20,2},{22,-2}},0)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Signal bus that is used to communicate all signals for <b>one</b> axis.
 // This is an expandable connector which is \"empty\".
@@ -16360,13 +16360,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <a href=\"Modelica://Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.Components.InternalConnectors.AxisControlBus\">here</a>.
 // </p>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,204,51},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{-20,2},{22,-2}},0)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Signal bus that is used to communicate <b>all signals</b> of the robot.
 // This is an expandable connector which is \"empty\".
@@ -16376,13 +16376,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // the connection to this bus) are defined
 // <a href=\"Modelica://Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.Components.InternalConnectors.ControlBus\">here</a>.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,110}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-80,90},{-88,68},{-72,68},{-80,88},{-80,90}},Smooth.None),Line(true,{0.0,0.0},0,{{-80,78},{-80,-82}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-90,0},{82,0}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{90,0},{68,8},{68,-8},{90,0}},Smooth.None),Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-42,55},{29,12}},"w",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-80,0},{-41,69},{26,69},{58,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-73,-44},{82,-69}},"1 axis",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Given
 // </p>
@@ -16415,7 +16415,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // 
 // </html>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,110}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-80,90},{-88,68},{-72,68},{-80,88},{-80,90}},Smooth.None),Line(true,{0.0,0.0},0,{{-80,78},{-80,-82}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-90,0},{82,0}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{90,0},{68,8},{68,-8},{90,0}},Smooth.None),Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-42,55},{29,12}},"w",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-80,0},{-41,69},{26,69},{58,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-70,-43},{85,-68}},"6 axes",0,TextAlignment.Center)}}
 // ""
@@ -16434,20 +16434,20 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // The elasticity and damping in the gearboxes of the outermost
 // three joints of the robot is neglected.
 // Default values for all parameters are given for joint 4.
 // </p>
 // </html>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,120},{0,60}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{80,-102},{80,-10}},{255,204,51},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Default values are given for the motor of joint 1.
 // The input of the motor is the desired current
@@ -16455,13 +16455,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // produced by the motor).
 // </p>
 // </html>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{235,235,235},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,-100},{100,100}},0),Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-30,54},{30,24}},0),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-30,40},{-60,50},{-60,30},{-30,40}},Smooth.None),Line(true,{0.0,0.0},0,{{-31,-41},{-78,-41},{-78,39},{-30,39}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-30,-26},{30,-56}},0),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{60,-32},{30,-42},{60,-52},{60,-32}},Smooth.None),Line(true,{0.0,0.0},0,{{30,39},{76,39},{76,-41},{30,-41}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,150},{100,110}},"%name",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This controller has an inner PI-controller to control the motor speed,
 // and an outer P-controller to control the motor position of one axis.
@@ -16470,7 +16470,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // reference signals. All signals are communicated via the
 // \"axisControlBus\".
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
@@ -16482,7 +16482,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // The axis model consists of the <b>controller</b>, the <b>motor</b> including current
 // controller and the <b>gearbox</b> including gear elasticity and bearing friction.
@@ -16499,19 +16499,19 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Default values of the parameters are given for the axis of joint 1.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {-200.0,-200.0,200.0,200.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-200,200},{200,-200}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,280},{200,200}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,-150},{-140,-190}},"1",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,-30},{-140,-70}},"3",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,-90},{-140,-130}},"2",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,90},{-140,50}},"5",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,28},{-140,-12}},"4",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-198,150},{-138,110}},"6",0,TextAlignment.Center),Bitmap(true,{0.0,0.0},0,{{-130,195},{195,-195}},"../../../../Images/MultiBody/Examples/Systems/robot_kr15.bmp")}}
 // ""
 // {-200.0,-200.0,200.0,200.0,true,0.1,2.0,2.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This model contains the mechanical components of the r3 robot
 // (multibody system).
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
@@ -16529,7 +16529,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This example consists of a body that is attached to the world system
 // with a spherical joint. On this body, a \"rotor\", i.e., a body with rotational
@@ -16567,7 +16567,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // is much faster.
 // </p>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
@@ -16591,7 +16591,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // 
 // <p>
 // The <b>3</b> signals of the <b>force</b> connector are interpreted
@@ -16657,13 +16657,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // 
 // </HTML>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-61,64},{46,27}},"resolve",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-145,-28},{140,-89}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{0,95},{0,82}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-100,0},{-94,13},{-86,28},{-74,48},{-65,60},{-52,72},{-35,81},{-22,84},{-8,84},{7,80},{19,73},{32,65},{44,55},{52,47},{58,40}},{0,0,0},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{94,10},{75,59},{41,24},{94,10}},Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // 
 // <p>
 // The <b>3</b> signals of the <b>torque</b> connector are interpreted
@@ -16728,13 +16728,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Forces/WorldTorque2.png\">
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-63,56},{44,19}},"resolve",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-151,-73},{134,-134}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-100,60},{-86,68},{-80,72},{-70,78},{-64,82},{-46,86},{-34,88},{-16,88},{-2,86},{12,80},{24,74},{34,68},{46,58},{52,54},{58,48}},{0,0,0},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{89,17},{64,76},{30,41},{89,17}},Smooth.None),Line(true,{0.0,0.0},0,{{0,95},{0,-26}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,0},{96,0}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-104,-48},{54,0},{46,20},{96,0},{66,-42},{60,-22},{-96,-72},{-104,-48}},Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // The <b>3</b> signals of the <b>force</b> and <b>torque</b>
 // connector are interpreted
@@ -16803,13 +16803,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Forces/WorldForceAndTorque2.png\">
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,255,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-98,99},{99,-98}},0),Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-92,61},{87,35}},"resolve",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-136,-52},{149,-113}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{40,100},{40,0}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-94,0},{-64,11},{-64,-10},{-94,0}},Smooth.None),Line(true,{0.0,0.0},0,{{-60,100},{40,100}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{94,0},{65,12},{65,-11},{94,0}},Smooth.None),Line(true,{0.0,0.0},0,{{-64,0},{-20,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{20,0},{65,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // The <b>3</b> signals of the <b>force</b> connector are interpreted
 // as the x-, y- and z-coordinates of a <b>force</b> acting at the frame
@@ -16868,13 +16868,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Forces/Force2.png\">
 // </p>
 // </html>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,255,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-98,99},{99,-98}},0),Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-59,55},{72,30}},"resolve",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-139,-27},{146,-88}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{100,20},{84,52},{69,39},{100,20}},Smooth.None),Line(true,{0.0,0.0},0,{{40,100},{76,46}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-99,20},{-86,53},{-70,42},{-99,20}},Smooth.None),Line(true,{0.0,0.0},0,{{-60,100},{40,100}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-79,47},{-70,61},{-59,72},{-45,81},{-32,84},{-20,85}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{77,45},{66,60},{55,69},{49,74},{41,80},{31,84},{20,85}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // The <b>3</b> signals of the <b>torque</b> connector are interpreted
 // as the x-, y- and z-coordinates of a <b>torque</b> acting at the frame
@@ -16933,7 +16933,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <IMG SRC=\"../Images/MultiBody/Forces/Torque2.png\">
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
@@ -18047,7 +18047,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <h4>Syntax</h4>
 // <blockquote><pre>
 // (LU, pivots)       = Matrices.<b>LU</b>(A);
@@ -18120,7 +18120,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <h4>See also</h4>
 // <a href=\"Modelica://Modelica.Math.Matrices.LU_solve\">Matrices.LU_solve</a>,
 // <a href=\"Modelica://Modelica.Math.Matrices.solve\">Matrices.solve</a>,
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
@@ -18178,7 +18178,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {"Lapack documentation
+// {info("Lapack documentation
 //     Purpose
 //     =======
 //     DGEEV computes for an N-by-N real nonsymmetric matrix A, the
@@ -18253,13 +18253,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //                   eigenvalues, and no eigenvectors have been computed;
 //                   elements i+1:N of WR and WI contain eigenvalues which
 //                   have converged.
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation
+// {info("Lapack documentation
 //     Purpose
 //     =======
 //     DGEEV computes for an N-by-N real nonsymmetric matrix A, the
@@ -18334,13 +18334,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //                   eigenvalues, and no eigenvectors have been computed;
 //                   elements i+1:N of WR and WI contain eigenvalues which
 //                   have converged.
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Purpose
+// {info("Purpose
 // =======
 // 
 // For a pair of N-by-N real nonsymmetric matrices A, B:
@@ -18484,13 +18484,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // form[*] of the \"balanced\" versions of A and B.  If no eigenvectors
 // are computed, then only the diagonal blocks will be correct.
 // [*] See DHGEQZ, DGEGS, or read the book \"Matrix Computations\",
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation
+// {info("Lapack documentation
 //   Purpose
 //   =======
 // 
@@ -18581,13 +18581,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //   INFO    (output) INTEGER
 //           = 0:  successful exit
 //           < 0:  if INFO = -i, the i-th argument had an illegal value
-//                                                                           "}
+//                                                                           ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation
+// {info("Lapack documentation
 //   Purpose
 //   =======
 // 
@@ -18676,13 +18676,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 //   INFO    (output) INTEGER
 //           = 0:  successful exit
-//           < 0:  if INFO = -i, the i-th argument had an illegal value    "}
+//           < 0:  if INFO = -i, the i-th argument had an illegal value    ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation:
+// {info("Lapack documentation:
 //     Purpose
 //     =======
 //     DGESV computes the solution to a real system of linear equations
@@ -18724,22 +18724,22 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 //                   has been completed, but the factor U is exactly
 //                   singular, so the solution could not be computed.
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"
+// {info("
 // Same as function LAPACK.dgesv, but right hand side is a vector and not a matrix.
 // For details of the arguments, see documentation of dgesv.
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation
+// {info("Lapack documentation
 // 
 //   Purpose
 //   =======
@@ -18819,13 +18819,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //   INFO    (output) INTEGER
 //           = 0:  successful exit.
 //           < 0:  if INFO = -i, the i-th argument had an illegal value.
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation:
+// {info("Lapack documentation:
 //     Purpose
 //     =======
 //     DGTSV  solves the equation
@@ -18870,22 +18870,22 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //                   has not been computed.  The factorization has not been
 // 
 //                   completed unless i = N.
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"
+// {info("
 // Same as function LAPACK.dgtsv, but right hand side is a vector and not a matrix.
 // For details of the arguments, see documentation of dgtsv.
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation:
+// {info("Lapack documentation:
 // Purpose
 // =======
 // DGBSV computes the solution to a real system of linear equations
@@ -18948,20 +18948,20 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //    a31  a42  a53  a64   *    *      m31  m42  m53  m64   *    *
 // Array elements marked * are not used by the routine; elements marked
 // + need not be set on entry, but are required by the routine to store
-// elements of U because of fill-in resulting from the row interchanges."}
+// elements of U because of fill-in resulting from the row interchanges.")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation:
-// "}
+// {info("Lapack documentation:
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation:
+// {info("Lapack documentation:
 //     Purpose
 //     =======
 //     DGESVD computes the singular value decomposition (SVD) of a real
@@ -19056,13 +19056,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //                   superdiagonals of an intermediate bidiagonal form B
 //                   did not converge to zero. See the description of WORK
 //                   above for details.
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation:
+// {info("Lapack documentation:
 //     Purpose
 //     =======
 //     DGESVD computes the singular value decomposition (SVD) of a real
@@ -19157,13 +19157,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //                   superdiagonals of an intermediate bidiagonal form B
 //                   did not converge to zero. See the description of WORK
 //                   above for details.
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation:
+// {info("Lapack documentation:
 //   SUBROUTINE DGETRF( M, N, A, LDA, IPIV, INFO )
 // -- LAPACK routine (version 1.1) --
 //    Univ. of Tennessee, Univ. of California Berkeley, NAG Ltd.,
@@ -19208,13 +19208,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //               has been completed, but the factor U is exactly
 //               singular, and division by zero will occur if it is used
 //               to solve a system of equations.
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation:
+// {info("Lapack documentation:
 //   SUBROUTINE DGETRS( TRANS, N, NRHS, A, LDA, IPIV, B, LDB, INFO )
 // -- LAPACK routine (version 1.1) --
 //    Univ. of Tennessee, Univ. of California Berkeley, NAG Ltd.,
@@ -19262,13 +19262,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // INFO    (output) INTEGER
 //         = 0:  successful exit
 //         < 0:  if INFO = -i, the i-th argument had an illegal value
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation:
+// {info("Lapack documentation:
 //   SUBROUTINE DGETRS( TRANS, N, NRHS, A, LDA, IPIV, B, LDB, INFO )
 // -- LAPACK routine (version 1.1) --
 //    Univ. of Tennessee, Univ. of California Berkeley, NAG Ltd.,
@@ -19316,13 +19316,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // INFO    (output) INTEGER
 //         = 0:  successful exit
 //         < 0:  if INFO = -i, the i-th argument had an illegal value
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation:
+// {info("Lapack documentation:
 //    SUBROUTINE DGETRI( N, A, LDA, IPIV, WORK, LWORK, INFO )
 // -- LAPACK routine (version 1.1) --
 //    Univ. of Tennessee, Univ. of California Berkeley, NAG Ltd.,
@@ -19364,13 +19364,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //         = 0:  successful exit
 //         < 0:  if INFO = -i, the i-th argument had an illegal value
 //         > 0:  if INFO = i, U(i,i) is exactly zero; the matrix is
-//               singular and its inverse could not be computed."}
+//               singular and its inverse could not be computed.")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation:
+// {info("Lapack documentation:
 //    SUBROUTINE DGEQPF( M, N, A, LDA, JPVT, TAU, WORK, INFO )
 // -- LAPACK test routine (version 1.1) --
 //    Univ. of Tennessee, Univ. of California Berkeley, NAG Ltd.,
@@ -19424,13 +19424,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // v(1:i-1) = 0 and v(i) = 1; v(i+1:m) is stored on exit in A(i+1:m,i).
 // The matrix P is represented in jpvt as follows: If
 //    jpvt(j) = i
-// then the jth column of P is the ith canonical unit vector."}
+// then the jth column of P is the ith canonical unit vector.")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"Lapack documentation:
+// {info("Lapack documentation:
 //    SUBROUTINE DORGQR( M, N, K, A, LDA, TAU, WORK, LWORK, INFO )
 // -- LAPACK routine (version 1.1) --
 //    Univ. of Tennessee, Univ. of California Berkeley, NAG Ltd.,
@@ -19478,13 +19478,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // INFO    (output) INTEGER
 //         = 0:  successful exit
 //         < 0:  if INFO = -i, the i-th argument has an illegal value
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This function returns y = sin(u), with -&infin; &lt; u &lt; &infin;:
 // </p>
@@ -19492,13 +19492,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // <img src=\"../Images/Math/sin.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This function returns y = cos(u), with -&infin; &lt; u &lt; &infin;:
 // </p>
@@ -19506,13 +19506,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // <img src=\"../Images/Math/cos.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This function returns y = tan(u), with -&infin; &lt; u &lt; &infin;
 // (if u is a multiple of (2n-1)*pi/2, y = tan(u) is +/- infinity).
@@ -19521,13 +19521,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // <img src=\"../Images/Math/tan.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This function returns y = asin(u), with -1 &le; u &le; +1:
 // </p>
@@ -19535,13 +19535,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // <img src=\"../Images/Math/asin.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This function returns y = acos(u), with -1 &le; u &le; +1:
 // </p>
@@ -19549,13 +19549,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // <img src=\"../Images/Math/acos.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This function returns y = atan(u), with -&infin; &lt; u &lt; &infin;:
 // </p>
@@ -19563,13 +19563,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // <img src=\"../Images/Math/atan.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // This function returns y = atan2(u1,u2) such that tan(y) = u1/u2 and
 // y is in the range -pi &lt; y &le; pi. u2 may be zero, provided
 // u1 is not zero. Usually u1, u2 is provided in such a form that
@@ -19581,13 +19581,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // 
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This function returns y = sinh(u), with -&infin; &lt; u &lt; &infin;:
 // </p>
@@ -19595,13 +19595,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // <img src=\"../Images/Math/sinh.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This function returns y = cosh(u), with -&infin; &lt; u &lt; &infin;:
 // </p>
@@ -19609,13 +19609,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // <img src=\"../Images/Math/cosh.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This function returns y = tanh(u), with -&infin; &lt; u &lt; &infin;:
 // </p>
@@ -19623,13 +19623,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // <img src=\"../Images/Math/tanh.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This function returns y = exp(u), with -&infin; &lt; u &lt; &infin;:
 // </p>
@@ -19637,13 +19637,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // <img src=\"../Images/Math/exp.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This function returns y = log(10) (the natural logarithm of u),
 // with u &gt; 0:
@@ -19652,13 +19652,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // <img src=\"../Images/Math/log.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This function returns y = log10(u),
 // with u &gt; 0:
@@ -19667,7 +19667,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p>
 // <img src=\"../Images/Math/log10.png\">
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
@@ -19965,7 +19965,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {revisions("<html>
 // <ul>
 // <li><i>  </i>
 //        </li>
@@ -19973,18 +19973,18 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //        by Susann Wolf<br> realized<br>
 //        </li>
 // </ul>
-// </html>","<html>
+// </html>"),info("<html>
 // <p>
 // With the test circuit AmplifierWithOpAmpDetailed a time domain analysis of the example arrangement with a sinusoidal input voltage (12 V amplitude, frequency 1 kHz) using the operational amplifier model OpAmpDetailed is carried out. The working voltages are 15 V and -15 V.
 // </p>
 // 
-// </HTML>"}
+// </HTML>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-88,102},{92,48}},"Characteristic Ideal Diodes",0,TextAlignment.Center)}}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <P>
 // Three examples of ideal diodes are shown:<br><br>
 // the <b>totally ideal diode</b> (Ideal) with all parameters to be zero <br>
@@ -20005,20 +20005,20 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </P>
 // 
 // </HTML>
-// ","<html>
+// "),revisions("<html>
 // <p><b>Release Notes:</b></p>
 // <ul>
 // <li><i>Mai 7, 2004   </i>
 //        by Christoph Clauss<br> realized<br>
 //        </li>
 // </ul>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-96,100},{98,60}},"Characteristic Thyristors",0,TextAlignment.Center)}}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <P>
 // Two examples of thyristors are shown:<br><br>
 // the <b>ideal thyristor</b>  <br>
@@ -20034,20 +20034,20 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </P>
 // 
 // </HTML>
-// ","<html>
+// "),revisions("<html>
 // <p><b>Release Notes:</b></p>
 // <ul>
 // <li><i>Mai 7, 2004   </i>
 //        by Christoph Clauss<br> realized<br>
 //        </li>
 // </ul>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-60,-80},{60,-100}},"try considerMagnetization=false/true",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-60,20},{60,0}},"Basic.Transformer (mutual inductance)",0,TextAlignment.Center)}}
 // ""
-// {"<html>
+// {revisions("<html>
 // <ul>
 // <li><i>  </i>
 //        </li>
@@ -20055,7 +20055,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //        by Anton Haumer<br> initially implemented<br>
 //        </li>
 // </ul>
-// </html>","<html>
+// </html>"),info("<html>
 // <p>
 // This example is o demonstrate the behaviour of transformer models. The Basic.Transformer, which consists of mutual coupled inductors,<br>
 // is compared with the ideal transformer model. If the ideal model is used with considerMagnetization=true eakage inductances are taken <br>
@@ -20076,13 +20076,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </P>
 // 
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,80},{100,60}},"Compare voltage and current of inductor1 and inductor2",0,TextAlignment.Center)}}
 // ""
-// {"<html>
+// {info("<html>
 // <P>
 // This example is to compare the behaviour of switch models with
 // and without an electric arc taking into consideration.<br><br>
@@ -20099,13 +20099,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // the suddenly switching.
 // 
 // </P>
-// </html>","<html>
+// </html>"),revisions("<html>
 // <ul>
 // <li><i>May, 2009   </i>
 //        by Anton Haumer<br> initially realized<br>
 //        </li>
 // </ul>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
@@ -20691,7 +20691,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-99,48},{-32,8}},0),Text(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-98,59},{-31,51}},"reference speed generation",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-98,-46},{-60,-52}},"PI controller",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-76,-44},{-57,-23}},{255,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.Filled},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-25,6},{99,-50}},0),Text(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{4,14},{71,7}},"plant (simple drive train)",0,TextAlignment.Center)}}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p>
 // This is a simple drive train controlled by a PID controller:
@@ -20754,13 +20754,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // is forced back to its limit after a transient phase.
 // </p>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This example demonstrates how to construct an inverse model in Modelica
 // (for more details see <a href=\"http://www.modelica.org/events/Conference2005/online_proceedings/Session3/Session3c3.pdf\">Looye, Th&uuml;mmel, Kurze, Otter, Bals: Nonlinear Inverse Models for Control</a>).
@@ -20832,13 +20832,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <img src=\"../Images/Blocks/InverseModel.png\">
 // </p>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This simple example demonstrates the logical sources in
 // <a href=\"Modelica://Modelica.Blocks.Sources\">Modelica.Blocks.Sources</a> and demonstrate
@@ -20848,13 +20848,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // model.
 // </p>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This example demonstrates a network of logical blocks. Note, that
 // the Boolean values of the input and output signals are visualized
@@ -20862,13 +20862,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // If a \"circle\" is \"white\", the signal is <b>false</b>. It a
 // \"circle\" is \"green\", the signal is <b>true</b>.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p><b>Signal bus concept</b></p>
 // <p>
 // In technical systems, such as vehicles, robots or satellites, many signals
@@ -20979,13 +20979,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // just potential signals. The user might still add different signal names.
 // </p>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,204,51},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{-20,2},{22,-2}},0)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This connector defines the \"expandable connector\" ControlBus that
 // is used as bus in the
@@ -20993,13 +20993,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Note, this connector is \"empty\". When using it, the actual content is
 // constructed by the signals connected to this bus.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,204,51},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{-20,2},{22,-2}},0)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This connector defines the \"expandable connector\" SubControlBus that
 // is used as sub-bus in the
@@ -21007,50 +21007,50 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Note, this connector is \"empty\". When using it, the actual content is
 // constructed by the signals connected to this bus.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,204,51},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{-20,2},{22,-2}},0)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This connector is used to show default signals that might be added
 // to the
 // <a href=\"Modelica://Modelica.Blocks.Examples.BusUsage_Utilities.Interfaces.ControlBus\">ControlBus</a>.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,204,51},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{-20,2},{22,-2}},0)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // This connector is used to show default signals that might be added
 // to the
 // <a href=\"Modelica://Modelica.Blocks.Examples.BusUsage_Utilities.Interfaces.SubControlBus\">SubControlBus</a>.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{159,159,223},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,60},{100,-60}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-106,124},{114,68}},"%name",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // <p>
 // This model is used to demonstrate the bus usage in example
 // <a href=\"Modelica://Modelica.Blocks.Examples.BusUsage\">BusUsage</a>.
 // </p>
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true,{0.0,0.0},0,{{-80,78},{-80,-90}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-80,90},{-88,68},{-72,68},{-80,90}},Smooth.None),Line(true,{0.0,0.0},0,{{-90,-80},{82,-80}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{90,-80},{68,-72},{68,-88},{90,-80}},Smooth.None),Line(true,{0.0,0.0},0,{{-80,-80},{-80,50},{-80,-20},{60,80}},{0,0,127},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,-20},{80,-60}},"PID",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,-150},{150,-110}},"Ti=%Ti",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // This is the text-book version of a PID-controller.
 // For a more practically useful PID-controller, use
@@ -21130,13 +21130,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // 
 // </HTML>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{-80,78},{-80,-90}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-80,90},{-88,68},{-72,68},{-80,90}},Smooth.None),Line(true,{0.0,0.0},0,{{-90,-80},{82,-80}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{90,-80},{68,-72},{68,-88},{90,-80}},Smooth.None),Line(true,{0.0,0.0},0,{{-80,-80},{-80,50},{-80,-20},{30,60},{80,60}},{0,0,127},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,-20},{80,-60}},"PID",0,TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // Via parameter <b>controllerType</b> either <b>P</b>, <b>PI</b>, <b>PD</b>,
 // or <b>PID</b> can be selected. If, e.g., PI is selected, all components belonging to the
@@ -21290,13 +21290,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // to use <b>limitAtInit</b> = <b>false</b>.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,127},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-80,76},{80,-82}},"der()",0,TextAlignment.Center)}}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // Defines that the output y is the <i>derivative</i>
 // of the input u. Note, that Modelica.Blocks.Continuous.Derivative
@@ -21305,158 +21305,158 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // by the Modelica translator, if this derivative is not yet present in
 // the model.
 // </p>
-// </HTML>"}
+// </HTML>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true,{0.0,0.0},0,{{-78,-42},{-52,-42},{-52,0},{-26,0},{-26,24},{-6,24},{-6,64},{18,64},{18,20},{38,20},{38,0},{44,0},{44,0},{62,0}},{0,0,127},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // The output is identical to the sampled input signal at sample
 // time instants and holds the output at the value of the last
 // sample instant during the sample points.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{-79,-41},{-59,-33},{-40,1},{-20,9},{0,63},{21,20},{41,10},{60,20}},{0,0,127},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{60,19},{81,10}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // The output signal is the extrapolation through the
 // values of the last two sampled input signals.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,127},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,-100},{100,100}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,110}},"%name",0,TextAlignment.Center)}}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Block that has only the basic icon for an input/output
 // block (no declarations, no equations). Most blocks
 // of package Modelica.Blocks inherit directly or indirectly
 // from this block.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Block has one continuous Real output signal.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Block has one continuous Real output signal vector.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Block has one continuous Real input and one continuous Real output signal.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Block has two continuous Real input signals u1 and u2 and one
 // continuous Real output signal y.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p> Block has one continuous Real input signal and a
 //     vector of continuous Real output signals.</p>
 // 
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // Block has a vector of continuous Real input signals and
 // one continuous Real output signal.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // Block has a continuous Real input and a continuous Real output signal vector.
 // The signal sizes of the input and output vector may be different.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<HTML>
+// {info("<HTML>
 // <p>
 // Block has a continuous Real input and a continuous Real output signal vector
 // where the signal sizes of the input and output vector are identical.
 // </p>
 // </HTML>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Block has two continuous Real input vectors u1 and u2 and one
 // continuous Real output vector y.
 // All vectors have the same number of elements.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Basic block for Real sources of package Blocks.Sources.
 // This component has one continuous Real output signal y
 // and two parameters (offset, startTime) to shift the
 // generated signal.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
@@ -21696,7 +21696,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // The (time varying) Integer output signal of this block can be defined in its
 // parameter menu via variable <b>y</b>. The purpose is to support the
@@ -21707,13 +21707,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // accessible and represents the \"model time\" and that
 // Variable <b>y</b> is both a variable and a connector.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{235,235,235},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.Raised,{{-100,40},{100,-40}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-96,15},{96,-15}},"%y",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,90},{140,50}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{255,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{100,10},{120,0},{100,-10},{100,10}},Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // The (time varying) Boolean output signal of this block can be defined in its
 // parameter menu via variable <b>y</b>. The purpose is to support the
@@ -21725,7 +21725,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // accessible and represents the \"model time\" and that
 // Variable <b>y</b> is both a variable and a connector.
 // </p>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
@@ -21761,7 +21761,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // The Modelica Standard Library consists of the following 
 // main sub-libraries: 
@@ -21937,13 +21937,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </table>
 // 
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p>
 // The Modelica standard library defines the most important
@@ -22115,13 +22115,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // 
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p>
 // Note, in the html documentation of any Modelica library,
@@ -22178,13 +22178,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </ol>
 // 
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p>
 // In this section the convention is summarized how default parameters are
@@ -22276,13 +22276,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // 
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Maintenance of the Modelica Standard Library is performed with
 // three branches on the subversion server of the Modelica Association
@@ -22380,13 +22380,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //          The problem is that this might be non-backward compatible,
 //          because a user might already extend from this class and already using the same name.</li>
 // </ul>
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // In this section bug fixes are summarized that have been incorporated
 // for version 3.1-<b>SVN</b>:
@@ -22560,13 +22560,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //       Fluid-library and not to ModelicaTest that most people will not have.</li>
 // </ul>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p>
 // Version 3.1 is backward compatible to version 3.0 and 3.0.1,
@@ -22871,13 +22871,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //     <td valign=\"top\"> Wrong documentation corrected (#162)</td> </tr>
 // </table>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p>
 // This Modelica package is provided under the
@@ -23154,13 +23154,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </table>
 // 
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Version 3.0 is <b>not</b> backward compatible to previous versions.
 // A conversion script is provided to transform models and libraries
@@ -23920,13 +23920,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </table>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // <p>
 // Version 2.2.2 is backward compatible to version 2.2.1 and 2.2 with
 // the following exceptions:
@@ -24916,13 +24916,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </table>
 // 
-// </html>"}
+// </html>")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p>
 // Version 2.2.1 is backward compatible to version 2.2.
@@ -25295,13 +25295,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </table>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p>
 // Version 2.2 is backward compatible to version 2.1.
@@ -25360,13 +25360,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //          still remain valid.</li>
 // </ul>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p> This is a major change with respect to previous versions of the
 //         Modelica Standard Library, because <b>many new libraries</b> and components
@@ -25554,13 +25554,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //          blue to dark blue in order to distinguish them from electrical signals.</li>
 // </ul>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p> Added 1 new library (Electrical.MultiPhase), 17 new components,
 //         improved 3 existing components
@@ -25634,13 +25634,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 //           <td valign=\"top\">min=0 added</td></tr>
 // </table>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p> Added 55 new components. In particular, added new package
 //         <b>Thermal.HeatTransfer</b> for modeling of lumped
@@ -25840,13 +25840,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // <p><i>MultiBody.Parts.InertialSystem</i></p>
 // <p>Icon corrected.</p>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <ul>
 // <li>Several minor bugs fixed. </li>
@@ -25906,13 +25906,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // First official release of the library.
 // </p>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <p>All files in this directory (Modelica) and in all
 // subdirectories, especially all files that build package \"Modelica\" and all
@@ -26478,13 +26478,13 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // a selling fee for a (in this case physical) copy. However, mere
 // printing and shipping costs may be recovered.</p>
 // </html>
-// "}
+// ")}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"<html>
+// {info("<html>
 // 
 // <dl>
 // <dt>The Modelica Standard Library (this Modelica package)
@@ -26801,6 +26801,6 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </tr>
 // </table>
 // </html>
-// "}
+// ")}
 // ""
 // endResult
