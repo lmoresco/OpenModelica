@@ -28,6 +28,14 @@ checkModel(FinalPropagation); getErrorString();
 // Variables (0)
 // =========
 // 
+// 
+// Equations (0)
+// =========
+// 
+// NoMatching
+// 
+// BackendDAEType: simulation
+// 
 // Known Variables (constants) (1)
 // =============================
 // 1:  r.b:PARAM(final = true )  = 1.0 FinalPropagation, .FinalPropagation.R, .Real type: Real (final = true )  indx = -1
@@ -38,9 +46,6 @@ checkModel(FinalPropagation); getErrorString();
 // AliasVariables: 0
 // ===============
 // 
-// 
-// Equations (0)
-// =========
 // Simple Equations (0)
 // =========
 // Initial Equations (0)
