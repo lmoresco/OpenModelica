@@ -42,7 +42,7 @@ val(y,1.0);
 // true
 // record SimulationResult
 //     resultFile = "ArrayEqn_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'ArrayEqn', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'ArrayEqn', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 2.0
@@ -70,13 +70,12 @@ val(y,1.0);
 // 0.0407647476693822
 // 0.0183165961085654
 // record SimulationResult
-//     resultFile = "",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 10, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'ArrayEqn1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
-//     messages = "Simulation execution failed for model: ArrayEqn1
-// "
+//     resultFile = "ArrayEqn1_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 10, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'ArrayEqn1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = ""
 // end SimulationResult;
 // 2.0
-// 0.0366331922171307
-// 0.0183165961085654
-// 0.0183165961085654
+// 0.0366321900434306
+// 0.0183160950217153
+// 0.0183160950217153
 // endResult
