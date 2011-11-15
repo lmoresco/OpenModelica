@@ -154,6 +154,7 @@ ConnectorIllegal3.mo \
 ConnectorIllegal4.mo \
 ConnectorInheritance1.mo \
 ConnectorSimple.mo \
+ConnectTheSameConnector.mo \
 ConnectTypes.mo \
 Constant10.mo \
 Constant11.mo \
