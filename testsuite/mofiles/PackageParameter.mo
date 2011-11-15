@@ -1,6 +1,6 @@
 // name: PackageParameter
 // keywords: package
-// status: correct
+// status: incorrect
 //
 // Tests to make sure that a parameter cannot be used as modifier
 // 
