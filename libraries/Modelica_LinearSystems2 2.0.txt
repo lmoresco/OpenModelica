@@ -3,3 +3,8 @@ https://modelica.org/libraries/Modelica_LinearSystems2
 
 Changes made to release version fixes the following:
   [Modelica_LinearSystems2 2.0/ZerosAndPoles.mo:2063:7-2063:22:writable] Error: Qualified import name Modelica already exists in this scope.
+
+  [Modelica_LinearSystems2 2.0/Utilities.mo:880:9-883:33]	Error: connect(phi, phi) connects the same connector instance! The connect equation will be ignored.
+  [Modelica_LinearSystems2 2.0/Examples/Utilities/DoublePendulum.mo:266:3-269:27]	Error: connect(phi, phi) connects the same connector instance! The connect equation will be ignored.
+  [Modelica_LinearSystems2 2.0/Controller/Examples/Components/DoublePendulum.mo:267:3-270:27]	Error: connect(phi, phi) connects the same connector instance! The connect equation will be ignored.
+
