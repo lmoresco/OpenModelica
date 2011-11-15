@@ -18,10 +18,10 @@ val(slidingMass1.s,3.9540);
 // true
 // record SimulationResult
 //     resultFile = "Inittest_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 50, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Inittest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 50, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'Inittest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 0.0
-// 0.0149938838637135
-// 0.014951376127624
+// 0.0149941075069808
+// 0.0149513904961226
 // endResult

@@ -11,9 +11,20 @@ val(y,0.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "PartialFn13_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'PartialFn13', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
-//     messages = ""
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'PartialFn13', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = "Simulation failed for model: PartialFn13
+// Error: Error building simulator. Buildlog: \\tools\\MinGW\\bin\\mingw32-make[3]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/meta'
+// gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o PartialFn13.o PartialFn13.c
+// In file included from PartialFn13.c:10:
+// PartialFn13_functions.c: In function '_CallerFn__FullFn':
+// PartialFn13_functions.c:39: error: '_inPartFn' undeclared (first use in this function)
+// PartialFn13_functions.c:39: error: (Each undeclared identifier is reported only once
+// PartialFn13_functions.c:39: error: for each function it appears in.)
+// \\tools\\MinGW\\bin\\mingw32-make[3]: *** [PartialFn13.o] Error 1
+// \\tools\\MinGW\\bin\\mingw32-make[3]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/meta'
+// 
+// "
 // end SimulationResult;
-// 4.5
+// 
 // endResult

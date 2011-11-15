@@ -495,6 +495,7 @@ Overwriting3.mo \
 Overwriting4.mo \
 PackageComponents.mo \
 PackageIllegal.mo \
+PackageParameter.mo \
 package-s-1.mo \
 packages1.mo \
 packages2.mo \

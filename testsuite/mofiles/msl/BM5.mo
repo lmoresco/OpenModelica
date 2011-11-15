@@ -1109,17 +1109,17 @@ end BM5;
 // 
 // class BM5
 //   parameter Integer asin1.n = 1 "Number of inputs (= number of outputs)";
+//   protected Real asin1.u[1] = asin1.inPort.signal[1] "Input signals";
 //   parameter Integer asin1.inPort.n = asin1.n "Dimension of signal vector";
 //   input Real asin1.inPort.signal[1] "Real input signals";
 //   parameter Integer asin1.outPort.n = asin1.n "Dimension of signal vector";
 //   output Real asin1.outPort.signal[1] "Real output signals";
 //   output Real asin1.y[1] "Output signals";
-//   protected Real asin1.u[1] = asin1.inPort.signal[1] "Input signals";
+//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 //   parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 //   parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 //   output Real constant1.outPort.signal[1] "Real output signals";
 //   output Real constant1.y[1];
-//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   asin1.y[1] = asin(asin1.u[1]);
 //   asin1.y[1] = asin1.outPort.signal[1];

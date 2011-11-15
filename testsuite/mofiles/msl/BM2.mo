@@ -1112,17 +1112,17 @@ end BM2;
 // 
 // class BM2
 //   parameter Integer acos1.n = 1 "Number of inputs (= number of outputs)";
+//   protected Real acos1.u[1] = acos1.inPort.signal[1] "Input signals";
 //   parameter Integer acos1.inPort.n = acos1.n "Dimension of signal vector";
 //   input Real acos1.inPort.signal[1] "Real input signals";
 //   parameter Integer acos1.outPort.n = acos1.n "Dimension of signal vector";
 //   output Real acos1.outPort.signal[1] "Real output signals";
 //   output Real acos1.y[1] "Output signals";
-//   protected Real acos1.u[1] = acos1.inPort.signal[1] "Input signals";
+//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 //   parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 //   parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 //   output Real constant1.outPort.signal[1] "Real output signals";
 //   output Real constant1.y[1];
-//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   acos1.y[1] = acos(acos1.u[1]);
 //   acos1.y[1] = acos1.outPort.signal[1];

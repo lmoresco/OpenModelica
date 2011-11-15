@@ -19,7 +19,7 @@ simulate(ExtObjStringParam2, startTime=0.0, stopTime=1.0, numberOfIntervals=2, t
 // ""
 // record SimulationResult
 //     resultFile = "ExtObjStringParam_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'ExtObjStringParam', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'ExtObjStringParam', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = "constructors says 'sampledata.xml'
 // constructors says 'sampledata.xml'
 // constructors says 'sampledata.xml'
@@ -224,7 +224,7 @@ simulate(ExtObjStringParam2, startTime=0.0, stopTime=1.0, numberOfIntervals=2, t
 // end SimulationResult;
 // record SimulationResult
 //     resultFile = "ExtObjStringParam2_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'ExtObjStringParam2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'ExtObjStringParam2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = "constructors says 'sampledata.xml'
 // destructor says 'sampledata.xml'
 // "

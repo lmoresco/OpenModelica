@@ -37,18 +37,18 @@ end Cat1;
 // class Cat1
 //   parameter Integer n(min = 1) = 2;
 //   parameter enumeration(divisionType1, divisionType2) myDivision = MyType.divisionType1;
-//   parameter Real x[1] = aDivisions[1];
-//   parameter Real x[2] = aDivisions[2];
-//   parameter Real y[1] = bDivisions[1];
-//   parameter Real y[2] = bDivisions[2];
-//   Real z[1];
-//   Real z[2];
 //   parameter Real a;
 //   parameter Real b;
+//   Real z[1];
+//   Real z[2];
 //   final parameter Real aDivisions[1] = a / Real(n);
 //   final parameter Real aDivisions[2] = a / Real(n);
 //   final parameter Real bDivisions[1] = if myDivision == MyType.divisionType1 then b / (Real(n + -1) * 2.0) else b / Real(n);
 //   final parameter Real bDivisions[2] = if myDivision == MyType.divisionType1 then b / (Real(n + -1) * 2.0) else b / Real(n);
+//   parameter Real x[1] = aDivisions[1];
+//   parameter Real x[2] = aDivisions[2];
+//   parameter Real y[1] = bDivisions[1];
+//   parameter Real y[2] = bDivisions[2];
 // equation
 //   z[1] = x[1] * y[1];
 //   z[2] = x[2] * y[2];

@@ -87,7 +87,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Internal.Lines); getErrorStr
 // 
 // function Modelica.Math.Vectors.normalize \"Inline before index reduction\" \"Return normalized vector such that length = 1Return normalized vector such that length = 1 and prevent zero-division for zero vector\"
 //   input Real[:] v \"Vector\";
-//   input Real eps = 1e-13 \"if |v| < eps then result = v/eps\";
+//   input Real eps = 1e-013 \"if |v| < eps then result = v/eps\";
 //   output Real[size(v,1)] result \"Input vector v normalized to length=1\";
 // algorithm
 //   result := if Modelica.Math.Vectors.length(v) >= eps then v / Modelica.Math.Vectors.length(v) else v / eps;
@@ -189,15 +189,15 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Internal.Lines); getErrorStr
 //   input Real color[3] = 0.0 \"Color of shape\";
 //   input Real specularCoefficient = 0.7 \"Reflection of ambient light (= 0: light is completely absorbed)\";
 //   protected Real abs_n_x(unit = \"1\") = Modelica.Math.Vectors.length({lengthDirection[1],lengthDirection[2],lengthDirection[3]});
-//   protected Real e_x[1](unit = \"1\") = if noEvent(abs_n_x < 1e-10) then 1.0 else lengthDirection[1] / abs_n_x;
-//   protected Real e_x[2](unit = \"1\") = if noEvent(abs_n_x < 1e-10) then 0.0 else lengthDirection[2] / abs_n_x;
-//   protected Real e_x[3](unit = \"1\") = if noEvent(abs_n_x < 1e-10) then 0.0 else lengthDirection[3] / abs_n_x;
+//   protected Real e_x[1](unit = \"1\") = if noEvent(abs_n_x < 1e-010) then 1.0 else lengthDirection[1] / abs_n_x;
+//   protected Real e_x[2](unit = \"1\") = if noEvent(abs_n_x < 1e-010) then 0.0 else lengthDirection[2] / abs_n_x;
+//   protected Real e_x[3](unit = \"1\") = if noEvent(abs_n_x < 1e-010) then 0.0 else lengthDirection[3] / abs_n_x;
 //   protected Real n_z_aux[1](unit = \"1\") = e_x[2] * widthDirection[3] - e_x[3] * widthDirection[2];
 //   protected Real n_z_aux[2](unit = \"1\") = e_x[3] * widthDirection[1] - e_x[1] * widthDirection[3];
 //   protected Real n_z_aux[3](unit = \"1\") = e_x[1] * widthDirection[2] - e_x[2] * widthDirection[1];
-//   protected Real e_y[1](unit = \"1\") = cross(Modelica.Math.Vectors.normalize(cross({e_x[1],e_x[2],e_x[3]},if noEvent(n_z_aux[1] ^ 2.0 + (n_z_aux[2] ^ 2.0 + n_z_aux[3] ^ 2.0) > 1e-06) then {widthDirection[1],widthDirection[2],widthDirection[3]} else if noEvent(abs(e_x[1]) > 1e-06) then {0.0,1.0,0.0} else {1.0,0.0,0.0}),1e-13),{e_x[1],e_x[2],e_x[3]})[1];
-//   protected Real e_y[2](unit = \"1\") = cross(Modelica.Math.Vectors.normalize(cross({e_x[1],e_x[2],e_x[3]},if noEvent(n_z_aux[1] ^ 2.0 + (n_z_aux[2] ^ 2.0 + n_z_aux[3] ^ 2.0) > 1e-06) then {widthDirection[1],widthDirection[2],widthDirection[3]} else if noEvent(abs(e_x[1]) > 1e-06) then {0.0,1.0,0.0} else {1.0,0.0,0.0}),1e-13),{e_x[1],e_x[2],e_x[3]})[2];
-//   protected Real e_y[3](unit = \"1\") = cross(Modelica.Math.Vectors.normalize(cross({e_x[1],e_x[2],e_x[3]},if noEvent(n_z_aux[1] ^ 2.0 + (n_z_aux[2] ^ 2.0 + n_z_aux[3] ^ 2.0) > 1e-06) then {widthDirection[1],widthDirection[2],widthDirection[3]} else if noEvent(abs(e_x[1]) > 1e-06) then {0.0,1.0,0.0} else {1.0,0.0,0.0}),1e-13),{e_x[1],e_x[2],e_x[3]})[3];
+//   protected Real e_y[1](unit = \"1\") = cross(Modelica.Math.Vectors.normalize(cross({e_x[1],e_x[2],e_x[3]},if noEvent(n_z_aux[1] ^ 2.0 + (n_z_aux[2] ^ 2.0 + n_z_aux[3] ^ 2.0) > 1e-006) then {widthDirection[1],widthDirection[2],widthDirection[3]} else if noEvent(abs(e_x[1]) > 1e-006) then {0.0,1.0,0.0} else {1.0,0.0,0.0}),1e-013),{e_x[1],e_x[2],e_x[3]})[1];
+//   protected Real e_y[2](unit = \"1\") = cross(Modelica.Math.Vectors.normalize(cross({e_x[1],e_x[2],e_x[3]},if noEvent(n_z_aux[1] ^ 2.0 + (n_z_aux[2] ^ 2.0 + n_z_aux[3] ^ 2.0) > 1e-006) then {widthDirection[1],widthDirection[2],widthDirection[3]} else if noEvent(abs(e_x[1]) > 1e-006) then {0.0,1.0,0.0} else {1.0,0.0,0.0}),1e-013),{e_x[1],e_x[2],e_x[3]})[2];
+//   protected Real e_y[3](unit = \"1\") = cross(Modelica.Math.Vectors.normalize(cross({e_x[1],e_x[2],e_x[3]},if noEvent(n_z_aux[1] ^ 2.0 + (n_z_aux[2] ^ 2.0 + n_z_aux[3] ^ 2.0) > 1e-006) then {widthDirection[1],widthDirection[2],widthDirection[3]} else if noEvent(abs(e_x[1]) > 1e-006) then {0.0,1.0,0.0} else {1.0,0.0,0.0}),1e-013),{e_x[1],e_x[2],e_x[3]})[3];
 //   protected output Real Form;
 //   output Real rxvisobj[1](unit = \"1\") \"x-axis unit vector of shape, resolved in world frame\";
 //   output Real rxvisobj[2](unit = \"1\") \"x-axis unit vector of shape, resolved in world frame\";
@@ -214,7 +214,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Internal.Lines); getErrorStr
 //   protected output Real Material;
 //   protected output Real Extra;
 // equation
-//   Form = 9.87e+25 + 1e+20 * Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape(shapeType);
+//   Form = 9.87e+025 + 1e+020 * Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape(shapeType);
 //   rxvisobj[1] = R.T[1,1] * e_x[1] + R.T[2,1] * e_x[2] + R.T[3,1] * e_x[3];
 //   rxvisobj[2] = R.T[1,2] * e_x[1] + R.T[2,2] * e_x[2] + R.T[3,2] * e_x[3];
 //   rxvisobj[3] = R.T[1,3] * e_x[1] + R.T[2,3] * e_x[2] + R.T[3,3] * e_x[3];

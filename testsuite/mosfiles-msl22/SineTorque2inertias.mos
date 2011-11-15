@@ -21,9 +21,9 @@ val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SpringInertia.SineTorque2intertias_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SpringInertia.SineTorque2intertias', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SpringInertia.SineTorque2intertias', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,0.87280975845674,1.34118173225308,1.49818546059564,1.59305678728729,1.69291084059908}
-// {0.0,0.235048643447699,1.02347710642579,1.96388645263398,2.45095924286316,2.2711460931265}
+// {0.0,0.872813182470284,1.34117895456351,1.49817801202152,1.59305765754764,1.69291714304226}
+// {0.0,0.235042665160893,1.02348250981602,1.96389965640531,2.45095789191673,2.27113586055016}
 // endResult

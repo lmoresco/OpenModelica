@@ -26,8 +26,8 @@ end Redeclare1;
 
 // Result:
 // class Redeclare1
-// Real m.a.x = 17.0;
-// Real m.a.z;
+//   Real m.a.x = 17.0;
+//   Real m.a.z;
 // equation
 //   m.a.z = m.a.x;
 // end Redeclare1;

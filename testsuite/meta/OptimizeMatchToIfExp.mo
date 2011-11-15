@@ -39,7 +39,7 @@ end OptimizeMatchToIfExp;
 
 // Result:
 // class OptimizeMatchToIfExp
-//   Boolean b1 =  not time > 0.0;
+//   Boolean b1 = not time > 0.0;
 //   Boolean b2 = false;
 //   Boolean b3 = if time > 0.0 then false else time > 3.0;
 // end OptimizeMatchToIfExp;

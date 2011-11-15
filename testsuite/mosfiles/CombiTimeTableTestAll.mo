@@ -8230,7 +8230,7 @@ assert(yMax >= yMin, "PID: Limits must be consistent");
         y=a*time + b;
       end TimeTable;
       model CombiTimeTable "Table look-up with respect to time and linear/perodic extrapolation methods (data from matrix/file)"
-              parameter Boolean tableOnFile=false "true, if table is defined on file or in function usertab" annotation(Dialog(group="table data definition"));
+        parameter Boolean tableOnFile=false "true, if table is defined on file or in function usertab" annotation(Dialog(group="table data definition"));
         parameter Real table[:,:]=fill(0.0, 0, 2) "table matrix (time = first column)" annotation(Dialog(group="table data definition",enable=not tableOnFile));
         parameter String tableName="NoName" "table name on file or in function usertab (see docu)" annotation(Dialog(group="table data definition",enable=tableOnFile));
         parameter String fileName="NoName" "file where matrix is stored" annotation(Dialog(group="table data definition",enable=tableOnFile));
@@ -8246,7 +8246,7 @@ assert(yMax >= yMin, "PID: Limits must be consistent");
         final parameter Real p_offset[nout]=if size(offset, 1) == 1 then ones(nout)*offset[1] else offset;
         final parameter Integer tableID=tableTimeInit(0.0, startTime, smoothness, extrapolation, if not tableOnFile then "NoName" else tableName, if not tableOnFile then "NoName" else fileName, table, 0);
         function tableTimeInit
-                  input Real timeIn;
+          input Real timeIn;
           input Real startTime;
           input Integer ipoType;
           input Integer expoType;
@@ -8256,30 +8256,30 @@ assert(yMax >= yMin, "PID: Limits must be consistent");
           input Integer colWise;
           output Integer tableID;
 
-          external "C" tableID=omcTableTimeIni(timeIn,startTime,ipoType,expoType,tableName,fileName,table,size(table, 1),size(table, 2),colWise) ;
-
+          external "C" tableID=omcTableTimeIni(timeIn,startTime,ipoType,expoType,tableName,fileName,table,size(table, 1),size(table, 2),colWise);
         end tableTimeInit;
+        
         function tableTimeIpo
-                  input Integer tableID;
+          input Integer tableID;
           input Integer icol;
           input Real timeIn;
           output Real value;
 
-          external "C" value=omcTableTimeIpo(tableID,icol,timeIn) ;
+          external "C" value=omcTableTimeIpo(tableID,icol,timeIn);
 
         end tableTimeIpo;
         function tableTimeTmin
-                  input Integer tableID;
+          input Integer tableID;
           output Real Tmin "minimum time value in table";
 
-          external "C" Tmin=omcTableTimeTmin(tableID) ;
+          external "C" Tmin=omcTableTimeTmin(tableID);
 
         end tableTimeTmin;
         function tableTimeTmax
-                  input Integer tableID;
+          input Integer tableID;
           output Real Tmax "maximum time value in table";
 
-          external "C" Tmax=omcTableTimeTmax(tableID) ;
+          external "C" Tmax=omcTableTimeTmax(tableID);
 
         end tableTimeTmax;
         annotation(Documentation(info="<HTML>
@@ -19057,7 +19057,7 @@ assert(L >= 0, "Inductance L_ (= " + String(L) + ") has to be >= 0!");
     constant Real eps=1e-15 "Biggest number such that 1.0 + eps = 1.0";
     constant Real small=1e-60 "Smallest number such that small and -small are representable on the machine";
     constant Real inf=1e+60 "Biggest Real number such that inf and -inf are representable on the machine";
-    constant Integer Integer_inf=-1073741824 "Biggest Integer number such that Integer_inf and -Integer_inf are representable on the machine";
+    constant Integer Integer_inf=-1073741823 "Biggest Integer number such that Integer_inf and -Integer_inf are representable on the machine";
     constant SI.Velocity c=299792458 "Speed of light in vacuum";
     constant SI.Acceleration g_n=9.80665 "Standard acceleration of gravity on earth";
     constant Real G(final unit="m3/(kg.s2)")=6.6742e-11 "Newtonian constant of gravitation";

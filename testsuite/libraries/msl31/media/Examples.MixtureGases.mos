@@ -39,7 +39,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real x \"Abszissa value\";
 //   input Real y1 \"Ordinate value for x > 0\";
 //   input Real y2 \"Ordinate value for x < 0\";
-//   input Real x_small(min = 0.0) = 1e-05 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
+//   input Real x_small(min = 0.0) = 1e-005 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
 //   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
 // algorithm
 //   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
@@ -54,20 +54,20 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.dynamicViscosity \"Return mixture dynamic viscosity\"
 //   input Modelica.Media.Examples.MixtureGases.Medium1.ThermodynamicState state \"thermodynamic state record\";
-//   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosity\";
-//   protected Real[2] etaX(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"component dynamic viscosities\";
+//   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosity\";
+//   protected Real[2] etaX(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"component dynamic viscosities\";
 // algorithm
 //   for i in 1:2 loop
-//     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,126.2[],0.0280134[],9.01e-05[],0.037[],0.0[],0.0);
+//     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,126.2[],0.0280134[],9.01e-005[],0.037[],0.0[],0.0);
 //   end for;
 //   eta := Modelica.Media.Examples.MixtureGases.Medium1.gasMixtureViscosity(Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions({state.X[1],state.X[2]},{0.0280134,0.0280134}),{0.0280134,0.0280134},{etaX[1],etaX[2]});
 // end Modelica.Media.Examples.MixtureGases.Medium1.dynamicViscosity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.gasMixtureViscosity \"Return viscosities of gas mixtures at low pressures (Wilke method)\"
-//   input Real[:] yi(quantity = \"MoleFraction\", unit = \"mol/mol\", min = 0, max = 1, nominal = 0.1) \"Mole fractions\";
+//   input Real[:] yi(quantity = \"MoleFraction\", unit = \"mol/mol\", min = 0.0, max = 1.0, nominal = 0.1) \"Mole fractions\";
 //   input Real[:] M(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Mole masses\";
-//   input Real[:] eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Pure component viscosities\";
-//   output Real etam(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Viscosity of the mixture\";
+//   input Real[:] eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Pure component viscosities\";
+//   output Real etam(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Viscosity of the mixture\";
 //   protected Real[size(yi,1), size(yi,1)] fi;
 // algorithm
 //   for i in 1:size(eta,1) loop
@@ -87,8 +87,8 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // end Modelica.Media.Examples.MixtureGases.Medium1.gasMixtureViscosity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.h_TX \"Return specific enthalpy\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {0.768,0.232} \"Independent Mass fractions of gas mixture\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.768,0.232} \"Independent Mass fractions of gas mixture\";
 //   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
 //   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
@@ -98,17 +98,17 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // end Modelica.Media.Examples.MixtureGases.Medium1.h_TX;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.lowPressureThermalConductivity \"Return thermal conductivites of low-pressure gas mixtures (Mason and Saxena Modification)\"
-//   input Real[:] y(quantity = \"MoleFraction\", unit = \"mol/mol\", min = 0, max = 1, nominal = 0.1) \"Mole fraction of the components in the gass mixture\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] Tc(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Critical temperatures\";
-//   input Real[:] Pc(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Critical pressures\";
+//   input Real[:] y(quantity = \"MoleFraction\", unit = \"mol/mol\", min = 0.0, max = 1.0, nominal = 0.1) \"Mole fraction of the components in the gass mixture\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] Tc(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Critical temperatures\";
+//   input Real[:] Pc(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Critical pressures\";
 //   input Real[:] M(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molecular weights\";
-//   input Real[:] lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) \"Thermal conductivities of the pure gases\";
-//   output Real lambdam(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) \"Thermal conductivity of the gas mixture\";
+//   input Real[:] lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivities of the pure gases\";
+//   output Real lambdam(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivity of the gas mixture\";
+//   protected constant Real epsilon = 1.0 \"Numerical constant near unity\";
 //   protected Real[size(y,1)] gamma(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032);
 //   protected Real[size(y,1)] Tr \"Reduced temperature\";
 //   protected Real[size(y,1), size(y,1)] A \"Mason and Saxena Modification\";
-//   protected constant Real epsilon = 1.0 \"Numerical constant near unity\";
 // algorithm
 //   for i in 1:size(y,1) loop
 //     gamma[i] := 210.0 * Tc[i] ^ 0.166666666666667 * M[i] ^ 0.5 * Pc[i] ^ -0.666666666666667;
@@ -124,10 +124,10 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions \"Return mole fractions from mass fractions X\"
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"1\") \"Mass fractions of mixture\";
-//   input Real[:] MMX(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0) \"molar masses of components\";
+//   input Real[:] MMX(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar masses of components\";
 //   output Real[size(X,1)] moleFractions(quantity = \"MoleFraction\", unit = \"1\") \"Mole fractions of gas mixture\";
+//   protected Real Mmix(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar mass of mixture\";
 //   protected Real[size(X,1)] invMMX \"inverses of molar weights\";
-//   protected Real Mmix(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0) \"molar mass of mixture\";
 // algorithm
 //   for i in 1:size(X,1) loop
 //     invMMX[i] := 1.0 / MMX[i];
@@ -147,23 +147,23 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
 //   input Modelica.Media.Examples.MixtureGases.Medium1.ThermodynamicState state \"thermodynamic state record\";
-//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
+//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
 // algorithm
 //   cp := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[1],state.T) * state.X[1] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[2],state.T) * state.X[2];
 // end Modelica.Media.Examples.MixtureGases.Medium1.specificHeatCapacityCp;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.thermalConductivity \"Return thermal conductivity for low pressure gas mixtures\"
 //   input Modelica.Media.Examples.MixtureGases.Medium1.ThermodynamicState state \"thermodynamic state record\";
-//   output Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) \"Thermal conductivity\";
+//   output Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivity\";
 //   input Integer method = 1 \"method to compute single component thermal conductivity\";
-//   protected Real[2] lambdaX(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) \"component thermal conductivities\";
-//   protected Real[2] eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"component thermal dynamic viscosities\";
-//   protected Real[2] cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"component heat capacity\";
+//   protected Real[2] lambdaX(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"component thermal conductivities\";
+//   protected Real[2] eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"component thermal dynamic viscosities\";
+//   protected Real[2] cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"component heat capacity\";
 // algorithm
 //   for i in 1:2 loop
 //     assert( true[], \"Critical data for \" + \"N2\"[] + \" not known. Can not compute thermal conductivity.\");
-//     eta[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,126.2[],0.0280134[],9.01e-05[],0.037[],0.0[],0.0);
-//     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T({Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-05,-9.62579362e-09,2.519705809e-12},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-07,-1.923105485e-11,1.061954386e-15},{12832.10415,-15.86640027},296.803386950531),Modelica.Media.IdealGases.Common.DataRecord(\"O2\",0.0319988,0.0,271263.422378339,1000.0,{-34255.6342,484.700097,1.119010961,0.00429388924,-6.83630052e-07,-2.0233727e-09,1.039040018e-12},{-3391.45487,18.4969947},{-1037939.022,2344.830282,1.819732036,0.001267847582,-2.188067988e-07,2.053719572e-11,-8.19346705e-16},{-16890.10929,17.38716506},259.836993887271)}[i],state.T);
+//     eta[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,126.2[],0.0280134[],9.01e-005[],0.037[],0.0[],0.0);
+//     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T({Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),Modelica.Media.IdealGases.Common.DataRecord(\"O2\",0.0319988,0.0,271263.422378339,1000.0,{-34255.6342,484.700097,1.119010961,0.00429388924,-6.83630052e-007,-2.0233727e-009,1.039040018e-012},{-3391.45487,18.4969947},{-1037939.022,2344.830282,1.819732036,0.001267847582,-2.188067988e-007,2.053719572e-011,-8.19346705e-016},{-16890.10929,17.38716506},259.836993887271)}[i],state.T);
 //     lambdaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate(cp[i],eta[i],method);
 //   end for;
 //   lambda := Modelica.Media.Examples.MixtureGases.Medium1.lowPressureThermalConductivity(Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions({state.X[1],state.X[2]},{0.0280134,0.0280134}),state.T,{126.2,126.2},{3398000.0,3398000.0},{0.0280134,0.0280134},{lambdaX[1],lambdaX[2]});
@@ -178,20 +178,20 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.dynamicViscosity \"Return mixture dynamic viscosity\"
 //   input Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState state \"thermodynamic state record\";
-//   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosity\";
-//   protected Real[6] etaX(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"component dynamic viscosities\";
+//   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosity\";
+//   protected Real[6] etaX(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"component dynamic viscosities\";
 // algorithm
 //   for i in 1:6 loop
-//     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,190.56[],0.01604246[],9.86e-05[],0.011[],0.0[],0.0);
+//     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,190.56[],0.01604246[],9.86e-005[],0.011[],0.0[],0.0);
 //   end for;
 //   eta := Modelica.Media.Examples.MixtureGases.Medium2.gasMixtureViscosity(Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions({state.X[1],state.X[2],state.X[3],state.X[4],state.X[5],state.X[6]},{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246}),{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246},{etaX[1],etaX[2],etaX[3],etaX[4],etaX[5],etaX[6]});
 // end Modelica.Media.Examples.MixtureGases.Medium2.dynamicViscosity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.gasMixtureViscosity \"Return viscosities of gas mixtures at low pressures (Wilke method)\"
-//   input Real[:] yi(quantity = \"MoleFraction\", unit = \"mol/mol\", min = 0, max = 1, nominal = 0.1) \"Mole fractions\";
+//   input Real[:] yi(quantity = \"MoleFraction\", unit = \"mol/mol\", min = 0.0, max = 1.0, nominal = 0.1) \"Mole fractions\";
 //   input Real[:] M(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Mole masses\";
-//   input Real[:] eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Pure component viscosities\";
-//   output Real etam(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Viscosity of the mixture\";
+//   input Real[:] eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Pure component viscosities\";
+//   output Real etam(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Viscosity of the mixture\";
 //   protected Real[size(yi,1), size(yi,1)] fi;
 // algorithm
 //   for i in 1:size(eta,1) loop
@@ -211,8 +211,8 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // end Modelica.Media.Examples.MixtureGases.Medium2.gasMixtureViscosity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.h_TX \"Return specific enthalpy\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {0.92,0.048,0.005,0.002,0.015,0.01} \"Independent Mass fractions of gas mixture\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.92,0.048,0.005,0.002,0.015,0.01} \"Independent Mass fractions of gas mixture\";
 //   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
 //   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
@@ -222,17 +222,17 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // end Modelica.Media.Examples.MixtureGases.Medium2.h_TX;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.lowPressureThermalConductivity \"Return thermal conductivites of low-pressure gas mixtures (Mason and Saxena Modification)\"
-//   input Real[:] y(quantity = \"MoleFraction\", unit = \"mol/mol\", min = 0, max = 1, nominal = 0.1) \"Mole fraction of the components in the gass mixture\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] Tc(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Critical temperatures\";
-//   input Real[:] Pc(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Critical pressures\";
+//   input Real[:] y(quantity = \"MoleFraction\", unit = \"mol/mol\", min = 0.0, max = 1.0, nominal = 0.1) \"Mole fraction of the components in the gass mixture\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] Tc(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Critical temperatures\";
+//   input Real[:] Pc(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Critical pressures\";
 //   input Real[:] M(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molecular weights\";
-//   input Real[:] lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) \"Thermal conductivities of the pure gases\";
-//   output Real lambdam(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) \"Thermal conductivity of the gas mixture\";
+//   input Real[:] lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivities of the pure gases\";
+//   output Real lambdam(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivity of the gas mixture\";
+//   protected constant Real epsilon = 1.0 \"Numerical constant near unity\";
 //   protected Real[size(y,1)] gamma(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032);
 //   protected Real[size(y,1)] Tr \"Reduced temperature\";
 //   protected Real[size(y,1), size(y,1)] A \"Mason and Saxena Modification\";
-//   protected constant Real epsilon = 1.0 \"Numerical constant near unity\";
 // algorithm
 //   for i in 1:size(y,1) loop
 //     gamma[i] := 210.0 * Tc[i] ^ 0.166666666666667 * M[i] ^ 0.5 * Pc[i] ^ -0.666666666666667;
@@ -248,10 +248,10 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions \"Return mole fractions from mass fractions X\"
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"1\") \"Mass fractions of mixture\";
-//   input Real[:] MMX(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0) \"molar masses of components\";
+//   input Real[:] MMX(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar masses of components\";
 //   output Real[size(X,1)] moleFractions(quantity = \"MoleFraction\", unit = \"1\") \"Mole fractions of gas mixture\";
+//   protected Real Mmix(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar mass of mixture\";
 //   protected Real[size(X,1)] invMMX \"inverses of molar weights\";
-//   protected Real Mmix(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0) \"molar mass of mixture\";
 // algorithm
 //   for i in 1:size(X,1) loop
 //     invMMX[i] := 1.0 / MMX[i];
@@ -280,9 +280,9 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // end Modelica.Media.Examples.MixtureGases.Medium2.setSmoothState;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.setState_pTX \"Return thermodynamic state as function of p, T and composition X\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {0.92,0.048,0.005,0.002,0.015,0.01} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.92,0.048,0.005,0.002,0.015,0.01} \"Mass fractions\";
 //   output Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState state;
 // algorithm
 //   state := if size(X,1) == 6 then Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState(p,T,X) else Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState(p,T,cat(1,X,{1.0 - sum(X)}));
@@ -290,23 +290,23 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
 //   input Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState state \"thermodynamic state record\";
-//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
+//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
 // algorithm
 //   cp := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[1],state.T) * state.X[1] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[2],state.T) * state.X[2] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[3],state.T) * state.X[3] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[4],state.T) * state.X[4] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[5],state.T) * state.X[5] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[6],state.T) * state.X[6];
 // end Modelica.Media.Examples.MixtureGases.Medium2.specificHeatCapacityCp;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.thermalConductivity \"Return thermal conductivity for low pressure gas mixtures\"
 //   input Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState state \"thermodynamic state record\";
-//   output Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) \"Thermal conductivity\";
+//   output Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivity\";
 //   input Integer method = 1 \"method to compute single component thermal conductivity\";
-//   protected Real[6] lambdaX(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) \"component thermal conductivities\";
-//   protected Real[6] eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"component thermal dynamic viscosities\";
-//   protected Real[6] cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"component heat capacity\";
+//   protected Real[6] lambdaX(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"component thermal conductivities\";
+//   protected Real[6] eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"component thermal dynamic viscosities\";
+//   protected Real[6] cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"component heat capacity\";
 // algorithm
 //   for i in 1:6 loop
 //     assert( true[], \"Critical data for \" + \"CH4\"[] + \" not known. Can not compute thermal conductivity.\");
-//     eta[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,190.56[],0.01604246[],9.86e-05[],0.011[],0.0[],0.0);
-//     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T({Modelica.Media.IdealGases.Common.DataRecord(\"CH4\",0.01604246,-4650159.63885838,624355.740952447,1000.0,{-176685.0998,2786.18102,-12.0257785,0.0391761929,-3.61905443e-05,2.026853043e-08,-4.97670549e-12},{-23313.1436,89.0432275},{3730042.76,-13835.01485,20.49107091,-0.001961974759,4.72731304e-07,-3.72881469e-11,1.623737207e-15},{75320.6691,-121.9124889},518.279116793808),Modelica.Media.IdealGases.Common.DataRecord(\"C2H6\",0.03006904,-2788633.8905399,395476.343774194,1000.0,{-186204.4161,3406.19186,-19.51705092,0.0756583559,-8.20417322e-05,5.0611358e-08,-1.319281992e-11},{-27029.3289,129.8140496},{5025782.13,-20330.22397,33.2255293,-0.00383670341,7.23840586e-07,-7.3191825e-11,3.065468699e-15},{111596.395,-203.9410584},276.512718729963),Modelica.Media.IdealGases.Common.DataRecord(\"C3H8\",0.04409562,-2373931.92339738,334301.184562095,1000.0,{-243314.4337,4656.27081,-29.39466091,0.1188952745,-0.0001376308269,8.81482391e-08,-2.342987994e-11},{-35403.3527,184.1749277},{6420731.68,-26597.91134,45.3435684,-0.00502066392,9.47121694e-07,-9.57540523e-11,4.00967288e-15},{145558.2459,-281.8374734},188.555507327032),Modelica.Media.IdealGases.Common.DataRecord(\"C4H10_n_butane\",0.0581222,-2164233.28779709,330832.022875941,1000.0,{-317587.254,6176.33182,-38.9156212,0.1584654284,-0.0001860050159,1.199676349e-07,-3.20167055e-11},{-45403.6339,237.9488665},{7682322.45,-32560.5151,57.3673275,-0.00619791681,1.180186048e-06,-1.221893698e-10,5.25063525e-15},{177452.656,-358.791876},143.051570656307),Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-05,-9.62579362e-09,2.519705809e-12},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-07,-1.923105485e-11,1.061954386e-15},{12832.10415,-15.86640027},296.803386950531),Modelica.Media.IdealGases.Common.DataRecord(\"CO2\",0.0440095,-8941478.54440518,212805.621513537,1000.0,{49436.5054,-626.411601,5.30172524,0.002503813816,-2.127308728e-07,-7.68998878e-10,2.849677801e-13},{-45281.9846,-7.04827944},{117696.2419,-1788.791477,8.29152319,-9.22315678e-05,4.86367688e-09,-1.891053312e-12,6.33003659e-16},{-39083.5059,-26.52669281},188.924482214067)}[i],state.T);
+//     eta[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,190.56[],0.01604246[],9.86e-005[],0.011[],0.0[],0.0);
+//     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T({Modelica.Media.IdealGases.Common.DataRecord(\"CH4\",0.01604246,-4650159.63885838,624355.740952447,1000.0,{-176685.0998,2786.18102,-12.0257785,0.0391761929,-3.61905443e-005,2.026853043e-008,-4.97670549e-012},{-23313.1436,89.0432275},{3730042.76,-13835.01485,20.49107091,-0.001961974759,4.72731304e-007,-3.72881469e-011,1.623737207e-015},{75320.6691,-121.9124889},518.279116793808),Modelica.Media.IdealGases.Common.DataRecord(\"C2H6\",0.03006904,-2788633.8905399,395476.343774194,1000.0,{-186204.4161,3406.19186,-19.51705092,0.0756583559,-8.20417322e-005,5.0611358e-008,-1.319281992e-011},{-27029.3289,129.8140496},{5025782.13,-20330.22397,33.2255293,-0.00383670341,7.23840586e-007,-7.3191825e-011,3.065468699e-015},{111596.395,-203.9410584},276.512718729963),Modelica.Media.IdealGases.Common.DataRecord(\"C3H8\",0.04409562,-2373931.92339738,334301.184562095,1000.0,{-243314.4337,4656.27081,-29.39466091,0.1188952745,-0.0001376308269,8.81482391e-008,-2.342987994e-011},{-35403.3527,184.1749277},{6420731.68,-26597.91134,45.3435684,-0.00502066392,9.47121694e-007,-9.57540523e-011,4.00967288e-015},{145558.2459,-281.8374734},188.555507327032),Modelica.Media.IdealGases.Common.DataRecord(\"C4H10_n_butane\",0.0581222,-2164233.28779709,330832.022875941,1000.0,{-317587.254,6176.33182,-38.9156212,0.1584654284,-0.0001860050159,1.199676349e-007,-3.20167055e-011},{-45403.6339,237.9488665},{7682322.45,-32560.5151,57.3673275,-0.00619791681,1.180186048e-006,-1.221893698e-010,5.25063525e-015},{177452.656,-358.791876},143.051570656307),Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),Modelica.Media.IdealGases.Common.DataRecord(\"CO2\",0.0440095,-8941478.54440518,212805.621513537,1000.0,{49436.5054,-626.411601,5.30172524,0.002503813816,-2.127308728e-007,-7.68998878e-010,2.849677801e-013},{-45281.9846,-7.04827944},{117696.2419,-1788.791477,8.29152319,-9.22315678e-005,4.86367688e-009,-1.891053312e-012,6.33003659e-016},{-39083.5059,-26.52669281},188.924482214067)}[i],state.T);
 //     lambdaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate(cp[i],eta[i],method);
 //   end for;
 //   lambda := Modelica.Media.Examples.MixtureGases.Medium2.lowPressureThermalConductivity(Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions({state.X[1],state.X[2],state.X[3],state.X[4],state.X[5],state.X[6]},{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246}),state.T,{190.56,190.56,190.56,190.56,190.56,190.56},{4599000.0,4599000.0,4599000.0,4599000.0,4599000.0,4599000.0},{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246},{lambdaX[1],lambdaX[2],lambdaX[3],lambdaX[4],lambdaX[5],lambdaX[6]});
@@ -328,22 +328,22 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // 
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T \"Compute specific heat capacity at constant pressure from temperature and gas data\"
 //   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") \"Specific heat capacity at temperature T\";
 // algorithm
 //   cp := if T < data.Tlimit then data.R * T ^ -2.0 * (data.alow[1] + T * (data.alow[2] + T * (data.alow[3] + T * (data.alow[4] + T * (data.alow[5] + T * (data.alow[6] + data.alow[7] * T)))))) else data.R * T ^ -2.0 * (data.ahigh[1] + T * (data.ahigh[2] + T * (data.ahigh[3] + T * (data.ahigh[4] + T * (data.ahigh[5] + T * (data.ahigh[6] + data.ahigh[7] * T))))));
 // end Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T;
 // 
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure \"Dynamic viscosity of low pressure gases\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Gas temperature\";
-//   input Real Tc(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Critical temperature of gas\";
-//   input Real M(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0) \"Molar mass of gas\";
-//   input Real Vc(quantity = \"MolarVolume\", unit = \"m3/mol\", min = 0) \"Critical molar volume of gas\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Gas temperature\";
+//   input Real Tc(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Critical temperature of gas\";
+//   input Real M(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"Molar mass of gas\";
+//   input Real Vc(quantity = \"MolarVolume\", unit = \"m3/mol\", min = 0.0) \"Critical molar volume of gas\";
 //   input Real w \"Acentric factor of gas\";
 //   input Real mu(quantity = \"ElectricDipoleMoment\", unit = \"debye\", min = 0.0, max = 2.0) \"Dipole moment of gas molecule\";
 //   input Real k = 0.0 \"Special correction for highly polar substances\";
-//   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0) \"Dynamic viscosity of gas\";
-//   protected parameter Real Const1_SI = 1.28973494369967e-08 \"Constant in formula for eta converted to SI units\";
+//   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) \"Dynamic viscosity of gas\";
+//   protected parameter Real Const1_SI = 1.28973494369967e-008 \"Constant in formula for eta converted to SI units\";
 //   protected parameter Real Const2_SI = 0.1313 \"Constant in formula for mur converted to SI units\";
 //   protected Real mur = (Const2_SI * mu) / sqrt(Vc * Tc) \"Dimensionless dipole moment of gas molecule\";
 //   protected Real Fc = 1.0 + (-0.2756 * w + (0.059035 * mur ^ 4.0 + k)) \"Factor to account for molecular shape and polarities of gas\";
@@ -358,7 +358,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.h_T \"Compute specific enthalpy from temperature and gas data; reference is decided by the
 //     refChoice input, or by the referenceChoice package constant by default\"
 //   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
 //   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.IdealGases.Common.SingleGasNasa.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
@@ -368,17 +368,17 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // end Modelica.Media.IdealGases.Common.SingleGasNasa.h_T;
 // 
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate \"Thermal conductivity of polyatomic gases(Eucken and Modified Eucken correlation)\"
-//   input Real Cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Constant pressure heat capacity\";
-//   input Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosity\";
+//   input Real Cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Constant pressure heat capacity\";
+//   input Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosity\";
 //   input Integer method(min = 1, max = 2) = 1 \"1: Eucken Method, 2: Modified Eucken Method\";
-//   output Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) \"Thermal conductivity [W/(m.k)]\";
+//   output Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivity [W/(m.k)]\";
 // algorithm
 //   lambda := if method == 1 then eta * (Cp + 1.25 * data.R) else eta * (Cp - data.R) * (1.32 + 1.77 / (-1.0 + Cp / 8.314472));
 // end Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate;
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
-//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
 //   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
@@ -391,7 +391,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // end Modelica.SIunits.Conversions.to_bar;
 // 
 // function Modelica.SIunits.Conversions.to_degC \"Convert from Kelvin to °Celsius\"
-//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 //   output Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 // algorithm
 //   Celsius := -273.15 + Kelvin;
@@ -401,31 +401,31 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   parameter Real V(quantity = \"Volume\", unit = \"m3\") = 1.0 \"Fixed size of volume 1 and volume 2\";
 //   parameter Real m_flow_ext(quantity = \"MassFlowRate\", unit = \"kg/s\") = 0.01 \"Fixed mass flow rate in to volume 1 and in to volume 2\";
 //   parameter Real H_flow_ext(quantity = \"EnthalpyFlowRate\", unit = \"W\") = 5000.0 \"Fixed enthalpy flow rate in to volume and in to volume 2\";
-//   input Real medium1.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, start = 100000.0, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
+//   input Real medium1.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = 100000.0, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
 //   input Real medium1.Xi[1](quantity = \"MassFraction\", unit = \"1\", start = 0.768, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
 //   input Real medium1.Xi[2](quantity = \"MassFraction\", unit = \"1\", start = 0.232, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
 //   input Real medium1.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy of medium\";
-//   Real medium1.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density of medium\";
-//   Real medium1.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300.0, nominal = 300, StateSelect = StateSelect.prefer) \"Temperature of medium\";
-//   Real medium1.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.8, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium1.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.2, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium1.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density of medium\";
+//   Real medium1.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0, StateSelect = StateSelect.prefer) \"Temperature of medium\";
+//   Real medium1.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.8, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium1.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.2, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   Real medium1.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
-//   Real medium1.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real medium1.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
 //   Real medium1.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
-//   Real medium1.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
-//   Real medium1.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature of medium\";
-//   Real medium1.state.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium1.state.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium1.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real medium1.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   Real medium1.state.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium1.state.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   parameter Boolean medium1.preferredMediumStates = false \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
 //   final constant Boolean medium1.standardOrderComponents;
 //   Real medium1.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(medium1.T) \"Temperature of medium in [degC]\";
 //   Real medium1.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(medium1.p) \"Absolute pressure of medium in [bar]\";
 //   Real m1(quantity = \"CombustionAirN2O2\", start = 1.0);
 //   Real U1(quantity = \"Energy\", unit = \"J\");
-//   Real cp1(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.MixtureGases.Medium1.specificHeatCapacityCp(medium1.state);
-//   Real eta1(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Examples.MixtureGases.Medium1.dynamicViscosity(medium1.state);
-//   Real lambda1(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) = Modelica.Media.Examples.MixtureGases.Medium1.thermalConductivity(medium1.state,1);
-//   input Real medium2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, start = 100000.0, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
+//   Real cp1(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.MixtureGases.Medium1.specificHeatCapacityCp(medium1.state);
+//   Real eta1(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Examples.MixtureGases.Medium1.dynamicViscosity(medium1.state);
+//   Real lambda1(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) = Modelica.Media.Examples.MixtureGases.Medium1.thermalConductivity(medium1.state,1);
+//   input Real medium2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = 100000.0, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
 //   input Real medium2.Xi[1](quantity = \"MassFraction\", unit = \"1\", start = 0.92, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
 //   input Real medium2.Xi[2](quantity = \"MassFraction\", unit = \"1\", start = 0.048, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
 //   input Real medium2.Xi[3](quantity = \"MassFraction\", unit = \"1\", start = 0.005, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
@@ -433,50 +433,50 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real medium2.Xi[5](quantity = \"MassFraction\", unit = \"1\", start = 0.015, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
 //   input Real medium2.Xi[6](quantity = \"MassFraction\", unit = \"1\", start = 0.01, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
 //   input Real medium2.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy of medium\";
-//   Real medium2.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density of medium\";
-//   Real medium2.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300.0, nominal = 300, StateSelect = StateSelect.prefer) \"Temperature of medium\";
-//   Real medium2.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.2, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.X[5](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.2, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.X[6](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.3, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density of medium\";
+//   Real medium2.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0, StateSelect = StateSelect.prefer) \"Temperature of medium\";
+//   Real medium2.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.2, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.X[5](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.2, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.X[6](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.3, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   Real medium2.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
-//   Real medium2.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real medium2.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
 //   Real medium2.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
-//   Real medium2.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
-//   Real medium2.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature of medium\";
-//   Real medium2.state.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.state.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.state.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.state.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.state.X[5](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.state.X[6](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real medium2.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   Real medium2.state.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.state.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.state.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.state.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.state.X[5](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.state.X[6](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   parameter Boolean medium2.preferredMediumStates = false \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
 //   final constant Boolean medium2.standardOrderComponents;
 //   Real medium2.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(medium2.T) \"Temperature of medium in [degC]\";
 //   Real medium2.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(medium2.p) \"Absolute pressure of medium in [bar]\";
 //   Real m2(quantity = \"SimpleNaturalGas\", start = 1.0);
 //   Real U2(quantity = \"Energy\", unit = \"J\");
-//   Real cp2(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.MixtureGases.Medium2.specificHeatCapacityCp(medium2.state);
-//   Real eta2(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Examples.MixtureGases.Medium2.dynamicViscosity(medium2.state);
-//   Real lambda2(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0, max = 500, start = 1, nominal = 1) = Modelica.Media.Examples.MixtureGases.Medium2.thermalConductivity(medium2.state,1);
-//   Real state2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 100500.0 \"Absolute pressure of medium\";
-//   Real state2.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) = 302.0 \"Temperature of medium\";
-//   Real state2.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = 0.3 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state2.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = 0.2 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state2.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = 0.2 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state2.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = 0.1 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state2.X[5](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = 0.1 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state2.X[6](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = 0.1 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real smoothState.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
-//   Real smoothState.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature of medium\";
-//   Real smoothState.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real smoothState.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real smoothState.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real smoothState.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real smoothState.X[5](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real smoothState.X[6](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real cp2(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.MixtureGases.Medium2.specificHeatCapacityCp(medium2.state);
+//   Real eta2(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Examples.MixtureGases.Medium2.dynamicViscosity(medium2.state);
+//   Real lambda2(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) = Modelica.Media.Examples.MixtureGases.Medium2.thermalConductivity(medium2.state,1);
+//   Real state2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 100500.0 \"Absolute pressure of medium\";
+//   Real state2.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 302.0 \"Temperature of medium\";
+//   Real state2.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.3 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state2.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.2 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state2.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.2 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state2.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.1 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state2.X[5](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.1 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state2.X[6](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.1 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real smoothState.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real smoothState.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   Real smoothState.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real smoothState.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real smoothState.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real smoothState.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real smoothState.X[5](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real smoothState.X[6](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   Real m_flow_ext2;
 //   Real der_p;
 //   Real der_T;
@@ -496,9 +496,9 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   medium1.state.X[2] = medium1.X[2];
 //   medium1.Xi[1] = medium1.X[1];
 //   medium1.Xi[2] = medium1.X[2];
-//   assert(medium1.X[1] >= -1e-05 and medium1.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium1.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(medium1.X[1] >= -1e-005 and medium1.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium1.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"CombustionAirN2O2\" + \" is not in the range 0..1\");
-//   assert(medium1.X[2] >= -1e-05 and medium1.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium1.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
+//   assert(medium1.X[2] >= -1e-005 and medium1.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium1.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
 // of medium \" + \"CombustionAirN2O2\" + \" is not in the range 0..1\");
 //   assert(medium1.p >= 0.0,\"Pressure (= \" + String(medium1.p,0,true,6) + \" Pa) of medium \\\"\" + \"CombustionAirN2O2\" + \"\\\" is negative
 // (Temperature = \" + String(medium1.T,0,true,6) + \" K)\");
@@ -525,17 +525,17 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   medium2.Xi[4] = medium2.X[4];
 //   medium2.Xi[5] = medium2.X[5];
 //   medium2.Xi[6] = medium2.X[6];
-//   assert(medium2.X[1] >= -1e-05 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
+//   assert(medium2.X[1] >= -1e-005 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[2] >= -1e-05 and medium2.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium2.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
+//   assert(medium2.X[2] >= -1e-005 and medium2.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium2.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[3] >= -1e-05 and medium2.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(medium2.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
+//   assert(medium2.X[3] >= -1e-005 and medium2.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(medium2.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[4] >= -1e-05 and medium2.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(medium2.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
+//   assert(medium2.X[4] >= -1e-005 and medium2.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(medium2.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[5] >= -1e-05 and medium2.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(medium2.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(medium2.X[5] >= -1e-005 and medium2.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(medium2.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[6] >= -1e-05 and medium2.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(medium2.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
+//   assert(medium2.X[6] >= -1e-005 and medium2.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(medium2.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
 //   assert(medium2.p >= 0.0,\"Pressure (= \" + String(medium2.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleNaturalGas\" + \"\\\" is negative
 // (Temperature = \" + String(medium2.T,0,true,6) + \" K)\");

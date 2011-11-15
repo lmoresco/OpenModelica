@@ -21,9 +21,9 @@ val(load.w,0.6),val(load.w,0.8),val(load.w,1.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SystemTests.ElasticBearing_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SystemTests.ElasticBearing', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SystemTests.ElasticBearing', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,0.275863935348383,0.392417116970391,0.569744893496212,1.23073673905217,1.60127637718387}
-// {0.0,0.00744816387987757,0.0724549729835669,0.181815306391984,0.310155795658677,0.503923417370719}
+// {0.0,0.275614387812051,0.392682266538178,0.569645366892297,1.23060409387352,1.60155089165808}
+// {0.0,0.00746313803799236,0.0724390653144787,0.181821279293305,0.310163755674331,0.503906947807172}
 // endResult

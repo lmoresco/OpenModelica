@@ -38,7 +38,7 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // 
 // function Modelica.Media.Examples.TestOnly.FlueGas.Medium.density_derX \"Return density derivative by mass fraction\"
 //   input Modelica.Media.Examples.TestOnly.FlueGas.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real[4] dddX(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Derivative of density wrt mass fraction\";
+//   output Real[4] dddX(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Derivative of density wrt mass fraction\";
 // algorithm
 //   dddX := {(-Modelica.Media.Examples.TestOnly.FlueGas.Medium.molarMass(state) * state.p) / (Modelica.Media.Examples.TestOnly.FlueGas.Medium.gasConstant(state) * state.T * 0.0280134),(-Modelica.Media.Examples.TestOnly.FlueGas.Medium.molarMass(state) * state.p) / (Modelica.Media.Examples.TestOnly.FlueGas.Medium.gasConstant(state) * state.T * 0.0280134),(-Modelica.Media.Examples.TestOnly.FlueGas.Medium.molarMass(state) * state.p) / (Modelica.Media.Examples.TestOnly.FlueGas.Medium.gasConstant(state) * state.T * 0.0280134),(-Modelica.Media.Examples.TestOnly.FlueGas.Medium.molarMass(state) * state.p) / (Modelica.Media.Examples.TestOnly.FlueGas.Medium.gasConstant(state) * state.T * 0.0280134)};
 // end Modelica.Media.Examples.TestOnly.FlueGas.Medium.density_derX;
@@ -51,8 +51,8 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // end Modelica.Media.Examples.TestOnly.FlueGas.Medium.gasConstant;
 // 
 // function Modelica.Media.Examples.TestOnly.FlueGas.Medium.h_TX \"Return specific enthalpy\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {0.768,0.232,0.0,0.0} \"Independent Mass fractions of gas mixture\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.768,0.232,0.0,0.0} \"Independent Mass fractions of gas mixture\";
 //   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
 //   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
@@ -62,13 +62,13 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // end Modelica.Media.Examples.TestOnly.FlueGas.Medium.h_TX;
 // 
 // function Modelica.Media.Examples.TestOnly.FlueGas.Medium.isentropicEnthalpyApproximation \"Approximate method of calculating h_is from upstream properties and downstream pressure\"
-//   input Real p2(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"downstream pressure\";
+//   input Real p2(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"downstream pressure\";
 //   input Modelica.Media.Examples.TestOnly.FlueGas.Medium.ThermodynamicState state \"thermodynamic state at upstream location\";
 //   output Real h_is(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"isentropic enthalpy\";
 //   protected Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy at upstream location\";
 //   protected Real[4] h_component(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy at upstream location\";
-//   protected Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1, max = 500000, start = 1.2, nominal = 1.2) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.isentropicExponent(state) \"Isentropic exponent\";
-//   protected Real[4] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"complete X-vector\";
+//   protected Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1.0, max = 500000.0, start = 1.2, nominal = 1.2) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.isentropicExponent(state) \"Isentropic exponent\";
+//   protected Real[4] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"complete X-vector\";
 // algorithm
 //   X := {state.X[1],state.X[2],state.X[3],state.X[4]};
 //   h_component := {Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[1],state.T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[2],state.T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[3],state.T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[4],state.T,true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0)};
@@ -78,14 +78,14 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // 
 // function Modelica.Media.Examples.TestOnly.FlueGas.Medium.isentropicExponent \"Return isentropic exponent\"
 //   input Modelica.Media.Examples.TestOnly.FlueGas.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1, max = 500000, start = 1.2, nominal = 1.2) \"Isentropic exponent\";
+//   output Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1.0, max = 500000.0, start = 1.2, nominal = 1.2) \"Isentropic exponent\";
 // algorithm
 //   gamma := Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCp(state) / Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCv(state);
 // end Modelica.Media.Examples.TestOnly.FlueGas.Medium.isentropicExponent;
 // 
 // function Modelica.Media.Examples.TestOnly.FlueGas.Medium.isobaricExpansionCoefficient \"Return isobaric expansion coefficient beta\"
 //   input Modelica.Media.Examples.TestOnly.FlueGas.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real beta(unit = \"1/K\", min = 0, max = 100000000.0) \"Isobaric expansion coefficient\";
+//   output Real beta(unit = \"1/K\", min = 0.0, max = 100000000.0) \"Isobaric expansion coefficient\";
 // algorithm
 //   beta := 1.0 / state.T;
 // end Modelica.Media.Examples.TestOnly.FlueGas.Medium.isobaricExpansionCoefficient;
@@ -99,10 +99,10 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // 
 // function Modelica.Media.Examples.TestOnly.FlueGas.Medium.massToMoleFractions \"Return mole fractions from mass fractions X\"
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"1\") \"Mass fractions of mixture\";
-//   input Real[:] MMX(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0) \"molar masses of components\";
+//   input Real[:] MMX(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar masses of components\";
 //   output Real[size(X,1)] moleFractions(quantity = \"MoleFraction\", unit = \"1\") \"Mole fractions of gas mixture\";
+//   protected Real Mmix(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar mass of mixture\";
 //   protected Real[size(X,1)] invMMX \"inverses of molar weights\";
-//   protected Real Mmix(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0) \"molar mass of mixture\";
 // algorithm
 //   for i in 1:size(X,1) loop
 //     invMMX[i] := 1.0 / MMX[i];
@@ -121,8 +121,8 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // end Modelica.Media.Examples.TestOnly.FlueGas.Medium.molarMass;
 // 
 // function Modelica.Media.Examples.TestOnly.FlueGas.Medium.s_TX \"Return temperature dependent part of the entropy, expects full entropy vector\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"temperature\";
-//   input Real[4] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"mass fraction\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
+//   input Real[4] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"mass fraction\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"specific entropy\";
 // algorithm
 //   s := Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T(data[1],T) * X[1] + Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T(data[2],T) * X[2] + Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T(data[3],T) * X[3] + Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T(data[4],T) * X[4];
@@ -138,21 +138,21 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // 
 // function Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
 //   input Modelica.Media.Examples.TestOnly.FlueGas.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
+//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
 // algorithm
 //   cp := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[1],state.T) * state.X[1] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[2],state.T) * state.X[2] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[3],state.T) * state.X[3] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[4],state.T) * state.X[4];
 // end Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCp;
 // 
 // function Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCv \"Return specific heat capacity at constant volume from temperature and gas data\"
 //   input Modelica.Media.Examples.TestOnly.FlueGas.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
+//   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
 // algorithm
 //   cv := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[1],state.T) * state.X[1] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[2],state.T) * state.X[2] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[3],state.T) * state.X[3] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[4],state.T) * state.X[4] + -296.803386950531 * (state.X[1] + state.X[2] + state.X[3] + state.X[4]);
 // end Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCv;
 // 
 // function Modelica.Media.Examples.TestOnly.FlueGas.Medium.velocityOfSound \"Return velocity of sound\"
 //   input Modelica.Media.Examples.TestOnly.FlueGas.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0, max = 100000.0, start = 1000, nominal = 1000) \"Velocity of sound\";
+//   output Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0.0, max = 100000.0, start = 1000.0, nominal = 1000.0) \"Velocity of sound\";
 // algorithm
 //   a := sqrt(max(0.0,(Modelica.Media.Examples.TestOnly.FlueGas.Medium.gasConstant(state) * state.T * Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCp(state)) / Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCv(state)));
 // end Modelica.Media.Examples.TestOnly.FlueGas.Medium.velocityOfSound;
@@ -173,7 +173,7 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // 
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T \"Compute specific heat capacity at constant pressure from temperature and gas data\"
 //   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") \"Specific heat capacity at temperature T\";
 // algorithm
 //   cp := if T < data.Tlimit then data.R * T ^ -2.0 * (data.alow[1] + T * (data.alow[2] + T * (data.alow[3] + T * (data.alow[4] + T * (data.alow[5] + T * (data.alow[6] + data.alow[7] * T)))))) else data.R * T ^ -2.0 * (data.ahigh[1] + T * (data.ahigh[2] + T * (data.ahigh[3] + T * (data.ahigh[4] + T * (data.ahigh[5] + T * (data.ahigh[6] + data.ahigh[7] * T))))));
@@ -182,7 +182,7 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.h_T \"Compute specific enthalpy from temperature and gas data; reference is decided by the
 //     refChoice input, or by the referenceChoice package constant by default\"
 //   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
 //   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.IdealGases.Common.SingleGasNasa.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
@@ -193,7 +193,7 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // 
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T \"Compute specific entropy from temperature and gas data\"
 //   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Specific entropy at temperature T\";
 // algorithm
 //   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + -0.5 * data.alow[1] * T ^ -2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + -0.5 * data.ahigh[1] * T ^ -2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
@@ -201,7 +201,7 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
-//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
 //   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
@@ -214,50 +214,50 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // end Modelica.SIunits.Conversions.to_bar;
 // 
 // function Modelica.SIunits.Conversions.to_degC \"Convert from Kelvin to °Celsius\"
-//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 //   output Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 // algorithm
 //   Celsius := -273.15 + Kelvin;
 // end Modelica.SIunits.Conversions.to_degC;
 // 
 // class Modelica.Media.Examples.TestOnly.FlueGas
-//   Real state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
-//   Real state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 200.0, nominal = 300) \"Temperature of medium\";
-//   Real state.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.2, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.3, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.4, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   input Real medium2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, start = 200000.0, StateSelect = StateSelect.default) \"Absolute pressure of medium\";
+//   Real state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 200.0, nominal = 300.0) \"Temperature of medium\";
+//   Real state.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.2, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.3, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.4, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   input Real medium2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = 200000.0, StateSelect = StateSelect.default) \"Absolute pressure of medium\";
 //   input Real medium2.Xi[1](quantity = \"MassFraction\", unit = \"1\", start = 0.768, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
 //   input Real medium2.Xi[2](quantity = \"MassFraction\", unit = \"1\", start = 0.232, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
 //   input Real medium2.Xi[3](quantity = \"MassFraction\", unit = \"1\", start = 0.0, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
 //   input Real medium2.Xi[4](quantity = \"MassFraction\", unit = \"1\", start = 0.0, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
 //   input Real medium2.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy of medium\";
-//   Real medium2.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density of medium\";
-//   Real medium2.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300.0, nominal = 300, StateSelect = StateSelect.default) \"Temperature of medium\";
-//   Real medium2.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.2, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.3, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 0.4, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density of medium\";
+//   Real medium2.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0, StateSelect = StateSelect.default) \"Temperature of medium\";
+//   Real medium2.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.2, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.3, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 0.4, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   Real medium2.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
-//   Real medium2.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real medium2.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
 //   Real medium2.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
-//   Real medium2.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
-//   Real medium2.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature of medium\";
-//   Real medium2.state.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.state.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.state.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real medium2.state.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real medium2.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   Real medium2.state.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.state.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.state.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.state.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   parameter Boolean medium2.preferredMediumStates = false \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
 //   final constant Boolean medium2.standardOrderComponents;
 //   Real medium2.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(medium2.T) \"Temperature of medium in [degC]\";
 //   Real medium2.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(medium2.p) \"Absolute pressure of medium in [bar]\";
-//   Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCp(state);
-//   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCv(state);
-//   Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1, max = 500000, start = 1.2, nominal = 1.2) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.isentropicExponent(state);
+//   Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCp(state);
+//   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCv(state);
+//   Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1.0, max = 500000.0, start = 1.2, nominal = 1.2) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.isentropicExponent(state);
 //   Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificEntropy(state);
 //   Real s2(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificEntropy(medium2.state);
-//   Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0, max = 100000.0, start = 1000, nominal = 1000) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.velocityOfSound(state);
+//   Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0.0, max = 100000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.velocityOfSound(state);
 //   Real beta = Modelica.Media.Examples.TestOnly.FlueGas.Medium.isobaricExpansionCoefficient(state);
 //   Real gamma2 = Modelica.Media.Examples.TestOnly.FlueGas.Medium.isothermalCompressibility(medium2.state);
 //   Real h_is(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = Modelica.Media.Examples.TestOnly.FlueGas.Medium.isentropicEnthalpyApproximation(200000.0,medium2.state);

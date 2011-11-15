@@ -34,8 +34,6 @@ checkModel(Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer)
 // 
 // class Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer
 //   parameter Integer n = 1 \"Number of heat transfer segments\";
-//   input Real surfaceAreas[1](quantity = \"Area\", unit = \"m2\") \"Heat transfer areas\";
-//   output Real Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   parameter Boolean use_k = false \"= true to use k value for thermal isolation\";
 //   parameter Real k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
 //   parameter Real T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
@@ -53,10 +51,12 @@ checkModel(Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer)
 //   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.massDynamics = system.energyDynamics \"Default formulation of mass balances\";
 //   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.substanceDynamics = system.massDynamics \"Default formulation of substance balances\";
 //   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.traceDynamics = system.massDynamics \"Default formulation of trace substance balances\";
+//   parameter Real alpha0(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") \"constant heat transfer coefficient\";
+//   input Real surfaceAreas[1](quantity = \"Area\", unit = \"m2\") \"Heat transfer areas\";
+//   output Real Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
 //   Real Ts[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.temperature(states[1]) \"Temperatures defined by fluid states\";
-//   parameter Real alpha0(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") \"constant heat transfer coefficient\";
 // equation
 //   Q_flows[1] = (alpha0 + k) * (surfaceAreas[1] * (heatPorts[1].T - Ts[1]));
 //   Q_flows[1] = heatPorts[1].Q_flow;

@@ -31,20 +31,20 @@ getErrorString();
 // 0
 // record SimulationResult
 //     resultFile = "ExternalLibraries1_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'ExternalLibraries1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'ExternalLibraries1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 0.600856216657394
-// 0.403950305566205
-// 0.288487010203944
-// 0.21383109175653
-// 0.1624770197271
+// 0.600856216657387
+// 0.403950305566201
+// 0.288487010203961
+// 0.213831091756546
+// 0.162477019727119
 // 2.0
 // 1.47702861915093
 // 1.24427877474115
 // 1.12932060688604
 // 1.06962080454224
-// 1.03781597225023
+// 1.03781597225024
 // ""
 // endResult

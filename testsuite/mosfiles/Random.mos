@@ -49,7 +49,7 @@ simulate(testRandom2, stopTime=3); getErrorString();
 // seed[1] = 6
 // seed[2] = 7
 // seed[3] = 2
-// x = 0.08483547196048632
+// x = 0.08483547196048633
 // x = 0.5353798901434894
 // x = 0.4768262391718505
 // x = 0.7703588380462376
@@ -69,13 +69,13 @@ simulate(testRandom2, stopTime=3); getErrorString();
 // seed[2] = 21
 // seed[3] = 17
 // x = 0.4009159389765675
-// x = 0.5804987598022004
+// x = 0.5804987598022005
 // x = 0.5620918184705914
 // x = 0.5724159035264322
 // x = 0.8498200264820869
 // x = 0.06581013494972066
 // x = 0.2625044697939489
-// x = 0.7933464385344386
+// x = 0.7933464385344387
 // x = 0.8767777042924849
 // x = 0.6998297199089916
 // 0.699829719908992
@@ -152,10 +152,10 @@ simulate(testRandom2, stopTime=3); getErrorString();
 //   parameter Integer seed_start[1] = 23;
 //   parameter Integer seed_start[2] = 87;
 //   parameter Integer seed_start[3] = 187;
+//   Real x;
 //   Integer seed[1](start = seed_start[1], fixed = true);
 //   Integer seed[2](start = seed_start[2], fixed = true);
 //   Integer seed[3](start = seed_start[3], fixed = true);
-//   Real x;
 //   parameter Real y = testRandom3({seed_start[1],seed_start[2],seed_start[3]});
 // algorithm
 //   when sample(0.0,0.2) then
@@ -204,7 +204,7 @@ simulate(testRandom2, stopTime=3); getErrorString();
 // x = 0.7684225743864566
 // record SimulationResult
 //     resultFile = "testRandom2_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'testRandom2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'testRandom2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = "See if seed_start is OK
 // seed_start[1] = 23
 // seed_start[2] = 87

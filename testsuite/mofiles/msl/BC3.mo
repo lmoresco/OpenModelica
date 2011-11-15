@@ -998,20 +998,20 @@ end BC3;
 // end BC3;
 // Result:
 // class BC3
+//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 //   parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 //   parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 //   output Real constant1.outPort.signal[1] "Real output signals";
 //   output Real constant1.y[1];
-//   parameter Real constant1.k[1] = 1.0 "Constant output values";
+//   protected Real firstOrder1.u[1] = firstOrder1.inPort.signal[1] "Input signals";
+//   parameter Real firstOrder1.k[1] = 1.0 "Gain";
+//   parameter Real firstOrder1.T[1](quantity = "Time", unit = "s") = 1.0 "Time Constant";
 //   parameter Integer firstOrder1.n = 1 "Number of inputs (= number of outputs)";
 //   parameter Integer firstOrder1.inPort.n = firstOrder1.n "Dimension of signal vector";
 //   input Real firstOrder1.inPort.signal[1] "Real input signals";
 //   parameter Integer firstOrder1.outPort.n = firstOrder1.n "Dimension of signal vector";
 //   output Real firstOrder1.outPort.signal[1] "Real output signals";
 //   output Real firstOrder1.y[1] "Output signals";
-//   protected Real firstOrder1.u[1] = firstOrder1.inPort.signal[1] "Input signals";
-//   parameter Real firstOrder1.k[1] = 1.0 "Gain";
-//   parameter Real firstOrder1.T[1](quantity = "Time", unit = "s") = 1.0 "Time Constant";
 //   protected parameter Real firstOrder1.p_k[1] = firstOrder1.k[1];
 //   protected parameter Real firstOrder1.p_T[1] = firstOrder1.T[1];
 // equation

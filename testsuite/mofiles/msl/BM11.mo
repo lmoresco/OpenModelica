@@ -1101,17 +1101,17 @@ end BM11;
 // 
 // class BM11
 //   parameter Integer exp1.n = 1 "Number of inputs (= number of outputs)";
+//   protected Real exp1.u[1] = exp1.inPort.signal[1] "Input signals";
 //   parameter Integer exp1.inPort.n = exp1.n "Dimension of signal vector";
 //   input Real exp1.inPort.signal[1] "Real input signals";
 //   parameter Integer exp1.outPort.n = exp1.n "Dimension of signal vector";
 //   output Real exp1.outPort.signal[1] "Real output signals";
 //   output Real exp1.y[1] "Output signals";
-//   protected Real exp1.u[1] = exp1.inPort.signal[1] "Input signals";
+//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 //   parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 //   parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 //   output Real constant1.outPort.signal[1] "Real output signals";
 //   output Real constant1.y[1];
-//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   exp1.y[1] = exp(exp1.u[1]);
 //   exp1.y[1] = exp1.outPort.signal[1];

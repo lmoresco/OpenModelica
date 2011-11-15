@@ -22,13 +22,13 @@ val(StateMachine_0.Region_0.Falling.active,20);
 // true
 // record SimulationResult
 //     resultFile = "BouncingBallExample.Ball_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 20.0, numberOfIntervals = 2000, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'BouncingBallExample.Ball', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 20.0, numberOfIntervals = 2000, tolerance = 1e-006, method = 'dassl2', fileNamePrefix = 'BouncingBallExample.Ball', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 0.0
-// 5.09680897166992
-// 2.6112304175769
-// 5.3601208411215e-06
+// 5.09680895921237
+// 2.6112352348121
+// 6.96348718880421e-006
 // 0.0
 // 1.0
 // 0.0

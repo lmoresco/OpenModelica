@@ -46,6 +46,6 @@ end PolynomialEvaluator2;
 //   Real inVector[3] = 5.0;
 //   Real result;
 // equation
-//   result = polyeval({inVector[1],inVector[2],inVector[3]},1.0);
+//   result = polyeval({inVector[1],inVector[2],inVector[3]},1);
 // end PolynomialEvaluator2;
 // endResult

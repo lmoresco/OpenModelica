@@ -44,8 +44,8 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.gasConstant;
 // 
 // function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.h_TX \"Return specific enthalpy\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Independent Mass fractions of gas mixture\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Independent Mass fractions of gas mixture\";
 //   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
 //   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
@@ -56,17 +56,17 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // 
 // function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.isentropicExponent \"Return isentropic exponent\"
 //   input Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1, max = 500000, start = 1.2, nominal = 1.2) \"Isentropic exponent\";
+//   output Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1.0, max = 500000.0, start = 1.2, nominal = 1.2) \"Isentropic exponent\";
 // algorithm
 //   gamma := Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCp(state) / Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCv(state);
 // end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.isentropicExponent;
 // 
 // function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.massToMoleFractions \"Return mole fractions from mass fractions X\"
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"1\") \"Mass fractions of mixture\";
-//   input Real[:] MMX(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0) \"molar masses of components\";
+//   input Real[:] MMX(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar masses of components\";
 //   output Real[size(X,1)] moleFractions(quantity = \"MoleFraction\", unit = \"1\") \"Mole fractions of gas mixture\";
+//   protected Real Mmix(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar mass of mixture\";
 //   protected Real[size(X,1)] invMMX \"inverses of molar weights\";
-//   protected Real Mmix(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0) \"molar mass of mixture\";
 // algorithm
 //   for i in 1:size(X,1) loop
 //     invMMX[i] := 1.0 / MMX[i];
@@ -85,8 +85,8 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.molarMass;
 // 
 // function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.s_TX \"Return temperature dependent part of the entropy, expects full entropy vector\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"temperature\";
-//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"mass fraction\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"mass fraction\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"specific entropy\";
 // algorithm
 //   s := Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T(data[1],T) * X[1];
@@ -102,21 +102,21 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // 
 // function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
 //   input Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
+//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
 // algorithm
 //   cp := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[1],state.T) * state.X[1];
 // end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCp;
 // 
 // function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCv \"Return specific heat capacity at constant volume from temperature and gas data\"
 //   input Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
+//   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
 // algorithm
 //   cv := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[1],state.T) * state.X[1] + -296.803386950531 * state.X[1];
 // end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCv;
 // 
 // function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.velocityOfSound \"Return velocity of sound\"
 //   input Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0, max = 100000.0, start = 1000, nominal = 1000) \"Velocity of sound\";
+//   output Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0.0, max = 100000.0, start = 1000.0, nominal = 1000.0) \"Velocity of sound\";
 // algorithm
 //   a := sqrt(max(0.0,(Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.gasConstant(state) * state.T * Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCp(state)) / Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCv(state)));
 // end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.velocityOfSound;
@@ -137,7 +137,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // 
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T \"Compute specific heat capacity at constant pressure from temperature and gas data\"
 //   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") \"Specific heat capacity at temperature T\";
 // algorithm
 //   cp := if T < data.Tlimit then data.R * T ^ -2.0 * (data.alow[1] + T * (data.alow[2] + T * (data.alow[3] + T * (data.alow[4] + T * (data.alow[5] + T * (data.alow[6] + data.alow[7] * T)))))) else data.R * T ^ -2.0 * (data.ahigh[1] + T * (data.ahigh[2] + T * (data.ahigh[3] + T * (data.ahigh[4] + T * (data.ahigh[5] + T * (data.ahigh[6] + data.ahigh[7] * T))))));
@@ -146,7 +146,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.h_T \"Compute specific enthalpy from temperature and gas data; reference is decided by the
 //     refChoice input, or by the referenceChoice package constant by default\"
 //   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
 //   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.IdealGases.Common.SingleGasNasa.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
@@ -157,7 +157,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // 
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T \"Compute specific entropy from temperature and gas data\"
 //   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Specific entropy at temperature T\";
 // algorithm
 //   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + -0.5 * data.alow[1] * T ^ -2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + -0.5 * data.ahigh[1] * T ^ -2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
@@ -165,7 +165,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
-//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
 //   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
@@ -178,7 +178,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // end Modelica.SIunits.Conversions.to_bar;
 // 
 // function Modelica.SIunits.Conversions.to_degC \"Convert from Kelvin to °Celsius\"
-//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 //   output Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 // algorithm
 //   Celsius := -273.15 + Kelvin;
@@ -188,29 +188,29 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 //   parameter Real V(quantity = \"Volume\", unit = \"m3\") = 1.0 \"Size of volume\";
 //   parameter Real m_flow_ext(quantity = \"MassFlowRate.Nitrogen\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = 0.01 \"Mass flow rate flowing into volume\";
 //   parameter Real H_flow_ext(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) = 5000.0 \"Enthalpy flow rate flowing into volume\";
-//   input Real medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, start = 100000.0, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
+//   input Real medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = 100000.0, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
 //   input Real medium.Xi[1](quantity = \"MassFraction\", unit = \"1\", start = 1.0, StateSelect = StateSelect.prefer) \"Structurally independent mass fractions\";
 //   input Real medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy of medium\";
-//   Real medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density of medium\";
-//   Real medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300.0, nominal = 300, StateSelect = StateSelect.prefer) \"Temperature of medium\";
-//   Real medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density of medium\";
+//   Real medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0, StateSelect = StateSelect.prefer) \"Temperature of medium\";
+//   Real medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   Real medium.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
-//   Real medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
 //   Real medium.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
-//   Real medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
-//   Real medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature of medium\";
-//   Real medium.state.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   Real medium.state.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   parameter Boolean medium.preferredMediumStates = true \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
 //   final constant Boolean medium.standardOrderComponents;
 //   Real medium.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(medium.T) \"Temperature of medium in [degC]\";
 //   Real medium.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(medium.p) \"Absolute pressure of medium in [bar]\";
 //   Real m(quantity = \"Nitrogen\", start = 1.0);
 //   Real U(quantity = \"Energy\", unit = \"J\");
-//   Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCp(medium.state);
-//   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCv(medium.state);
-//   Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1, max = 500000, start = 1.2, nominal = 1.2) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.isentropicExponent(medium.state);
+//   Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCp(medium.state);
+//   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCv(medium.state);
+//   Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1.0, max = 500000.0, start = 1.2, nominal = 1.2) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.isentropicExponent(medium.state);
 //   Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificEntropy(medium.state);
-//   Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0, max = 100000.0, start = 1000, nominal = 1000) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.velocityOfSound(medium.state);
+//   Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0.0, max = 100000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.velocityOfSound(medium.state);
 // equation
 //   assert(medium.T >= 200.0 and medium.T <= 6000.0,\"
 // Temperature T (=\" + String(medium.T,0,true,6) + \" K = 200 K) is not in the allowed range

@@ -316,6 +316,63 @@ end Philosopher_DiningTable;
 // class Philosopher_DiningTable
 //   parameter Integer t.n = 5 "Number of philosophers and forks";
 //   parameter Real t.sigma = 5.0 "Standard deviation of delay times";
+//   parameter Integer t.mutex.n = t.n "The number of connected ports";
+//   protected Boolean t.mutex.occupied "Mutex is locked if occupied is true";
+//   input Boolean t.mutex.port[1].request "Set by application to request access";
+//   input Boolean t.mutex.port[1].release "Set by application to release access";
+//   output Boolean t.mutex.port[1].ok "Signal that ownership was granted";
+//   input Boolean t.mutex.port[2].request "Set by application to request access";
+//   input Boolean t.mutex.port[2].release "Set by application to release access";
+//   output Boolean t.mutex.port[2].ok "Signal that ownership was granted";
+//   input Boolean t.mutex.port[3].request "Set by application to request access";
+//   input Boolean t.mutex.port[3].release "Set by application to release access";
+//   output Boolean t.mutex.port[3].ok "Signal that ownership was granted";
+//   input Boolean t.mutex.port[4].request "Set by application to request access";
+//   input Boolean t.mutex.port[4].release "Set by application to release access";
+//   output Boolean t.mutex.port[4].ok "Signal that ownership was granted";
+//   input Boolean t.mutex.port[5].request "Set by application to request access";
+//   input Boolean t.mutex.port[5].release "Set by application to release access";
+//   output Boolean t.mutex.port[5].ok "Signal that ownership was granted";
+//   protected Boolean t.mutex.request[1];
+//   protected Boolean t.mutex.request[2];
+//   protected Boolean t.mutex.request[3];
+//   protected Boolean t.mutex.request[4];
+//   protected Boolean t.mutex.request[5];
+//   protected Boolean t.mutex.release[1];
+//   protected Boolean t.mutex.release[2];
+//   protected Boolean t.mutex.release[3];
+//   protected Boolean t.mutex.release[4];
+//   protected Boolean t.mutex.release[5];
+//   protected Boolean t.mutex.ok[1];
+//   protected Boolean t.mutex.ok[2];
+//   protected Boolean t.mutex.ok[3];
+//   protected Boolean t.mutex.ok[4];
+//   protected Boolean t.mutex.ok[5];
+//   protected Boolean t.mutex.waiting[1];
+//   protected Boolean t.mutex.waiting[2];
+//   protected Boolean t.mutex.waiting[3];
+//   protected Boolean t.mutex.waiting[4];
+//   protected Boolean t.mutex.waiting[5];
+//   Boolean t.fork[1].left.pickedUp(start = false);
+//   Boolean t.fork[1].left.busy;
+//   Boolean t.fork[1].right.pickedUp(start = false);
+//   Boolean t.fork[1].right.busy;
+//   Boolean t.fork[2].left.pickedUp(start = false);
+//   Boolean t.fork[2].left.busy;
+//   Boolean t.fork[2].right.pickedUp(start = false);
+//   Boolean t.fork[2].right.busy;
+//   Boolean t.fork[3].left.pickedUp(start = false);
+//   Boolean t.fork[3].left.busy;
+//   Boolean t.fork[3].right.pickedUp(start = false);
+//   Boolean t.fork[3].right.busy;
+//   Boolean t.fork[4].left.pickedUp(start = false);
+//   Boolean t.fork[4].left.busy;
+//   Boolean t.fork[4].right.pickedUp(start = false);
+//   Boolean t.fork[4].right.busy;
+//   Boolean t.fork[5].left.pickedUp(start = false);
+//   Boolean t.fork[5].left.busy;
+//   Boolean t.fork[5].right.pickedUp(start = false);
+//   Boolean t.fork[5].right.busy;
 //   output Boolean t.phil[1].mutexPort.request "Set this to request ownership of the mutex";
 //   output Boolean t.phil[1].mutexPort.release "Set this to release ownership of the mutex";
 //   input Boolean t.phil[1].mutexPort.ok "This signals that ownership was granted";
@@ -441,84 +498,7 @@ end Philosopher_DiningTable;
 //   protected Boolean t.phil[5].timeToChangeState;
 //   protected Boolean t.phil[5].timeToGetHungry;
 //   protected Boolean t.phil[5].doneEating;
-//   parameter Integer t.mutex.n = t.n "The number of connected ports";
-//   input Boolean t.mutex.port[1].request "Set by application to request access";
-//   input Boolean t.mutex.port[1].release "Set by application to release access";
-//   output Boolean t.mutex.port[1].ok "Signal that ownership was granted";
-//   input Boolean t.mutex.port[2].request "Set by application to request access";
-//   input Boolean t.mutex.port[2].release "Set by application to release access";
-//   output Boolean t.mutex.port[2].ok "Signal that ownership was granted";
-//   input Boolean t.mutex.port[3].request "Set by application to request access";
-//   input Boolean t.mutex.port[3].release "Set by application to release access";
-//   output Boolean t.mutex.port[3].ok "Signal that ownership was granted";
-//   input Boolean t.mutex.port[4].request "Set by application to request access";
-//   input Boolean t.mutex.port[4].release "Set by application to release access";
-//   output Boolean t.mutex.port[4].ok "Signal that ownership was granted";
-//   input Boolean t.mutex.port[5].request "Set by application to request access";
-//   input Boolean t.mutex.port[5].release "Set by application to release access";
-//   output Boolean t.mutex.port[5].ok "Signal that ownership was granted";
-//   protected Boolean t.mutex.request[1];
-//   protected Boolean t.mutex.request[2];
-//   protected Boolean t.mutex.request[3];
-//   protected Boolean t.mutex.request[4];
-//   protected Boolean t.mutex.request[5];
-//   protected Boolean t.mutex.release[1];
-//   protected Boolean t.mutex.release[2];
-//   protected Boolean t.mutex.release[3];
-//   protected Boolean t.mutex.release[4];
-//   protected Boolean t.mutex.release[5];
-//   protected Boolean t.mutex.ok[1];
-//   protected Boolean t.mutex.ok[2];
-//   protected Boolean t.mutex.ok[3];
-//   protected Boolean t.mutex.ok[4];
-//   protected Boolean t.mutex.ok[5];
-//   protected Boolean t.mutex.waiting[1];
-//   protected Boolean t.mutex.waiting[2];
-//   protected Boolean t.mutex.waiting[3];
-//   protected Boolean t.mutex.waiting[4];
-//   protected Boolean t.mutex.waiting[5];
-//   protected Boolean t.mutex.occupied "Mutex is locked if occupied is true";
-//   Boolean t.fork[1].left.pickedUp(start = false);
-//   Boolean t.fork[1].left.busy;
-//   Boolean t.fork[1].right.pickedUp(start = false);
-//   Boolean t.fork[1].right.busy;
-//   Boolean t.fork[2].left.pickedUp(start = false);
-//   Boolean t.fork[2].left.busy;
-//   Boolean t.fork[2].right.pickedUp(start = false);
-//   Boolean t.fork[2].right.busy;
-//   Boolean t.fork[3].left.pickedUp(start = false);
-//   Boolean t.fork[3].left.busy;
-//   Boolean t.fork[3].right.pickedUp(start = false);
-//   Boolean t.fork[3].right.busy;
-//   Boolean t.fork[4].left.pickedUp(start = false);
-//   Boolean t.fork[4].left.busy;
-//   Boolean t.fork[4].right.pickedUp(start = false);
-//   Boolean t.fork[4].right.busy;
-//   Boolean t.fork[5].left.pickedUp(start = false);
-//   Boolean t.fork[5].left.busy;
-//   Boolean t.fork[5].right.pickedUp(start = false);
-//   Boolean t.fork[5].right.busy;
 // equation
-//   t.phil[1].timeToChangeState = t.phil[1].timeOfNextChange <= time;
-//   t.phil[1].canEat = t.phil[1].state == 1 and not (t.phil[1].left.busy or t.phil[1].right.busy);
-//   t.phil[1].timeToGetHungry = t.phil[1].state == 0 and t.phil[1].timeToChangeState;
-//   t.phil[1].doneEating = t.phil[1].state == 2 and t.phil[1].timeToChangeState;
-//   t.phil[2].timeToChangeState = t.phil[2].timeOfNextChange <= time;
-//   t.phil[2].canEat = t.phil[2].state == 1 and not (t.phil[2].left.busy or t.phil[2].right.busy);
-//   t.phil[2].timeToGetHungry = t.phil[2].state == 0 and t.phil[2].timeToChangeState;
-//   t.phil[2].doneEating = t.phil[2].state == 2 and t.phil[2].timeToChangeState;
-//   t.phil[3].timeToChangeState = t.phil[3].timeOfNextChange <= time;
-//   t.phil[3].canEat = t.phil[3].state == 1 and not (t.phil[3].left.busy or t.phil[3].right.busy);
-//   t.phil[3].timeToGetHungry = t.phil[3].state == 0 and t.phil[3].timeToChangeState;
-//   t.phil[3].doneEating = t.phil[3].state == 2 and t.phil[3].timeToChangeState;
-//   t.phil[4].timeToChangeState = t.phil[4].timeOfNextChange <= time;
-//   t.phil[4].canEat = t.phil[4].state == 1 and not (t.phil[4].left.busy or t.phil[4].right.busy);
-//   t.phil[4].timeToGetHungry = t.phil[4].state == 0 and t.phil[4].timeToChangeState;
-//   t.phil[4].doneEating = t.phil[4].state == 2 and t.phil[4].timeToChangeState;
-//   t.phil[5].timeToChangeState = t.phil[5].timeOfNextChange <= time;
-//   t.phil[5].canEat = t.phil[5].state == 1 and not (t.phil[5].left.busy or t.phil[5].right.busy);
-//   t.phil[5].timeToGetHungry = t.phil[5].state == 0 and t.phil[5].timeToChangeState;
-//   t.phil[5].doneEating = t.phil[5].state == 2 and t.phil[5].timeToChangeState;
 //   t.mutex.port[1].ok = t.mutex.ok[1];
 //   t.mutex.request[1] = t.mutex.port[1].request;
 //   t.mutex.release[1] = t.mutex.port[1].release;
@@ -544,6 +524,26 @@ end Philosopher_DiningTable;
 //   t.fork[4].left.busy = t.fork[4].right.pickedUp;
 //   t.fork[5].right.busy = t.fork[5].left.pickedUp;
 //   t.fork[5].left.busy = t.fork[5].right.pickedUp;
+//   t.phil[1].timeToChangeState = t.phil[1].timeOfNextChange <= time;
+//   t.phil[1].canEat = t.phil[1].state == 1 and not (t.phil[1].left.busy or t.phil[1].right.busy);
+//   t.phil[1].timeToGetHungry = t.phil[1].state == 0 and t.phil[1].timeToChangeState;
+//   t.phil[1].doneEating = t.phil[1].state == 2 and t.phil[1].timeToChangeState;
+//   t.phil[2].timeToChangeState = t.phil[2].timeOfNextChange <= time;
+//   t.phil[2].canEat = t.phil[2].state == 1 and not (t.phil[2].left.busy or t.phil[2].right.busy);
+//   t.phil[2].timeToGetHungry = t.phil[2].state == 0 and t.phil[2].timeToChangeState;
+//   t.phil[2].doneEating = t.phil[2].state == 2 and t.phil[2].timeToChangeState;
+//   t.phil[3].timeToChangeState = t.phil[3].timeOfNextChange <= time;
+//   t.phil[3].canEat = t.phil[3].state == 1 and not (t.phil[3].left.busy or t.phil[3].right.busy);
+//   t.phil[3].timeToGetHungry = t.phil[3].state == 0 and t.phil[3].timeToChangeState;
+//   t.phil[3].doneEating = t.phil[3].state == 2 and t.phil[3].timeToChangeState;
+//   t.phil[4].timeToChangeState = t.phil[4].timeOfNextChange <= time;
+//   t.phil[4].canEat = t.phil[4].state == 1 and not (t.phil[4].left.busy or t.phil[4].right.busy);
+//   t.phil[4].timeToGetHungry = t.phil[4].state == 0 and t.phil[4].timeToChangeState;
+//   t.phil[4].doneEating = t.phil[4].state == 2 and t.phil[4].timeToChangeState;
+//   t.phil[5].timeToChangeState = t.phil[5].timeOfNextChange <= time;
+//   t.phil[5].canEat = t.phil[5].state == 1 and not (t.phil[5].left.busy or t.phil[5].right.busy);
+//   t.phil[5].timeToGetHungry = t.phil[5].state == 0 and t.phil[5].timeToChangeState;
+//   t.phil[5].doneEating = t.phil[5].state == 2 and t.phil[5].timeToChangeState;
 //   t.mutex.port[1].request = t.phil[1].mutexPort.request;
 //   t.mutex.port[1].release = t.phil[1].mutexPort.release;
 //   t.mutex.port[1].ok = t.phil[1].mutexPort.ok;
@@ -580,6 +580,101 @@ end Philosopher_DiningTable;
 //   t.fork[5].right.pickedUp = t.phil[1].left.pickedUp;
 //   t.fork[5].right.busy = t.phil[1].left.busy;
 // algorithm
+//   when t.mutex.request[1] then
+//     if not t.mutex.occupied then
+//       t.mutex.ok[1] := true;
+//       t.mutex.waiting[1] := false;
+//     else
+//       t.mutex.ok[1] := false;
+//       t.mutex.waiting[1] := true;
+//     end if;
+//     t.mutex.occupied := true;
+//   end when;
+//   when pre(t.mutex.waiting[1]) and not t.mutex.occupied then
+//     t.mutex.occupied := true;
+//     t.mutex.ok[1] := true;
+//     t.mutex.waiting[1] := false;
+//   end when;
+//   when pre(t.mutex.release[1]) then
+//     t.mutex.ok[1] := false;
+//     t.mutex.occupied := false;
+//   end when;
+//   when t.mutex.request[2] then
+//     if not t.mutex.occupied then
+//       t.mutex.ok[2] := true;
+//       t.mutex.waiting[2] := false;
+//     else
+//       t.mutex.ok[2] := false;
+//       t.mutex.waiting[2] := true;
+//     end if;
+//     t.mutex.occupied := true;
+//   end when;
+//   when pre(t.mutex.waiting[2]) and not t.mutex.occupied then
+//     t.mutex.occupied := true;
+//     t.mutex.ok[2] := true;
+//     t.mutex.waiting[2] := false;
+//   end when;
+//   when pre(t.mutex.release[2]) then
+//     t.mutex.ok[2] := false;
+//     t.mutex.occupied := false;
+//   end when;
+//   when t.mutex.request[3] then
+//     if not t.mutex.occupied then
+//       t.mutex.ok[3] := true;
+//       t.mutex.waiting[3] := false;
+//     else
+//       t.mutex.ok[3] := false;
+//       t.mutex.waiting[3] := true;
+//     end if;
+//     t.mutex.occupied := true;
+//   end when;
+//   when pre(t.mutex.waiting[3]) and not t.mutex.occupied then
+//     t.mutex.occupied := true;
+//     t.mutex.ok[3] := true;
+//     t.mutex.waiting[3] := false;
+//   end when;
+//   when pre(t.mutex.release[3]) then
+//     t.mutex.ok[3] := false;
+//     t.mutex.occupied := false;
+//   end when;
+//   when t.mutex.request[4] then
+//     if not t.mutex.occupied then
+//       t.mutex.ok[4] := true;
+//       t.mutex.waiting[4] := false;
+//     else
+//       t.mutex.ok[4] := false;
+//       t.mutex.waiting[4] := true;
+//     end if;
+//     t.mutex.occupied := true;
+//   end when;
+//   when pre(t.mutex.waiting[4]) and not t.mutex.occupied then
+//     t.mutex.occupied := true;
+//     t.mutex.ok[4] := true;
+//     t.mutex.waiting[4] := false;
+//   end when;
+//   when pre(t.mutex.release[4]) then
+//     t.mutex.ok[4] := false;
+//     t.mutex.occupied := false;
+//   end when;
+//   when t.mutex.request[5] then
+//     if not t.mutex.occupied then
+//       t.mutex.ok[5] := true;
+//       t.mutex.waiting[5] := false;
+//     else
+//       t.mutex.ok[5] := false;
+//       t.mutex.waiting[5] := true;
+//     end if;
+//     t.mutex.occupied := true;
+//   end when;
+//   when pre(t.mutex.waiting[5]) and not t.mutex.occupied then
+//     t.mutex.occupied := true;
+//     t.mutex.ok[5] := true;
+//     t.mutex.waiting[5] := false;
+//   end when;
+//   when pre(t.mutex.release[5]) then
+//     t.mutex.ok[5] := false;
+//     t.mutex.occupied := false;
+//   end when;
 //   when initial() then
 //     t.phil[1].state := 0;
 //     t.phil[1].left.pickedUp := false;
@@ -734,101 +829,6 @@ end Philosopher_DiningTable;
 //     t.phil[5].right.pickedUp := false;
 //     (t.phil[5].T, t.phil[5].randomSeed) := Philosopher.Random.normalvariate(t.phil[5].mu,t.phil[5].sigma,{pre(t.phil[5].randomSeed[1]),pre(t.phil[5].randomSeed[2]),pre(t.phil[5].randomSeed[3])});
 //     t.phil[5].timeOfNextChange := time + abs(t.phil[5].T);
-//   end when;
-//   when t.mutex.request[1] then
-//     if not t.mutex.occupied then
-//       t.mutex.ok[1] := true;
-//       t.mutex.waiting[1] := false;
-//     else
-//       t.mutex.ok[1] := false;
-//       t.mutex.waiting[1] := true;
-//     end if;
-//     t.mutex.occupied := true;
-//   end when;
-//   when pre(t.mutex.waiting[1]) and not t.mutex.occupied then
-//     t.mutex.occupied := true;
-//     t.mutex.ok[1] := true;
-//     t.mutex.waiting[1] := false;
-//   end when;
-//   when pre(t.mutex.release[1]) then
-//     t.mutex.ok[1] := false;
-//     t.mutex.occupied := false;
-//   end when;
-//   when t.mutex.request[2] then
-//     if not t.mutex.occupied then
-//       t.mutex.ok[2] := true;
-//       t.mutex.waiting[2] := false;
-//     else
-//       t.mutex.ok[2] := false;
-//       t.mutex.waiting[2] := true;
-//     end if;
-//     t.mutex.occupied := true;
-//   end when;
-//   when pre(t.mutex.waiting[2]) and not t.mutex.occupied then
-//     t.mutex.occupied := true;
-//     t.mutex.ok[2] := true;
-//     t.mutex.waiting[2] := false;
-//   end when;
-//   when pre(t.mutex.release[2]) then
-//     t.mutex.ok[2] := false;
-//     t.mutex.occupied := false;
-//   end when;
-//   when t.mutex.request[3] then
-//     if not t.mutex.occupied then
-//       t.mutex.ok[3] := true;
-//       t.mutex.waiting[3] := false;
-//     else
-//       t.mutex.ok[3] := false;
-//       t.mutex.waiting[3] := true;
-//     end if;
-//     t.mutex.occupied := true;
-//   end when;
-//   when pre(t.mutex.waiting[3]) and not t.mutex.occupied then
-//     t.mutex.occupied := true;
-//     t.mutex.ok[3] := true;
-//     t.mutex.waiting[3] := false;
-//   end when;
-//   when pre(t.mutex.release[3]) then
-//     t.mutex.ok[3] := false;
-//     t.mutex.occupied := false;
-//   end when;
-//   when t.mutex.request[4] then
-//     if not t.mutex.occupied then
-//       t.mutex.ok[4] := true;
-//       t.mutex.waiting[4] := false;
-//     else
-//       t.mutex.ok[4] := false;
-//       t.mutex.waiting[4] := true;
-//     end if;
-//     t.mutex.occupied := true;
-//   end when;
-//   when pre(t.mutex.waiting[4]) and not t.mutex.occupied then
-//     t.mutex.occupied := true;
-//     t.mutex.ok[4] := true;
-//     t.mutex.waiting[4] := false;
-//   end when;
-//   when pre(t.mutex.release[4]) then
-//     t.mutex.ok[4] := false;
-//     t.mutex.occupied := false;
-//   end when;
-//   when t.mutex.request[5] then
-//     if not t.mutex.occupied then
-//       t.mutex.ok[5] := true;
-//       t.mutex.waiting[5] := false;
-//     else
-//       t.mutex.ok[5] := false;
-//       t.mutex.waiting[5] := true;
-//     end if;
-//     t.mutex.occupied := true;
-//   end when;
-//   when pre(t.mutex.waiting[5]) and not t.mutex.occupied then
-//     t.mutex.occupied := true;
-//     t.mutex.ok[5] := true;
-//     t.mutex.waiting[5] := false;
-//   end when;
-//   when pre(t.mutex.release[5]) then
-//     t.mutex.ok[5] := false;
-//     t.mutex.occupied := false;
 //   end when;
 // end Philosopher_DiningTable;
 // endResult

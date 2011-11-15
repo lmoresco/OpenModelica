@@ -103,7 +103,6 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   constant Integer stop1.Forward = 1 \"v_rel > 0 (forward sliding)\";
 //   constant Integer stop1.Stuck = 0 \"v_rel = 0 (forward sliding, locked or backward sliding)\";
 //   constant Integer stop1.Backward = -1 \"v_rel < 0 (backward sliding)\";
-//   Integer stop1.mode(min = -1, max = 3, start = 3, fixed = true);
 //   protected constant Real stop1.unitAcceleration(quantity = \"Acceleration\", unit = \"m/s2\") = 1.0;
 //   protected constant Real stop1.unitForce(quantity = \"Force\", unit = \"N\") = 1.0;
 //   Real stop1.v(quantity = \"Velocity\", unit = \"m/s\", start = 0.0, fixed = true, StateSelect = StateSelect.always) \"Absolute velocity of flange_a and flange_b\";
@@ -114,6 +113,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   parameter Real stop1.F_Stribeck(quantity = \"Force\", unit = \"N\", start = 10.0) = 10.0 \"Stribeck effect\";
 //   parameter Real stop1.fexp(unit = \"s/m\", min = 0.0, start = 2.0) = 2.0 \"Exponential decay\";
 //   Integer stop1.stopped = if stop1.s <= stop1.smin + stop1.L / 2.0 then -1 else if stop1.s >= stop1.smax + (-stop1.L) / 2.0 then 1 else 0;
+//   Integer stop1.mode(min = -1, max = 3, start = 3, fixed = true);
 //   parameter Boolean force.useSupport = false \"= true, if support flange enabled, otherwise implicitly grounded\";
 //   Real force.s(quantity = \"Length\", unit = \"m\") = force.flange.s - force.s_support \"distance between flange and support (= flange.s - support.s)\";
 //   Real force.flange.s(quantity = \"Length\", unit = \"m\") \"absolute position of flange\";
@@ -151,7 +151,6 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   constant Integer stop2.Forward = 1 \"v_rel > 0 (forward sliding)\";
 //   constant Integer stop2.Stuck = 0 \"v_rel = 0 (forward sliding, locked or backward sliding)\";
 //   constant Integer stop2.Backward = -1 \"v_rel < 0 (backward sliding)\";
-//   Integer stop2.mode(min = -1, max = 3, start = 3, fixed = true);
 //   protected constant Real stop2.unitAcceleration(quantity = \"Acceleration\", unit = \"m/s2\") = 1.0;
 //   protected constant Real stop2.unitForce(quantity = \"Force\", unit = \"N\") = 1.0;
 //   Real stop2.v(quantity = \"Velocity\", unit = \"m/s\", start = -5.0, fixed = true, StateSelect = StateSelect.always) \"Absolute velocity of flange_a and flange_b\";
@@ -162,6 +161,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   parameter Real stop2.F_Stribeck(quantity = \"Force\", unit = \"N\", start = 10.0) = 5.0 \"Stribeck effect\";
 //   parameter Real stop2.fexp(unit = \"s/m\", min = 0.0, start = 2.0) = 2.0 \"Exponential decay\";
 //   Integer stop2.stopped = if stop2.s <= stop2.smin + stop2.L / 2.0 then -1 else if stop2.s >= stop2.smax + (-stop2.L) / 2.0 then 1 else 0;
+//   Integer stop2.mode(min = -1, max = 3, start = 3, fixed = true);
 //   Real spring.flange_a.s(quantity = \"Length\", unit = \"m\") \"absolute position of flange\";
 //   Real spring.flange_a.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   Real spring.flange_b.s(quantity = \"Length\", unit = \"m\") \"absolute position of flange\";
@@ -179,7 +179,6 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   Real force2.flange.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   protected Real force2.s_support(quantity = \"Length\", unit = \"m\") \"Absolute position of support flange\";
 //   input Real force2.f \"driving force as input signal\";
-//   Real mass.s(quantity = \"Length\", unit = \"m\", start = 0.0, fixed = true, StateSelect = StateSelect.default) \"Absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)\";
 //   parameter Real mass.L(quantity = \"Length\", unit = \"m\", start = 0.0) = 1.0 \"Length of component, from left flange to right flange (= flange_b.s - flange_a.s)\";
 //   Real mass.flange_a.s(quantity = \"Length\", unit = \"m\") \"absolute position of flange\";
 //   Real mass.flange_a.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
@@ -187,8 +186,9 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   Real mass.flange_b.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   parameter Real mass.m(quantity = \"Mass\", unit = \"kg\", min = 0.0, start = 1.0) = 1.0 \"mass of the sliding mass\";
 //   parameter enumeration(never, avoid, default, prefer, always) mass.stateSelect = StateSelect.default \"Priority to use s and v as states\";
-//   Real mass.v(quantity = \"Velocity\", unit = \"m/s\", start = 0.0, fixed = true, StateSelect = StateSelect.default) \"absolute velocity of component\";
 //   Real mass.a(quantity = \"Acceleration\", unit = \"m/s2\", start = 0.0) \"absolute acceleration of component\";
+//   Real mass.s(quantity = \"Length\", unit = \"m\", start = 0.0, fixed = true, StateSelect = StateSelect.default) \"Absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)\";
+//   Real mass.v(quantity = \"Velocity\", unit = \"m/s\", start = 0.0, fixed = true, StateSelect = StateSelect.default) \"absolute velocity of component\";
 //   parameter Boolean supportFriction.useSupport = false \"= true, if support flange enabled, otherwise implicitly grounded\";
 //   Real supportFriction.flange_a.s(quantity = \"Length\", unit = \"m\") \"absolute position of flange\";
 //   Real supportFriction.flange_a.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
@@ -212,7 +212,6 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   constant Integer supportFriction.Forward = 1 \"v_rel > 0 (forward sliding)\";
 //   constant Integer supportFriction.Stuck = 0 \"v_rel = 0 (forward sliding, locked or backward sliding)\";
 //   constant Integer supportFriction.Backward = -1 \"v_rel < 0 (backward sliding)\";
-//   Integer supportFriction.mode(min = -1, max = 3, start = 3, fixed = true);
 //   protected constant Real supportFriction.unitAcceleration(quantity = \"Acceleration\", unit = \"m/s2\") = 1.0;
 //   protected constant Real supportFriction.unitForce(quantity = \"Force\", unit = \"N\") = 1.0;
 //   parameter Real supportFriction.f_pos[1,1] = 0.0 \"[v, f] Positive sliding friction characteristic (v>=0)\";
@@ -320,6 +319,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   Real supportFriction.f(quantity = \"Force\", unit = \"N\") \"Friction force\";
 //   Real supportFriction.v(quantity = \"Velocity\", unit = \"m/s\") \"Absolute velocity of flange_a and flange_b\";
 //   Real supportFriction.a(quantity = \"Acceleration\", unit = \"m/s2\") \"Absolute acceleration of flange_a and flange_b\";
+//   Integer supportFriction.mode(min = -1, max = 3, start = 3, fixed = true);
 // equation
 //   stop1.f0 = stop1.F_Coulomb + stop1.F_Stribeck;
 //   stop1.f0_max = 1.001 * stop1.f0;

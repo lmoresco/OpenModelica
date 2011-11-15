@@ -30,9 +30,9 @@ end EmptyArraySubscript;
 // class EmptyArraySubscript
 //   parameter Integer nIn = 0;
 //   parameter Integer n = 0;
+//   Boolean bOut;
 //   parameter input Integer glog.n = nIn;
 //   output Boolean glog.b;
-//   Boolean bOut;
 // equation
 //   bOut = glog.b;
 // algorithm

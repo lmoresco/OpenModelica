@@ -17,11 +17,11 @@ end EnumDimSum;
 
 // Result:
 // class EnumDimSum
+//   Real x;
+//   Real y;
 //   Real X[EnumDimSum.E.one];
 //   Real X[EnumDimSum.E.two];
 //   Real X[EnumDimSum.E.three];
-//   Real x;
-//   Real y;
 // equation
 //   x = X[EnumDimSum.E.one] + (X[EnumDimSum.E.two] + X[EnumDimSum.E.three]);
 //   y = X[EnumDimSum.E.one] ^ 2.0 + (X[EnumDimSum.E.two] ^ 2.0 + X[EnumDimSum.E.three] ^ 2.0);

@@ -23,6 +23,10 @@ end Reductions;
 // Result:
 // class Reductions
 //   parameter Integer n = 5;
+//   Real c;
+//   Real d;
+//   Real e;
+//   Real f;
 //   Real A[1];
 //   Real A[2];
 //   Real A[3];
@@ -33,10 +37,6 @@ end Reductions;
 //   Real B[3];
 //   Real B[4];
 //   Real B[5];
-//   Real c;
-//   Real d;
-//   Real e;
-//   Real f;
 // equation
 //   c = A[1] ^ 2.0 + B[1] ^ 2.0 + (A[2] ^ 2.0 + B[2] ^ 2.0 + (A[3] ^ 2.0 + B[3] ^ 2.0 + (A[4] ^ 2.0 + B[4] ^ 2.0 + (A[5] ^ 2.0 + B[5] ^ 2.0))));
 //   d = (A[1] ^ 2.0 + B[1] ^ 2.0) * ((A[2] ^ 2.0 + B[2] ^ 2.0) * ((A[3] ^ 2.0 + B[3] ^ 2.0) * ((A[4] ^ 2.0 + B[4] ^ 2.0) * (A[5] ^ 2.0 + B[5] ^ 2.0))));

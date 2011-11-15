@@ -79,6 +79,9 @@ getErrorString();
 //   Real SineVoltage1.n.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   parameter Real SineVoltage1.offset(quantity = \"ElectricPotential\", unit = \"V\") = 0.0 \"Voltage offset\";
 //   parameter Real SineVoltage1.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Time offset\";
+//   parameter Real SineVoltage1.V(quantity = \"ElectricPotential\", unit = \"V\") = 1.0 \"Amplitude of sine wave\";
+//   parameter Real SineVoltage1.phase(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") = 0.0 \"Phase of sine wave\";
+//   parameter Real SineVoltage1.freqHz(quantity = \"Frequency\", unit = \"Hz\") = 1.0 \"Frequency of sine wave\";
 //   output Real SineVoltage1.signalSource.y \"Connector of Real output signal\";
 //   parameter Real SineVoltage1.signalSource.amplitude = SineVoltage1.V \"Amplitude of sine wave\";
 //   parameter Real SineVoltage1.signalSource.freqHz(quantity = \"Frequency\", unit = \"Hz\") = SineVoltage1.freqHz \"Frequency of sine wave\";
@@ -86,12 +89,9 @@ getErrorString();
 //   parameter Real SineVoltage1.signalSource.offset = SineVoltage1.offset \"Offset of output signal\";
 //   parameter Real SineVoltage1.signalSource.startTime(quantity = \"Time\", unit = \"s\") = SineVoltage1.startTime \"Output = offset for time < startTime\";
 //   protected constant Real SineVoltage1.signalSource.pi = 3.14159265358979;
-//   parameter Real SineVoltage1.V(quantity = \"ElectricPotential\", unit = \"V\") = 1.0 \"Amplitude of sine wave\";
-//   parameter Real SineVoltage1.phase(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") = 0.0 \"Phase of sine wave\";
-//   parameter Real SineVoltage1.freqHz(quantity = \"Frequency\", unit = \"Hz\") = 1.0 \"Frequency of sine wave\";
 //   output Real Ramp1.y \"Connector of Real output signal\";
 //   parameter Real Ramp1.height = 5.0 \"Height of ramps\";
-//   parameter Real Ramp1.duration(min = 1e-60) = 2.0 \"Durations of ramp\";
+//   parameter Real Ramp1.duration(min = 1e-060) = 2.0 \"Durations of ramp\";
 //   parameter Real Ramp1.offset = 2.0 \"Offset of output signal\";
 //   parameter Real Ramp1.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
 // equation
@@ -147,7 +147,5 @@ getErrorString();
 // end Modelica.Electrical.Analog.Examples.ShowVariableResistor;
 // "
 // "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
-// [ShowVariableResistor.mo:24:3-24:179:writable] Warning: Component VariableResistor has the same name as its type Modelica.Electrical.Analog.Basic.VariableResistor.
-// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // "
 // endResult

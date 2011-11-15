@@ -23,10 +23,10 @@ val(sine1.y,0.6),val(sine1.y,0.8),val(sine1.y,1.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.Circuit1_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.Circuit1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.Circuit1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {1.18200702060213e-162,-0.0241567375194052,0.0577053998994437,0.0687842115210824,0.070283596598756,0.0704864781476259}
-// {-1.11203836912104e-163,-6.04900780382282,-6.86762892549697,-6.97841747814076,-6.99341070865672,-6.99544032563561}
-// {0.0,1.12834186438704e-11,1.53761448018486e-11,2.28226326726144e-11,3.07238678942667e-11,3.79488215273535e-11}
+// {0.0,-0.0241582499106848,0.0577044552276197,0.0687834037715999,0.0702827361229988,0.0704856878830661}
+// {0.0,-6.04899771694246,-6.86762551909511,-6.97841421773812,-6.99340845277616,-6.99543707848971}
+// {0.0,7.68343250104701e-012,1.53668650020938e-011,2.28189165400784e-011,3.0733730004185e-011,3.79489105070685e-011}
 // endResult

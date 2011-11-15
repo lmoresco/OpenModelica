@@ -20,9 +20,9 @@ end N;
 
 // Result:
 // function N.ThermodynamicState "Automatically generated record constructor for N.ThermodynamicState"
-// input Real T;
-// input Real p;
-// output ThermodynamicState res;
+//   input Real T;
+//   input Real p;
+//   output ThermodynamicState res;
 // end N.ThermodynamicState;
 // 
 // class N

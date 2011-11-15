@@ -104,7 +104,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 //   input Modelica.Media.Common.PhaseBoundaryProperties liq \"properties on the boiling curve\";
 //   input Modelica.Media.Common.PhaseBoundaryProperties vap \"properties on the condensation curve\";
 //   input Real x(quantity = \"MassFraction\", unit = \"1\") \"vapour mass fraction\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"preoperties\";
 //   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") \"isochoric specific heat capacity\";
 //   protected Real dpT \"derivative of pressure w.r.t. temperature\";
@@ -192,19 +192,19 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Examples.WaterIF97.Medium.bubbleEnthalpy;
 // 
 // function Modelica.Media.Examples.WaterIF97.Medium.density_pT \"Computes density as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_pT(p,T,0);
 // end Modelica.Media.Examples.WaterIF97.Medium.density_pT;
 // 
 // function Modelica.Media.Examples.WaterIF97.Medium.density_ph \"Computes density as a function of pressure and specific enthalpy\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_ph(p,h,phase,0);
 // end Modelica.Media.Examples.WaterIF97.Medium.density_ph;
@@ -217,8 +217,8 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Examples.WaterIF97.Medium.dewEnthalpy;
 // 
 // function Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature \"saturation temperature of water\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"saturation temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"saturation temperature\";
 // algorithm
 //   T := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat(p);
 // end Modelica.Media.Examples.WaterIF97.Medium.saturationTemperature;
@@ -234,8 +234,8 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Examples.WaterIF97.Medium.setSmoothState;
 // 
 // function Modelica.Media.Examples.WaterIF97.Medium.setState_pT \"Return thermodynamic state from p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Modelica.Media.Examples.WaterIF97.Medium.ThermodynamicState state \"thermodynamic state record\";
 // algorithm
@@ -243,9 +243,9 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Examples.WaterIF97.Medium.setState_pT;
 // 
 // function Modelica.Media.Examples.WaterIF97.Medium.setState_pTX \"Return thermodynamic state of water as function of p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Media.Examples.WaterIF97.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
@@ -253,8 +253,8 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Examples.WaterIF97.Medium.setState_pTX;
 // 
 // function Modelica.Media.Examples.WaterIF97.Medium.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
 // algorithm
@@ -262,10 +262,10 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Examples.WaterIF97.Medium.specificEnthalpy_pT;
 // 
 // function Modelica.Media.Examples.WaterIF97.Medium.temperature_ph \"Computes temperature as a function of pressure and specific enthalpy\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 // algorithm
 //   T := Modelica.Media.Water.IF97_Utilities.T_ph(p,h,phase,0);
 // end Modelica.Media.Examples.WaterIF97.Medium.temperature_ph;
@@ -273,13 +273,13 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.T3a_ph \"Region 3 a: inverse function T(p,h)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   protected constant Real[31] n = {-1.33645667811215e-007,4.55912656802978e-006,-1.46294640700979e-005,0.0063934131297008,372.783927268847,-7186.54377460447,573494.7521034,-2675693.29111439,-3.34066283302614e-005,-0.0245479214069597,47.8087847764996,7.64664131818904e-006,0.00128350627676972,0.0171219081377331,-8.51007304583213,-0.0136513461629781,-3.84460997596657e-006,0.00337423807911655,-0.551624873066791,0.72920227710747,-0.00992522757376041,-0.119308831407288,0.793929190615421,0.454270731799386,0.20999859125991,-0.00642109823904738,-0.023515586860454,0.00252233108341612,-0.00764885133368119,0.0136176427574291,-0.0133027883575669};
 //   protected constant Real[31] I = {-12.0,-12.0,-12.0,-12.0,-12.0,-12.0,-12.0,-12.0,-10.0,-10.0,-10.0,-8.0,-8.0,-8.0,-8.0,-5.0,-3.0,-2.0,-2.0,-2.0,-1.0,-1.0,0.0,0.0,1.0,3.0,3.0,4.0,4.0,10.0,12.0};
 //   protected constant Real[31] J = {0.0,1.0,2.0,6.0,14.0,16.0,20.0,22.0,1.0,5.0,12.0,0.0,2.0,4.0,10.0,2.0,0.0,1.0,3.0,4.0,0.0,2.0,0.0,1.0,1.0,0.0,1.0,0.0,3.0,4.0,5.0};
 //   protected constant Real hstar(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 2300000.0 \"normalization enthalpy\";
 //   protected constant Real pstar(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = 100000000.0 \"normalization pressure\";
-//   protected constant Real Tstar(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = 760.0 \"normalization temperature\";
+//   protected constant Real Tstar(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 760.0 \"normalization temperature\";
 //   protected Real pi = p / 100000000.0 \"normalized specific pressure\";
 //   protected Real eta = h / 2300000.0 \"normalized specific enthalpy\";
 // algorithm
@@ -289,11 +289,11 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.T3b_ph \"Region 3 b: inverse function T(p,h)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   protected constant Real[33] n = {3.2325457364492e-005,-0.000127575556587181,-0.000475851877356068,0.00156183014181602,0.105724860113781,-85.8514221132534,724.140095480911,0.00296475810273257,-0.00592721983365988,-0.0126305422818666,-0.115716196364853,84.9000969739595,-0.0108602260086615,0.0154304475328851,0.0750455441524466,0.0252520973612982,-0.0602507901232996,-3.07622221350501,-0.0574011959864879,5.03471360939849,-0.925081888584834,3.91733882917546,-77.314600713019,9493.08762098587,-1410437.19679409,8491662.30819026,0.861095729446704,0.32334644281172,0.873281936020439,-0.436653048526683,0.286596714529479,-0.131778331276228,0.00676682064330275};
 //   protected constant Real[33] I = {-12.0,-12.0,-10.0,-10.0,-10.0,-10.0,-10.0,-8.0,-8.0,-8.0,-8.0,-8.0,-6.0,-6.0,-6.0,-4.0,-4.0,-3.0,-2.0,-2.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,0.0,1.0,3.0,5.0,6.0,8.0};
 //   protected constant Real[33] J = {0.0,1.0,0.0,1.0,5.0,10.0,12.0,0.0,1.0,2.0,4.0,10.0,0.0,1.0,2.0,0.0,1.0,5.0,0.0,4.0,2.0,4.0,6.0,10.0,14.0,16.0,0.0,2.0,1.0,1.0,1.0,1.0,1.0};
-//   protected constant Real Tstar(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = 860.0 \"normalization temperature\";
+//   protected constant Real Tstar(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 860.0 \"normalization temperature\";
 //   protected constant Real pstar(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = 100000000.0 \"normalization pressure\";
 //   protected constant Real hstar(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 2800000.0 \"normalization enthalpy\";
 //   protected Real pi = p / 100000000.0 \"normalized specific pressure\";
@@ -303,7 +303,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.T3b_ph;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.dptofT \"derivative of pressure wrt temperature along the saturation pressure curve\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Real dpt(unit = \"Pa/K\") \"temperature derivative of pressure\";
 //   protected Real[31] o \"vector of auxiliary variables\";
 //   protected Real Tlim \"temeprature limited to TCRIT\";
@@ -403,8 +403,8 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.dtsatofp;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.f3 \"Helmholtz function for region 3: f(d,T)\"
-//   input Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Modelica.Media.Common.HelmholtzDerivs f \"dimensionless Helmholtz function and dervatives wrt delta and tau\";
 //   protected Real[40] o \"vector of auxiliary variables\";
 // algorithm
@@ -463,7 +463,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.g1 \"Gibbs function for region 1: g(p,T)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Modelica.Media.Common.GibbsDerivs g \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Real pi1 \"dimensionless pressure\";
 //   protected Real tau1 \"dimensionless temperature\";
@@ -537,7 +537,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.g2 \"Gibbs function for region 2: g(p,T)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Modelica.Media.Common.GibbsDerivs g \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Real tau2 \"dimensionless temperature\";
 //   protected Real[55] o \"vector of auxiliary variables\";
@@ -618,7 +618,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.g5 \"base function for region 5: g(p,T)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Modelica.Media.Common.GibbsDerivs g \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Real[11] o \"vector of auxiliary variables\";
 // algorithm
@@ -662,7 +662,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.h3ab_p;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat \"region 4 saturation pressure as a functionx of temperature\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Real p_sat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   protected Real[8] o \"vector of auxiliary variables\";
 //   protected Real Tlim = min(T,647.096);
@@ -681,7 +681,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat_der \"derivative function for psat\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   input Real der_T(unit = \"K/s\") \"temperature derivative\";
 //   output Real der_psat(unit = \"Pa/s\") \"pressure\";
 //   protected Real dpt;
@@ -693,7 +693,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tph1 \"inverse function for region 1: T(p,h)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   protected Real pi \"dimensionless pressure\";
 //   protected Real eta1 \"dimensionless specific enthalpy\";
 //   protected Real[3] o \"vector of auxiliary variables\";
@@ -711,7 +711,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tph2 \"reverse function for region 2: T(p,h)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   protected Real pi \"dimensionless pressure\";
 //   protected Real pi2b \"dimensionless pressure\";
 //   protected Real pi2c \"dimensionless pressure\";
@@ -761,7 +761,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat \"region 4 saturation temperature as a function of pressure\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   output Real t_sat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   output Real t_sat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   protected Real pi \"dimensionless pressure\";
 //   protected Real[20] o \"vector of auxiliary variables\";
 // algorithm
@@ -804,7 +804,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.v3a_ph \"Region 3 a: inverse function v(p,h)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
-//   output Real v(quantity = \"SpecificVolume\", unit = \"m3/kg\", min = 0) \"specific volume\";
+//   output Real v(quantity = \"SpecificVolume\", unit = \"m3/kg\", min = 0.0) \"specific volume\";
 //   protected constant Real[32] n = {0.00529944062966028,-0.170099690234461,11.1323814312927,-2178.98123145125,-0.000506061827980875,0.556495239685324,-9.43672726094016,-0.297856807561527,93.9353943717186,0.0192944939465981,0.421740664704763,-3689141.2628233,-0.00737566847600639,-0.354753242424366,-1.99768169338727,1.15456297059049,5683.6687581596,0.00808169540124668,0.172416341519307,1.04270175292927,-0.297691372792847,0.560394465163593,0.275234661176914,-0.148347894866012,-0.0651142513478515,-2.92468715386302,0.0664876096952665,3.52335014263844,-0.0146340792313332,-2.24503486668184,1.10533464706142,-0.0408757344495612};
 //   protected constant Real[32] I = {-12.0,-12.0,-12.0,-12.0,-10.0,-10.0,-10.0,-8.0,-8.0,-6.0,-6.0,-6.0,-4.0,-4.0,-3.0,-2.0,-2.0,-1.0,-1.0,-1.0,-1.0,0.0,0.0,1.0,1.0,1.0,2.0,2.0,3.0,4.0,5.0,8.0};
 //   protected constant Real[32] J = {6.0,8.0,12.0,18.0,4.0,7.0,10.0,5.0,12.0,3.0,4.0,22.0,2.0,3.0,7.0,3.0,16.0,0.0,1.0,2.0,3.0,0.0,1.0,0.0,1.0,2.0,0.0,2.0,0.0,2.0,2.0,2.0};
@@ -820,7 +820,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.v3b_ph \"Region 3 b: inverse function v(p,h)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
-//   output Real v(quantity = \"SpecificVolume\", unit = \"m3/kg\", min = 0) \"specific volume\";
+//   output Real v(quantity = \"SpecificVolume\", unit = \"m3/kg\", min = 0.0) \"specific volume\";
 //   protected constant Real[30] n = {-2.25196934336318e-009,1.40674363313486e-008,2.3378408528056e-006,-3.31833715229001e-005,0.00107956778514318,-0.271382067378863,1.07202262490333,-0.853821329075382,-2.15214194340526e-005,0.00076965608822273,-0.00431136580433864,0.453342167309331,-0.507749535873652,-100.475154528389,-0.219201924648793,-3.21087965668917,607.567815637771,0.000557686450685932,0.18749904002955,0.00905368030448107,0.285417173048685,0.0329924030996098,0.239897419685483,4.82754995951394,-11.8035753702231,0.169490044091791,-0.0179967222507787,0.0371810116332674,-0.0536288335065096,1.6069710109252};
 //   protected constant Real[30] I = {-12.0,-12.0,-8.0,-8.0,-8.0,-8.0,-8.0,-8.0,-6.0,-6.0,-6.0,-6.0,-6.0,-6.0,-4.0,-4.0,-4.0,-3.0,-3.0,-2.0,-2.0,-1.0,-1.0,-1.0,-1.0,0.0,1.0,1.0,2.0,2.0};
 //   protected constant Real[30] J = {0.0,1.0,0.0,1.0,3.0,6.0,7.0,8.0,0.0,1.0,2.0,5.0,6.0,10.0,3.0,6.0,10.0,0.0,2.0,1.0,2.0,0.0,1.0,4.0,5.0,0.0,0.0,1.0,2.0,6.0};
@@ -835,7 +835,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Inverses.dofp13 \"density at the boundary between regions 1 and 3\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 //   protected Real p2 \"auxiliary variable\";
 //   protected Real[3] o \"vector of auxiliary variables\";
 // algorithm
@@ -848,8 +848,8 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Inverses.dofp23 \"density at the boundary between regions 2 and 3\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
-//   protected Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0);
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
+//   protected Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0);
 //   protected Real[13] o \"vector of auxiliary variables\";
 //   protected Real taug \"auxiliary variable\";
 //   protected Real pi \"dimensionless pressure\";
@@ -877,22 +877,22 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Inverses.dofpt3 \"inverse iteration in region 3: (d) = f(p,T)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   input Real delp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"iteration converged if (p-pre(p) < delp)\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 //   output Integer error = 0 \"error flag: iteration failed if different from 0\";
-//   protected Real dguess(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"guess density\";
+//   protected Real dguess(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"guess density\";
 //   protected Integer i = 0 \"loop counter\";
 //   protected Real dp \"pressure difference\";
-//   protected Real deld(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density step\";
+//   protected Real deld(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density step\";
 //   protected Modelica.Media.Common.HelmholtzDerivs f \"dimensionless Helmholtz function and dervatives wrt delta and tau\";
 //   protected Modelica.Media.Common.NewtonDerivatives_pT nDerivs \"derivatives needed in Newton iteration\";
 //   protected Boolean found = false \"flag for iteration success\";
 //   protected Boolean supercritical \"flag, true for supercritical states\";
 //   protected Boolean liquid \"flag, true for liquid states\";
-//   protected Real dmin(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"lower density limit\";
-//   protected Real dmax(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"upper density limit\";
-//   protected Real Tmax(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"maximum temperature\";
+//   protected Real dmin(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"lower density limit\";
+//   protected Real dmax(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"upper density limit\";
+//   protected Real Tmax(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"maximum temperature\";
 // algorithm
 //   assert( p >= 16529200.0, \"BaseIF97.dofpt3: function called outside of region 3! p too low
 // p = \" + String(p,0,true,6) + \" Pa < \" + String(16529200.0,0,true,6) + \" Pa\");
@@ -946,11 +946,11 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   input Real delp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"iteration accuracy\";
 //   input Real delh(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"iteration accuracy\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Integer error \"error flag: iteration failed if different from 0\";
-//   protected Real Tguess(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"initial temperature\";
-//   protected Real dguess(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"initial density\";
+//   protected Real Tguess(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"initial temperature\";
+//   protected Real dguess(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"initial density\";
 //   protected Integer i \"iteration counter\";
 //   protected Real dh \"Newton-error in h-direction\";
 //   protected Real dp \"Newton-error in p-direction\";
@@ -997,12 +997,12 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Inverses.dtofph3;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Inverses.fixdT \"region limits for inverse iteration in region 3\"
-//   input Real din(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
-//   input Real Tin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
-//   output Real dout(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
-//   output Real Tout(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
-//   protected Real Tmin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"approximation of minimum temperature\";
-//   protected Real Tmax(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"approximation of maximum temperature\";
+//   input Real din(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
+//   input Real Tin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
+//   output Real dout(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
+//   output Real Tout(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
+//   protected Real Tmin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"approximation of minimum temperature\";
+//   protected Real Tmax(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"approximation of maximum temperature\";
 // algorithm
 //   if din > 765.0 then
 //     dout := 765.0;
@@ -1034,11 +1034,11 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   input Real reldh(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"iteration accuracy\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Integer error \"error flag: iteration failed if different from 0\";
 //   protected Modelica.Media.Common.GibbsDerivs g \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Real proh(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"h for current guess in T\";
-//   protected constant Real Tguess(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = 1500.0 \"initial temperature\";
+//   protected constant Real Tguess(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 1500.0 \"initial temperature\";
 //   protected Integer i \"iteration counter\";
 //   protected Real relerr \"relative error in h\";
 //   protected Real dh \"Newton-error in h-direction\";
@@ -1069,7 +1069,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Isentropic.hofpT1 \"intermediate function for isentropic specific enthalpy in region 1\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   protected Real[13] o \"vector of auxiliary variables\";
 //   protected Real pi1 \"dimensionless pressure\";
@@ -1099,7 +1099,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Isentropic.hofpT2 \"intermediate function for isentropic specific enthalpy in region 2\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   protected Real[16] o \"vector of auxiliary variables\";
 //   protected Real pi \"dimensionless pressure\";
@@ -1163,7 +1163,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boundary23ofT \"boundary function for region boundary between regions 2 and 3 (input temperature)\"
-//   input Real t(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real t(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   protected constant Real[5] n = {348.05185628969,-1.1671859879975,0.0010192970039326,572.54459862746,13.91883977887};
 // algorithm
@@ -1172,7 +1172,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boundary23ofp \"boundary function for region boundary between regions 2 and 3 (input pressure)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   output Real t(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   output Real t(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   protected constant Real[5] n = {348.05185628969,-1.1671859879975,0.0010192970039326,572.54459862746,13.91883977887};
 //   protected Real pi \"dimensionless pressure\";
 // algorithm
@@ -1184,8 +1184,8 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.d1n \"density in region 1 as function of p and T\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 //   protected Real pi \"dimensionless pressure\";
 //   protected Real pi1 \"dimensionless pressure\";
 //   protected Real tau \"dimensionless temperature\";
@@ -1214,8 +1214,8 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.d2n \"density in region 2  as function of p and T\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 //   protected Real pi \"dimensionless pressure\";
 //   protected Real tau \"dimensionless temperature\";
 //   protected Real tau2 \"dimensionless temperature\";
@@ -1428,7 +1428,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_pT \"return the current region (valid values: 1,2,3,5) in IF97, given pressure and temperature\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   input Integer mode = 0 \"mode: 0 means check, otherwise assume region=mode\";
 //   output Integer region \"region (valid values: 1,2,3,5) in IF97, region 4 is impossible!\";
 // algorithm
@@ -1462,7 +1462,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 //   input Integer mode = 0 \"mode: 0 means check, otherwise assume region=mode\";
 //   output Integer region \"region (valid values: 1,2,3,4,5) in IF97\";
 //   protected Boolean hsubcrit;
-//   protected Real Ttest(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0);
+//   protected Real Ttest(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0);
 //   protected Real hl(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"bubble enthalpy\";
 //   protected Real hv(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"dew enthalpy\";
 // algorithm
@@ -1538,7 +1538,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhol_p_R4b \"explicit approximation of liquid density on the boundary between regions 4 and 3\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   output Real dl(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"liquid density\";
+//   output Real dl(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"liquid density\";
 //   protected Real x \"auxiliary variable\";
 // algorithm
 //   if p < 22064000.0 then
@@ -1551,7 +1551,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhov_p_R4b \"explicit approximation of vapour density on the boundary between regions 4 and 2\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   output Real dv(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"vapour density\";
+//   output Real dv(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"vapour density\";
 //   protected Real x \"auxiliary variable\";
 // algorithm
 //   if p < 22064000.0 then
@@ -1567,7 +1567,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   input Integer phase = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   input Integer region = 0 \"if 0, region is unknown, otherwise known and this input\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 // algorithm
 //   T := Modelica.Media.Water.IF97_Utilities.T_props_ph(p,h,Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(p,h,phase,region));
 // end Modelica.Media.Water.IF97_Utilities.T_ph;
@@ -1593,14 +1593,14 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   input Modelica.Media.Common.IF97BaseTwoPhase properties \"auxiliary record\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 // algorithm
 //   T := properties.T;
 // end Modelica.Media.Water.IF97_Utilities.T_props_ph;
 // 
 // function Modelica.Media.Water.IF97_Utilities.h_pT \"specific enthalpy as function or pressure and temperature\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   input Integer region = 0 \"if 0, region is unknown, otherwise known and this input\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 // algorithm
@@ -1609,7 +1609,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.h_pT_der \"derivative function of h_pT\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Modelica.Media.Common.IF97BaseTwoPhase aux \"auxiliary record\";
 //   input Real p_der \"derivative of pressure\";
 //   input Real T_der \"derivative of temperature\";
@@ -1624,7 +1624,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.h_props_pT \"Inline after index reduction\" \"specific enthalpy as function or pressure and temperature\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Modelica.Media.Common.IF97BaseTwoPhase aux \"auxiliary record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 // algorithm
@@ -1647,16 +1647,16 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.rho_pT \"density as function or pressure and temperature\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Integer region = 0 \"if 0, region is unknown, otherwise known and this input\";
-//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 // algorithm
 //   rho := Modelica.Media.Water.IF97_Utilities.rho_props_pT(p,T,Modelica.Media.Water.IF97_Utilities.waterBaseProp_pT(p,T,region));
 // end Modelica.Media.Water.IF97_Utilities.rho_pT;
 // 
 // function Modelica.Media.Water.IF97_Utilities.rho_pT_der \"derivative function of rho_pT\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Modelica.Media.Common.IF97BaseTwoPhase aux \"auxiliary record\";
 //   input Real p_der \"derivative of pressure\";
 //   input Real T_der \"derivative of temperature\";
@@ -1674,7 +1674,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   input Integer phase = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   input Integer region = 0 \"if 0, region is unknown, otherwise known and this input\";
-//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 // algorithm
 //   rho := Modelica.Media.Water.IF97_Utilities.rho_props_ph(p,h,Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(p,h,phase,region));
 // end Modelica.Media.Water.IF97_Utilities.rho_ph;
@@ -1698,9 +1698,9 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.rho_props_pT \"Inline after index reduction\" \"density as function or pressure and temperature\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Modelica.Media.Common.IF97BaseTwoPhase aux \"auxiliary record\";
-//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 // algorithm
 //   rho := aux.rho;
 // end Modelica.Media.Water.IF97_Utilities.rho_props_pT;
@@ -1709,14 +1709,14 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   input Modelica.Media.Common.IF97BaseTwoPhase properties \"auxiliary record\";
-//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 // algorithm
 //   rho := properties.rho;
 // end Modelica.Media.Water.IF97_Utilities.rho_props_ph;
 // 
 // function Modelica.Media.Water.IF97_Utilities.rhol_T \"compute the saturated liquid d(T)\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density of water at the boiling point\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density of water at the boiling point\";
 //   protected Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"saturation pressure\";
 // algorithm
 //   p := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat(T);
@@ -1730,8 +1730,8 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.rhol_T;
 // 
 // function Modelica.Media.Water.IF97_Utilities.rhov_T \"compute the saturated vapour d(T)\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density of steam at the condensation point\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density of steam at the condensation point\";
 //   protected Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"saturation pressure\";
 // algorithm
 //   p := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat(T);
@@ -1746,7 +1746,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.waterBaseProp_pT \"intermediate property record for water (p and T prefered states)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Integer region = 0 \"if 0, do region computation, otherwise assume the region is this input\";
 //   output Modelica.Media.Common.IF97BaseTwoPhase aux \"auxiliary record\";
 //   protected Modelica.Media.Common.GibbsDerivs g \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
@@ -1811,17 +1811,17 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 //   protected Modelica.Media.Common.HelmholtzDerivs f \"dimensionless Helmholtz funcion and dervatives wrt delta and tau\";
 //   protected Integer error \"error flag for inverse iterations\";
 //   protected Real h_liq(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"liquid specific enthalpy\";
-//   protected Real d_liq(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"liquid density\";
+//   protected Real d_liq(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"liquid density\";
 //   protected Real h_vap(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"vapour specific enthalpy\";
-//   protected Real d_vap(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"vapour density\";
+//   protected Real d_vap(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"vapour density\";
 //   protected Modelica.Media.Common.PhaseBoundaryProperties liq \"phase boundary property record\";
 //   protected Modelica.Media.Common.PhaseBoundaryProperties vap \"phase boundary property record\";
 //   protected Modelica.Media.Common.GibbsDerivs gl \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Modelica.Media.Common.GibbsDerivs gv \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Modelica.Media.Common.HelmholtzDerivs fl \"dimensionless Helmholtz function and dervatives wrt delta and tau\";
 //   protected Modelica.Media.Common.HelmholtzDerivs fv \"dimensionless Helmholtz function and dervatives wrt delta and tau\";
-//   protected Real t1(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature at phase boundary, using inverse from region 1\";
-//   protected Real t2(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature at phase boundary, using inverse from region 2\";
+//   protected Real t1(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature at phase boundary, using inverse from region 1\";
+//   protected Real t2(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature at phase boundary, using inverse from region 2\";
 // algorithm
 //   aux.region := if region == 0 then if phase == 2 then 4 else Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph(p,h,phase,0) else region;
 //   aux.phase := if phase <> 0 then phase else if aux.region == 4 then 2 else 1;
@@ -1907,7 +1907,7 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
-//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
 //   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
@@ -1920,49 +1920,49 @@ checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 // end Modelica.SIunits.Conversions.to_bar;
 // 
 // function Modelica.SIunits.Conversions.to_degC \"Convert from Kelvin to °Celsius\"
-//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 //   output Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 // algorithm
 //   Celsius := -273.15 + Kelvin;
 // end Modelica.SIunits.Conversions.to_degC;
 // 
 // class Modelica.Media.Examples.WaterIF97
-//   input Real medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, start = 100000.0, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
+//   input Real medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = 100000.0, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
 //   input Real medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", start = 100000.0, StateSelect = StateSelect.prefer) \"Specific enthalpy of medium\";
-//   Real medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 999.0, nominal = 1, StateSelect = StateSelect.default) \"Density of medium\";
-//   Real medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 275.0, nominal = 300, StateSelect = StateSelect.default) \"Temperature of medium\";
-//   Real medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 999.0, nominal = 1.0, StateSelect = StateSelect.default) \"Density of medium\";
+//   Real medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 275.0, nominal = 300.0, StateSelect = StateSelect.default) \"Temperature of medium\";
+//   Real medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   Real medium.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
-//   Real medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
 //   Real medium.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
 //   Integer medium.state.phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
 //   Real medium.state.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   Real medium.state.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"density\";
-//   Real medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"temperature\";
-//   Real medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
+//   Real medium.state.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
+//   Real medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
+//   Real medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
 //   parameter Boolean medium.preferredMediumStates = false \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
 //   parameter Boolean medium.standardOrderComponents = true \"if true, and reducedX = true, the last element of X will be computed from the other ones\";
 //   Real medium.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(medium.T) \"Temperature of medium in [degC]\";
 //   Real medium.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(medium.p) \"Absolute pressure of medium in [bar]\";
-//   Real medium.sat.psat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"saturation pressure\";
-//   Real medium.sat.Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300.0, nominal = 300) \"saturation temperature\";
+//   Real medium.sat.psat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"saturation pressure\";
+//   Real medium.sat.Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"saturation temperature\";
 //   Integer medium.phase(min = 0, max = 2, start = 1, fixed = false) \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   Real V(quantity = \"Volume\", unit = \"m3\", start = 0.1);
 //   parameter Real dV(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = 0.0 \"Fixed time derivative of volume\";
 //   parameter Real m_flow_ext(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = 0.0 \"Fixed mass flow rate into volume\";
 //   parameter Real H_flow_ext(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) = 10000.0 \"Fixed enthalpy flow rate into volume\";
-//   Real m(quantity = \"Mass\", unit = \"kg\", min = 0) \"Mass of volume\";
+//   Real m(quantity = \"Mass\", unit = \"kg\", min = 0.0) \"Mass of volume\";
 //   Real U(quantity = \"Energy\", unit = \"J\") \"Internal energy of volume\";
 //   Integer state2.phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
 //   Real state2.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   Real state2.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"density\";
-//   Real state2.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"temperature\";
-//   Real state2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
+//   Real state2.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
+//   Real state2.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
+//   Real state2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
 //   Integer state.phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
 //   Real state.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   Real state.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"density\";
-//   Real state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"temperature\";
-//   Real state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
+//   Real state.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
+//   Real state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
+//   Real state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
 //   Real m_flow_ext2;
 //   Real der_p;
 //   Real der_T;

@@ -21,9 +21,9 @@ val(gain3.y,0.6),val(gain3.y,0.8),val(gain3.y,1.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.Tank_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.Tank', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-010, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.Tank', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,3.87243571488101,7.70245387019044,9.54604622064632,9.42519260624546,9.30510888064674}
-// {0.0,0.0196785053164132,0.0277532950659745,0.030896676553711,0.0307004765537043,0.030504276553701}
+// {0.0,3.8724357146756,7.70245387010363,9.54604624180313,9.42519262727202,9.30510890154091}
+// {0.0,0.0196785053158912,0.0277532950658181,0.030896676587949,0.030700476587949,0.030504276587949}
 // endResult

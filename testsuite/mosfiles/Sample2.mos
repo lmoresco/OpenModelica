@@ -39,25 +39,25 @@ val(b,5);
 // true
 // record SimulationResult
 //     resultFile = "Sample2_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Sample2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Sample2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "y"
 // 0.0
 // 1.0
-// 9.4
+// 9.40000000000001
 // 28.9
 // 58.4
 // 102.4
 // 126.4
 // "x"
 // 1.0
-// 1.87646791693592
-// 4.58793482854333
-// 42.8714021436028
-// 188.505113768709
-// 643.162196845627
-// 1132.35799880914
+// 1.87638442935885
+// 4.5877848711842
+// 42.8682130866912
+// 188.488475699567
+// 643.071861569476
+// 1132.16263542883
 // "b"
 // 0.0
 // 0.0

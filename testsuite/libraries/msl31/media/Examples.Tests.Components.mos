@@ -57,13 +57,13 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
-//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
 //   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Examples.Tests.Components.FluidPort
-//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
 //   Real H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
@@ -89,13 +89,13 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
-//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
 //   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Examples.Tests.Components.FluidPort_a
-//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
 //   Real H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
@@ -121,13 +121,13 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
-//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
 //   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Examples.Tests.Components.FluidPort_b
-//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
 //   Real H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
@@ -187,19 +187,19 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
-//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
 //   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Examples.Tests.Components.ShortPipe
-//   parameter Real dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-10, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Nominal pressure drop\";
-//   parameter Real m_flow_nominal(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 1e-10, max = 100000.0) \"Nominal mass flow rate at nominal pressure drop\";
-//   Real port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   parameter Real dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-010, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Nominal pressure drop\";
+//   parameter Real m_flow_nominal(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 1e-010, max = 100000.0) \"Nominal mass flow rate at nominal pressure drop\";
+//   Real port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real port_a.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
 //   Real port_a.H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
-//   Real port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   Real port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real port_b.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real port_b.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
 //   Real port_b.H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";

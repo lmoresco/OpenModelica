@@ -1,0 +1,2 @@
+ loadFile("vaporizing.mo"); getErrorString();
+ instantiateModel(Modelica.Fluid.Valves.ValveVaporizing); getErrorString();

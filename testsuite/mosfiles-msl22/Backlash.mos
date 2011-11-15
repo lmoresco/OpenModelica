@@ -21,9 +21,9 @@ val(inertia1.phi,0.6),val(inertia1.phi,0.8),val(inertia1.phi,1.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SpringInertia.BacklashTest_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SpringInertia.BacklashTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SpringInertia.BacklashTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,0.109973081043417,0.287950839731115,0.287948365964486,0.110001212227011,4.54102166517533e-06}
-// {0.0,0.00774420681210716,0.0487805213844517,0.110397552622587,0.151435171331935,0.159176820285892}
+// {0.0,0.109960391377025,0.287918196137837,0.287911581492195,0.109965818908286,9.63055582513162e-006}
+// {0.0,0.00774607185224532,0.0487785750525064,0.110387832067622,0.151418540672861,0.159153083969638}
 // endResult

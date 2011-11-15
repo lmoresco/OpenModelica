@@ -60,8 +60,8 @@ end ExternalFunction4;
 //   input Integer[size(LU,1)] pivots;
 //   output Real[size(LU,1), size(LU,2)] inv = LU;
 //   protected Integer lwork = min(10,size(LU,1)) * (size(LU,1));
-//   protected Real[lwork] work;
 //   protected Integer info;
+//   protected Real[lwork] work;
 // 
 //   external "FORTRAN 77" dgetri(size(LU, 1), inv, size(LU, 1), pivots, work, lwork, info);
 // end ExternalFunction4.dgetri;
@@ -85,7 +85,7 @@ end ExternalFunction4;
 //   constant Real r[2,2] = 4.0;
 //   Real r2[1,1] = 1.0;
 //   Real r2[1,2] = 0.0;
-//   Real r2[2,1] = 8.88178419700125e-16;
+//   Real r2[2,1] = 8.88178419700125e-016;
 //   Real r2[2,2] = 1.0;
 // end ExternalFunction4;
 // endResult

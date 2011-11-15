@@ -33,9 +33,9 @@ model InnerOuterWithExtendsTest
   extends C1;
 end InnerOuterWithExtendsTest;
 
+
 // Result:
 // class InnerOuterWithExtendsTest
 //   Real V = 1.0;
 // end InnerOuterWithExtendsTest;
 // endResult
-

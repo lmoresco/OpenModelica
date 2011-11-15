@@ -30,20 +30,20 @@ val(dm.tank2.h,400);
 // true
 // record SimulationResult
 //     resultFile = "TwoTanksSystemExample.Simulations.TankSystemSimulation_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 400.0, numberOfIntervals = 4000, tolerance = 1e-06, method = 'rungekutta', fileNamePrefix = 'TwoTanksSystemExample.Simulations.TankSystemSimulation', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 400.0, numberOfIntervals = 4000, tolerance = 1e-006, method = 'rungekutta', fileNamePrefix = 'TwoTanksSystemExample.Simulations.TankSystemSimulation', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 0.0153846153832492
-// 0.540783003153361
-// 0.251810558846488
-// 0.450646163860487
-// 0.0840105155313676
-// 0.194208478084356
-// 0.268751088537662
-// 0.000506232078094431
-// 1.28465155201145
-// 0.26450390606777
-// 0.634453661205419
-// 0.0835876968253631
-// 0.440956776939228
+// 0.0153846153731533
+// 0.540789190232063
+// 0.251810601872853
+// 0.450649020037753
+// 0.084008973639534
+// 0.194205610095606
+// 0.26875071847709
+// 0.000501580744513529
+// 1.2846636718509
+// 0.264501233219996
+// 0.634461572595253
+// 0.0835854826109112
+// 0.440956019969881
 // endResult

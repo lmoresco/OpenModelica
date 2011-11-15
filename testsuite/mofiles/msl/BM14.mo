@@ -1107,17 +1107,17 @@ end BM14;
 // 
 // class BM14
 //   parameter Integer log1.n = 1 "Number of inputs (= number of outputs)";
+//   protected Real log1.u[1] = log1.inPort.signal[1] "Input signals";
 //   parameter Integer log1.inPort.n = log1.n "Dimension of signal vector";
 //   input Real log1.inPort.signal[1] "Real input signals";
 //   parameter Integer log1.outPort.n = log1.n "Dimension of signal vector";
 //   output Real log1.outPort.signal[1] "Real output signals";
 //   output Real log1.y[1] "Output signals";
-//   protected Real log1.u[1] = log1.inPort.signal[1] "Input signals";
+//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 //   parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 //   parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 //   output Real constant1.outPort.signal[1] "Real output signals";
 //   output Real constant1.y[1];
-//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   log1.y[1] = log(log1.u[1]);
 //   log1.y[1] = log1.outPort.signal[1];

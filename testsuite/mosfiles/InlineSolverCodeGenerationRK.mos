@@ -24,28 +24,28 @@ val(z,0.0);val(z,1.0);val(z,2.0);
 // true
 // record SimulationResult
 //     resultFile = "DerivativeCodeGeneration_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 4.0, numberOfIntervals = 10000, tolerance = 1e-06, method = 'inline-rungekutta', fileNamePrefix = 'DerivativeCodeGeneration', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 4.0, numberOfIntervals = 10000, tolerance = 1e-006, method = 'inline-rungekutta', fileNamePrefix = 'DerivativeCodeGeneration', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""
 // "x[1]"
 // 0.0
-// 1.00081692708345
-// 2.00133958333345
+// 1.00128437423703
+// 2.00180805740353
 // "x[2]"
 // 0.0
-// 2.0016338541669
-// 4.0026791666669
+// 2.00256874847406
+// 4.00361611480706
 // "mixed.v1"
 // 0.0
-// -0.44097259249721
-// -0.748674522384433
+// -0.440971806900097
+// -0.748673074892494
 // "y"
 // 2.0
-// 3.00081692708342
-// 4.00133958333342
+// 3.001284374237
+// 4.0018080574035
 // "z"
 // 15.0
-// 15.5007438206102
-// 17.0018993774941
+// 15.5007445035624
+// 17.001901646101
 // endResult

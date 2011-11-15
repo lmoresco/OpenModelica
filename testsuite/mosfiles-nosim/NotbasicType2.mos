@@ -11,8 +11,8 @@ getErrorString();
 // Result:
 // true
 // "class BP
-//   parameter Integer a = b;
 //   parameter Integer b = 1;
+//   parameter Integer a = b;
 // end BP;
 // "
 // ""

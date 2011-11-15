@@ -28,14 +28,14 @@ s2;
 // true
 // record SimulationResult
 //     resultFile = "WatchDogSystem2_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 4.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'WatchDogSystem2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 4.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'WatchDogSystem2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // true
 // 0.0
-// 1.00000000000089
+// 1.0
 // 0.0
-// 0.250000000000888
+// 0.250000000596046
 // 0.0
 // 1.0
 // endResult

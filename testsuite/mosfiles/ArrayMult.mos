@@ -33,17 +33,30 @@ m8;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ArrayMult_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'ArrayMult', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
-//     messages = ""
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'ArrayMult', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = "Simulation failed for model: ArrayMult
+// Error: Error building simulator. Buildlog: \\tools\\MinGW\\bin\\mingw32-make[3]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/mosfiles'
+// gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o ArrayMult.o ArrayMult.c
+// gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o ArrayMult_records.o ArrayMult_records.c
+// g++ -I. -o ArrayMult.exe ArrayMult.o ArrayMult_records.o -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.       -O3 -falign-functions -msse2 -mfpmath=sse   -L\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/lib/omc\" -lSimulationRuntimeC -lregex -lexpat -linteractive -static-libgcc -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32 -Wl,-Bstatic -lf2c -Wl,-Bdynamic
+// c:/omdev/tools/mingw/bin/../lib/gcc/mingw32/4.4.0/../../../../mingw32/bin/ld.exe: reopening ArrayMult.exe: Permission denied
+// 
+// c:/omdev/tools/mingw/bin/../lib/gcc/mingw32/4.4.0/../../../../mingw32/bin/ld.exe: final link failed: Permission denied
+// collect2: ld returned 1 exit status
+// \\tools\\MinGW\\bin\\mingw32-make[3]: *** [ArrayMult] Error 1
+// \\tools\\MinGW\\bin\\mingw32-make[3]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/mosfiles'
+// 
+// "
 // end SimulationResult;
-// true
-// 2.0
-// 6.0
-// 11.0
-// 11.0
-// 35.0
-// 35.0
-// 10.0
-// 4.0
+// Error processing file: ArrayMult.mos
+// Error: Failed to open simulation result c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/mosfiles/ArrayMult_res.mat: No such file or directory
+// 
+// Error: Error reading simulation result.
+// Error: Internal error - Types.typeOfValue failed: fail()
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

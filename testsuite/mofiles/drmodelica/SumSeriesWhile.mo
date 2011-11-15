@@ -21,7 +21,7 @@ end SumSeries;
 
 // Result:
 // class SumSeries
-//   parameter Real eps = 1e-06;
+//   parameter Real eps = 1e-006;
 //   Integer i;
 //   Real sum;
 //   Real delta;

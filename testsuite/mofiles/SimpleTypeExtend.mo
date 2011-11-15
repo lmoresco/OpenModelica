@@ -12,11 +12,16 @@ model SimpleTypeExtend
 end SimpleTypeExtend;
 
 // Result:
-// Error processing file: SimpleTypeExtend.mo
-// [SimpleTypeExtend.mo:9:1-12:21:writable] Error: Class SimpleTypeExtend inherits primary type but has components
-// 
-// # Error encountered! Exiting...
-// # Please check the error message and the flags.
-// 
-// Execution failed!
+// class SimpleTypeExtend
+//   final parameter String unit = "";
+//   final parameter String quantity = "";
+//   final parameter String displayUnit = "";
+//   final parameter Real min = 0.0;
+//   final parameter Real max = 0.0;
+//   final parameter Real start = 0.0;
+//   final parameter Boolean fixed = false;
+//   final parameter Real nominal;
+//   final parameter enumeration(never, avoid, default, prefer, always) stateSelect = StateSelect.default;
+//   Real illegalReal;
+// end SimpleTypeExtend;
 // endResult

@@ -26,7 +26,7 @@ end test;
 // function equal
 //   input Real[:] x;
 //   input Real[:] y;
-//   input Real eps = 1e-06;
+//   input Real eps = 1e-006;
 //   output Boolean equal;
 // algorithm
 //   equal := false;
@@ -41,6 +41,6 @@ end test;
 // equation
 //   x[1] = y[1];
 //   x[2] = y[2];
-//   b = equal({x[1],x[2]},{y[1],y[2]},1e-06);
+//   b = equal({x[1],x[2]},{y[1],y[2]},1e-006);
 // end test;
 // endResult

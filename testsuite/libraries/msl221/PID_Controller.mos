@@ -25,29 +25,21 @@ getErrorString();
 //   output Real PI.controlError = PI.u_s - PI.u_m \"Control error (set point - measurement)\";
 //   parameter Integer PI.controllerType(min = 1, max = 4) = 2 \"Type of controller\";
 //   parameter Real PI.k(min = 0.0) = 100.0 \"Gain of controller\";
-//   parameter Real PI.Ti(quantity = \"Time\", unit = \"s\", min = 1e-60) = 0.1 \"Time constant of Integrator block\";
+//   parameter Real PI.Ti(quantity = \"Time\", unit = \"s\", min = 1e-060) = 0.1 \"Time constant of Integrator block\";
 //   parameter Real PI.Td(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.1 \"Time constant of Derivative block\";
 //   parameter Real PI.yMax = 12.0 \"Upper limit of output\";
 //   parameter Real PI.wp(min = 0.0) = 1.0 \"Set-point weight for Proportional block (0..1)\";
 //   parameter Real PI.wd(min = 0.0) = 0.0 \"Set-point weight for Derivative block (0..1)\";
-//   parameter Real PI.Ni(min = 1e-13) = 0.1 \"Ni*Ti is time constant of anti-windup compensation\";
-//   parameter Real PI.Nd(min = 1e-13) = 10.0 \"The higher Nd, the more ideal the derivative block\";
+//   parameter Real PI.Ni(min = 1e-013) = 0.1 \"Ni*Ti is time constant of anti-windup compensation\";
+//   parameter Real PI.Nd(min = 1e-013) = 10.0 \"The higher Nd, the more ideal the derivative block\";
 //   parameter Integer PI.initType(min = 1, max = 5) = 2 \"Type of initialization\";
 //   parameter Boolean PI.limitsAtInit = false \"= false, if limits are ignored during initializiation\";
 //   parameter Real PI.xi_start = 0.0 \"Initial or guess value value for integrator output (= integrator state)\";
 //   parameter Real PI.xd_start = 0.0 \"Initial or guess value for state of derivative block\";
 //   parameter Real PI.y_start = 0.0 \"Initial value of output\";
-//   input Real PI.addP.u1 \"Connector of Real input signal 1\";
-//   input Real PI.addP.u2 \"Connector of Real input signal 2\";
-//   output Real PI.addP.y \"Connector of Real output signal\";
-//   parameter Real PI.addP.k1 = PI.wp \"Gain of upper input\";
-//   parameter Real PI.addP.k2 = -1.0 \"Gain of lower input\";
 //   parameter Real PI.P.k = 1.0 \"Gain value multiplied with input signal\";
 //   input Real PI.P.u \"Input signal connector\";
 //   output Real PI.P.y \"Output signal connector\";
-//   parameter Real PI.gainPID.k = PI.k \"Gain value multiplied with input signal\";
-//   input Real PI.gainPID.u \"Input signal connector\";
-//   output Real PI.gainPID.y \"Output signal connector\";
 //   parameter Real PI.addPID.k1 = 1.0 \"Gain of upper input\";
 //   parameter Real PI.addPID.k2 = 1.0 \"Gain of middle input\";
 //   parameter Real PI.addPID.k3 = 1.0 \"Gain of lower input\";
@@ -55,19 +47,22 @@ getErrorString();
 //   input Real PI.addPID.u2 \"Connector 2 of Real input signals\";
 //   input Real PI.addPID.u3 \"Connector 3 of Real input signals\";
 //   output Real PI.addPID.y \"Connector of Real output signals\";
-//   input Real PI.limiter.u \"Connector of Real input signal\";
-//   output Real PI.limiter.y \"Connector of Real output signal\";
-//   parameter Real PI.limiter.uMax = PI.yMax \"Upper limits of input signals\";
-//   parameter Boolean PI.limiter.limitsAtInit = PI.limitsAtInit \"= false, if limits are ignored during initializiation (i.e., y=u)\";
-//   parameter Real PI.limiter.uMin = PI.yMin \"Lower limits of input signals\";
 //   protected parameter Boolean PI.with_I = PI.controllerType == 2 or PI.controllerType == 4;
 //   protected parameter Boolean PI.with_D = PI.controllerType == 3 or PI.controllerType == 4;
+//   parameter Real PI.gainPID.k = PI.k \"Gain value multiplied with input signal\";
+//   input Real PI.gainPID.u \"Input signal connector\";
+//   output Real PI.gainPID.y \"Output signal connector\";
 //   parameter Real PI.yMin = -PI.yMax \"Lower limit of output\";
+//   input Real PI.addP.u1 \"Connector of Real input signal 1\";
+//   input Real PI.addP.u2 \"Connector of Real input signal 2\";
+//   output Real PI.addP.y \"Connector of Real output signal\";
+//   parameter Real PI.addP.k1 = PI.wp \"Gain of upper input\";
+//   parameter Real PI.addP.k2 = -1.0 \"Gain of lower input\";
 //   input Real PI.I.u \"Connector of Real input signal\";
-//   output Real PI.I.y(start = 0.0) \"Connector of Real output signal\";
 //   parameter Real PI.I.k = 1.0 / PI.Ti \"Integrator gain\";
 //   parameter Integer PI.I.initType(min = 1, max = 4) = if PI.initType == 2 then 2 else if PI.initType == 3 or PI.initType == 5 then 3 else 1 \"Type of initialization (InitialState and InitialOutput are identical)\";
 //   parameter Real PI.I.y_start = PI.xi_start \"Initial or guess value of output (= state)\";
+//   output Real PI.I.y(start = 0.0) \"Connector of Real output signal\";
 //   parameter Real PI.addI.k1 = 1.0 \"Gain of upper input\";
 //   parameter Real PI.addI.k2 = -1.0 \"Gain of middle input\";
 //   parameter Real PI.addI.k3 = 1.0 \"Gain of lower input\";
@@ -85,6 +80,11 @@ getErrorString();
 //   output Real PI.gainTrack.y \"Output signal connector\";
 //   output Real PI.Dzero.y \"Connector of Real output signal\";
 //   parameter Real PI.Dzero.k = 0.0 \"Constant output value\";
+//   input Real PI.limiter.u \"Connector of Real input signal\";
+//   output Real PI.limiter.y \"Connector of Real output signal\";
+//   parameter Real PI.limiter.uMax = PI.yMax \"Upper limits of input signals\";
+//   parameter Boolean PI.limiter.limitsAtInit = PI.limitsAtInit \"= false, if limits are ignored during initializiation (i.e., y=u)\";
+//   parameter Real PI.limiter.uMin = PI.yMin \"Lower limits of input signals\";
 //   Real inertia1.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\", start = inertia1.phi_start, StateSelect = StateSelect.default) \"Absolute rotation angle of component (= flange_a.phi = flange_b.phi)\";
 //   Real inertia1.flange_a.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real inertia1.flange_a.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
@@ -130,30 +130,11 @@ getErrorString();
 //   parameter Integer inertia2.stateSelection(min = 1, max = 5) = 3 \"Priority to use phi and w as states\";
 //   Real inertia2.w(quantity = \"AngularVelocity\", unit = \"rad/s\", displayUnit = \"rev/min\", start = inertia2.w_start, StateSelect = StateSelect.default) \"Absolute angular velocity of component\";
 //   Real inertia2.a(quantity = \"AngularAcceleration\", unit = \"rad/s2\") \"Absolute angular acceleration of component\";
-//   parameter Integer kinematicPTP.nout(min = 1) = 1 \"Number of outputs\";
-//   output Real kinematicPTP.y[1] \"Connector of Real output signals\";
-//   parameter Real kinematicPTP.deltaq[1] = driveAngle \"Distance to move\";
-//   parameter Real kinematicPTP.qd_max[1](min = 1e-60) = 1.0 \"Maximum velocities der(q)\";
-//   parameter Real kinematicPTP.qdd_max[1](min = 1e-60) = 1.0 \"Maximum accelerations der(qd)\";
-//   parameter Real kinematicPTP.startTime(quantity = \"Time\", unit = \"s\") = 0.5 \"Time instant at which movement starts\";
-//   protected parameter Real kinematicPTP.p_deltaq[1] = kinematicPTP.deltaq[1];
-//   protected parameter Real kinematicPTP.p_qd_max[1] = kinematicPTP.qd_max[1];
-//   protected parameter Real kinematicPTP.p_qdd_max[1] = kinematicPTP.qdd_max[1];
-//   protected Real kinematicPTP.sd_max;
-//   protected Real kinematicPTP.sdd_max;
-//   protected Real kinematicPTP.sdd;
-//   protected Real kinematicPTP.aux1[1];
-//   protected Real kinematicPTP.aux2[1];
-//   protected Real kinematicPTP.Ta1(quantity = \"Time\", unit = \"s\");
-//   protected Real kinematicPTP.Ta2(quantity = \"Time\", unit = \"s\");
-//   protected Real kinematicPTP.Tv(quantity = \"Time\", unit = \"s\");
-//   protected Real kinematicPTP.Te(quantity = \"Time\", unit = \"s\");
-//   protected Boolean kinematicPTP.noWphase;
 //   input Real integrator.u \"Connector of Real input signal\";
-//   output Real integrator.y(start = 0.0) \"Connector of Real output signal\";
 //   parameter Real integrator.k = 1.0 \"Integrator gain\";
 //   parameter Integer integrator.initType(min = 1, max = 4) = 3 \"Type of initialization (InitialState and InitialOutput are identical)\";
 //   parameter Real integrator.y_start = 0.0 \"Initial or guess value of output (= state)\";
+//   output Real integrator.y(start = 0.0) \"Connector of Real output signal\";
 //   Real speedSensor.flange_a.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real speedSensor.flange_a.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   output Real speedSensor.w(quantity = \"AngularVelocity\", unit = \"rad/s\", displayUnit = \"rev/min\") \"Absolute angular velocity of flange\";
@@ -164,6 +145,25 @@ getErrorString();
 //   Real loadTorque.bearing.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real loadTorque.bearing.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   parameter Real loadTorque.tau_constant(quantity = \"Torque\", unit = \"N.m\") = 10.0 \"constant torque (if negative, torque is acting as load)\";
+//   parameter Real kinematicPTP.deltaq[1] = driveAngle \"Distance to move\";
+//   parameter Real kinematicPTP.qd_max[1](min = 1e-060) = 1.0 \"Maximum velocities der(q)\";
+//   parameter Real kinematicPTP.qdd_max[1](min = 1e-060) = 1.0 \"Maximum accelerations der(qd)\";
+//   parameter Real kinematicPTP.startTime(quantity = \"Time\", unit = \"s\") = 0.5 \"Time instant at which movement starts\";
+//   protected Real kinematicPTP.sd_max;
+//   protected Real kinematicPTP.sdd_max;
+//   protected Real kinematicPTP.sdd;
+//   protected Real kinematicPTP.Ta1(quantity = \"Time\", unit = \"s\");
+//   protected Real kinematicPTP.Ta2(quantity = \"Time\", unit = \"s\");
+//   protected Real kinematicPTP.Tv(quantity = \"Time\", unit = \"s\");
+//   protected Real kinematicPTP.Te(quantity = \"Time\", unit = \"s\");
+//   protected Boolean kinematicPTP.noWphase;
+//   parameter Integer kinematicPTP.nout(min = 1) = 1 \"Number of outputs\";
+//   output Real kinematicPTP.y[1] \"Connector of Real output signals\";
+//   protected parameter Real kinematicPTP.p_deltaq[1] = kinematicPTP.deltaq[1];
+//   protected parameter Real kinematicPTP.p_qd_max[1] = kinematicPTP.qd_max[1];
+//   protected parameter Real kinematicPTP.p_qdd_max[1] = kinematicPTP.qdd_max[1];
+//   protected Real kinematicPTP.aux1[1];
+//   protected Real kinematicPTP.aux2[1];
 // initial equation
 //   der(PI.I.y) = 0.0;
 //   inertia1.phi = inertia1.phi_start;
@@ -172,10 +172,15 @@ getErrorString();
 //   der(spring.w_rel) = 0.0;
 //   integrator.y = integrator.y_start;
 // equation
-//   PI.addP.y = PI.addP.k1 * PI.addP.u1 + PI.addP.k2 * PI.addP.u2;
 //   PI.P.y = PI.P.k * PI.P.u;
-//   PI.gainPID.y = PI.gainPID.k * PI.gainPID.u;
 //   PI.addPID.y = PI.addPID.k1 * PI.addPID.u1 + (PI.addPID.k2 * PI.addPID.u2 + PI.addPID.k3 * PI.addPID.u3);
+//   PI.gainPID.y = PI.gainPID.k * PI.gainPID.u;
+//   PI.addP.y = PI.addP.k1 * PI.addP.u1 + PI.addP.k2 * PI.addP.u2;
+//   der(PI.I.y) = PI.I.k * PI.I.u;
+//   PI.addI.y = PI.addI.k1 * PI.addI.u1 + (PI.addI.k2 * PI.addI.u2 + PI.addI.k3 * PI.addI.u3);
+//   PI.addSat.y = PI.addSat.k1 * PI.addSat.u1 + PI.addSat.k2 * PI.addSat.u2;
+//   PI.gainTrack.y = PI.gainTrack.k * PI.gainTrack.u;
+//   PI.Dzero.y = PI.Dzero.k;
 //   assert(PI.limiter.uMax >= PI.limiter.uMin,\"Limiter: Limits must be consistent. However, uMax (=\" + String(PI.limiter.uMax,0,true,6) + \") < uMin (=\" + String(PI.limiter.uMin,0,true,6) + \")\");
 //   if initial() and not PI.limiter.limitsAtInit then
 //   PI.limiter.y = PI.limiter.u;
@@ -185,11 +190,6 @@ getErrorString();
 //   else
 //   PI.limiter.y = if PI.limiter.u > PI.limiter.uMax then PI.limiter.uMax else if PI.limiter.u < PI.limiter.uMin then PI.limiter.uMin else PI.limiter.u;
 //   end if;
-//   der(PI.I.y) = PI.I.k * PI.I.u;
-//   PI.addI.y = PI.addI.k1 * PI.addI.u1 + (PI.addI.k2 * PI.addI.u2 + PI.addI.k3 * PI.addI.u3);
-//   PI.addSat.y = PI.addSat.k1 * PI.addSat.u1 + PI.addSat.k2 * PI.addSat.u2;
-//   PI.gainTrack.y = PI.gainTrack.k * PI.gainTrack.u;
-//   PI.Dzero.y = PI.Dzero.k;
 //   assert(PI.yMax >= PI.yMin,\"LimPID: Limits must be consistent. However, yMax (=\" + String(PI.yMax,0,true,6) + \") < yMin (=\" + String(PI.yMin,0,true,6) + \")\");
 //   assert(PI.limitsAtInit or not PI.limitsAtInit and PI.y >= PI.yMin and PI.y <= PI.yMax,\"LimPID: During initialization the limits have been switched off.
 // After initialization, the output y (=\" + String(PI.y,0,true,6) + \") is outside of the limits of yMin (=\" + String(PI.yMin,0,true,6) + \") and yMax (=\" + String(PI.yMax,0,true,6) + \")\");
@@ -210,6 +210,11 @@ getErrorString();
 //   inertia2.J * inertia2.a = inertia2.flange_a.tau + inertia2.flange_b.tau;
 //   inertia2.flange_a.phi = inertia2.phi;
 //   inertia2.flange_b.phi = inertia2.phi;
+//   der(integrator.y) = integrator.k * integrator.u;
+//   speedSensor.w = der(speedSensor.flange_a.phi);
+//   0.0 = speedSensor.flange_a.tau;
+//   loadTorque.tau = -loadTorque.tau_constant;
+//   loadTorque.bearing.phi = 0.0;
 //   kinematicPTP.aux1[1] = kinematicPTP.p_deltaq[1] / kinematicPTP.p_qd_max[1];
 //   kinematicPTP.aux2[1] = kinematicPTP.p_deltaq[1] / kinematicPTP.p_qdd_max[1];
 //   kinematicPTP.sd_max = 1.0 / abs(kinematicPTP.aux1[1]);
@@ -221,11 +226,6 @@ getErrorString();
 //   kinematicPTP.Te = if kinematicPTP.noWphase then 2.0 * kinematicPTP.Ta1 else kinematicPTP.Tv + kinematicPTP.Ta2;
 //   kinematicPTP.sdd = if time < kinematicPTP.startTime then 0.0 else if kinematicPTP.noWphase then if time < kinematicPTP.Ta1 + kinematicPTP.startTime then kinematicPTP.sdd_max else if time < kinematicPTP.Te + kinematicPTP.startTime then -kinematicPTP.sdd_max else 0.0 else if time < kinematicPTP.Ta2 + kinematicPTP.startTime then kinematicPTP.sdd_max else if time < kinematicPTP.Tv + kinematicPTP.startTime then 0.0 else if time < kinematicPTP.Te + kinematicPTP.startTime then -kinematicPTP.sdd_max else 0.0;
 //   kinematicPTP.y[1] = kinematicPTP.sdd * kinematicPTP.p_deltaq[1];
-//   der(integrator.y) = integrator.k * integrator.u;
-//   speedSensor.w = der(speedSensor.flange_a.phi);
-//   0.0 = speedSensor.flange_a.tau;
-//   loadTorque.tau = -loadTorque.tau_constant;
-//   loadTorque.bearing.phi = 0.0;
 //   PI.addSat.u2 = PI.gainPID.y;
 //   PI.addSat.u2 = PI.limiter.u;
 //   PI.addSat.u1 = PI.limiter.y;
@@ -260,13 +260,13 @@ getErrorString();
 // end Modelica.Blocks.Examples.PID_Controller;
 // "
 // "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
-// [Sources.mo:251:5-251:97:writable] Warning: Variable kinematicPTP.qd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Sources.mo:251:5-251:97:writable] Warning: Variable kinematicPTP.qd_max: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
 // 
-// [Sources.mo:252:5-252:102:writable] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Sources.mo:252:5-252:102:writable] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
 // 
-// [Sources.mo:251:5-251:97:writable] Warning: Variable kinematicPTP.qd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Sources.mo:251:5-251:97:writable] Warning: Variable kinematicPTP.qd_max: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
 // 
-// [Sources.mo:252:5-252:102:writable] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Sources.mo:252:5-252:102:writable] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
 // 
 // "
 // endResult

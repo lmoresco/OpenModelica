@@ -172,8 +172,6 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransf
 // 
 // class Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer
 //   parameter Integer n = 1 \"Number of heat transfer segments\";
-//   input Real surfaceAreas[1](quantity = \"Area\", unit = \"m2\") \"Heat transfer areas\";
-//   output Real Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   parameter Boolean use_k = false \"= true to use k value for thermal isolation\";
 //   parameter Real k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
 //   parameter Real T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
@@ -191,16 +189,18 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransf
 //   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.massDynamics = system.energyDynamics \"Default formulation of mass balances\";
 //   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.substanceDynamics = system.massDynamics \"Default formulation of substance balances\";
 //   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.traceDynamics = system.massDynamics \"Default formulation of trace substance balances\";
+//   parameter Real nParallel \"number of identical parallel flow devices\";
+//   parameter Real alpha0(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 100.0 \"guess value for heat transfer coefficients\";
+//   protected Real Nu_1;
+//   input Real surfaceAreas[1](quantity = \"Area\", unit = \"m2\") \"Heat transfer areas\";
+//   output Real Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
 //   Real Ts[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.temperature(states[1]) \"Temperatures defined by fluid states\";
 //   input Real vs[1](quantity = \"Velocity\", unit = \"m/s\") \"Mean velocities of fluid flow in segments\";
-//   parameter Real nParallel \"number of identical parallel flow devices\";
 //   input Real lengths[1](quantity = \"Length\", unit = \"m\") \"Lengths along flow path\";
 //   input Real dimensions[1](quantity = \"Length\", unit = \"m\") \"Characteristic dimensions for fluid flow (diameter for pipe flow)\";
 //   input Real roughnesses[1](quantity = \"Length\", unit = \"m\", min = 0.0) \"Average heights of surface asperities\";
-//   parameter Real alpha0(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 100.0 \"guess value for heat transfer coefficients\";
-//   Real alphas[1](quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\", start = alpha0) \"CoefficientOfHeatTransfer\";
 //   Real Res[1] \"Reynolds numbers\";
 //   Real Prs[1] \"Prandtl numbers\";
 //   Real Nus[1] \"Nusselt numbers\";
@@ -210,9 +210,9 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransf
 //   Real diameters[1](quantity = \"Length\", unit = \"m\") = dimensions[1] \"Hydraulic diameters for pipe flow\";
 //   protected Real Nus_turb[1] \"Nusselt number for turbulent flow\";
 //   protected Real Nus_lam[1] \"Nusselt number for laminar flow\";
-//   protected Real Nu_1;
 //   protected Real Nus_2[1];
 //   protected Real Xis[1];
+//   Real alphas[1](quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\", start = alpha0) \"CoefficientOfHeatTransfer\";
 // equation
 //   Nu_1 = 3.66;
 //   Nus_turb[1] = ((1.0 + 0.333333333333333 * (diameters[1] ^ 0.666666666666667 * ((1.0 / (if vs[1] >= 0.0 then 0.5 else 0.5 + Real(n + -1))) ^ 0.666666666666667 * (1.0 / lengths[1]) ^ 0.666666666666667))) * (Prs[1] * (abs(Res[1]) * Xis[1]))) / (8.0 + 101.6 * ((Xis[1] / 8.0) ^ 0.5 * (-1.0 + Prs[1] ^ 0.666666666666667)));

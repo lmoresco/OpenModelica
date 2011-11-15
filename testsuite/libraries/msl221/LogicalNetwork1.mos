@@ -23,7 +23,7 @@ getErrorString();
 // algorithm
 //   if size(table,1) == 0 then
 //     index := 0;
-//     nextTime := -1e+60;
+//     nextTime := -1e+060;
 //     y := startValue;
 //   elseif size(table,1) == 1 then
 //     index := 1;

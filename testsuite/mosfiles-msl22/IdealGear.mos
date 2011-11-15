@@ -23,12 +23,12 @@ val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
 // ""
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.Gears.IdealGear_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.IdealGear', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.IdealGear', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "Warning: Alias variables inertia1.w = -$DER.springDamper1.phi_rel have start values inertia1.w_start != springDamper1.w_rel_start. Use value from inertia1.w.
 // 
 // "
-// {0.0,0.0428007219053217,0.107445682214664,0.0913803271315843,-0.00078214498021506,-0.0623708688962204}
-// {0.0,0.0863368081569939,0.214428853175442,0.181921532634685,-0.00136475865901982,-0.123740910077574}
+// {0.0,0.0427968809696379,0.107459601438166,0.0913889362955513,-0.000745563229210932,-0.0623473366311579}
+// {0.0,0.0863457781534111,0.214434642211703,0.181929819594846,-0.00136572081457851,-0.123726023687414}
 // endResult

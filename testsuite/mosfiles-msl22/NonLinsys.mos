@@ -49,7 +49,7 @@ readSimulationResult("NonLinSys4_res.mat",{psii,delta},size);
 // true
 // record SimulationResult
 //     resultFile = "NonLinSys_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'NonLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'NonLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 1.0
@@ -57,22 +57,22 @@ readSimulationResult("NonLinSys4_res.mat",{psii,delta},size);
 // 0.854023850799674
 // record SimulationResult
 //     resultFile = "dae1_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'dae1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'dae1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 1.00066822930857
-// 0.000168105394453882
+// 1.00066822930858
+// 0.000168105394477873
 // record SimulationResult
 //     resultFile = "dae2_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'dae2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'dae2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 0.666664660297344
-// 0.50000146530108
+// 0.666664660297818
+// 0.500001465301342
 // true
 // record SimulationResult
 //     resultFile = "NonLinSys2_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'NonLinSys2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'NonLinSys2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 1.0
@@ -84,13 +84,13 @@ readSimulationResult("NonLinSys4_res.mat",{psii,delta},size);
 // true
 // record SimulationResult
 //     resultFile = "NonLinSys3_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'NonLinSys3', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-010, method = 'dassl', fileNamePrefix = 'NonLinSys3', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 1.21474279743756
-// 1.64263509095628
+// 1.21472971359509
+// 1.64262701861152
 // 2.0
-// 2.26878869394866
-// 2.92574180241193
+// 2.26876840606874
+// 2.92573132639409
 // endResult

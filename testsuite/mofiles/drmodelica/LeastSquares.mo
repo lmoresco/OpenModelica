@@ -37,9 +37,9 @@ end LeastSquares;
 //   output Real[size(A,1), size(A,2)] Ares = A;
 //   output Real[size(A,2), size(B,2)] x;
 //   protected Integer lwork = min(size(A,1),size(A,2)) + 32 * max(max(size(A,1),size(A,2)),size(B,2));
-//   protected Real[lwork] work;
 //   protected Integer info;
 //   protected String transposed = "NNNN";
+//   protected Real[lwork] work;
 // 
 //   external "FORTRAN 77" dgesl(transposed, 100, size(A, 1), size(A, 2), size(B, 2), Ares, size(A, 1), B, size(B, 1), work, lwork, info, x);
 // end ls;

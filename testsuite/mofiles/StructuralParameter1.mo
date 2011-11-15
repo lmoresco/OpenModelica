@@ -19,9 +19,9 @@ end StructuralParam;
 // Result:
 // class StructuralParam
 //   parameter Integer n = 1;
+//   parameter Integer m = n;
 //   Real x[1];
 //   Real y[1];
-//   parameter Integer m = n;
 // equation
 //   x[1] = y[1];
 // end StructuralParam;

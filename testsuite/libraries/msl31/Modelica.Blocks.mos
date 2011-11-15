@@ -40,7 +40,6 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // ""
 // "Check of Modelica.Blocks.Continuous.TransferFunction completed successfully.
 // 
-// [Continuous.mo:1213:5-1215:50:writable] Warning: Failed to deduce dimensions of x_start due to unknown dimensions of modifier fill(0,nx).
 // [Continuous.mo:1226:5-1226:61:writable] Warning: Failed to deduce dimensions of bb due to unknown dimensions of modifier vector(DAE.CAST(/tp:REAL[:, :]/, cat(1,fill(0,max(0,na - nb),1),{{b[1]}}))).
 // [Continuous.mo:1213:5-1215:50:writable] Warning: Failed to deduce dimensions of x_start due to unknown dimensions of modifier fill(0,nx).
 // 
@@ -262,8 +261,6 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin;
 // 
 // class Modelica.Blocks.Sources.CombiTimeTable
-//   parameter Integer nout(min = 1) = 1 \"Number of outputs\";
-//   output Real y[1] \"Connector of Real output signals\";
 //   parameter Boolean tableOnFile = false \"= true, if table is defined on file or in function usertab\";
 //   parameter String tableName = \"NoName\" \"Table name on file or in function usertab (see docu)\";
 //   parameter String fileName = \"NoName\" \"File where matrix is stored\";
@@ -273,9 +270,11 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   parameter Real startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
 //   final parameter Real t_min(fixed = false) \"Minimum abscissa value defined in table\";
 //   final parameter Real t_max(fixed = false) \"Maximum abscissa value defined in table\";
-//   protected final parameter Real p_offset[1] = offset[1];
 //   protected Integer tableID;
 //   parameter Integer columns[1] = 2 \"Columns of table to be interpolated\";
+//   parameter Integer nout(min = 1) = 1 \"Number of outputs\";
+//   output Real y[1] \"Connector of Real output signals\";
+//   protected final parameter Real p_offset[1] = offset[1];
 // initial equation
 //   t_min = Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin(tableID);
 //   t_max = Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax(tableID);

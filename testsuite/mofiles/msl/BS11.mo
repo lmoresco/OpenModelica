@@ -1426,9 +1426,6 @@ end BS11;
 // 
 // class BS11
 //   parameter Integer timeTable1.nout(min = 1) = 1 "Number of outputs";
-//   parameter Integer timeTable1.outPort.n = timeTable1.nout "Dimension of signal vector";
-//   output Real timeTable1.outPort.signal[1] "Real output signals";
-//   output Real timeTable1.y[1];
 //   parameter Real timeTable1.table[1,1] = 0.0 "Table matrix (time = first column)";
 //   parameter Real timeTable1.table[1,2] = 0.0 "Table matrix (time = first column)";
 //   parameter Real timeTable1.table[2,1] = 1.0 "Table matrix (time = first column)";
@@ -1441,13 +1438,16 @@ end BS11;
 //   protected Real timeTable1.b "Interpolation coefficients b of actual interval (y=a*x+b)";
 //   protected Integer timeTable1.last(start = 1) "Last used lower grid index";
 //   protected Real timeTable1.nextEvent(quantity = "Time", unit = "s", start = 0.0) "Next event instant";
+//   parameter Integer timeTable1.outPort.n = timeTable1.nout "Dimension of signal vector";
+//   output Real timeTable1.outPort.signal[1] "Real output signals";
+//   output Real timeTable1.y[1];
 //   parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
+//   protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
 //   parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
 //   input Real der1.inPort.signal[1] "Real input signals";
 //   parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
 //   output Real der1.outPort.signal[1] "Real output signals";
 //   output Real der1.y[1] "Output signals";
-//   protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
 // equation
 //   timeTable1.outPort.signal[1] = timeTable1.a * time + timeTable1.b;
 //   timeTable1.y[1] = timeTable1.outPort.signal[1];
@@ -1457,7 +1457,7 @@ end BS11;
 //   der1.inPort.signal[1] = timeTable1.outPort.signal[1];
 // algorithm
 //   when {time >= pre(timeTable1.nextEvent),initial()} then
-//     (timeTable1.a, timeTable1.b, timeTable1.nextEvent, timeTable1.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{timeTable1.table[1,1],timeTable1.table[1,2]},{timeTable1.table[2,1],timeTable1.table[2,2]},{timeTable1.table[3,1],timeTable1.table[3,2]}},timeTable1.offset[1],timeTable1.startTime[1],time,timeTable1.last,1e-13);
+//     (timeTable1.a, timeTable1.b, timeTable1.nextEvent, timeTable1.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{timeTable1.table[1,1],timeTable1.table[1,2]},{timeTable1.table[2,1],timeTable1.table[2,2]},{timeTable1.table[3,1],timeTable1.table[3,2]}},timeTable1.offset[1],timeTable1.startTime[1],time,timeTable1.last,1e-013);
 //   end when;
 // end BS11;
 // endResult

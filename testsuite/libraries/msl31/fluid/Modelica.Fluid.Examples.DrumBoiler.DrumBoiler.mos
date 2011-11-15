@@ -79,7 +79,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.bubbleDensity \"boiling curve specific density of water\"
 //   input Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.SaturationProperties sat \"saturation property record\";
-//   output Real dl(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"boiling curve density\";
+//   output Real dl(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"boiling curve density\";
 // algorithm
 //   dl := Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhol_p(sat.psat);
 // end Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.bubbleDensity;
@@ -92,17 +92,17 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.bubbleEnthalpy;
 // 
 // function Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.density_pT \"Computes density as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_pT(p,T,0);
 // end Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.density_pT;
 // 
 // function Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.dewDensity \"dew curve specific density of water\"
 //   input Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.SaturationProperties sat \"saturation property record\";
-//   output Real dv(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"dew curve density\";
+//   output Real dv(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"dew curve density\";
 // algorithm
 //   dv := Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhov_p(sat.psat);
 // end Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.dewDensity;
@@ -115,16 +115,16 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.dewEnthalpy;
 // 
 // function Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.saturationTemperature \"saturation temperature of water\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"saturation temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"saturation temperature\";
 // algorithm
 //   T := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat(p);
 // end Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.saturationTemperature;
 // 
 // function Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.setState_pTX \"Return thermodynamic state of water as function of p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
@@ -139,8 +139,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.specificEnthalpy;
 // 
 // function Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
 // algorithm
@@ -148,9 +148,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.specificEnthalpy_pT;
 // 
 // function Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.specificEnthalpy_pTX \"Return specific enthalpy from pressure, temperature and mass fraction\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy at p, T, X\";
 // algorithm
@@ -158,9 +158,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Fluid.Interfaces.FluidPort.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Fluid.Interfaces.FluidPort.Medium.ThermodynamicState state \"thermodynamic state record\";
 // end Modelica.Fluid.Interfaces.FluidPort.Medium.setState_pTX;
 // 
@@ -170,9 +170,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Interfaces.FluidPort.Medium.specificEnthalpy;
 // 
 // function Modelica.Fluid.Interfaces.FluidPort.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
 //   h := Modelica.Fluid.Interfaces.FluidPort.Medium.specificEnthalpy(Modelica.Fluid.Interfaces.FluidPort.Medium.setState_pTX(p,T,X));
@@ -188,18 +188,18 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Interfaces.FluidPort_a.Medium.ThermodynamicState;
 // 
 // function Modelica.Fluid.Interfaces.FluidPort_a.Medium.density_pT \"Computes density as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_pT(p,T,0);
 // end Modelica.Fluid.Interfaces.FluidPort_a.Medium.density_pT;
 // 
 // function Modelica.Fluid.Interfaces.FluidPort_a.Medium.setState_pTX \"Return thermodynamic state of water as function of p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Fluid.Interfaces.FluidPort_a.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
@@ -214,8 +214,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Interfaces.FluidPort_a.Medium.specificEnthalpy;
 // 
 // function Modelica.Fluid.Interfaces.FluidPort_a.Medium.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
 // algorithm
@@ -223,9 +223,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Interfaces.FluidPort_a.Medium.specificEnthalpy_pT;
 // 
 // function Modelica.Fluid.Interfaces.FluidPort_a.Medium.specificEnthalpy_pTX \"Return specific enthalpy from pressure, temperature and mass fraction\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy at p, T, X\";
 // algorithm
@@ -242,18 +242,18 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Interfaces.FluidPort_b.Medium.ThermodynamicState;
 // 
 // function Modelica.Fluid.Interfaces.FluidPort_b.Medium.density_pT \"Computes density as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_pT(p,T,0);
 // end Modelica.Fluid.Interfaces.FluidPort_b.Medium.density_pT;
 // 
 // function Modelica.Fluid.Interfaces.FluidPort_b.Medium.setState_pTX \"Return thermodynamic state of water as function of p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Fluid.Interfaces.FluidPort_b.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
@@ -268,8 +268,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Interfaces.FluidPort_b.Medium.specificEnthalpy;
 // 
 // function Modelica.Fluid.Interfaces.FluidPort_b.Medium.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
 // algorithm
@@ -277,9 +277,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Interfaces.FluidPort_b.Medium.specificEnthalpy_pT;
 // 
 // function Modelica.Fluid.Interfaces.FluidPort_b.Medium.specificEnthalpy_pTX \"Return specific enthalpy from pressure, temperature and mass fraction\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy at p, T, X\";
 // algorithm
@@ -296,18 +296,18 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Interfaces.FluidPorts_b.Medium.ThermodynamicState;
 // 
 // function Modelica.Fluid.Interfaces.FluidPorts_b.Medium.density_pT \"Computes density as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_pT(p,T,0);
 // end Modelica.Fluid.Interfaces.FluidPorts_b.Medium.density_pT;
 // 
 // function Modelica.Fluid.Interfaces.FluidPorts_b.Medium.setState_pTX \"Return thermodynamic state of water as function of p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Fluid.Interfaces.FluidPorts_b.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
@@ -322,8 +322,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy;
 // 
 // function Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
 // algorithm
@@ -331,9 +331,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy_pT;
 // 
 // function Modelica.Fluid.Interfaces.FluidPorts_b.Medium.specificEnthalpy_pTX \"Return specific enthalpy from pressure, temperature and mass fraction\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy at p, T, X\";
 // algorithm
@@ -350,18 +350,18 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sensors.Pressure.Medium.ThermodynamicState;
 // 
 // function Modelica.Fluid.Sensors.Pressure.Medium.density_pT \"Computes density as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_pT(p,T,0);
 // end Modelica.Fluid.Sensors.Pressure.Medium.density_pT;
 // 
 // function Modelica.Fluid.Sensors.Pressure.Medium.setState_pTX \"Return thermodynamic state of water as function of p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Fluid.Sensors.Pressure.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
@@ -376,8 +376,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sensors.Pressure.Medium.specificEnthalpy;
 // 
 // function Modelica.Fluid.Sensors.Pressure.Medium.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
 // algorithm
@@ -385,9 +385,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sensors.Pressure.Medium.specificEnthalpy_pT;
 // 
 // function Modelica.Fluid.Sensors.Pressure.Medium.specificEnthalpy_pTX \"Return specific enthalpy from pressure, temperature and mass fraction\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy at p, T, X\";
 // algorithm
@@ -404,27 +404,27 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sensors.Temperature.Medium.ThermodynamicState;
 // 
 // function Modelica.Fluid.Sensors.Temperature.Medium.density_pT \"Computes density as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_pT(p,T,0);
 // end Modelica.Fluid.Sensors.Temperature.Medium.density_pT;
 // 
 // function Modelica.Fluid.Sensors.Temperature.Medium.density_ph \"Computes density as a function of pressure and specific enthalpy\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_ph(p,h,phase,0);
 // end Modelica.Fluid.Sensors.Temperature.Medium.density_ph;
 // 
 // function Modelica.Fluid.Sensors.Temperature.Medium.setState_pTX \"Return thermodynamic state of water as function of p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Fluid.Sensors.Temperature.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
@@ -432,9 +432,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sensors.Temperature.Medium.setState_pTX;
 // 
 // function Modelica.Fluid.Sensors.Temperature.Medium.setState_phX \"Return thermodynamic state of water as function of p and h\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Fluid.Sensors.Temperature.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
@@ -449,8 +449,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sensors.Temperature.Medium.specificEnthalpy;
 // 
 // function Modelica.Fluid.Sensors.Temperature.Medium.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
 // algorithm
@@ -458,9 +458,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sensors.Temperature.Medium.specificEnthalpy_pT;
 // 
 // function Modelica.Fluid.Sensors.Temperature.Medium.specificEnthalpy_pTX \"Return specific enthalpy from pressure, temperature and mass fraction\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy at p, T, X\";
 // algorithm
@@ -469,16 +469,16 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Fluid.Sensors.Temperature.Medium.temperature \"return temperature of ideal gas\"
 //   input Modelica.Fluid.Sensors.Temperature.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 // algorithm
 //   T := state.T;
 // end Modelica.Fluid.Sensors.Temperature.Medium.temperature;
 // 
 // function Modelica.Fluid.Sensors.Temperature.Medium.temperature_ph \"Computes temperature as a function of pressure and specific enthalpy\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 // algorithm
 //   T := Modelica.Media.Water.IF97_Utilities.T_ph(p,h,phase,0);
 // end Modelica.Fluid.Sensors.Temperature.Medium.temperature_ph;
@@ -494,40 +494,40 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Fluid.Sources.FixedBoundary.Medium.density \"return density of ideal gas\"
 //   input Modelica.Fluid.Sources.FixedBoundary.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := state.d;
 // end Modelica.Fluid.Sources.FixedBoundary.Medium.density;
 // 
 // function Modelica.Fluid.Sources.FixedBoundary.Medium.density_pT \"Computes density as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_pT(p,T,0);
 // end Modelica.Fluid.Sources.FixedBoundary.Medium.density_pT;
 // 
 // function Modelica.Fluid.Sources.FixedBoundary.Medium.density_pTX \"Return density from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Fluid.Sources.FixedBoundary.Medium.density(Modelica.Fluid.Sources.FixedBoundary.Medium.setState_pTX(p,T,X,0));
 // end Modelica.Fluid.Sources.FixedBoundary.Medium.density_pTX;
 // 
 // function Modelica.Fluid.Sources.FixedBoundary.Medium.saturationTemperature \"saturation temperature of water\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"saturation temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"saturation temperature\";
 // algorithm
 //   T := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat(p);
 // end Modelica.Fluid.Sources.FixedBoundary.Medium.saturationTemperature;
 // 
 // function Modelica.Fluid.Sources.FixedBoundary.Medium.setState_pTX \"Return thermodynamic state of water as function of p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Fluid.Sources.FixedBoundary.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
@@ -542,8 +542,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sources.FixedBoundary.Medium.specificEnthalpy;
 // 
 // function Modelica.Fluid.Sources.FixedBoundary.Medium.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
 // algorithm
@@ -551,9 +551,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sources.FixedBoundary.Medium.specificEnthalpy_pT;
 // 
 // function Modelica.Fluid.Sources.FixedBoundary.Medium.specificEnthalpy_pTX \"Return specific enthalpy from pressure, temperature and mass fraction\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy at p, T, X\";
 // algorithm
@@ -583,19 +583,19 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sources.MassFlowSource_h.Medium.bubbleEnthalpy;
 // 
 // function Modelica.Fluid.Sources.MassFlowSource_h.Medium.density_pT \"Computes density as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_pT(p,T,0);
 // end Modelica.Fluid.Sources.MassFlowSource_h.Medium.density_pT;
 // 
 // function Modelica.Fluid.Sources.MassFlowSource_h.Medium.density_ph \"Computes density as a function of pressure and specific enthalpy\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_ph(p,h,phase,0);
 // end Modelica.Fluid.Sources.MassFlowSource_h.Medium.density_ph;
@@ -608,16 +608,16 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sources.MassFlowSource_h.Medium.dewEnthalpy;
 // 
 // function Modelica.Fluid.Sources.MassFlowSource_h.Medium.saturationTemperature \"saturation temperature of water\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"saturation temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"saturation temperature\";
 // algorithm
 //   T := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat(p);
 // end Modelica.Fluid.Sources.MassFlowSource_h.Medium.saturationTemperature;
 // 
 // function Modelica.Fluid.Sources.MassFlowSource_h.Medium.setState_pTX \"Return thermodynamic state of water as function of p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Fluid.Sources.MassFlowSource_h.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
@@ -632,8 +632,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sources.MassFlowSource_h.Medium.specificEnthalpy;
 // 
 // function Modelica.Fluid.Sources.MassFlowSource_h.Medium.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
 // algorithm
@@ -641,9 +641,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sources.MassFlowSource_h.Medium.specificEnthalpy_pT;
 // 
 // function Modelica.Fluid.Sources.MassFlowSource_h.Medium.specificEnthalpy_pTX \"Return specific enthalpy from pressure, temperature and mass fraction\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy at p, T, X\";
 // algorithm
@@ -651,10 +651,10 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Sources.MassFlowSource_h.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Fluid.Sources.MassFlowSource_h.Medium.temperature_ph \"Computes temperature as a function of pressure and specific enthalpy\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 // algorithm
 //   T := Modelica.Media.Water.IF97_Utilities.T_ph(p,h,phase,0);
 // end Modelica.Fluid.Sources.MassFlowSource_h.Medium.temperature_ph;
@@ -715,33 +715,33 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Fluid.Valves.ValveLinear.Medium.density \"return density of ideal gas\"
 //   input Modelica.Fluid.Valves.ValveLinear.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := state.d;
 // end Modelica.Fluid.Valves.ValveLinear.Medium.density;
 // 
 // function Modelica.Fluid.Valves.ValveLinear.Medium.density_pT \"Computes density as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_pT(p,T,0);
 // end Modelica.Fluid.Valves.ValveLinear.Medium.density_pT;
 // 
 // function Modelica.Fluid.Valves.ValveLinear.Medium.density_ph \"Computes density as a function of pressure and specific enthalpy\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"Density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_ph(p,h,phase,0);
 // end Modelica.Fluid.Valves.ValveLinear.Medium.density_ph;
 // 
 // function Modelica.Fluid.Valves.ValveLinear.Medium.setState_pTX \"Return thermodynamic state of water as function of p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Fluid.Valves.ValveLinear.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
@@ -749,9 +749,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Valves.ValveLinear.Medium.setState_pTX;
 // 
 // function Modelica.Fluid.Valves.ValveLinear.Medium.setState_phX \"Return thermodynamic state of water as function of p and h\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Fluid.Valves.ValveLinear.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
@@ -766,8 +766,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Valves.ValveLinear.Medium.specificEnthalpy;
 // 
 // function Modelica.Fluid.Valves.ValveLinear.Medium.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
 // algorithm
@@ -775,9 +775,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Fluid.Valves.ValveLinear.Medium.specificEnthalpy_pT;
 // 
 // function Modelica.Fluid.Valves.ValveLinear.Medium.specificEnthalpy_pTX \"Return specific enthalpy from pressure, temperature and mass fraction\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy at p, T, X\";
 // algorithm
@@ -786,16 +786,16 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Fluid.Valves.ValveLinear.Medium.temperature \"return temperature of ideal gas\"
 //   input Modelica.Fluid.Valves.ValveLinear.Medium.ThermodynamicState state \"thermodynamic state record\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 // algorithm
 //   T := state.T;
 // end Modelica.Fluid.Valves.ValveLinear.Medium.temperature;
 // 
 // function Modelica.Fluid.Valves.ValveLinear.Medium.temperature_ph \"Computes temperature as a function of pressure and specific enthalpy\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 // algorithm
 //   T := Modelica.Media.Water.IF97_Utilities.T_ph(p,h,phase,0);
 // end Modelica.Fluid.Valves.ValveLinear.Medium.temperature_ph;
@@ -889,7 +889,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   input Modelica.Media.Common.PhaseBoundaryProperties liq \"properties on the boiling curve\";
 //   input Modelica.Media.Common.PhaseBoundaryProperties vap \"properties on the condensation curve\";
 //   input Real x(quantity = \"MassFraction\", unit = \"1\") \"vapour mass fraction\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"preoperties\";
 //   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") \"isochoric specific heat capacity\";
 //   protected Real dpT \"derivative of pressure w.r.t. temperature\";
@@ -945,9 +945,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Media.Common.helmholtzToBoundaryProps;
 // 
 // function Modelica.Media.Interfaces.PartialMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Media.Interfaces.PartialMedium.ThermodynamicState state \"thermodynamic state record\";
 // end Modelica.Media.Interfaces.PartialMedium.setState_pTX;
 // 
@@ -957,18 +957,18 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Media.Interfaces.PartialMedium.specificEnthalpy;
 // 
 // function Modelica.Media.Interfaces.PartialMedium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
 //   h := Modelica.Media.Interfaces.PartialMedium.specificEnthalpy(Modelica.Media.Interfaces.PartialMedium.setState_pTX(p,T,X));
 // end Modelica.Media.Interfaces.PartialMedium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Interfaces.PartialTwoPhaseMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Modelica.Media.Interfaces.PartialTwoPhaseMedium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // end Modelica.Media.Interfaces.PartialTwoPhaseMedium.setState_pTX;
@@ -979,9 +979,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Media.Interfaces.PartialTwoPhaseMedium.specificEnthalpy;
 // 
 // function Modelica.Media.Interfaces.PartialTwoPhaseMedium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
 //   h := Modelica.Media.Interfaces.PartialTwoPhaseMedium.specificEnthalpy(Modelica.Media.Interfaces.PartialTwoPhaseMedium.setState_pTX(p,T,X,0));
@@ -990,13 +990,13 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.T3a_ph \"Region 3 a: inverse function T(p,h)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   protected constant Real[31] n = {-1.33645667811215e-007,4.55912656802978e-006,-1.46294640700979e-005,0.0063934131297008,372.783927268847,-7186.54377460447,573494.7521034,-2675693.29111439,-3.34066283302614e-005,-0.0245479214069597,47.8087847764996,7.64664131818904e-006,0.00128350627676972,0.0171219081377331,-8.51007304583213,-0.0136513461629781,-3.84460997596657e-006,0.00337423807911655,-0.551624873066791,0.72920227710747,-0.00992522757376041,-0.119308831407288,0.793929190615421,0.454270731799386,0.20999859125991,-0.00642109823904738,-0.023515586860454,0.00252233108341612,-0.00764885133368119,0.0136176427574291,-0.0133027883575669};
 //   protected constant Real[31] I = {-12.0,-12.0,-12.0,-12.0,-12.0,-12.0,-12.0,-12.0,-10.0,-10.0,-10.0,-8.0,-8.0,-8.0,-8.0,-5.0,-3.0,-2.0,-2.0,-2.0,-1.0,-1.0,0.0,0.0,1.0,3.0,3.0,4.0,4.0,10.0,12.0};
 //   protected constant Real[31] J = {0.0,1.0,2.0,6.0,14.0,16.0,20.0,22.0,1.0,5.0,12.0,0.0,2.0,4.0,10.0,2.0,0.0,1.0,3.0,4.0,0.0,2.0,0.0,1.0,1.0,0.0,1.0,0.0,3.0,4.0,5.0};
 //   protected constant Real hstar(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 2300000.0 \"normalization enthalpy\";
 //   protected constant Real pstar(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = 100000000.0 \"normalization pressure\";
-//   protected constant Real Tstar(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = 760.0 \"normalization temperature\";
+//   protected constant Real Tstar(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 760.0 \"normalization temperature\";
 //   protected Real pi = p / 100000000.0 \"normalized specific pressure\";
 //   protected Real eta = h / 2300000.0 \"normalized specific enthalpy\";
 // algorithm
@@ -1006,11 +1006,11 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.T3b_ph \"Region 3 b: inverse function T(p,h)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   protected constant Real[33] n = {3.2325457364492e-005,-0.000127575556587181,-0.000475851877356068,0.00156183014181602,0.105724860113781,-85.8514221132534,724.140095480911,0.00296475810273257,-0.00592721983365988,-0.0126305422818666,-0.115716196364853,84.9000969739595,-0.0108602260086615,0.0154304475328851,0.0750455441524466,0.0252520973612982,-0.0602507901232996,-3.07622221350501,-0.0574011959864879,5.03471360939849,-0.925081888584834,3.91733882917546,-77.314600713019,9493.08762098587,-1410437.19679409,8491662.30819026,0.861095729446704,0.32334644281172,0.873281936020439,-0.436653048526683,0.286596714529479,-0.131778331276228,0.00676682064330275};
 //   protected constant Real[33] I = {-12.0,-12.0,-10.0,-10.0,-10.0,-10.0,-10.0,-8.0,-8.0,-8.0,-8.0,-8.0,-6.0,-6.0,-6.0,-4.0,-4.0,-3.0,-2.0,-2.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,0.0,1.0,3.0,5.0,6.0,8.0};
 //   protected constant Real[33] J = {0.0,1.0,0.0,1.0,5.0,10.0,12.0,0.0,1.0,2.0,4.0,10.0,0.0,1.0,2.0,0.0,1.0,5.0,0.0,4.0,2.0,4.0,6.0,10.0,14.0,16.0,0.0,2.0,1.0,1.0,1.0,1.0,1.0};
-//   protected constant Real Tstar(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = 860.0 \"normalization temperature\";
+//   protected constant Real Tstar(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 860.0 \"normalization temperature\";
 //   protected constant Real pstar(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = 100000000.0 \"normalization pressure\";
 //   protected constant Real hstar(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 2800000.0 \"normalization enthalpy\";
 //   protected Real pi = p / 100000000.0 \"normalized specific pressure\";
@@ -1020,7 +1020,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.T3b_ph;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.dptofT \"derivative of pressure wrt temperature along the saturation pressure curve\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Real dpt(unit = \"Pa/K\") \"temperature derivative of pressure\";
 //   protected Real[31] o \"vector of auxiliary variables\";
 //   protected Real Tlim \"temeprature limited to TCRIT\";
@@ -1120,8 +1120,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.dtsatofp;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.f3 \"Helmholtz function for region 3: f(d,T)\"
-//   input Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Modelica.Media.Common.HelmholtzDerivs f \"dimensionless Helmholtz function and dervatives wrt delta and tau\";
 //   protected Real[40] o \"vector of auxiliary variables\";
 // algorithm
@@ -1180,7 +1180,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.g1 \"Gibbs function for region 1: g(p,T)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Modelica.Media.Common.GibbsDerivs g \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Real pi1 \"dimensionless pressure\";
 //   protected Real tau1 \"dimensionless temperature\";
@@ -1254,7 +1254,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.g2 \"Gibbs function for region 2: g(p,T)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Modelica.Media.Common.GibbsDerivs g \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Real tau2 \"dimensionless temperature\";
 //   protected Real[55] o \"vector of auxiliary variables\";
@@ -1335,7 +1335,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.g5 \"base function for region 5: g(p,T)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Modelica.Media.Common.GibbsDerivs g \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Real[11] o \"vector of auxiliary variables\";
 // algorithm
@@ -1379,7 +1379,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.h3ab_p;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat \"region 4 saturation pressure as a functionx of temperature\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Real p_sat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   protected Real[8] o \"vector of auxiliary variables\";
 //   protected Real Tlim = min(T,647.096);
@@ -1398,7 +1398,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat_der \"derivative function for psat\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   input Real der_T(unit = \"K/s\") \"temperature derivative\";
 //   output Real der_psat(unit = \"Pa/s\") \"pressure\";
 //   protected Real dpt;
@@ -1410,7 +1410,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tph1 \"inverse function for region 1: T(p,h)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   protected Real pi \"dimensionless pressure\";
 //   protected Real eta1 \"dimensionless specific enthalpy\";
 //   protected Real[3] o \"vector of auxiliary variables\";
@@ -1428,7 +1428,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tph2 \"reverse function for region 2: T(p,h)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   protected Real pi \"dimensionless pressure\";
 //   protected Real pi2b \"dimensionless pressure\";
 //   protected Real pi2c \"dimensionless pressure\";
@@ -1478,7 +1478,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat \"region 4 saturation temperature as a function of pressure\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   output Real t_sat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   output Real t_sat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   protected Real pi \"dimensionless pressure\";
 //   protected Real[20] o \"vector of auxiliary variables\";
 // algorithm
@@ -1521,7 +1521,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.v3a_ph \"Region 3 a: inverse function v(p,h)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
-//   output Real v(quantity = \"SpecificVolume\", unit = \"m3/kg\", min = 0) \"specific volume\";
+//   output Real v(quantity = \"SpecificVolume\", unit = \"m3/kg\", min = 0.0) \"specific volume\";
 //   protected constant Real[32] n = {0.00529944062966028,-0.170099690234461,11.1323814312927,-2178.98123145125,-0.000506061827980875,0.556495239685324,-9.43672726094016,-0.297856807561527,93.9353943717186,0.0192944939465981,0.421740664704763,-3689141.2628233,-0.00737566847600639,-0.354753242424366,-1.99768169338727,1.15456297059049,5683.6687581596,0.00808169540124668,0.172416341519307,1.04270175292927,-0.297691372792847,0.560394465163593,0.275234661176914,-0.148347894866012,-0.0651142513478515,-2.92468715386302,0.0664876096952665,3.52335014263844,-0.0146340792313332,-2.24503486668184,1.10533464706142,-0.0408757344495612};
 //   protected constant Real[32] I = {-12.0,-12.0,-12.0,-12.0,-10.0,-10.0,-10.0,-8.0,-8.0,-6.0,-6.0,-6.0,-4.0,-4.0,-3.0,-2.0,-2.0,-1.0,-1.0,-1.0,-1.0,0.0,0.0,1.0,1.0,1.0,2.0,2.0,3.0,4.0,5.0,8.0};
 //   protected constant Real[32] J = {6.0,8.0,12.0,18.0,4.0,7.0,10.0,5.0,12.0,3.0,4.0,22.0,2.0,3.0,7.0,3.0,16.0,0.0,1.0,2.0,3.0,0.0,1.0,0.0,1.0,2.0,0.0,2.0,0.0,2.0,2.0,2.0};
@@ -1537,7 +1537,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.v3b_ph \"Region 3 b: inverse function v(p,h)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
-//   output Real v(quantity = \"SpecificVolume\", unit = \"m3/kg\", min = 0) \"specific volume\";
+//   output Real v(quantity = \"SpecificVolume\", unit = \"m3/kg\", min = 0.0) \"specific volume\";
 //   protected constant Real[30] n = {-2.25196934336318e-009,1.40674363313486e-008,2.3378408528056e-006,-3.31833715229001e-005,0.00107956778514318,-0.271382067378863,1.07202262490333,-0.853821329075382,-2.15214194340526e-005,0.00076965608822273,-0.00431136580433864,0.453342167309331,-0.507749535873652,-100.475154528389,-0.219201924648793,-3.21087965668917,607.567815637771,0.000557686450685932,0.18749904002955,0.00905368030448107,0.285417173048685,0.0329924030996098,0.239897419685483,4.82754995951394,-11.8035753702231,0.169490044091791,-0.0179967222507787,0.0371810116332674,-0.0536288335065096,1.6069710109252};
 //   protected constant Real[30] I = {-12.0,-12.0,-8.0,-8.0,-8.0,-8.0,-8.0,-8.0,-6.0,-6.0,-6.0,-6.0,-6.0,-6.0,-4.0,-4.0,-4.0,-3.0,-3.0,-2.0,-2.0,-1.0,-1.0,-1.0,-1.0,0.0,1.0,1.0,2.0,2.0};
 //   protected constant Real[30] J = {0.0,1.0,0.0,1.0,3.0,6.0,7.0,8.0,0.0,1.0,2.0,5.0,6.0,10.0,3.0,6.0,10.0,0.0,2.0,1.0,2.0,0.0,1.0,4.0,5.0,0.0,0.0,1.0,2.0,6.0};
@@ -1552,7 +1552,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Inverses.dofp13 \"density at the boundary between regions 1 and 3\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 //   protected Real p2 \"auxiliary variable\";
 //   protected Real[3] o \"vector of auxiliary variables\";
 // algorithm
@@ -1565,8 +1565,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Inverses.dofp23 \"density at the boundary between regions 2 and 3\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
-//   protected Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0);
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
+//   protected Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0);
 //   protected Real[13] o \"vector of auxiliary variables\";
 //   protected Real taug \"auxiliary variable\";
 //   protected Real pi \"dimensionless pressure\";
@@ -1594,22 +1594,22 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Inverses.dofpt3 \"inverse iteration in region 3: (d) = f(p,T)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   input Real delp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"iteration converged if (p-pre(p) < delp)\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 //   output Integer error = 0 \"error flag: iteration failed if different from 0\";
-//   protected Real dguess(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"guess density\";
+//   protected Real dguess(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"guess density\";
 //   protected Integer i = 0 \"loop counter\";
 //   protected Real dp \"pressure difference\";
-//   protected Real deld(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density step\";
+//   protected Real deld(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density step\";
 //   protected Modelica.Media.Common.HelmholtzDerivs f \"dimensionless Helmholtz function and dervatives wrt delta and tau\";
 //   protected Modelica.Media.Common.NewtonDerivatives_pT nDerivs \"derivatives needed in Newton iteration\";
 //   protected Boolean found = false \"flag for iteration success\";
 //   protected Boolean supercritical \"flag, true for supercritical states\";
 //   protected Boolean liquid \"flag, true for liquid states\";
-//   protected Real dmin(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"lower density limit\";
-//   protected Real dmax(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"upper density limit\";
-//   protected Real Tmax(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"maximum temperature\";
+//   protected Real dmin(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"lower density limit\";
+//   protected Real dmax(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"upper density limit\";
+//   protected Real Tmax(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"maximum temperature\";
 // algorithm
 //   assert( p >= 16529200.0, \"BaseIF97.dofpt3: function called outside of region 3! p too low
 // p = \" + String(p,0,true,6) + \" Pa < \" + String(16529200.0,0,true,6) + \" Pa\");
@@ -1663,11 +1663,11 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   input Real delp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"iteration accuracy\";
 //   input Real delh(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"iteration accuracy\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Integer error \"error flag: iteration failed if different from 0\";
-//   protected Real Tguess(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"initial temperature\";
-//   protected Real dguess(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"initial density\";
+//   protected Real Tguess(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"initial temperature\";
+//   protected Real dguess(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"initial density\";
 //   protected Integer i \"iteration counter\";
 //   protected Real dh \"Newton-error in h-direction\";
 //   protected Real dp \"Newton-error in p-direction\";
@@ -1714,12 +1714,12 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Inverses.dtofph3;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Inverses.fixdT \"region limits for inverse iteration in region 3\"
-//   input Real din(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
-//   input Real Tin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
-//   output Real dout(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
-//   output Real Tout(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
-//   protected Real Tmin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"approximation of minimum temperature\";
-//   protected Real Tmax(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"approximation of maximum temperature\";
+//   input Real din(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
+//   input Real Tin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
+//   output Real dout(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
+//   output Real Tout(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
+//   protected Real Tmin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"approximation of minimum temperature\";
+//   protected Real Tmax(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"approximation of maximum temperature\";
 // algorithm
 //   if din > 765.0 then
 //     dout := 765.0;
@@ -1751,11 +1751,11 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   input Real reldh(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"iteration accuracy\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Integer error \"error flag: iteration failed if different from 0\";
 //   protected Modelica.Media.Common.GibbsDerivs g \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Real proh(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"h for current guess in T\";
-//   protected constant Real Tguess(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = 1500.0 \"initial temperature\";
+//   protected constant Real Tguess(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 1500.0 \"initial temperature\";
 //   protected Integer i \"iteration counter\";
 //   protected Real relerr \"relative error in h\";
 //   protected Real dh \"Newton-error in h-direction\";
@@ -1786,7 +1786,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Isentropic.hofpT1 \"intermediate function for isentropic specific enthalpy in region 1\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   protected Real[13] o \"vector of auxiliary variables\";
 //   protected Real pi1 \"dimensionless pressure\";
@@ -1816,7 +1816,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Isentropic.hofpT2 \"intermediate function for isentropic specific enthalpy in region 2\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   protected Real[16] o \"vector of auxiliary variables\";
 //   protected Real pi \"dimensionless pressure\";
@@ -1880,7 +1880,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boundary23ofT \"boundary function for region boundary between regions 2 and 3 (input temperature)\"
-//   input Real t(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real t(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   output Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   protected constant Real[5] n = {348.05185628969,-1.1671859879975,0.0010192970039326,572.54459862746,13.91883977887};
 // algorithm
@@ -1889,7 +1889,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boundary23ofp \"boundary function for region boundary between regions 2 and 3 (input pressure)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   output Real t(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   output Real t(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   protected constant Real[5] n = {348.05185628969,-1.1671859879975,0.0010192970039326,572.54459862746,13.91883977887};
 //   protected Real pi \"dimensionless pressure\";
 // algorithm
@@ -1901,8 +1901,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.d1n \"density in region 1 as function of p and T\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 //   protected Real pi \"dimensionless pressure\";
 //   protected Real pi1 \"dimensionless pressure\";
 //   protected Real tau \"dimensionless temperature\";
@@ -1931,8 +1931,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.d2n \"density in region 2  as function of p and T\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 //   protected Real pi \"dimensionless pressure\";
 //   protected Real tau \"dimensionless temperature\";
 //   protected Real tau2 \"dimensionless temperature\";
@@ -2145,7 +2145,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_pT \"return the current region (valid values: 1,2,3,5) in IF97, given pressure and temperature\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature (K)\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature (K)\";
 //   input Integer mode = 0 \"mode: 0 means check, otherwise assume region=mode\";
 //   output Integer region \"region (valid values: 1,2,3,5) in IF97, region 4 is impossible!\";
 // algorithm
@@ -2179,7 +2179,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   input Integer mode = 0 \"mode: 0 means check, otherwise assume region=mode\";
 //   output Integer region \"region (valid values: 1,2,3,4,5) in IF97\";
 //   protected Boolean hsubcrit;
-//   protected Real Ttest(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0);
+//   protected Real Ttest(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0);
 //   protected Real hl(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"bubble enthalpy\";
 //   protected Real hv(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"dew enthalpy\";
 // algorithm
@@ -2254,8 +2254,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhol_T \"density of saturated water\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density of water at the boiling point\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density of water at the boiling point\";
 //   protected Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"saturation pressure\";
 // algorithm
 //   p := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat(T);
@@ -2270,14 +2270,14 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhol_p \"density of saturated water\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"saturation pressure\";
-//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density of steam at the condensation point\";
+//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density of steam at the condensation point\";
 // algorithm
 //   rho := Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhovl_p(p,Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(p));
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhol_p;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhol_p_R4b \"explicit approximation of liquid density on the boundary between regions 4 and 3\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   output Real dl(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"liquid density\";
+//   output Real dl(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"liquid density\";
 //   protected Real x \"auxiliary variable\";
 // algorithm
 //   if p < 22064000.0 then
@@ -2289,8 +2289,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhol_p_R4b;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhov_T \"density of saturated vapour\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density of steam at the condensation point\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density of steam at the condensation point\";
 //   protected Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"saturation pressure\";
 // algorithm
 //   p := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat(T);
@@ -2305,14 +2305,14 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhov_p \"density of saturated vapour\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"saturation pressure\";
-//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density of steam at the condensation point\";
+//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density of steam at the condensation point\";
 // algorithm
 //   rho := Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhovl_p(p,Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.dewcurve_p(p));
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhov_p;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhov_p_R4b \"explicit approximation of vapour density on the boundary between regions 4 and 2\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   output Real dv(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"vapour density\";
+//   output Real dv(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"vapour density\";
 //   protected Real x \"auxiliary variable\";
 // algorithm
 //   if p < 22064000.0 then
@@ -2326,7 +2326,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhovl_p \"Inline after index reduction\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   input Modelica.Media.Common.IF97PhaseBoundaryProperties bpro \"property record\";
-//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 // algorithm
 //   rho := bpro.d;
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhovl_p;
@@ -2345,7 +2345,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   input Integer phase = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   input Integer region = 0 \"if 0, region is unknown, otherwise known and this input\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 // algorithm
 //   T := Modelica.Media.Water.IF97_Utilities.T_props_ph(p,h,Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(p,h,phase,region));
 // end Modelica.Media.Water.IF97_Utilities.T_ph;
@@ -2371,14 +2371,14 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   input Modelica.Media.Common.IF97BaseTwoPhase properties \"auxiliary record\";
-//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 // algorithm
 //   T := properties.T;
 // end Modelica.Media.Water.IF97_Utilities.T_props_ph;
 // 
 // function Modelica.Media.Water.IF97_Utilities.h_pT \"specific enthalpy as function or pressure and temperature\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   input Integer region = 0 \"if 0, region is unknown, otherwise known and this input\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 // algorithm
@@ -2387,7 +2387,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.h_pT_der \"derivative function of h_pT\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Modelica.Media.Common.IF97BaseTwoPhase aux \"auxiliary record\";
 //   input Real p_der \"derivative of pressure\";
 //   input Real T_der \"derivative of temperature\";
@@ -2402,7 +2402,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.h_props_pT \"Inline after index reduction\" \"specific enthalpy as function or pressure and temperature\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Modelica.Media.Common.IF97BaseTwoPhase aux \"auxiliary record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 // algorithm
@@ -2425,16 +2425,16 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.rho_pT \"density as function or pressure and temperature\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Integer region = 0 \"if 0, region is unknown, otherwise known and this input\";
-//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 // algorithm
 //   rho := Modelica.Media.Water.IF97_Utilities.rho_props_pT(p,T,Modelica.Media.Water.IF97_Utilities.waterBaseProp_pT(p,T,region));
 // end Modelica.Media.Water.IF97_Utilities.rho_pT;
 // 
 // function Modelica.Media.Water.IF97_Utilities.rho_pT_der \"derivative function of rho_pT\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Modelica.Media.Common.IF97BaseTwoPhase aux \"auxiliary record\";
 //   input Real p_der \"derivative of pressure\";
 //   input Real T_der \"derivative of temperature\";
@@ -2452,7 +2452,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   input Integer phase = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   input Integer region = 0 \"if 0, region is unknown, otherwise known and this input\";
-//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 // algorithm
 //   rho := Modelica.Media.Water.IF97_Utilities.rho_props_ph(p,h,Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(p,h,phase,region));
 // end Modelica.Media.Water.IF97_Utilities.rho_ph;
@@ -2476,9 +2476,9 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.rho_props_pT \"Inline after index reduction\" \"density as function or pressure and temperature\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Modelica.Media.Common.IF97BaseTwoPhase aux \"auxiliary record\";
-//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 // algorithm
 //   rho := aux.rho;
 // end Modelica.Media.Water.IF97_Utilities.rho_props_pT;
@@ -2487,14 +2487,14 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"specific enthalpy\";
 //   input Modelica.Media.Common.IF97BaseTwoPhase properties \"auxiliary record\";
-//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density\";
+//   output Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density\";
 // algorithm
 //   rho := properties.rho;
 // end Modelica.Media.Water.IF97_Utilities.rho_props_ph;
 // 
 // function Modelica.Media.Water.IF97_Utilities.rhol_T \"compute the saturated liquid d(T)\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density of water at the boiling point\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density of water at the boiling point\";
 //   protected Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"saturation pressure\";
 // algorithm
 //   p := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat(T);
@@ -2508,8 +2508,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Media.Water.IF97_Utilities.rhol_T;
 // 
 // function Modelica.Media.Water.IF97_Utilities.rhov_T \"compute the saturated vapour d(T)\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"density of steam at the condensation point\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"density of steam at the condensation point\";
 //   protected Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"saturation pressure\";
 // algorithm
 //   p := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat(T);
@@ -2524,7 +2524,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.Media.Water.IF97_Utilities.waterBaseProp_pT \"intermediate property record for water (p and T prefered states)\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature\";
 //   input Integer region = 0 \"if 0, do region computation, otherwise assume the region is this input\";
 //   output Modelica.Media.Common.IF97BaseTwoPhase aux \"auxiliary record\";
 //   protected Modelica.Media.Common.GibbsDerivs g \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
@@ -2589,17 +2589,17 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   protected Modelica.Media.Common.HelmholtzDerivs f \"dimensionless Helmholtz funcion and dervatives wrt delta and tau\";
 //   protected Integer error \"error flag for inverse iterations\";
 //   protected Real h_liq(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"liquid specific enthalpy\";
-//   protected Real d_liq(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"liquid density\";
+//   protected Real d_liq(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"liquid density\";
 //   protected Real h_vap(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"vapour specific enthalpy\";
-//   protected Real d_vap(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0) \"vapour density\";
+//   protected Real d_vap(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"vapour density\";
 //   protected Modelica.Media.Common.PhaseBoundaryProperties liq \"phase boundary property record\";
 //   protected Modelica.Media.Common.PhaseBoundaryProperties vap \"phase boundary property record\";
 //   protected Modelica.Media.Common.GibbsDerivs gl \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Modelica.Media.Common.GibbsDerivs gv \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Modelica.Media.Common.HelmholtzDerivs fl \"dimensionless Helmholtz function and dervatives wrt delta and tau\";
 //   protected Modelica.Media.Common.HelmholtzDerivs fv \"dimensionless Helmholtz function and dervatives wrt delta and tau\";
-//   protected Real t1(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature at phase boundary, using inverse from region 1\";
-//   protected Real t2(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"temperature at phase boundary, using inverse from region 2\";
+//   protected Real t1(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature at phase boundary, using inverse from region 1\";
+//   protected Real t2(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"temperature at phase boundary, using inverse from region 2\";
 // algorithm
 //   aux.region := if region == 0 then if phase == 2 then 4 else Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph(p,h,phase,0) else region;
 //   aux.phase := if phase <> 0 then phase else if aux.region == 4 then 2 else 1;
@@ -2692,7 +2692,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
-//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
 //   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
@@ -2705,7 +2705,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.SIunits.Conversions.to_bar;
 // 
 // function Modelica.SIunits.Conversions.to_degC \"Convert from Kelvin to °Celsius\"
-//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Kelvin value\";
+//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 //   output Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 // algorithm
 //   Celsius := -273.15 + Kelvin;
@@ -2718,8 +2718,8 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // end Modelica.Utilities.Streams.error;
 // 
 // class Modelica.Fluid.Examples.DrumBoiler.DrumBoiler
-//   parameter Real system.p_ambient(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0) = 101325.0 \"Default ambient pressure\";
-//   parameter Real system.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = 293.15 \"Default ambient temperature\";
+//   parameter Real system.p_ambient(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 101325.0 \"Default ambient pressure\";
+//   parameter Real system.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Default ambient temperature\";
 //   parameter Real system.g(quantity = \"Acceleration\", unit = \"m/s2\") = 9.80665 \"Constant gravity acceleration\";
 //   parameter Boolean system.allowFlowReversal = true \"= false to restrict to design flow direction (port_a -> port_b)\";
 //   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.energyDynamics = Modelica.Fluid.Types.Dynamics.DynamicFreeInitial \"Default formulation of energy balances\";
@@ -2727,103 +2727,103 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   parameter Real system.m_flow_start(quantity = \"MassFlowRate\", unit = \"kg/s\") = 0.0 \"Default start value for mass flow rates\";
 //   parameter Real system.m_flow_small(quantity = \"MassFlowRate\", unit = \"kg/s\", min = 0.0) = 0.01 \"Default small laminar mass flow rate for regularization of zero flow\";
 //   parameter Real system.dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Default small pressure drop for regularization of laminar and zero flow\";
-//   parameter Real system.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0) = system.p_ambient \"Default start value for pressures\";
-//   parameter Real system.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = system.T_ambient \"Default start value for temperatures\";
+//   parameter Real system.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = system.p_ambient \"Default start value for pressures\";
+//   parameter Real system.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Default start value for temperatures\";
 //   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.massDynamics = system.energyDynamics \"Default formulation of mass balances\";
 //   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.substanceDynamics = system.massDynamics \"Default formulation of substance balances\";
 //   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.traceDynamics = system.massDynamics \"Default formulation of trace substance balances\";
 //   parameter Boolean evaporator.allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
 //   Real evaporator.port_a.m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = if evaporator.allowFlowReversal then -1e+060 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
-//   Real evaporator.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real evaporator.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real evaporator.port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   Real evaporator.port_b.m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = -100000.0, max = if evaporator.allowFlowReversal then 1e+060 else 0.0) \"Mass flow rate from the connection point into the component\";
-//   Real evaporator.port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real evaporator.port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real evaporator.port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   protected parameter Boolean evaporator.port_a_exposesState = true \"= true if port_a exposes the state of a fluid volume\";
 //   protected parameter Boolean evaporator.port_b_exposesState = true \"= true if port_b.p exposes the state of a fluid volume\";
 //   protected parameter Boolean evaporator.showDesignFlowDirection = true \"= false to hide the arrow in the model icon\";
-//   parameter Real evaporator.m_D(quantity = \"Mass\", unit = \"kg\", min = 0) = 300000.0 \"mass of surrounding drum metal\";
-//   parameter Real evaporator.cp_D(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = 500.0 \"specific heat capacity of drum metal\";
+//   parameter Real evaporator.m_D(quantity = \"Mass\", unit = \"kg\", min = 0.0) = 300000.0 \"mass of surrounding drum metal\";
+//   parameter Real evaporator.cp_D(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = 500.0 \"specific heat capacity of drum metal\";
 //   parameter Real evaporator.V_t(quantity = \"Volume\", unit = \"m3\") = 100.0 \"total volume inside drum\";
-//   parameter Real evaporator.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 100000.0 \"Start value of pressure\";
+//   parameter Real evaporator.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 100000.0 \"Start value of pressure\";
 //   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) evaporator.energyDynamics = Modelica.Fluid.Types.Dynamics.FixedInitial \"Formulation of energy balance\";
 //   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) evaporator.massDynamics = Modelica.Fluid.Types.Dynamics.FixedInitial \"Formulation of mass balance\";
-//   Real evaporator.heatPort.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Port temperature\";
+//   Real evaporator.heatPort.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real evaporator.heatPort.Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
 //   output Real evaporator.V \"liquid volume\";
-//   Real evaporator.sat.psat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"saturation pressure\";
-//   Real evaporator.sat.Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"saturation temperature\";
-//   Real evaporator.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = evaporator.p_start, nominal = 100000.0, StateSelect = StateSelect.prefer) \"pressure inside drum boiler\";
-//   Real evaporator.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"temperature inside drum boiler\";
+//   Real evaporator.sat.psat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"saturation pressure\";
+//   Real evaporator.sat.Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"saturation temperature\";
+//   Real evaporator.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature inside drum boiler\";
 //   Real evaporator.V_v(quantity = \"Volume\", unit = \"m3\") \"volume of vapour phase\";
-//   Real evaporator.V_l(quantity = \"Volume\", unit = \"m3\", start = evaporator.V_l_start, StateSelect = StateSelect.prefer) \"volumes of liquid phase\";
 //   Real evaporator.h_v(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.dewEnthalpy(evaporator.sat) \"specific enthalpy of vapour\";
 //   Real evaporator.h_l(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.bubbleEnthalpy(evaporator.sat) \"specific enthalpy of liquid\";
-//   Real evaporator.rho_v(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) = Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.dewDensity(evaporator.sat) \"density in vapour phase\";
-//   Real evaporator.rho_l(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) = Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.bubbleDensity(evaporator.sat) \"density in liquid phase\";
-//   Real evaporator.m(quantity = \"Mass\", unit = \"kg\", min = 0) \"total mass of drum boiler\";
+//   Real evaporator.rho_v(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.dewDensity(evaporator.sat) \"density in vapour phase\";
+//   Real evaporator.rho_l(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.Medium.bubbleDensity(evaporator.sat) \"density in liquid phase\";
+//   Real evaporator.m(quantity = \"Mass\", unit = \"kg\", min = 0.0) \"total mass of drum boiler\";
 //   Real evaporator.U(quantity = \"Energy\", unit = \"J\") \"internal energy\";
-//   Real evaporator.T_D(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) = evaporator.heatPort.T \"temperature of drum\";
+//   Real evaporator.T_D(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = evaporator.heatPort.T \"temperature of drum\";
 //   Real evaporator.q_F(quantity = \"Power\", unit = \"W\") = evaporator.heatPort.Q_flow \"heat flow rate from furnace\";
 //   Real evaporator.h_W(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = pump.ports[1].h_outflow \"Feed water enthalpy (specific enthalpy close to feedwater port when mass flows in to the boiler)\";
 //   Real evaporator.h_S(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = (max(-massFlowRate.port_a.m_flow,1e-015) * massFlowRate.port_a.h_outflow + (max(-temperature.port.m_flow,1e-015) * temperature.port.h_outflow + max(-pressure.port.m_flow,1e-015) * pressure.port.h_outflow)) / (max(-massFlowRate.port_a.m_flow,1e-015) + (max(-temperature.port.m_flow,1e-015) + max(-pressure.port.m_flow,1e-015))) \"steam enthalpy (specific enthalpy close to steam port when mass flows in to the boiler)\";
 //   Real evaporator.qm_W(quantity = \"MassFlowRate\", unit = \"kg/s\") = evaporator.port_a.m_flow \"feed water mass flow rate\";
 //   Real evaporator.qm_S(quantity = \"MassFlowRate\", unit = \"kg/s\") = evaporator.port_b.m_flow \"steam mass flow rate\";
 //   parameter Real evaporator.V_l_start(quantity = \"Volume\", unit = \"m3\") = 67.0 \"Start value of liquid volumeStart value of volume\";
-//   parameter Real furnace.T_ref(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) = 293.15 \"Reference temperature\";
+//   Real evaporator.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = evaporator.p_start, nominal = 100000.0, StateSelect = StateSelect.prefer) \"pressure inside drum boiler\";
+//   Real evaporator.V_l(quantity = \"Volume\", unit = \"m3\", start = evaporator.V_l_start, StateSelect = StateSelect.prefer) \"volumes of liquid phase\";
+//   parameter Real furnace.T_ref(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Reference temperature\";
 //   parameter Real furnace.alpha(quantity = \"LinearTemperatureCoefficient\", unit = \"1/K\") = 0.0 \"Temperature coefficient of heat flow rate\";
 //   input Real furnace.Q_flow;
-//   Real furnace.port.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0) \"Port temperature\";
+//   Real furnace.port.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real furnace.port.Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
 //   parameter Integer sink.nPorts = 1 \"Number of ports\";
-//   input Real sink.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, StateSelect = StateSelect.default) \"Absolute pressure of medium\";
+//   input Real sink.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, StateSelect = StateSelect.default) \"Absolute pressure of medium\";
 //   input Real sink.medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", StateSelect = StateSelect.default) \"Specific enthalpy of medium\";
-//   Real sink.medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1, StateSelect = StateSelect.default) \"Density of medium\";
-//   Real sink.medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300, StateSelect = StateSelect.default) \"Temperature of medium\";
-//   Real sink.medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real sink.medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0, StateSelect = StateSelect.default) \"Density of medium\";
+//   Real sink.medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0, StateSelect = StateSelect.default) \"Temperature of medium\";
+//   Real sink.medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   Real sink.medium.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
-//   Real sink.medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real sink.medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
 //   Real sink.medium.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
 //   Integer sink.medium.state.phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
 //   Real sink.medium.state.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   Real sink.medium.state.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"density\";
-//   Real sink.medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"temperature\";
-//   Real sink.medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
+//   Real sink.medium.state.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
+//   Real sink.medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
+//   Real sink.medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
 //   parameter Boolean sink.medium.preferredMediumStates = false \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
 //   parameter Boolean sink.medium.standardOrderComponents = true \"if true, and reducedX = true, the last element of X will be computed from the other ones\";
 //   Real sink.medium.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(sink.medium.T) \"Temperature of medium in [degC]\";
 //   Real sink.medium.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(sink.medium.p) \"Absolute pressure of medium in [bar]\";
-//   Real sink.medium.sat.psat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"saturation pressure\";
-//   Real sink.medium.sat.Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300.0, nominal = 300) \"saturation temperature\";
+//   Real sink.medium.sat.psat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"saturation pressure\";
+//   Real sink.medium.sat.Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"saturation temperature\";
 //   Integer sink.medium.phase(min = 0, max = 2, start = 1, fixed = false) \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   Real sink.ports[1].m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = if sink.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+060, max = if sink.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+060) \"Mass flow rate from the connection point into the component\";
-//   Real sink.ports[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
-//   Real sink.ports[1].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   protected parameter enumeration(Entering, Leaving, Bidirectional) sink.flowDirection = Modelica.Fluid.Types.PortFlowDirection.Bidirectional \"Allowed flow direction\";
 //   parameter Boolean sink.use_p = true \"select p or d\";
-//   parameter Real sink.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 50000.0 \"Boundary pressure\";
-//   parameter Real sink.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) = Modelica.Fluid.Sources.FixedBoundary.Medium.density_pTX(101325.0,293.15,{1.0}) \"Boundary density\";
+//   parameter Real sink.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 50000.0 \"Boundary pressure\";
+//   parameter Real sink.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = Modelica.Fluid.Sources.FixedBoundary.Medium.density_pTX(101325.0,293.15,{1.0}) \"Boundary density\";
 //   parameter Boolean sink.use_T = true \"select T or h\";
-//   parameter Real sink.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) = 500.0 \"Boundary temperature\";
+//   parameter Real sink.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 500.0 \"Boundary temperature\";
 //   parameter Real sink.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = 0.0 \"Boundary specific enthalpy\";
-//   parameter Real sink.X[1](quantity = \"water\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = 1.0 \"Boundary mass fractions m_i/m\";
+//   parameter Real sink.X[1](quantity = \"water\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Boundary mass fractions m_i/m\";
+//   Real sink.ports[1].m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = if sink.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+060, max = if sink.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+060) \"Mass flow rate from the connection point into the component\";
+//   Real sink.ports[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real sink.ports[1].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   parameter Boolean massFlowRate.allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
 //   Real massFlowRate.port_a.m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = if massFlowRate.allowFlowReversal then -1e+060 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
-//   Real massFlowRate.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real massFlowRate.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real massFlowRate.port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   Real massFlowRate.port_b.m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = -100000.0, max = if massFlowRate.allowFlowReversal then 1e+060 else 0.0) \"Mass flow rate from the connection point into the component\";
-//   Real massFlowRate.port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real massFlowRate.port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real massFlowRate.port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   protected parameter Boolean massFlowRate.port_a_exposesState = false \"= true if port_a exposes the state of a fluid volume\";
 //   protected parameter Boolean massFlowRate.port_b_exposesState = false \"= true if port_b.p exposes the state of a fluid volume\";
 //   protected parameter Boolean massFlowRate.showDesignFlowDirection = true \"= false to hide the arrow in the model icon\";
 //   output Real massFlowRate.m_flow(quantity = \"MassFlowRate\", unit = \"kg/s\") \"Mass flow rate from port_a to port_b\";
 //   Real temperature.port.m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
-//   Real temperature.port.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real temperature.port.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real temperature.port.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   output Real temperature.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature in port medium\";
 //   Real pressure.port.m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
-//   Real pressure.port.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real pressure.port.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real pressure.port.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   output Real pressure.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) \"Pressure at port\";
 //   input Real controller.u \"Connector of Real input signal\";
@@ -2835,29 +2835,26 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   parameter Real controller.y_start = 0.0 \"Initial value of output\";
 //   output Real controller.x(start = controller.x_start) \"State of block\";
 //   parameter Integer pump.nPorts = 1 \"Number of ports\";
-//   input Real pump.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, StateSelect = StateSelect.default) \"Absolute pressure of medium\";
+//   input Real pump.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, StateSelect = StateSelect.default) \"Absolute pressure of medium\";
 //   input Real pump.medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", StateSelect = StateSelect.default) \"Specific enthalpy of medium\";
-//   Real pump.medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1, StateSelect = StateSelect.default) \"Density of medium\";
-//   Real pump.medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300, StateSelect = StateSelect.default) \"Temperature of medium\";
-//   Real pump.medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real pump.medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0, StateSelect = StateSelect.default) \"Density of medium\";
+//   Real pump.medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0, StateSelect = StateSelect.default) \"Temperature of medium\";
+//   Real pump.medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   Real pump.medium.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
-//   Real pump.medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real pump.medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
 //   Real pump.medium.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
 //   Integer pump.medium.state.phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
 //   Real pump.medium.state.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   Real pump.medium.state.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"density\";
-//   Real pump.medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"temperature\";
-//   Real pump.medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
+//   Real pump.medium.state.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
+//   Real pump.medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
+//   Real pump.medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
 //   parameter Boolean pump.medium.preferredMediumStates = false \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
 //   parameter Boolean pump.medium.standardOrderComponents = true \"if true, and reducedX = true, the last element of X will be computed from the other ones\";
 //   Real pump.medium.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(pump.medium.T) \"Temperature of medium in [degC]\";
 //   Real pump.medium.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(pump.medium.p) \"Absolute pressure of medium in [bar]\";
-//   Real pump.medium.sat.psat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"saturation pressure\";
-//   Real pump.medium.sat.Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300.0, nominal = 300) \"saturation temperature\";
+//   Real pump.medium.sat.psat(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"saturation pressure\";
+//   Real pump.medium.sat.Tsat(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"saturation temperature\";
 //   Integer pump.medium.phase(min = 0, max = 2, start = 1, fixed = false) \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   Real pump.ports[1].m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = if pump.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+060, max = if pump.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+060) \"Mass flow rate from the connection point into the component\";
-//   Real pump.ports[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
-//   Real pump.ports[1].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   protected parameter enumeration(Entering, Leaving, Bidirectional) pump.flowDirection = Modelica.Fluid.Types.PortFlowDirection.Bidirectional \"Allowed flow direction\";
 //   parameter Boolean pump.use_m_flow_in = true \"Get the mass flow rate from the input connector\";
 //   parameter Boolean pump.use_h_in = false \"Get the specific enthalpy from the input connector\";
@@ -2865,10 +2862,13 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   parameter Boolean pump.use_C_in = false \"Get the trace substances from the input connector\";
 //   parameter Real pump.m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = 0.0 \"Fixed mass flow rate going out of the fluid port\";
 //   parameter Real pump.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = 500000.0 \"Fixed value of specific enthalpy\";
-//   parameter Real pump.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0, max = 1, nominal = 0.1) = 1.0 \"Fixed value of composition\";
+//   parameter Real pump.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Fixed value of composition\";
 //   protected input Real pump.m_flow_in_internal \"Needed to connect to conditional connector\";
 //   protected input Real pump.h_in_internal \"Needed to connect to conditional connector\";
 //   protected input Real pump.X_in_internal[1] \"Needed to connect to conditional connector\";
+//   Real pump.ports[1].m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = if pump.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+060, max = if pump.flowDirection == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+060) \"Mass flow rate from the connection point into the component\";
+//   Real pump.ports[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real pump.ports[1].h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   input Real pump.m_flow_in \"Prescribed mass flow rate\";
 //   input Real feedback.u1;
 //   input Real feedback.u2;
@@ -2894,36 +2894,36 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 //   parameter Real limiter.uMin = 0.0 \"Lower limits of input signals\";
 //   parameter Boolean SteamValve.allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
 //   Real SteamValve.port_a.m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = if SteamValve.allowFlowReversal then -1e+060 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
-//   Real SteamValve.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real SteamValve.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real SteamValve.port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   Real SteamValve.port_b.m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = -100000.0, max = if SteamValve.allowFlowReversal then 1e+060 else 0.0) \"Mass flow rate from the connection point into the component\";
-//   Real SteamValve.port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real SteamValve.port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real SteamValve.port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   protected parameter Boolean SteamValve.port_a_exposesState = false \"= true if port_a exposes the state of a fluid volume\";
 //   protected parameter Boolean SteamValve.port_b_exposesState = false \"= true if port_b.p exposes the state of a fluid volume\";
 //   protected parameter Boolean SteamValve.showDesignFlowDirection = true \"= false to hide the arrow in the model icon\";
-//   parameter Real SteamValve.dp_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 0.01 * system.p_start \"Guess value of dp = port_a.p - port_b.p\";
+//   parameter Real SteamValve.dp_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 0.01 * system.p_start \"Guess value of dp = port_a.p - port_b.p\";
 //   parameter Real SteamValve.m_flow_start(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_start \"Guess value of m_flow = port_a.m_flow\";
 //   parameter Real SteamValve.m_flow_small(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_small \"Small mass flow rate for regularization of zero flow\";
 //   parameter Boolean SteamValve.show_T = true \"= true, if temperatures at port_a and port_b are computed\";
 //   parameter Boolean SteamValve.show_V_flow = true \"= true, if volume flow rate at inflowing port is computed\";
-//   Real SteamValve.m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = if SteamValve.allowFlowReversal then -1e+060 else 0.0, max = 100000.0, start = SteamValve.m_flow_start) \"Mass flow rate in design flow direction\";
-//   Real SteamValve.dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = SteamValve.dp_start) \"Pressure difference between port_a and port_b (= port_a.p - port_b.p)\";
 //   Integer SteamValve.state_a.phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
 //   Real SteamValve.state_a.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   Real SteamValve.state_a.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"density\";
-//   Real SteamValve.state_a.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"temperature\";
-//   Real SteamValve.state_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
+//   Real SteamValve.state_a.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
+//   Real SteamValve.state_a.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
+//   Real SteamValve.state_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
 //   Integer SteamValve.state_b.phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
 //   Real SteamValve.state_b.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   Real SteamValve.state_b.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0, max = 100000.0, start = 1, nominal = 1) \"density\";
-//   Real SteamValve.state_b.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) \"temperature\";
-//   Real SteamValve.state_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
-//   parameter Real SteamValve.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0) = 9000000.0 \"Nominal pressure drop at full opening\";
+//   Real SteamValve.state_b.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
+//   Real SteamValve.state_b.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
+//   Real SteamValve.state_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
+//   parameter Real SteamValve.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 9000000.0 \"Nominal pressure drop at full opening\";
 //   parameter Real SteamValve.m_flow_nominal(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = 180.0 \"Nominal mass flowrate at full opening\";
 //   input Real SteamValve.opening(min = 0.0, max = 1.0) \"=1: completely open, =0: completely closed\";
-//   Real SteamValve.port_a_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) = Modelica.Fluid.Utilities.regStep(SteamValve.port_a.m_flow,Modelica.Fluid.Valves.ValveLinear.Medium.temperature(SteamValve.state_a),Modelica.Fluid.Valves.ValveLinear.Medium.temperature(Modelica.Fluid.Valves.ValveLinear.Medium.setState_phX(SteamValve.port_a.p,SteamValve.port_a.h_outflow,{},0)),SteamValve.m_flow_small) \"Temperature close to port_a, if show_T = true\";
-//   Real SteamValve.port_b_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1, max = 10000.0, start = 300, nominal = 300) = Modelica.Fluid.Utilities.regStep(SteamValve.port_b.m_flow,Modelica.Fluid.Valves.ValveLinear.Medium.temperature(SteamValve.state_b),Modelica.Fluid.Valves.ValveLinear.Medium.temperature(Modelica.Fluid.Valves.ValveLinear.Medium.setState_phX(SteamValve.port_b.p,SteamValve.port_b.h_outflow,{},0)),SteamValve.m_flow_small) \"Temperature close to port_b, if show_T = true\";
+//   Real SteamValve.dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = SteamValve.dp_start) \"Pressure difference between port_a and port_b (= port_a.p - port_b.p)\";
+//   Real SteamValve.m_flow(quantity = \"MassFlowRate.WaterIF97\", unit = \"kg/s\", min = if SteamValve.allowFlowReversal then -1e+060 else 0.0, max = 100000.0, start = SteamValve.m_flow_start) \"Mass flow rate in design flow direction\";
+//   Real SteamValve.port_a_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.Fluid.Utilities.regStep(SteamValve.port_a.m_flow,Modelica.Fluid.Valves.ValveLinear.Medium.temperature(SteamValve.state_a),Modelica.Fluid.Valves.ValveLinear.Medium.temperature(Modelica.Fluid.Valves.ValveLinear.Medium.setState_phX(SteamValve.port_a.p,SteamValve.port_a.h_outflow,{},0)),SteamValve.m_flow_small) \"Temperature close to port_a, if show_T = true\";
+//   Real SteamValve.port_b_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.Fluid.Utilities.regStep(SteamValve.port_b.m_flow,Modelica.Fluid.Valves.ValveLinear.Medium.temperature(SteamValve.state_b),Modelica.Fluid.Valves.ValveLinear.Medium.temperature(Modelica.Fluid.Valves.ValveLinear.Medium.setState_phX(SteamValve.port_b.p,SteamValve.port_b.h_outflow,{},0)),SteamValve.m_flow_small) \"Temperature close to port_b, if show_T = true\";
 //   Real SteamValve.V_flow(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = SteamValve.m_flow / Modelica.Fluid.Utilities.regStep(SteamValve.m_flow,Modelica.Fluid.Valves.ValveLinear.Medium.density(SteamValve.state_a),Modelica.Fluid.Valves.ValveLinear.Medium.density(SteamValve.state_b),SteamValve.m_flow_small) \"Volume flow rate at inflowing port (positive when flow from port_a to port_b)\";
 //   final parameter Real SteamValve.k(quantity = \"HydraulicConductance\", unit = \"kg/(s.Pa)\") = SteamValve.m_flow_nominal / SteamValve.dp_nominal \"Hydraulic conductance at full opening\";
 //   output Real q_F_Tab.y \"Connector of Real output signal\";

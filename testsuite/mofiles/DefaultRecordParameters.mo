@@ -61,7 +61,7 @@ end DefaultRecordParameters;
 //   parameter Real body2.data.volume = 5.0;
 //   Real body2.displacement;
 //   constant Real body2.pi = 3.1415956;
-//   parameter Real body3.data.length = 5.0;
+//   parameter Real body3.data.length = 5;
 //   parameter Real body3.data.volume = 6.0;
 //   Real body3.displacement;
 //   constant Real body3.pi = 3.1415956;

@@ -50,14 +50,14 @@ end ArrayDim3;
 //   Real identitymatrix[3,1] = 0.0;
 //   Real identitymatrix[3,2] = 0.0;
 //   Real identitymatrix[3,3] = 1.0;
+//   Boolean truthvalues[1] = false;
+//   Boolean truthvalues[2] = true;
 //   Integer arr3d[1,1,1];
 //   Integer arr3d[1,1,2];
 //   Integer arr3d[1,1,3];
 //   Integer arr3d[1,2,1];
 //   Integer arr3d[1,2,2];
 //   Integer arr3d[1,2,3];
-//   Boolean truthvalues[1] = false;
-//   Boolean truthvalues[2] = true;
 // equation
 //   arr3d[1,1,1] = 3;
 //   arr3d[1,1,2] = 4;

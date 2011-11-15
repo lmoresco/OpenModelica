@@ -1101,17 +1101,17 @@ end BM22;
 // 
 // class BM22
 //   parameter Integer sinh1.n = 1 "Number of inputs (= number of outputs)";
+//   protected Real sinh1.u[1] = sinh1.inPort.signal[1] "Input signals";
 //   parameter Integer sinh1.inPort.n = sinh1.n "Dimension of signal vector";
 //   input Real sinh1.inPort.signal[1] "Real input signals";
 //   parameter Integer sinh1.outPort.n = sinh1.n "Dimension of signal vector";
 //   output Real sinh1.outPort.signal[1] "Real output signals";
 //   output Real sinh1.y[1] "Output signals";
-//   protected Real sinh1.u[1] = sinh1.inPort.signal[1] "Input signals";
+//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 //   parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 //   parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 //   output Real constant1.outPort.signal[1] "Real output signals";
 //   output Real constant1.y[1];
-//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   sinh1.y[1] = sinh(sinh1.u[1]);
 //   sinh1.y[1] = sinh1.outPort.signal[1];

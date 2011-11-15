@@ -17,10 +17,10 @@ end example;
 
 // Result:
 // function abcRec "Automatically generated record constructor for abcRec"
-// input Integer a;
-// input Integer b = 2;
-// constant Integer c = 3;
-// output abcRec res;
+//   input Integer a;
+//   input Integer b = 2;
+//   constant Integer c = 3;
+//   output abcRec res;
 // end abcRec;
 // 
 // class example

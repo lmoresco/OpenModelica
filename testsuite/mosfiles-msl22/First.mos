@@ -21,9 +21,9 @@ val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SystemTests.First_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SystemTests.First', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-010, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SystemTests.First', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,-0.15560418929093,-0.537477780553385,-0.693696161003548,-0.90158424392602,-1.12249284118502}
-// {0.0,-0.0155604191673736,-0.053747777604553,-0.0693696164388354,-0.090158423831254,-0.112249284527425}
+// {0.0,-0.15560416415179,-0.537477809446253,-0.693696143765058,-0.901584208726307,-1.12249294988603}
+// {0.0,-0.015560416415179,-0.0537477809446253,-0.0693696143765057,-0.0901584208726307,-0.112249294988603}
 // endResult

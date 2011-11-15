@@ -23,8 +23,8 @@ end Redeclare2;
 
 // Result:
 // class Redeclare2
-// Real x.x;
+//   Real x.x;
 // equation
-// x.x = 1.0;
+//   x.x = 1.0;
 // end Redeclare2;
 // endResult

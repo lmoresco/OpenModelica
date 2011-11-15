@@ -1009,34 +1009,34 @@ end BN3;
 // end BN3;
 // Result:
 // class BN3
+//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 //   parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 //   parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 //   output Real constant1.outPort.signal[1] "Real output signals";
 //   output Real constant1.y[1];
-//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 //   parameter Integer variableLimiter1.n = 1 "Number of inputs (= number of outputs)";
+//   protected Real variableLimiter1.u[1] = variableLimiter1.inPort.signal[1] "Input signals";
 //   parameter Integer variableLimiter1.inPort.n = variableLimiter1.n "Dimension of signal vector";
 //   input Real variableLimiter1.inPort.signal[1] "Real input signals";
 //   parameter Integer variableLimiter1.outPort.n = variableLimiter1.n "Dimension of signal vector";
 //   output Real variableLimiter1.outPort.signal[1] "Real output signals";
 //   output Real variableLimiter1.y[1] "Output signals";
-//   protected Real variableLimiter1.u[1] = variableLimiter1.inPort.signal[1] "Input signals";
 //   parameter Integer variableLimiter1.limit1.n = variableLimiter1.n "Dimension of signal vector";
 //   input Real variableLimiter1.limit1.signal[1] "Real input signals";
 //   parameter Integer variableLimiter1.limit2.n = variableLimiter1.n "Dimension of signal vector";
 //   input Real variableLimiter1.limit2.signal[1] "Real input signals";
 //   protected Real variableLimiter1.uMax[1];
 //   protected Real variableLimiter1.uMin[1];
+//   parameter Real constant2.k[1] = 1.0 "Constant output values";
 //   parameter Integer constant2.nout(min = 1) = 1 "Number of outputs";
 //   parameter Integer constant2.outPort.n = constant2.nout "Dimension of signal vector";
 //   output Real constant2.outPort.signal[1] "Real output signals";
 //   output Real constant2.y[1];
-//   parameter Real constant2.k[1] = 1.0 "Constant output values";
+//   parameter Real constant3.k[1] = 1.0 "Constant output values";
 //   parameter Integer constant3.nout(min = 1) = 1 "Number of outputs";
 //   parameter Integer constant3.outPort.n = constant3.nout "Dimension of signal vector";
 //   output Real constant3.outPort.signal[1] "Real output signals";
 //   output Real constant3.y[1];
-//   parameter Real constant3.k[1] = 1.0 "Constant output values";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

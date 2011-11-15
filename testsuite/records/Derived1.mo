@@ -16,9 +16,9 @@ end Derived1;
 
 // Result:
 // function Derived1.ThermodynamicState "Automatically generated record constructor for Derived1.ThermodynamicState"
-// input Real T;
-// input Real p;
-// output ThermodynamicState res;
+//   input Real T;
+//   input Real p;
+//   output ThermodynamicState res;
 // end Derived1.ThermodynamicState;
 // 
 // class Derived1

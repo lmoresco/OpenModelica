@@ -49,6 +49,7 @@ end WaveEquationSample;
 //   parameter Real L = 10.0 "Length of duct";
 //   parameter Integer n = 30 "Number of sections";
 //   parameter Real c = 1.0;
+//   parameter Real dL = L / Real(n) "Section length";
 //   Real p[1](start = WaveEquationSample.initialPressure(n)[1]);
 //   Real p[2](start = WaveEquationSample.initialPressure(n)[2]);
 //   Real p[3](start = WaveEquationSample.initialPressure(n)[3]);
@@ -109,7 +110,6 @@ end WaveEquationSample;
 //   Real dp[28](start = 0.0);
 //   Real dp[29](start = 0.0);
 //   Real dp[30](start = 0.0);
-//   parameter Real dL = L / Real(n) "Section length";
 // equation
 //   p[1] = exp(-((-L) / 2.0) ^ 2.0);
 //   p[30] = exp(-(L / 2.0) ^ 2.0);

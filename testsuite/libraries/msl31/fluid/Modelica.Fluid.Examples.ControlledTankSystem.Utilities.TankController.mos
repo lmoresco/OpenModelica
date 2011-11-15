@@ -30,12 +30,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   parameter Integer s1.nIn(min = 0) = 2 \"Number of input connections\";
 //   parameter Integer s1.nOut(min = 0) = 1 \"Number of output connections\";
 //   output Boolean s1.localActive \"= true if step is active, otherwise the step is not active\";
-//   output Boolean s1.inPort[1].occupied \"true, if step is active\";
-//   input Boolean s1.inPort[1].set \"true, if transition fires and step is activated\";
-//   output Boolean s1.inPort[2].occupied \"true, if step is active\";
-//   input Boolean s1.inPort[2].set \"true, if transition fires and step is activated\";
-//   output Boolean s1.outPort[1].available \"true, if step is active\";
-//   input Boolean s1.outPort[1].reset \"true, if transition fires and step is deactivated\";
 //   output Boolean s1.stateGraphRoot.suspend = false;
 //   output Boolean s1.stateGraphRoot.resume = false;
 //   output Boolean s1.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
@@ -49,6 +43,63 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   protected Boolean s1.newActive \"Value of active in the next iteration\";
 //   protected Boolean s1.oldActive \"Value of active when CompositeStep was aborted\";
 //   output Boolean s1.active \"= true if step is active, otherwise the step is not active\";
+//   output Boolean s1.inPort[1].occupied \"true, if step is active\";
+//   input Boolean s1.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean s1.inPort[2].occupied \"true, if step is active\";
+//   input Boolean s1.inPort[2].set \"true, if transition fires and step is activated\";
+//   output Boolean s1.outPort[1].available \"true, if step is active\";
+//   input Boolean s1.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   parameter Integer s2.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer s2.nOut(min = 0) = 2 \"Number of output connections\";
+//   output Boolean s2.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean s2.stateGraphRoot.suspend = false;
+//   output Boolean s2.stateGraphRoot.resume = false;
+//   output Boolean s2.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean s2.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real s2.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real s2.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean s2.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean s2.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real s2.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real s2.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean s2.newActive \"Value of active in the next iteration\";
+//   protected Boolean s2.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean s2.active \"= true if step is active, otherwise the step is not active\";
+//   output Boolean s2.inPort[1].occupied \"true, if step is active\";
+//   input Boolean s2.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean s2.outPort[1].available \"true, if step is active\";
+//   input Boolean s2.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean s2.outPort[2].available \"true, if step is active\";
+//   input Boolean s2.outPort[2].reset \"true, if transition fires and step is deactivated\";
+//   parameter Integer emptyTanks.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer emptyTanks.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean emptyTanks.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean emptyTanks.stateGraphRoot.suspend = false;
+//   output Boolean emptyTanks.stateGraphRoot.resume = false;
+//   output Boolean emptyTanks.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean emptyTanks.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real emptyTanks.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real emptyTanks.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean emptyTanks.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean emptyTanks.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real emptyTanks.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real emptyTanks.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean emptyTanks.newActive \"Value of active in the next iteration\";
+//   protected Boolean emptyTanks.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean emptyTanks.active \"= true if step is active, otherwise the step is not active\";
+//   output Boolean emptyTanks.inPort[1].occupied \"true, if step is active\";
+//   input Boolean emptyTanks.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean emptyTanks.outPort[1].available \"true, if step is active\";
+//   input Boolean emptyTanks.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   input Boolean start;
+//   input Boolean stop;
+//   input Boolean shut;
+//   input Real level1;
+//   input Real level2;
+//   output Boolean valve1;
+//   output Boolean valve2;
+//   output Boolean valve3;
+//   output Boolean setValve1.y = normal.fillTank1.active \"Value of Boolean output\";
 //   output Boolean normal.stateGraphRoot.suspend = false;
 //   output Boolean normal.stateGraphRoot.resume = false;
 //   output Boolean normal.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
@@ -68,10 +119,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   input Boolean normal.inPort.set \"true, if transition fires and step is activated\";
 //   output Boolean normal.outPort.available \"true, if step is active\";
 //   input Boolean normal.outPort.reset \"true, if transition fires and step is deactivated\";
-//   output Boolean normal.suspend[1].available \"true, if step is active\";
-//   input Boolean normal.suspend[1].reset \"true, if transition fires and step is deactived\";
-//   output Boolean normal.resume[1].occupied \"true, if step is active\";
-//   input Boolean normal.resume[1].set \"true, if transition fires and step is activated\";
 //   input Boolean normal.outerState.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
 //   input Boolean normal.outerState.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
 //   Real normal.outerState.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
@@ -85,10 +132,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   parameter Integer normal.fillTank1.nIn(min = 0) = 1 \"Number of input connections\";
 //   parameter Integer normal.fillTank1.nOut(min = 0) = 1 \"Number of output connections\";
 //   output Boolean normal.fillTank1.localActive \"= true if step is active, otherwise the step is not active\";
-//   output Boolean normal.fillTank1.inPort[1].occupied \"true, if step is active\";
-//   input Boolean normal.fillTank1.inPort[1].set \"true, if transition fires and step is activated\";
-//   output Boolean normal.fillTank1.outPort[1].available \"true, if step is active\";
-//   input Boolean normal.fillTank1.outPort[1].reset \"true, if transition fires and step is deactivated\";
 //   input Boolean normal.fillTank1.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
 //   input Boolean normal.fillTank1.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
 //   Real normal.fillTank1.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
@@ -96,26 +139,13 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   protected Boolean normal.fillTank1.newActive \"Value of active in the next iteration\";
 //   protected Boolean normal.fillTank1.oldActive \"Value of active when CompositeStep was aborted\";
 //   output Boolean normal.fillTank1.active \"= true if step is active, otherwise the step is not active\";
-//   input Boolean normal.T1.localCondition = normal.T1.condition \"= true, if transition may fire\";
-//   parameter Boolean normal.T1.enableTimer = false \"= true, if timer is enabled\";
-//   parameter Real normal.T1.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
-//   output Real normal.T1.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
-//   output Boolean normal.T1.enableFire \"= true, if all firing conditions are true\";
-//   output Boolean normal.T1.fire \"= true, if transition fires\";
-//   input Boolean normal.T1.inPort.available \"true, if step connected to the transition input is active\";
-//   output Boolean normal.T1.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
-//   input Boolean normal.T1.outPort.occupied \"true, if step connected to the transition output is active\";
-//   output Boolean normal.T1.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
-//   protected Real normal.T1.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
-//   protected Real normal.T1.t_dummy;
-//   input Boolean normal.T1.condition = normal.level1 > normal.maxLevel \"= true, if transition may fire (time varying expression)\";
+//   output Boolean normal.fillTank1.inPort[1].occupied \"true, if step is active\";
+//   input Boolean normal.fillTank1.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean normal.fillTank1.outPort[1].available \"true, if step is active\";
+//   input Boolean normal.fillTank1.outPort[1].reset \"true, if transition fires and step is deactivated\";
 //   parameter Integer normal.fillTank2.nIn(min = 0) = 1 \"Number of input connections\";
 //   parameter Integer normal.fillTank2.nOut(min = 0) = 1 \"Number of output connections\";
 //   output Boolean normal.fillTank2.localActive \"= true if step is active, otherwise the step is not active\";
-//   output Boolean normal.fillTank2.inPort[1].occupied \"true, if step is active\";
-//   input Boolean normal.fillTank2.inPort[1].set \"true, if transition fires and step is activated\";
-//   output Boolean normal.fillTank2.outPort[1].available \"true, if step is active\";
-//   input Boolean normal.fillTank2.outPort[1].reset \"true, if transition fires and step is deactivated\";
 //   input Boolean normal.fillTank2.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
 //   input Boolean normal.fillTank2.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
 //   Real normal.fillTank2.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
@@ -123,26 +153,13 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   protected Boolean normal.fillTank2.newActive \"Value of active in the next iteration\";
 //   protected Boolean normal.fillTank2.oldActive \"Value of active when CompositeStep was aborted\";
 //   output Boolean normal.fillTank2.active \"= true if step is active, otherwise the step is not active\";
-//   input Boolean normal.T3.localCondition = normal.T3.condition \"= true, if transition may fire\";
-//   parameter Boolean normal.T3.enableTimer = false \"= true, if timer is enabled\";
-//   parameter Real normal.T3.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
-//   output Real normal.T3.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
-//   output Boolean normal.T3.enableFire \"= true, if all firing conditions are true\";
-//   output Boolean normal.T3.fire \"= true, if transition fires\";
-//   input Boolean normal.T3.inPort.available \"true, if step connected to the transition input is active\";
-//   output Boolean normal.T3.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
-//   input Boolean normal.T3.outPort.occupied \"true, if step connected to the transition output is active\";
-//   output Boolean normal.T3.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
-//   protected Real normal.T3.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
-//   protected Real normal.T3.t_dummy;
-//   input Boolean normal.T3.condition = normal.level1 < normal.minLevel \"= true, if transition may fire (time varying expression)\";
+//   output Boolean normal.fillTank2.inPort[1].occupied \"true, if step is active\";
+//   input Boolean normal.fillTank2.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean normal.fillTank2.outPort[1].available \"true, if step is active\";
+//   input Boolean normal.fillTank2.outPort[1].reset \"true, if transition fires and step is deactivated\";
 //   parameter Integer normal.emptyTank2.nIn(min = 0) = 1 \"Number of input connections\";
 //   parameter Integer normal.emptyTank2.nOut(min = 0) = 1 \"Number of output connections\";
 //   output Boolean normal.emptyTank2.localActive \"= true if step is active, otherwise the step is not active\";
-//   output Boolean normal.emptyTank2.inPort[1].occupied \"true, if step is active\";
-//   input Boolean normal.emptyTank2.inPort[1].set \"true, if transition fires and step is activated\";
-//   output Boolean normal.emptyTank2.outPort[1].available \"true, if step is active\";
-//   input Boolean normal.emptyTank2.outPort[1].reset \"true, if transition fires and step is deactivated\";
 //   input Boolean normal.emptyTank2.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
 //   input Boolean normal.emptyTank2.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
 //   Real normal.emptyTank2.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
@@ -150,13 +167,13 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   protected Boolean normal.emptyTank2.newActive \"Value of active in the next iteration\";
 //   protected Boolean normal.emptyTank2.oldActive \"Value of active when CompositeStep was aborted\";
 //   output Boolean normal.emptyTank2.active \"= true if step is active, otherwise the step is not active\";
+//   output Boolean normal.emptyTank2.inPort[1].occupied \"true, if step is active\";
+//   input Boolean normal.emptyTank2.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean normal.emptyTank2.outPort[1].available \"true, if step is active\";
+//   input Boolean normal.emptyTank2.outPort[1].reset \"true, if transition fires and step is deactivated\";
 //   parameter Integer normal.wait1.nIn(min = 0) = 1 \"Number of input connections\";
 //   parameter Integer normal.wait1.nOut(min = 0) = 1 \"Number of output connections\";
 //   output Boolean normal.wait1.localActive \"= true if step is active, otherwise the step is not active\";
-//   output Boolean normal.wait1.inPort[1].occupied \"true, if step is active\";
-//   input Boolean normal.wait1.inPort[1].set \"true, if transition fires and step is activated\";
-//   output Boolean normal.wait1.outPort[1].available \"true, if step is active\";
-//   input Boolean normal.wait1.outPort[1].reset \"true, if transition fires and step is deactivated\";
 //   input Boolean normal.wait1.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
 //   input Boolean normal.wait1.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
 //   Real normal.wait1.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
@@ -164,6 +181,28 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   protected Boolean normal.wait1.newActive \"Value of active in the next iteration\";
 //   protected Boolean normal.wait1.oldActive \"Value of active when CompositeStep was aborted\";
 //   output Boolean normal.wait1.active \"= true if step is active, otherwise the step is not active\";
+//   output Boolean normal.wait1.inPort[1].occupied \"true, if step is active\";
+//   input Boolean normal.wait1.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean normal.wait1.outPort[1].available \"true, if step is active\";
+//   input Boolean normal.wait1.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   parameter Integer normal.wait2.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer normal.wait2.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean normal.wait2.localActive \"= true if step is active, otherwise the step is not active\";
+//   input Boolean normal.wait2.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean normal.wait2.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real normal.wait2.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real normal.wait2.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean normal.wait2.newActive \"Value of active in the next iteration\";
+//   protected Boolean normal.wait2.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean normal.wait2.active \"= true if step is active, otherwise the step is not active\";
+//   output Boolean normal.wait2.inPort[1].occupied \"true, if step is active\";
+//   input Boolean normal.wait2.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean normal.wait2.outPort[1].available \"true, if step is active\";
+//   input Boolean normal.wait2.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean normal.suspend[1].available \"true, if step is active\";
+//   input Boolean normal.suspend[1].reset \"true, if transition fires and step is deactived\";
+//   output Boolean normal.resume[1].occupied \"true, if step is active\";
+//   input Boolean normal.resume[1].set \"true, if transition fires and step is activated\";
 //   input Boolean normal.T2.localCondition = normal.T2.condition \"= true, if transition may fire\";
 //   parameter Boolean normal.T2.enableTimer = true \"= true, if timer is enabled\";
 //   parameter Real normal.T2.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = normal.waitTime \"Wait time before transition fires\";
@@ -177,20 +216,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   protected Real normal.T2.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
 //   protected Real normal.T2.t_dummy;
 //   input Boolean normal.T2.condition = true \"= true, if transition may fire (time varying expression)\";
-//   parameter Integer normal.wait2.nIn(min = 0) = 1 \"Number of input connections\";
-//   parameter Integer normal.wait2.nOut(min = 0) = 1 \"Number of output connections\";
-//   output Boolean normal.wait2.localActive \"= true if step is active, otherwise the step is not active\";
-//   output Boolean normal.wait2.inPort[1].occupied \"true, if step is active\";
-//   input Boolean normal.wait2.inPort[1].set \"true, if transition fires and step is activated\";
-//   output Boolean normal.wait2.outPort[1].available \"true, if step is active\";
-//   input Boolean normal.wait2.outPort[1].reset \"true, if transition fires and step is deactivated\";
-//   input Boolean normal.wait2.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
-//   input Boolean normal.wait2.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
-//   Real normal.wait2.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
-//   Real normal.wait2.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
-//   protected Boolean normal.wait2.newActive \"Value of active in the next iteration\";
-//   protected Boolean normal.wait2.oldActive \"Value of active when CompositeStep was aborted\";
-//   output Boolean normal.wait2.active \"= true if step is active, otherwise the step is not active\";
 //   input Boolean normal.T4.localCondition = normal.T4.condition \"= true, if transition may fire\";
 //   parameter Boolean normal.T4.enableTimer = true \"= true, if timer is enabled\";
 //   parameter Real normal.T4.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = normal.waitTime \"Wait time before transition fires\";
@@ -204,6 +229,32 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   protected Real normal.T4.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
 //   protected Real normal.T4.t_dummy;
 //   input Boolean normal.T4.condition = true \"= true, if transition may fire (time varying expression)\";
+//   input Boolean normal.T1.localCondition = normal.T1.condition \"= true, if transition may fire\";
+//   parameter Boolean normal.T1.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real normal.T1.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real normal.T1.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean normal.T1.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean normal.T1.fire \"= true, if transition fires\";
+//   input Boolean normal.T1.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean normal.T1.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean normal.T1.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean normal.T1.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real normal.T1.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real normal.T1.t_dummy;
+//   input Boolean normal.T1.condition = normal.level1 > normal.maxLevel \"= true, if transition may fire (time varying expression)\";
+//   input Boolean normal.T3.localCondition = normal.T3.condition \"= true, if transition may fire\";
+//   parameter Boolean normal.T3.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real normal.T3.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real normal.T3.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean normal.T3.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean normal.T3.fire \"= true, if transition fires\";
+//   input Boolean normal.T3.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean normal.T3.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean normal.T3.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean normal.T3.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real normal.T3.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real normal.T3.t_dummy;
+//   input Boolean normal.T3.condition = normal.level1 < normal.minLevel \"= true, if transition may fire (time varying expression)\";
 //   input Boolean T1.localCondition = T1.condition \"= true, if transition may fire\";
 //   parameter Boolean T1.enableTimer = false \"= true, if timer is enabled\";
 //   parameter Real T1.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
@@ -217,54 +268,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   protected Real T1.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
 //   protected Real T1.t_dummy;
 //   input Boolean T1.condition = start \"= true, if transition may fire (time varying expression)\";
-//   input Boolean T2.localCondition = T2.condition \"= true, if transition may fire\";
-//   parameter Boolean T2.enableTimer = false \"= true, if timer is enabled\";
-//   parameter Real T2.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
-//   output Real T2.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
-//   output Boolean T2.enableFire \"= true, if all firing conditions are true\";
-//   output Boolean T2.fire \"= true, if transition fires\";
-//   input Boolean T2.inPort.available \"true, if step connected to the transition input is active\";
-//   output Boolean T2.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
-//   input Boolean T2.outPort.occupied \"true, if step connected to the transition output is active\";
-//   output Boolean T2.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
-//   protected Real T2.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
-//   protected Real T2.t_dummy;
-//   input Boolean T2.condition = level2 < minLevel \"= true, if transition may fire (time varying expression)\";
-//   input Boolean T3.localCondition = T3.condition \"= true, if transition may fire\";
-//   parameter Boolean T3.enableTimer = false \"= true, if timer is enabled\";
-//   parameter Real T3.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
-//   output Real T3.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
-//   output Boolean T3.enableFire \"= true, if all firing conditions are true\";
-//   output Boolean T3.fire \"= true, if transition fires\";
-//   input Boolean T3.inPort.available \"true, if step connected to the transition input is active\";
-//   output Boolean T3.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
-//   input Boolean T3.outPort.occupied \"true, if step connected to the transition output is active\";
-//   output Boolean T3.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
-//   protected Real T3.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
-//   protected Real T3.t_dummy;
-//   input Boolean T3.condition = stop \"= true, if transition may fire (time varying expression)\";
-//   parameter Integer s2.nIn(min = 0) = 1 \"Number of input connections\";
-//   parameter Integer s2.nOut(min = 0) = 2 \"Number of output connections\";
-//   output Boolean s2.localActive \"= true if step is active, otherwise the step is not active\";
-//   output Boolean s2.inPort[1].occupied \"true, if step is active\";
-//   input Boolean s2.inPort[1].set \"true, if transition fires and step is activated\";
-//   output Boolean s2.outPort[1].available \"true, if step is active\";
-//   input Boolean s2.outPort[1].reset \"true, if transition fires and step is deactivated\";
-//   output Boolean s2.outPort[2].available \"true, if step is active\";
-//   input Boolean s2.outPort[2].reset \"true, if transition fires and step is deactivated\";
-//   output Boolean s2.stateGraphRoot.suspend = false;
-//   output Boolean s2.stateGraphRoot.resume = false;
-//   output Boolean s2.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
-//   output Boolean s2.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
-//   Real s2.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
-//   Real s2.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
-//   input Boolean s2.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
-//   input Boolean s2.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
-//   Real s2.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
-//   Real s2.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
-//   protected Boolean s2.newActive \"Value of active in the next iteration\";
-//   protected Boolean s2.oldActive \"Value of active when CompositeStep was aborted\";
-//   output Boolean s2.active \"= true if step is active, otherwise the step is not active\";
 //   input Boolean T4.localCondition = T4.condition \"= true, if transition may fire\";
 //   parameter Boolean T4.enableTimer = false \"= true, if timer is enabled\";
 //   parameter Real T4.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
@@ -278,6 +281,19 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   protected Real T4.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
 //   protected Real T4.t_dummy;
 //   input Boolean T4.condition = start \"= true, if transition may fire (time varying expression)\";
+//   input Boolean T3.localCondition = T3.condition \"= true, if transition may fire\";
+//   parameter Boolean T3.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real T3.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real T3.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean T3.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean T3.fire \"= true, if transition fires\";
+//   input Boolean T3.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean T3.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean T3.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean T3.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real T3.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real T3.t_dummy;
+//   input Boolean T3.condition = stop \"= true, if transition may fire (time varying expression)\";
 //   input Boolean T5.localCondition = T5.condition \"= true, if transition may fire\";
 //   parameter Boolean T5.enableTimer = false \"= true, if timer is enabled\";
 //   parameter Real T5.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
@@ -291,26 +307,20 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   protected Real T5.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
 //   protected Real T5.t_dummy;
 //   input Boolean T5.condition = shut \"= true, if transition may fire (time varying expression)\";
-//   parameter Integer emptyTanks.nIn(min = 0) = 1 \"Number of input connections\";
-//   parameter Integer emptyTanks.nOut(min = 0) = 1 \"Number of output connections\";
-//   output Boolean emptyTanks.localActive \"= true if step is active, otherwise the step is not active\";
-//   output Boolean emptyTanks.inPort[1].occupied \"true, if step is active\";
-//   input Boolean emptyTanks.inPort[1].set \"true, if transition fires and step is activated\";
-//   output Boolean emptyTanks.outPort[1].available \"true, if step is active\";
-//   input Boolean emptyTanks.outPort[1].reset \"true, if transition fires and step is deactivated\";
-//   output Boolean emptyTanks.stateGraphRoot.suspend = false;
-//   output Boolean emptyTanks.stateGraphRoot.resume = false;
-//   output Boolean emptyTanks.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
-//   output Boolean emptyTanks.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
-//   Real emptyTanks.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
-//   Real emptyTanks.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
-//   input Boolean emptyTanks.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
-//   input Boolean emptyTanks.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
-//   Real emptyTanks.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
-//   Real emptyTanks.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
-//   protected Boolean emptyTanks.newActive \"Value of active in the next iteration\";
-//   protected Boolean emptyTanks.oldActive \"Value of active when CompositeStep was aborted\";
-//   output Boolean emptyTanks.active \"= true if step is active, otherwise the step is not active\";
+//   output Boolean setValve2.y = normal.fillTank2.active or emptyTanks.active and level1 > minLevel \"Value of Boolean output\";
+//   input Boolean T2.localCondition = T2.condition \"= true, if transition may fire\";
+//   parameter Boolean T2.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real T2.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real T2.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean T2.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean T2.fire \"= true, if transition fires\";
+//   input Boolean T2.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean T2.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean T2.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean T2.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real T2.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real T2.t_dummy;
+//   input Boolean T2.condition = level2 < minLevel \"= true, if transition may fire (time varying expression)\";
 //   input Boolean T6.localCondition = T6.condition \"= true, if transition may fire\";
 //   parameter Boolean T6.enableTimer = false \"= true, if timer is enabled\";
 //   parameter Real T6.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
@@ -324,52 +334,42 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   protected Real T6.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
 //   protected Real T6.t_dummy;
 //   input Boolean T6.condition = level1 < minLevel and level2 < minLevel \"= true, if transition may fire (time varying expression)\";
-//   input Boolean start;
-//   input Boolean stop;
-//   input Boolean shut;
-//   input Real level1;
-//   input Real level2;
-//   output Boolean valve1;
-//   output Boolean valve2;
-//   output Boolean valve3;
-//   output Boolean setValve1.y = normal.fillTank1.active \"Value of Boolean output\";
-//   output Boolean setValve2.y = normal.fillTank2.active or emptyTanks.active and level1 > minLevel \"Value of Boolean output\";
 //   output Boolean setValve3.y = normal.emptyTank2.active or emptyTanks.active and level2 > minLevel \"Value of Boolean output\";
 // initial equation
 //   s1.active = true;
 //   pre(s1.newActive) = pre(s1.localActive);
 //   pre(s1.oldActive) = pre(s1.localActive);
+//   s2.active = false;
+//   pre(s2.newActive) = pre(s2.localActive);
+//   pre(s2.oldActive) = pre(s2.localActive);
+//   emptyTanks.active = false;
+//   pre(emptyTanks.newActive) = pre(emptyTanks.localActive);
+//   pre(emptyTanks.oldActive) = pre(emptyTanks.localActive);
 //   normal.fillTank1.active = false;
 //   pre(normal.fillTank1.newActive) = pre(normal.fillTank1.localActive);
 //   pre(normal.fillTank1.oldActive) = pre(normal.fillTank1.localActive);
-//   pre(normal.T1.enableFire) = false;
 //   normal.fillTank2.active = false;
 //   pre(normal.fillTank2.newActive) = pre(normal.fillTank2.localActive);
 //   pre(normal.fillTank2.oldActive) = pre(normal.fillTank2.localActive);
-//   pre(normal.T3.enableFire) = false;
 //   normal.emptyTank2.active = false;
 //   pre(normal.emptyTank2.newActive) = pre(normal.emptyTank2.localActive);
 //   pre(normal.emptyTank2.oldActive) = pre(normal.emptyTank2.localActive);
 //   normal.wait1.active = false;
 //   pre(normal.wait1.newActive) = pre(normal.wait1.localActive);
 //   pre(normal.wait1.oldActive) = pre(normal.wait1.localActive);
-//   pre(normal.T2.enableFire) = false;
 //   normal.wait2.active = false;
 //   pre(normal.wait2.newActive) = pre(normal.wait2.localActive);
 //   pre(normal.wait2.oldActive) = pre(normal.wait2.localActive);
+//   pre(normal.T2.enableFire) = false;
 //   pre(normal.T4.enableFire) = false;
+//   pre(normal.T1.enableFire) = false;
+//   pre(normal.T3.enableFire) = false;
 //   pre(normal.newActive) = pre(normal.active);
 //   pre(T1.enableFire) = false;
-//   pre(T2.enableFire) = false;
-//   pre(T3.enableFire) = false;
-//   s2.active = false;
-//   pre(s2.newActive) = pre(s2.localActive);
-//   pre(s2.oldActive) = pre(s2.localActive);
 //   pre(T4.enableFire) = false;
+//   pre(T3.enableFire) = false;
 //   pre(T5.enableFire) = false;
-//   emptyTanks.active = false;
-//   pre(emptyTanks.newActive) = pre(emptyTanks.localActive);
-//   pre(emptyTanks.oldActive) = pre(emptyTanks.localActive);
+//   pre(T2.enableFire) = false;
 //   pre(T6.enableFire) = false;
 // equation
 //   s1.stateGraphRoot.suspend = s1.stateGraphRoot.subgraphStatePort.suspend;
@@ -388,6 +388,36 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   s1.inPort[1].occupied = s1.localActive;
 //   s1.inPort[2].occupied = s1.inPort[1].occupied or s1.inPort[1].set;
 //   s1.outPort[1].available = s1.localActive;
+//   s2.stateGraphRoot.suspend = s2.stateGraphRoot.subgraphStatePort.suspend;
+//   s2.stateGraphRoot.resume = s2.stateGraphRoot.subgraphStatePort.resume;
+//   s2.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   s2.active = s2.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   s2.localActive = pre(s2.newActive);
+//   s2.newActive = if s2.outerStatePort.subgraphStatePort.resume then s2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({s2.inPort[1].set}) or s2.localActive and not Modelica.StateGraph.Temporary.anyTrue({s2.outPort[1].reset,s2.outPort[2].reset})) and not s2.outerStatePort.subgraphStatePort.suspend;
+//   when s2.outerStatePort.subgraphStatePort.suspend then
+//   s2.oldActive = s2.localActive;
+//   end when;
+//   s2.outerStatePort.subgraphStatePort.activeSteps = if s2.localActive then 1.0 else 0.0;
+//   s2.inPort[1].occupied = s2.localActive;
+//   s2.outPort[1].available = s2.localActive;
+//   s2.outPort[2].available = s2.outPort[1].available and not s2.outPort[1].reset;
+//   emptyTanks.stateGraphRoot.suspend = emptyTanks.stateGraphRoot.subgraphStatePort.suspend;
+//   emptyTanks.stateGraphRoot.resume = emptyTanks.stateGraphRoot.subgraphStatePort.resume;
+//   emptyTanks.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   emptyTanks.active = emptyTanks.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   emptyTanks.localActive = pre(emptyTanks.newActive);
+//   emptyTanks.newActive = if emptyTanks.outerStatePort.subgraphStatePort.resume then emptyTanks.oldActive else (Modelica.StateGraph.Temporary.anyTrue({emptyTanks.inPort[1].set}) or emptyTanks.localActive and not Modelica.StateGraph.Temporary.anyTrue({emptyTanks.outPort[1].reset})) and not emptyTanks.outerStatePort.subgraphStatePort.suspend;
+//   when emptyTanks.outerStatePort.subgraphStatePort.suspend then
+//   emptyTanks.oldActive = emptyTanks.localActive;
+//   end when;
+//   emptyTanks.outerStatePort.subgraphStatePort.activeSteps = if emptyTanks.localActive then 1.0 else 0.0;
+//   emptyTanks.inPort[1].occupied = emptyTanks.localActive;
+//   emptyTanks.outPort[1].available = emptyTanks.localActive;
 //   normal.stateGraphRoot.suspend = normal.stateGraphRoot.subgraphStatePort.suspend;
 //   normal.stateGraphRoot.resume = normal.stateGraphRoot.subgraphStatePort.resume;
 //   normal.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
@@ -405,15 +435,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   normal.fillTank1.outerStatePort.subgraphStatePort.activeSteps = if normal.fillTank1.localActive then 1.0 else 0.0;
 //   normal.fillTank1.inPort[1].occupied = normal.fillTank1.localActive;
 //   normal.fillTank1.outPort[1].available = normal.fillTank1.localActive;
-//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
-//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
-//   normal.T1.t_start = 0.0;
-//   normal.T1.t_dummy = 0.0;
-//   normal.T1.t = 0.0;
-//   normal.T1.fire = normal.T1.enableFire;
-//   normal.T1.enableFire = normal.T1.localCondition and normal.T1.inPort.available and not normal.T1.outPort.occupied;
-//   normal.T1.inPort.reset = normal.T1.fire;
-//   normal.T1.outPort.set = normal.T1.fire;
 //   normal.fillTank2.active = normal.fillTank2.localActive;
 //   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
 //   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
@@ -425,15 +446,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   normal.fillTank2.outerStatePort.subgraphStatePort.activeSteps = if normal.fillTank2.localActive then 1.0 else 0.0;
 //   normal.fillTank2.inPort[1].occupied = normal.fillTank2.localActive;
 //   normal.fillTank2.outPort[1].available = normal.fillTank2.localActive;
-//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
-//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
-//   normal.T3.t_start = 0.0;
-//   normal.T3.t_dummy = 0.0;
-//   normal.T3.t = 0.0;
-//   normal.T3.fire = normal.T3.enableFire;
-//   normal.T3.enableFire = normal.T3.localCondition and normal.T3.inPort.available and not normal.T3.outPort.occupied;
-//   normal.T3.inPort.reset = normal.T3.fire;
-//   normal.T3.outPort.set = normal.T3.fire;
 //   normal.emptyTank2.active = normal.emptyTank2.localActive;
 //   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
 //   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
@@ -456,17 +468,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   normal.wait1.outerStatePort.subgraphStatePort.activeSteps = if normal.wait1.localActive then 1.0 else 0.0;
 //   normal.wait1.inPort[1].occupied = normal.wait1.localActive;
 //   normal.wait1.outPort[1].available = normal.wait1.localActive;
-//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
-//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
-//   when normal.T2.enableFire then
-//   normal.T2.t_start = time;
-//   end when;
-//   normal.T2.t_dummy = time - normal.T2.t_start;
-//   normal.T2.t = if normal.T2.enableFire then normal.T2.t_dummy else 0.0;
-//   normal.T2.fire = normal.T2.enableFire and time >= normal.T2.t_start + normal.T2.waitTime;
-//   normal.T2.enableFire = normal.T2.localCondition and normal.T2.inPort.available and not normal.T2.outPort.occupied;
-//   normal.T2.inPort.reset = normal.T2.fire;
-//   normal.T2.outPort.set = normal.T2.fire;
 //   normal.wait2.active = normal.wait2.localActive;
 //   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
 //   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
@@ -480,6 +481,17 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   normal.wait2.outPort[1].available = normal.wait2.localActive;
 //   assert(true,\"Connector inPort is not connected to exactly one other connector\");
 //   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   when normal.T2.enableFire then
+//   normal.T2.t_start = time;
+//   end when;
+//   normal.T2.t_dummy = time - normal.T2.t_start;
+//   normal.T2.t = if normal.T2.enableFire then normal.T2.t_dummy else 0.0;
+//   normal.T2.fire = normal.T2.enableFire and time >= normal.T2.t_start + normal.T2.waitTime;
+//   normal.T2.enableFire = normal.T2.localCondition and normal.T2.inPort.available and not normal.T2.outPort.occupied;
+//   normal.T2.inPort.reset = normal.T2.fire;
+//   normal.T2.outPort.set = normal.T2.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
 //   when normal.T4.enableFire then
 //   normal.T4.t_start = time;
 //   end when;
@@ -489,6 +501,24 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   normal.T4.enableFire = normal.T4.localCondition and normal.T4.inPort.available and not normal.T4.outPort.occupied;
 //   normal.T4.inPort.reset = normal.T4.fire;
 //   normal.T4.outPort.set = normal.T4.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   normal.T1.t_start = 0.0;
+//   normal.T1.t_dummy = 0.0;
+//   normal.T1.t = 0.0;
+//   normal.T1.fire = normal.T1.enableFire;
+//   normal.T1.enableFire = normal.T1.localCondition and normal.T1.inPort.available and not normal.T1.outPort.occupied;
+//   normal.T1.inPort.reset = normal.T1.fire;
+//   normal.T1.outPort.set = normal.T1.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   normal.T3.t_start = 0.0;
+//   normal.T3.t_dummy = 0.0;
+//   normal.T3.t = 0.0;
+//   normal.T3.fire = normal.T3.enableFire;
+//   normal.T3.enableFire = normal.T3.localCondition and normal.T3.inPort.available and not normal.T3.outPort.occupied;
+//   normal.T3.inPort.reset = normal.T3.fire;
+//   normal.T3.outPort.set = normal.T3.fire;
 //   normal.outerState.subgraphStatePort.activeSteps = if normal.active then 1.0 else 0.0;
 //   normal.activeSteps = -integer(normal.stateGraphRoot.subgraphStatePort.activeSteps);
 //   normal.active = pre(normal.newActive);
@@ -517,40 +547,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   T1.outPort.set = T1.fire;
 //   assert(true,\"Connector inPort is not connected to exactly one other connector\");
 //   assert(true,\"Connector outPort is not connected to exactly one other connector\");
-//   T2.t_start = 0.0;
-//   T2.t_dummy = 0.0;
-//   T2.t = 0.0;
-//   T2.fire = T2.enableFire;
-//   T2.enableFire = T2.localCondition and T2.inPort.available and not T2.outPort.occupied;
-//   T2.inPort.reset = T2.fire;
-//   T2.outPort.set = T2.fire;
-//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
-//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
-//   T3.t_start = 0.0;
-//   T3.t_dummy = 0.0;
-//   T3.t = 0.0;
-//   T3.fire = T3.enableFire;
-//   T3.enableFire = T3.localCondition and T3.inPort.available and not T3.outPort.occupied;
-//   T3.inPort.reset = T3.fire;
-//   T3.outPort.set = T3.fire;
-//   s2.stateGraphRoot.suspend = s2.stateGraphRoot.subgraphStatePort.suspend;
-//   s2.stateGraphRoot.resume = s2.stateGraphRoot.subgraphStatePort.resume;
-//   s2.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
-//   s2.active = s2.localActive;
-//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
-//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
-//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
-//   s2.localActive = pre(s2.newActive);
-//   s2.newActive = if s2.outerStatePort.subgraphStatePort.resume then s2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({s2.inPort[1].set}) or s2.localActive and not Modelica.StateGraph.Temporary.anyTrue({s2.outPort[1].reset,s2.outPort[2].reset})) and not s2.outerStatePort.subgraphStatePort.suspend;
-//   when s2.outerStatePort.subgraphStatePort.suspend then
-//   s2.oldActive = s2.localActive;
-//   end when;
-//   s2.outerStatePort.subgraphStatePort.activeSteps = if s2.localActive then 1.0 else 0.0;
-//   s2.inPort[1].occupied = s2.localActive;
-//   s2.outPort[1].available = s2.localActive;
-//   s2.outPort[2].available = s2.outPort[1].available and not s2.outPort[1].reset;
-//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
-//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
 //   T4.t_start = 0.0;
 //   T4.t_dummy = 0.0;
 //   T4.t = 0.0;
@@ -560,6 +556,15 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   T4.outPort.set = T4.fire;
 //   assert(true,\"Connector inPort is not connected to exactly one other connector\");
 //   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   T3.t_start = 0.0;
+//   T3.t_dummy = 0.0;
+//   T3.t = 0.0;
+//   T3.fire = T3.enableFire;
+//   T3.enableFire = T3.localCondition and T3.inPort.available and not T3.outPort.occupied;
+//   T3.inPort.reset = T3.fire;
+//   T3.outPort.set = T3.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
 //   T5.t_start = 0.0;
 //   T5.t_dummy = 0.0;
 //   T5.t = 0.0;
@@ -567,20 +572,15 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   T5.enableFire = T5.localCondition and T5.inPort.available and not T5.outPort.occupied;
 //   T5.inPort.reset = T5.fire;
 //   T5.outPort.set = T5.fire;
-//   emptyTanks.stateGraphRoot.suspend = emptyTanks.stateGraphRoot.subgraphStatePort.suspend;
-//   emptyTanks.stateGraphRoot.resume = emptyTanks.stateGraphRoot.subgraphStatePort.resume;
-//   emptyTanks.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
-//   emptyTanks.active = emptyTanks.localActive;
-//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
-//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
-//   emptyTanks.localActive = pre(emptyTanks.newActive);
-//   emptyTanks.newActive = if emptyTanks.outerStatePort.subgraphStatePort.resume then emptyTanks.oldActive else (Modelica.StateGraph.Temporary.anyTrue({emptyTanks.inPort[1].set}) or emptyTanks.localActive and not Modelica.StateGraph.Temporary.anyTrue({emptyTanks.outPort[1].reset})) and not emptyTanks.outerStatePort.subgraphStatePort.suspend;
-//   when emptyTanks.outerStatePort.subgraphStatePort.suspend then
-//   emptyTanks.oldActive = emptyTanks.localActive;
-//   end when;
-//   emptyTanks.outerStatePort.subgraphStatePort.activeSteps = if emptyTanks.localActive then 1.0 else 0.0;
-//   emptyTanks.inPort[1].occupied = emptyTanks.localActive;
-//   emptyTanks.outPort[1].available = emptyTanks.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   T2.t_start = 0.0;
+//   T2.t_dummy = 0.0;
+//   T2.t = 0.0;
+//   T2.fire = T2.enableFire;
+//   T2.enableFire = T2.localCondition and T2.inPort.available and not T2.outPort.occupied;
+//   T2.inPort.reset = T2.fire;
+//   T2.outPort.set = T2.fire;
 //   assert(true,\"Connector inPort is not connected to exactly one other connector\");
 //   assert(true,\"Connector outPort is not connected to exactly one other connector\");
 //   T6.t_start = 0.0;
@@ -591,6 +591,8 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   T6.inPort.reset = T6.fire;
 //   T6.outPort.set = T6.fire;
 //   s1.stateGraphRoot.subgraphStatePort.activeSteps + s1.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   s2.stateGraphRoot.subgraphStatePort.activeSteps + s2.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   emptyTanks.stateGraphRoot.subgraphStatePort.activeSteps + emptyTanks.outerStatePort.subgraphStatePort.activeSteps = 0.0;
 //   normal.stateGraphRoot.subgraphStatePort.activeSteps + normal.outerState.subgraphStatePort.activeSteps + normal.fillTank1.outerStatePort.subgraphStatePort.activeSteps + normal.fillTank2.outerStatePort.subgraphStatePort.activeSteps + normal.emptyTank2.outerStatePort.subgraphStatePort.activeSteps + normal.wait1.outerStatePort.subgraphStatePort.activeSteps + normal.wait2.outerStatePort.subgraphStatePort.activeSteps = 0.0;
 //   normal.fillTank1.inPort[1].occupied = normal.inPort.occupied;
 //   normal.fillTank1.inPort[1].set = normal.inPort.set;
@@ -612,8 +614,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   normal.T3.outPort.set = normal.wait2.inPort[1].set;
 //   normal.T4.outPort.occupied = normal.emptyTank2.inPort[1].occupied;
 //   normal.T4.outPort.set = normal.emptyTank2.inPort[1].set;
-//   s2.stateGraphRoot.subgraphStatePort.activeSteps + s2.outerStatePort.subgraphStatePort.activeSteps = 0.0;
-//   emptyTanks.stateGraphRoot.subgraphStatePort.activeSteps + emptyTanks.outerStatePort.subgraphStatePort.activeSteps = 0.0;
 //   T1.inPort.available = s1.outPort[1].available;
 //   T1.inPort.reset = s1.outPort[1].reset;
 //   T1.outPort.occupied = normal.inPort.occupied;
@@ -642,12 +642,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   T6.outPort.set = s1.inPort[2].set;
 //   T4.outPort.occupied = normal.resume[1].occupied;
 //   T4.outPort.set = normal.resume[1].set;
-//   emptyTanks.outerStatePort.subgraphStatePort.suspend = emptyTanks.stateGraphRoot.subgraphStatePort.suspend;
-//   emptyTanks.outerStatePort.subgraphStatePort.resume = emptyTanks.stateGraphRoot.subgraphStatePort.resume;
-//   emptyTanks.outerStatePort.subgraphStatePort.activeStepsDummy = emptyTanks.stateGraphRoot.subgraphStatePort.activeStepsDummy;
-//   s2.outerStatePort.subgraphStatePort.suspend = s2.stateGraphRoot.subgraphStatePort.suspend;
-//   s2.outerStatePort.subgraphStatePort.resume = s2.stateGraphRoot.subgraphStatePort.resume;
-//   s2.outerStatePort.subgraphStatePort.activeStepsDummy = s2.stateGraphRoot.subgraphStatePort.activeStepsDummy;
 //   normal.emptyTank2.outerStatePort.subgraphStatePort.suspend = normal.fillTank1.outerStatePort.subgraphStatePort.suspend;
 //   normal.emptyTank2.outerStatePort.subgraphStatePort.suspend = normal.fillTank2.outerStatePort.subgraphStatePort.suspend;
 //   normal.emptyTank2.outerStatePort.subgraphStatePort.suspend = normal.outerState.subgraphStatePort.suspend;
@@ -666,6 +660,12 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   normal.emptyTank2.outerStatePort.subgraphStatePort.activeStepsDummy = normal.stateGraphRoot.subgraphStatePort.activeStepsDummy;
 //   normal.emptyTank2.outerStatePort.subgraphStatePort.activeStepsDummy = normal.wait1.outerStatePort.subgraphStatePort.activeStepsDummy;
 //   normal.emptyTank2.outerStatePort.subgraphStatePort.activeStepsDummy = normal.wait2.outerStatePort.subgraphStatePort.activeStepsDummy;
+//   emptyTanks.outerStatePort.subgraphStatePort.suspend = emptyTanks.stateGraphRoot.subgraphStatePort.suspend;
+//   emptyTanks.outerStatePort.subgraphStatePort.resume = emptyTanks.stateGraphRoot.subgraphStatePort.resume;
+//   emptyTanks.outerStatePort.subgraphStatePort.activeStepsDummy = emptyTanks.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   s2.outerStatePort.subgraphStatePort.suspend = s2.stateGraphRoot.subgraphStatePort.suspend;
+//   s2.outerStatePort.subgraphStatePort.resume = s2.stateGraphRoot.subgraphStatePort.resume;
+//   s2.outerStatePort.subgraphStatePort.activeStepsDummy = s2.stateGraphRoot.subgraphStatePort.activeStepsDummy;
 //   s1.outerStatePort.subgraphStatePort.suspend = s1.stateGraphRoot.subgraphStatePort.suspend;
 //   s1.outerStatePort.subgraphStatePort.resume = s1.stateGraphRoot.subgraphStatePort.resume;
 //   s1.outerStatePort.subgraphStatePort.activeStepsDummy = s1.stateGraphRoot.subgraphStatePort.activeStepsDummy;
@@ -674,6 +674,24 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 // "Warning: No corresponding 'inner' declaration found for component s1.stateGraphRoot declared as 'outer '.
 //   The existing 'inner' components are: 
 //     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.InitialStep.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component s2.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component emptyTanks.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component normal.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     .Modelica.StateGraph.Interfaces.CompositeStepState normal.stateGraphRoot; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation.
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
@@ -687,19 +705,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
 // Warning: Parameter minLevel has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: No corresponding 'inner' declaration found for component s2.stateGraphRoot declared as 'outer '.
-//   The existing 'inner' components are: 
-//     .Modelica.StateGraph.Interfaces.CompositeStepState normal.stateGraphRoot; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation. Referenced by 'outer' components: {normal.wait2.stateGraphRoot, normal.wait1.stateGraphRoot, normal.emptyTank2.stateGraphRoot, normal.fillTank2.stateGraphRoot, normal.fillTank1.stateGraphRoot, normal.innerState.stateGraphRoot}
-//   Check if you have not misspelled the 'outer' component name.
-//   Please declare an 'inner' component with the same name in the top scope.
-//   Continuing flattening by only considering the 'outer' component declaration.
-// Warning: No corresponding 'inner' declaration found for component emptyTanks.stateGraphRoot declared as 'outer '.
-//   The existing 'inner' components are: 
-//     .Modelica.StateGraph.Interfaces.CompositeStepState normal.stateGraphRoot; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation. Referenced by 'outer' components: {normal.wait2.stateGraphRoot, normal.wait1.stateGraphRoot, normal.emptyTank2.stateGraphRoot, normal.fillTank2.stateGraphRoot, normal.fillTank1.stateGraphRoot, normal.innerState.stateGraphRoot}
-//   Check if you have not misspelled the 'outer' component name.
-//   Please declare an 'inner' component with the same name in the top scope.
-//   Continuing flattening by only considering the 'outer' component declaration.
-// Warning: Parameter minLevel has neither value nor start value, and is fixed during initialization (fixed=true)
 // "
 // "Check of Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController completed successfully.
 // 
@@ -709,21 +714,21 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
-// Warning: No corresponding 'inner' declaration found for component normal.stateGraphRoot declared as 'outer '.
-//   The existing 'inner' components are: 
-//     .Modelica.StateGraph.Interfaces.CompositeStepState normal.stateGraphRoot; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation.
-//   Check if you have not misspelled the 'outer' component name.
-//   Please declare an 'inner' component with the same name in the top scope.
-//   Continuing flattening by only considering the 'outer' component declaration.
 // Warning: No corresponding 'inner' declaration found for component s2.stateGraphRoot declared as 'outer '.
 //   The existing 'inner' components are: 
-//     .Modelica.StateGraph.Interfaces.CompositeStepState normal.stateGraphRoot; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation. Referenced by 'outer' components: {normal.wait2.stateGraphRoot, normal.wait1.stateGraphRoot, normal.emptyTank2.stateGraphRoot, normal.fillTank2.stateGraphRoot, normal.fillTank1.stateGraphRoot, normal.innerState.stateGraphRoot}
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
 // Warning: No corresponding 'inner' declaration found for component emptyTanks.stateGraphRoot declared as 'outer '.
 //   The existing 'inner' components are: 
-//     .Modelica.StateGraph.Interfaces.CompositeStepState normal.stateGraphRoot; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation. Referenced by 'outer' components: {normal.wait2.stateGraphRoot, normal.wait1.stateGraphRoot, normal.emptyTank2.stateGraphRoot, normal.fillTank2.stateGraphRoot, normal.fillTank1.stateGraphRoot, normal.innerState.stateGraphRoot}
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component normal.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     .Modelica.StateGraph.Interfaces.CompositeStepState normal.stateGraphRoot; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation.
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.

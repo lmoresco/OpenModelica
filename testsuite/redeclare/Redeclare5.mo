@@ -24,8 +24,8 @@ end D;
 
 // Result:
 // class D
-// parameter Real c.d.b = 5.0;
-// Real c.d.x;
+//   parameter Real c.d.b = 5.0;
+//   Real c.d.x;
 // equation
 //   der(c.d.x) = c.d.b;
 // end D;

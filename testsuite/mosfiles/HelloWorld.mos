@@ -18,19 +18,19 @@ val(der(x),1.0);getErrorString();
 // true
 // record SimulationResult
 //     resultFile = "HelloWorld_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'HelloWorld', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'HelloWorld', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 1.0
 // ""
-// 0.606540253453921
+// 0.606540253453881
 // ""
-// 0.367885530477953
+// 0.367885530477952
 // ""
 // -1.0
 // ""
-// -0.606540253453921
+// -0.606540253453881
 // ""
-// -0.367885530477953
+// -0.367885530477952
 // ""
 // endResult
