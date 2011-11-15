@@ -106,13 +106,14 @@ sub setbaselineone
     
     open(SRC,"<$baseline");
     open(DST,">$f");
+    # write in bin-mode to force LF instead of CRLF on windows!
+    binmode(DST);
+
     while(<SRC>) {
-      print DST $_;
+      $_ =~ s/[\n\r]$//g;
+      print DST "$_\x{0A}";
     }
-    
     close DST;
-    
-    # system "dos2unix $f";
      
     return 0;
 }
