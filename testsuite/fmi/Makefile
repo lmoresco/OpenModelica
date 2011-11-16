@@ -2,7 +2,8 @@ TEST = ../rtest -v
 
 TESTFILES = \
 BouncingBall.mos \
-HelloFMIWorld.mos
+HelloFMIWorld.mos \
+ExternalFMUs.mos \
 
 
 # test that currently fail. Move up when fixed. 

@@ -8,7 +8,7 @@
 loadFile("HelloFMIWorld.mo");
 translateModelFMU(HelloFMIWorld);
 getErrorString();
-system("%OPENMODELICAHOME%/bin/fmigenerator.exe --fmufile=./HelloFMIWorld.fmu --outputdir=./");
+importFMU("HelloFMIWorld.fmu");
 loadFile("HelloFMIWorldFMUImport.mo");
 getErrorString();
 simulate(FMUImport_HelloFMIWorld.FMUBlock,stopTime=1);
@@ -19,7 +19,7 @@ val(x,1);
 // true
 // "SimCode: The model HelloFMIWorld has been translated to FMU"
 // ""
-// Archive:  ./HelloFMIWorld.fmu
+// Archive:  HelloFMIWorld.fmu
 //    creating: .//binaries/          
 //    creating: .//binaries/win32/    
 //   inflating: .//binaries/win32/HelloFMIWorld.dll  
@@ -34,7 +34,7 @@ val(x,1);
 //   inflating: .//sources/HelloFMIWorld_records.c  
 // 
 // 
-// 1
+// false
 // true
 // ""
 // record SimulationResult
@@ -43,5 +43,5 @@ val(x,1);
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 7.34541200837849
+// 7.3295758089811
 // endResult

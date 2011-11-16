@@ -1,0 +1,129 @@
+// name:     externalFMUs
+// keywords: fmu import
+// status: correct
+// teardown_command: rm -rf rm -rf dsres.mat CPUCooling_04b_CoolingFinFMUImport.mo vanDerPolFMUImport.mo documentation model.png binaries sources modelDescription.xml bouncingBall.fmu bouncingBallFMUImport.mo fmu*.log FMUImport_* bouncingBall_* bouncingBall.log bouncingBall.libs bouncingBall bouncingBall.exe bouncingBall.cpp bouncingBall.makefile output.log bouncingBall/*
+//
+// 
+
+importFMU("testedFMU/fmusdk1.0.2/bouncingBall.fmu");
+loadFile("BouncingBallFMUImport.mo");
+getErrorString();
+simulate(FMUImport_bouncingBall.FMUBlock);
+val(h,0);
+val(h,1);
+val(h,3);
+
+importFMU("testedFMU/fmusdk1.0.2/vanDerPol.fmu");
+loadFile("vanDerPolFMUImport.mo");
+getErrorString();
+simulate(FMUImport_vanDerPol.FMUBlock);
+val(x0,0);
+val(x0,1);
+val(x1,0);
+val(x1,1);
+
+importFMU("testedFMU/dymola7.4/CPUCooling.fmu");
+loadFile("CPUCooling_04b_CoolingFinFMUImport.mo");
+getErrorString();
+simulate(FMUImport_CPUCooling_04b_CoolingFin.FMUBlock);
+val(heatCapacitor1_T,0);
+val(heatCapacitor1_T,10);
+val(heatCapacitor2_T,0);
+val(heatCapacitor2_T,10);
+
+
+importFMU("testedFMU/dymola7.4/bouncingBall.fmu");
+loadFile("bouncingBallFMUImport.mo");
+getErrorString();
+simulate(FMUImport_bouncingBall.FMUBlock);
+val(height,0);
+val(height,1);
+val(height,3);
+
+
+// Result:
+// Archive:  testedFMU/fmusdk1.0.2/bouncingBall.fmu
+//    creating: .//binaries/          
+//    creating: .//binaries/win32/    
+//   inflating: .//binaries/win32/bouncingBall.dll  
+//    creating: .//documentation/     
+//   inflating: .//documentation/plot_h.PNG  
+//   inflating: .//documentation/_main.html  
+//  extracting: .//model.png            
+//   inflating: .//modelDescription.xml  
+//    creating: .//sources/           
+//   inflating: .//sources/bouncingBall.c  
+//   inflating: .//sources/fmuTemplate.c  
+//   inflating: .//sources/fmuTemplate.h  
+// 
+// 
+// false
+// true
+// ""
+// record SimulationResult
+//     resultFile = "FMUImport_bouncingBall.FMUBlock_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 500, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'FMUImport_bouncingBall.FMUBlock', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = ""
+// end SimulationResult;
+// 1.0
+// 0.291428261319518
+// 0.00292382051359584
+// Archive:  testedFMU/fmusdk1.0.2/vanDerPol.fmu
+//   inflating: .//binaries/win32/vanDerPol.dll  
+//   inflating: .//documentation/plot_states.png  
+//   inflating: .//documentation/_main.html  
+//  extracting: .//model.png            
+//   inflating: .//modelDescription.xml  
+//   inflating: .//sources/fmuTemplate.c  
+//   inflating: .//sources/fmuTemplate.h  
+//   inflating: .//sources/vanDerPol.c  
+// 
+// 
+// false
+// true
+// ""
+// record SimulationResult
+//     resultFile = "FMUImport_vanDerPol.FMUBlock_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 500, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'FMUImport_vanDerPol.FMUBlock', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = ""
+// end SimulationResult;
+// 2.0
+// 1.51642970053358
+// 0.0
+// -0.777047817635994
+// Archive:  testedFMU/dymola7.4/CPUCooling.fmu
+//   inflating: .//modelDescription.xml  
+//   inflating: .//binaries/win32/CPUCooling_04b_CoolingFin.dll  
+//   inflating: .//binaries/win32/CPUCooling_04b_CoolingFin.lib  
+// 
+// 
+// false
+// true
+// ""
+// record SimulationResult
+//     resultFile = "FMUImport_CPUCooling_04b_CoolingFin.FMUBlock_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 0.0001, method = 'dassl', fileNamePrefix = 'FMUImport_CPUCooling_04b_CoolingFin.FMUBlock', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = ""
+// end SimulationResult;
+// 300.0
+// 371.952328358773
+// 300.0
+// 372.409798219034
+// Archive:  testedFMU/dymola7.4/bouncingBall.fmu
+//   inflating: .//modelDescription.xml  
+//   inflating: .//binaries/win32/bouncingBall.dll  
+//   inflating: .//binaries/win32/bouncingBall.lib  
+// 
+// 
+// false
+// true
+// ""
+// record SimulationResult
+//     resultFile = "FMUImport_bouncingBall.FMUBlock_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 0.0001, method = 'dassl', fileNamePrefix = 'FMUImport_bouncingBall.FMUBlock', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = ""
+// end SimulationResult;
+// 1.0
+// 0.888596532512055
+// 0.431335238389005
+// endResult
