@@ -1,0 +1,20 @@
+// name:     ParameterCycle
+// keywords: parameter cycle, bound expressions
+// status: correct
+// teardown_command: rm -rf MyModel.makefile MyModel.c MyModel.log MyModel MyModel.exe MyModel_* output.log
+//
+// Test for Bug [# 1651].
+//
+
+loadFile("ParameterCycle.mo");
+simulate(MyModel);
+
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "MyModel_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'MyModel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = ""
+// end SimulationResult;
+// endResult

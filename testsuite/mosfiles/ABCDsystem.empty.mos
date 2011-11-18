@@ -1,4 +1,4 @@
-// name:     ABCDsystem.csv
+// name:     ABCDsystem.empty
 // keywords: array
 // status: correct
 // teardown_command: rm -rf ABCDsystem_* ABCDsystem ABCDsystem.exe ABCDsystem.cpp ABCDsystem.makefile ABCDsystem.libs ABCDsystem.log output.log

@@ -83,6 +83,8 @@ nonConstantParam.mos \
 NonlinearFailed.mos \
 NonlinearMixed.mos \
 OneArgBaseFunction.mos \
+ParameterCycle.mos \
+ParameterModel.mos \
 Pendulum.mos \
 PolynomialEvaluatorA.mos PolynomialEvaluatorB.mos \
 PolynomialEvaluator1.mos PolynomialEvaluator2.mos PolynomialEvaluator3.mos \
