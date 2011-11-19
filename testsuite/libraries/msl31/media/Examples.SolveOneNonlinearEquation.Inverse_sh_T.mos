@@ -377,6 +377,20 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 //   T := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.temperature(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_psX(p,s,X));
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.temperature_psX;
 // 
+// function Modelica.Media.IdealGases.Common.DataRecord \"Automatically generated record constructor for Modelica.Media.IdealGases.Common.DataRecord\"
+//   input String name;
+//   input Real(quantity=\"MolarMass\", unit=\"kg/mol\", min=0.0) MM;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") Hf;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") H0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") Tlimit;
+//   input Real[7] alow;
+//   input Real[2] blow;
+//   input Real[7] ahigh;
+//   input Real[2] bhigh;
+//   input Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") R;
+//   output DataRecord res;
+// end Modelica.Media.IdealGases.Common.DataRecord;
+// 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";

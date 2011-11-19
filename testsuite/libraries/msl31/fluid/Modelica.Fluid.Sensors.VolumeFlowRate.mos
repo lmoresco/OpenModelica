@@ -13,7 +13,11 @@ checkModel(Modelica.Fluid.Sensors.VolumeFlowRate); getErrorString();
 // Result:
 // true
 // ""
-// "function Modelica.Fluid.Sensors.VolumeFlowRate.Medium.density \"Return density\"
+// "function Modelica.Fluid.Sensors.VolumeFlowRate.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Fluid.Sensors.VolumeFlowRate.Medium.ThermodynamicState\"
+//   output ThermodynamicState res;
+// end Modelica.Fluid.Sensors.VolumeFlowRate.Medium.ThermodynamicState;
+// 
+// function Modelica.Fluid.Sensors.VolumeFlowRate.Medium.density \"Return density\"
 //   input Modelica.Fluid.Sensors.VolumeFlowRate.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // end Modelica.Fluid.Sensors.VolumeFlowRate.Medium.density;

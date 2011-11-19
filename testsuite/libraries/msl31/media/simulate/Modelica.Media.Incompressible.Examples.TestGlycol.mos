@@ -19,24 +19,19 @@ simulate(Modelica.Media.Incompressible.Examples.TestGlycol);
 //     resultFile = "",
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Incompressible.Examples.TestGlycol', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = "Simulation failed for model: Modelica.Media.Incompressible.Examples.TestGlycol
+// [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.TestGlycol.Medium.Polynomials_Temp.fitting({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},{1066.0,1062.0,1058.0,1054.0,1044.0,1030.0,1015.0,999.0,984.0},2).
+// [Incompressible.mo:80:5-82:98:writable] Warning: Failed to deduce dimensions of poly_Cp due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.TestGlycol.Medium.Polynomials_Temp.fitting({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},{3450.0,3490.0,3520.0,3560.0,3620.0,3690.0,3760.0,3820.0,3890.0},2).
+// [Incompressible.mo:83:5-85:98:writable] Warning: Failed to deduce dimensions of poly_eta due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.TestGlycol.Medium.Polynomials_Temp.fitting(Modelica.Media.Incompressible.Examples.TestGlycol.Medium.invertTemp({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},false),{-1.83258146374831,-2.59964432725842,-3.4514385980989,-3.9633162998157,-5.07357509387013,-5.81248189157954,-6.42532912973784,-6.81244509917781,-7.11847631029779},2).
+// [Incompressible.mo:89:5-91:98:writable] Warning: Failed to deduce dimensions of poly_lam due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.TestGlycol.Medium.Polynomials_Temp.fitting({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},{0.397,0.396,0.395,0.395,0.394,0.393,0.392,0.391,0.39},2).
 // Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-
 // gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Incompressible.Examples.TestGlycol.o Modelica.Media.Incompressible.Examples.TestGlycol.c
-
 // In file included from Modelica.Media.Incompressible.Examples.TestGlycol.c:10:
-
 // Modelica.Media.Incompressible.Examples.TestGlycol_functions.c: In function '_Modelica_Media_Incompressible_TableBased_invertTemp':
-
-// Modelica.Media.Incompressible.Examples.TestGlycol_functions.c:824: error: '_TinK' undeclared (first use in this function)
-
-// Modelica.Media.Incompressible.Examples.TestGlycol_functions.c:824: error: (Each undeclared identifier is reported only once
-
-// Modelica.Media.Incompressible.Examples.TestGlycol_functions.c:824: error: for each function it appears in.)
-
+// Modelica.Media.Incompressible.Examples.TestGlycol_functions.c:1284: error: '_TinK' undeclared (first use in this function)
+// Modelica.Media.Incompressible.Examples.TestGlycol_functions.c:1284: error: (Each undeclared identifier is reported only once
+// Modelica.Media.Incompressible.Examples.TestGlycol_functions.c:1284: error: for each function it appears in.)
 // mingw32-make[1]: *** [Modelica.Media.Incompressible.Examples.TestGlycol.o] Error 1
-
 // mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-
 // 
 // "
 // end SimulationResult;

@@ -35,83 +35,44 @@ simulate(Modelica.Media.Examples.TestOnly.FlueGas);
 // Warning: Alias variables medium2.X[2] = medium2.Xi[2] have start values 0.1 != 0.232. Use value from medium2.X[2].
 // 
 // Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-
 // gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.TestOnly.FlueGas.o Modelica.Media.Examples.TestOnly.FlueGas.c
-
 // In file included from Modelica.Media.Examples.TestOnly.FlueGas.c:10:
-
 // Modelica.Media.Examples.TestOnly.FlueGas_functions.c: In function '_Modelica_Media_Examples_TestOnly_FlueGas_Medium_h__TX':
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:247: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:248: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:249: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:250: error: expected expression before 'struct'
-
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:216: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:217: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:218: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:219: error: expected expression before 'struct'
 // In file included from Modelica.Media.Examples.TestOnly.FlueGas.c:10:
-
 // Modelica.Media.Examples.TestOnly.FlueGas_functions.c: In function '_Modelica_Media_Examples_TestOnly_FlueGas_Medium_isentropicEnthalpyApproximation':
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:480: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:481: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:482: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:483: error: expected expression before 'struct'
-
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:449: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:450: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:451: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:452: error: expected expression before 'struct'
 // In file included from Modelica.Media.Examples.TestOnly.FlueGas.c:10:
-
 // Modelica.Media.Examples.TestOnly.FlueGas_functions.c: In function '_Modelica_Media_Examples_TestOnly_FlueGas_Medium_specificHeatCapacityCp':
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:838: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:839: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:840: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:841: error: expected expression before 'struct'
-
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:688: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:689: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:690: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:691: error: expected expression before 'struct'
 // In file included from Modelica.Media.Examples.TestOnly.FlueGas.c:10:
-
 // Modelica.Media.Examples.TestOnly.FlueGas_functions.c: In function '_Modelica_Media_Examples_TestOnly_FlueGas_Medium_specificEntropy':
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:935: error: '_MMX' undeclared (first use in this function)
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:935: error: (Each undeclared identifier is reported only once
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:935: error: for each function it appears in.)
-
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:785: error: '_MMX' undeclared (first use in this function)
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:785: error: (Each undeclared identifier is reported only once
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:785: error: for each function it appears in.)
 // In file included from Modelica.Media.Examples.TestOnly.FlueGas.c:10:
-
 // Modelica.Media.Examples.TestOnly.FlueGas_functions.c: In function '_Modelica_Media_Examples_TestOnly_FlueGas_Medium_s__TX':
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:981: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:982: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:983: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:984: error: expected expression before 'struct'
-
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:831: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:832: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:833: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:834: error: expected expression before 'struct'
 // In file included from Modelica.Media.Examples.TestOnly.FlueGas.c:10:
-
 // Modelica.Media.Examples.TestOnly.FlueGas_functions.c: In function '_Modelica_Media_Examples_TestOnly_FlueGas_Medium_specificHeatCapacityCv':
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:1031: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:1032: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:1033: error: expected expression before 'struct'
-
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:1034: error: expected expression before 'struct'
-
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:881: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:882: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:883: error: expected expression before 'struct'
+// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:884: error: expected expression before 'struct'
 // mingw32-make[1]: *** [Modelica.Media.Examples.TestOnly.FlueGas.o] Error 1
-
 // mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-
 // 
 // "
 // end SimulationResult;

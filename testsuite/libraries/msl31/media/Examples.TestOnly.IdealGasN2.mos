@@ -98,6 +98,20 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2); getErrorString();
 //   a := sqrt(max(0.0,(296.803386950531 * state.T * Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),state.T)) / Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.specificHeatCapacityCv(state)));
 // end Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.velocityOfSound;
 // 
+// function Modelica.Media.IdealGases.Common.DataRecord \"Automatically generated record constructor for Modelica.Media.IdealGases.Common.DataRecord\"
+//   input String name;
+//   input Real(quantity=\"MolarMass\", unit=\"kg/mol\", min=0.0) MM;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") Hf;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") H0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") Tlimit;
+//   input Real[7] alow;
+//   input Real[2] blow;
+//   input Real[7] ahigh;
+//   input Real[2] bhigh;
+//   input Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") R;
+//   output DataRecord res;
+// end Modelica.Media.IdealGases.Common.DataRecord;
+// 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";

@@ -14,7 +14,28 @@ defaultMakefileTarget = Makefile.omdev.mingw
 
 include Makefile.common
 
-.testvariables:
+CONFIG_REVISION = $(shell wget --user=anonymous --password='none' --no-check-certificate -q https://www.openmodelica.org/svn/OpenModelica/trunk -O - | grep title | grep Revision | cut -d ' '  -f 4 | cut -d ':' -f 1)
+
+revision:
+	@echo Current revision: $(CONFIG_REVISION)
+ifeq ($(CONFIG_REVISION),) 
+	@if test -f revision.h; \
+	then echo Could not retrieve revision number. revision.h not updated; \
+	else echo "" > revision.h; echo Could not retrieve revision number. empty revision.h was created; \
+	fi; 
+else # revision is not empty, update it if it changed
+	@if test -f revision.h; \
+	then \
+		echo "#define CONFIG_REVISION \"$(CONFIG_REVISION)\"" > revision.h.tmp; diff revision.h revision.h.tmp > /dev/null; \
+		if [ $$? -eq 0 ]; then echo No change in revision; rm revision.h.tmp; \
+		else echo Revision has changed. updating revision.h; \mv revision.h.tmp revision.h; touch Compiler/runtime/config.h; \
+		fi; \
+	else \
+		echo "#define CONFIG_REVISION \"$(CONFIG_REVISION)\"" > revision.h; echo Retrieved revision number. revision.h was created; \
+	fi; 
+endif
+
+.testvariables: revision
 ifndef OMDEV
 	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
 	@echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/

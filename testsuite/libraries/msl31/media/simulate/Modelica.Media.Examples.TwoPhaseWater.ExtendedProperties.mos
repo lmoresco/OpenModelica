@@ -20,23 +20,33 @@ simulate(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = "Simulation failed for model: Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties
 // Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-
 // gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.o Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c
-
-// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c: In function 'bound_parameters':
-
-// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1130: error: '$Pbpro$Pd' undeclared (first use in this function)
-
-// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1130: error: (Each undeclared identifier is reported only once
-
-// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1130: error: for each function it appears in.)
-
-// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1131: error: '$Pbpro$Ph' undeclared (first use in this function)
-
+// In file included from Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:10:
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties_functions.c: In function '_Modelica_Media_Water_IF97__Utilities_dynamicViscosity':
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties_functions.c:8377: warning: passing argument 1 of 'real_get' discards qualifiers from pointer target type
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/real_array.h:46: note: expected 'struct real_array_t *' but argument is of type 'const struct real_array *'
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties_functions.c: In function '_Modelica_Media_Water_IF97__Utilities_BaseIF97_Transport_visc__dTp':
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties_functions.c:8695: warning: passing argument 1 of 'real_get' discards qualifiers from pointer target type
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/real_array.h:46: note: expected 'struct real_array_t *' but argument is of type 'const struct real_array *'
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties_functions.c: In function '_Modelica_Media_Water_IF97__Utilities_thermalConductivity':
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties_functions.c:9962: warning: passing argument 1 of 'real_get' discards qualifiers from pointer target type
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/real_array.h:46: note: expected 'struct real_array_t *' but argument is of type 'const struct real_array *'
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c: In function 'eqFunction_0':
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1138: error: '$Pbpro$Pd' undeclared (first use in this function)
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1138: error: (Each undeclared identifier is reported only once
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1138: error: for each function it appears in.)
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c: In function 'eqFunction_1':
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1145: error: '$Pbpro$Ph' undeclared (first use in this function)
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c: In function 'eqFunction_2':
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1152: error: '$Pbpro$Pd' undeclared (first use in this function)
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c: In function 'eqFunction_3':
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1159: error: '$Pbpro$Ph' undeclared (first use in this function)
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c: In function 'eqFunction_4':
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1166: error: '$Pbpro$Pd' undeclared (first use in this function)
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c: In function 'eqFunction_5':
+// Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.c:1173: error: '$Pbpro$Ph' undeclared (first use in this function)
 // mingw32-make[1]: *** [Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.o] Error 1
-
 // mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-
 // 
 // "
 // end SimulationResult;

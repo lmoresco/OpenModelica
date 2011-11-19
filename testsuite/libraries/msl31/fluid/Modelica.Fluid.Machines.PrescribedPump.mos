@@ -26,14 +26,7 @@ checkModel(Modelica.Fluid.Machines.PrescribedPump); getErrorString();
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
 // [Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.PrescribedPump.
-// Warning: Parameter N_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
-//   The existing 'inner' components are: 
-//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Machines.PrescribedPump.
-//   Check if you have not misspelled the 'outer' component name.
-//   Please declare an 'inner' component with the same name in the top scope.
-//   Continuing flattening by only considering the 'outer' component declaration.
-// [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
+// [Machines.mo:399:5-399:34:writable] Error: Variable medium.d not found in scope Modelica.Fluid.Machines.PrescribedPump
 // Error: Error occurred while flattening model Modelica.Fluid.Machines.PrescribedPump
 // "
 // "Check of Modelica.Fluid.Machines.PrescribedPump completed successfully.
@@ -45,20 +38,14 @@ checkModel(Modelica.Fluid.Machines.PrescribedPump); getErrorString();
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
 // [Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.PrescribedPump.
-// Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
-//   The existing 'inner' components are: 
-//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Machines.PrescribedPump.
-//   Check if you have not misspelled the 'outer' component name.
-//   Please declare an 'inner' component with the same name in the top scope.
-//   Continuing flattening by only considering the 'outer' component declaration.
 // [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
-// [Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.PrescribedPump.
 // Warning: No corresponding 'inner' declaration found for component heatTransfer.system declared as 'outer '.
 //   The existing 'inner' components are: 
 //     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Machines.PrescribedPump.HeatTransfer.
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
+// [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
 // [Machines.mo:581:5-585:17:writable] Warning: Forcing full instantiation of partial class baseFlow during checkModel.
 // [Interfaces.mo:613:7-614:108:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.PrescribedPump.
 // 

@@ -13,7 +13,11 @@ checkModel(Modelica.Fluid.Sensors.TemperatureTwoPort); getErrorString();
 // Result:
 // true
 // ""
-// "function Modelica.Fluid.Sensors.TemperatureTwoPort.Medium.setState_phX \"Return thermodynamic state as function of p, h and composition X or Xi\"
+// "function Modelica.Fluid.Sensors.TemperatureTwoPort.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Fluid.Sensors.TemperatureTwoPort.Medium.ThermodynamicState\"
+//   output ThermodynamicState res;
+// end Modelica.Fluid.Sensors.TemperatureTwoPort.Medium.ThermodynamicState;
+// 
+// function Modelica.Fluid.Sensors.TemperatureTwoPort.Medium.setState_phX \"Return thermodynamic state as function of p, h and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";

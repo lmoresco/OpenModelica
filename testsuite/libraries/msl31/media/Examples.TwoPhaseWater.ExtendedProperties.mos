@@ -95,6 +95,59 @@ checkModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties); getErrorSt
 //   nderivs.hd := (nderivs.pd + (-f.T * nderivs.pt) / f.d) / f.d;
 // end Modelica.Media.Common.Helmholtz_ph;
 // 
+// function Modelica.Media.Common.IF97BaseTwoPhase \"Automatically generated record constructor for Modelica.Media.Common.IF97BaseTwoPhase\"
+//   input Integer phase = 0;
+//   input Integer(min=1, max=5) region;
+//   input Real(quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") h;
+//   input Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") R;
+//   input Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") cp;
+//   input Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") cv;
+//   input Real(quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\", min=0.0) rho;
+//   input Real(quantity=\"SpecificEntropy\", unit=\"J/(kg.K)\") s;
+//   input Real(quantity=\"DerPressureByTemperature\", unit=\"Pa/K\") pt;
+//   input Real(quantity=\"DerPressureByDensity\", unit=\"Pa.m3/kg\") pd;
+//   input Real vt;
+//   input Real vp;
+//   input Real x;
+//   input Real dpT;
+//   output IF97BaseTwoPhase res;
+// end Modelica.Media.Common.IF97BaseTwoPhase;
+// 
+// function Modelica.Media.Common.IF97PhaseBoundaryProperties \"Automatically generated record constructor for Modelica.Media.Common.IF97PhaseBoundaryProperties\"
+//   input Boolean region3boundary;
+//   input Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") R;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T;
+//   input Real(quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\", min=0.0) d;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") h;
+//   input Real(quantity=\"SpecificEntropy\", unit=\"J/(kg.K)\") s;
+//   input Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") cp;
+//   input Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") cv;
+//   input Real(quantity=\"DerPressureByTemperature\", unit=\"Pa/K\") dpT;
+//   input Real(quantity=\"DerPressureByTemperature\", unit=\"Pa/K\") pt;
+//   input Real(quantity=\"DerPressureByDensity\", unit=\"Pa.m3/kg\") pd;
+//   input Real(unit=\"m3/(kg.K)\") vt;
+//   input Real(unit=\"m3/(kg.Pa)\") vp;
+//   output IF97PhaseBoundaryProperties res;
+// end Modelica.Media.Common.IF97PhaseBoundaryProperties;
+// 
+// function Modelica.Media.Common.NewtonDerivatives_pT \"Automatically generated record constructor for Modelica.Media.Common.NewtonDerivatives_pT\"
+//   input Real(quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(quantity=\"DerPressureByDensity\", unit=\"Pa.m3/kg\") pd;
+//   output NewtonDerivatives_pT res;
+// end Modelica.Media.Common.NewtonDerivatives_pT;
+// 
+// function Modelica.Media.Common.NewtonDerivatives_ph \"Automatically generated record constructor for Modelica.Media.Common.NewtonDerivatives_ph\"
+//   input Real(quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") h;
+//   input Real(quantity=\"DerPressureByDensity\", unit=\"Pa.m3/kg\") pd;
+//   input Real(quantity=\"DerPressureByTemperature\", unit=\"Pa/K\") pt;
+//   input Real hd;
+//   input Real ht;
+//   output NewtonDerivatives_ph res;
+// end Modelica.Media.Common.NewtonDerivatives_ph;
+// 
 // function Modelica.Media.Common.PhaseBoundaryProperties \"Automatically generated record constructor for Modelica.Media.Common.PhaseBoundaryProperties\"
 //   input Real(quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\", min=0.0) d;
 //   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") h;

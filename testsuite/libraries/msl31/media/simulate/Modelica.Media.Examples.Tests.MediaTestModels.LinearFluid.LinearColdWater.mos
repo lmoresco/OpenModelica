@@ -20,47 +20,27 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWat
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = "Simulation failed for model: Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater
 // Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-
 // gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater.o Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater.c
-
 // In file included from Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater.c:10:
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c: In function '_Modelica_Media_Interfaces_PartialMedium_specificEnthalpy__pTX':
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:96: error: 'Modelica_Media_Interfaces_PartialMedium_setState__pTX_rettype' undeclared (first use in this function)
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:96: error: (Each undeclared identifier is reported only once
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:96: error: for each function it appears in.)
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:96: error: expected ';' before 'tmp3'
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:97: error: 'Modelica_Media_Interfaces_PartialMedium_specificEnthalpy_rettype' undeclared (first use in this function)
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:97: error: expected ';' before 'tmp4'
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:108: error: 'tmp3' undeclared (first use in this function)
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:109: error: 'tmp4' undeclared (first use in this function)
-
 // Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c: In function '_Modelica_Media_Examples_Tests_Components_FluidPort_Medium_specificEnthalpy__pTX':
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:230: error: 'Modelica_Media_Examples_Tests_Components_FluidPort_Medium_setState__pTX_rettype' undeclared (first use in this function)
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:230: error: expected ';' before 'tmp3'
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:231: error: 'Modelica_Media_Examples_Tests_Components_FluidPort_Medium_specificEnthalpy_rettype' undeclared (first use in this function)
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:231: error: expected ';' before 'tmp4'
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:242: error: 'tmp3' undeclared (first use in this function)
-
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:243: error: 'tmp4' undeclared (first use in this function)
-
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:174: error: 'Modelica_Media_Examples_Tests_Components_FluidPort_Medium_setState__pTX_rettype' undeclared (first use in this function)
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:174: error: (Each undeclared identifier is reported only once
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:174: error: for each function it appears in.)
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:174: error: expected ';' before 'tmp3'
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:175: error: 'Modelica_Media_Examples_Tests_Components_FluidPort_Medium_specificEnthalpy_rettype' undeclared (first use in this function)
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:175: error: expected ';' before 'tmp4'
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:186: error: 'tmp3' undeclared (first use in this function)
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:187: error: 'tmp4' undeclared (first use in this function)
+// In file included from Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater.c:10:
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c: In function '_Modelica_Media_Interfaces_PartialMedium_specificEnthalpy__pTX':
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:1227: error: 'Modelica_Media_Interfaces_PartialMedium_setState__pTX_rettype' undeclared (first use in this function)
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:1227: error: expected ';' before 'tmp3'
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:1228: error: 'Modelica_Media_Interfaces_PartialMedium_specificEnthalpy_rettype' undeclared (first use in this function)
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:1228: error: expected ';' before 'tmp4'
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:1239: error: 'tmp3' undeclared (first use in this function)
+// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater_functions.c:1240: error: 'tmp4' undeclared (first use in this function)
 // mingw32-make[1]: *** [Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater.o] Error 1
-
 // mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-
 // 
 // "
 // end SimulationResult;

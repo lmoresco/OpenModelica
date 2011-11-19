@@ -26,6 +26,12 @@ protected
 end ConstructParameters2;
 
 // Result:
+// function Prec "Automatically generated record constructor for Prec"
+//   input Real p3;
+//   input Real p4;
+//   output Prec res;
+// end Prec;
+// 
 // function fc
 //   output Prec p;
 //   input Real p1;

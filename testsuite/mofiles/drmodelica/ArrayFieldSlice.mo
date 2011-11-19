@@ -44,6 +44,13 @@ equation
 end getPerson; 
 
 // Result:
+// function Person "Automatically generated record constructor for Person"
+//   input String name;
+//   input Integer age;
+//   input String[2] children;
+//   output Person res;
+// end Person;
+// 
 // function mkperson
 //   input String name;
 //   input Integer age;

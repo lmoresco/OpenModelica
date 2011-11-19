@@ -115,6 +115,10 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen); g
 //   h := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy_pTX;
 // 
+// function Modelica.Media.Examples.Tests.Components.FluidPort.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.Tests.Components.FluidPort.Medium.ThermodynamicState\"
+//   output ThermodynamicState res;
+// end Modelica.Media.Examples.Tests.Components.FluidPort.Medium.ThermodynamicState;
+// 
 // function Modelica.Media.Examples.Tests.Components.FluidPort.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
@@ -351,6 +355,24 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen); g
 //   h := Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen.Medium.specificEnthalpy_pTX;
 // 
+// function Modelica.Media.IdealGases.Common.DataRecord \"Automatically generated record constructor for Modelica.Media.IdealGases.Common.DataRecord\"
+//   input String name;
+//   input Real(quantity=\"MolarMass\", unit=\"kg/mol\", min=0.0) MM;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") Hf;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") H0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") Tlimit;
+//   input Real[7] alow;
+//   input Real[2] blow;
+//   input Real[7] ahigh;
+//   input Real[2] bhigh;
+//   input Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") R;
+//   output DataRecord res;
+// end Modelica.Media.IdealGases.Common.DataRecord;
+// 
+// function Modelica.Media.Interfaces.PartialMedium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Interfaces.PartialMedium.ThermodynamicState\"
+//   output ThermodynamicState res;
+// end Modelica.Media.Interfaces.PartialMedium.ThermodynamicState;
+// 
 // function Modelica.Media.Interfaces.PartialMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
@@ -371,6 +393,13 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen); g
 // algorithm
 //   h := Modelica.Media.Interfaces.PartialMedium.specificEnthalpy(Modelica.Media.Interfaces.PartialMedium.setState_pTX(p,T,X));
 // end Modelica.Media.Interfaces.PartialMedium.specificEnthalpy_pTX;
+// 
+// function Modelica.Media.Interfaces.PartialMixtureMedium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Interfaces.PartialMixtureMedium.ThermodynamicState\"
+//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+//   input Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[1] X;
+//   output ThermodynamicState res;
+// end Modelica.Media.Interfaces.PartialMixtureMedium.ThermodynamicState;
 // 
 // function Modelica.Media.Interfaces.PartialMixtureMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";

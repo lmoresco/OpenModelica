@@ -151,6 +151,20 @@ checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 //   a := sqrt(max(0.0,(461.523329085088 * state.T * Modelica.Media.Examples.IdealGasH2O.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),state.T)) / Modelica.Media.Examples.IdealGasH2O.Medium.specificHeatCapacityCv(state)));
 // end Modelica.Media.Examples.IdealGasH2O.Medium.velocityOfSound;
 // 
+// function Modelica.Media.IdealGases.Common.DataRecord \"Automatically generated record constructor for Modelica.Media.IdealGases.Common.DataRecord\"
+//   input String name;
+//   input Real(quantity=\"MolarMass\", unit=\"kg/mol\", min=0.0) MM;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") Hf;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") H0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") Tlimit;
+//   input Real[7] alow;
+//   input Real[2] blow;
+//   input Real[7] ahigh;
+//   input Real[2] bhigh;
+//   input Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") R;
+//   output DataRecord res;
+// end Modelica.Media.IdealGases.Common.DataRecord;
+// 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";

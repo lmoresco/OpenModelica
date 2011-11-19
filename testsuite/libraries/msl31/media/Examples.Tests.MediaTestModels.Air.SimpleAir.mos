@@ -40,6 +40,10 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   h := -299774.9175 + 1005.45 * T;
 // end Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy_pTX;
 // 
+// function Modelica.Media.Examples.Tests.Components.FluidPort.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.Tests.Components.FluidPort.Medium.ThermodynamicState\"
+//   output ThermodynamicState res;
+// end Modelica.Media.Examples.Tests.Components.FluidPort.Medium.ThermodynamicState;
+// 
 // function Modelica.Media.Examples.Tests.Components.FluidPort.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
@@ -105,6 +109,10 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 // algorithm
 //   h := -299774.9175 + 1005.45 * T;
 // end Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir.Medium.specificEnthalpy_pTX;
+// 
+// function Modelica.Media.Interfaces.PartialMedium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Interfaces.PartialMedium.ThermodynamicState\"
+//   output ThermodynamicState res;
+// end Modelica.Media.Interfaces.PartialMedium.ThermodynamicState;
 // 
 // function Modelica.Media.Interfaces.PartialMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";

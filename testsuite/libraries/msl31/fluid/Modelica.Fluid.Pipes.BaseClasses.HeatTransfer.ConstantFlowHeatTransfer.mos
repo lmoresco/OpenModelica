@@ -13,7 +13,11 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfe
 // Result:
 // true
 // ""
-// "function Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfer.Medium.temperature \"Return temperature\"
+// "function Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfer.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfer.Medium.ThermodynamicState\"
+//   output ThermodynamicState res;
+// end Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfer.Medium.ThermodynamicState;
+// 
+// function Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfer.Medium.temperature \"Return temperature\"
 //   input Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfer.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 // end Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfer.Medium.temperature;

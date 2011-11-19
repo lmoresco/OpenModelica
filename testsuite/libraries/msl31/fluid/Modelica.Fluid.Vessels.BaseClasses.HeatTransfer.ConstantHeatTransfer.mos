@@ -13,7 +13,11 @@ checkModel(Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer)
 // Result:
 // true
 // ""
-// "function Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.temperature \"Return temperature\"
+// "function Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.ThermodynamicState\"
+//   output ThermodynamicState res;
+// end Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.ThermodynamicState;
+// 
+// function Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.temperature \"Return temperature\"
 //   input Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 // end Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.temperature;

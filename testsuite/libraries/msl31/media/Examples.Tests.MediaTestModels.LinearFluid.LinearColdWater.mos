@@ -84,6 +84,10 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   h := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy_pTX;
 // 
+// function Modelica.Media.Examples.Tests.Components.FluidPort.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.Tests.Components.FluidPort.Medium.ThermodynamicState\"
+//   output ThermodynamicState res;
+// end Modelica.Media.Examples.Tests.Components.FluidPort.Medium.ThermodynamicState;
+// 
 // function Modelica.Media.Examples.Tests.Components.FluidPort.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
@@ -259,6 +263,10 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 // algorithm
 //   h := Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater.Medium.specificEnthalpy_pTX;
+// 
+// function Modelica.Media.Interfaces.PartialMedium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Interfaces.PartialMedium.ThermodynamicState\"
+//   output ThermodynamicState res;
+// end Modelica.Media.Interfaces.PartialMedium.ThermodynamicState;
 // 
 // function Modelica.Media.Interfaces.PartialMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";

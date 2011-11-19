@@ -25,13 +25,11 @@ checkModel(Modelica.Fluid.Pipes.DynamicPipe); getErrorString();
 // [Interfaces.mo:877:3-878:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Pipes.DynamicPipe.
 // Warning: Parameter diameter has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: Parameter length has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
-//   The existing 'inner' components are: 
-//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.DynamicPipe.
-//   Check if you have not misspelled the 'outer' component name.
-//   Please declare an 'inner' component with the same name in the top scope.
-//   Continuing flattening by only considering the 'outer' component declaration.
-// [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
+// [Pipes.mo:452:7-453:43:writable] Error: Illegal subscript [i] for dimensions  in component <NO COMPONENT>
+// [Pipes.mo:452:7-453:43:writable] Error: Variable mediums[i].d not found in scope Modelica.Fluid.Pipes.DynamicPipe.$foriter loop scope$
+// Warning: Parameter length has neither value nor start value, and is fixed during initialization (fixed=true)
+// [Pipes.mo:452:7-453:43:writable] Error: Illegal subscript [i] for dimensions  in component <NO COMPONENT>
+// [Pipes.mo:452:7-453:43:writable] Error: Variable mediums[i].d not found in scope Modelica.Fluid.Pipes.DynamicPipe.$foriter loop scope$
 // Error: Error occurred while flattening model Modelica.Fluid.Pipes.DynamicPipe
 // "
 // "Check of Modelica.Fluid.Pipes.DynamicPipe completed successfully.
@@ -43,20 +41,14 @@ checkModel(Modelica.Fluid.Pipes.DynamicPipe); getErrorString();
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
 // [Interfaces.mo:877:3-878:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Pipes.DynamicPipe.
-// Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
-//   The existing 'inner' components are: 
-//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.DynamicPipe.
-//   Check if you have not misspelled the 'outer' component name.
-//   Please declare an 'inner' component with the same name in the top scope.
-//   Continuing flattening by only considering the 'outer' component declaration.
 // [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
-// [Interfaces.mo:877:3-878:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Pipes.DynamicPipe.
 // Warning: No corresponding 'inner' declaration found for component flowModel.system declared as 'outer '.
 //   The existing 'inner' components are: 
 //     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.DynamicPipe.FlowModel.
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
+// [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
 // Warning: No corresponding 'inner' declaration found for component heatTransfer.system declared as 'outer '.
 //   The existing 'inner' components are: 
 //     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer.

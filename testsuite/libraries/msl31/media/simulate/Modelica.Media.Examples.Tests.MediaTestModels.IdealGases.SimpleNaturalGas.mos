@@ -15,21 +15,30 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // ""
 // true
 // Evaluating: simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas)
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
+// eqns =13
 // record SimulationResult
 //     resultFile = "",
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
@@ -52,7 +61,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -63,7 +72,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -74,7 +83,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -85,7 +94,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -96,7 +105,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -107,7 +116,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -118,7 +127,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -129,7 +138,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -140,7 +149,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -151,7 +160,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -162,7 +171,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -173,7 +182,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -184,7 +193,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -195,7 +204,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
 // [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -206,7 +215,106 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalG
 // volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 // volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
 // volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables volume.medium.h(42), volume.medium.d(41), volume.medium.u(39), volume.medium.R(38), volume.m(33), 
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2939:12-2939:29:writable] Error: Model is structurally singular, error found sorting equations volume.U = volume.m * volume.medium.u;
+// volume.m = volume.V * volume.medium.d;
+// volume.medium.d = volume.medium.p / (volume.medium.T * volume.medium.R);
+// volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
+// volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
+// volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2939:12-2939:29:writable] Error: Model is structurally singular, error found sorting equations volume.U = volume.m * volume.medium.u;
+// volume.m = volume.V * volume.medium.d;
+// volume.medium.d = volume.medium.p / (volume.medium.T * volume.medium.R);
+// volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
+// volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
+// volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2939:12-2939:29:writable] Error: Model is structurally singular, error found sorting equations volume.U = volume.m * volume.medium.u;
+// volume.m = volume.V * volume.medium.d;
+// volume.medium.d = volume.medium.p / (volume.medium.T * volume.medium.R);
+// volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
+// volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
+// volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2939:12-2939:29:writable] Error: Model is structurally singular, error found sorting equations volume.U = volume.m * volume.medium.u;
+// volume.m = volume.V * volume.medium.d;
+// volume.medium.d = volume.medium.p / (volume.medium.T * volume.medium.R);
+// volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
+// volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
+// volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2939:12-2939:29:writable] Error: Model is structurally singular, error found sorting equations volume.U = volume.m * volume.medium.u;
+// volume.m = volume.V * volume.medium.d;
+// volume.medium.d = volume.medium.p / (volume.medium.T * volume.medium.R);
+// volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
+// volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
+// volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2939:12-2939:29:writable] Error: Model is structurally singular, error found sorting equations volume.U = volume.m * volume.medium.u;
+// volume.m = volume.V * volume.medium.d;
+// volume.medium.d = volume.medium.p / (volume.medium.T * volume.medium.R);
+// volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
+// volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
+// volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2939:12-2939:29:writable] Error: Model is structurally singular, error found sorting equations volume.U = volume.m * volume.medium.u;
+// volume.m = volume.V * volume.medium.d;
+// volume.medium.d = volume.medium.p / (volume.medium.T * volume.medium.R);
+// volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
+// volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
+// volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2939:12-2939:29:writable] Error: Model is structurally singular, error found sorting equations volume.U = volume.m * volume.medium.u;
+// volume.m = volume.V * volume.medium.d;
+// volume.medium.d = volume.medium.p / (volume.medium.T * volume.medium.R);
+// volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
+// volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
+// volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
+// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2939:12-2939:29:writable] Error: Model is structurally singular, error found sorting equations volume.U = volume.m * volume.medium.u;
+// volume.m = volume.V * volume.medium.d;
+// volume.medium.d = volume.medium.p / (volume.medium.T * volume.medium.R);
+// volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
+// volume.medium.R = 518.279116793808 * (volume.medium.Xi[1] + (volume.medium.Xi[2] + (volume.medium.Xi[3] + (volume.medium.Xi[4] + (volume.medium.Xi[5] + volume.medium.Xi[6])))));
+// volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//  for variables volume.medium.h(33), volume.medium.d(32), volume.medium.u(30), volume.medium.R(29), volume.m(24), 
 // Error: Internal error Transformation Module failed!
 // "
 // end SimulationResult;

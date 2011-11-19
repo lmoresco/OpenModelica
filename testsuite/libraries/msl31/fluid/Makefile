@@ -43,6 +43,8 @@ Modelica.Fluid.Sensors.VolumeFlowRate.mos \
 Modelica.Fluid.System.mos \
 Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.mos \
 Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.IdealHeatTransfer.mos \
+Modelica.Fluid.Valves.ValveVaporizing.mos \
+Modelica.Fluid.Valves.ValveCompressible.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
@@ -83,8 +85,6 @@ Modelica.Fluid.Sources.Boundary_pT.mos \
 Modelica.Fluid.Sources.FixedBoundary.mos \
 Modelica.Fluid.Sources.MassFlowSource_h.mos \
 Modelica.Fluid.Sources.MassFlowSource_T.mos \
-Modelica.Fluid.Valves.ValveCompressible.mos \
-Modelica.Fluid.Valves.ValveVaporizing.mos \
 Modelica.Fluid.Vessels.ClosedVolume.mos
 
 .PHONY : test

@@ -15,14 +15,17 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph);
 // ""
 // true
 // Evaluating: simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph)
-// eqns =6, 4, 3
-// eqns =6, 4, 3
-// eqns =6, 4, 3
-// eqns =6, 4, 3
-// eqns =6, 4, 3
-// eqns =6, 4, 3
-// eqns =6, 4, 3
-// eqns =6, 4, 3
+// eqns =9, 7, 6
+// eqns =9, 7, 6
+// eqns =9, 7, 6
+// eqns =9, 7, 6
+// eqns =9, 7, 6
+// eqns =9, 7, 6
+// eqns =9, 7, 6
+// eqns =9, 7, 6
+// eqns =9, 7, 6
+// eqns =9, 7, 6
+// eqns =9, 7, 6
 // record SimulationResult
 //     resultFile = "",
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
@@ -35,7 +38,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph);
 // volume.medium.sat.Tsat = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p);
 // volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,volume.medium.state.phase);
 // volume.medium.state.phase = if volume.medium.h < Modelica.Media.Examples.Tests.Components.PortVolume.Medium.bubbleEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.h > Modelica.Media.Examples.Tests.Components.PortVolume.Medium.dewEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.p > 22064000.0 then 1 else 2;
-//  for variables volume.medium.sat.Tsat(11), volume.medium.state.d(7), volume.medium.state.phase(6), 
+//  for variables volume.medium.sat.Tsat(14), volume.medium.state.d(10), volume.medium.state.phase(9), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p) is non-existent
 // [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -44,7 +47,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph);
 // volume.medium.sat.Tsat = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p);
 // volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,volume.medium.state.phase);
 // volume.medium.state.phase = if volume.medium.h < Modelica.Media.Examples.Tests.Components.PortVolume.Medium.bubbleEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.h > Modelica.Media.Examples.Tests.Components.PortVolume.Medium.dewEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.p > 22064000.0 then 1 else 2;
-//  for variables volume.medium.sat.Tsat(11), volume.medium.state.d(7), volume.medium.state.phase(6), 
+//  for variables volume.medium.sat.Tsat(14), volume.medium.state.d(10), volume.medium.state.phase(9), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p) is non-existent
 // [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -53,7 +56,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph);
 // volume.medium.sat.Tsat = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p);
 // volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,volume.medium.state.phase);
 // volume.medium.state.phase = if volume.medium.h < Modelica.Media.Examples.Tests.Components.PortVolume.Medium.bubbleEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.h > Modelica.Media.Examples.Tests.Components.PortVolume.Medium.dewEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.p > 22064000.0 then 1 else 2;
-//  for variables volume.medium.sat.Tsat(11), volume.medium.state.d(7), volume.medium.state.phase(6), 
+//  for variables volume.medium.sat.Tsat(14), volume.medium.state.d(10), volume.medium.state.phase(9), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p) is non-existent
 // [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -62,7 +65,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph);
 // volume.medium.sat.Tsat = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p);
 // volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,volume.medium.state.phase);
 // volume.medium.state.phase = if volume.medium.h < Modelica.Media.Examples.Tests.Components.PortVolume.Medium.bubbleEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.h > Modelica.Media.Examples.Tests.Components.PortVolume.Medium.dewEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.p > 22064000.0 then 1 else 2;
-//  for variables volume.medium.sat.Tsat(11), volume.medium.state.d(7), volume.medium.state.phase(6), 
+//  for variables volume.medium.sat.Tsat(14), volume.medium.state.d(10), volume.medium.state.phase(9), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p) is non-existent
 // [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -71,7 +74,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph);
 // volume.medium.sat.Tsat = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p);
 // volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,volume.medium.state.phase);
 // volume.medium.state.phase = if volume.medium.h < Modelica.Media.Examples.Tests.Components.PortVolume.Medium.bubbleEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.h > Modelica.Media.Examples.Tests.Components.PortVolume.Medium.dewEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.p > 22064000.0 then 1 else 2;
-//  for variables volume.medium.sat.Tsat(11), volume.medium.state.d(7), volume.medium.state.phase(6), 
+//  for variables volume.medium.sat.Tsat(14), volume.medium.state.d(10), volume.medium.state.phase(9), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p) is non-existent
 // [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -80,7 +83,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph);
 // volume.medium.sat.Tsat = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p);
 // volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,volume.medium.state.phase);
 // volume.medium.state.phase = if volume.medium.h < Modelica.Media.Examples.Tests.Components.PortVolume.Medium.bubbleEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.h > Modelica.Media.Examples.Tests.Components.PortVolume.Medium.dewEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.p > 22064000.0 then 1 else 2;
-//  for variables volume.medium.sat.Tsat(11), volume.medium.state.d(7), volume.medium.state.phase(6), 
+//  for variables volume.medium.sat.Tsat(14), volume.medium.state.d(10), volume.medium.state.phase(9), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p) is non-existent
 // [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -89,7 +92,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph);
 // volume.medium.sat.Tsat = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p);
 // volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,volume.medium.state.phase);
 // volume.medium.state.phase = if volume.medium.h < Modelica.Media.Examples.Tests.Components.PortVolume.Medium.bubbleEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.h > Modelica.Media.Examples.Tests.Components.PortVolume.Medium.dewEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.p > 22064000.0 then 1 else 2;
-//  for variables volume.medium.sat.Tsat(11), volume.medium.state.d(7), volume.medium.state.phase(6), 
+//  for variables volume.medium.sat.Tsat(14), volume.medium.state.d(10), volume.medium.state.phase(9), 
 // Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p) is non-existent
 // [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
 // Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
@@ -98,7 +101,34 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph);
 // volume.medium.sat.Tsat = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p);
 // volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,volume.medium.state.phase);
 // volume.medium.state.phase = if volume.medium.h < Modelica.Media.Examples.Tests.Components.PortVolume.Medium.bubbleEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.h > Modelica.Media.Examples.Tests.Components.PortVolume.Medium.dewEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.p > 22064000.0 then 1 else 2;
-//  for variables volume.medium.sat.Tsat(11), volume.medium.state.d(7), volume.medium.state.phase(6), 
+//  for variables volume.medium.sat.Tsat(14), volume.medium.state.d(10), volume.medium.state.phase(9), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p) is non-existent
+// [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2937:12-2937:29:writable] Error: Model is structurally singular, error found sorting equations volume.m = volume.V * volume.medium.state.d;
+// volume.medium.sat.Tsat = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p);
+// volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,volume.medium.state.phase);
+// volume.medium.state.phase = if volume.medium.h < Modelica.Media.Examples.Tests.Components.PortVolume.Medium.bubbleEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.h > Modelica.Media.Examples.Tests.Components.PortVolume.Medium.dewEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.p > 22064000.0 then 1 else 2;
+//  for variables volume.medium.sat.Tsat(14), volume.medium.state.d(10), volume.medium.state.phase(9), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p) is non-existent
+// [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2937:12-2937:29:writable] Error: Model is structurally singular, error found sorting equations volume.m = volume.V * volume.medium.state.d;
+// volume.medium.sat.Tsat = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p);
+// volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,volume.medium.state.phase);
+// volume.medium.state.phase = if volume.medium.h < Modelica.Media.Examples.Tests.Components.PortVolume.Medium.bubbleEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.h > Modelica.Media.Examples.Tests.Components.PortVolume.Medium.dewEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.p > 22064000.0 then 1 else 2;
+//  for variables volume.medium.sat.Tsat(14), volume.medium.state.d(10), volume.medium.state.phase(9), 
+// Error: Derivative of expression Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p) is non-existent
+// [package.mo:217:7-217:42:writable] Error: Internal error - Derive.differentiateEquationTime failed.
+// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
+// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
+// [package.mo:2937:12-2937:29:writable] Error: Model is structurally singular, error found sorting equations volume.m = volume.V * volume.medium.state.d;
+// volume.medium.sat.Tsat = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.saturationTemperature(volume.medium.p);
+// volume.medium.state.d = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.density_ph(volume.medium.p,volume.medium.h,volume.medium.state.phase);
+// volume.medium.state.phase = if volume.medium.h < Modelica.Media.Examples.Tests.Components.PortVolume.Medium.bubbleEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.h > Modelica.Media.Examples.Tests.Components.PortVolume.Medium.dewEnthalpy(Modelica.Media.Examples.Tests.Components.PortVolume.Medium.SaturationProperties(volume.medium.p,volume.medium.sat.Tsat)) or volume.medium.p > 22064000.0 then 1 else 2;
+//  for variables volume.medium.sat.Tsat(14), volume.medium.state.d(10), volume.medium.state.phase(9), 
 // Error: Internal error Transformation Module failed!
 // "
 // end SimulationResult;

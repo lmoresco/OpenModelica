@@ -5,6 +5,7 @@ LDFLAGS=-L../../build/lib/omc -L./ -lomcruntime -lomparse -lSimulationRuntimeC .
 -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32 -lRpcrt4 -lshlwapi \
 -Wl,--stack,16777216,--large-address-aware -llapack-mingw -ltmglib-mingw -lblas-mingw -lf2c
 CFLAGS=-ggdb -O0 -falign-functions -static-libgcc --param ggc-min-expand=1 --param ggc-min-heapsize=999999 
+#CFLAGS=-O3 -falign-functions -static-libgcc --param ggc-min-expand=1 --param ggc-min-heapsize=999999 
 
 RECS=libmainrecords.a
 CC=gcc

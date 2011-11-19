@@ -13,7 +13,182 @@ checkModel(Modelica.Fluid.Valves.ValveCompressible); getErrorString();
 // Result:
 // true
 // ""
-// ""
+// "function Modelica.Fluid.Utilities.regRoot \"Anti-symmetric square root approximation with finite derivative in the origin\"
+//   input Real x;
+//   input Real delta = 0.01 \"Range of significant deviation from sqrt(abs(x))*sgn(x)\";
+//   output Real y;
+// algorithm
+//   y := x * (x ^ 2.0 + delta ^ 2.0) ^ -0.25;
+// end Modelica.Fluid.Utilities.regRoot;
+// 
+// function Modelica.Fluid.Utilities.regRoot_der \"Derivative of regRoot\"
+//   input Real x;
+//   input Real delta = 0.01 \"Range of significant deviation from sqrt(x)\";
+//   input Real dx \"Derivative of x\";
+//   output Real dy;
+// algorithm
+//   dy := 0.5 * dx * (x ^ 2.0 + 2.0 * delta ^ 2.0) * (x ^ 2.0 + delta ^ 2.0) ^ -1.25;
+// end Modelica.Fluid.Utilities.regRoot_der;
+// 
+// function Modelica.Fluid.Utilities.regStep \"Approximation of a general step, such that the characteristic is continuous and differentiable\"
+//   input Real x \"Abscissa value\";
+//   input Real y1 \"Ordinate value for x > 0\";
+//   input Real y2 \"Ordinate value for x < 0\";
+//   input Real x_small(min = 0.0) = 1e-005 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
+//   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
+// algorithm
+//   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
+// end Modelica.Fluid.Utilities.regStep;
+// 
+// function Modelica.Fluid.Valves.ValveCompressible.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Fluid.Valves.ValveCompressible.Medium.ThermodynamicState\"
+//   output ThermodynamicState res;
+// end Modelica.Fluid.Valves.ValveCompressible.Medium.ThermodynamicState;
+// 
+// function Modelica.Fluid.Valves.ValveCompressible.Medium.density \"Return density\"
+//   input Modelica.Fluid.Valves.ValveCompressible.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
+// end Modelica.Fluid.Valves.ValveCompressible.Medium.density;
+// 
+// function Modelica.Fluid.Valves.ValveCompressible.Medium.density_pTX \"Return density from p, T, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
+// algorithm
+//   d := Modelica.Fluid.Valves.ValveCompressible.Medium.density(Modelica.Fluid.Valves.ValveCompressible.Medium.setState_pTX(p,T,X));
+// end Modelica.Fluid.Valves.ValveCompressible.Medium.density_pTX;
+// 
+// function Modelica.Fluid.Valves.ValveCompressible.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Fluid.Valves.ValveCompressible.Medium.ThermodynamicState state \"thermodynamic state record\";
+// end Modelica.Fluid.Valves.ValveCompressible.Medium.setState_pTX;
+// 
+// function Modelica.Fluid.Valves.ValveCompressible.Medium.setState_phX \"Return thermodynamic state as function of p, h and composition X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Fluid.Valves.ValveCompressible.Medium.ThermodynamicState state \"thermodynamic state record\";
+// end Modelica.Fluid.Valves.ValveCompressible.Medium.setState_phX;
+// 
+// function Modelica.Fluid.Valves.ValveCompressible.Medium.temperature \"Return temperature\"
+//   input Modelica.Fluid.Valves.ValveCompressible.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+// end Modelica.Fluid.Valves.ValveCompressible.Medium.temperature;
+// 
+// function Modelica.Fluid.Valves.ValveCompressible.valveCharacteristic \"Linear characteristic\"
+//   input Real pos \"Opening position (per unit)\";
+//   output Real rc \"Relative flow coefficient (per unit)\";
+// algorithm
+//   rc := pos;
+// end Modelica.Fluid.Valves.ValveCompressible.valveCharacteristic;
+// 
+// function Modelica.Fluid.Valves.ValveCompressible.xtCharacteristic \"Constant characteristic\"
+//   input Real pos \"Opening position (per unit)\";
+//   output Real rc \"Relative flow coefficient (per unit)\";
+// algorithm
+//   rc := 1.0;
+// end Modelica.Fluid.Valves.ValveCompressible.xtCharacteristic;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Fluid.Valves.ValveCompressible
+//   parameter Real system.p_ambient(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 101325.0 \"Default ambient pressure\";
+//   parameter Real system.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Default ambient temperature\";
+//   parameter Real system.g(quantity = \"Acceleration\", unit = \"m/s2\") = 9.80665 \"Constant gravity acceleration\";
+//   parameter Boolean system.allowFlowReversal = true \"= false to restrict to design flow direction (port_a -> port_b)\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.energyDynamics = Modelica.Fluid.Types.Dynamics.DynamicFreeInitial \"Default formulation of energy balances\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.momentumDynamics = Modelica.Fluid.Types.Dynamics.SteadyState \"Default formulation of momentum balances, if options available\";
+//   parameter Real system.m_flow_start(quantity = \"MassFlowRate\", unit = \"kg/s\") = 0.0 \"Default start value for mass flow rates\";
+//   parameter Real system.m_flow_small(quantity = \"MassFlowRate\", unit = \"kg/s\", min = 0.0) = 0.01 \"Default small laminar mass flow rate for regularization of zero flow\";
+//   parameter Real system.dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Default small pressure drop for regularization of laminar and zero flow\";
+//   parameter Real system.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = system.p_ambient \"Default start value for pressures\";
+//   parameter Real system.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Default start value for temperatures\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.massDynamics = system.energyDynamics \"Default formulation of mass balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.substanceDynamics = system.massDynamics \"Default formulation of substance balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.traceDynamics = system.massDynamics \"Default formulation of trace substance balances\";
+//   parameter Boolean allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
+//   Real port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+060 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   Real port_b.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = if allowFlowReversal then 1e+060 else 0.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   protected parameter Boolean port_a_exposesState = false \"= true if port_a exposes the state of a fluid volume\";
+//   protected parameter Boolean port_b_exposesState = false \"= true if port_b.p exposes the state of a fluid volume\";
+//   protected parameter Boolean showDesignFlowDirection = true \"= false to hide the arrow in the model icon\";
+//   parameter Real m_flow_small(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_small \"Small mass flow rate for regularization of zero flow\";
+//   parameter Boolean show_T = true \"= true, if temperatures at port_a and port_b are computed\";
+//   parameter Boolean show_V_flow = true \"= true, if volume flow rate at inflowing port is computed\";
+//   parameter enumeration(Av, Kv, Cv, OpPoint) CvData = Modelica.Fluid.Types.CvTypes.OpPoint \"Selection of flow coefficient\";
+//   parameter Real Kv = 0.0 \"Kv (metric) flow coefficient [m3/h]\";
+//   parameter Real Cv = 0.0 \"Cv (US) flow coefficient [USG/min]\";
+//   parameter Real dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Nominal pressure drop\";
+//   parameter Real m_flow_nominal(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Nominal mass flowrate\";
+//   parameter Real rho_nominal(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = Modelica.Fluid.Valves.ValveCompressible.Medium.density_pTX(101325.0,293.15,{1.0}) \"Nominal inlet density\";
+//   parameter Real opening_nominal = 1.0 \"Nominal opening\";
+//   parameter Boolean checkValve = false \"Reverse flow stopped\";
+//   parameter Real dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = system.dp_small \"Regularisation of zero flow\";
+//   constant Real Kv2Av(quantity = \"Area\", unit = \"m2\") = 2.77e-005 \"Conversion factor\";
+//   constant Real Cv2Av(quantity = \"Area\", unit = \"m2\") = 2.4e-005 \"Conversion factor\";
+//   input Real opening(min = 0.0, max = 1.0) \"Valve position in the range 0-1\";
+//   parameter Real p_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Nominal inlet pressure\";
+//   parameter Real Fxt_full = 0.5 \"Fk*xt critical ratio at full opening\";
+//   Real Fxt;
+//   Real x \"Pressure drop ratio\";
+//   Real xs \"Saturated pressure drop ratio\";
+//   Real Y \"Compressibility factor\";
+//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Inlet pressure\";
+//   protected parameter Real Fxt_nominal(fixed = false) \"Nominal Fxt\";
+//   protected parameter Real x_nominal(fixed = false) \"Nominal pressure drop ratio\";
+//   protected parameter Real xs_nominal(fixed = false) \"Nominal saturated pressure drop ratio\";
+//   protected parameter Real Y_nominal(fixed = false) \"Nominal compressibility factor\";
+//   Real port_a_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.Fluid.Utilities.regStep(port_a.m_flow,Modelica.Fluid.Valves.ValveCompressible.Medium.temperature(state_a),Modelica.Fluid.Valves.ValveCompressible.Medium.temperature(Modelica.Fluid.Valves.ValveCompressible.Medium.setState_phX(port_a.p,port_a.h_outflow,{})),m_flow_small) \"Temperature close to port_a, if show_T = true\";
+//   Real port_b_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.Fluid.Utilities.regStep(port_b.m_flow,Modelica.Fluid.Valves.ValveCompressible.Medium.temperature(state_b),Modelica.Fluid.Valves.ValveCompressible.Medium.temperature(Modelica.Fluid.Valves.ValveCompressible.Medium.setState_phX(port_b.p,port_b.h_outflow,{})),m_flow_small) \"Temperature close to port_b, if show_T = true\";
+//   Real V_flow(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = m_flow / Modelica.Fluid.Utilities.regStep(m_flow,Modelica.Fluid.Valves.ValveCompressible.Medium.density(state_a),Modelica.Fluid.Valves.ValveCompressible.Medium.density(state_b),m_flow_small) \"Volume flow rate at inflowing port (positive when flow from port_a to port_b)\";
+//   parameter Real dp_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = dp_nominal \"Guess value of dp = port_a.p - port_b.p\";
+//   parameter Real m_flow_start(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = m_flow_nominal \"Guess value of m_flow = port_a.m_flow\";
+//   parameter Real Av(quantity = \"Area\", unit = \"m2\", start = (Modelica.Fluid.Valves.ValveCompressible.valveCharacteristic(opening_nominal) * m_flow_nominal) / sqrt(rho_nominal * dp_nominal), fixed = CvData == Modelica.Fluid.Types.CvTypes.Av) = 0.0 \"Av (metric) flow coefficient\";
+//   Real dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = dp_start) \"Pressure difference between port_a and port_b (= port_a.p - port_b.p)\";
+//   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+060 else 0.0, max = 100000.0, start = m_flow_start) \"Mass flow rate in design flow direction\";
+// initial equation
+//   Fxt_nominal = Fxt_full * Modelica.Fluid.Valves.ValveCompressible.xtCharacteristic(opening_nominal);
+//   x_nominal = dp_nominal / p_nominal;
+//   xs_nominal = if x_nominal > Fxt_nominal then Fxt_nominal else x_nominal;
+//   Y_nominal = 1.0 + (-abs(xs_nominal)) / (Fxt_nominal * 3.0);
+//   m_flow_nominal = Modelica.Fluid.Valves.ValveCompressible.valveCharacteristic(opening_nominal) * (Av * (Y_nominal * (sqrt(rho_nominal) * Modelica.Fluid.Utilities.regRoot(p_nominal * xs_nominal,dp_small))));
+// equation
+//   p = if noEvent(dp >= 0.0) then port_a.p else port_b.p;
+//   Fxt = Fxt_full * Modelica.Fluid.Valves.ValveCompressible.xtCharacteristic(opening);
+//   x = dp / p;
+//   xs = if x < -Fxt then -Fxt else if x > Fxt then Fxt else x;
+//   Y = 1.0 + (-abs(xs)) / (Fxt * 3.0);
+//   m_flow = Modelica.Fluid.Valves.ValveCompressible.valveCharacteristic(opening) * (Av * (Y * (Modelica.Fluid.Utilities.regRoot(p * xs,dp_small) * (if xs >= 0.0 then sqrt(Modelica.Fluid.Valves.ValveCompressible.Medium.density(state_a)) else sqrt(Modelica.Fluid.Valves.ValveCompressible.Medium.density(state_b))))));
+//   port_a.h_outflow = port_b.h_outflow;
+//   port_b.h_outflow = port_a.h_outflow;
+//   state_a = Modelica.Fluid.Valves.ValveCompressible.Medium.setState_phX(port_a.p,port_a.h_outflow,{});
+//   state_b = Modelica.Fluid.Valves.ValveCompressible.Medium.setState_phX(port_b.p,port_b.h_outflow,{});
+//   dp = port_a.p - port_b.p;
+//   m_flow = port_a.m_flow;
+//   assert(m_flow > -m_flow_small or allowFlowReversal,\"Reverting flow occurs even though allowFlowReversal is false\");
+//   port_a.m_flow + port_b.m_flow = 0.0;
+//   port_a.m_flow = 0.0;
+//   port_b.m_flow = 0.0;
+// end Modelica.Fluid.Valves.ValveCompressible;
+// "
 // "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
 //   The existing 'inner' components are: 
 //     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Valves.ValveCompressible.
@@ -28,62 +203,23 @@ checkModel(Modelica.Fluid.Valves.ValveCompressible); getErrorString();
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
-// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
 // Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter p_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// [Interfaces.mo:230:45-230:68:writable] Error: Class .Modelica.Fluid.Valves.ValveCompressible.Medium not found in scope Modelica.Fluid.Interfaces.FluidPort_a.Medium.
-// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// [Interfaces.mo:230:45-230:68:writable] Error: Class .Modelica.Fluid.Valves.ValveCompressible.Medium not found in scope Modelica.Fluid.Interfaces.FluidPort_a.Medium.
-// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// [Interfaces.mo:230:45-230:68:writable] Error: Class .Modelica.Fluid.Valves.ValveCompressible.Medium not found in scope Modelica.Fluid.Interfaces.FluidPort_a.Medium.
-// [Interfaces.mo:13:5-14:68:writable] Error: Class Medium.MassFlowRate not found in scope Modelica.Fluid.Interfaces.FluidPort_a while instantiating port_a.m_flow.
-// Error: Error occurred while flattening model Modelica.Fluid.Valves.ValveCompressible
+// Warning: Parameter p_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
 // "
-// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+// "Check of Modelica.Fluid.Valves.ValveCompressible completed successfully.
+// 
+// Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
 //   The existing 'inner' components are: 
 //     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Valves.ValveCompressible.
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// [Interfaces.mo:230:45-230:68:writable] Error: Class .Modelica.Fluid.Valves.ValveCompressible.Medium not found in scope Modelica.Fluid.Interfaces.FluidPort_a.Medium.
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// [Interfaces.mo:230:45-230:68:writable] Error: Class .Modelica.Fluid.Valves.ValveCompressible.Medium not found in scope Modelica.Fluid.Interfaces.FluidPort_a.Medium.
-// [Interfaces.mo:322:3-324:41:writable] Error: Variable system.m_flow_small not found in scope Modelica.Fluid.Valves.ValveCompressible
-// [Interfaces.mo:230:45-230:68:writable] Error: Class .Modelica.Fluid.Valves.ValveCompressible.Medium not found in scope Modelica.Fluid.Interfaces.FluidPort_a.Medium.
-// [Interfaces.mo:13:5-14:68:writable] Error: Class Medium.MassFlowRate not found in scope Modelica.Fluid.Interfaces.FluidPort_a while instantiating port_a.m_flow.
-// Error: Error occurred while flattening model Modelica.Fluid.Valves.ValveCompressible
+// 
+// Class Modelica.Fluid.Valves.ValveCompressible has 18 equation(s) and 16 variable(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // endResult
