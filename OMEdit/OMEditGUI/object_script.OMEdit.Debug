@@ -3,7 +3,7 @@ INPUT(
 ./debug\mainwindow.o
 ./debug\ProjectTabWidget.o
 ./debug\LibraryWidget.o
-./debug\MessageWidget.o
+./debug\ProblemsWidget.o
 ./debug\omc_communication.o
 ./debug\OMCProxy.o
 ./debug\OMCThread.o
@@ -32,10 +32,11 @@ INPUT(
 ./debug\BitmapAnnotation.o
 ./debug\InteractiveSimulationTabWidget.o
 ./debug\PlotWindowContainer.o
+./debug\FMIWidget.o
 ./debug\moc_mainwindow.o
 ./debug\moc_ProjectTabWidget.o
 ./debug\moc_LibraryWidget.o
-./debug\moc_MessageWidget.o
+./debug\moc_ProblemsWidget.o
 ./debug\moc_OMCProxy.o
 ./debug\moc_OMCThread.o
 ./debug\moc_ModelWidget.o
@@ -57,5 +58,6 @@ INPUT(
 ./debug\moc_BitmapAnnotation.o
 ./debug\moc_InteractiveSimulationTabWidget.o
 ./debug\moc_PlotWindowContainer.o
+./debug\moc_FMIWidget.o
 ./debug\qrc_resource_omedit.o
 );
