@@ -35,7 +35,7 @@ val(h,3);
 //   inflating: .//sources/BouncingBall_records.c  
 // 
 // 
-// false
+// true
 // true
 // ""
 // record SimulationResult

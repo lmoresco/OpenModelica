@@ -57,7 +57,7 @@ val(height,3);
 //   inflating: .//sources/fmuTemplate.h  
 // 
 // 
-// false
+// true
 // true
 // ""
 // record SimulationResult
@@ -79,7 +79,7 @@ val(height,3);
 //   inflating: .//sources/vanDerPol.c  
 // 
 // 
-// false
+// true
 // true
 // ""
 // record SimulationResult
@@ -97,7 +97,7 @@ val(height,3);
 //   inflating: .//binaries/win32/CPUCooling_04b_CoolingFin.lib  
 // 
 // 
-// false
+// true
 // true
 // ""
 // record SimulationResult
@@ -115,7 +115,7 @@ val(height,3);
 //   inflating: .//binaries/win32/bouncingBall.lib  
 // 
 // 
-// false
+// true
 // true
 // ""
 // record SimulationResult

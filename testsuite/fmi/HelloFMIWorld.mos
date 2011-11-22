@@ -1,7 +1,7 @@
 // name:     HelloFMIWorld
 // keywords: fmu export
 // status: correct
-// teardown_command: rm -rf HelloFMIWorld.fmu binaries sources modelDescription.xml HelloFMIWorldFMUImport.mo fmu*.log FMUImport_* HelloFMIWorld_* HelloFMIWorld.log HelloFMIWorld.libs HelloFMIWorld HelloFMIWorld.exe HelloFMIWorld.cpp HelloFMIWorld.makefile output.log HelloFMIWorld/*
+// teardown_command: rm -rf binaries sources modelDescription.xml HelloFMIWorld.fmu HelloFMIWorldFMUImport.mo fmu*.log FMUImport_* HelloFMIWorld_* HelloFMIWorld.log HelloFMIWorld.libs HelloFMIWorld HelloFMIWorld.exe HelloFMIWorld.cpp HelloFMIWorld.makefile output.log HelloFMIWorld/*
 //
 // Event handling
 //
@@ -34,7 +34,7 @@ val(x,1);
 //   inflating: .//sources/HelloFMIWorld_records.c  
 // 
 // 
-// false
+// true
 // true
 // ""
 // record SimulationResult
