@@ -1,6 +1,6 @@
 MATH_OBJS = bigden.o enorm.o hybrd1.o nelmead.o qform.o r1updt.o biglag.o dogleg.o fdjac1.o hybrj.o newuoa.o qrfac.o trsapp.o dpmpar.o hybrd.o lsame.o newuob.o r1mpyq.o update.o events.o ringbuffer.o delay.o initialization.o dgesv_aux.o list.o
 
-SOLVER_OBJS = daux.o ddasrt.o ddassl.o dlamch.o dlinpk.o solver_main.o
+SOLVER_OBJS = daux.o ddasrt.o ddassl.o dlamch.o dlinpk.o solver_main.o dassl.o
 
 RESULTS_OBJS =  read_csv.o read_matlab4.o simulation_result_csv.o simulation_result_mat.o  simulation_result_plt.o
 
