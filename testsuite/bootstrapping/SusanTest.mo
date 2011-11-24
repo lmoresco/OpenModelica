@@ -5,7 +5,7 @@ function main
 protected
   list<String> args_1;
 algorithm
-  args_1 := RTOpts.args(args);
+  args_1 := Flags.new(args);
   _ := match (args_1)
     local
       String arg;

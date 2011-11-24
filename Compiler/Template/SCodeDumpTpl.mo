@@ -12,7 +12,7 @@ public import Tpl;
 public import Absyn;
 public import Dump;
 public import SCode;
-public import RTOpts;
+public import Config;
 
 public function dumpProgram
   input Tpl.Text txt;
@@ -4968,7 +4968,7 @@ public function dumpAnnotation
 protected
   Boolean ret_0;
 algorithm
-  ret_0 := RTOpts.showAnnotations();
+  ret_0 := Config.showAnnotations();
   out_txt := fun_135(txt, ret_0, a_annotation);
 end dumpAnnotation;
 
@@ -5357,7 +5357,7 @@ public function dumpComment
 protected
   Boolean ret_0;
 algorithm
-  ret_0 := RTOpts.showAnnotations();
+  ret_0 := Config.showAnnotations();
   out_txt := fun_149(txt, ret_0, a_comment);
 end dumpComment;
 

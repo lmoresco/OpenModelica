@@ -1,6 +1,6 @@
 // name: SimplifyTest
 // status: correct
-setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
+setCommandLineOptions({"+g=MetaModelica", "+d=rml,noevalfunc"});
 
 runScript("LoadCompilerSources.mos");
 loadFile("SimplifyTest.mo");

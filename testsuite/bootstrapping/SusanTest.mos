@@ -5,15 +5,27 @@
 setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
 loadFile("../../Compiler/FrontEnd/Absyn.mo");
 getErrorString();
+loadFile("../../Compiler/Global/Global.mo");
+getErrorString();
+loadFile("../../Compiler/Util/Corba.mo");
+getErrorString();
 loadFile("../../Compiler/Util/Debug.mo");
 getErrorString();
 loadFile("../../Compiler/Util/Error.mo");
 getErrorString();
 loadFile("../../Compiler/Util/ErrorExt.mo");
 getErrorString();
+loadFile("../../Compiler/Util/Flags.mo");
+getErrorString();
+loadFile("../../Compiler/Util/Name.mo");
+getErrorString();
+loadFile("../../Compiler/Util/Pool.mo");
+getErrorString();
 loadFile("../../Compiler/Util/Print.mo");
 getErrorString();
-loadFile("../../Compiler/Util/RTOpts.mo");
+loadFile("../../Compiler/Util/Scope.mo");
+getErrorString();
+loadFile("../../Compiler/Util/Settings.mo");
 getErrorString();
 loadFile("../../Compiler/Util/System.mo");
 getErrorString();
@@ -56,6 +68,18 @@ getErrorString();
 
 // Result:
 // {true,true}
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
 // true
 // ""
 // true
