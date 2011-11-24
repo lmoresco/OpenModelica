@@ -42,19 +42,6 @@ val(height,3);
 
 
 // Result:
-// Archive:  testedFMU/fmusdk1.0.2/bouncingBall.fmu
-//    creating: .//binaries/          
-//    creating: .//binaries/win32/    
-//   inflating: .//binaries/win32/bouncingBall.dll  
-//    creating: .//documentation/     
-//   inflating: .//documentation/plot_h.PNG  
-//   inflating: .//documentation/_main.html  
-//  extracting: .//model.png            
-//   inflating: .//modelDescription.xml  
-//    creating: .//sources/           
-//   inflating: .//sources/bouncingBall.c  
-//   inflating: .//sources/fmuTemplate.c  
-//   inflating: .//sources/fmuTemplate.h  
 // 
 // 
 // true
@@ -68,15 +55,6 @@ val(height,3);
 // 1.0
 // 0.291428261319518
 // 0.00292382051359584
-// Archive:  testedFMU/fmusdk1.0.2/vanDerPol.fmu
-//   inflating: .//binaries/win32/vanDerPol.dll  
-//   inflating: .//documentation/plot_states.png  
-//   inflating: .//documentation/_main.html  
-//  extracting: .//model.png            
-//   inflating: .//modelDescription.xml  
-//   inflating: .//sources/fmuTemplate.c  
-//   inflating: .//sources/fmuTemplate.h  
-//   inflating: .//sources/vanDerPol.c  
 // 
 // 
 // true
@@ -91,10 +69,6 @@ val(height,3);
 // 1.51642970053358
 // 0.0
 // -0.777047817635994
-// Archive:  testedFMU/dymola7.4/CPUCooling.fmu
-//   inflating: .//modelDescription.xml  
-//   inflating: .//binaries/win32/CPUCooling_04b_CoolingFin.dll  
-//   inflating: .//binaries/win32/CPUCooling_04b_CoolingFin.lib  
 // 
 // 
 // true
@@ -109,10 +83,6 @@ val(height,3);
 // 371.952328358773
 // 300.0
 // 372.409798219034
-// Archive:  testedFMU/dymola7.4/bouncingBall.fmu
-//   inflating: .//modelDescription.xml  
-//   inflating: .//binaries/win32/bouncingBall.dll  
-//   inflating: .//binaries/win32/bouncingBall.lib  
 // 
 // 
 // true
