@@ -12605,19 +12605,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.MUL_SCALAR_ARRAY(ty = i_ty) )
-      equation
-        txt = expTypeShort(txt, i_ty);
-      then txt;
-
-    case ( txt,
            DAE.MUL_ARRAY_SCALAR(ty = i_ty) )
-      equation
-        txt = expTypeShort(txt, i_ty);
-      then txt;
-
-    case ( txt,
-           DAE.ADD_SCALAR_ARRAY(ty = i_ty) )
       equation
         txt = expTypeShort(txt, i_ty);
       then txt;
@@ -12630,12 +12618,6 @@ algorithm
 
     case ( txt,
            DAE.SUB_SCALAR_ARRAY(ty = i_ty) )
-      equation
-        txt = expTypeShort(txt, i_ty);
-      then txt;
-
-    case ( txt,
-           DAE.SUB_ARRAY_SCALAR(ty = i_ty) )
       equation
         txt = expTypeShort(txt, i_ty);
       then txt;

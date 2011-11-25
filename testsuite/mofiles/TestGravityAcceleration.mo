@@ -117,7 +117,7 @@ end TestGravityAcceleration;
 // 
 // function Math.normalize "Return normalized vector such that length = 1Return normalized vector such that length = 1 and prevent zero-division for zero vector"
 //   input Real[:] v "Vector";
-//   input Real eps = 1e-013 "if |v| < eps then result = v/eps";
+//   input Real eps = 1e-13 "if |v| < eps then result = v/eps";
 //   output Real[size(v,1)] result "Input vector v normalized to length=1";
 // algorithm
 //   result := if Math.length(v) >= eps then v / Math.length(v) else v / eps;
@@ -137,13 +137,13 @@ end TestGravityAcceleration;
 //   parameter Real w.n[1](unit = "1") = 0.0;
 //   parameter Real w.n[2](unit = "1") = -1.0;
 //   parameter Real w.n[3](unit = "1") = 0.0;
-//   parameter Real w.mue(unit = "m3/s2", min = 0.0) = 398600000000000 "Gravity field constant (default = field constant of earth)";
+//   parameter Real w.mue(unit = "m3/s2", min = 0.0) = 398600000000000.0 "Gravity field constant (default = field constant of earth)";
 //   parameter enumeration(NoGravity, UniformGravity, PointGravity) w.gravityType = Types.GravityTypes.UniformGravity;
 //   parameter Real w.g = 9.81 "Constant gravity acceleration";
 //   Real gravity[1];
 //   Real gravity[2];
 //   Real gravity[3];
 // equation
-//   gravity = TestGravityAcceleration.w__gravityAcceleration({1.0,5.0,6.0},w.gravityType,w.g * Math.normalize({w.n[1],w.n[2],w.n[3]},1e-013),w.mue);
+//   gravity = TestGravityAcceleration.w__gravityAcceleration({1.0,5.0,6.0},w.gravityType,Math.normalize({w.n[1],w.n[2],w.n[3]},1e-13) * w.g,w.mue);
 // end TestGravityAcceleration;
 // endResult

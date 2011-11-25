@@ -26203,19 +26203,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.MUL_SCALAR_ARRAY(ty = i_ty) )
-      equation
-        txt = expTypeShort(txt, i_ty);
-      then txt;
-
-    case ( txt,
            DAE.MUL_ARRAY_SCALAR(ty = i_ty) )
-      equation
-        txt = expTypeShort(txt, i_ty);
-      then txt;
-
-    case ( txt,
-           DAE.ADD_SCALAR_ARRAY(ty = i_ty) )
       equation
         txt = expTypeShort(txt, i_ty);
       then txt;
@@ -26228,12 +26216,6 @@ algorithm
 
     case ( txt,
            DAE.SUB_SCALAR_ARRAY(ty = i_ty) )
-      equation
-        txt = expTypeShort(txt, i_ty);
-      then txt;
-
-    case ( txt,
-           DAE.SUB_ARRAY_SCALAR(ty = i_ty) )
       equation
         txt = expTypeShort(txt, i_ty);
       then txt;
@@ -27085,7 +27067,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4623, 12), "algStmtTupleAssign failed");
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4620, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
@@ -30550,21 +30532,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.MUL_SCALAR_ARRAY(ty = i_o_ty),
-           a_flag )
-      equation
-        txt = expTypeFlag(txt, i_o_ty, a_flag);
-      then txt;
-
-    case ( txt,
            DAE.MUL_ARRAY_SCALAR(ty = i_o_ty),
-           a_flag )
-      equation
-        txt = expTypeFlag(txt, i_o_ty, a_flag);
-      then txt;
-
-    case ( txt,
-           DAE.ADD_SCALAR_ARRAY(ty = i_o_ty),
            a_flag )
       equation
         txt = expTypeFlag(txt, i_o_ty, a_flag);
@@ -30579,13 +30547,6 @@ algorithm
 
     case ( txt,
            DAE.SUB_SCALAR_ARRAY(ty = i_o_ty),
-           a_flag )
-      equation
-        txt = expTypeFlag(txt, i_o_ty, a_flag);
-      then txt;
-
-    case ( txt,
-           DAE.SUB_ARRAY_SCALAR(ty = i_o_ty),
            a_flag )
       equation
         txt = expTypeFlag(txt, i_o_ty, a_flag);
