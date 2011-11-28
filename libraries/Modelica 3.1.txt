@@ -2,6 +2,10 @@ A full copy of Modelica Standard Library 3.1 from:
  https://svn.modelica.org/projects/Modelica/branches/maintenance/3.1
 Revision 4084
 
+Added by perost, 2011-11-28
+Modelica/Media/package.mo Changed nX to : in function ending with X in
+PartialTwoPhaseMedium to make them have the correct dimensions.
+
 Added by sjoelund.se, 2011-10-04
 Modelica/Electrical/Analog/Lines.mo fixed according to https://trac.modelica.org/Modelica/ticket/485
 
