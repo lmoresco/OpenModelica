@@ -38,7 +38,7 @@ checkModel(FinalPropagation); getErrorString();
 // 
 // Known Variables (constants) (1)
 // =============================
-// 1:  r.b:PARAM(final = true )  = 1.0 FinalPropagation, .FinalPropagation.R, .Real type: Real (final = true )  indx = -1
+// 1:  r.b:PARAM(final = true )  = 1.0 .FinalPropagation, .FinalPropagation.R, .Real type: Real (final = true )  indx = -1
 // External Objects (0)
 // =============================
 // Classes of External Objects (0)

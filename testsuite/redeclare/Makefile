@@ -18,6 +18,8 @@ Redeclare2.mo \
 Redeclare3.mo \
 Redeclare4.mo \
 Redeclare5.mo \
+Redeclare6.mo \
+Redeclare6.mos \
 RedeclareBaseClass1.mo \
 RedeclareFlowEffort.mo \
 RedeclareFunction.mo \
