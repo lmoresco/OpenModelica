@@ -5772,7 +5772,7 @@ end PartialMixtureMedium;
         extends Modelica.Icons.Function;
         input AbsolutePressure p "Pressure";
         input Temperature T "Temperature";
-        input MassFraction X[nX] "Mass fractions";
+        input MassFraction X[:] "Mass fractions";
         input FixedPhase phase=0
         "2 for two-phase, 1 for one-phase, 0 if not known";
         output SpecificEnthalpy h "Specific enthalpy at p, T, X";
@@ -5786,7 +5786,7 @@ end PartialMixtureMedium;
         extends Modelica.Icons.Function;
         input AbsolutePressure p "Pressure";
         input SpecificEnthalpy h "Specific enthalpy";
-        input MassFraction X[nX] "Mass fractions";
+        input MassFraction X[:] "Mass fractions";
         input FixedPhase phase=0
         "2 for two-phase, 1 for one-phase, 0 if not known";
         output Temperature T "Temperature";
@@ -5800,7 +5800,7 @@ end PartialMixtureMedium;
         extends Modelica.Icons.Function;
         input AbsolutePressure p "Pressure";
         input SpecificEnthalpy h "Specific enthalpy";
-        input MassFraction X[nX] "Mass fractions";
+        input MassFraction X[:] "Mass fractions";
         input FixedPhase phase=0
         "2 for two-phase, 1 for one-phase, 0 if not known";
         output Density d "density";
@@ -5814,7 +5814,7 @@ end PartialMixtureMedium;
         extends Modelica.Icons.Function;
         input AbsolutePressure p "Pressure";
         input SpecificEntropy s "Specific entropy";
-        input MassFraction X[nX] "Mass fractions";
+        input MassFraction X[:] "Mass fractions";
         input FixedPhase phase=0
         "2 for two-phase, 1 for one-phase, 0 if not known";
         output Temperature T "Temperature";
@@ -5828,7 +5828,7 @@ end PartialMixtureMedium;
         extends Modelica.Icons.Function;
         input AbsolutePressure p "Pressure";
         input SpecificEntropy s "Specific entropy";
-        input MassFraction X[nX] "Mass fractions";
+        input MassFraction X[:] "Mass fractions";
         input FixedPhase phase=0
         "2 for two-phase, 1 for one-phase, 0 if not known";
         output Density d "Density";
@@ -5842,7 +5842,7 @@ end PartialMixtureMedium;
         extends Modelica.Icons.Function;
         input AbsolutePressure p "Pressure";
         input SpecificEntropy s "Specific entropy";
-        input MassFraction X[nX] "Mass fractions";
+        input MassFraction X[:] "Mass fractions";
         input FixedPhase phase=0
         "2 for two-phase, 1 for one-phase, 0 if not known";
         output SpecificEnthalpy h "specific enthalpy";
