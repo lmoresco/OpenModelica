@@ -10271,15 +10271,6 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.UPLUS(ty = _),
-           a_e )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
-        txt = Tpl.writeText(txt, a_e);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
-      then txt;
-
-    case ( txt,
            DAE.NOT(ty = _),
            a_e )
       equation
@@ -10293,13 +10284,6 @@ algorithm
            _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("UMINUS_ARR_NOT_IMPLEMENTED"));
-      then txt;
-
-    case ( txt,
-           DAE.UPLUS_ARR(ty = _),
-           _ )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("UPLUS_ARR_NOT_IMPLEMENTED"));
       then txt;
 
     case ( txt,
@@ -12563,19 +12547,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.UPLUS(ty = i_ty) )
-      equation
-        txt = expTypeShort(txt, i_ty);
-      then txt;
-
-    case ( txt,
            DAE.UMINUS_ARR(ty = i_ty) )
-      equation
-        txt = expTypeShort(txt, i_ty);
-      then txt;
-
-    case ( txt,
-           DAE.UPLUS_ARR(ty = i_ty) )
       equation
         txt = expTypeShort(txt, i_ty);
       then txt;

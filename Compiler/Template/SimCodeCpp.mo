@@ -24013,16 +24013,6 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.UPLUS(ty = _),
-           a_preExp,
-           a_e )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
-        txt = Tpl.writeText(txt, a_e);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
-      then (txt, a_preExp);
-
-    case ( txt,
            DAE.UMINUS_ARR(ty = DAE.ET_ARRAY(ty = DAE.ET_REAL())),
            a_preExp,
            a_e )
@@ -24040,14 +24030,6 @@ algorithm
            _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("unary minus for non-real arrays not implemented"));
-      then (txt, a_preExp);
-
-    case ( txt,
-           DAE.UPLUS_ARR(ty = _),
-           a_preExp,
-           _ )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("UPLUS_ARR_NOT_IMPLEMENTED"));
       then (txt, a_preExp);
 
     case ( txt,
@@ -26161,19 +26143,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.UPLUS(ty = i_ty) )
-      equation
-        txt = expTypeShort(txt, i_ty);
-      then txt;
-
-    case ( txt,
            DAE.UMINUS_ARR(ty = i_ty) )
-      equation
-        txt = expTypeShort(txt, i_ty);
-      then txt;
-
-    case ( txt,
-           DAE.UPLUS_ARR(ty = i_ty) )
       equation
         txt = expTypeShort(txt, i_ty);
       then txt;
@@ -27067,7 +27037,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4620, 12), "algStmtTupleAssign failed");
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4616, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
@@ -30483,21 +30453,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.UPLUS(ty = i_o_ty),
-           a_flag )
-      equation
-        txt = expTypeFlag(txt, i_o_ty, a_flag);
-      then txt;
-
-    case ( txt,
            DAE.UMINUS_ARR(ty = i_o_ty),
-           a_flag )
-      equation
-        txt = expTypeFlag(txt, i_o_ty, a_flag);
-      then txt;
-
-    case ( txt,
-           DAE.UPLUS_ARR(ty = i_o_ty),
            a_flag )
       equation
         txt = expTypeFlag(txt, i_o_ty, a_flag);
