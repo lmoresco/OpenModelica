@@ -24,7 +24,7 @@ checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 //   input Real x \"Abszissa value\";
 //   input Real y1 \"Ordinate value for x > 0\";
 //   input Real y2 \"Ordinate value for x < 0\";
-//   input Real x_small(min = 0.0) = 1e-005 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
+//   input Real x_small(min = 0.0) = 1e-05 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
 //   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
 // algorithm
 //   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
@@ -145,7 +145,7 @@ checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 //   medium.state.T = medium.T;
 //   medium.state.p = medium.p;
 //   medium.X[1] = 1.0;
-//   assert(medium.X[1] >= -1e-005 and medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
+//   assert(medium.X[1] >= -1e-05 and medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
 // of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
 //   assert(medium.p >= 0.0,\"Pressure (= \" + String(medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
 // (Temperature = \" + String(medium.T,0,true,6) + \" K)\");
@@ -162,7 +162,7 @@ checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 //   medium2.state.T = medium2.T;
 //   medium2.state.p = medium2.p;
 //   medium2.X[1] = 1.0;
-//   assert(medium2.X[1] >= -1e-005 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
+//   assert(medium2.X[1] >= -1e-05 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
 // of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
 //   assert(medium2.p >= 0.0,\"Pressure (= \" + String(medium2.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
 // (Temperature = \" + String(medium2.T,0,true,6) + \" K)\");

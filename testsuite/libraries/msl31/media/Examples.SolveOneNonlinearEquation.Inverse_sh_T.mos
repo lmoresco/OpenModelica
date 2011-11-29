@@ -33,7 +33,7 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 //   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 // algorithm
-//   T := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.solve(h,200.0,6000.0,100000.0,{1.0},Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),1e-013);
+//   T := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.solve(h,200.0,6000.0,100000.0,{1.0},Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),1e-13);
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.f_nonlinear \"Nonlinear algebraic equation in one unknown: y = f_nonlinear(x,p,X)\"
@@ -55,9 +55,9 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 //   input Real pressure = 0.0 \"disregaded variables (here always used for pressure)\";
 //   input Real[:] X = {} \"disregaded variables (here always used for composition)\";
 //   input Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.f_nonlinear_Data f_nonlinear_data \"Additional data for function f_nonlinear\";
-//   input Real x_tol = 1e-013 \"Relative tolerance of the result\";
+//   input Real x_tol = 1e-13 \"Relative tolerance of the result\";
 //   output Real x_zero \"f_nonlinear(x_zero) = y_zero\";
-//   protected constant Real eps = 1e-015 \"machine epsilon\";
+//   protected constant Real eps = 1e-15 \"machine epsilon\";
 //   protected Real a = x_min \"Current best minimum interval value\";
 //   protected Real b = x_max \"Current best maximum interval value\";
 //   protected Real c \"Intermediate point a <= c <= b\";
@@ -100,7 +100,7 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 //       fb := fc;
 //       fc := fa;
 //     end if;
-//     tol := 2e-015 * abs(b) + x_tol;
+//     tol := 2e-15 * abs(b) + x_tol;
 //     m := c / 2.0 + -b / 2.0;
 //     if abs(m) <= tol or fb == 0.0 then
 //       found := true;
@@ -153,7 +153,7 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 //   input Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
 //   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 // algorithm
-//   T := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.solve(s,200.0,6000.0,p,{1.0},Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),1e-013);
+//   T := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.solve(s,200.0,6000.0,p,{1.0},Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),1e-13);
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.f_nonlinear \"Nonlinear algebraic equation in one unknown: y = f_nonlinear(x,p,X)\"
@@ -175,9 +175,9 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 //   input Real pressure = 0.0 \"disregaded variables (here always used for pressure)\";
 //   input Real[:] X = {} \"disregaded variables (here always used for composition)\";
 //   input Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.f_nonlinear_Data f_nonlinear_data \"Additional data for function f_nonlinear\";
-//   input Real x_tol = 1e-013 \"Relative tolerance of the result\";
+//   input Real x_tol = 1e-13 \"Relative tolerance of the result\";
 //   output Real x_zero \"f_nonlinear(x_zero) = y_zero\";
-//   protected constant Real eps = 1e-015 \"machine epsilon\";
+//   protected constant Real eps = 1e-15 \"machine epsilon\";
 //   protected Real a = x_min \"Current best minimum interval value\";
 //   protected Real b = x_max \"Current best maximum interval value\";
 //   protected Real c \"Intermediate point a <= c <= b\";
@@ -220,7 +220,7 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 //       fb := fc;
 //       fc := fa;
 //     end if;
-//     tol := 2e-015 * abs(b) + x_tol;
+//     tol := 2e-15 * abs(b) + x_tol;
 //     m := c / 2.0 + -b / 2.0;
 //     if abs(m) <= tol or fb == 0.0 then
 //       found := true;
@@ -291,7 +291,7 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Specific entropy at temperature T\";
 // algorithm
-//   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + -0.5 * data.alow[1] * T ^ -2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + -0.5 * data.ahigh[1] * T ^ -2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
+//   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + (-0.5 * data.alow[1]) / T ^ 2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + (-0.5 * data.ahigh[1]) / T ^ 2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.s0_T;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_pT \"Return thermodynamic state from p and T\"
@@ -333,7 +333,7 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 //   input Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),state.T,true,Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -349,7 +349,7 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 //   input Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
 // algorithm
-//   s := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.s0_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),state.T) + -287.051224952979 * log(state.p / 101325.0);
+//   s := Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.s0_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),state.T) + -287.051224952979 * log(state.p / 101325.0);
 // end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.specificEntropy;
 // 
 // function Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.temperature \"return temperature of ideal gas\"
@@ -415,8 +415,8 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 //   Real Th(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature computed from h1\";
 //   Real Ts(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature computed from s1\";
 //   protected constant Real timeUnit(quantity = \"Time\", unit = \"s\") = 1.0;
-//   final parameter Real h_min(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T_min,true,Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) \"Specific enthalpy at T_min\";
-//   final parameter Real h_max(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-005,-7.94029797e-009,2.18523191e-012},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-008,-1.07148349e-011,6.57780015e-016},{6462.26319,-8.147411905},287.051224952979),T_max,true,Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) \"Specific enthalpy at T_max\";
+//   final parameter Real h_min(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T_min,true,Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) \"Specific enthalpy at T_min\";
+//   final parameter Real h_max(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979),T_max,true,Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) \"Specific enthalpy at T_max\";
 //   final parameter Real s_min(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") = Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.specificEntropy(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_pT(p,T_min)) \"Specific entropy at T_min\";
 //   final parameter Real s_max(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") = Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.specificEntropy(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.setState_pT(p,T_max)) \"Specific entropy at T_max\";
 // equation

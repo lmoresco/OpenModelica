@@ -133,7 +133,7 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
 //   protected Real[4] Y(unit = \"mol/mol\") = Modelica.Media.Examples.TestOnly.FlueGas.Medium.massToMoleFractions({state.X[1],state.X[2],state.X[3],state.X[4]},{0.0280134,0.0280134,0.0280134,0.0280134}) \"Molar fractions\";
 // algorithm
-//   s := Modelica.Media.Examples.TestOnly.FlueGas.Medium.s_TX(state.T,{state.X[1],state.X[2],state.X[3],state.X[4]}) + (-8.314472 * if state.X[1] < 1e-015 then Y[1] else log((Y[1] * state.p) / 101325.0) * state.X[1]) / MMX[1] + (-8.314472 * if state.X[2] < 1e-015 then Y[2] else log((Y[2] * state.p) / 101325.0) * state.X[2]) / MMX[2] + (-8.314472 * if state.X[3] < 1e-015 then Y[3] else log((Y[3] * state.p) / 101325.0) * state.X[3]) / MMX[3] + (-8.314472 * if state.X[4] < 1e-015 then Y[4] else log((Y[4] * state.p) / 101325.0) * state.X[4]) / MMX[4];
+//   s := Modelica.Media.Examples.TestOnly.FlueGas.Medium.s_TX(state.T,{state.X[1],state.X[2],state.X[3],state.X[4]}) + (-8.314472 * if state.X[1] < 1e-15 then Y[1] else log((Y[1] * state.p) / 101325.0) * state.X[1]) / MMX[1] + (-8.314472 * if state.X[2] < 1e-15 then Y[2] else log((Y[2] * state.p) / 101325.0) * state.X[2]) / MMX[2] + (-8.314472 * if state.X[3] < 1e-15 then Y[3] else log((Y[3] * state.p) / 101325.0) * state.X[3]) / MMX[3] + (-8.314472 * if state.X[4] < 1e-15 then Y[4] else log((Y[4] * state.p) / 101325.0) * state.X[4]) / MMX[4];
 // end Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificEntropy;
 // 
 // function Modelica.Media.Examples.TestOnly.FlueGas.Medium.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
@@ -196,7 +196,7 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Specific entropy at temperature T\";
 // algorithm
-//   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + -0.5 * data.alow[1] * T ^ -2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + -0.5 * data.ahigh[1] * T ^ -2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
+//   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + (-0.5 * data.alow[1]) / T ^ 2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + (-0.5 * data.ahigh[1]) / T ^ 2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
 // end Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T;
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
@@ -290,13 +290,13 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 //   medium2.Xi[2] = medium2.X[2];
 //   medium2.Xi[3] = medium2.X[3];
 //   medium2.Xi[4] = medium2.X[4];
-//   assert(medium2.X[1] >= -1e-005 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(medium2.X[1] >= -1e-05 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"FlueGasLambda1plus\" + \" is not in the range 0..1\");
-//   assert(medium2.X[2] >= -1e-005 and medium2.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium2.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
+//   assert(medium2.X[2] >= -1e-05 and medium2.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium2.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
 // of medium \" + \"FlueGasLambda1plus\" + \" is not in the range 0..1\");
-//   assert(medium2.X[3] >= -1e-005 and medium2.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(medium2.X[3],0,true,6) + \"of substance \" + \"Water\" + \"
+//   assert(medium2.X[3] >= -1e-05 and medium2.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(medium2.X[3],0,true,6) + \"of substance \" + \"Water\" + \"
 // of medium \" + \"FlueGasLambda1plus\" + \" is not in the range 0..1\");
-//   assert(medium2.X[4] >= -1e-005 and medium2.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(medium2.X[4],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
+//   assert(medium2.X[4] >= -1e-05 and medium2.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(medium2.X[4],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
 // of medium \" + \"FlueGasLambda1plus\" + \" is not in the range 0..1\");
 //   assert(medium2.p >= 0.0,\"Pressure (= \" + String(medium2.p,0,true,6) + \" Pa) of medium \\\"\" + \"FlueGasLambda1plus\" + \"\\\" is negative
 // (Temperature = \" + String(medium2.T,0,true,6) + \" K)\");

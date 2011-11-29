@@ -41,7 +41,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   protected Integer rank;
 //   protected Real[max(size(A,1),size(A,2))] xx;
 // algorithm
-//   (xx, info, rank) := Modelica.Math.Matrices.LAPACK.dgelsx_vec(A,b,1e-013);
+//   (xx, info, rank) := Modelica.Math.Matrices.LAPACK.dgelsx_vec(A,b,1e-13);
 //   x := xx[1:size(A,2)];
 //   assert( info == 0, \"Solving an overdetermined or underdetermined linear system of
 // equations with function \\\"Matrices.leastSquares\\\" failed.\");
@@ -847,8 +847,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Initial value of temperature\";
 //   parameter Real h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\") = Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.specificEnthalpy_pTX(101325.0,Modelica.SIunits.Conversions.from_degC(20.0),{1.0}) \"Initial value of specific enthalpy\";
 //   parameter Real X_start[1] = 1.0 \"Initial value of mass fractions\";
-//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-010, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
-//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.Essotherm 650\", unit = \"kg/s\", min = 1e-010, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
+//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-10, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
+//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.Essotherm 650\", unit = \"kg/s\", min = 1e-10, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
 //   Real shortPipe.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real shortPipe.port_a.m_flow(quantity = \"MassFlowRate.Essotherm 650\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real shortPipe.port_a.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
@@ -961,7 +961,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   volume.medium.state.p = volume.medium.p;
 //   volume.medium.MM = 0.1;
 //   volume.medium.X[1] = 1.0;
-//   assert(volume.medium.X[1] >= -1e-005 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"Essotherm 650\" + \"
+//   assert(volume.medium.X[1] >= -1e-05 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"Essotherm 650\" + \"
 // of medium \" + \"Essotherm 650\" + \" is not in the range 0..1\");
 //   assert(volume.medium.p >= 0.0,\"Pressure (= \" + String(volume.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Essotherm 650\" + \"\\\" is negative
 // (Temperature = \" + String(volume.medium.T,0,true,6) + \" K)\");
@@ -982,7 +982,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   fixedMassFlowRate.medium.state.p = fixedMassFlowRate.medium.p;
 //   fixedMassFlowRate.medium.MM = 0.1;
 //   fixedMassFlowRate.medium.X[1] = 1.0;
-//   assert(fixedMassFlowRate.medium.X[1] >= -1e-005 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"Essotherm 650\" + \"
+//   assert(fixedMassFlowRate.medium.X[1] >= -1e-05 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"Essotherm 650\" + \"
 // of medium \" + \"Essotherm 650\" + \" is not in the range 0..1\");
 //   assert(fixedMassFlowRate.medium.p >= 0.0,\"Pressure (= \" + String(fixedMassFlowRate.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Essotherm 650\" + \"\\\" is negative
 // (Temperature = \" + String(fixedMassFlowRate.medium.T,0,true,6) + \" K)\");
@@ -1001,7 +1001,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essother
 //   ambient.medium.state.p = ambient.medium.p;
 //   ambient.medium.MM = 0.1;
 //   ambient.medium.X[1] = 1.0;
-//   assert(ambient.medium.X[1] >= -1e-005 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"Essotherm 650\" + \"
+//   assert(ambient.medium.X[1] >= -1e-05 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"Essotherm 650\" + \"
 // of medium \" + \"Essotherm 650\" + \" is not in the range 0..1\");
 //   assert(ambient.medium.p >= 0.0,\"Pressure (= \" + String(ambient.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Essotherm 650\" + \"\\\" is negative
 // (Temperature = \" + String(ambient.medium.T,0,true,6) + \" K)\");

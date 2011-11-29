@@ -52,7 +52,7 @@ checkModel(Modelica.Media.Water.StandardWater); getErrorString();
 //   constant Real fluidConstants[1].molarMass(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) = 0.018015268 \"molar mass\";
 //   constant Real fluidConstants[1].criticalTemperature(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 647.096 \"critical temperature\";
 //   constant Real fluidConstants[1].criticalPressure(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 22064000.0 \"critical pressure\";
-//   constant Real fluidConstants[1].criticalMolarVolume(quantity = \"MolarVolume\", unit = \"m3/mol\", min = 1e-006, max = 1000000.0, nominal = 1.0) = 5.59480372670807e-005 \"critical molar Volume\";
+//   constant Real fluidConstants[1].criticalMolarVolume(quantity = \"MolarVolume\", unit = \"m3/mol\", min = 1e-06, max = 1000000.0, nominal = 1.0) = 5.59480372670807e-05 \"critical molar Volume\";
 //   constant Real fluidConstants[1].acentricFactor = 0.344 \"Pitzer acentric factor\";
 //   constant Real fluidConstants[1].triplePointTemperature(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 273.16 \"triple point temperature\";
 //   constant Real fluidConstants[1].triplePointPressure(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 611.657 \"triple point pressure\";

@@ -73,11 +73,11 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //     assert( true[], \"Critical data for \" + \"N2\"[] + \" not known. Can not compute viscosity.\");
 //     for j in 1:size(eta,1) loop
 //       if i == 1 then
-//         fi[i,j] := (1.0 + (eta[i] / eta[j]) ^ 0.5 * (M[j] / M[i]) ^ 0.25) ^ 2.0 * (8.0 + (8.0 * M[i]) / M[j]) ^ -0.5;
+//         fi[i,j] := (1.0 + (eta[i] / eta[j]) ^ 0.5 * (M[j] / M[i]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5;
 //       elseif j < i then
 //         fi[i,j] := (fi[j,i] * M[j] * eta[i]) / (eta[j] * M[i]);
 //       else
-//         fi[i,j] := (1.0 + (eta[i] / eta[j]) ^ 0.5 * (M[j] / M[i]) ^ 0.25) ^ 2.0 * (8.0 + (8.0 * M[i]) / M[j]) ^ -0.5;
+//         fi[i,j] := (1.0 + (eta[i] / eta[j]) ^ 0.5 * (M[j] / M[i]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5;
 //       end if;
 //     end for;
 //   end for;
@@ -145,12 +145,12 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //   protected Real[size(y,1), size(y,1)] A \"Mason and Saxena Modification\";
 // algorithm
 //   for i in 1:size(y,1) loop
-//     gamma[i] := 210.0 * Tc[i] ^ 0.166666666666667 * M[i] ^ 0.5 * Pc[i] ^ -0.666666666666667;
+//     gamma[i] := (210.0 * Tc[i] ^ 0.166666666666667 * M[i] ^ 0.5) / Pc[i] ^ 0.666666666666667;
 //     Tr[i] := T / Tc[i];
 //   end for;
 //   for i in 1:size(y,1) loop
 //     for j in 1:size(y,1) loop
-//       A[i,j] := (1.0 + gamma[j] ^ 0.5 * (exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) ^ 0.5 * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j]))) ^ 0.5 * (1.0 / gamma[i]) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 * (8.0 + (8.0 * M[i]) / M[j]) ^ -0.5;
+//       A[i,j] := (1.0 + gamma[j] ^ 0.5 * (exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) ^ 0.5 * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j]))) ^ 0.5 * (1.0 / gamma[i]) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5;
 //     end for;
 //   end for;
 //   lambdam := <reduction>sum((y[i] * lambda[i]) / (<reduction>sum(y[j] * A[i,j] for j in 1:(size(y,1)))) for i in 1:(size(y,1)));
@@ -272,8 +272,8 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //   protected Real Ov \"Viscosity collision integral for the gas\";
 // algorithm
 //   Tstar := (1.2593 * T) / Tc;
-//   Ov := 1.16145 * Tstar ^ -0.14874 + 0.52487 * exp(-0.7732 * Tstar) + 2.16178 * exp(-2.43787 * Tstar);
-//   eta := (Const1_SI * Fc * sqrt(M * T) * Vc ^ -0.666666666666667) / Ov;
+//   Ov := 1.16145 / Tstar ^ 0.14874 + 0.52487 * exp(-0.7732 * Tstar) + 2.16178 * exp(-2.43787 * Tstar);
+//   eta := (Const1_SI * Fc * sqrt(M * T)) / (Vc ^ 0.666666666666667 * Ov);
 // end Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure;
 // 
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.h_T \"Compute specific enthalpy from temperature and gas data; reference is decided by the
@@ -293,7 +293,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Specific entropy at temperature T\";
 // algorithm
-//   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + -0.5 * data.alow[1] * T ^ -2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + -0.5 * data.ahigh[1] * T ^ -2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
+//   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + (-0.5 * data.alow[1]) / T ^ 2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + (-0.5 * data.ahigh[1]) / T ^ 2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
 // end Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T;
 // 
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate \"Thermal conductivity of polyatomic gases(Eucken and Modified Eucken correlation)\"
@@ -451,7 +451,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 // Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
 // Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5
 // Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
-// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 * (8.0 + (8.0 * M[i]) / M[j]) ^ -0.5
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5
 // "
 // "Check of Modelica.Media.Examples.TestOnly.MixIdealGasAir completed successfully.
 // 
@@ -477,7 +477,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 // Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
 // Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5
 // Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
-// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 * (8.0 + (8.0 * M[i]) / M[j]) ^ -0.5
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5
 // 
 // Class Modelica.Media.Examples.TestOnly.MixIdealGasAir has 45 equation(s) and 45 variable(s).
 // 14 of these are trivial equation(s).

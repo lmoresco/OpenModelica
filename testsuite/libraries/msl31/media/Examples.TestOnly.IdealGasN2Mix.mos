@@ -97,7 +97,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
 //   protected Real[1] Y(unit = \"mol/mol\") = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.massToMoleFractions({state.X[1]},{0.0280134}) \"Molar fractions\";
 // algorithm
-//   s := Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.s_TX(state.T,{state.X[1]}) + (-8.314472 * if state.X[1] < 1e-015 then Y[1] else log((Y[1] * state.p) / 101325.0) * state.X[1]) / MMX[1];
+//   s := Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.s_TX(state.T,{state.X[1]}) + (-8.314472 * if state.X[1] < 1e-15 then Y[1] else log((Y[1] * state.p) / 101325.0) * state.X[1]) / MMX[1];
 // end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificEntropy;
 // 
 // function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
@@ -160,7 +160,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Specific entropy at temperature T\";
 // algorithm
-//   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + -0.5 * data.alow[1] * T ^ -2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + -0.5 * data.ahigh[1] * T ^ -2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
+//   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + (-0.5 * data.alow[1]) / T ^ 2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + (-0.5 * data.ahigh[1]) / T ^ 2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
 // end Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T;
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
@@ -225,7 +225,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 //   medium.state.p = medium.p;
 //   medium.state.X[1] = medium.X[1];
 //   medium.Xi[1] = medium.X[1];
-//   assert(medium.X[1] >= -1e-005 and medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(medium.X[1] >= -1e-05 and medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"Nitrogen\" + \" is not in the range 0..1\");
 //   assert(medium.p >= 0.0,\"Pressure (= \" + String(medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Nitrogen\" + \"\\\" is negative
 // (Temperature = \" + String(medium.T,0,true,6) + \" K)\");

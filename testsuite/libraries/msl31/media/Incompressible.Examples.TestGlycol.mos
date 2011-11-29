@@ -41,7 +41,7 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   protected Integer rank;
 //   protected Real[max(size(A,1),size(A,2))] xx;
 // algorithm
-//   (xx, info, rank) := Modelica.Math.Matrices.LAPACK.dgelsx_vec(A,b,1e-013);
+//   (xx, info, rank) := Modelica.Math.Matrices.LAPACK.dgelsx_vec(A,b,1e-13);
 //   x := xx[1:size(A,2)];
 //   assert( info == 0, \"Solving an overdetermined or underdetermined linear system of
 // equations with function \\\"Matrices.leastSquares\\\" failed.\");
@@ -324,7 +324,7 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   medium.state.p = medium.p;
 //   medium.MM = 0.1;
 //   medium.X[1] = 1.0;
-//   assert(medium.X[1] >= -1e-005 and medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium.X[1],0,true,6) + \"of substance \" + \"Glycol-Water 47%\" + \"
+//   assert(medium.X[1] >= -1e-05 and medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium.X[1],0,true,6) + \"of substance \" + \"Glycol-Water 47%\" + \"
 // of medium \" + \"Glycol-Water 47%\" + \" is not in the range 0..1\");
 //   assert(medium.p >= 0.0,\"Pressure (= \" + String(medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Glycol-Water 47%\" + \"\\\" is negative
 // (Temperature = \" + String(medium.T,0,true,6) + \" K)\");

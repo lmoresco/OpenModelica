@@ -41,7 +41,7 @@ checkModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 //   protected Integer rank;
 //   protected Real[max(size(A,1),size(A,2))] xx;
 // algorithm
-//   (xx, info, rank) := Modelica.Math.Matrices.LAPACK.dgelsx_vec(A,b,1e-013);
+//   (xx, info, rank) := Modelica.Math.Matrices.LAPACK.dgelsx_vec(A,b,1e-13);
 //   x := xx[1:size(A,2)];
 //   assert( info == 0, \"Solving an overdetermined or underdetermined linear system of
 // equations with function \\\"Matrices.leastSquares\\\" failed.\");
