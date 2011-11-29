@@ -4,8 +4,9 @@
 
 top_builddir= ../..
 
-CPPSRC = omi_Calculation.cpp omi_Control.cpp omi_ResultManager.cpp \
-				 omi_ServiceInterface.cpp omi_Transfer.cpp socket.cpp thread.cpp
+#CPPSRC = omi_Calculation.cpp omi_Control.cpp omi_ResultManager.cpp \
+#				 omi_ServiceInterface.cpp omi_Transfer.cpp socket.cpp thread.cpp
+CPPSRC = socket.cpp thread.cpp
 
 SHELL	= /bin/sh
 CC	= gcc
@@ -16,9 +17,9 @@ OBJ = $(CPPSRC:.cpp=.o)
 
 all: libinteractive.a client install
 
-omc_ServiceInterface.o: omi_ServiceInterface.h omi_Control.h omi_Transfer.h \
-  ../c/simulation/simulation_runtime.h ../c/simulation/simulation_input_xml.h ../c/simulation/solver/solver_dasrt.h \
-  ../c/simulation/solver/solver_main.h ../c/simulation/options.h
+#omc_ServiceInterface.o: omi_ServiceInterface.h omi_Control.h omi_Transfer.h \
+#  ../c/simulation/simulation_runtime.h ../c/simulation/simulation_input_xml.h ../c/simulation/solver/solver_dasrt.h \
+#  ../c/simulation/solver/solver_main.h ../c/simulation/options.h
 
 libinteractive.a : $(OBJ)
 	$(AR) -s -r $@ $(OBJ)
