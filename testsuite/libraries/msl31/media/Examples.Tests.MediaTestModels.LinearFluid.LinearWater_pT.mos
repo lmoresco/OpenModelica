@@ -1307,7 +1307,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //     if abs(relerr) < reldd then
 //       found := true;
 //     end if;
-//     delp := (dd * -p ^ 2.0 * d ^ -2.0 * g.pi ^ -2.0) / (T * g.gpipi * 461.526);
+//     delp := (dd * -p ^ 2.0 * (d * g.pi) ^ -2.0) / (T * g.gpipi * 461.526);
 //     p := p - delp;
 //     i := 1 + i;
 //     if not found then

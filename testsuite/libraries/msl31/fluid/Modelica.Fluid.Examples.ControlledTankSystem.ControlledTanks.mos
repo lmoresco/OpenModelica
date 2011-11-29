@@ -1451,7 +1451,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   tank1.portVelocities[1] = tank1.ports[1].m_flow / (tank1.portDensities[1] * tank1.portAreas[1]);
 //   tank1.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(tank1.fluidLevel + (-0.1 * tank1.portsData_diameter[1] - tank1.portsData_height[1]),1.0,0.001,0.1 * tank1.portsData_diameter[1]);
 //   if tank1.fluidLevel >= tank1.portsData_height[1] then
-//   tank1.ports[1].p = tank1.vessel_ps_static[1] + 0.5 * (tank1.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank1.ports[1].m_flow,tank1.m_flow_small,(tank1.ports_penetration[1] * (-1.0 + (tank1.portsData_zeta_in[1] + tank1.portAreas[1] ^ 2.0 * tank1.vesselArea ^ -2.0))) / tank1.portDensities[1],(1.0 + (tank1.portsData_zeta_out[1] - tank1.portAreas[1] ^ 2.0 * tank1.vesselArea ^ -2.0)) / (tank1.ports_penetration[1] * tank1.medium.d),false,1));
+//   tank1.ports[1].p = tank1.vessel_ps_static[1] + 0.5 * (tank1.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank1.ports[1].m_flow,tank1.m_flow_small,(tank1.ports_penetration[1] * (-1.0 + (tank1.portsData_zeta_in[1] + (tank1.portAreas[1] / tank1.vesselArea) ^ 2.0))) / tank1.portDensities[1],(1.0 + (tank1.portsData_zeta_out[1] - (tank1.portAreas[1] / tank1.vesselArea) ^ 2.0)) / (tank1.ports_penetration[1] * tank1.medium.d),false,1));
 //   tank1.s[1] = tank1.fluidLevel - tank1.portsData_height[1];
 //   elseif tank1.s[1] > 0.0 or tank1.portsData_height[1] >= tank1.fluidLevel_max then
 //   tank1.ports[1].p = tank1.vessel_ps_static[1];
@@ -1467,7 +1467,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   tank1.portVelocities[2] = tank1.ports[2].m_flow / (tank1.portDensities[2] * tank1.portAreas[2]);
 //   tank1.ports_penetration[2] = Modelica.Fluid.Utilities.regStep(tank1.fluidLevel + (-0.1 * tank1.portsData_diameter[2] - tank1.portsData_height[2]),1.0,0.001,0.1 * tank1.portsData_diameter[2]);
 //   if tank1.fluidLevel >= tank1.portsData_height[2] then
-//   tank1.ports[2].p = tank1.vessel_ps_static[2] + 0.5 * (tank1.portAreas[2] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank1.ports[2].m_flow,tank1.m_flow_small,(tank1.ports_penetration[2] * (-1.0 + (tank1.portsData_zeta_in[2] + tank1.portAreas[2] ^ 2.0 * tank1.vesselArea ^ -2.0))) / tank1.portDensities[2],(1.0 + (tank1.portsData_zeta_out[2] - tank1.portAreas[2] ^ 2.0 * tank1.vesselArea ^ -2.0)) / (tank1.ports_penetration[2] * tank1.medium.d),false,1));
+//   tank1.ports[2].p = tank1.vessel_ps_static[2] + 0.5 * (tank1.portAreas[2] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank1.ports[2].m_flow,tank1.m_flow_small,(tank1.ports_penetration[2] * (-1.0 + (tank1.portsData_zeta_in[2] + (tank1.portAreas[2] / tank1.vesselArea) ^ 2.0))) / tank1.portDensities[2],(1.0 + (tank1.portsData_zeta_out[2] - (tank1.portAreas[2] / tank1.vesselArea) ^ 2.0)) / (tank1.ports_penetration[2] * tank1.medium.d),false,1));
 //   tank1.s[2] = tank1.fluidLevel - tank1.portsData_height[2];
 //   elseif tank1.s[2] > 0.0 or tank1.portsData_height[2] >= tank1.fluidLevel_max then
 //   tank1.ports[2].p = tank1.vessel_ps_static[2];
@@ -1549,7 +1549,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   tank2.portVelocities[1] = tank2.ports[1].m_flow / (tank2.portDensities[1] * tank2.portAreas[1]);
 //   tank2.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(tank2.fluidLevel + (-0.1 * tank2.portsData_diameter[1] - tank2.portsData_height[1]),1.0,0.001,0.1 * tank2.portsData_diameter[1]);
 //   if tank2.fluidLevel >= tank2.portsData_height[1] then
-//   tank2.ports[1].p = tank2.vessel_ps_static[1] + 0.5 * (tank2.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank2.ports[1].m_flow,tank2.m_flow_small,(tank2.ports_penetration[1] * (-1.0 + (tank2.portsData_zeta_in[1] + tank2.portAreas[1] ^ 2.0 * tank2.vesselArea ^ -2.0))) / tank2.portDensities[1],(1.0 + (tank2.portsData_zeta_out[1] - tank2.portAreas[1] ^ 2.0 * tank2.vesselArea ^ -2.0)) / (tank2.ports_penetration[1] * tank2.medium.d),false,1));
+//   tank2.ports[1].p = tank2.vessel_ps_static[1] + 0.5 * (tank2.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank2.ports[1].m_flow,tank2.m_flow_small,(tank2.ports_penetration[1] * (-1.0 + (tank2.portsData_zeta_in[1] + (tank2.portAreas[1] / tank2.vesselArea) ^ 2.0))) / tank2.portDensities[1],(1.0 + (tank2.portsData_zeta_out[1] - (tank2.portAreas[1] / tank2.vesselArea) ^ 2.0)) / (tank2.ports_penetration[1] * tank2.medium.d),false,1));
 //   tank2.s[1] = tank2.fluidLevel - tank2.portsData_height[1];
 //   elseif tank2.s[1] > 0.0 or tank2.portsData_height[1] >= tank2.fluidLevel_max then
 //   tank2.ports[1].p = tank2.vessel_ps_static[1];
@@ -1565,7 +1565,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   tank2.portVelocities[2] = tank2.ports[2].m_flow / (tank2.portDensities[2] * tank2.portAreas[2]);
 //   tank2.ports_penetration[2] = Modelica.Fluid.Utilities.regStep(tank2.fluidLevel + (-0.1 * tank2.portsData_diameter[2] - tank2.portsData_height[2]),1.0,0.001,0.1 * tank2.portsData_diameter[2]);
 //   if tank2.fluidLevel >= tank2.portsData_height[2] then
-//   tank2.ports[2].p = tank2.vessel_ps_static[2] + 0.5 * (tank2.portAreas[2] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank2.ports[2].m_flow,tank2.m_flow_small,(tank2.ports_penetration[2] * (-1.0 + (tank2.portsData_zeta_in[2] + tank2.portAreas[2] ^ 2.0 * tank2.vesselArea ^ -2.0))) / tank2.portDensities[2],(1.0 + (tank2.portsData_zeta_out[2] - tank2.portAreas[2] ^ 2.0 * tank2.vesselArea ^ -2.0)) / (tank2.ports_penetration[2] * tank2.medium.d),false,1));
+//   tank2.ports[2].p = tank2.vessel_ps_static[2] + 0.5 * (tank2.portAreas[2] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank2.ports[2].m_flow,tank2.m_flow_small,(tank2.ports_penetration[2] * (-1.0 + (tank2.portsData_zeta_in[2] + (tank2.portAreas[2] / tank2.vesselArea) ^ 2.0))) / tank2.portDensities[2],(1.0 + (tank2.portsData_zeta_out[2] - (tank2.portAreas[2] / tank2.vesselArea) ^ 2.0)) / (tank2.ports_penetration[2] * tank2.medium.d),false,1));
 //   tank2.s[2] = tank2.fluidLevel - tank2.portsData_height[2];
 //   elseif tank2.s[2] > 0.0 or tank2.portsData_height[2] >= tank2.fluidLevel_max then
 //   tank2.ports[2].p = tank2.vessel_ps_static[2];

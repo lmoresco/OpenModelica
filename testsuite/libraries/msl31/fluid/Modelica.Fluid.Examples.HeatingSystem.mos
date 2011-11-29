@@ -4440,7 +4440,7 @@ checkModel(Modelica.Fluid.Examples.HeatingSystem); getErrorString();
 //   tank.portVelocities[1] = tank.ports[1].m_flow / (tank.portDensities[1] * tank.portAreas[1]);
 //   tank.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(tank.fluidLevel + (-0.1 * tank.portsData_diameter[1] - tank.portsData_height[1]),1.0,0.001,0.1 * tank.portsData_diameter[1]);
 //   if tank.fluidLevel >= tank.portsData_height[1] then
-//   tank.ports[1].p = tank.vessel_ps_static[1] + 0.5 * (tank.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank.ports[1].m_flow,tank.m_flow_small,(tank.ports_penetration[1] * (-1.0 + (tank.portsData_zeta_in[1] + tank.portAreas[1] ^ 2.0 * tank.vesselArea ^ -2.0))) / tank.portDensities[1],(1.0 + (tank.portsData_zeta_out[1] - tank.portAreas[1] ^ 2.0 * tank.vesselArea ^ -2.0)) / (tank.ports_penetration[1] * tank.medium.d),false,1));
+//   tank.ports[1].p = tank.vessel_ps_static[1] + 0.5 * (tank.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank.ports[1].m_flow,tank.m_flow_small,(tank.ports_penetration[1] * (-1.0 + (tank.portsData_zeta_in[1] + (tank.portAreas[1] / tank.vesselArea) ^ 2.0))) / tank.portDensities[1],(1.0 + (tank.portsData_zeta_out[1] - (tank.portAreas[1] / tank.vesselArea) ^ 2.0)) / (tank.ports_penetration[1] * tank.medium.d),false,1));
 //   tank.s[1] = tank.fluidLevel - tank.portsData_height[1];
 //   elseif tank.s[1] > 0.0 or tank.portsData_height[1] >= tank.fluidLevel_max then
 //   tank.ports[1].p = tank.vessel_ps_static[1];
@@ -4456,7 +4456,7 @@ checkModel(Modelica.Fluid.Examples.HeatingSystem); getErrorString();
 //   tank.portVelocities[2] = tank.ports[2].m_flow / (tank.portDensities[2] * tank.portAreas[2]);
 //   tank.ports_penetration[2] = Modelica.Fluid.Utilities.regStep(tank.fluidLevel + (-0.1 * tank.portsData_diameter[2] - tank.portsData_height[2]),1.0,0.001,0.1 * tank.portsData_diameter[2]);
 //   if tank.fluidLevel >= tank.portsData_height[2] then
-//   tank.ports[2].p = tank.vessel_ps_static[2] + 0.5 * (tank.portAreas[2] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank.ports[2].m_flow,tank.m_flow_small,(tank.ports_penetration[2] * (-1.0 + (tank.portsData_zeta_in[2] + tank.portAreas[2] ^ 2.0 * tank.vesselArea ^ -2.0))) / tank.portDensities[2],(1.0 + (tank.portsData_zeta_out[2] - tank.portAreas[2] ^ 2.0 * tank.vesselArea ^ -2.0)) / (tank.ports_penetration[2] * tank.medium.d),false,1));
+//   tank.ports[2].p = tank.vessel_ps_static[2] + 0.5 * (tank.portAreas[2] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(tank.ports[2].m_flow,tank.m_flow_small,(tank.ports_penetration[2] * (-1.0 + (tank.portsData_zeta_in[2] + (tank.portAreas[2] / tank.vesselArea) ^ 2.0))) / tank.portDensities[2],(1.0 + (tank.portsData_zeta_out[2] - (tank.portAreas[2] / tank.vesselArea) ^ 2.0)) / (tank.ports_penetration[2] * tank.medium.d),false,1));
 //   tank.s[2] = tank.fluidLevel - tank.portsData_height[2];
 //   elseif tank.s[2] > 0.0 or tank.portsData_height[2] >= tank.fluidLevel_max then
 //   tank.ports[2].p = tank.vessel_ps_static[2];

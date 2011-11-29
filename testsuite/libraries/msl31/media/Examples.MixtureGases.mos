@@ -39,7 +39,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real x \"Abszissa value\";
 //   input Real y1 \"Ordinate value for x > 0\";
 //   input Real y2 \"Ordinate value for x < 0\";
-//   input Real x_small(min = 0.0) = 1e-005 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
+//   input Real x_small(min = 0.0) = 1e-05 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
 //   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
 // algorithm
 //   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
@@ -58,7 +58,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   protected Real[2] etaX(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"component dynamic viscosities\";
 // algorithm
 //   for i in 1:2 loop
-//     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,126.2[],0.0280134[],9.01e-005[],0.037[],0.0[],0.0);
+//     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,126.2[],0.0280134[],9.01e-05[],0.037[],0.0[],0.0);
 //   end for;
 //   eta := Modelica.Media.Examples.MixtureGases.Medium1.gasMixtureViscosity(Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions({state.X[1],state.X[2]},{0.0280134,0.0280134}),{0.0280134,0.0280134},{etaX[1],etaX[2]});
 // end Modelica.Media.Examples.MixtureGases.Medium1.dynamicViscosity;
@@ -162,8 +162,8 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // algorithm
 //   for i in 1:2 loop
 //     assert( true[], \"Critical data for \" + \"N2\"[] + \" not known. Can not compute thermal conductivity.\");
-//     eta[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,126.2[],0.0280134[],9.01e-005[],0.037[],0.0[],0.0);
-//     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T({Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),Modelica.Media.IdealGases.Common.DataRecord(\"O2\",0.0319988,0.0,271263.422378339,1000.0,{-34255.6342,484.700097,1.119010961,0.00429388924,-6.83630052e-007,-2.0233727e-009,1.039040018e-012},{-3391.45487,18.4969947},{-1037939.022,2344.830282,1.819732036,0.001267847582,-2.188067988e-007,2.053719572e-011,-8.19346705e-016},{-16890.10929,17.38716506},259.836993887271)}[i],state.T);
+//     eta[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,126.2[],0.0280134[],9.01e-05[],0.037[],0.0[],0.0);
+//     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T({Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-05,-9.62579362e-09,2.519705809e-12},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-07,-1.923105485e-11,1.061954386e-15},{12832.10415,-15.86640027},296.803386950531),Modelica.Media.IdealGases.Common.DataRecord(\"O2\",0.0319988,0.0,271263.422378339,1000.0,{-34255.6342,484.700097,1.119010961,0.00429388924,-6.83630052e-07,-2.0233727e-09,1.039040018e-12},{-3391.45487,18.4969947},{-1037939.022,2344.830282,1.819732036,0.001267847582,-2.188067988e-07,2.053719572e-11,-8.19346705e-16},{-16890.10929,17.38716506},259.836993887271)}[i],state.T);
 //     lambdaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate(cp[i],eta[i],method);
 //   end for;
 //   lambda := Modelica.Media.Examples.MixtureGases.Medium1.lowPressureThermalConductivity(Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions({state.X[1],state.X[2]},{0.0280134,0.0280134}),state.T,{126.2,126.2},{3398000.0,3398000.0},{0.0280134,0.0280134},{lambdaX[1],lambdaX[2]});
@@ -182,7 +182,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   protected Real[6] etaX(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"component dynamic viscosities\";
 // algorithm
 //   for i in 1:6 loop
-//     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,190.56[],0.01604246[],9.86e-005[],0.011[],0.0[],0.0);
+//     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,190.56[],0.01604246[],9.86e-05[],0.011[],0.0[],0.0);
 //   end for;
 //   eta := Modelica.Media.Examples.MixtureGases.Medium2.gasMixtureViscosity(Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions({state.X[1],state.X[2],state.X[3],state.X[4],state.X[5],state.X[6]},{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246}),{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246},{etaX[1],etaX[2],etaX[3],etaX[4],etaX[5],etaX[6]});
 // end Modelica.Media.Examples.MixtureGases.Medium2.dynamicViscosity;
@@ -305,8 +305,8 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // algorithm
 //   for i in 1:6 loop
 //     assert( true[], \"Critical data for \" + \"CH4\"[] + \" not known. Can not compute thermal conductivity.\");
-//     eta[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,190.56[],0.01604246[],9.86e-005[],0.011[],0.0[],0.0);
-//     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T({Modelica.Media.IdealGases.Common.DataRecord(\"CH4\",0.01604246,-4650159.63885838,624355.740952447,1000.0,{-176685.0998,2786.18102,-12.0257785,0.0391761929,-3.61905443e-005,2.026853043e-008,-4.97670549e-012},{-23313.1436,89.0432275},{3730042.76,-13835.01485,20.49107091,-0.001961974759,4.72731304e-007,-3.72881469e-011,1.623737207e-015},{75320.6691,-121.9124889},518.279116793808),Modelica.Media.IdealGases.Common.DataRecord(\"C2H6\",0.03006904,-2788633.8905399,395476.343774194,1000.0,{-186204.4161,3406.19186,-19.51705092,0.0756583559,-8.20417322e-005,5.0611358e-008,-1.319281992e-011},{-27029.3289,129.8140496},{5025782.13,-20330.22397,33.2255293,-0.00383670341,7.23840586e-007,-7.3191825e-011,3.065468699e-015},{111596.395,-203.9410584},276.512718729963),Modelica.Media.IdealGases.Common.DataRecord(\"C3H8\",0.04409562,-2373931.92339738,334301.184562095,1000.0,{-243314.4337,4656.27081,-29.39466091,0.1188952745,-0.0001376308269,8.81482391e-008,-2.342987994e-011},{-35403.3527,184.1749277},{6420731.68,-26597.91134,45.3435684,-0.00502066392,9.47121694e-007,-9.57540523e-011,4.00967288e-015},{145558.2459,-281.8374734},188.555507327032),Modelica.Media.IdealGases.Common.DataRecord(\"C4H10_n_butane\",0.0581222,-2164233.28779709,330832.022875941,1000.0,{-317587.254,6176.33182,-38.9156212,0.1584654284,-0.0001860050159,1.199676349e-007,-3.20167055e-011},{-45403.6339,237.9488665},{7682322.45,-32560.5151,57.3673275,-0.00619791681,1.180186048e-006,-1.221893698e-010,5.25063525e-015},{177452.656,-358.791876},143.051570656307),Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),Modelica.Media.IdealGases.Common.DataRecord(\"CO2\",0.0440095,-8941478.54440518,212805.621513537,1000.0,{49436.5054,-626.411601,5.30172524,0.002503813816,-2.127308728e-007,-7.68998878e-010,2.849677801e-013},{-45281.9846,-7.04827944},{117696.2419,-1788.791477,8.29152319,-9.22315678e-005,4.86367688e-009,-1.891053312e-012,6.33003659e-016},{-39083.5059,-26.52669281},188.924482214067)}[i],state.T);
+//     eta[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,190.56[],0.01604246[],9.86e-05[],0.011[],0.0[],0.0);
+//     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T({Modelica.Media.IdealGases.Common.DataRecord(\"CH4\",0.01604246,-4650159.63885838,624355.740952447,1000.0,{-176685.0998,2786.18102,-12.0257785,0.0391761929,-3.61905443e-05,2.026853043e-08,-4.97670549e-12},{-23313.1436,89.0432275},{3730042.76,-13835.01485,20.49107091,-0.001961974759,4.72731304e-07,-3.72881469e-11,1.623737207e-15},{75320.6691,-121.9124889},518.279116793808),Modelica.Media.IdealGases.Common.DataRecord(\"C2H6\",0.03006904,-2788633.8905399,395476.343774194,1000.0,{-186204.4161,3406.19186,-19.51705092,0.0756583559,-8.20417322e-05,5.0611358e-08,-1.319281992e-11},{-27029.3289,129.8140496},{5025782.13,-20330.22397,33.2255293,-0.00383670341,7.23840586e-07,-7.3191825e-11,3.065468699e-15},{111596.395,-203.9410584},276.512718729963),Modelica.Media.IdealGases.Common.DataRecord(\"C3H8\",0.04409562,-2373931.92339738,334301.184562095,1000.0,{-243314.4337,4656.27081,-29.39466091,0.1188952745,-0.0001376308269,8.81482391e-08,-2.342987994e-11},{-35403.3527,184.1749277},{6420731.68,-26597.91134,45.3435684,-0.00502066392,9.47121694e-07,-9.57540523e-11,4.00967288e-15},{145558.2459,-281.8374734},188.555507327032),Modelica.Media.IdealGases.Common.DataRecord(\"C4H10_n_butane\",0.0581222,-2164233.28779709,330832.022875941,1000.0,{-317587.254,6176.33182,-38.9156212,0.1584654284,-0.0001860050159,1.199676349e-07,-3.20167055e-11},{-45403.6339,237.9488665},{7682322.45,-32560.5151,57.3673275,-0.00619791681,1.180186048e-06,-1.221893698e-10,5.25063525e-15},{177452.656,-358.791876},143.051570656307),Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-05,-9.62579362e-09,2.519705809e-12},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-07,-1.923105485e-11,1.061954386e-15},{12832.10415,-15.86640027},296.803386950531),Modelica.Media.IdealGases.Common.DataRecord(\"CO2\",0.0440095,-8941478.54440518,212805.621513537,1000.0,{49436.5054,-626.411601,5.30172524,0.002503813816,-2.127308728e-07,-7.68998878e-10,2.849677801e-13},{-45281.9846,-7.04827944},{117696.2419,-1788.791477,8.29152319,-9.22315678e-05,4.86367688e-09,-1.891053312e-12,6.33003659e-16},{-39083.5059,-26.52669281},188.924482214067)}[i],state.T);
 //     lambdaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate(cp[i],eta[i],method);
 //   end for;
 //   lambda := Modelica.Media.Examples.MixtureGases.Medium2.lowPressureThermalConductivity(Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions({state.X[1],state.X[2],state.X[3],state.X[4],state.X[5],state.X[6]},{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246}),state.T,{190.56,190.56,190.56,190.56,190.56,190.56},{4599000.0,4599000.0,4599000.0,4599000.0,4599000.0,4599000.0},{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246},{lambdaX[1],lambdaX[2],lambdaX[3],lambdaX[4],lambdaX[5],lambdaX[6]});
@@ -343,7 +343,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real mu(quantity = \"ElectricDipoleMoment\", unit = \"debye\", min = 0.0, max = 2.0) \"Dipole moment of gas molecule\";
 //   input Real k = 0.0 \"Special correction for highly polar substances\";
 //   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) \"Dynamic viscosity of gas\";
-//   protected parameter Real Const1_SI = 1.28973494369967e-008 \"Constant in formula for eta converted to SI units\";
+//   protected parameter Real Const1_SI = 1.28973494369967e-08 \"Constant in formula for eta converted to SI units\";
 //   protected parameter Real Const2_SI = 0.1313 \"Constant in formula for mur converted to SI units\";
 //   protected Real mur = (Const2_SI * mu) / sqrt(Vc * Tc) \"Dimensionless dipole moment of gas molecule\";
 //   protected Real Fc = 1.0 + (-0.2756 * w + (0.059035 * mur ^ 4.0 + k)) \"Factor to account for molecular shape and polarities of gas\";
@@ -496,9 +496,9 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   medium1.state.X[2] = medium1.X[2];
 //   medium1.Xi[1] = medium1.X[1];
 //   medium1.Xi[2] = medium1.X[2];
-//   assert(medium1.X[1] >= -1e-005 and medium1.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium1.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(medium1.X[1] >= -1e-05 and medium1.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium1.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"CombustionAirN2O2\" + \" is not in the range 0..1\");
-//   assert(medium1.X[2] >= -1e-005 and medium1.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium1.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
+//   assert(medium1.X[2] >= -1e-05 and medium1.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium1.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
 // of medium \" + \"CombustionAirN2O2\" + \" is not in the range 0..1\");
 //   assert(medium1.p >= 0.0,\"Pressure (= \" + String(medium1.p,0,true,6) + \" Pa) of medium \\\"\" + \"CombustionAirN2O2\" + \"\\\" is negative
 // (Temperature = \" + String(medium1.T,0,true,6) + \" K)\");
@@ -525,17 +525,17 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   medium2.Xi[4] = medium2.X[4];
 //   medium2.Xi[5] = medium2.X[5];
 //   medium2.Xi[6] = medium2.X[6];
-//   assert(medium2.X[1] >= -1e-005 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
+//   assert(medium2.X[1] >= -1e-05 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[2] >= -1e-005 and medium2.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium2.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
+//   assert(medium2.X[2] >= -1e-05 and medium2.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium2.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[3] >= -1e-005 and medium2.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(medium2.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
+//   assert(medium2.X[3] >= -1e-05 and medium2.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(medium2.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[4] >= -1e-005 and medium2.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(medium2.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
+//   assert(medium2.X[4] >= -1e-05 and medium2.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(medium2.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[5] >= -1e-005 and medium2.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(medium2.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(medium2.X[5] >= -1e-05 and medium2.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(medium2.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[6] >= -1e-005 and medium2.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(medium2.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
+//   assert(medium2.X[6] >= -1e-05 and medium2.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(medium2.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
 //   assert(medium2.p >= 0.0,\"Pressure (= \" + String(medium2.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleNaturalGas\" + \"\\\" is negative
 // (Temperature = \" + String(medium2.T,0,true,6) + \" K)\");
@@ -569,6 +569,32 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:534:5-535:65:writable] Error: No constant value for variable data.R in scope Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate.
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: 1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: 1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 * (8.0 + (8.0 * M[i]) / M[j]) ^ -0.5
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: 1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: 1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 * (8.0 + (8.0 * M[i]) / M[j]) ^ -0.5
 // "
 // "Check of Modelica.Media.Examples.MixtureGases completed successfully.
 // 
@@ -580,6 +606,32 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:534:5-535:65:writable] Error: No constant value for variable data.R in scope Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate.
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: 1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: 1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 * (8.0 + (8.0 * M[i]) / M[j]) ^ -0.5
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: 1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: 1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25
+// Warning: ExpressionSimplify iterated to the fixpoint maximum for expression: (1.0 + (gamma[j] * ((exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) * (1.0 / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * 1.0 / gamma[i]))) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 * (8.0 + (8.0 * M[i]) / M[j]) ^ -0.5
 // 
 // Class Modelica.Media.Examples.MixtureGases has 75 equation(s) and 75 variable(s).
 // 38 of these are trivial equation(s).
