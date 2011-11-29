@@ -2175,7 +2175,7 @@ end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 //   input Real dx "Derivative of x";
 //   output Real dy;
 // algorithm
-//   dy := 0.5 * dx * (x ^ 2.0 + 2.0 * delta ^ 2.0) * (x ^ 2.0 + delta ^ 2.0) ^ -1.25;
+//   dy := (0.5 * dx * (x ^ 2.0 + 2.0 * delta ^ 2.0)) / (x ^ 2.0 + delta ^ 2.0) ^ 1.25;
 // end SiemensPower.Utilities.Functions.der_sqrtReg;
 // 
 // function SiemensPower.Utilities.Functions.sqrtReg "Symmetric square root approximation with finite derivative in zero"

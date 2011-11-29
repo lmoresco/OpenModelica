@@ -1069,7 +1069,7 @@ end Toneco_PEXPipe;
 //   assert(V_flowNominal > V_flowLaminar, "SimpleFriction: V_flowNominal has to be > V_flowLaminar!");
 //   k := (V_flowNominal * dpLaminar) / V_flowLaminar;
 //   assert(dpNominal >= k, "SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!");
-//   k := (dpNominal - k) * (V_flowNominal - V_flowLaminar) ^ -2.0;
+//   k := (dpNominal - k) / (V_flowNominal - V_flowLaminar) ^ 2.0;
 // equation
 //   VolumeFlow = V_flow;
 //   dp = pressureDrop + 9.80665 * (medium.rho * h_g);

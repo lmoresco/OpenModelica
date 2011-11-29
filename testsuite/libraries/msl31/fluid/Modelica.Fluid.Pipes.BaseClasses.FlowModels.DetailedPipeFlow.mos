@@ -78,8 +78,8 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //     rho := rho_b;
 //     mu := mu_b;
 //   end if;
-//   lambda2 := (2.0 * abs(dp_fric) * diameter ^ 3.0 * rho * mu ^ -2.0) / length;
-//   aux1 := (2.0 * diameter ^ 3.0 * rho * mu ^ -2.0) / length;
+//   lambda2 := (2.0 * abs(dp_fric) * diameter ^ 3.0 * rho) / (mu ^ 2.0 * length);
+//   aux1 := (2.0 * diameter ^ 3.0 * rho) / (mu ^ 2.0 * length);
 //   Re := lambda2 / 64.0;
 //   dRe_ddp := aux1 / 64.0;
 //   if Re > Re1 then
@@ -105,7 +105,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //   protected Real x1 = log10(64.0 * Re1);
 //   protected Real y1 = log10(Re1);
 //   protected Real y1d = 1.0;
-//   protected Real aux2 = Delta / 3.7 + 5.74 * Re2 ^ -0.9;
+//   protected Real aux2 = Delta / 3.7 + 5.74 / Re2 ^ 0.9;
 //   protected Real aux3 = log10(aux2);
 //   protected Real L2 = 0.25 * (Re2 / aux3) ^ 2.0;
 //   protected Real aux4 = 2.51 / sqrt(L2) + 0.27 * Delta;
@@ -255,7 +255,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //     end if;
 //     mu := xstar - x0;
 //     eta := x1 - xstar;
-//     omega := 3.0 * (y0d + y1d + -2.0 * Delta0) * (xstar - x0) ^ 2.0 * h0 ^ -2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (xstar - x0)) / h0 + y0d;
+//     omega := (3.0 * (y0d + y1d + -2.0 * Delta0) * (xstar - x0) ^ 2.0) / h0 ^ 2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (xstar - x0)) / h0 + y0d;
 //     aux01 := 0.25 * /*REAL*/(sign(Delta0)) * min(abs(omega),abs(Delta0));
 //     if abs(y0d - y1d) <= 1e-13 then
 //       aux02 := y0d;
@@ -296,9 +296,9 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //         y := ((x - xi2) ^ 3.0 * a2) / 3.0 + c * x + const3;
 //       end if;
 //     else
-//       y := (y0d + y1d + -2.0 * Delta0) * (x - x0) ^ 3.0 * h0 ^ -2.0 + (-2.0 * y0d + 3.0 * Delta0 - y1d * (x - x0) ^ 2.0) / h0 + y0d * (x - x0) + y0;
+//       y := (y0d + y1d + -2.0 * Delta0 * (x - x0) ^ 3.0) / h0 ^ 2.0 + (-2.0 * y0d + 3.0 * Delta0 - y1d * (x - x0) ^ 2.0) / h0 + y0d * (x - x0) + y0;
 //       aux01 := x0 / 2.0 + x1 / 2.0;
-//       c := 3.0 * (y0d + y1d + -2.0 * Delta0) * (aux01 - x0) ^ 2.0 * h0 ^ -2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (aux01 - x0)) / h0 + y0d;
+//       c := (3.0 * (y0d + y1d + -2.0 * Delta0) * (aux01 - x0) ^ 2.0) / h0 ^ 2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (aux01 - x0)) / h0 + y0d;
 //     end if;
 //   end if;
 // end Modelica.Fluid.Utilities.regFun3;

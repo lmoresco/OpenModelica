@@ -60,9 +60,9 @@ end MoonLanding;
 //   Real apollo.thrust;
 //   Real apollo.gravity;
 //   parameter Real apollo.massLossRate = 0.000277;
-//   Real moon.mass = 7.382e+022;
+//   Real moon.mass = 7.382e+22;
 //   String moon.name = "moon";
-//   constant Real moon.g = 6.672e-011;
+//   constant Real moon.g = 6.672e-11;
 //   parameter Real moon.radius = 1738000.0;
 // equation
 //   (apollo.thrust - apollo.mass * apollo.gravity) / apollo.mass = apollo.acceleration;
@@ -70,6 +70,6 @@ end MoonLanding;
 //   der(apollo.altitude) = apollo.velocity;
 //   der(apollo.velocity) = apollo.acceleration;
 //   apollo.thrust = if time < thrustDecreaseTime then force1 else if time < thrustEndTime then force2 else 0.0;
-//   apollo.gravity = 6.672e-011 * (moon.mass * (apollo.altitude + moon.radius) ^ -2.0);
+//   apollo.gravity = (6.672e-11 * moon.mass) / (apollo.altitude + moon.radius) ^ 2.0;
 // end MoonLanding;
 // endResult

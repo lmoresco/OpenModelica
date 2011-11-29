@@ -3761,7 +3761,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedSolenoid.g_mFeYokeSide2.Phi = advancedSolenoid.g_mFeYokeSide2.port_p.Phi;
 //   0.0 = advancedSolenoid.g_mFeYokeSide2.port_p.Phi + advancedSolenoid.g_mFeYokeSide2.port_n.Phi;
 //   advancedSolenoid.g_mAirWork.G_m = (1.25663706143592e-06 * (advancedSolenoid.g_mAirWork.mu_r * advancedSolenoid.g_mAirWork.A)) / advancedSolenoid.g_mAirWork.l;
-//   advancedSolenoid.g_mAirWork.dGmBydx = -1.25663706143592e-06 * (advancedSolenoid.g_mAirWork.mu_r * (advancedSolenoid.g_mAirWork.A * (advancedSolenoid.g_mAirWork.l ^ -2.0 * Real(advancedSolenoid.g_mAirWork.dlBydx))));
+//   advancedSolenoid.g_mAirWork.dGmBydx = (-1.25663706143592e-06 * (Real(advancedSolenoid.g_mAirWork.dlBydx) * (advancedSolenoid.g_mAirWork.mu_r * advancedSolenoid.g_mAirWork.A))) / advancedSolenoid.g_mAirWork.l ^ 2.0;
 //   advancedSolenoid.g_mAirWork.B = advancedSolenoid.g_mAirWork.Phi / advancedSolenoid.g_mAirWork.A;
 //   advancedSolenoid.g_mAirWork.V_m = advancedSolenoid.g_mAirWork.Phi * advancedSolenoid.g_mAirWork.R_m;
 //   advancedSolenoid.g_mAirWork.R_m = 1.0 / advancedSolenoid.g_mAirWork.G_m;
@@ -3830,7 +3830,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedSolenoid.g_mLeak3.Phi = advancedSolenoid.g_mLeak3.port_p.Phi;
 //   0.0 = advancedSolenoid.g_mLeak3.port_p.Phi + advancedSolenoid.g_mLeak3.port_n.Phi;
 //   advancedSolenoid.g_mLeakWork.G_m = 4e-07 * (advancedSolenoid.g_mLeakWork.w * log(1.0 + (3.14159265358979 * advancedSolenoid.g_mLeakWork.r) / advancedSolenoid.g_mLeakWork.l));
-//   advancedSolenoid.g_mLeakWork.dGmBydx = (-1.25663706143592e-06 * (advancedSolenoid.g_mLeakWork.w * (advancedSolenoid.g_mLeakWork.r * (Real(advancedSolenoid.g_mLeakWork.dlBydx) * advancedSolenoid.g_mLeakWork.l ^ -2.0)))) / (1.0 + (3.14159265358979 * advancedSolenoid.g_mLeakWork.r) / advancedSolenoid.g_mLeakWork.l);
+//   advancedSolenoid.g_mLeakWork.dGmBydx = (-1.25663706143592e-06 * (advancedSolenoid.g_mLeakWork.w * (advancedSolenoid.g_mLeakWork.r * Real(advancedSolenoid.g_mLeakWork.dlBydx)))) / (advancedSolenoid.g_mLeakWork.l ^ 2.0 * (1.0 + (3.14159265358979 * advancedSolenoid.g_mLeakWork.r) / advancedSolenoid.g_mLeakWork.l));
 //   advancedSolenoid.g_mLeakWork.V_m = advancedSolenoid.g_mLeakWork.Phi * advancedSolenoid.g_mLeakWork.R_m;
 //   advancedSolenoid.g_mLeakWork.R_m = 1.0 / advancedSolenoid.g_mLeakWork.G_m;
 //   advancedSolenoid.g_mLeakWork.F_m = 0.5 * (advancedSolenoid.g_mLeakWork.V_m ^ 2.0 * advancedSolenoid.g_mLeakWork.dGmBydx);
@@ -3925,7 +3925,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   simpleSolenoid.g_mFeYokeSide.Phi = simpleSolenoid.g_mFeYokeSide.port_p.Phi;
 //   0.0 = simpleSolenoid.g_mFeYokeSide.port_p.Phi + simpleSolenoid.g_mFeYokeSide.port_n.Phi;
 //   simpleSolenoid.g_mAirWork.G_m = (1.25663706143592e-06 * (simpleSolenoid.g_mAirWork.mu_r * simpleSolenoid.g_mAirWork.A)) / simpleSolenoid.g_mAirWork.l;
-//   simpleSolenoid.g_mAirWork.dGmBydx = -1.25663706143592e-06 * (simpleSolenoid.g_mAirWork.mu_r * (simpleSolenoid.g_mAirWork.A * (simpleSolenoid.g_mAirWork.l ^ -2.0 * Real(simpleSolenoid.g_mAirWork.dlBydx))));
+//   simpleSolenoid.g_mAirWork.dGmBydx = (-1.25663706143592e-06 * (Real(simpleSolenoid.g_mAirWork.dlBydx) * (simpleSolenoid.g_mAirWork.mu_r * simpleSolenoid.g_mAirWork.A))) / simpleSolenoid.g_mAirWork.l ^ 2.0;
 //   simpleSolenoid.g_mAirWork.B = simpleSolenoid.g_mAirWork.Phi / simpleSolenoid.g_mAirWork.A;
 //   simpleSolenoid.g_mAirWork.V_m = simpleSolenoid.g_mAirWork.Phi * simpleSolenoid.g_mAirWork.R_m;
 //   simpleSolenoid.g_mAirWork.R_m = 1.0 / simpleSolenoid.g_mAirWork.G_m;
@@ -3978,7 +3978,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   simpleSolenoid.g_mLeak2.Phi = simpleSolenoid.g_mLeak2.port_p.Phi;
 //   0.0 = simpleSolenoid.g_mLeak2.port_p.Phi + simpleSolenoid.g_mLeak2.port_n.Phi;
 //   simpleSolenoid.g_mLeakWork.G_m = 4e-07 * (simpleSolenoid.g_mLeakWork.w * log(1.0 + (3.14159265358979 * simpleSolenoid.g_mLeakWork.r) / simpleSolenoid.g_mLeakWork.l));
-//   simpleSolenoid.g_mLeakWork.dGmBydx = (-1.25663706143592e-06 * (simpleSolenoid.g_mLeakWork.w * (simpleSolenoid.g_mLeakWork.r * (Real(simpleSolenoid.g_mLeakWork.dlBydx) * simpleSolenoid.g_mLeakWork.l ^ -2.0)))) / (1.0 + (3.14159265358979 * simpleSolenoid.g_mLeakWork.r) / simpleSolenoid.g_mLeakWork.l);
+//   simpleSolenoid.g_mLeakWork.dGmBydx = (-1.25663706143592e-06 * (simpleSolenoid.g_mLeakWork.w * (simpleSolenoid.g_mLeakWork.r * Real(simpleSolenoid.g_mLeakWork.dlBydx)))) / (simpleSolenoid.g_mLeakWork.l ^ 2.0 * (1.0 + (3.14159265358979 * simpleSolenoid.g_mLeakWork.r) / simpleSolenoid.g_mLeakWork.l));
 //   simpleSolenoid.g_mLeakWork.V_m = simpleSolenoid.g_mLeakWork.Phi * simpleSolenoid.g_mLeakWork.R_m;
 //   simpleSolenoid.g_mLeakWork.R_m = 1.0 / simpleSolenoid.g_mLeakWork.G_m;
 //   simpleSolenoid.g_mLeakWork.F_m = 0.5 * (simpleSolenoid.g_mLeakWork.V_m ^ 2.0 * simpleSolenoid.g_mLeakWork.dGmBydx);
@@ -7315,7 +7315,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedSolenoid.g_mFeYokeSide2.Phi = advancedSolenoid.g_mFeYokeSide2.port_p.Phi;
 //   0.0 = advancedSolenoid.g_mFeYokeSide2.port_p.Phi + advancedSolenoid.g_mFeYokeSide2.port_n.Phi;
 //   advancedSolenoid.g_mAirWork.G_m = (1.25663706143592e-06 * (advancedSolenoid.g_mAirWork.mu_r * advancedSolenoid.g_mAirWork.A)) / advancedSolenoid.g_mAirWork.l;
-//   advancedSolenoid.g_mAirWork.dGmBydx = -1.25663706143592e-06 * (advancedSolenoid.g_mAirWork.mu_r * (advancedSolenoid.g_mAirWork.A * (advancedSolenoid.g_mAirWork.l ^ -2.0 * Real(advancedSolenoid.g_mAirWork.dlBydx))));
+//   advancedSolenoid.g_mAirWork.dGmBydx = (-1.25663706143592e-06 * (Real(advancedSolenoid.g_mAirWork.dlBydx) * (advancedSolenoid.g_mAirWork.mu_r * advancedSolenoid.g_mAirWork.A))) / advancedSolenoid.g_mAirWork.l ^ 2.0;
 //   advancedSolenoid.g_mAirWork.B = advancedSolenoid.g_mAirWork.Phi / advancedSolenoid.g_mAirWork.A;
 //   advancedSolenoid.g_mAirWork.V_m = advancedSolenoid.g_mAirWork.Phi * advancedSolenoid.g_mAirWork.R_m;
 //   advancedSolenoid.g_mAirWork.R_m = 1.0 / advancedSolenoid.g_mAirWork.G_m;
@@ -7384,7 +7384,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedSolenoid.g_mLeak3.Phi = advancedSolenoid.g_mLeak3.port_p.Phi;
 //   0.0 = advancedSolenoid.g_mLeak3.port_p.Phi + advancedSolenoid.g_mLeak3.port_n.Phi;
 //   advancedSolenoid.g_mLeakWork.G_m = 4e-07 * (advancedSolenoid.g_mLeakWork.w * log(1.0 + (3.14159265358979 * advancedSolenoid.g_mLeakWork.r) / advancedSolenoid.g_mLeakWork.l));
-//   advancedSolenoid.g_mLeakWork.dGmBydx = (-1.25663706143592e-06 * (advancedSolenoid.g_mLeakWork.w * (advancedSolenoid.g_mLeakWork.r * (Real(advancedSolenoid.g_mLeakWork.dlBydx) * advancedSolenoid.g_mLeakWork.l ^ -2.0)))) / (1.0 + (3.14159265358979 * advancedSolenoid.g_mLeakWork.r) / advancedSolenoid.g_mLeakWork.l);
+//   advancedSolenoid.g_mLeakWork.dGmBydx = (-1.25663706143592e-06 * (advancedSolenoid.g_mLeakWork.w * (advancedSolenoid.g_mLeakWork.r * Real(advancedSolenoid.g_mLeakWork.dlBydx)))) / (advancedSolenoid.g_mLeakWork.l ^ 2.0 * (1.0 + (3.14159265358979 * advancedSolenoid.g_mLeakWork.r) / advancedSolenoid.g_mLeakWork.l));
 //   advancedSolenoid.g_mLeakWork.V_m = advancedSolenoid.g_mLeakWork.Phi * advancedSolenoid.g_mLeakWork.R_m;
 //   advancedSolenoid.g_mLeakWork.R_m = 1.0 / advancedSolenoid.g_mLeakWork.G_m;
 //   advancedSolenoid.g_mLeakWork.F_m = 0.5 * (advancedSolenoid.g_mLeakWork.V_m ^ 2.0 * advancedSolenoid.g_mLeakWork.dGmBydx);
@@ -7480,7 +7480,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   simpleSolenoid.g_mFeYokeSide.Phi = simpleSolenoid.g_mFeYokeSide.port_p.Phi;
 //   0.0 = simpleSolenoid.g_mFeYokeSide.port_p.Phi + simpleSolenoid.g_mFeYokeSide.port_n.Phi;
 //   simpleSolenoid.g_mAirWork.G_m = (1.25663706143592e-06 * (simpleSolenoid.g_mAirWork.mu_r * simpleSolenoid.g_mAirWork.A)) / simpleSolenoid.g_mAirWork.l;
-//   simpleSolenoid.g_mAirWork.dGmBydx = -1.25663706143592e-06 * (simpleSolenoid.g_mAirWork.mu_r * (simpleSolenoid.g_mAirWork.A * (simpleSolenoid.g_mAirWork.l ^ -2.0 * Real(simpleSolenoid.g_mAirWork.dlBydx))));
+//   simpleSolenoid.g_mAirWork.dGmBydx = (-1.25663706143592e-06 * (Real(simpleSolenoid.g_mAirWork.dlBydx) * (simpleSolenoid.g_mAirWork.mu_r * simpleSolenoid.g_mAirWork.A))) / simpleSolenoid.g_mAirWork.l ^ 2.0;
 //   simpleSolenoid.g_mAirWork.B = simpleSolenoid.g_mAirWork.Phi / simpleSolenoid.g_mAirWork.A;
 //   simpleSolenoid.g_mAirWork.V_m = simpleSolenoid.g_mAirWork.Phi * simpleSolenoid.g_mAirWork.R_m;
 //   simpleSolenoid.g_mAirWork.R_m = 1.0 / simpleSolenoid.g_mAirWork.G_m;
@@ -7533,7 +7533,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   simpleSolenoid.g_mLeak2.Phi = simpleSolenoid.g_mLeak2.port_p.Phi;
 //   0.0 = simpleSolenoid.g_mLeak2.port_p.Phi + simpleSolenoid.g_mLeak2.port_n.Phi;
 //   simpleSolenoid.g_mLeakWork.G_m = 4e-07 * (simpleSolenoid.g_mLeakWork.w * log(1.0 + (3.14159265358979 * simpleSolenoid.g_mLeakWork.r) / simpleSolenoid.g_mLeakWork.l));
-//   simpleSolenoid.g_mLeakWork.dGmBydx = (-1.25663706143592e-06 * (simpleSolenoid.g_mLeakWork.w * (simpleSolenoid.g_mLeakWork.r * (Real(simpleSolenoid.g_mLeakWork.dlBydx) * simpleSolenoid.g_mLeakWork.l ^ -2.0)))) / (1.0 + (3.14159265358979 * simpleSolenoid.g_mLeakWork.r) / simpleSolenoid.g_mLeakWork.l);
+//   simpleSolenoid.g_mLeakWork.dGmBydx = (-1.25663706143592e-06 * (simpleSolenoid.g_mLeakWork.w * (simpleSolenoid.g_mLeakWork.r * Real(simpleSolenoid.g_mLeakWork.dlBydx)))) / (simpleSolenoid.g_mLeakWork.l ^ 2.0 * (1.0 + (3.14159265358979 * simpleSolenoid.g_mLeakWork.r) / simpleSolenoid.g_mLeakWork.l));
 //   simpleSolenoid.g_mLeakWork.V_m = simpleSolenoid.g_mLeakWork.Phi * simpleSolenoid.g_mLeakWork.R_m;
 //   simpleSolenoid.g_mLeakWork.R_m = 1.0 / simpleSolenoid.g_mLeakWork.G_m;
 //   simpleSolenoid.g_mLeakWork.F_m = 0.5 * (simpleSolenoid.g_mLeakWork.V_m ^ 2.0 * simpleSolenoid.g_mLeakWork.dGmBydx);
@@ -8142,7 +8142,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   g_mFeYokeSide.Phi = g_mFeYokeSide.port_p.Phi;
 //   0.0 = g_mFeYokeSide.port_p.Phi + g_mFeYokeSide.port_n.Phi;
 //   g_mAirWork.G_m = (1.25663706143592e-06 * (g_mAirWork.mu_r * g_mAirWork.A)) / g_mAirWork.l;
-//   g_mAirWork.dGmBydx = -1.25663706143592e-06 * (g_mAirWork.mu_r * (g_mAirWork.A * (g_mAirWork.l ^ -2.0 * Real(g_mAirWork.dlBydx))));
+//   g_mAirWork.dGmBydx = (-1.25663706143592e-06 * (Real(g_mAirWork.dlBydx) * (g_mAirWork.mu_r * g_mAirWork.A))) / g_mAirWork.l ^ 2.0;
 //   g_mAirWork.B = g_mAirWork.Phi / g_mAirWork.A;
 //   g_mAirWork.V_m = g_mAirWork.Phi * g_mAirWork.R_m;
 //   g_mAirWork.R_m = 1.0 / g_mAirWork.G_m;
@@ -8195,7 +8195,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   g_mLeak2.Phi = g_mLeak2.port_p.Phi;
 //   0.0 = g_mLeak2.port_p.Phi + g_mLeak2.port_n.Phi;
 //   g_mLeakWork.G_m = 4e-07 * (g_mLeakWork.w * log(1.0 + (3.14159265358979 * g_mLeakWork.r) / g_mLeakWork.l));
-//   g_mLeakWork.dGmBydx = (-1.25663706143592e-06 * (g_mLeakWork.w * (g_mLeakWork.r * (Real(g_mLeakWork.dlBydx) * g_mLeakWork.l ^ -2.0)))) / (1.0 + (3.14159265358979 * g_mLeakWork.r) / g_mLeakWork.l);
+//   g_mLeakWork.dGmBydx = (-1.25663706143592e-06 * (g_mLeakWork.w * (g_mLeakWork.r * Real(g_mLeakWork.dlBydx)))) / (g_mLeakWork.l ^ 2.0 * (1.0 + (3.14159265358979 * g_mLeakWork.r) / g_mLeakWork.l));
 //   g_mLeakWork.V_m = g_mLeakWork.Phi * g_mLeakWork.R_m;
 //   g_mLeakWork.R_m = 1.0 / g_mLeakWork.G_m;
 //   g_mLeakWork.F_m = 0.5 * (g_mLeakWork.V_m ^ 2.0 * g_mLeakWork.dGmBydx);
@@ -8886,7 +8886,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   g_mFeYokeSide2.Phi = g_mFeYokeSide2.port_p.Phi;
 //   0.0 = g_mFeYokeSide2.port_p.Phi + g_mFeYokeSide2.port_n.Phi;
 //   g_mAirWork.G_m = (1.25663706143592e-06 * (g_mAirWork.mu_r * g_mAirWork.A)) / g_mAirWork.l;
-//   g_mAirWork.dGmBydx = -1.25663706143592e-06 * (g_mAirWork.mu_r * (g_mAirWork.A * (g_mAirWork.l ^ -2.0 * Real(g_mAirWork.dlBydx))));
+//   g_mAirWork.dGmBydx = (-1.25663706143592e-06 * (Real(g_mAirWork.dlBydx) * (g_mAirWork.mu_r * g_mAirWork.A))) / g_mAirWork.l ^ 2.0;
 //   g_mAirWork.B = g_mAirWork.Phi / g_mAirWork.A;
 //   g_mAirWork.V_m = g_mAirWork.Phi * g_mAirWork.R_m;
 //   g_mAirWork.R_m = 1.0 / g_mAirWork.G_m;
@@ -8955,7 +8955,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   g_mLeak3.Phi = g_mLeak3.port_p.Phi;
 //   0.0 = g_mLeak3.port_p.Phi + g_mLeak3.port_n.Phi;
 //   g_mLeakWork.G_m = 4e-07 * (g_mLeakWork.w * log(1.0 + (3.14159265358979 * g_mLeakWork.r) / g_mLeakWork.l));
-//   g_mLeakWork.dGmBydx = (-1.25663706143592e-06 * (g_mLeakWork.w * (g_mLeakWork.r * (Real(g_mLeakWork.dlBydx) * g_mLeakWork.l ^ -2.0)))) / (1.0 + (3.14159265358979 * g_mLeakWork.r) / g_mLeakWork.l);
+//   g_mLeakWork.dGmBydx = (-1.25663706143592e-06 * (g_mLeakWork.w * (g_mLeakWork.r * Real(g_mLeakWork.dlBydx)))) / (g_mLeakWork.l ^ 2.0 * (1.0 + (3.14159265358979 * g_mLeakWork.r) / g_mLeakWork.l));
 //   g_mLeakWork.V_m = g_mLeakWork.Phi * g_mLeakWork.R_m;
 //   g_mLeakWork.R_m = 1.0 / g_mLeakWork.G_m;
 //   g_mLeakWork.F_m = 0.5 * (g_mLeakWork.V_m ^ 2.0 * g_mLeakWork.dGmBydx);
@@ -9238,7 +9238,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   final parameter Real P_calculated(quantity = \"Power\", unit = \"W\") = V_op ^ 2.0 / R_calculated \"Winding's ohmic losses at operating temperature and voltage resp. with CALCULATED number of turns and wire diameter\";
 //   final parameter Real R_actual(quantity = \"Resistance\", unit = \"Ohm\") = (rho * (N_chosen * l_avg)) / A_wireChosen \"Winding resistance at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
 //   final parameter Real P_actual(quantity = \"Power\", unit = \"W\") = V_op ^ 2.0 / R_actual \"Winding's ohmic losses at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
-//   final parameter Real J_actual(quantity = \"CurrentDensity\", unit = \"A/m2\") = (4.0 * (V_op * d_wireChosen ^ -2.0)) / (R_actual * 3.14159265358979) \"Current density at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
+//   final parameter Real J_actual(quantity = \"CurrentDensity\", unit = \"A/m2\") = (4.0 * V_op) / (d_wireChosen ^ 2.0 * (R_actual * 3.14159265358979)) \"Current density at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
 // end Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign;
 // "
 // "Warning: Parameter h_w has neither value nor start value, and is fixed during initialization (fixed=true)

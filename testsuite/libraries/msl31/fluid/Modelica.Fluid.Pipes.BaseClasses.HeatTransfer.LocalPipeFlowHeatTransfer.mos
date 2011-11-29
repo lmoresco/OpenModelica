@@ -159,7 +159,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransf
 //   end if;
 //   out := dpos * y + (1.0 - y) * dneg;
 //   if abs(scaledX1) < 1.0 then
-//     out := out + (pos - neg * dscaledX1 * asin(1.0) * (cosh(tan(scaledX)) * cos(scaledX)) ^ -2.0) / 2.0;
+//     out := out + (pos - neg * dscaledX1 * asin(1.0)) / ((cosh(tan(scaledX)) * cos(scaledX)) ^ 2.0 * 2.0);
 //   end if;
 // end Modelica.Media.Air.MoistAir.Utilities.spliceFunction_der;
 // 

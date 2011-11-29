@@ -274,7 +274,7 @@ getErrorString();
 //   assert(Pipe1.V_flowNominal > Pipe1.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
 //   Pipe1.k := (Pipe1.V_flowNominal * Pipe1.dpLaminar) / Pipe1.V_flowLaminar;
 //   assert(Pipe1.dpNominal >= Pipe1.k, \"SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!\");
-//   Pipe1.k := (Pipe1.dpNominal - Pipe1.k) * (Pipe1.V_flowNominal - Pipe1.V_flowLaminar) ^ -2.0;
+//   Pipe1.k := (Pipe1.dpNominal - Pipe1.k) / (Pipe1.V_flowNominal - Pipe1.V_flowLaminar) ^ 2.0;
 // equation
 //   PrescribedHeatFlow1.port.Q_flow = (-PrescribedHeatFlow1.Q_flow) * (1.0 + PrescribedHeatFlow1.alpha * (PrescribedHeatFlow1.port.T - PrescribedHeatFlow1.T_ref));
 //   HeatFlow.y = HeatFlow.k;

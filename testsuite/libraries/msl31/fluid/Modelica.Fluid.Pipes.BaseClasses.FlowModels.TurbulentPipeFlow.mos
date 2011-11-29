@@ -63,7 +63,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow); getEr
 //   input Real dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Turbulent flow if |dp| >= dp_small (dummy if use_dp_small = false)\";
 //   output Real m_flow(quantity = \"MassFlowRate\", unit = \"kg/s\") \"Mass flow rate from port_a to port_b\";
 //   protected constant Real pi = 3.14159265358979;
-//   protected Real zeta = (length * (2.0 * log10((3.7 * diameter) / roughness)) ^ -2.0) / diameter;
+//   protected Real zeta = length / ((2.0 * log10((3.7 * diameter) / roughness)) ^ 2.0 * diameter);
 //   protected Real k_inv = (3.14159265358979 * diameter ^ 2.0) ^ 2.0 / (zeta * 8.0);
 //   protected Real dp_grav_a(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = g_times_height_ab * rho_a \"Static head if mass flows in design direction (a to b)\";
 //   protected Real dp_grav_b(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = g_times_height_ab * rho_b \"Static head if mass flows against design direction (b to a)\";
@@ -141,7 +141,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow); getEr
 //     end if;
 //     mu := xstar - x0;
 //     eta := x1 - xstar;
-//     omega := 3.0 * (y0d + y1d + -2.0 * Delta0) * (xstar - x0) ^ 2.0 * h0 ^ -2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (xstar - x0)) / h0 + y0d;
+//     omega := (3.0 * (y0d + y1d + -2.0 * Delta0) * (xstar - x0) ^ 2.0) / h0 ^ 2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (xstar - x0)) / h0 + y0d;
 //     aux01 := 0.25 * /*REAL*/(sign(Delta0)) * min(abs(omega),abs(Delta0));
 //     if abs(y0d - y1d) <= 1e-13 then
 //       aux02 := y0d;
@@ -182,9 +182,9 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow); getEr
 //         y := ((x - xi2) ^ 3.0 * a2) / 3.0 + c * x + const3;
 //       end if;
 //     else
-//       y := (y0d + y1d + -2.0 * Delta0) * (x - x0) ^ 3.0 * h0 ^ -2.0 + (-2.0 * y0d + 3.0 * Delta0 - y1d * (x - x0) ^ 2.0) / h0 + y0d * (x - x0) + y0;
+//       y := (y0d + y1d + -2.0 * Delta0 * (x - x0) ^ 3.0) / h0 ^ 2.0 + (-2.0 * y0d + 3.0 * Delta0 - y1d * (x - x0) ^ 2.0) / h0 + y0d * (x - x0) + y0;
 //       aux01 := x0 / 2.0 + x1 / 2.0;
-//       c := 3.0 * (y0d + y1d + -2.0 * Delta0) * (aux01 - x0) ^ 2.0 * h0 ^ -2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (aux01 - x0)) / h0 + y0d;
+//       c := (3.0 * (y0d + y1d + -2.0 * Delta0) * (aux01 - x0) ^ 2.0) / h0 ^ 2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (aux01 - x0)) / h0 + y0d;
 //     end if;
 //   end if;
 // end Modelica.Fluid.Utilities.regFun3;

@@ -1012,8 +1012,8 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 // algorithm
 //   dxv := if liq.d <> vap.d then (liq.d * vap.d) / (liq.d - vap.d) else 0.0;
 //   dpT := (vap.s - liq.s) * dxv;
-//   dvTl := (liq.pt - dpT * liq.d ^ -2.0) / liq.pd;
-//   dvTv := (vap.pt - dpT * vap.d ^ -2.0) / vap.pd;
+//   dvTl := (liq.pt - dpT) / (liq.d ^ 2.0 * liq.pd);
+//   dvTv := (vap.pt - dpT) / (vap.d ^ 2.0 * vap.pd);
 //   dxt := -dxv * (dvTl + x * (dvTv - dvTl));
 //   duTl := liq.cv + (T * liq.pt - p) * dvTl;
 //   duTv := vap.cv + (T * vap.pt - p) * dvTv;
@@ -1033,7 +1033,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   sat.cp := -g.R * g.tau ^ 2.0 * g.gtautau;
 //   sat.cv := g.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
 //   vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * g.R) / g.p;
-//   vp := g.R * g.T * g.p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
+//   vp := (g.gpipi * g.pi ^ 2.0 * g.R * g.T) / g.p ^ 2.0;
 //   sat.pt := (g.tau * g.gtaupi - g.gpi * g.p) / (g.pi * g.gpipi * g.T);
 //   sat.pd := (-g.R * g.T * g.gpi ^ 2.0) / g.gpipi;
 // end Modelica.Media.Common.gibbsToBoundaryProps;
@@ -1235,7 +1235,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   o[47] := 1295.95640782102 * o[46];
 //   o[48] := 2862.09212505088 + o[40] + o[41] + o[42] + o[43] + o[44] + o[45] + o[47];
 //   o[49] := o[35] ^ -2.0;
-//   dtsat := 5e-07 * ((2.0 * o[15]) / o[35] + -2.0 * o[11] * (-3005.2061756175 * o[2] + -0.5 * o[26] * o[31] + -583.52607263835 * o[5]) * o[49] + (-20953.4635664399 * (o[39] * (1295.95640782102 + 5398.05138359071 * o[2] + 0.25 * o[2] * o[30] + -0.861036696828853 * o[26] * o[31] + -0.255316477279829 * o[26] * o[31] * o[4] + -4096.43557421473 * o[5] + -0.255316477279829 * o[30] * o[5] + -2325.01894614276 / o[8] + 0.5 * o[26] * o[31] * o[8]) + -2.0 * (o[19] + o[20] + 0.5 * o[26] * o[31]) * o[48] * o[37] ^ -3.0)) / sqrt(o[39] * o[48]));
+//   dtsat := 5e-07 * ((2.0 * o[15]) / o[35] + -2.0 * o[11] * (-3005.2061756175 * o[2] + -0.5 * o[26] * o[31] + -583.52607263835 * o[5]) * o[49] + (-20953.4635664399 * (o[39] * (1295.95640782102 + 5398.05138359071 * o[2] + 0.25 * o[2] * o[30] + -0.861036696828853 * o[26] * o[31] + -0.255316477279829 * o[26] * o[31] * o[4] + -4096.43557421473 * o[5] + -0.255316477279829 * o[30] * o[5] + -2325.01894614276 / o[8] + 0.5 * o[26] * o[31] * o[8]) + (-2.0 * (o[19] + o[20] + 0.5 * o[26] * o[31]) * o[48]) / o[37] ^ 3.0)) / sqrt(o[39] * o[48]));
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.dtsatofp;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.f3 \"Helmholtz function for region 3: f(d,T)\"
@@ -1513,7 +1513,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   o[6] := o[4] ^ 2.0;
 //   o[7] := 14.91510861353 * o[6];
 //   o[8] := 405113.40542057 + o[5] + o[7];
-//   p_sat := 16000000.0 * o[8] ^ 4.0 * (3232555.0322333 + -12020.82470247 * o[4] + 17.073846940092 * o[6] + ((2896852.66812824 + -4.0 * (1167.0521452767 * o[4] + o[6])) * o[8] + (-3232555.0322333 + 12020.82470247 * o[4] + -17.073846940092 * o[6]) ^ 2.0) ^ 0.5) ^ -4.0;
+//   p_sat := (16000000.0 * o[8] ^ 4.0) / (3232555.0322333 + -12020.82470247 * o[4] + 17.073846940092 * o[6] + ((2896852.66812824 + -4.0 * (1167.0521452767 * o[4] + o[6])) * o[8] + (-3232555.0322333 + 12020.82470247 * o[4] + -17.073846940092 * o[6]) ^ 2.0) ^ 0.5) ^ 4.0;
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat_der \"derivative function for psat\"
@@ -1893,7 +1893,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //     if abs(relerr) < reldh then
 //       found := true;
 //     end if;
-//     dT := (dh * g.tau ^ -2.0) / (g.gtautau * -461.526);
+//     dT := dh / (g.tau ^ 2.0 * g.gtautau * -461.526);
 //     T := T - dT;
 //     i := 1 + i;
 //   end while;
@@ -1984,7 +1984,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //     bpro.s := g.R * (g.tau * g.gtau - g.g);
 //     bpro.cp := -bpro.R * g.tau ^ 2.0 * g.gtautau;
 //     bpro.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * bpro.R) / p;
-//     bpro.vp := bpro.R * bpro.T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
+//     bpro.vp := (g.gpipi * g.pi ^ 2.0 * bpro.R * bpro.T) / p ^ 2.0;
 //     bpro.pt := (g.tau * g.gtaupi - g.gpi * p) / (g.pi * g.gpipi * bpro.T);
 //     bpro.pd := (-bpro.R * bpro.T * g.gpi ^ 2.0) / g.gpipi;
 //   else
@@ -2095,7 +2095,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //     bpro.s := g.R * (g.tau * g.gtau - g.g);
 //     bpro.cp := -bpro.R * g.tau ^ 2.0 * g.gtautau;
 //     bpro.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * bpro.R) / p;
-//     bpro.vp := bpro.R * bpro.T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
+//     bpro.vp := (g.gpipi * g.pi ^ 2.0 * bpro.R * bpro.T) / p ^ 2.0;
 //     bpro.pt := (g.tau * g.gtaupi - g.gpi * p) / (g.pi * g.gpipi * bpro.T);
 //     bpro.pd := (-bpro.R * bpro.T * g.gpi ^ 2.0) / g.gpipi;
 //   else
@@ -2256,7 +2256,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   output Real h_der \"time derivative of specific enthalpy along the phase boundary\";
 // algorithm
 //   if bpro.region3boundary then
-//     h_der := ((bpro.d * bpro.pd - bpro.T * bpro.pt) * p_der + (p_der * (bpro.T * bpro.pt ^ 2.0 + bpro.d ^ 2.0 * bpro.pd * bpro.cv)) / bpro.dpT * bpro.d ^ -2.0) / bpro.pd;
+//     h_der := ((bpro.d * bpro.pd - bpro.T * bpro.pt) * p_der + (p_der * (bpro.T * bpro.pt ^ 2.0 + bpro.d ^ 2.0 * bpro.pd * bpro.cv)) / bpro.dpT) / (bpro.d ^ 2.0 * bpro.pd);
 //   else
 //     h_der := (1.0 / bpro.d - bpro.T * bpro.vt) * p_der + (p_der * bpro.cp) / bpro.dpT;
 //   end if;
@@ -2452,7 +2452,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   output Real h_der \"derivative of specific enthalpy\";
 // algorithm
 //   if aux.region == 3 then
-//     h_der := (p_der * (-aux.rho * aux.pd + T * aux.pt) * aux.rho ^ -2.0) / aux.pd + (T_der * (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0) * aux.rho ^ -2.0) / aux.pd;
+//     h_der := (p_der * (-aux.rho * aux.pd + T * aux.pt)) / (aux.rho ^ 2.0 * aux.pd) + (T_der * (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0)) / (aux.rho ^ 2.0 * aux.pd);
 //   else
 //     h_der := (1.0 / aux.rho - aux.T * aux.vt) * p_der + aux.cp * T_der;
 //   end if;
@@ -2600,7 +2600,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //     aux.s := aux.R * (g.tau * g.gtau - g.g);
 //     aux.rho := p / (g.gpi * g.pi * T * aux.R);
 //     aux.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * aux.R) / p;
-//     aux.vp := aux.R * T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
+//     aux.vp := (g.gpipi * g.pi ^ 2.0 * aux.R * T) / p ^ 2.0;
 //     aux.cp := -aux.R * g.tau ^ 2.0 * g.gtautau;
 //     aux.cv := aux.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
 //     aux.x := 0.0;
@@ -2610,7 +2610,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //     aux.s := aux.R * (g.tau * g.gtau - g.g);
 //     aux.rho := p / (g.gpi * g.pi * T * aux.R);
 //     aux.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * aux.R) / p;
-//     aux.vp := aux.R * T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
+//     aux.vp := (g.gpipi * g.pi ^ 2.0 * aux.R * T) / p ^ 2.0;
 //     aux.cp := -aux.R * g.tau ^ 2.0 * g.gtautau;
 //     aux.cv := aux.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
 //     aux.x := 1.0;
@@ -2629,7 +2629,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //     aux.s := aux.R * (g.tau * g.gtau - g.g);
 //     aux.rho := p / (g.gpi * g.pi * T * aux.R);
 //     aux.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * aux.R) / p;
-//     aux.vp := aux.R * T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
+//     aux.vp := (g.gpipi * g.pi ^ 2.0 * aux.R * T) / p ^ 2.0;
 //     aux.cp := -aux.R * g.tau ^ 2.0 * g.gtautau;
 //     aux.cv := aux.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
 //   else
@@ -2670,7 +2670,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //     aux.s := aux.R * (g.tau * g.gtau - g.g);
 //     aux.rho := p / (g.gpi * g.pi * aux.T * aux.R);
 //     aux.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * aux.R) / p;
-//     aux.vp := aux.R * aux.T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
+//     aux.vp := (g.gpipi * g.pi ^ 2.0 * aux.R * aux.T) / p ^ 2.0;
 //     aux.cp := -aux.R * g.tau ^ 2.0 * g.gtautau;
 //     aux.cv := aux.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
 //     aux.x := 0.0;
@@ -2681,7 +2681,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //     aux.s := aux.R * (g.tau * g.gtau - g.g);
 //     aux.rho := p / (g.gpi * g.pi * aux.T * aux.R);
 //     aux.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * aux.R) / p;
-//     aux.vp := aux.R * aux.T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
+//     aux.vp := (g.gpipi * g.pi ^ 2.0 * aux.R * aux.T) / p ^ 2.0;
 //     aux.cp := -aux.R * g.tau ^ 2.0 * g.gtautau;
 //     aux.cv := aux.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
 //     aux.x := 1.0;
@@ -2694,7 +2694,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //     aux.pd := aux.R * aux.T * f.delta * (2.0 * f.fdelta + f.delta * f.fdeltadelta);
 //     aux.pt := aux.R * aux.rho * f.delta * (f.fdelta - f.tau * f.fdeltatau);
 //     aux.cv := abs(aux.R * -f.tau ^ 2.0 * f.ftautau);
-//     aux.cp := (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0 * aux.rho ^ -2.0) / aux.pd;
+//     aux.cp := (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0) / (aux.rho ^ 2.0 * aux.pd);
 //     aux.x := 0.0;
 //     aux.dpT := aux.pt;
 //   elseif aux.region == 4 then
@@ -2732,7 +2732,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //     aux.s := aux.R * (g.tau * g.gtau - g.g);
 //     aux.rho := p / (g.gpi * g.pi * aux.T * aux.R);
 //     aux.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * aux.R) / p;
-//     aux.vp := aux.R * aux.T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
+//     aux.vp := (g.gpipi * g.pi ^ 2.0 * aux.R * aux.T) / p ^ 2.0;
 //     aux.cp := -aux.R * g.tau ^ 2.0 * g.gtautau;
 //     aux.cv := aux.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
 //     aux.dpT := -aux.vt / aux.vp;
@@ -3528,7 +3528,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   openTankCold2.portVelocities[1] = openTankCold2.ports[1].m_flow / (openTankCold2.portDensities[1] * openTankCold2.portAreas[1]);
 //   openTankCold2.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(openTankCold2.fluidLevel + (-0.1 * openTankCold2.portsData_diameter[1] - openTankCold2.portsData_height[1]),1.0,0.001,0.1 * openTankCold2.portsData_diameter[1]);
 //   if openTankCold2.fluidLevel >= openTankCold2.portsData_height[1] then
-//   openTankCold2.ports[1].p = openTankCold2.vessel_ps_static[1] + 0.5 * (openTankCold2.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(openTankCold2.ports[1].m_flow,openTankCold2.m_flow_small,(openTankCold2.ports_penetration[1] * (-1.0 + (openTankCold2.portsData_zeta_in[1] + (openTankCold2.portAreas[1] / openTankCold2.vesselArea) ^ 2.0))) / openTankCold2.portDensities[1],(1.0 + (openTankCold2.portsData_zeta_out[1] - (openTankCold2.portAreas[1] / openTankCold2.vesselArea) ^ 2.0)) / (openTankCold2.ports_penetration[1] * openTankCold2.medium.d),false,1));
+//   openTankCold2.ports[1].p = openTankCold2.vessel_ps_static[1] + (0.5 * Modelica.Fluid.Utilities.regSquare2(openTankCold2.ports[1].m_flow,openTankCold2.m_flow_small,(openTankCold2.ports_penetration[1] * (-1.0 + (openTankCold2.portsData_zeta_in[1] + (openTankCold2.portAreas[1] / openTankCold2.vesselArea) ^ 2.0))) / openTankCold2.portDensities[1],(1.0 + (openTankCold2.portsData_zeta_out[1] - (openTankCold2.portAreas[1] / openTankCold2.vesselArea) ^ 2.0)) / (openTankCold2.ports_penetration[1] * openTankCold2.medium.d),false,1)) / openTankCold2.portAreas[1] ^ 2.0;
 //   openTankCold2.s[1] = openTankCold2.fluidLevel - openTankCold2.portsData_height[1];
 //   elseif openTankCold2.s[1] > 0.0 or openTankCold2.portsData_height[1] >= openTankCold2.fluidLevel_max then
 //   openTankCold2.ports[1].p = openTankCold2.vessel_ps_static[1];
@@ -3589,7 +3589,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   openTankCold1.portVelocities[1] = openTankCold1.ports[1].m_flow / (openTankCold1.portDensities[1] * openTankCold1.portAreas[1]);
 //   openTankCold1.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(openTankCold1.fluidLevel + (-0.1 * openTankCold1.portsData_diameter[1] - openTankCold1.portsData_height[1]),1.0,0.001,0.1 * openTankCold1.portsData_diameter[1]);
 //   if openTankCold1.fluidLevel >= openTankCold1.portsData_height[1] then
-//   openTankCold1.ports[1].p = openTankCold1.vessel_ps_static[1] + 0.5 * (openTankCold1.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(openTankCold1.ports[1].m_flow,openTankCold1.m_flow_small,(openTankCold1.ports_penetration[1] * (-1.0 + (openTankCold1.portsData_zeta_in[1] + (openTankCold1.portAreas[1] / openTankCold1.vesselArea) ^ 2.0))) / openTankCold1.portDensities[1],(1.0 + (openTankCold1.portsData_zeta_out[1] - (openTankCold1.portAreas[1] / openTankCold1.vesselArea) ^ 2.0)) / (openTankCold1.ports_penetration[1] * openTankCold1.medium.d),false,1));
+//   openTankCold1.ports[1].p = openTankCold1.vessel_ps_static[1] + (0.5 * Modelica.Fluid.Utilities.regSquare2(openTankCold1.ports[1].m_flow,openTankCold1.m_flow_small,(openTankCold1.ports_penetration[1] * (-1.0 + (openTankCold1.portsData_zeta_in[1] + (openTankCold1.portAreas[1] / openTankCold1.vesselArea) ^ 2.0))) / openTankCold1.portDensities[1],(1.0 + (openTankCold1.portsData_zeta_out[1] - (openTankCold1.portAreas[1] / openTankCold1.vesselArea) ^ 2.0)) / (openTankCold1.ports_penetration[1] * openTankCold1.medium.d),false,1)) / openTankCold1.portAreas[1] ^ 2.0;
 //   openTankCold1.s[1] = openTankCold1.fluidLevel - openTankCold1.portsData_height[1];
 //   elseif openTankCold1.s[1] > 0.0 or openTankCold1.portsData_height[1] >= openTankCold1.fluidLevel_max then
 //   openTankCold1.ports[1].p = openTankCold1.vessel_ps_static[1];
@@ -3650,7 +3650,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   openTankHot1.portVelocities[1] = openTankHot1.ports[1].m_flow / (openTankHot1.portDensities[1] * openTankHot1.portAreas[1]);
 //   openTankHot1.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(openTankHot1.fluidLevel + (-0.1 * openTankHot1.portsData_diameter[1] - openTankHot1.portsData_height[1]),1.0,0.001,0.1 * openTankHot1.portsData_diameter[1]);
 //   if openTankHot1.fluidLevel >= openTankHot1.portsData_height[1] then
-//   openTankHot1.ports[1].p = openTankHot1.vessel_ps_static[1] + 0.5 * (openTankHot1.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(openTankHot1.ports[1].m_flow,openTankHot1.m_flow_small,(openTankHot1.ports_penetration[1] * (-1.0 + (openTankHot1.portsData_zeta_in[1] + (openTankHot1.portAreas[1] / openTankHot1.vesselArea) ^ 2.0))) / openTankHot1.portDensities[1],(1.0 + (openTankHot1.portsData_zeta_out[1] - (openTankHot1.portAreas[1] / openTankHot1.vesselArea) ^ 2.0)) / (openTankHot1.ports_penetration[1] * openTankHot1.medium.d),false,1));
+//   openTankHot1.ports[1].p = openTankHot1.vessel_ps_static[1] + (0.5 * Modelica.Fluid.Utilities.regSquare2(openTankHot1.ports[1].m_flow,openTankHot1.m_flow_small,(openTankHot1.ports_penetration[1] * (-1.0 + (openTankHot1.portsData_zeta_in[1] + (openTankHot1.portAreas[1] / openTankHot1.vesselArea) ^ 2.0))) / openTankHot1.portDensities[1],(1.0 + (openTankHot1.portsData_zeta_out[1] - (openTankHot1.portAreas[1] / openTankHot1.vesselArea) ^ 2.0)) / (openTankHot1.ports_penetration[1] * openTankHot1.medium.d),false,1)) / openTankHot1.portAreas[1] ^ 2.0;
 //   openTankHot1.s[1] = openTankHot1.fluidLevel - openTankHot1.portsData_height[1];
 //   elseif openTankHot1.s[1] > 0.0 or openTankHot1.portsData_height[1] >= openTankHot1.fluidLevel_max then
 //   openTankHot1.ports[1].p = openTankHot1.vessel_ps_static[1];
@@ -3711,7 +3711,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   openTankHot2.portVelocities[1] = openTankHot2.ports[1].m_flow / (openTankHot2.portDensities[1] * openTankHot2.portAreas[1]);
 //   openTankHot2.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(openTankHot2.fluidLevel + (-0.1 * openTankHot2.portsData_diameter[1] - openTankHot2.portsData_height[1]),1.0,0.001,0.1 * openTankHot2.portsData_diameter[1]);
 //   if openTankHot2.fluidLevel >= openTankHot2.portsData_height[1] then
-//   openTankHot2.ports[1].p = openTankHot2.vessel_ps_static[1] + 0.5 * (openTankHot2.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(openTankHot2.ports[1].m_flow,openTankHot2.m_flow_small,(openTankHot2.ports_penetration[1] * (-1.0 + (openTankHot2.portsData_zeta_in[1] + (openTankHot2.portAreas[1] / openTankHot2.vesselArea) ^ 2.0))) / openTankHot2.portDensities[1],(1.0 + (openTankHot2.portsData_zeta_out[1] - (openTankHot2.portAreas[1] / openTankHot2.vesselArea) ^ 2.0)) / (openTankHot2.ports_penetration[1] * openTankHot2.medium.d),false,1));
+//   openTankHot2.ports[1].p = openTankHot2.vessel_ps_static[1] + (0.5 * Modelica.Fluid.Utilities.regSquare2(openTankHot2.ports[1].m_flow,openTankHot2.m_flow_small,(openTankHot2.ports_penetration[1] * (-1.0 + (openTankHot2.portsData_zeta_in[1] + (openTankHot2.portAreas[1] / openTankHot2.vesselArea) ^ 2.0))) / openTankHot2.portDensities[1],(1.0 + (openTankHot2.portsData_zeta_out[1] - (openTankHot2.portAreas[1] / openTankHot2.vesselArea) ^ 2.0)) / (openTankHot2.ports_penetration[1] * openTankHot2.medium.d),false,1)) / openTankHot2.portAreas[1] ^ 2.0;
 //   openTankHot2.s[1] = openTankHot2.fluidLevel - openTankHot2.portsData_height[1];
 //   elseif openTankHot2.s[1] > 0.0 or openTankHot2.portsData_height[1] >= openTankHot2.fluidLevel_max then
 //   openTankHot2.ports[1].p = openTankHot2.vessel_ps_static[1];
@@ -3838,7 +3838,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   openTankCold3.portVelocities[1] = openTankCold3.ports[1].m_flow / (openTankCold3.portDensities[1] * openTankCold3.portAreas[1]);
 //   openTankCold3.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(openTankCold3.fluidLevel + (-0.1 * openTankCold3.portsData_diameter[1] - openTankCold3.portsData_height[1]),1.0,0.001,0.1 * openTankCold3.portsData_diameter[1]);
 //   if openTankCold3.fluidLevel >= openTankCold3.portsData_height[1] then
-//   openTankCold3.ports[1].p = openTankCold3.vessel_ps_static[1] + 0.5 * (openTankCold3.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(openTankCold3.ports[1].m_flow,openTankCold3.m_flow_small,(openTankCold3.ports_penetration[1] * (-1.0 + (openTankCold3.portsData_zeta_in[1] + (openTankCold3.portAreas[1] / openTankCold3.vesselArea) ^ 2.0))) / openTankCold3.portDensities[1],(1.0 + (openTankCold3.portsData_zeta_out[1] - (openTankCold3.portAreas[1] / openTankCold3.vesselArea) ^ 2.0)) / (openTankCold3.ports_penetration[1] * openTankCold3.medium.d),false,1));
+//   openTankCold3.ports[1].p = openTankCold3.vessel_ps_static[1] + (0.5 * Modelica.Fluid.Utilities.regSquare2(openTankCold3.ports[1].m_flow,openTankCold3.m_flow_small,(openTankCold3.ports_penetration[1] * (-1.0 + (openTankCold3.portsData_zeta_in[1] + (openTankCold3.portAreas[1] / openTankCold3.vesselArea) ^ 2.0))) / openTankCold3.portDensities[1],(1.0 + (openTankCold3.portsData_zeta_out[1] - (openTankCold3.portAreas[1] / openTankCold3.vesselArea) ^ 2.0)) / (openTankCold3.ports_penetration[1] * openTankCold3.medium.d),false,1)) / openTankCold3.portAreas[1] ^ 2.0;
 //   openTankCold3.s[1] = openTankCold3.fluidLevel - openTankCold3.portsData_height[1];
 //   elseif openTankCold3.s[1] > 0.0 or openTankCold3.portsData_height[1] >= openTankCold3.fluidLevel_max then
 //   openTankCold3.ports[1].p = openTankCold3.vessel_ps_static[1];
@@ -3899,7 +3899,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   openTankHot3.portVelocities[1] = openTankHot3.ports[1].m_flow / (openTankHot3.portDensities[1] * openTankHot3.portAreas[1]);
 //   openTankHot3.ports_penetration[1] = Modelica.Fluid.Utilities.regStep(openTankHot3.fluidLevel + (-0.1 * openTankHot3.portsData_diameter[1] - openTankHot3.portsData_height[1]),1.0,0.001,0.1 * openTankHot3.portsData_diameter[1]);
 //   if openTankHot3.fluidLevel >= openTankHot3.portsData_height[1] then
-//   openTankHot3.ports[1].p = openTankHot3.vessel_ps_static[1] + 0.5 * (openTankHot3.portAreas[1] ^ -2.0 * Modelica.Fluid.Utilities.regSquare2(openTankHot3.ports[1].m_flow,openTankHot3.m_flow_small,(openTankHot3.ports_penetration[1] * (-1.0 + (openTankHot3.portsData_zeta_in[1] + (openTankHot3.portAreas[1] / openTankHot3.vesselArea) ^ 2.0))) / openTankHot3.portDensities[1],(1.0 + (openTankHot3.portsData_zeta_out[1] - (openTankHot3.portAreas[1] / openTankHot3.vesselArea) ^ 2.0)) / (openTankHot3.ports_penetration[1] * openTankHot3.medium.d),false,1));
+//   openTankHot3.ports[1].p = openTankHot3.vessel_ps_static[1] + (0.5 * Modelica.Fluid.Utilities.regSquare2(openTankHot3.ports[1].m_flow,openTankHot3.m_flow_small,(openTankHot3.ports_penetration[1] * (-1.0 + (openTankHot3.portsData_zeta_in[1] + (openTankHot3.portAreas[1] / openTankHot3.vesselArea) ^ 2.0))) / openTankHot3.portDensities[1],(1.0 + (openTankHot3.portsData_zeta_out[1] - (openTankHot3.portAreas[1] / openTankHot3.vesselArea) ^ 2.0)) / (openTankHot3.ports_penetration[1] * openTankHot3.medium.d),false,1)) / openTankHot3.portAreas[1] ^ 2.0;
 //   openTankHot3.s[1] = openTankHot3.fluidLevel - openTankHot3.portsData_height[1];
 //   elseif openTankHot3.s[1] > 0.0 or openTankHot3.portsData_height[1] >= openTankHot3.fluidLevel_max then
 //   openTankHot3.ports[1].p = openTankHot3.vessel_ps_static[1];

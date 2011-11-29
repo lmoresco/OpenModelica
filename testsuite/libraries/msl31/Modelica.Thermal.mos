@@ -289,7 +289,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   assert(valve.kv0 < 0.999999999999999, \"Valve characteristic: kv0 has to be < 1 !\");
 //   assert(pipe.V_flowNominal > pipe.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
 //   assert(pipe.dpNominal >= pipe.dpNomMin, \"SimpleFriction: dpNominal has to be > dpLaminar/V_flowLaminar*V_flowNominal!\");
-//   pipe.k := (pipe.dpNominal - pipe.dpNomMin) * (pipe.V_flowNominal - pipe.V_flowLaminar) ^ -2.0;
+//   pipe.k := (pipe.dpNominal - pipe.dpNomMin) / (pipe.V_flowNominal - pipe.V_flowLaminar) ^ 2.0;
 // equation
 //   prescribedHeatFlow.port.Q_flow = (-prescribedHeatFlow.Q_flow) * (1.0 + prescribedHeatFlow.alpha * (prescribedHeatFlow.port.T - prescribedHeatFlow.T_ref));
 //   heatFlow.y = heatFlow.k;

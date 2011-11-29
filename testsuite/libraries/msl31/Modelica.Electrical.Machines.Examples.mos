@@ -2405,7 +2405,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   parameter Real aims.turnsRatio(min = 1e-60, start = 1.0) \"Effective number of stator turns / effective number of rotor turns\";
 //   parameter Real aims.VsNominal(quantity = \"ElectricPotential\", unit = \"V\", start = 100.0) \"nominal stator voltage per phase\";
 //   output Real aims.i_0_r(quantity = \"ElectricCurrent\", unit = \"A\", StateSelect = StateSelect.prefer) = aims.spacePhasorR.zero.i \"rotor zero-sequence current\";
-//   protected final parameter Real aims.internalTurnsRatio = if aims.useTurnsRatio then aims.turnsRatio else (6.28318530717959 * (aims.fsNominal * (aims.Lm * aims.VsNominal))) / (sqrt(aims.Rs ^ 2.0 + 39.4784176043574 * (aims.fsNominal ^ 2.0 * (aims.Lm + aims.Lssigma) ^ 2.0)) * aims.VrLockedRotor);
+//   protected final parameter Real aims.internalTurnsRatio = if aims.useTurnsRatio then aims.turnsRatio else (6.28318530717959 * (aims.fsNominal * (aims.Lm * aims.VsNominal))) / (sqrt(aims.Rs ^ 2.0 + 39.4784176043574 * (aims.fsNominal * (aims.Lm + aims.Lssigma)) ^ 2.0) * aims.VrLockedRotor);
 //   parameter Real aims.Js(quantity = \"MomentOfInertia\", unit = \"kg.m2\", start = aims.Jr) \"stator's moment of inertia\";
 //   Real aims.inertiaRotor.flange_a.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real aims.inertiaRotor.flange_a.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
@@ -2546,7 +2546,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   protected parameter Real aims.airGapS.L[1,2](quantity = \"Inductance\", unit = \"H\") = 0.0 \"inductance matrix\";
 //   protected parameter Real aims.airGapS.L[2,1](quantity = \"Inductance\", unit = \"H\") = 0.0 \"inductance matrix\";
 //   protected parameter Real aims.airGapS.L[2,2](quantity = \"Inductance\", unit = \"H\") = aims.airGapS.Lm \"inductance matrix\";
-//   parameter Real aims.VrLockedRotor(quantity = \"ElectricPotential\", unit = \"V\", start = (628.318530717959 * (aims.fsNominal * aims.Lm)) / sqrt(aims.Rs ^ 2.0 + 39.4784176043574 * (aims.fsNominal ^ 2.0 * (aims.Lm + aims.Lssigma) ^ 2.0))) \"locked-rotor voltage per phase\";
+//   parameter Real aims.VrLockedRotor(quantity = \"ElectricPotential\", unit = \"V\", start = (628.318530717959 * (aims.fsNominal * aims.Lm)) / sqrt(aims.Rs ^ 2.0 + 39.4784176043574 * (aims.fsNominal * (aims.Lm + aims.Lssigma)) ^ 2.0)) \"locked-rotor voltage per phase\";
 //   parameter Integer aims.rs.m(min = 1) = 3 \"number of phases\";
 //   parameter Boolean aims.rs.useHeatPort = false \"=true, if all HeatPorts are enabled\";
 //   Real aims.rs.v[1](quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drops between the two plugs\";
@@ -9574,9 +9574,9 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   final parameter Real transformerData.I1ph(quantity = \"ElectricCurrent\", unit = \"A\") = transformerData.SNominal / (transformerData.V1ph * 3.0) \"primary phase current (RMS)\";
 //   final parameter Real transformerData.I2ph(quantity = \"ElectricCurrent\", unit = \"A\") = transformerData.SNominal / (transformerData.V2ph * 3.0) \"secondary phase current (RMS)\";
 //   final parameter Real transformerData.Z1ph(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * (transformerData.v_sc * transformerData.V1ph)) / transformerData.I1ph \"primary impedance per phase\";
-//   parameter Real transformerData.R1(quantity = \"Resistance\", unit = \"Ohm\") = 0.166666666666667 * (transformerData.P_sc * transformerData.I1ph ^ -2.0) \"warm primary resistance per phase\";
+//   parameter Real transformerData.R1(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * transformerData.P_sc) / (transformerData.I1ph ^ 2.0 * 3.0) \"warm primary resistance per phase\";
 //   final parameter Real transformerData.Z2ph(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * (transformerData.v_sc * transformerData.V2ph)) / transformerData.I2ph \"secondary impedance per phase\";
-//   parameter Real transformerData.R2(quantity = \"Resistance\", unit = \"Ohm\") = 0.166666666666667 * (transformerData.P_sc * transformerData.I2ph ^ -2.0) \"warm secondary resistance per phase\";
+//   parameter Real transformerData.R2(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * transformerData.P_sc) / (transformerData.I2ph ^ 2.0 * 3.0) \"warm secondary resistance per phase\";
 //   parameter Real transformerData.L1sigma(quantity = \"Inductance\", unit = \"H\") = sqrt(transformerData.Z1ph ^ 2.0 - transformerData.R1 ^ 2.0) / (transformerData.f * 6.28318530717959) \"primary stray inductance per phase\";
 //   parameter Real transformerData.L2sigma(quantity = \"Inductance\", unit = \"H\") = sqrt(transformerData.Z2ph ^ 2.0 - transformerData.R2 ^ 2.0) / (transformerData.f * 6.28318530717959) \"secondary stray inductance per phase\";
 //   constant Integer transformer.m(min = 1) = 3 \"Number of phases\";
@@ -10811,9 +10811,9 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   final parameter Real transformerData1.I1ph(quantity = \"ElectricCurrent\", unit = \"A\") = transformerData1.SNominal / (transformerData1.V1ph * 3.0) \"primary phase current (RMS)\";
 //   final parameter Real transformerData1.I2ph(quantity = \"ElectricCurrent\", unit = \"A\") = transformerData1.SNominal / (transformerData1.V2ph * 3.0) \"secondary phase current (RMS)\";
 //   final parameter Real transformerData1.Z1ph(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * (transformerData1.v_sc * transformerData1.V1ph)) / transformerData1.I1ph \"primary impedance per phase\";
-//   parameter Real transformerData1.R1(quantity = \"Resistance\", unit = \"Ohm\") = 0.166666666666667 * (transformerData1.P_sc * transformerData1.I1ph ^ -2.0) \"warm primary resistance per phase\";
+//   parameter Real transformerData1.R1(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * transformerData1.P_sc) / (transformerData1.I1ph ^ 2.0 * 3.0) \"warm primary resistance per phase\";
 //   final parameter Real transformerData1.Z2ph(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * (transformerData1.v_sc * transformerData1.V2ph)) / transformerData1.I2ph \"secondary impedance per phase\";
-//   parameter Real transformerData1.R2(quantity = \"Resistance\", unit = \"Ohm\") = 0.166666666666667 * (transformerData1.P_sc * transformerData1.I2ph ^ -2.0) \"warm secondary resistance per phase\";
+//   parameter Real transformerData1.R2(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * transformerData1.P_sc) / (transformerData1.I2ph ^ 2.0 * 3.0) \"warm secondary resistance per phase\";
 //   parameter Real transformerData1.L1sigma(quantity = \"Inductance\", unit = \"H\") = sqrt(transformerData1.Z1ph ^ 2.0 - transformerData1.R1 ^ 2.0) / (transformerData1.f * 6.28318530717959) \"primary stray inductance per phase\";
 //   parameter Real transformerData1.L2sigma(quantity = \"Inductance\", unit = \"H\") = sqrt(transformerData1.Z2ph ^ 2.0 - transformerData1.R2 ^ 2.0) / (transformerData1.f * 6.28318530717959) \"secondary stray inductance per phase\";
 //   constant Integer transformer1.m(min = 1) = 3 \"Number of phases\";
@@ -12099,9 +12099,9 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   final parameter Real transformerData1.I1ph(quantity = \"ElectricCurrent\", unit = \"A\") = transformerData1.SNominal / (transformerData1.V1ph * 3.0) \"primary phase current (RMS)\";
 //   final parameter Real transformerData1.I2ph(quantity = \"ElectricCurrent\", unit = \"A\") = transformerData1.SNominal / (transformerData1.V2ph * 3.0) \"secondary phase current (RMS)\";
 //   final parameter Real transformerData1.Z1ph(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * (transformerData1.v_sc * transformerData1.V1ph)) / transformerData1.I1ph \"primary impedance per phase\";
-//   parameter Real transformerData1.R1(quantity = \"Resistance\", unit = \"Ohm\") = 0.166666666666667 * (transformerData1.P_sc * transformerData1.I1ph ^ -2.0) \"warm primary resistance per phase\";
+//   parameter Real transformerData1.R1(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * transformerData1.P_sc) / (transformerData1.I1ph ^ 2.0 * 3.0) \"warm primary resistance per phase\";
 //   final parameter Real transformerData1.Z2ph(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * (transformerData1.v_sc * transformerData1.V2ph)) / transformerData1.I2ph \"secondary impedance per phase\";
-//   parameter Real transformerData1.R2(quantity = \"Resistance\", unit = \"Ohm\") = 0.166666666666667 * (transformerData1.P_sc * transformerData1.I2ph ^ -2.0) \"warm secondary resistance per phase\";
+//   parameter Real transformerData1.R2(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * transformerData1.P_sc) / (transformerData1.I2ph ^ 2.0 * 3.0) \"warm secondary resistance per phase\";
 //   parameter Real transformerData1.L1sigma(quantity = \"Inductance\", unit = \"H\") = sqrt(transformerData1.Z1ph ^ 2.0 - transformerData1.R1 ^ 2.0) / (transformerData1.f * 6.28318530717959) \"primary stray inductance per phase\";
 //   parameter Real transformerData1.L2sigma(quantity = \"Inductance\", unit = \"H\") = sqrt(transformerData1.Z2ph ^ 2.0 - transformerData1.R2 ^ 2.0) / (transformerData1.f * 6.28318530717959) \"secondary stray inductance per phase\";
 //   constant Integer transformer1.m(min = 1) = 3 \"Number of phases\";
@@ -12882,9 +12882,9 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   final parameter Real transformerData2.I1ph(quantity = \"ElectricCurrent\", unit = \"A\") = transformerData2.SNominal / (transformerData2.V1ph * 3.0) \"primary phase current (RMS)\";
 //   final parameter Real transformerData2.I2ph(quantity = \"ElectricCurrent\", unit = \"A\") = transformerData2.SNominal / (transformerData2.V2ph * 3.0) \"secondary phase current (RMS)\";
 //   final parameter Real transformerData2.Z1ph(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * (transformerData2.v_sc * transformerData2.V1ph)) / transformerData2.I1ph \"primary impedance per phase\";
-//   parameter Real transformerData2.R1(quantity = \"Resistance\", unit = \"Ohm\") = 0.166666666666667 * (transformerData2.P_sc * transformerData2.I1ph ^ -2.0) \"warm primary resistance per phase\";
+//   parameter Real transformerData2.R1(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * transformerData2.P_sc) / (transformerData2.I1ph ^ 2.0 * 3.0) \"warm primary resistance per phase\";
 //   final parameter Real transformerData2.Z2ph(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * (transformerData2.v_sc * transformerData2.V2ph)) / transformerData2.I2ph \"secondary impedance per phase\";
-//   parameter Real transformerData2.R2(quantity = \"Resistance\", unit = \"Ohm\") = 0.166666666666667 * (transformerData2.P_sc * transformerData2.I2ph ^ -2.0) \"warm secondary resistance per phase\";
+//   parameter Real transformerData2.R2(quantity = \"Resistance\", unit = \"Ohm\") = (0.5 * transformerData2.P_sc) / (transformerData2.I2ph ^ 2.0 * 3.0) \"warm secondary resistance per phase\";
 //   parameter Real transformerData2.L1sigma(quantity = \"Inductance\", unit = \"H\") = sqrt(transformerData2.Z1ph ^ 2.0 - transformerData2.R1 ^ 2.0) / (transformerData2.f * 6.28318530717959) \"primary stray inductance per phase\";
 //   parameter Real transformerData2.L2sigma(quantity = \"Inductance\", unit = \"H\") = sqrt(transformerData2.Z2ph ^ 2.0 - transformerData2.R2 ^ 2.0) / (transformerData2.f * 6.28318530717959) \"secondary stray inductance per phase\";
 //   parameter Integer starAC.m(min = 1) = 3 \"number of phases\";

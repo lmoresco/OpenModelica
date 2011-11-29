@@ -18,7 +18,7 @@ checkModel(Modelica.Fluid.Valves.ValveCompressible); getErrorString();
 //   input Real delta = 0.01 \"Range of significant deviation from sqrt(abs(x))*sgn(x)\";
 //   output Real y;
 // algorithm
-//   y := x * (x ^ 2.0 + delta ^ 2.0) ^ -0.25;
+//   y := x / (x ^ 2.0 + delta ^ 2.0) ^ 0.25;
 // end Modelica.Fluid.Utilities.regRoot;
 // 
 // function Modelica.Fluid.Utilities.regRoot_der \"Derivative of regRoot\"
@@ -27,7 +27,7 @@ checkModel(Modelica.Fluid.Valves.ValveCompressible); getErrorString();
 //   input Real dx \"Derivative of x\";
 //   output Real dy;
 // algorithm
-//   dy := 0.5 * dx * (x ^ 2.0 + 2.0 * delta ^ 2.0) * (x ^ 2.0 + delta ^ 2.0) ^ -1.25;
+//   dy := (0.5 * dx * (x ^ 2.0 + 2.0 * delta ^ 2.0)) / (x ^ 2.0 + delta ^ 2.0) ^ 1.25;
 // end Modelica.Fluid.Utilities.regRoot_der;
 // 
 // function Modelica.Fluid.Utilities.regStep \"Approximation of a general step, such that the characteristic is continuous and differentiable\"
