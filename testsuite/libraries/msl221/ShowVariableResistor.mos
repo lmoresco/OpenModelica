@@ -91,7 +91,7 @@ getErrorString();
 //   protected constant Real SineVoltage1.signalSource.pi = 3.14159265358979;
 //   output Real Ramp1.y \"Connector of Real output signal\";
 //   parameter Real Ramp1.height = 5.0 \"Height of ramps\";
-//   parameter Real Ramp1.duration(min = 1e-060) = 2.0 \"Durations of ramp\";
+//   parameter Real Ramp1.duration(min = 1e-60) = 2.0 \"Durations of ramp\";
 //   parameter Real Ramp1.offset = 2.0 \"Offset of output signal\";
 //   parameter Real Ramp1.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
 // equation

@@ -45,7 +45,7 @@ end InStreamInsideOutside;
 //   a.instream_s = s.s;
 //   instream_s = s.s;
 //   instream_s_a = s.s;
-//   a.s.f + (-s.f) = 0.0;
+//   a.s.f + -s.f = 0.0;
 //   s.f = 0.0;
 //   a.s.r = s.r;
 //   a.s.s = s.s;

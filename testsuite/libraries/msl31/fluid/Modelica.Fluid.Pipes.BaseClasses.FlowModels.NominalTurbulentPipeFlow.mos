@@ -58,14 +58,14 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalTurbulentPipeFlow)
 //   input Real mu_b(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) \"Dynamic viscosity at port_b (dummy if use_mu = false)\";
 //   input Real length(quantity = \"Length\", unit = \"m\") \"Length of pipe\";
 //   input Real diameter(quantity = \"Length\", unit = \"m\", min = 0.0) \"Inner (hydraulic) diameter of pipe\";
-//   input Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 2.5e-005 \"Absolute roughness of pipe, with a default for a smooth steel pipe (dummy if use_roughness = false)\";
+//   input Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 2.5e-05 \"Absolute roughness of pipe, with a default for a smooth steel pipe (dummy if use_roughness = false)\";
 //   input Real dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Turbulent flow if |dp| >= dp_small (dummy if use_dp_small = false)\";
 //   output Real m_flow(quantity = \"MassFlowRate\", unit = \"kg/s\") \"Mass flow rate from port_a to port_b\";
 //   protected constant Real pi = 3.14159265358979;
 //   protected Real zeta;
 //   protected Real k_inv;
 // algorithm
-//   assert( roughness > 1e-010, \"roughness > 0 required for quadratic turbulent wall friction characteristic\");
+//   assert( roughness > 1e-10, \"roughness > 0 required for quadratic turbulent wall friction characteristic\");
 //   zeta := (length * (2.0 * log10((3.7 * diameter) / roughness)) ^ -2.0) / diameter;
 //   k_inv := (3.14159265358979 * diameter ^ 2.0) ^ 2.0 / (zeta * 8.0);
 //   m_flow := Modelica.Fluid.Utilities.regRoot2(dp,dp_small,rho_a * k_inv,rho_b * k_inv,false,1);
@@ -222,7 +222,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalTurbulentPipeFlow)
 //   parameter Boolean from_dp = momentumDynamics >= Modelica.Fluid.Types.Dynamics.SteadyStateInitial \" = true, use m_flow = f(dp), otherwise dp = f(m_flow)\";
 //   protected parameter Boolean use_mu_nominal = not show_Res \"= true, if mu_nominal is used, otherwise computed from medium\";
 //   input Real pathLengths[1](quantity = \"Length\", unit = \"m\") \"Lengths along flow path\";
-//   Real m_flows[1](quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+060 else 0.0, max = 100000.0, start = m_flow_start, StateSelect = StateSelect.default) \"mass flow rates between states\";
+//   Real m_flows[1](quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+60 else 0.0, max = 100000.0, start = m_flow_start, StateSelect = StateSelect.default) \"mass flow rates between states\";
 //   Real Is[1](quantity = \"Momentum\", unit = \"kg.m/s\") \"Momentums of flow segments\";
 //   Real Ib_flows[1](quantity = \"Force\", unit = \"N\") \"Flow of momentum across boudaries\";
 //   Real Fs_p[1](quantity = \"Force\", unit = \"N\") \"Pressure forces\";

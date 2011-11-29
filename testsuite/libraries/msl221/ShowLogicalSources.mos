@@ -23,7 +23,7 @@ getErrorString();
 // algorithm
 //   if size(table,1) == 0 then
 //     index := 0;
-//     nextTime := -1e+060;
+//     nextTime := -1e+60;
 //     y := startValue;
 //   elseif size(table,1) == 1 then
 //     index := 1;
@@ -81,13 +81,13 @@ getErrorString();
 //   parameter Real step.startTime(quantity = \"Time\", unit = \"s\") = 4.0 \"Time instant of step start\";
 //   parameter Boolean step.startValue = false \"Output before startTime\";
 //   output Boolean pulse.y \"Connector of Boolean output signal\";
-//   parameter Real pulse.width(min = 1e-060, max = 100.0) = 50.0 \"Width of pulse in % of period\";
-//   parameter Real pulse.period(quantity = \"Time\", unit = \"s\", min = 1e-060) = 1.5 \"Time for one period\";
+//   parameter Real pulse.width(min = 1e-60, max = 100.0) = 50.0 \"Width of pulse in % of period\";
+//   parameter Real pulse.period(quantity = \"Time\", unit = \"s\", min = 1e-60) = 1.5 \"Time for one period\";
 //   parameter Real pulse.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Time instant of first pulse\";
 //   protected discrete Real pulse.pulsStart(quantity = \"Time\", unit = \"s\") \"Start time of pulse\";
 //   protected parameter Real pulse.Twidth(quantity = \"Time\", unit = \"s\") = (pulse.period * pulse.width) / 100.0 \"width of one pulse\";
 //   output Boolean sample.y \"Connector of Boolean output signal\";
-//   parameter Real sample.period(quantity = \"Time\", unit = \"s\", min = 1e-060) = 0.5 \"Sample period\";
+//   parameter Real sample.period(quantity = \"Time\", unit = \"s\", min = 1e-60) = 0.5 \"Sample period\";
 //   parameter Real sample.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Time instant of first sample trigger\";
 //   output Boolean booleanExpression.y = pulse.y and step.y \"Value of Boolean output\";
 // initial equation

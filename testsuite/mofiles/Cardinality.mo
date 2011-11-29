@@ -55,16 +55,16 @@ end circuit;
 //   Real R2.y[1];
 // equation
 //   p.i = 0.0;
-//   (-p.i) + R1.p.i = 0.0;
+//   -p.i + R1.p.i = 0.0;
 //   R1.n.i = 0.0;
 //   R1.q.i = 0.0;
 //   R1.p.v = R1.q.v;
-//   (-R1.p.i) + (-R1.q.i) = 0.0;
+//   -R1.p.i + -R1.q.i = 0.0;
 //   R2.p.i = 0.0;
 //   R2.n.i = 0.0;
 //   R2.q.i = 0.0;
 //   R2.p.v = R2.q.v;
-//   (-R2.p.i) + (-R2.q.i) = 0.0;
+//   -R2.p.i + -R2.q.i = 0.0;
 //   R1.p.v = p.v;
 // end circuit;
 // endResult

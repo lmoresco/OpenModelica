@@ -32,6 +32,6 @@ end Connect6;
 //   c1.f = 0.0;
 //   c2.f = 0.0;
 //   c1.s = c2.s;
-//   (-c1.f) + (-c2.f) = 0.0;
+//   -c1.f + -c2.f = 0.0;
 // end Connect6;
 // endResult

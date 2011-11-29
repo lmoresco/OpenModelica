@@ -131,7 +131,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //   input Real length(quantity = \"Length\", unit = \"m\") \"Length of pipe\";
 //   input Real diameter(quantity = \"Length\", unit = \"m\", min = 0.0) \"Inner (hydraulic) diameter of pipe\";
 //   input Real g_times_height_ab \"Gravity times (Height(port_b) - Height(port_a))\";
-//   input Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 2.5e-005 \"Absolute roughness of pipe, with a default for a smooth steel pipe (dummy if use_roughness = false)\";
+//   input Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 2.5e-05 \"Absolute roughness of pipe, with a default for a smooth steel pipe (dummy if use_roughness = false)\";
 //   input Real dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Turbulent flow if |dp| >= dp_small (dummy if use_dp_small = false)\";
 //   output Real m_flow(quantity = \"MassFlowRate\", unit = \"kg/s\") \"Mass flow rate from port_a to port_b\";
 //   protected Real Delta = roughness / diameter \"Relative roughness\";
@@ -208,7 +208,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //     dy_dx := (y1 * h00d) / h + y1d * h10d + (y2 * h01d) / h + y2d * h11d;
 //   else
 //     y := y1 / 2.0 + y2 / 2.0;
-//     dy_dx := 1e+060 * /*REAL*/(sign(y2 - y1));
+//     dy_dx := 1e+60 * /*REAL*/(sign(y2 - y1));
 //   end if;
 // end Modelica.Fluid.Utilities.cubicHermite_withDerivative;
 // 
@@ -248,8 +248,8 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //   if abs(Delta0) <= 0.0 then
 //     y := y0;
 //   else
-//     if abs(y1d + y0d + -2.0 * Delta0) < 1e-013 then
-//       xstar := 1e+060 * (x1 - x0) * (2.0 * y0d + y1d + -3.0 * Delta0) * if y0d + y1d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
+//     if abs(y1d + y0d + -2.0 * Delta0) < 1e-13 then
+//       xstar := 1e+60 * (x1 - x0) * (2.0 * y0d + y1d + -3.0 * Delta0) * if y0d + y1d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
 //     else
 //       xstar := (0.333333333333333 * (-3.0 * x0 * (y0d + y1d) + 6.0 * x0 * Delta0 + -2.0 * h0 * y0d + 3.0 * h0 * Delta0 - h0 * y1d)) / (2.0 * Delta0 + -y1d - y0d);
 //     end if;
@@ -257,13 +257,13 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //     eta := x1 - xstar;
 //     omega := 3.0 * (y0d + y1d + -2.0 * Delta0) * (xstar - x0) ^ 2.0 * h0 ^ -2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (xstar - x0)) / h0 + y0d;
 //     aux01 := 0.25 * /*REAL*/(sign(Delta0)) * min(abs(omega),abs(Delta0));
-//     if abs(y0d - y1d) <= 1e-013 then
+//     if abs(y0d - y1d) <= 1e-13 then
 //       aux02 := y0d;
 //       if y1 > y0 + y0d * (x1 - x0) then
 //         useSingleCubicPolynomial := true;
 //       end if;
-//     elseif abs(y1d + y0d + -2.0 * Delta0) < 1e-013 then
-//       aux02 := 1e+060 * (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + -y1d * y0d + -y1d ^ 2.0 - y0d ^ 2.0) * if y1d + y0d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
+//     elseif abs(y1d + y0d + -2.0 * Delta0) < 1e-13 then
+//       aux02 := 1e+60 * (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + -y1d * y0d + -y1d ^ 2.0 - y0d ^ 2.0) * if y1d + y0d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
 //     else
 //       aux02 := (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + -y1d * y0d + -y1d ^ 2.0 - y0d ^ 2.0) / (y1d + y0d + -2.0 * Delta0 * 3.0);
 //     end if;
@@ -276,7 +276,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //         c := 0.1 * Delta0;
 //       end if;
 //       theta0 := (y0d * mu + y1d * eta) / h0;
-//       if abs(theta0 - c) < 1e-006 then
+//       if abs(theta0 - c) < 1e-06 then
 //         c := 0.999999 * theta0;
 //       end if;
 //       rho := (3.0 * (Delta0 - c)) / (theta0 - c);
@@ -284,8 +284,8 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //       eta_tilde := rho * eta;
 //       xi1 := x0 + mu_tilde;
 //       xi2 := x1 - eta_tilde;
-//       a1 := (y0d - c) / max(mu_tilde ^ 2.0,1e-013);
-//       a2 := (y1d - c) / max(eta_tilde ^ 2.0,1e-013);
+//       a1 := (y0d - c) / max(mu_tilde ^ 2.0,1e-13);
+//       a2 := (y1d - c) / max(eta_tilde ^ 2.0,1e-13);
 //       const12 := y0 + (-(x0 - xi1) ^ 3.0 * a1) / 3.0 - c * x0;
 //       const3 := y1 + (-(x1 - xi2) ^ 3.0 * a2) / 3.0 - c * x1;
 //       if x < xi1 then
@@ -394,7 +394,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //   parameter Real dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1000.0 * dp_small \"Nominal pressure loss (for nominal models)\";
 //   parameter Real m_flow_nominal(quantity = \"MassFlowRate\", unit = \"kg/s\") = 100.0 * m_flow_small \"Mass flow rate for dp_nominal (for nominal models)\";
 //   input Real pathLengths[1](quantity = \"Length\", unit = \"m\") \"Lengths along flow path\";
-//   Real m_flows[1](quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+060 else 0.0, max = 100000.0, start = m_flow_start, StateSelect = StateSelect.default) \"mass flow rates between states\";
+//   Real m_flows[1](quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+60 else 0.0, max = 100000.0, start = m_flow_start, StateSelect = StateSelect.default) \"mass flow rates between states\";
 //   Real Is[1](quantity = \"Momentum\", unit = \"kg.m/s\") \"Momentums of flow segments\";
 //   Real Ib_flows[1](quantity = \"Force\", unit = \"N\") \"Flow of momentum across boudaries\";
 //   Real Fs_p[1](quantity = \"Force\", unit = \"N\") \"Pressure forces\";

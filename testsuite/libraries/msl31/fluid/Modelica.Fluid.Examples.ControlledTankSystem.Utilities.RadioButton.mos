@@ -26,7 +26,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton); 
 // algorithm
 //   if size(table,1) == 0 then
 //     index := 0;
-//     nextTime := -1e+060;
+//     nextTime := -1e+60;
 //     y := startValue;
 //   elseif size(table,1) == 1 then
 //     index := 1;

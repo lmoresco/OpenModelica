@@ -3986,7 +3986,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   openTankHot3.portsData_zeta_in[1] = openTankHot3.portsData_zeta_in_internal[1];
 //   openTankHot3.portsData_zeta_out[1] = openTankHot3.portsData_zeta_out_internal[1];
 //   mFlow3.m_flow_in = mFlow3.m_flow_in_internal;
-//   (-junctionIdeal.port_1.m_flow) + (-junctionIdeal.port_2.m_flow) + (-junctionIdeal.port_3.m_flow) = 0.0;
+//   -junctionIdeal.port_1.m_flow + -junctionIdeal.port_2.m_flow + -junctionIdeal.port_3.m_flow = 0.0;
 //   junctionIdeal.port_1.p = junctionIdeal.port_2.p;
 //   junctionIdeal.port_1.p = junctionIdeal.port_3.p;
 //   junctionIdeal.port_3.h_outflow = (max(junctionIdeal.port_1.m_flow,1e-15) * (max(-T_junction.port.m_flow,1e-15) * T_junction.port.h_outflow + max(-mFlow3.ports[1].m_flow,1e-15) * mFlow3.ports[1].h_outflow) / (max(-T_junction.port.m_flow,1e-15) + max(-mFlow3.ports[1].m_flow,1e-15)) + max(junctionIdeal.port_2.m_flow,1e-15) * openTankHot3.ports[1].h_outflow) / (max(junctionIdeal.port_1.m_flow,1e-15) + max(junctionIdeal.port_2.m_flow,1e-15));

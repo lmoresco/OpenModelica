@@ -27,7 +27,7 @@ getErrorString();
 // class Modelica.Electrical.Analog.Examples.Rectifier
 //   parameter Real VAC(quantity = \"ElectricPotential\", unit = \"V\") = 400.0 \"RMS line-to-line\";
 //   parameter Real f(quantity = \"Frequency\", unit = \"Hz\") = 50.0 \"line frequency\";
-//   parameter Real LAC(quantity = \"Inductance\", unit = \"H\") = 6e-005 \"line inductor\";
+//   parameter Real LAC(quantity = \"Inductance\", unit = \"H\") = 6e-05 \"line inductor\";
 //   parameter Real Ron(quantity = \"Resistance\", unit = \"Ohm\") = 0.001 \"diode forward resistance\";
 //   parameter Real Goff(quantity = \"Conductance\", unit = \"S\") = 0.001 \"diode backward conductance\";
 //   parameter Real Vknee(quantity = \"ElectricPotential\", unit = \"V\") = 2.0 \"diode threshold voltage\";

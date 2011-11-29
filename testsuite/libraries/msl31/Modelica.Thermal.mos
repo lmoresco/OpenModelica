@@ -75,12 +75,12 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   protected parameter Real speed.w_crit(quantity = \"AngularFrequency\", unit = \"rad/s\") = 6.28318530717959 * speed.f_crit \"Critical frequency\";
 //   output Real speedRamp.y \"Connector of Real output signal\";
 //   parameter Real speedRamp.height = 0.5 \"Height of ramps\";
-//   parameter Real speedRamp.duration(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 2.0) = 0.1 \"Durations of ramp\";
+//   parameter Real speedRamp.duration(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 2.0) = 0.1 \"Durations of ramp\";
 //   parameter Real speedRamp.offset = 0.5 \"Offset of output signal\";
 //   parameter Real speedRamp.startTime(quantity = \"Time\", unit = \"s\") = 0.4 \"Output = offset for time < startTime\";
 //   output Real valveRamp.y \"Connector of Real output signal\";
 //   parameter Real valveRamp.height = 0.5 \"Height of ramps\";
-//   parameter Real valveRamp.duration(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 2.0) = 0.1 \"Durations of ramp\";
+//   parameter Real valveRamp.duration(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 2.0) = 0.1 \"Durations of ramp\";
 //   parameter Real valveRamp.offset = 0.5 \"Offset of output signal\";
 //   parameter Real valveRamp.startTime(quantity = \"Time\", unit = \"s\") = 0.9 \"Output = offset for time < startTime\";
 //   parameter Real ambient1.medium.rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = 1 \"Density\";
@@ -174,8 +174,8 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   parameter Real valve.rho0(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, start = 10.0) \"Standard medium's density\";
 //   parameter Real valve.frictionLoss(min = 0.0, max = 1.0, start = 0.0) \"Part of friction losses fed to medium\";
 //   protected constant Real valve.unitVolumeFlowRate(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = 1.0;
-//   protected constant Real valve.small = 1e-060;
-//   protected constant Real valve.eps = 1e-015;
+//   protected constant Real valve.small = 1e-60;
+//   protected constant Real valve.eps = 1e-15;
 //   protected Real valve.yLim = max(min(valve.y,valve.y1),0.0) \"Limited valve opening\";
 //   protected Real valve.Kv(quantity = \"VolumeFlowRate\", unit = \"m3/s\") \"Standard flow rate\";
 //   input Real valve.y;
@@ -198,10 +198,10 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   Real valve.flowPort_b.h(quantity = \"SpecificEnergy\", unit = \"J/kg\");
 //   Real valve.flowPort_b.H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\");
 //   output Real valve.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0, start = valve.T0) \"Outlet temperature of medium\";
-//   parameter Real valve.y1(min = 1e-060, start = 1.0) \"Max. valve opening\";
-//   parameter Real valve.Kv1(quantity = \"VolumeFlowRate\", unit = \"m3/s\", min = 1e-060, start = 1.0) \"Max. flow @ y = y1\";
-//   protected constant Real valve.smallVolumeFlowRate(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = 1e-015;
-//   parameter Real valve.kv0(min = 1e-060, max = 1.0, start = 0.01) \"Leakage flow / max.flow @ y = 0\";
+//   parameter Real valve.y1(min = 1e-60, start = 1.0) \"Max. valve opening\";
+//   parameter Real valve.Kv1(quantity = \"VolumeFlowRate\", unit = \"m3/s\", min = 1e-60, start = 1.0) \"Max. flow @ y = y1\";
+//   protected constant Real valve.smallVolumeFlowRate(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = 1e-15;
+//   parameter Real valve.kv0(min = 1e-60, max = 1.0, start = 0.01) \"Leakage flow / max.flow @ y = 0\";
 //   parameter Real pipe.medium.rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = 1 \"Density\";
 //   parameter Real pipe.medium.cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") = 1 \"Specific heat capacity at constant pressure\";
 //   parameter Real pipe.medium.cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") = 1 \"Specific heat capacity at constant volume\";
@@ -218,7 +218,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   output Real pipe.dT(quantity = \"ThermodynamicTemperature\", unit = \"K\") = if noEvent(pipe.V_flow >= 0.0) then pipe.T - pipe.T_a else pipe.T_b - pipe.T \"Temperature increase of coolant in flow direction\";
 //   protected Real pipe.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") = pipe.medium.cp * pipe.T \"Medium's specific enthalpy\";
 //   protected Real pipe.T_q(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = pipe.T - Real(sign(pipe.V_flow)) * ((1.0 - pipe.tapT) * pipe.dT) \"Temperature relevant for heat exchange with ambient\";
-//   parameter Real pipe.V_flowLaminar(quantity = \"VolumeFlowRate\", unit = \"m3/s\", min = 1e-060, start = 0.1) \"Laminar volume flow\";
+//   parameter Real pipe.V_flowLaminar(quantity = \"VolumeFlowRate\", unit = \"m3/s\", min = 1e-60, start = 0.1) \"Laminar volume flow\";
 //   parameter Real pipe.dpLaminar(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = 0.1) \"Laminar pressure drop\";
 //   parameter Real pipe.V_flowNominal(quantity = \"VolumeFlowRate\", unit = \"m3/s\", start = 1.0) \"Nominal volume flow\";
 //   parameter Real pipe.dpNominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = 1.0) \"Nominal pressure drop\";
@@ -283,9 +283,9 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   Real heatCapacitor.port.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real heatCapacitor.port.Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
 // initial algorithm
-//   assert(valve.y1 > 1e-060, \"Valve characteristic: y1 has to be > 0 !\");
-//   assert(valve.Kv1 > 1e-015, \"Valve characteristic: Kv1 has to be > 0 !\");
-//   assert(valve.kv0 > 1e-060, \"Valve characteristic: kv0 has to be > 0 !\");
+//   assert(valve.y1 > 1e-60, \"Valve characteristic: y1 has to be > 0 !\");
+//   assert(valve.Kv1 > 1e-15, \"Valve characteristic: Kv1 has to be > 0 !\");
+//   assert(valve.kv0 > 1e-60, \"Valve characteristic: kv0 has to be > 0 !\");
 //   assert(valve.kv0 < 0.999999999999999, \"Valve characteristic: kv0 has to be < 1 !\");
 //   assert(pipe.V_flowNominal > pipe.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
 //   assert(pipe.dpNominal >= pipe.dpNomMin, \"SimpleFriction: dpNominal has to be > dpLaminar/V_flowLaminar*V_flowNominal!\");
@@ -312,7 +312,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   ambient1.flowPort.H_flow = semiLinear(ambient1.flowPort.m_flow,ambient1.flowPort.h,ambient1.h);
 //   idealPump.dp1 = idealPump.dp0 * (Real(sign(idealPump.w / idealPump.wNominal)) * (idealPump.w / idealPump.wNominal) ^ 2.0);
 //   idealPump.V_flow1 = (idealPump.V_flow0 * idealPump.w) / idealPump.wNominal;
-//   if noEvent(abs(idealPump.w) < 1e-060) then
+//   if noEvent(abs(idealPump.w) < 1e-60) then
 //   idealPump.dp = 0.0;
 //   idealPump.flange_a.tau = 0.0;
 //   else

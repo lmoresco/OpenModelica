@@ -24,16 +24,16 @@ evecRow3 := {val(evec[3,1], 0), val(evec[3,2], 0), val(evec[3,3], 0)};
 // ""
 // record SimulationResult
 //     resultFile = "TestMatrices_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'TestMatrices', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'TestMatrices', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""
 // "eigenValues"
 // {8.0,0.0}
-// {-0.618033988749895,0.0}
+// {-0.618033988749896,0.0}
 // {1.61803398874989,0.0}
 // "eigenVector"
 // {-0.408248290463863,-0.912253039957255,-0.196881012350686}
 // {-0.816496580927726,0.215353730110744,-0.83400135179648}
-// {-0.408248290463863,0.348449654923256,0.515441182073583}
+// {-0.408248290463863,0.348449654923255,0.515441182073583}
 // endResult

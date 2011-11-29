@@ -76,7 +76,7 @@ getErrorString();
 //   Real torque.bearing.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   output Real ramp.y \"Connector of Real output signal\";
 //   parameter Real ramp.height = 100.0 \"Height of ramps\";
-//   parameter Real ramp.duration(min = 1e-060) = 5.0 \"Durations of ramp\";
+//   parameter Real ramp.duration(min = 1e-60) = 5.0 \"Durations of ramp\";
 //   parameter Real ramp.offset = 0.0 \"Offset of output signal\";
 //   parameter Real ramp.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
 //   Real idealGear.flange_a.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";

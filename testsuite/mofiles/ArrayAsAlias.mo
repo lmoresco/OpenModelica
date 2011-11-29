@@ -206,7 +206,7 @@ end ArrayAsAlias;
 //   parameter Real w.n[1](unit = "1") = 0.0 "Direction of gravity resolved in world frame (gravity = g*n/length(n))";
 //   parameter Real w.n[2](unit = "1") = -1.0 "Direction of gravity resolved in world frame (gravity = g*n/length(n))";
 //   parameter Real w.n[3](unit = "1") = 0.0 "Direction of gravity resolved in world frame (gravity = g*n/length(n))";
-//   parameter Real w.mue(unit = "m3/s2", min = 0.0) = 398600000000000 "Gravity field constant (default = field constant of earth)";
+//   parameter Real w.mue(unit = "m3/s2", min = 0.0) = 398600000000000.0 "Gravity field constant (default = field constant of earth)";
 //   parameter Boolean w.driveTrainMechanics3D = true "= true, if 3-dim. mechanical effects of Parts.Mounting1D/Rotor1D/BevelGear1D shall be taken into account";
 //   parameter Boolean w.axisShowLabels = true "= true, if labels shall be shown";
 //   input Integer w.axisColor_x[1](min = 0, max = 255) = 0 "Color of x-arrow";

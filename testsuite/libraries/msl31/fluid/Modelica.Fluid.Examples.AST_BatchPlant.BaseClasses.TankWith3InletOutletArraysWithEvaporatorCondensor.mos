@@ -2335,10 +2335,10 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutl
 //   TopFluidPort[1].m_flow = 0.0;
 //   SideFluidPort[1].m_flow = 0.0;
 //   BottomFluidPort[1].m_flow = 0.0;
-//   (-heatPort.Q_flow) + heatTransfer.heatPorts[1].Q_flow = 0.0;
-//   (-TopFluidPort[1].m_flow) + InnerTankTop[1].port.m_flow = 0.0;
-//   (-SideFluidPort[1].m_flow) + InnerTankSide[1].port.m_flow = 0.0;
-//   (-BottomFluidPort[1].m_flow) + InnerTankBottom[1].port.m_flow = 0.0;
+//   -heatPort.Q_flow + heatTransfer.heatPorts[1].Q_flow = 0.0;
+//   -TopFluidPort[1].m_flow + InnerTankTop[1].port.m_flow = 0.0;
+//   -SideFluidPort[1].m_flow + InnerTankSide[1].port.m_flow = 0.0;
+//   -BottomFluidPort[1].m_flow + InnerTankBottom[1].port.m_flow = 0.0;
 //   heatPort.T = heatTransfer.heatPorts[1].T;
 //   BottomFluidPort[1].p = InnerTankBottom[1].port.p;
 //   BottomFluidPort[1].h_outflow = InnerTankBottom[1].port.h_outflow;

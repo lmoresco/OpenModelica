@@ -328,8 +328,8 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   stop1.a = der(stop1.v);
 //   stop1.v_relfric = stop1.v;
 //   stop1.a_relfric = stop1.a;
-//   0.0 = stop1.flange_a.f + (stop1.flange_b.f + ((-stop1.f) - stop1.m * der(stop1.v)));
-//   stop1.f = if stop1.locked then stop1.sa else if stop1.free then 0.0 else if stop1.startForward then stop1.F_prop * stop1.v + (stop1.F_Coulomb + stop1.F_Stribeck) else if stop1.startBackward then stop1.F_prop * stop1.v + ((-stop1.F_Coulomb) - stop1.F_Stribeck) else if pre(stop1.mode) == 1 then stop1.F_prop * stop1.v + (stop1.F_Coulomb + stop1.F_Stribeck * exp((-stop1.fexp) * abs(stop1.v))) else stop1.F_prop * stop1.v + ((-stop1.F_Coulomb) - stop1.F_Stribeck * exp((-stop1.fexp) * abs(stop1.v)));
+//   0.0 = stop1.flange_a.f + (stop1.flange_b.f + (-stop1.f - stop1.m * der(stop1.v)));
+//   stop1.f = if stop1.locked then stop1.sa else if stop1.free then 0.0 else if stop1.startForward then stop1.F_prop * stop1.v + (stop1.F_Coulomb + stop1.F_Stribeck) else if stop1.startBackward then stop1.F_prop * stop1.v + (-stop1.F_Coulomb - stop1.F_Stribeck) else if pre(stop1.mode) == 1 then stop1.F_prop * stop1.v + (stop1.F_Coulomb + stop1.F_Stribeck * exp((-stop1.fexp) * abs(stop1.v))) else stop1.F_prop * stop1.v + (-stop1.F_Coulomb - stop1.F_Stribeck * exp((-stop1.fexp) * abs(stop1.v)));
 //   stop1.startForward = pre(stop1.mode) == 0 and (stop1.sa > stop1.f0_max and stop1.s < stop1.smax + (-stop1.L) / 2.0 or pre(stop1.startForward) and stop1.sa > stop1.f0 and stop1.s < stop1.smax + (-stop1.L) / 2.0) or pre(stop1.mode) == -1 and stop1.v_relfric > stop1.v_small or initial() and stop1.v_relfric > 0.0;
 //   stop1.startBackward = pre(stop1.mode) == 0 and (stop1.sa < -stop1.f0_max and stop1.s > stop1.smin + stop1.L / 2.0 or pre(stop1.startBackward) and stop1.sa < -stop1.f0 and stop1.s > stop1.smin + stop1.L / 2.0) or pre(stop1.mode) == 1 and stop1.v_relfric < -stop1.v_small or initial() and stop1.v_relfric < 0.0;
 //   stop1.locked = not stop1.free and not (pre(stop1.mode) == 1 or stop1.startForward or pre(stop1.mode) == -1 or stop1.startBackward);
@@ -347,8 +347,8 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   stop2.a = der(stop2.v);
 //   stop2.v_relfric = stop2.v;
 //   stop2.a_relfric = stop2.a;
-//   0.0 = stop2.flange_a.f + (stop2.flange_b.f + ((-stop2.f) - stop2.m * der(stop2.v)));
-//   stop2.f = if stop2.locked then stop2.sa else if stop2.free then 0.0 else if stop2.startForward then stop2.F_prop * stop2.v + (stop2.F_Coulomb + stop2.F_Stribeck) else if stop2.startBackward then stop2.F_prop * stop2.v + ((-stop2.F_Coulomb) - stop2.F_Stribeck) else if pre(stop2.mode) == 1 then stop2.F_prop * stop2.v + (stop2.F_Coulomb + stop2.F_Stribeck * exp((-stop2.fexp) * abs(stop2.v))) else stop2.F_prop * stop2.v + ((-stop2.F_Coulomb) - stop2.F_Stribeck * exp((-stop2.fexp) * abs(stop2.v)));
+//   0.0 = stop2.flange_a.f + (stop2.flange_b.f + (-stop2.f - stop2.m * der(stop2.v)));
+//   stop2.f = if stop2.locked then stop2.sa else if stop2.free then 0.0 else if stop2.startForward then stop2.F_prop * stop2.v + (stop2.F_Coulomb + stop2.F_Stribeck) else if stop2.startBackward then stop2.F_prop * stop2.v + (-stop2.F_Coulomb - stop2.F_Stribeck) else if pre(stop2.mode) == 1 then stop2.F_prop * stop2.v + (stop2.F_Coulomb + stop2.F_Stribeck * exp((-stop2.fexp) * abs(stop2.v))) else stop2.F_prop * stop2.v + (-stop2.F_Coulomb - stop2.F_Stribeck * exp((-stop2.fexp) * abs(stop2.v)));
 //   stop2.startForward = pre(stop2.mode) == 0 and (stop2.sa > stop2.f0_max and stop2.s < stop2.smax + (-stop2.L) / 2.0 or pre(stop2.startForward) and stop2.sa > stop2.f0 and stop2.s < stop2.smax + (-stop2.L) / 2.0) or pre(stop2.mode) == -1 and stop2.v_relfric > stop2.v_small or initial() and stop2.v_relfric > 0.0;
 //   stop2.startBackward = pre(stop2.mode) == 0 and (stop2.sa < -stop2.f0_max and stop2.s > stop2.smin + stop2.L / 2.0 or pre(stop2.startBackward) and stop2.sa < -stop2.f0 and stop2.s > stop2.smin + stop2.L / 2.0) or pre(stop2.mode) == 1 and stop2.v_relfric < -stop2.v_small or initial() and stop2.v_relfric < 0.0;
 //   stop2.locked = not stop2.free and not (pre(stop2.mode) == 1 or stop2.startForward or pre(stop2.mode) == -1 or stop2.startBackward);

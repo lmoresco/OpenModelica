@@ -120,8 +120,8 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real S.LossPower(quantity = \"Power\", unit = \"W\") \"Loss power leaving component via HeatPort\";
 //   Real S.T_heatPort(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature of HeatPort\";
 //   parameter Real S.level(quantity = \"ElectricPotential\", unit = \"V\") = 2.5 \"Switch level\";
-//   parameter Real S.Ron(quantity = \"Resistance\", unit = \"Ohm\", min = 0.0) = 1e-005 \"Closed switch resistance\";
-//   parameter Real S.Goff(quantity = \"Conductance\", unit = \"S\", min = 0.0) = 1e-005 \"Opened switch conductance\";
+//   parameter Real S.Ron(quantity = \"Resistance\", unit = \"Ohm\", min = 0.0) = 1e-05 \"Closed switch resistance\";
+//   parameter Real S.Goff(quantity = \"Conductance\", unit = \"S\", min = 0.0) = 1e-05 \"Opened switch conductance\";
 //   Real S.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real S.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real S.n2.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -165,7 +165,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   S.n2.i = (-S.s2) * (if S.control.v > S.level then 1.0 else S.Goff);
 //   S.LossPower = S.p.i * S.p.v + (S.n1.i * S.n1.v + S.n2.i * S.n2.v);
 //   S.T_heatPort = S.T;
-//   assert(1.0 + R.alpha * (R.T_heatPort - R.T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + R.alpha * (R.T_heatPort - R.T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   R.R_actual = R.R * (1.0 + R.alpha * (R.T_heatPort - R.T_ref));
 //   R.v = R.R_actual * R.i;
 //   R.LossPower = R.v * R.i;
@@ -174,10 +174,10 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   R.i = R.p.i;
 //   R.T_heatPort = R.T;
 //   S.p.i + R.n.i = 0.0;
-//   S.n2.i + (-n2.i) = 0.0;
-//   S.n1.i + (-n1.i) = 0.0;
-//   S.control.i + (-control.i) = 0.0;
-//   R.p.i + (-p.i) = 0.0;
+//   S.n2.i + -n2.i = 0.0;
+//   S.n1.i + -n1.i = 0.0;
+//   S.control.i + -control.i = 0.0;
+//   R.p.i + -p.i = 0.0;
 //   p.i = 0.0;
 //   n1.i = 0.0;
 //   n2.i = 0.0;
@@ -210,14 +210,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real TP1.S.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real TP1.B.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real TP1.B.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
-//   parameter Real TP1.W(quantity = \"Length\", unit = \"m\") = 6.5e-006 \"Width\";
-//   parameter Real TP1.L(quantity = \"Length\", unit = \"m\") = 3.1e-006 \"Length\";
-//   parameter Real TP1.Beta(quantity = \"Transconductance\", unit = \"A/V2\") = 1.05e-005 \"Transconductance parameter\";
+//   parameter Real TP1.W(quantity = \"Length\", unit = \"m\") = 6.5e-06 \"Width\";
+//   parameter Real TP1.L(quantity = \"Length\", unit = \"m\") = 3.1e-06 \"Length\";
+//   parameter Real TP1.Beta(quantity = \"Transconductance\", unit = \"A/V2\") = 1.05e-05 \"Transconductance parameter\";
 //   parameter Real TP1.Vt(quantity = \"ElectricPotential\", unit = \"V\") = -1.0 \"Zero bias threshold voltage\";
 //   parameter Real TP1.K2 = 0.41 \"Bulk threshold parameter\";
 //   parameter Real TP1.K5 = 0.8385 \"Reduction of pinch-off region\";
-//   parameter Real TP1.dW(quantity = \"Length\", unit = \"m\") = -2.5e-006 \"Narrowing of channel\";
-//   parameter Real TP1.dL(quantity = \"Length\", unit = \"m\") = -2.1e-006 \"Shortening of channel\";
+//   parameter Real TP1.dW(quantity = \"Length\", unit = \"m\") = -2.5e-06 \"Narrowing of channel\";
+//   parameter Real TP1.dL(quantity = \"Length\", unit = \"m\") = -2.1e-06 \"Shortening of channel\";
 //   parameter Real TP1.RDS(quantity = \"Resistance\", unit = \"Ohm\") = 10000000.0 \"Drain-Source-Resistance\";
 //   protected Real TP1.v;
 //   protected Real TP1.uds;
@@ -239,14 +239,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real TP2.S.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real TP2.B.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real TP2.B.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
-//   parameter Real TP2.W(quantity = \"Length\", unit = \"m\") = 6.5e-006 \"Width\";
-//   parameter Real TP2.L(quantity = \"Length\", unit = \"m\") = 3.1e-006 \"Length\";
-//   parameter Real TP2.Beta(quantity = \"Transconductance\", unit = \"A/V2\") = 1.05e-005 \"Transconductance parameter\";
+//   parameter Real TP2.W(quantity = \"Length\", unit = \"m\") = 6.5e-06 \"Width\";
+//   parameter Real TP2.L(quantity = \"Length\", unit = \"m\") = 3.1e-06 \"Length\";
+//   parameter Real TP2.Beta(quantity = \"Transconductance\", unit = \"A/V2\") = 1.05e-05 \"Transconductance parameter\";
 //   parameter Real TP2.Vt(quantity = \"ElectricPotential\", unit = \"V\") = -1.0 \"Zero bias threshold voltage\";
 //   parameter Real TP2.K2 = 0.41 \"Bulk threshold parameter\";
 //   parameter Real TP2.K5 = 0.8385 \"Reduction of pinch-off region\";
-//   parameter Real TP2.dW(quantity = \"Length\", unit = \"m\") = -2.5e-006 \"Narrowing of channel\";
-//   parameter Real TP2.dL(quantity = \"Length\", unit = \"m\") = -2.1e-006 \"Shortening of channel\";
+//   parameter Real TP2.dW(quantity = \"Length\", unit = \"m\") = -2.5e-06 \"Narrowing of channel\";
+//   parameter Real TP2.dL(quantity = \"Length\", unit = \"m\") = -2.1e-06 \"Shortening of channel\";
 //   parameter Real TP2.RDS(quantity = \"Resistance\", unit = \"Ohm\") = 10000000.0 \"Drain-Source-Resistance\";
 //   protected Real TP2.v;
 //   protected Real TP2.uds;
@@ -268,14 +268,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real TN1.S.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real TN1.B.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real TN1.B.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
-//   parameter Real TN1.W(quantity = \"Length\", unit = \"m\") = 6.5e-006 \"Width\";
-//   parameter Real TN1.L(quantity = \"Length\", unit = \"m\") = 3.1e-006 \"Length\";
-//   parameter Real TN1.Beta(quantity = \"Transconductance\", unit = \"A/V2\") = 4.1e-005 \"Transconductance parameter\";
+//   parameter Real TN1.W(quantity = \"Length\", unit = \"m\") = 6.5e-06 \"Width\";
+//   parameter Real TN1.L(quantity = \"Length\", unit = \"m\") = 3.1e-06 \"Length\";
+//   parameter Real TN1.Beta(quantity = \"Transconductance\", unit = \"A/V2\") = 4.1e-05 \"Transconductance parameter\";
 //   parameter Real TN1.Vt(quantity = \"ElectricPotential\", unit = \"V\") = 0.8 \"Zero bias threshold voltage\";
 //   parameter Real TN1.K2 = 1.144 \"Bulk threshold parameter\";
 //   parameter Real TN1.K5 = 0.7311 \"Reduction of pinch-off region\";
-//   parameter Real TN1.dW(quantity = \"Length\", unit = \"m\") = -2.5e-006 \"narrowing of channel\";
-//   parameter Real TN1.dL(quantity = \"Length\", unit = \"m\") = -1.5e-006 \"shortening of channel\";
+//   parameter Real TN1.dW(quantity = \"Length\", unit = \"m\") = -2.5e-06 \"narrowing of channel\";
+//   parameter Real TN1.dL(quantity = \"Length\", unit = \"m\") = -1.5e-06 \"shortening of channel\";
 //   parameter Real TN1.RDS(quantity = \"Resistance\", unit = \"Ohm\") = 10000000.0 \"Drain-Source-Resistance\";
 //   protected Real TN1.v;
 //   protected Real TN1.uds;
@@ -297,14 +297,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real TN2.S.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real TN2.B.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real TN2.B.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
-//   parameter Real TN2.W(quantity = \"Length\", unit = \"m\") = 6.5e-006 \"Width\";
-//   parameter Real TN2.L(quantity = \"Length\", unit = \"m\") = 3.1e-006 \"Length\";
-//   parameter Real TN2.Beta(quantity = \"Transconductance\", unit = \"A/V2\") = 4.1e-005 \"Transconductance parameter\";
+//   parameter Real TN2.W(quantity = \"Length\", unit = \"m\") = 6.5e-06 \"Width\";
+//   parameter Real TN2.L(quantity = \"Length\", unit = \"m\") = 3.1e-06 \"Length\";
+//   parameter Real TN2.Beta(quantity = \"Transconductance\", unit = \"A/V2\") = 4.1e-05 \"Transconductance parameter\";
 //   parameter Real TN2.Vt(quantity = \"ElectricPotential\", unit = \"V\") = 0.8 \"Zero bias threshold voltage\";
 //   parameter Real TN2.K2 = 1.144 \"Bulk threshold parameter\";
 //   parameter Real TN2.K5 = 0.7311 \"Reduction of pinch-off region\";
-//   parameter Real TN2.dW(quantity = \"Length\", unit = \"m\") = -2.5e-006 \"narrowing of channel\";
-//   parameter Real TN2.dL(quantity = \"Length\", unit = \"m\") = -1.5e-006 \"shortening of channel\";
+//   parameter Real TN2.dW(quantity = \"Length\", unit = \"m\") = -2.5e-06 \"narrowing of channel\";
+//   parameter Real TN2.dL(quantity = \"Length\", unit = \"m\") = -1.5e-06 \"shortening of channel\";
 //   parameter Real TN2.RDS(quantity = \"Resistance\", unit = \"Ohm\") = 10000000.0 \"Drain-Source-Resistance\";
 //   protected Real TN2.v;
 //   protected Real TN2.uds;
@@ -320,14 +320,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real C4.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real C4.n.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real C4.n.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
-//   parameter Real C4.C(quantity = \"Capacitance\", unit = \"F\", min = 0.0, start = 1.0) = 4e-014 \"Capacitance\";
+//   parameter Real C4.C(quantity = \"Capacitance\", unit = \"F\", min = 0.0, start = 1.0) = 4e-14 \"Capacitance\";
 //   Real C7.v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real C7.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
 //   Real C7.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real C7.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real C7.n.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real C7.n.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
-//   parameter Real C7.C(quantity = \"Capacitance\", unit = \"F\", min = 0.0, start = 1.0) = 4e-014 \"Capacitance\";
+//   parameter Real C7.C(quantity = \"Capacitance\", unit = \"F\", min = 0.0, start = 1.0) = 4e-14 \"Capacitance\";
 //   Real Gnd.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real Gnd.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real Gnd2.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -349,13 +349,13 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real y.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real y.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 // equation
-//   TP1.gds = if TP1.RDS < 1e-020 and TP1.RDS > -1e-020 then 1e+020 else 1.0 / TP1.RDS;
+//   TP1.gds = if TP1.RDS < 1e-20 and TP1.RDS > -1e-20 then 1e+20 else 1.0 / TP1.RDS;
 //   TP1.v = (TP1.Beta * (TP1.W + TP1.dW)) / (TP1.L + TP1.dL);
 //   TP1.ud = if TP1.D.v > TP1.S.v then TP1.S.v else TP1.D.v;
 //   TP1.us = if TP1.D.v > TP1.S.v then TP1.D.v else TP1.S.v;
 //   TP1.uds = TP1.ud - TP1.us;
 //   TP1.ubs = if TP1.B.v < TP1.us then 0.0 else TP1.B.v - TP1.us;
-//   TP1.ugst = (TP1.G.v + (TP1.K2 * TP1.ubs + ((-TP1.Vt) - TP1.us))) * TP1.K5;
+//   TP1.ugst = (TP1.G.v + (TP1.K2 * TP1.ubs + (-TP1.Vt - TP1.us))) * TP1.K5;
 //   TP1.id = if TP1.ugst >= 0.0 then TP1.uds * TP1.gds else if TP1.ugst < TP1.uds then (-TP1.v) * (TP1.uds * (TP1.ugst + (-TP1.uds) / 2.0)) + TP1.uds * TP1.gds else ((-TP1.v) * TP1.ugst ^ 2.0) / 2.0 + TP1.uds * TP1.gds;
 //   TP1.G.i = 0.0;
 //   TP1.D.i = if TP1.D.v > TP1.S.v then -TP1.id else TP1.id;
@@ -363,13 +363,13 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   TP1.B.i = 0.0;
 //   TP1.LossPower = TP1.D.i * (TP1.D.v - TP1.S.v);
 //   TP1.T_heatPort = TP1.T;
-//   TP2.gds = if TP2.RDS < 1e-020 and TP2.RDS > -1e-020 then 1e+020 else 1.0 / TP2.RDS;
+//   TP2.gds = if TP2.RDS < 1e-20 and TP2.RDS > -1e-20 then 1e+20 else 1.0 / TP2.RDS;
 //   TP2.v = (TP2.Beta * (TP2.W + TP2.dW)) / (TP2.L + TP2.dL);
 //   TP2.ud = if TP2.D.v > TP2.S.v then TP2.S.v else TP2.D.v;
 //   TP2.us = if TP2.D.v > TP2.S.v then TP2.D.v else TP2.S.v;
 //   TP2.uds = TP2.ud - TP2.us;
 //   TP2.ubs = if TP2.B.v < TP2.us then 0.0 else TP2.B.v - TP2.us;
-//   TP2.ugst = (TP2.G.v + (TP2.K2 * TP2.ubs + ((-TP2.Vt) - TP2.us))) * TP2.K5;
+//   TP2.ugst = (TP2.G.v + (TP2.K2 * TP2.ubs + (-TP2.Vt - TP2.us))) * TP2.K5;
 //   TP2.id = if TP2.ugst >= 0.0 then TP2.uds * TP2.gds else if TP2.ugst < TP2.uds then (-TP2.v) * (TP2.uds * (TP2.ugst + (-TP2.uds) / 2.0)) + TP2.uds * TP2.gds else ((-TP2.v) * TP2.ugst ^ 2.0) / 2.0 + TP2.uds * TP2.gds;
 //   TP2.G.i = 0.0;
 //   TP2.D.i = if TP2.D.v > TP2.S.v then -TP2.id else TP2.id;
@@ -377,13 +377,13 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   TP2.B.i = 0.0;
 //   TP2.LossPower = TP2.D.i * (TP2.D.v - TP2.S.v);
 //   TP2.T_heatPort = TP2.T;
-//   TN1.gds = if TN1.RDS < 1e-020 and TN1.RDS > -1e-020 then 1e+020 else 1.0 / TN1.RDS;
+//   TN1.gds = if TN1.RDS < 1e-20 and TN1.RDS > -1e-20 then 1e+20 else 1.0 / TN1.RDS;
 //   TN1.v = (TN1.Beta * (TN1.W + TN1.dW)) / (TN1.L + TN1.dL);
 //   TN1.ud = if TN1.D.v < TN1.S.v then TN1.S.v else TN1.D.v;
 //   TN1.us = if TN1.D.v < TN1.S.v then TN1.D.v else TN1.S.v;
 //   TN1.uds = TN1.ud - TN1.us;
 //   TN1.ubs = if TN1.B.v > TN1.us then 0.0 else TN1.B.v - TN1.us;
-//   TN1.ugst = (TN1.G.v + (TN1.K2 * TN1.ubs + ((-TN1.Vt) - TN1.us))) * TN1.K5;
+//   TN1.ugst = (TN1.G.v + (TN1.K2 * TN1.ubs + (-TN1.Vt - TN1.us))) * TN1.K5;
 //   TN1.id = if TN1.ugst <= 0.0 then TN1.uds * TN1.gds else if TN1.ugst > TN1.uds then TN1.v * (TN1.uds * (TN1.ugst + (-TN1.uds) / 2.0)) + TN1.uds * TN1.gds else (TN1.v * TN1.ugst ^ 2.0) / 2.0 + TN1.uds * TN1.gds;
 //   TN1.G.i = 0.0;
 //   TN1.D.i = if TN1.D.v < TN1.S.v then -TN1.id else TN1.id;
@@ -391,13 +391,13 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   TN1.B.i = 0.0;
 //   TN1.LossPower = TN1.D.i * (TN1.D.v - TN1.S.v);
 //   TN1.T_heatPort = TN1.T;
-//   TN2.gds = if TN2.RDS < 1e-020 and TN2.RDS > -1e-020 then 1e+020 else 1.0 / TN2.RDS;
+//   TN2.gds = if TN2.RDS < 1e-20 and TN2.RDS > -1e-20 then 1e+20 else 1.0 / TN2.RDS;
 //   TN2.v = (TN2.Beta * (TN2.W + TN2.dW)) / (TN2.L + TN2.dL);
 //   TN2.ud = if TN2.D.v < TN2.S.v then TN2.S.v else TN2.D.v;
 //   TN2.us = if TN2.D.v < TN2.S.v then TN2.D.v else TN2.S.v;
 //   TN2.uds = TN2.ud - TN2.us;
 //   TN2.ubs = if TN2.B.v > TN2.us then 0.0 else TN2.B.v - TN2.us;
-//   TN2.ugst = (TN2.G.v + (TN2.K2 * TN2.ubs + ((-TN2.Vt) - TN2.us))) * TN2.K5;
+//   TN2.ugst = (TN2.G.v + (TN2.K2 * TN2.ubs + (-TN2.Vt - TN2.us))) * TN2.K5;
 //   TN2.id = if TN2.ugst <= 0.0 then TN2.uds * TN2.gds else if TN2.ugst > TN2.uds then TN2.v * (TN2.uds * (TN2.ugst + (-TN2.uds) / 2.0)) + TN2.uds * TN2.gds else (TN2.v * TN2.ugst ^ 2.0) / 2.0 + TN2.uds * TN2.gds;
 //   TN2.G.i = 0.0;
 //   TN2.D.i = if TN2.D.v < TN2.S.v then -TN2.id else TN2.id;
@@ -419,11 +419,11 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Gnd6.p.v = 0.0;
 //   Gnd7.p.v = 0.0;
 //   Gnd8.p.v = 0.0;
-//   TP1.D.i + TP2.D.i + (-Vdd.i) = 0.0;
-//   TP1.G.i + TN1.G.i + (-x2.i) = 0.0;
-//   TP1.S.i + TP2.S.i + TN1.D.i + C4.p.i + (-y.i) = 0.0;
+//   TP1.D.i + TP2.D.i + -Vdd.i = 0.0;
+//   TP1.G.i + TN1.G.i + -x2.i = 0.0;
+//   TP1.S.i + TP2.S.i + TN1.D.i + C4.p.i + -y.i = 0.0;
 //   TP1.B.i + Gnd8.p.i = 0.0;
-//   TP2.G.i + TN2.G.i + (-x1.i) = 0.0;
+//   TP2.G.i + TN2.G.i + -x1.i = 0.0;
 //   TP2.B.i + Gnd6.p.i = 0.0;
 //   TN1.S.i + TN2.D.i + C7.p.i = 0.0;
 //   TN1.B.i + Gnd7.p.i = 0.0;
@@ -517,10 +517,10 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // class Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed
 //   parameter Real opAmp.Rdm(quantity = \"Resistance\", unit = \"Ohm\") = 2000000.0 \"input resistance (differential input mode)\";
 //   parameter Real opAmp.Rcm(quantity = \"Resistance\", unit = \"Ohm\") = 2000000000.0 \"input resistance (common mode)\";
-//   parameter Real opAmp.Cin(quantity = \"Capacitance\", unit = \"F\", min = 0.0) = 1.4e-012 \"input capacitance\";
+//   parameter Real opAmp.Cin(quantity = \"Capacitance\", unit = \"F\", min = 0.0) = 1.4e-12 \"input capacitance\";
 //   parameter Real opAmp.Vos(quantity = \"ElectricPotential\", unit = \"V\") = 0.001 \"input offset voltage\";
-//   parameter Real opAmp.Ib(quantity = \"ElectricCurrent\", unit = \"A\") = 8e-008 \"input bias current\";
-//   parameter Real opAmp.Ios(quantity = \"ElectricCurrent\", unit = \"A\") = 2e-008 \"input offset current\";
+//   parameter Real opAmp.Ib(quantity = \"ElectricCurrent\", unit = \"A\") = 8e-08 \"input bias current\";
+//   parameter Real opAmp.Ios(quantity = \"ElectricCurrent\", unit = \"A\") = 2e-08 \"input offset current\";
 //   parameter Real opAmp.vcp(quantity = \"ElectricPotential\", unit = \"V\") = 0.0 \"correction value for limiting by p_supply\";
 //   parameter Real opAmp.vcm(quantity = \"ElectricPotential\", unit = \"V\") = 0.0 \"correction value for limiting by msupply\";
 //   parameter Real opAmp.Avd0 = 106.0 \"differential amplifier [dB]\";
@@ -535,7 +535,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real opAmp.Rout(quantity = \"Resistance\", unit = \"Ohm\") = 75.0 \"output resistance\";
 //   parameter Real opAmp.Imaxso(quantity = \"ElectricCurrent\", unit = \"A\") = 0.025 \"maximal output current (source current)\";
 //   parameter Real opAmp.Imaxsi(quantity = \"ElectricCurrent\", unit = \"A\") = 0.025 \"maximal output current (sink current)\";
-//   parameter Real opAmp.Ts(quantity = \"Time\", unit = \"s\") = 1.2e-006 \"sampling time\";
+//   parameter Real opAmp.Ts(quantity = \"Time\", unit = \"s\") = 1.2e-06 \"sampling time\";
 //   constant Real opAmp.Pi = 3.141592654;
 //   Real opAmp.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real opAmp.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
@@ -659,7 +659,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   opAmp.v_pos = opAmp.p_supply.v;
 //   opAmp.v_neg = opAmp.m_supply.v;
 //   opAmp.p.i = opAmp.i_vos;
-//   opAmp.m.i = opAmp.i_4 + ((-opAmp.i_r2) - opAmp.i_c3);
+//   opAmp.m.i = opAmp.i_4 + (-opAmp.i_r2 - opAmp.i_c3);
 //   0.0 = opAmp.i_3 + (opAmp.i_r2 + (opAmp.i_c3 - opAmp.i_vos));
 //   opAmp.p.v - opAmp.m.v = opAmp.v_vos + opAmp.v_in;
 //   opAmp.v_4 = opAmp.m.v;
@@ -686,7 +686,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   opAmp.i_out = Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNiout_limit(opAmp.v_source,opAmp.v_out,opAmp.Rout,opAmp.Imaxsi_val,opAmp.Imaxso_val);
 //   opAmp.p_supply.i = 0.0;
 //   opAmp.m_supply.i = 0.0;
-//   assert(1.0 + resistor.alpha * (resistor.T_heatPort - resistor.T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + resistor.alpha * (resistor.T_heatPort - resistor.T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   resistor.R_actual = resistor.R * (1.0 + resistor.alpha * (resistor.T_heatPort - resistor.T_ref));
 //   resistor.v = resistor.R_actual * resistor.i;
 //   resistor.LossPower = resistor.v * resistor.i;
@@ -694,7 +694,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = resistor.p.i + resistor.n.i;
 //   resistor.i = resistor.p.i;
 //   resistor.T_heatPort = resistor.T;
-//   assert(1.0 + resistor1.alpha * (resistor1.T_heatPort - resistor1.T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + resistor1.alpha * (resistor1.T_heatPort - resistor1.T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   resistor1.R_actual = resistor1.R * (1.0 + resistor1.alpha * (resistor1.T_heatPort - resistor1.T_ref));
 //   resistor1.v = resistor1.R_actual * resistor1.i;
 //   resistor1.LossPower = resistor1.v * resistor1.i;
@@ -702,7 +702,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = resistor1.p.i + resistor1.n.i;
 //   resistor1.i = resistor1.p.i;
 //   resistor1.T_heatPort = resistor1.T;
-//   assert(1.0 + resistor2.alpha * (resistor2.T_heatPort - resistor2.T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + resistor2.alpha * (resistor2.T_heatPort - resistor2.T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   resistor2.R_actual = resistor2.R * (1.0 + resistor2.alpha * (resistor2.T_heatPort - resistor2.T_ref));
 //   resistor2.v = resistor2.R_actual * resistor2.i;
 //   resistor2.LossPower = resistor2.v * resistor2.i;
@@ -801,10 +801,10 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real offset(quantity = \"ElectricPotential\", unit = \"V\") = 0.0 \"Voltage offset\";
 //   parameter Real startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Time offset\";
 //   parameter Real V(quantity = \"ElectricPotential\", unit = \"V\", start = 1.0) \"Height of ramp\";
-//   parameter Real duration(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 2.0) \"Duration of ramp\";
+//   parameter Real duration(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 2.0) \"Duration of ramp\";
 //   output Real signalSource.y \"Connector of Real output signal\";
 //   parameter Real signalSource.height = V \"Height of ramps\";
-//   parameter Real signalSource.duration(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 2.0) = duration \"Durations of ramp\";
+//   parameter Real signalSource.duration(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 2.0) = duration \"Durations of ramp\";
 //   parameter Real signalSource.offset = offset \"Offset of output signal\";
 //   parameter Real signalSource.startTime(quantity = \"Time\", unit = \"s\") = startTime \"Output = offset for time < startTime\";
 // equation
@@ -961,16 +961,16 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Time offset\";
 //   parameter Real vMax(start = 1.0) \"Upper bound for rising edge\";
 //   parameter Real riseTime(quantity = \"Time\", unit = \"s\", min = 0.0, start = 0.5) \"Rise time\";
-//   parameter Real riseTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 0.1) \"Rise time constant\";
+//   parameter Real riseTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 0.1) \"Rise time constant\";
 //   output Real signalSource.y \"Connector of Real output signal\";
 //   parameter Real signalSource.outMax = vMax \"Height of output for infinite riseTime\";
 //   parameter Real signalSource.riseTime(quantity = \"Time\", unit = \"s\", min = 0.0, start = 0.5) = riseTime \"Rise time\";
-//   parameter Real signalSource.riseTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-060) = riseTimeConst \"Rise time constant; rising is defined as outMax*(1-exp(-riseTime/riseTimeConst))\";
+//   parameter Real signalSource.riseTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-60) = riseTimeConst \"Rise time constant; rising is defined as outMax*(1-exp(-riseTime/riseTimeConst))\";
 //   parameter Real signalSource.offset = offset \"Offset of output signal\";
 //   parameter Real signalSource.startTime(quantity = \"Time\", unit = \"s\") = startTime \"Output = offset for time < startTime\";
 //   protected Real signalSource.y_riseTime;
-//   parameter Real signalSource.fallTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-060) = fallTimeConst \"Fall time constant\";
-//   parameter Real fallTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-060, start = riseTimeConst) \"Fall time constant\";
+//   parameter Real signalSource.fallTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-60) = fallTimeConst \"Fall time constant\";
+//   parameter Real fallTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-60, start = riseTimeConst) \"Fall time constant\";
 // equation
 //   signalSource.y_riseTime = signalSource.outMax * (1.0 - exp((-signalSource.riseTime) / signalSource.riseTimeConst));
 //   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.riseTime then signalSource.outMax * (1.0 - exp((signalSource.startTime - time) / signalSource.riseTimeConst)) else signalSource.y_riseTime * exp((signalSource.riseTime + signalSource.startTime - time) / signalSource.fallTimeConst));
@@ -1007,12 +1007,12 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real offset(quantity = \"ElectricPotential\", unit = \"V\") = 0.0 \"Voltage offset\";
 //   parameter Real startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Time offset\";
 //   parameter Real V(quantity = \"ElectricPotential\", unit = \"V\", start = 1.0) \"Amplitude of pulse\";
-//   parameter Real width(min = 1e-060, max = 100.0, start = 50.0) \"Width of pulse in % of period\";
-//   parameter Real period(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 1.0) \"Time for one period\";
+//   parameter Real width(min = 1e-60, max = 100.0, start = 50.0) \"Width of pulse in % of period\";
+//   parameter Real period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) \"Time for one period\";
 //   output Real signalSource.y \"Connector of Real output signal\";
 //   parameter Real signalSource.amplitude = V \"Amplitude of pulse\";
-//   parameter Real signalSource.width(min = 1e-060, max = 100.0) = width \"Width of pulse in % of period\";
-//   parameter Real signalSource.period(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 1.0) = period \"Time for one period\";
+//   parameter Real signalSource.width(min = 1e-60, max = 100.0) = width \"Width of pulse in % of period\";
+//   parameter Real signalSource.period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) = period \"Time for one period\";
 //   parameter Real signalSource.offset = offset \"Offset of output signals\";
 //   parameter Real signalSource.startTime(quantity = \"Time\", unit = \"s\") = startTime \"Output = offset for time < startTime\";
 //   protected Real signalSource.T_width(quantity = \"Time\", unit = \"s\") = (signalSource.period * signalSource.width) / 100.0;
@@ -1058,7 +1058,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real period(quantity = \"Time\", unit = \"s\", start = 1.0) \"Time for one period\";
 //   output Real signalSource.y \"Connector of Real output signal\";
 //   parameter Real signalSource.amplitude = V \"Amplitude of saw tooth\";
-//   parameter Real signalSource.period(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 1.0) = period \"Time for one period\";
+//   parameter Real signalSource.period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) = period \"Time for one period\";
 //   parameter Real signalSource.offset = offset \"Offset of output signals\";
 //   parameter Real signalSource.startTime(quantity = \"Time\", unit = \"s\") = startTime \"Output = offset for time < startTime\";
 //   protected Real signalSource.T0(quantity = \"Time\", unit = \"s\", start = signalSource.startTime) \"Start time of current period\";
@@ -1103,14 +1103,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real rising(quantity = \"Time\", unit = \"s\", min = 0.0, start = 0.0) \"Rising duration of trapezoid\";
 //   parameter Real width(quantity = \"Time\", unit = \"s\", min = 0.0, start = 0.5) \"Width duration of trapezoid\";
 //   parameter Real falling(quantity = \"Time\", unit = \"s\", min = 0.0, start = 0.0) \"Falling duration of trapezoid\";
-//   parameter Real period(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 1.0) \"Time for one period\";
+//   parameter Real period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) \"Time for one period\";
 //   parameter Integer nperiod(start = -1) \"Number of periods (< 0 means infinite number of periods)\";
 //   output Real signalSource.y \"Connector of Real output signal\";
 //   parameter Real signalSource.amplitude = V \"Amplitude of trapezoid\";
 //   parameter Real signalSource.rising(quantity = \"Time\", unit = \"s\", min = 0.0) = rising \"Rising duration of trapezoid\";
 //   parameter Real signalSource.width(quantity = \"Time\", unit = \"s\", min = 0.0) = width \"Width duration of trapezoid\";
 //   parameter Real signalSource.falling(quantity = \"Time\", unit = \"s\", min = 0.0) = falling \"Falling duration of trapezoid\";
-//   parameter Real signalSource.period(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 1.0) = period \"Time for one period\";
+//   parameter Real signalSource.period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) = period \"Time for one period\";
 //   parameter Integer signalSource.nperiod = nperiod \"Number of periods (< 0 means infinite number of periods)\";
 //   parameter Real signalSource.offset = offset \"Offset of output signal\";
 //   parameter Real signalSource.startTime(quantity = \"Time\", unit = \"s\") = startTime \"Output = offset for time < startTime\";
@@ -1236,7 +1236,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   n.i = 0.0;
 // algorithm
 //   when {time >= pre(signalSource.nextEvent),initial()} then
-//     (signalSource.a, signalSource.b, signalSource.nextEvent, signalSource.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{signalSource.table[1,1],signalSource.table[1,2]},{signalSource.table[2,1],signalSource.table[2,2]},{signalSource.table[3,1],signalSource.table[3,2]}},signalSource.offset,signalSource.startTime,time,signalSource.last,1e-013);
+//     (signalSource.a, signalSource.b, signalSource.nextEvent, signalSource.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{signalSource.table[1,1],signalSource.table[1,2]},{signalSource.table[2,1],signalSource.table[2,2]},{signalSource.table[3,1],signalSource.table[3,2]}},signalSource.offset,signalSource.startTime,time,signalSource.last,1e-13);
 //   end when;
 // end Modelica.Electrical.Analog.Sources.TableVoltage;
 // "
@@ -1297,10 +1297,10 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real offset(quantity = \"ElectricCurrent\", unit = \"A\") = 0.0 \"Current offset\";
 //   parameter Real startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Time offset\";
 //   parameter Real I(quantity = \"ElectricCurrent\", unit = \"A\", start = 1.0) \"Height of ramp\";
-//   parameter Real duration(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 2.0) \"Duration of ramp\";
+//   parameter Real duration(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 2.0) \"Duration of ramp\";
 //   output Real signalSource.y \"Connector of Real output signal\";
 //   parameter Real signalSource.height = I \"Height of ramps\";
-//   parameter Real signalSource.duration(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 2.0) = duration \"Durations of ramp\";
+//   parameter Real signalSource.duration(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 2.0) = duration \"Durations of ramp\";
 //   parameter Real signalSource.offset = offset \"Offset of output signal\";
 //   parameter Real signalSource.startTime(quantity = \"Time\", unit = \"s\") = startTime \"Output = offset for time < startTime\";
 // equation
@@ -1457,16 +1457,16 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Time offset\";
 //   parameter Real iMax(start = 1.0) \"Upper bound for rising edge\";
 //   parameter Real riseTime(quantity = \"Time\", unit = \"s\", min = 0.0, start = 0.5) \"Rise time\";
-//   parameter Real riseTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 0.1) \"Rise time constant\";
+//   parameter Real riseTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 0.1) \"Rise time constant\";
 //   output Real signalSource.y \"Connector of Real output signal\";
 //   parameter Real signalSource.outMax = iMax \"Height of output for infinite riseTime\";
 //   parameter Real signalSource.riseTime(quantity = \"Time\", unit = \"s\", min = 0.0, start = 0.5) = riseTime \"Rise time\";
-//   parameter Real signalSource.riseTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-060) = riseTimeConst \"Rise time constant; rising is defined as outMax*(1-exp(-riseTime/riseTimeConst))\";
+//   parameter Real signalSource.riseTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-60) = riseTimeConst \"Rise time constant; rising is defined as outMax*(1-exp(-riseTime/riseTimeConst))\";
 //   parameter Real signalSource.offset = offset \"Offset of output signal\";
 //   parameter Real signalSource.startTime(quantity = \"Time\", unit = \"s\") = startTime \"Output = offset for time < startTime\";
 //   protected Real signalSource.y_riseTime;
-//   parameter Real signalSource.fallTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-060) = fallTimeConst \"Fall time constant\";
-//   parameter Real fallTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-060, start = riseTimeConst) \"Fall time constant\";
+//   parameter Real signalSource.fallTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-60) = fallTimeConst \"Fall time constant\";
+//   parameter Real fallTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-60, start = riseTimeConst) \"Fall time constant\";
 // equation
 //   signalSource.y_riseTime = signalSource.outMax * (1.0 - exp((-signalSource.riseTime) / signalSource.riseTimeConst));
 //   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.riseTime then signalSource.outMax * (1.0 - exp((signalSource.startTime - time) / signalSource.riseTimeConst)) else signalSource.y_riseTime * exp((signalSource.riseTime + signalSource.startTime - time) / signalSource.fallTimeConst));
@@ -1503,12 +1503,12 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real offset(quantity = \"ElectricCurrent\", unit = \"A\") = 0.0 \"Current offset\";
 //   parameter Real startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Time offset\";
 //   parameter Real I(quantity = \"ElectricCurrent\", unit = \"A\", start = 1.0) \"Amplitude of pulse\";
-//   parameter Real width(min = 1e-060, max = 100.0, start = 50.0) \"Width of pulse in % of period\";
-//   parameter Real period(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 1.0) \"Time for one period\";
+//   parameter Real width(min = 1e-60, max = 100.0, start = 50.0) \"Width of pulse in % of period\";
+//   parameter Real period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) \"Time for one period\";
 //   output Real signalSource.y \"Connector of Real output signal\";
 //   parameter Real signalSource.amplitude = I \"Amplitude of pulse\";
-//   parameter Real signalSource.width(min = 1e-060, max = 100.0) = width \"Width of pulse in % of period\";
-//   parameter Real signalSource.period(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 1.0) = period \"Time for one period\";
+//   parameter Real signalSource.width(min = 1e-60, max = 100.0) = width \"Width of pulse in % of period\";
+//   parameter Real signalSource.period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) = period \"Time for one period\";
 //   parameter Real signalSource.offset = offset \"Offset of output signals\";
 //   parameter Real signalSource.startTime(quantity = \"Time\", unit = \"s\") = startTime \"Output = offset for time < startTime\";
 //   protected Real signalSource.T_width(quantity = \"Time\", unit = \"s\") = (signalSource.period * signalSource.width) / 100.0;
@@ -1554,7 +1554,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real period(quantity = \"Time\", unit = \"s\", start = 1.0) \"Time for one period\";
 //   output Real signalSource.y \"Connector of Real output signal\";
 //   parameter Real signalSource.amplitude = I \"Amplitude of saw tooth\";
-//   parameter Real signalSource.period(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 1.0) = period \"Time for one period\";
+//   parameter Real signalSource.period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) = period \"Time for one period\";
 //   parameter Real signalSource.offset = offset \"Offset of output signals\";
 //   parameter Real signalSource.startTime(quantity = \"Time\", unit = \"s\") = startTime \"Output = offset for time < startTime\";
 //   protected Real signalSource.T0(quantity = \"Time\", unit = \"s\", start = signalSource.startTime) \"Start time of current period\";
@@ -1599,14 +1599,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real rising(quantity = \"Time\", unit = \"s\", min = 0.0, start = 0.0) \"Rising duration of trapezoid\";
 //   parameter Real width(quantity = \"Time\", unit = \"s\", min = 0.0, start = 0.5) \"Width duration of trapezoid\";
 //   parameter Real falling(quantity = \"Time\", unit = \"s\", min = 0.0, start = 0.0) \"Falling duration of trapezoid\";
-//   parameter Real period(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 1.0) \"Time for one period\";
+//   parameter Real period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) \"Time for one period\";
 //   parameter Integer nperiod(start = -1) \"Number of periods (< 0 means infinite number of periods)\";
 //   output Real signalSource.y \"Connector of Real output signal\";
 //   parameter Real signalSource.amplitude = I \"Amplitude of trapezoid\";
 //   parameter Real signalSource.rising(quantity = \"Time\", unit = \"s\", min = 0.0) = rising \"Rising duration of trapezoid\";
 //   parameter Real signalSource.width(quantity = \"Time\", unit = \"s\", min = 0.0) = width \"Width duration of trapezoid\";
 //   parameter Real signalSource.falling(quantity = \"Time\", unit = \"s\", min = 0.0) = falling \"Falling duration of trapezoid\";
-//   parameter Real signalSource.period(quantity = \"Time\", unit = \"s\", min = 1e-060, start = 1.0) = period \"Time for one period\";
+//   parameter Real signalSource.period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) = period \"Time for one period\";
 //   parameter Integer signalSource.nperiod = nperiod \"Number of periods (< 0 means infinite number of periods)\";
 //   parameter Real signalSource.offset = offset \"Offset of output signal\";
 //   parameter Real signalSource.startTime(quantity = \"Time\", unit = \"s\") = startTime \"Output = offset for time < startTime\";
@@ -1732,7 +1732,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   n.i = 0.0;
 // algorithm
 //   when {time >= pre(signalSource.nextEvent),initial()} then
-//     (signalSource.a, signalSource.b, signalSource.nextEvent, signalSource.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{signalSource.table[1,1],signalSource.table[1,2]},{signalSource.table[2,1],signalSource.table[2,2]},{signalSource.table[3,1],signalSource.table[3,2]}},signalSource.offset,signalSource.startTime,time,signalSource.last,1e-013);
+//     (signalSource.a, signalSource.b, signalSource.nextEvent, signalSource.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{signalSource.table[1,1],signalSource.table[1,2]},{signalSource.table[2,1],signalSource.table[2,2]},{signalSource.table[3,1],signalSource.table[3,2]}},signalSource.offset,signalSource.startTime,time,signalSource.last,1e-13);
 //   end when;
 // end Modelica.Electrical.Analog.Sources.TableCurrent;
 // "
@@ -1779,10 +1779,10 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   nc.i = 0.0;
 //   pv.i = 0.0;
 //   nv.i = 0.0;
-//   (-pv.i) + voltageSensor.p.i = 0.0;
-//   (-nv.i) + voltageSensor.n.i = 0.0;
-//   (-pc.i) + currentSensor.p.i = 0.0;
-//   (-nc.i) + currentSensor.n.i = 0.0;
+//   -pv.i + voltageSensor.p.i = 0.0;
+//   -nv.i + voltageSensor.n.i = 0.0;
+//   -pc.i + currentSensor.p.i = 0.0;
+//   -nc.i + currentSensor.n.i = 0.0;
 //   pv.v = voltageSensor.p.v;
 //   nv.v = voltageSensor.n.v;
 //   currentSensor.p.v = pc.v;
@@ -1818,11 +1818,11 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real v23(quantity = \"ElectricPotential\", unit = \"V\");
 //   Real i1(quantity = \"ElectricCurrent\", unit = \"A\");
 //   Real i2(quantity = \"ElectricCurrent\", unit = \"A\");
-//   parameter Real r(unit = \"Ohm/m\", min = 1e-060, start = 1.0) \"Resistance per meter\";
-//   parameter Real l(unit = \"H/m\", min = 1e-060, start = 1.0) \"Inductance per meter\";
-//   parameter Real g(unit = \"S/m\", min = 1e-060, start = 1.0) \"Conductance per meter\";
-//   parameter Real c(unit = \"F/m\", min = 1e-060, start = 1.0) \"Capacitance per meter\";
-//   parameter Real length(quantity = \"Length\", unit = \"m\", min = 1e-060, start = 1.0) \"Length of line\";
+//   parameter Real r(unit = \"Ohm/m\", min = 1e-60, start = 1.0) \"Resistance per meter\";
+//   parameter Real l(unit = \"H/m\", min = 1e-60, start = 1.0) \"Inductance per meter\";
+//   parameter Real g(unit = \"S/m\", min = 1e-60, start = 1.0) \"Conductance per meter\";
+//   parameter Real c(unit = \"F/m\", min = 1e-60, start = 1.0) \"Capacitance per meter\";
+//   parameter Real length(quantity = \"Length\", unit = \"m\", min = 1e-60, start = 1.0) \"Length of line\";
 //   parameter Integer N(min = 1, start = 1) \"Number of lumped segments\";
 //   Real R[1].v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real R[1].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
@@ -1888,7 +1888,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real G[1].G_actual(quantity = \"Conductance\", unit = \"S\") \"Actual conductance = G/(1 + alpha*(T_heatPort - T_ref))\";
 //   parameter Real G[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = G[1].T_ref \"Fixed device temperature if useHeatPort = false\";
 // equation
-//   assert(1.0 + R[1].alpha * (R[1].T_heatPort - R[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + R[1].alpha * (R[1].T_heatPort - R[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   R[1].R_actual = R[1].R * (1.0 + R[1].alpha * (R[1].T_heatPort - R[1].T_ref));
 //   R[1].v = R[1].R_actual * R[1].i;
 //   R[1].LossPower = R[1].v * R[1].i;
@@ -1896,7 +1896,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = R[1].p.i + R[1].n.i;
 //   R[1].i = R[1].p.i;
 //   R[1].T_heatPort = R[1].T;
-//   assert(1.0 + R[2].alpha * (R[2].T_heatPort - R[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + R[2].alpha * (R[2].T_heatPort - R[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   R[2].R_actual = R[2].R * (1.0 + R[2].alpha * (R[2].T_heatPort - R[2].T_ref));
 //   R[2].v = R[2].R_actual * R[2].i;
 //   R[2].LossPower = R[2].v * R[2].i;
@@ -1916,7 +1916,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   C[1].v = C[1].p.v - C[1].n.v;
 //   0.0 = C[1].p.i + C[1].n.i;
 //   C[1].i = C[1].p.i;
-//   assert(1.0 + G[1].alpha * (G[1].T_heatPort - G[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + G[1].alpha * (G[1].T_heatPort - G[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   G[1].G_actual = G[1].G / (1.0 + G[1].alpha * (G[1].T_heatPort - G[1].T_ref));
 //   G[1].i = G[1].G_actual * G[1].v;
 //   G[1].LossPower = G[1].v * G[1].i;
@@ -1931,12 +1931,12 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p1.i = 0.0;
 //   p2.i = 0.0;
 //   p3.i = 0.0;
-//   (-p1.i) + R[1].p.i = 0.0;
+//   -p1.i + R[1].p.i = 0.0;
 //   R[1].n.i + L[1].p.i = 0.0;
 //   R[2].p.i + L[1].n.i + C[1].p.i + G[1].p.i = 0.0;
 //   R[2].n.i + L[2].p.i = 0.0;
-//   (-p2.i) + L[2].n.i = 0.0;
-//   (-p3.i) + C[1].n.i + G[1].n.i = 0.0;
+//   -p2.i + L[2].n.i = 0.0;
+//   -p3.i + C[1].n.i + G[1].n.i = 0.0;
 //   R[1].p.v = p1.v;
 //   L[1].p.v = R[1].n.v;
 //   C[1].p.v = G[1].p.v;
@@ -1964,14 +1964,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Analog.Lines.M_OLine
-//   parameter Real length(quantity = \"Length\", unit = \"m\", min = 1e-060) = 0.1 \"Length of line\";
+//   parameter Real length(quantity = \"Length\", unit = \"m\", min = 1e-60) = 0.1 \"Length of line\";
 //   parameter Integer N(min = 1) = 5 \"Number of lumped segments\";
 //   parameter Integer lines(min = 2) = 4 \"Number of lines\";
 //   protected parameter Integer dim_vector_lgc = div(lines * (1 + lines),2);
-//   parameter Real r[1](unit = \"Ohm/m\", min = 1e-060) = 476000.0 \"Resistance per meter\";
-//   parameter Real r[2](unit = \"Ohm/m\", min = 1e-060) = 172000.0 \"Resistance per meter\";
-//   parameter Real r[3](unit = \"Ohm/m\", min = 1e-060) = 172000.0 \"Resistance per meter\";
-//   parameter Real r[4](unit = \"Ohm/m\", min = 1e-060) = 172000.0 \"Resistance per meter\";
+//   parameter Real r[1](unit = \"Ohm/m\", min = 1e-60) = 476000.0 \"Resistance per meter\";
+//   parameter Real r[2](unit = \"Ohm/m\", min = 1e-60) = 172000.0 \"Resistance per meter\";
+//   parameter Real r[3](unit = \"Ohm/m\", min = 1e-60) = 172000.0 \"Resistance per meter\";
+//   parameter Real r[4](unit = \"Ohm/m\", min = 1e-60) = 172000.0 \"Resistance per meter\";
 //   Real p[1].v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real p[1].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real p[2].v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -1988,36 +1988,36 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real n[3].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real n[4].v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real n[4].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
-//   parameter Real l[1](unit = \"H/m\", min = 1e-060) = 5.98e-007 \"Inductance per meter\";
-//   parameter Real l[2](unit = \"H/m\", min = 1e-060) = 4.44e-007 \"Inductance per meter\";
-//   parameter Real l[3](unit = \"H/m\", min = 1e-060) = 4.39e-007 \"Inductance per meter\";
-//   parameter Real l[4](unit = \"H/m\", min = 1e-060) = 3.99e-007 \"Inductance per meter\";
-//   parameter Real l[5](unit = \"H/m\", min = 1e-060) = 5.81e-007 \"Inductance per meter\";
-//   parameter Real l[6](unit = \"H/m\", min = 1e-060) = 4.09e-007 \"Inductance per meter\";
-//   parameter Real l[7](unit = \"H/m\", min = 1e-060) = 4.23e-007 \"Inductance per meter\";
-//   parameter Real l[8](unit = \"H/m\", min = 1e-060) = 5.96e-007 \"Inductance per meter\";
-//   parameter Real l[9](unit = \"H/m\", min = 1e-060) = 4.71e-007 \"Inductance per meter\";
-//   parameter Real l[10](unit = \"H/m\", min = 1e-060) = 6.06e-007 \"Inductance per meter\";
-//   parameter Real g[1](unit = \"S/m\", min = 1e-060) = 8.05e-006 \"Conductance per meter\";
-//   parameter Real g[2](unit = \"S/m\", min = 1e-060) = 3.42e-005 \"Conductance per meter\";
-//   parameter Real g[3](unit = \"S/m\", min = 1e-060) = 1.99909 \"Conductance per meter\";
-//   parameter Real g[4](unit = \"S/m\", min = 1e-060) = 1.76e-006 \"Conductance per meter\";
-//   parameter Real g[5](unit = \"S/m\", min = 1e-060) = 9.16e-006 \"Conductance per meter\";
-//   parameter Real g[6](unit = \"S/m\", min = 1e-060) = 7.12e-006 \"Conductance per meter\";
-//   parameter Real g[7](unit = \"S/m\", min = 1e-060) = 2.43e-005 \"Conductance per meter\";
-//   parameter Real g[8](unit = \"S/m\", min = 1e-060) = 5.93e-006 \"Conductance per meter\";
-//   parameter Real g[9](unit = \"S/m\", min = 1e-060) = 4.19e-005 \"Conductance per meter\";
-//   parameter Real g[10](unit = \"S/m\", min = 1e-060) = 6.64e-006 \"Conductance per meter\";
-//   parameter Real c[1](unit = \"F/m\", min = 1e-060) = 2.38e-011 \"Capacitance per meter\";
-//   parameter Real c[2](unit = \"F/m\", min = 1e-060) = 1.01e-010 \"Capacitance per meter\";
-//   parameter Real c[3](unit = \"F/m\", min = 1e-060) = 8.56e-011 \"Capacitance per meter\";
-//   parameter Real c[4](unit = \"F/m\", min = 1e-060) = 5.09e-012 \"Capacitance per meter\";
-//   parameter Real c[5](unit = \"F/m\", min = 1e-060) = 2.71e-011 \"Capacitance per meter\";
-//   parameter Real c[6](unit = \"F/m\", min = 1e-060) = 2.09e-011 \"Capacitance per meter\";
-//   parameter Real c[7](unit = \"F/m\", min = 1e-060) = 7.16e-011 \"Capacitance per meter\";
-//   parameter Real c[8](unit = \"F/m\", min = 1e-060) = 1.83e-011 \"Capacitance per meter\";
-//   parameter Real c[9](unit = \"F/m\", min = 1e-060) = 1.23e-010 \"Capacitance per meter\";
-//   parameter Real c[10](unit = \"F/m\", min = 1e-060) = 2.07e-011 \"Capacitance per meter\";
+//   parameter Real l[1](unit = \"H/m\", min = 1e-60) = 5.98e-07 \"Inductance per meter\";
+//   parameter Real l[2](unit = \"H/m\", min = 1e-60) = 4.44e-07 \"Inductance per meter\";
+//   parameter Real l[3](unit = \"H/m\", min = 1e-60) = 4.39e-07 \"Inductance per meter\";
+//   parameter Real l[4](unit = \"H/m\", min = 1e-60) = 3.99e-07 \"Inductance per meter\";
+//   parameter Real l[5](unit = \"H/m\", min = 1e-60) = 5.81e-07 \"Inductance per meter\";
+//   parameter Real l[6](unit = \"H/m\", min = 1e-60) = 4.09e-07 \"Inductance per meter\";
+//   parameter Real l[7](unit = \"H/m\", min = 1e-60) = 4.23e-07 \"Inductance per meter\";
+//   parameter Real l[8](unit = \"H/m\", min = 1e-60) = 5.96e-07 \"Inductance per meter\";
+//   parameter Real l[9](unit = \"H/m\", min = 1e-60) = 4.71e-07 \"Inductance per meter\";
+//   parameter Real l[10](unit = \"H/m\", min = 1e-60) = 6.06e-07 \"Inductance per meter\";
+//   parameter Real g[1](unit = \"S/m\", min = 1e-60) = 8.05e-06 \"Conductance per meter\";
+//   parameter Real g[2](unit = \"S/m\", min = 1e-60) = 3.42e-05 \"Conductance per meter\";
+//   parameter Real g[3](unit = \"S/m\", min = 1e-60) = 1.99909 \"Conductance per meter\";
+//   parameter Real g[4](unit = \"S/m\", min = 1e-60) = 1.76e-06 \"Conductance per meter\";
+//   parameter Real g[5](unit = \"S/m\", min = 1e-60) = 9.16e-06 \"Conductance per meter\";
+//   parameter Real g[6](unit = \"S/m\", min = 1e-60) = 7.12e-06 \"Conductance per meter\";
+//   parameter Real g[7](unit = \"S/m\", min = 1e-60) = 2.43e-05 \"Conductance per meter\";
+//   parameter Real g[8](unit = \"S/m\", min = 1e-60) = 5.93e-06 \"Conductance per meter\";
+//   parameter Real g[9](unit = \"S/m\", min = 1e-60) = 4.19e-05 \"Conductance per meter\";
+//   parameter Real g[10](unit = \"S/m\", min = 1e-60) = 6.64e-06 \"Conductance per meter\";
+//   parameter Real c[1](unit = \"F/m\", min = 1e-60) = 2.38e-11 \"Capacitance per meter\";
+//   parameter Real c[2](unit = \"F/m\", min = 1e-60) = 1.01e-10 \"Capacitance per meter\";
+//   parameter Real c[3](unit = \"F/m\", min = 1e-60) = 8.56e-11 \"Capacitance per meter\";
+//   parameter Real c[4](unit = \"F/m\", min = 1e-60) = 5.09e-12 \"Capacitance per meter\";
+//   parameter Real c[5](unit = \"F/m\", min = 1e-60) = 2.71e-11 \"Capacitance per meter\";
+//   parameter Real c[6](unit = \"F/m\", min = 1e-60) = 2.09e-11 \"Capacitance per meter\";
+//   parameter Real c[7](unit = \"F/m\", min = 1e-60) = 7.16e-11 \"Capacitance per meter\";
+//   parameter Real c[8](unit = \"F/m\", min = 1e-60) = 1.83e-11 \"Capacitance per meter\";
+//   parameter Real c[9](unit = \"F/m\", min = 1e-60) = 1.23e-10 \"Capacitance per meter\";
+//   parameter Real c[10](unit = \"F/m\", min = 1e-60) = 2.07e-11 \"Capacitance per meter\";
 //   parameter Integer s[1].lines(min = 1) = lines;
 //   Real s[1].M.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real s[1].M.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
@@ -4062,7 +4062,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   s[1].C[10].v = s[1].C[10].p.v - s[1].C[10].n.v;
 //   0.0 = s[1].C[10].p.i + s[1].C[10].n.i;
 //   s[1].C[10].i = s[1].C[10].p.i;
-//   assert(1.0 + s[1].R[1].alpha * (s[1].R[1].T_heatPort - s[1].R[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].R[1].alpha * (s[1].R[1].T_heatPort - s[1].R[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].R[1].R_actual = s[1].R[1].R * (1.0 + s[1].R[1].alpha * (s[1].R[1].T_heatPort - s[1].R[1].T_ref));
 //   s[1].R[1].v = s[1].R[1].R_actual * s[1].R[1].i;
 //   s[1].R[1].LossPower = s[1].R[1].v * s[1].R[1].i;
@@ -4070,7 +4070,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].R[1].p.i + s[1].R[1].n.i;
 //   s[1].R[1].i = s[1].R[1].p.i;
 //   s[1].R[1].T_heatPort = s[1].R[1].T;
-//   assert(1.0 + s[1].R[2].alpha * (s[1].R[2].T_heatPort - s[1].R[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].R[2].alpha * (s[1].R[2].T_heatPort - s[1].R[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].R[2].R_actual = s[1].R[2].R * (1.0 + s[1].R[2].alpha * (s[1].R[2].T_heatPort - s[1].R[2].T_ref));
 //   s[1].R[2].v = s[1].R[2].R_actual * s[1].R[2].i;
 //   s[1].R[2].LossPower = s[1].R[2].v * s[1].R[2].i;
@@ -4078,7 +4078,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].R[2].p.i + s[1].R[2].n.i;
 //   s[1].R[2].i = s[1].R[2].p.i;
 //   s[1].R[2].T_heatPort = s[1].R[2].T;
-//   assert(1.0 + s[1].R[3].alpha * (s[1].R[3].T_heatPort - s[1].R[3].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].R[3].alpha * (s[1].R[3].T_heatPort - s[1].R[3].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].R[3].R_actual = s[1].R[3].R * (1.0 + s[1].R[3].alpha * (s[1].R[3].T_heatPort - s[1].R[3].T_ref));
 //   s[1].R[3].v = s[1].R[3].R_actual * s[1].R[3].i;
 //   s[1].R[3].LossPower = s[1].R[3].v * s[1].R[3].i;
@@ -4086,7 +4086,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].R[3].p.i + s[1].R[3].n.i;
 //   s[1].R[3].i = s[1].R[3].p.i;
 //   s[1].R[3].T_heatPort = s[1].R[3].T;
-//   assert(1.0 + s[1].R[4].alpha * (s[1].R[4].T_heatPort - s[1].R[4].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].R[4].alpha * (s[1].R[4].T_heatPort - s[1].R[4].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].R[4].R_actual = s[1].R[4].R * (1.0 + s[1].R[4].alpha * (s[1].R[4].T_heatPort - s[1].R[4].T_ref));
 //   s[1].R[4].v = s[1].R[4].R_actual * s[1].R[4].i;
 //   s[1].R[4].LossPower = s[1].R[4].v * s[1].R[4].i;
@@ -4094,7 +4094,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].R[4].p.i + s[1].R[4].n.i;
 //   s[1].R[4].i = s[1].R[4].p.i;
 //   s[1].R[4].T_heatPort = s[1].R[4].T;
-//   assert(1.0 + s[1].G[1].alpha * (s[1].G[1].T_heatPort - s[1].G[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].G[1].alpha * (s[1].G[1].T_heatPort - s[1].G[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].G[1].G_actual = s[1].G[1].G / (1.0 + s[1].G[1].alpha * (s[1].G[1].T_heatPort - s[1].G[1].T_ref));
 //   s[1].G[1].i = s[1].G[1].G_actual * s[1].G[1].v;
 //   s[1].G[1].LossPower = s[1].G[1].v * s[1].G[1].i;
@@ -4102,7 +4102,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].G[1].p.i + s[1].G[1].n.i;
 //   s[1].G[1].i = s[1].G[1].p.i;
 //   s[1].G[1].T_heatPort = s[1].G[1].T;
-//   assert(1.0 + s[1].G[2].alpha * (s[1].G[2].T_heatPort - s[1].G[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].G[2].alpha * (s[1].G[2].T_heatPort - s[1].G[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].G[2].G_actual = s[1].G[2].G / (1.0 + s[1].G[2].alpha * (s[1].G[2].T_heatPort - s[1].G[2].T_ref));
 //   s[1].G[2].i = s[1].G[2].G_actual * s[1].G[2].v;
 //   s[1].G[2].LossPower = s[1].G[2].v * s[1].G[2].i;
@@ -4110,7 +4110,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].G[2].p.i + s[1].G[2].n.i;
 //   s[1].G[2].i = s[1].G[2].p.i;
 //   s[1].G[2].T_heatPort = s[1].G[2].T;
-//   assert(1.0 + s[1].G[3].alpha * (s[1].G[3].T_heatPort - s[1].G[3].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].G[3].alpha * (s[1].G[3].T_heatPort - s[1].G[3].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].G[3].G_actual = s[1].G[3].G / (1.0 + s[1].G[3].alpha * (s[1].G[3].T_heatPort - s[1].G[3].T_ref));
 //   s[1].G[3].i = s[1].G[3].G_actual * s[1].G[3].v;
 //   s[1].G[3].LossPower = s[1].G[3].v * s[1].G[3].i;
@@ -4118,7 +4118,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].G[3].p.i + s[1].G[3].n.i;
 //   s[1].G[3].i = s[1].G[3].p.i;
 //   s[1].G[3].T_heatPort = s[1].G[3].T;
-//   assert(1.0 + s[1].G[4].alpha * (s[1].G[4].T_heatPort - s[1].G[4].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].G[4].alpha * (s[1].G[4].T_heatPort - s[1].G[4].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].G[4].G_actual = s[1].G[4].G / (1.0 + s[1].G[4].alpha * (s[1].G[4].T_heatPort - s[1].G[4].T_ref));
 //   s[1].G[4].i = s[1].G[4].G_actual * s[1].G[4].v;
 //   s[1].G[4].LossPower = s[1].G[4].v * s[1].G[4].i;
@@ -4126,7 +4126,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].G[4].p.i + s[1].G[4].n.i;
 //   s[1].G[4].i = s[1].G[4].p.i;
 //   s[1].G[4].T_heatPort = s[1].G[4].T;
-//   assert(1.0 + s[1].G[5].alpha * (s[1].G[5].T_heatPort - s[1].G[5].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].G[5].alpha * (s[1].G[5].T_heatPort - s[1].G[5].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].G[5].G_actual = s[1].G[5].G / (1.0 + s[1].G[5].alpha * (s[1].G[5].T_heatPort - s[1].G[5].T_ref));
 //   s[1].G[5].i = s[1].G[5].G_actual * s[1].G[5].v;
 //   s[1].G[5].LossPower = s[1].G[5].v * s[1].G[5].i;
@@ -4134,7 +4134,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].G[5].p.i + s[1].G[5].n.i;
 //   s[1].G[5].i = s[1].G[5].p.i;
 //   s[1].G[5].T_heatPort = s[1].G[5].T;
-//   assert(1.0 + s[1].G[6].alpha * (s[1].G[6].T_heatPort - s[1].G[6].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].G[6].alpha * (s[1].G[6].T_heatPort - s[1].G[6].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].G[6].G_actual = s[1].G[6].G / (1.0 + s[1].G[6].alpha * (s[1].G[6].T_heatPort - s[1].G[6].T_ref));
 //   s[1].G[6].i = s[1].G[6].G_actual * s[1].G[6].v;
 //   s[1].G[6].LossPower = s[1].G[6].v * s[1].G[6].i;
@@ -4142,7 +4142,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].G[6].p.i + s[1].G[6].n.i;
 //   s[1].G[6].i = s[1].G[6].p.i;
 //   s[1].G[6].T_heatPort = s[1].G[6].T;
-//   assert(1.0 + s[1].G[7].alpha * (s[1].G[7].T_heatPort - s[1].G[7].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].G[7].alpha * (s[1].G[7].T_heatPort - s[1].G[7].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].G[7].G_actual = s[1].G[7].G / (1.0 + s[1].G[7].alpha * (s[1].G[7].T_heatPort - s[1].G[7].T_ref));
 //   s[1].G[7].i = s[1].G[7].G_actual * s[1].G[7].v;
 //   s[1].G[7].LossPower = s[1].G[7].v * s[1].G[7].i;
@@ -4150,7 +4150,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].G[7].p.i + s[1].G[7].n.i;
 //   s[1].G[7].i = s[1].G[7].p.i;
 //   s[1].G[7].T_heatPort = s[1].G[7].T;
-//   assert(1.0 + s[1].G[8].alpha * (s[1].G[8].T_heatPort - s[1].G[8].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].G[8].alpha * (s[1].G[8].T_heatPort - s[1].G[8].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].G[8].G_actual = s[1].G[8].G / (1.0 + s[1].G[8].alpha * (s[1].G[8].T_heatPort - s[1].G[8].T_ref));
 //   s[1].G[8].i = s[1].G[8].G_actual * s[1].G[8].v;
 //   s[1].G[8].LossPower = s[1].G[8].v * s[1].G[8].i;
@@ -4158,7 +4158,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].G[8].p.i + s[1].G[8].n.i;
 //   s[1].G[8].i = s[1].G[8].p.i;
 //   s[1].G[8].T_heatPort = s[1].G[8].T;
-//   assert(1.0 + s[1].G[9].alpha * (s[1].G[9].T_heatPort - s[1].G[9].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].G[9].alpha * (s[1].G[9].T_heatPort - s[1].G[9].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].G[9].G_actual = s[1].G[9].G / (1.0 + s[1].G[9].alpha * (s[1].G[9].T_heatPort - s[1].G[9].T_ref));
 //   s[1].G[9].i = s[1].G[9].G_actual * s[1].G[9].v;
 //   s[1].G[9].LossPower = s[1].G[9].v * s[1].G[9].i;
@@ -4166,7 +4166,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[1].G[9].p.i + s[1].G[9].n.i;
 //   s[1].G[9].i = s[1].G[9].p.i;
 //   s[1].G[9].T_heatPort = s[1].G[9].T;
-//   assert(1.0 + s[1].G[10].alpha * (s[1].G[10].T_heatPort - s[1].G[10].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[1].G[10].alpha * (s[1].G[10].T_heatPort - s[1].G[10].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[1].G[10].G_actual = s[1].G[10].G / (1.0 + s[1].G[10].alpha * (s[1].G[10].T_heatPort - s[1].G[10].T_ref));
 //   s[1].G[10].i = s[1].G[10].G_actual * s[1].G[10].v;
 //   s[1].G[10].LossPower = s[1].G[10].v * s[1].G[10].i;
@@ -4231,7 +4231,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   s[2].C[10].v = s[2].C[10].p.v - s[2].C[10].n.v;
 //   0.0 = s[2].C[10].p.i + s[2].C[10].n.i;
 //   s[2].C[10].i = s[2].C[10].p.i;
-//   assert(1.0 + s[2].R[1].alpha * (s[2].R[1].T_heatPort - s[2].R[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].R[1].alpha * (s[2].R[1].T_heatPort - s[2].R[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].R[1].R_actual = s[2].R[1].R * (1.0 + s[2].R[1].alpha * (s[2].R[1].T_heatPort - s[2].R[1].T_ref));
 //   s[2].R[1].v = s[2].R[1].R_actual * s[2].R[1].i;
 //   s[2].R[1].LossPower = s[2].R[1].v * s[2].R[1].i;
@@ -4239,7 +4239,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].R[1].p.i + s[2].R[1].n.i;
 //   s[2].R[1].i = s[2].R[1].p.i;
 //   s[2].R[1].T_heatPort = s[2].R[1].T;
-//   assert(1.0 + s[2].R[2].alpha * (s[2].R[2].T_heatPort - s[2].R[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].R[2].alpha * (s[2].R[2].T_heatPort - s[2].R[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].R[2].R_actual = s[2].R[2].R * (1.0 + s[2].R[2].alpha * (s[2].R[2].T_heatPort - s[2].R[2].T_ref));
 //   s[2].R[2].v = s[2].R[2].R_actual * s[2].R[2].i;
 //   s[2].R[2].LossPower = s[2].R[2].v * s[2].R[2].i;
@@ -4247,7 +4247,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].R[2].p.i + s[2].R[2].n.i;
 //   s[2].R[2].i = s[2].R[2].p.i;
 //   s[2].R[2].T_heatPort = s[2].R[2].T;
-//   assert(1.0 + s[2].R[3].alpha * (s[2].R[3].T_heatPort - s[2].R[3].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].R[3].alpha * (s[2].R[3].T_heatPort - s[2].R[3].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].R[3].R_actual = s[2].R[3].R * (1.0 + s[2].R[3].alpha * (s[2].R[3].T_heatPort - s[2].R[3].T_ref));
 //   s[2].R[3].v = s[2].R[3].R_actual * s[2].R[3].i;
 //   s[2].R[3].LossPower = s[2].R[3].v * s[2].R[3].i;
@@ -4255,7 +4255,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].R[3].p.i + s[2].R[3].n.i;
 //   s[2].R[3].i = s[2].R[3].p.i;
 //   s[2].R[3].T_heatPort = s[2].R[3].T;
-//   assert(1.0 + s[2].R[4].alpha * (s[2].R[4].T_heatPort - s[2].R[4].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].R[4].alpha * (s[2].R[4].T_heatPort - s[2].R[4].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].R[4].R_actual = s[2].R[4].R * (1.0 + s[2].R[4].alpha * (s[2].R[4].T_heatPort - s[2].R[4].T_ref));
 //   s[2].R[4].v = s[2].R[4].R_actual * s[2].R[4].i;
 //   s[2].R[4].LossPower = s[2].R[4].v * s[2].R[4].i;
@@ -4263,7 +4263,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].R[4].p.i + s[2].R[4].n.i;
 //   s[2].R[4].i = s[2].R[4].p.i;
 //   s[2].R[4].T_heatPort = s[2].R[4].T;
-//   assert(1.0 + s[2].G[1].alpha * (s[2].G[1].T_heatPort - s[2].G[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].G[1].alpha * (s[2].G[1].T_heatPort - s[2].G[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].G[1].G_actual = s[2].G[1].G / (1.0 + s[2].G[1].alpha * (s[2].G[1].T_heatPort - s[2].G[1].T_ref));
 //   s[2].G[1].i = s[2].G[1].G_actual * s[2].G[1].v;
 //   s[2].G[1].LossPower = s[2].G[1].v * s[2].G[1].i;
@@ -4271,7 +4271,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].G[1].p.i + s[2].G[1].n.i;
 //   s[2].G[1].i = s[2].G[1].p.i;
 //   s[2].G[1].T_heatPort = s[2].G[1].T;
-//   assert(1.0 + s[2].G[2].alpha * (s[2].G[2].T_heatPort - s[2].G[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].G[2].alpha * (s[2].G[2].T_heatPort - s[2].G[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].G[2].G_actual = s[2].G[2].G / (1.0 + s[2].G[2].alpha * (s[2].G[2].T_heatPort - s[2].G[2].T_ref));
 //   s[2].G[2].i = s[2].G[2].G_actual * s[2].G[2].v;
 //   s[2].G[2].LossPower = s[2].G[2].v * s[2].G[2].i;
@@ -4279,7 +4279,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].G[2].p.i + s[2].G[2].n.i;
 //   s[2].G[2].i = s[2].G[2].p.i;
 //   s[2].G[2].T_heatPort = s[2].G[2].T;
-//   assert(1.0 + s[2].G[3].alpha * (s[2].G[3].T_heatPort - s[2].G[3].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].G[3].alpha * (s[2].G[3].T_heatPort - s[2].G[3].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].G[3].G_actual = s[2].G[3].G / (1.0 + s[2].G[3].alpha * (s[2].G[3].T_heatPort - s[2].G[3].T_ref));
 //   s[2].G[3].i = s[2].G[3].G_actual * s[2].G[3].v;
 //   s[2].G[3].LossPower = s[2].G[3].v * s[2].G[3].i;
@@ -4287,7 +4287,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].G[3].p.i + s[2].G[3].n.i;
 //   s[2].G[3].i = s[2].G[3].p.i;
 //   s[2].G[3].T_heatPort = s[2].G[3].T;
-//   assert(1.0 + s[2].G[4].alpha * (s[2].G[4].T_heatPort - s[2].G[4].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].G[4].alpha * (s[2].G[4].T_heatPort - s[2].G[4].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].G[4].G_actual = s[2].G[4].G / (1.0 + s[2].G[4].alpha * (s[2].G[4].T_heatPort - s[2].G[4].T_ref));
 //   s[2].G[4].i = s[2].G[4].G_actual * s[2].G[4].v;
 //   s[2].G[4].LossPower = s[2].G[4].v * s[2].G[4].i;
@@ -4295,7 +4295,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].G[4].p.i + s[2].G[4].n.i;
 //   s[2].G[4].i = s[2].G[4].p.i;
 //   s[2].G[4].T_heatPort = s[2].G[4].T;
-//   assert(1.0 + s[2].G[5].alpha * (s[2].G[5].T_heatPort - s[2].G[5].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].G[5].alpha * (s[2].G[5].T_heatPort - s[2].G[5].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].G[5].G_actual = s[2].G[5].G / (1.0 + s[2].G[5].alpha * (s[2].G[5].T_heatPort - s[2].G[5].T_ref));
 //   s[2].G[5].i = s[2].G[5].G_actual * s[2].G[5].v;
 //   s[2].G[5].LossPower = s[2].G[5].v * s[2].G[5].i;
@@ -4303,7 +4303,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].G[5].p.i + s[2].G[5].n.i;
 //   s[2].G[5].i = s[2].G[5].p.i;
 //   s[2].G[5].T_heatPort = s[2].G[5].T;
-//   assert(1.0 + s[2].G[6].alpha * (s[2].G[6].T_heatPort - s[2].G[6].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].G[6].alpha * (s[2].G[6].T_heatPort - s[2].G[6].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].G[6].G_actual = s[2].G[6].G / (1.0 + s[2].G[6].alpha * (s[2].G[6].T_heatPort - s[2].G[6].T_ref));
 //   s[2].G[6].i = s[2].G[6].G_actual * s[2].G[6].v;
 //   s[2].G[6].LossPower = s[2].G[6].v * s[2].G[6].i;
@@ -4311,7 +4311,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].G[6].p.i + s[2].G[6].n.i;
 //   s[2].G[6].i = s[2].G[6].p.i;
 //   s[2].G[6].T_heatPort = s[2].G[6].T;
-//   assert(1.0 + s[2].G[7].alpha * (s[2].G[7].T_heatPort - s[2].G[7].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].G[7].alpha * (s[2].G[7].T_heatPort - s[2].G[7].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].G[7].G_actual = s[2].G[7].G / (1.0 + s[2].G[7].alpha * (s[2].G[7].T_heatPort - s[2].G[7].T_ref));
 //   s[2].G[7].i = s[2].G[7].G_actual * s[2].G[7].v;
 //   s[2].G[7].LossPower = s[2].G[7].v * s[2].G[7].i;
@@ -4319,7 +4319,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].G[7].p.i + s[2].G[7].n.i;
 //   s[2].G[7].i = s[2].G[7].p.i;
 //   s[2].G[7].T_heatPort = s[2].G[7].T;
-//   assert(1.0 + s[2].G[8].alpha * (s[2].G[8].T_heatPort - s[2].G[8].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].G[8].alpha * (s[2].G[8].T_heatPort - s[2].G[8].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].G[8].G_actual = s[2].G[8].G / (1.0 + s[2].G[8].alpha * (s[2].G[8].T_heatPort - s[2].G[8].T_ref));
 //   s[2].G[8].i = s[2].G[8].G_actual * s[2].G[8].v;
 //   s[2].G[8].LossPower = s[2].G[8].v * s[2].G[8].i;
@@ -4327,7 +4327,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].G[8].p.i + s[2].G[8].n.i;
 //   s[2].G[8].i = s[2].G[8].p.i;
 //   s[2].G[8].T_heatPort = s[2].G[8].T;
-//   assert(1.0 + s[2].G[9].alpha * (s[2].G[9].T_heatPort - s[2].G[9].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].G[9].alpha * (s[2].G[9].T_heatPort - s[2].G[9].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].G[9].G_actual = s[2].G[9].G / (1.0 + s[2].G[9].alpha * (s[2].G[9].T_heatPort - s[2].G[9].T_ref));
 //   s[2].G[9].i = s[2].G[9].G_actual * s[2].G[9].v;
 //   s[2].G[9].LossPower = s[2].G[9].v * s[2].G[9].i;
@@ -4335,7 +4335,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[2].G[9].p.i + s[2].G[9].n.i;
 //   s[2].G[9].i = s[2].G[9].p.i;
 //   s[2].G[9].T_heatPort = s[2].G[9].T;
-//   assert(1.0 + s[2].G[10].alpha * (s[2].G[10].T_heatPort - s[2].G[10].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[2].G[10].alpha * (s[2].G[10].T_heatPort - s[2].G[10].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[2].G[10].G_actual = s[2].G[10].G / (1.0 + s[2].G[10].alpha * (s[2].G[10].T_heatPort - s[2].G[10].T_ref));
 //   s[2].G[10].i = s[2].G[10].G_actual * s[2].G[10].v;
 //   s[2].G[10].LossPower = s[2].G[10].v * s[2].G[10].i;
@@ -4400,7 +4400,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   s[3].C[10].v = s[3].C[10].p.v - s[3].C[10].n.v;
 //   0.0 = s[3].C[10].p.i + s[3].C[10].n.i;
 //   s[3].C[10].i = s[3].C[10].p.i;
-//   assert(1.0 + s[3].R[1].alpha * (s[3].R[1].T_heatPort - s[3].R[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].R[1].alpha * (s[3].R[1].T_heatPort - s[3].R[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].R[1].R_actual = s[3].R[1].R * (1.0 + s[3].R[1].alpha * (s[3].R[1].T_heatPort - s[3].R[1].T_ref));
 //   s[3].R[1].v = s[3].R[1].R_actual * s[3].R[1].i;
 //   s[3].R[1].LossPower = s[3].R[1].v * s[3].R[1].i;
@@ -4408,7 +4408,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].R[1].p.i + s[3].R[1].n.i;
 //   s[3].R[1].i = s[3].R[1].p.i;
 //   s[3].R[1].T_heatPort = s[3].R[1].T;
-//   assert(1.0 + s[3].R[2].alpha * (s[3].R[2].T_heatPort - s[3].R[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].R[2].alpha * (s[3].R[2].T_heatPort - s[3].R[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].R[2].R_actual = s[3].R[2].R * (1.0 + s[3].R[2].alpha * (s[3].R[2].T_heatPort - s[3].R[2].T_ref));
 //   s[3].R[2].v = s[3].R[2].R_actual * s[3].R[2].i;
 //   s[3].R[2].LossPower = s[3].R[2].v * s[3].R[2].i;
@@ -4416,7 +4416,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].R[2].p.i + s[3].R[2].n.i;
 //   s[3].R[2].i = s[3].R[2].p.i;
 //   s[3].R[2].T_heatPort = s[3].R[2].T;
-//   assert(1.0 + s[3].R[3].alpha * (s[3].R[3].T_heatPort - s[3].R[3].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].R[3].alpha * (s[3].R[3].T_heatPort - s[3].R[3].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].R[3].R_actual = s[3].R[3].R * (1.0 + s[3].R[3].alpha * (s[3].R[3].T_heatPort - s[3].R[3].T_ref));
 //   s[3].R[3].v = s[3].R[3].R_actual * s[3].R[3].i;
 //   s[3].R[3].LossPower = s[3].R[3].v * s[3].R[3].i;
@@ -4424,7 +4424,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].R[3].p.i + s[3].R[3].n.i;
 //   s[3].R[3].i = s[3].R[3].p.i;
 //   s[3].R[3].T_heatPort = s[3].R[3].T;
-//   assert(1.0 + s[3].R[4].alpha * (s[3].R[4].T_heatPort - s[3].R[4].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].R[4].alpha * (s[3].R[4].T_heatPort - s[3].R[4].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].R[4].R_actual = s[3].R[4].R * (1.0 + s[3].R[4].alpha * (s[3].R[4].T_heatPort - s[3].R[4].T_ref));
 //   s[3].R[4].v = s[3].R[4].R_actual * s[3].R[4].i;
 //   s[3].R[4].LossPower = s[3].R[4].v * s[3].R[4].i;
@@ -4432,7 +4432,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].R[4].p.i + s[3].R[4].n.i;
 //   s[3].R[4].i = s[3].R[4].p.i;
 //   s[3].R[4].T_heatPort = s[3].R[4].T;
-//   assert(1.0 + s[3].G[1].alpha * (s[3].G[1].T_heatPort - s[3].G[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].G[1].alpha * (s[3].G[1].T_heatPort - s[3].G[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].G[1].G_actual = s[3].G[1].G / (1.0 + s[3].G[1].alpha * (s[3].G[1].T_heatPort - s[3].G[1].T_ref));
 //   s[3].G[1].i = s[3].G[1].G_actual * s[3].G[1].v;
 //   s[3].G[1].LossPower = s[3].G[1].v * s[3].G[1].i;
@@ -4440,7 +4440,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].G[1].p.i + s[3].G[1].n.i;
 //   s[3].G[1].i = s[3].G[1].p.i;
 //   s[3].G[1].T_heatPort = s[3].G[1].T;
-//   assert(1.0 + s[3].G[2].alpha * (s[3].G[2].T_heatPort - s[3].G[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].G[2].alpha * (s[3].G[2].T_heatPort - s[3].G[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].G[2].G_actual = s[3].G[2].G / (1.0 + s[3].G[2].alpha * (s[3].G[2].T_heatPort - s[3].G[2].T_ref));
 //   s[3].G[2].i = s[3].G[2].G_actual * s[3].G[2].v;
 //   s[3].G[2].LossPower = s[3].G[2].v * s[3].G[2].i;
@@ -4448,7 +4448,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].G[2].p.i + s[3].G[2].n.i;
 //   s[3].G[2].i = s[3].G[2].p.i;
 //   s[3].G[2].T_heatPort = s[3].G[2].T;
-//   assert(1.0 + s[3].G[3].alpha * (s[3].G[3].T_heatPort - s[3].G[3].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].G[3].alpha * (s[3].G[3].T_heatPort - s[3].G[3].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].G[3].G_actual = s[3].G[3].G / (1.0 + s[3].G[3].alpha * (s[3].G[3].T_heatPort - s[3].G[3].T_ref));
 //   s[3].G[3].i = s[3].G[3].G_actual * s[3].G[3].v;
 //   s[3].G[3].LossPower = s[3].G[3].v * s[3].G[3].i;
@@ -4456,7 +4456,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].G[3].p.i + s[3].G[3].n.i;
 //   s[3].G[3].i = s[3].G[3].p.i;
 //   s[3].G[3].T_heatPort = s[3].G[3].T;
-//   assert(1.0 + s[3].G[4].alpha * (s[3].G[4].T_heatPort - s[3].G[4].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].G[4].alpha * (s[3].G[4].T_heatPort - s[3].G[4].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].G[4].G_actual = s[3].G[4].G / (1.0 + s[3].G[4].alpha * (s[3].G[4].T_heatPort - s[3].G[4].T_ref));
 //   s[3].G[4].i = s[3].G[4].G_actual * s[3].G[4].v;
 //   s[3].G[4].LossPower = s[3].G[4].v * s[3].G[4].i;
@@ -4464,7 +4464,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].G[4].p.i + s[3].G[4].n.i;
 //   s[3].G[4].i = s[3].G[4].p.i;
 //   s[3].G[4].T_heatPort = s[3].G[4].T;
-//   assert(1.0 + s[3].G[5].alpha * (s[3].G[5].T_heatPort - s[3].G[5].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].G[5].alpha * (s[3].G[5].T_heatPort - s[3].G[5].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].G[5].G_actual = s[3].G[5].G / (1.0 + s[3].G[5].alpha * (s[3].G[5].T_heatPort - s[3].G[5].T_ref));
 //   s[3].G[5].i = s[3].G[5].G_actual * s[3].G[5].v;
 //   s[3].G[5].LossPower = s[3].G[5].v * s[3].G[5].i;
@@ -4472,7 +4472,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].G[5].p.i + s[3].G[5].n.i;
 //   s[3].G[5].i = s[3].G[5].p.i;
 //   s[3].G[5].T_heatPort = s[3].G[5].T;
-//   assert(1.0 + s[3].G[6].alpha * (s[3].G[6].T_heatPort - s[3].G[6].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].G[6].alpha * (s[3].G[6].T_heatPort - s[3].G[6].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].G[6].G_actual = s[3].G[6].G / (1.0 + s[3].G[6].alpha * (s[3].G[6].T_heatPort - s[3].G[6].T_ref));
 //   s[3].G[6].i = s[3].G[6].G_actual * s[3].G[6].v;
 //   s[3].G[6].LossPower = s[3].G[6].v * s[3].G[6].i;
@@ -4480,7 +4480,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].G[6].p.i + s[3].G[6].n.i;
 //   s[3].G[6].i = s[3].G[6].p.i;
 //   s[3].G[6].T_heatPort = s[3].G[6].T;
-//   assert(1.0 + s[3].G[7].alpha * (s[3].G[7].T_heatPort - s[3].G[7].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].G[7].alpha * (s[3].G[7].T_heatPort - s[3].G[7].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].G[7].G_actual = s[3].G[7].G / (1.0 + s[3].G[7].alpha * (s[3].G[7].T_heatPort - s[3].G[7].T_ref));
 //   s[3].G[7].i = s[3].G[7].G_actual * s[3].G[7].v;
 //   s[3].G[7].LossPower = s[3].G[7].v * s[3].G[7].i;
@@ -4488,7 +4488,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].G[7].p.i + s[3].G[7].n.i;
 //   s[3].G[7].i = s[3].G[7].p.i;
 //   s[3].G[7].T_heatPort = s[3].G[7].T;
-//   assert(1.0 + s[3].G[8].alpha * (s[3].G[8].T_heatPort - s[3].G[8].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].G[8].alpha * (s[3].G[8].T_heatPort - s[3].G[8].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].G[8].G_actual = s[3].G[8].G / (1.0 + s[3].G[8].alpha * (s[3].G[8].T_heatPort - s[3].G[8].T_ref));
 //   s[3].G[8].i = s[3].G[8].G_actual * s[3].G[8].v;
 //   s[3].G[8].LossPower = s[3].G[8].v * s[3].G[8].i;
@@ -4496,7 +4496,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].G[8].p.i + s[3].G[8].n.i;
 //   s[3].G[8].i = s[3].G[8].p.i;
 //   s[3].G[8].T_heatPort = s[3].G[8].T;
-//   assert(1.0 + s[3].G[9].alpha * (s[3].G[9].T_heatPort - s[3].G[9].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].G[9].alpha * (s[3].G[9].T_heatPort - s[3].G[9].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].G[9].G_actual = s[3].G[9].G / (1.0 + s[3].G[9].alpha * (s[3].G[9].T_heatPort - s[3].G[9].T_ref));
 //   s[3].G[9].i = s[3].G[9].G_actual * s[3].G[9].v;
 //   s[3].G[9].LossPower = s[3].G[9].v * s[3].G[9].i;
@@ -4504,7 +4504,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[3].G[9].p.i + s[3].G[9].n.i;
 //   s[3].G[9].i = s[3].G[9].p.i;
 //   s[3].G[9].T_heatPort = s[3].G[9].T;
-//   assert(1.0 + s[3].G[10].alpha * (s[3].G[10].T_heatPort - s[3].G[10].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[3].G[10].alpha * (s[3].G[10].T_heatPort - s[3].G[10].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[3].G[10].G_actual = s[3].G[10].G / (1.0 + s[3].G[10].alpha * (s[3].G[10].T_heatPort - s[3].G[10].T_ref));
 //   s[3].G[10].i = s[3].G[10].G_actual * s[3].G[10].v;
 //   s[3].G[10].LossPower = s[3].G[10].v * s[3].G[10].i;
@@ -4569,7 +4569,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   s[4].C[10].v = s[4].C[10].p.v - s[4].C[10].n.v;
 //   0.0 = s[4].C[10].p.i + s[4].C[10].n.i;
 //   s[4].C[10].i = s[4].C[10].p.i;
-//   assert(1.0 + s[4].R[1].alpha * (s[4].R[1].T_heatPort - s[4].R[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].R[1].alpha * (s[4].R[1].T_heatPort - s[4].R[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].R[1].R_actual = s[4].R[1].R * (1.0 + s[4].R[1].alpha * (s[4].R[1].T_heatPort - s[4].R[1].T_ref));
 //   s[4].R[1].v = s[4].R[1].R_actual * s[4].R[1].i;
 //   s[4].R[1].LossPower = s[4].R[1].v * s[4].R[1].i;
@@ -4577,7 +4577,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].R[1].p.i + s[4].R[1].n.i;
 //   s[4].R[1].i = s[4].R[1].p.i;
 //   s[4].R[1].T_heatPort = s[4].R[1].T;
-//   assert(1.0 + s[4].R[2].alpha * (s[4].R[2].T_heatPort - s[4].R[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].R[2].alpha * (s[4].R[2].T_heatPort - s[4].R[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].R[2].R_actual = s[4].R[2].R * (1.0 + s[4].R[2].alpha * (s[4].R[2].T_heatPort - s[4].R[2].T_ref));
 //   s[4].R[2].v = s[4].R[2].R_actual * s[4].R[2].i;
 //   s[4].R[2].LossPower = s[4].R[2].v * s[4].R[2].i;
@@ -4585,7 +4585,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].R[2].p.i + s[4].R[2].n.i;
 //   s[4].R[2].i = s[4].R[2].p.i;
 //   s[4].R[2].T_heatPort = s[4].R[2].T;
-//   assert(1.0 + s[4].R[3].alpha * (s[4].R[3].T_heatPort - s[4].R[3].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].R[3].alpha * (s[4].R[3].T_heatPort - s[4].R[3].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].R[3].R_actual = s[4].R[3].R * (1.0 + s[4].R[3].alpha * (s[4].R[3].T_heatPort - s[4].R[3].T_ref));
 //   s[4].R[3].v = s[4].R[3].R_actual * s[4].R[3].i;
 //   s[4].R[3].LossPower = s[4].R[3].v * s[4].R[3].i;
@@ -4593,7 +4593,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].R[3].p.i + s[4].R[3].n.i;
 //   s[4].R[3].i = s[4].R[3].p.i;
 //   s[4].R[3].T_heatPort = s[4].R[3].T;
-//   assert(1.0 + s[4].R[4].alpha * (s[4].R[4].T_heatPort - s[4].R[4].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].R[4].alpha * (s[4].R[4].T_heatPort - s[4].R[4].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].R[4].R_actual = s[4].R[4].R * (1.0 + s[4].R[4].alpha * (s[4].R[4].T_heatPort - s[4].R[4].T_ref));
 //   s[4].R[4].v = s[4].R[4].R_actual * s[4].R[4].i;
 //   s[4].R[4].LossPower = s[4].R[4].v * s[4].R[4].i;
@@ -4601,7 +4601,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].R[4].p.i + s[4].R[4].n.i;
 //   s[4].R[4].i = s[4].R[4].p.i;
 //   s[4].R[4].T_heatPort = s[4].R[4].T;
-//   assert(1.0 + s[4].G[1].alpha * (s[4].G[1].T_heatPort - s[4].G[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].G[1].alpha * (s[4].G[1].T_heatPort - s[4].G[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].G[1].G_actual = s[4].G[1].G / (1.0 + s[4].G[1].alpha * (s[4].G[1].T_heatPort - s[4].G[1].T_ref));
 //   s[4].G[1].i = s[4].G[1].G_actual * s[4].G[1].v;
 //   s[4].G[1].LossPower = s[4].G[1].v * s[4].G[1].i;
@@ -4609,7 +4609,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].G[1].p.i + s[4].G[1].n.i;
 //   s[4].G[1].i = s[4].G[1].p.i;
 //   s[4].G[1].T_heatPort = s[4].G[1].T;
-//   assert(1.0 + s[4].G[2].alpha * (s[4].G[2].T_heatPort - s[4].G[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].G[2].alpha * (s[4].G[2].T_heatPort - s[4].G[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].G[2].G_actual = s[4].G[2].G / (1.0 + s[4].G[2].alpha * (s[4].G[2].T_heatPort - s[4].G[2].T_ref));
 //   s[4].G[2].i = s[4].G[2].G_actual * s[4].G[2].v;
 //   s[4].G[2].LossPower = s[4].G[2].v * s[4].G[2].i;
@@ -4617,7 +4617,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].G[2].p.i + s[4].G[2].n.i;
 //   s[4].G[2].i = s[4].G[2].p.i;
 //   s[4].G[2].T_heatPort = s[4].G[2].T;
-//   assert(1.0 + s[4].G[3].alpha * (s[4].G[3].T_heatPort - s[4].G[3].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].G[3].alpha * (s[4].G[3].T_heatPort - s[4].G[3].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].G[3].G_actual = s[4].G[3].G / (1.0 + s[4].G[3].alpha * (s[4].G[3].T_heatPort - s[4].G[3].T_ref));
 //   s[4].G[3].i = s[4].G[3].G_actual * s[4].G[3].v;
 //   s[4].G[3].LossPower = s[4].G[3].v * s[4].G[3].i;
@@ -4625,7 +4625,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].G[3].p.i + s[4].G[3].n.i;
 //   s[4].G[3].i = s[4].G[3].p.i;
 //   s[4].G[3].T_heatPort = s[4].G[3].T;
-//   assert(1.0 + s[4].G[4].alpha * (s[4].G[4].T_heatPort - s[4].G[4].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].G[4].alpha * (s[4].G[4].T_heatPort - s[4].G[4].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].G[4].G_actual = s[4].G[4].G / (1.0 + s[4].G[4].alpha * (s[4].G[4].T_heatPort - s[4].G[4].T_ref));
 //   s[4].G[4].i = s[4].G[4].G_actual * s[4].G[4].v;
 //   s[4].G[4].LossPower = s[4].G[4].v * s[4].G[4].i;
@@ -4633,7 +4633,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].G[4].p.i + s[4].G[4].n.i;
 //   s[4].G[4].i = s[4].G[4].p.i;
 //   s[4].G[4].T_heatPort = s[4].G[4].T;
-//   assert(1.0 + s[4].G[5].alpha * (s[4].G[5].T_heatPort - s[4].G[5].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].G[5].alpha * (s[4].G[5].T_heatPort - s[4].G[5].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].G[5].G_actual = s[4].G[5].G / (1.0 + s[4].G[5].alpha * (s[4].G[5].T_heatPort - s[4].G[5].T_ref));
 //   s[4].G[5].i = s[4].G[5].G_actual * s[4].G[5].v;
 //   s[4].G[5].LossPower = s[4].G[5].v * s[4].G[5].i;
@@ -4641,7 +4641,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].G[5].p.i + s[4].G[5].n.i;
 //   s[4].G[5].i = s[4].G[5].p.i;
 //   s[4].G[5].T_heatPort = s[4].G[5].T;
-//   assert(1.0 + s[4].G[6].alpha * (s[4].G[6].T_heatPort - s[4].G[6].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].G[6].alpha * (s[4].G[6].T_heatPort - s[4].G[6].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].G[6].G_actual = s[4].G[6].G / (1.0 + s[4].G[6].alpha * (s[4].G[6].T_heatPort - s[4].G[6].T_ref));
 //   s[4].G[6].i = s[4].G[6].G_actual * s[4].G[6].v;
 //   s[4].G[6].LossPower = s[4].G[6].v * s[4].G[6].i;
@@ -4649,7 +4649,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].G[6].p.i + s[4].G[6].n.i;
 //   s[4].G[6].i = s[4].G[6].p.i;
 //   s[4].G[6].T_heatPort = s[4].G[6].T;
-//   assert(1.0 + s[4].G[7].alpha * (s[4].G[7].T_heatPort - s[4].G[7].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].G[7].alpha * (s[4].G[7].T_heatPort - s[4].G[7].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].G[7].G_actual = s[4].G[7].G / (1.0 + s[4].G[7].alpha * (s[4].G[7].T_heatPort - s[4].G[7].T_ref));
 //   s[4].G[7].i = s[4].G[7].G_actual * s[4].G[7].v;
 //   s[4].G[7].LossPower = s[4].G[7].v * s[4].G[7].i;
@@ -4657,7 +4657,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].G[7].p.i + s[4].G[7].n.i;
 //   s[4].G[7].i = s[4].G[7].p.i;
 //   s[4].G[7].T_heatPort = s[4].G[7].T;
-//   assert(1.0 + s[4].G[8].alpha * (s[4].G[8].T_heatPort - s[4].G[8].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].G[8].alpha * (s[4].G[8].T_heatPort - s[4].G[8].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].G[8].G_actual = s[4].G[8].G / (1.0 + s[4].G[8].alpha * (s[4].G[8].T_heatPort - s[4].G[8].T_ref));
 //   s[4].G[8].i = s[4].G[8].G_actual * s[4].G[8].v;
 //   s[4].G[8].LossPower = s[4].G[8].v * s[4].G[8].i;
@@ -4665,7 +4665,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].G[8].p.i + s[4].G[8].n.i;
 //   s[4].G[8].i = s[4].G[8].p.i;
 //   s[4].G[8].T_heatPort = s[4].G[8].T;
-//   assert(1.0 + s[4].G[9].alpha * (s[4].G[9].T_heatPort - s[4].G[9].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].G[9].alpha * (s[4].G[9].T_heatPort - s[4].G[9].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].G[9].G_actual = s[4].G[9].G / (1.0 + s[4].G[9].alpha * (s[4].G[9].T_heatPort - s[4].G[9].T_ref));
 //   s[4].G[9].i = s[4].G[9].G_actual * s[4].G[9].v;
 //   s[4].G[9].LossPower = s[4].G[9].v * s[4].G[9].i;
@@ -4673,7 +4673,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s[4].G[9].p.i + s[4].G[9].n.i;
 //   s[4].G[9].i = s[4].G[9].p.i;
 //   s[4].G[9].T_heatPort = s[4].G[9].T;
-//   assert(1.0 + s[4].G[10].alpha * (s[4].G[10].T_heatPort - s[4].G[10].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s[4].G[10].alpha * (s[4].G[10].T_heatPort - s[4].G[10].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s[4].G[10].G_actual = s[4].G[10].G / (1.0 + s[4].G[10].alpha * (s[4].G[10].T_heatPort - s[4].G[10].T_ref));
 //   s[4].G[10].i = s[4].G[10].G_actual * s[4].G[10].v;
 //   s[4].G[10].LossPower = s[4].G[10].v * s[4].G[10].i;
@@ -4738,7 +4738,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   s_first.C[10].v = s_first.C[10].p.v - s_first.C[10].n.v;
 //   0.0 = s_first.C[10].p.i + s_first.C[10].n.i;
 //   s_first.C[10].i = s_first.C[10].p.i;
-//   assert(1.0 + s_first.R[1].alpha * (s_first.R[1].T_heatPort - s_first.R[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.R[1].alpha * (s_first.R[1].T_heatPort - s_first.R[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.R[1].R_actual = s_first.R[1].R * (1.0 + s_first.R[1].alpha * (s_first.R[1].T_heatPort - s_first.R[1].T_ref));
 //   s_first.R[1].v = s_first.R[1].R_actual * s_first.R[1].i;
 //   s_first.R[1].LossPower = s_first.R[1].v * s_first.R[1].i;
@@ -4746,7 +4746,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.R[1].p.i + s_first.R[1].n.i;
 //   s_first.R[1].i = s_first.R[1].p.i;
 //   s_first.R[1].T_heatPort = s_first.R[1].T;
-//   assert(1.0 + s_first.R[2].alpha * (s_first.R[2].T_heatPort - s_first.R[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.R[2].alpha * (s_first.R[2].T_heatPort - s_first.R[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.R[2].R_actual = s_first.R[2].R * (1.0 + s_first.R[2].alpha * (s_first.R[2].T_heatPort - s_first.R[2].T_ref));
 //   s_first.R[2].v = s_first.R[2].R_actual * s_first.R[2].i;
 //   s_first.R[2].LossPower = s_first.R[2].v * s_first.R[2].i;
@@ -4754,7 +4754,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.R[2].p.i + s_first.R[2].n.i;
 //   s_first.R[2].i = s_first.R[2].p.i;
 //   s_first.R[2].T_heatPort = s_first.R[2].T;
-//   assert(1.0 + s_first.R[3].alpha * (s_first.R[3].T_heatPort - s_first.R[3].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.R[3].alpha * (s_first.R[3].T_heatPort - s_first.R[3].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.R[3].R_actual = s_first.R[3].R * (1.0 + s_first.R[3].alpha * (s_first.R[3].T_heatPort - s_first.R[3].T_ref));
 //   s_first.R[3].v = s_first.R[3].R_actual * s_first.R[3].i;
 //   s_first.R[3].LossPower = s_first.R[3].v * s_first.R[3].i;
@@ -4762,7 +4762,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.R[3].p.i + s_first.R[3].n.i;
 //   s_first.R[3].i = s_first.R[3].p.i;
 //   s_first.R[3].T_heatPort = s_first.R[3].T;
-//   assert(1.0 + s_first.R[4].alpha * (s_first.R[4].T_heatPort - s_first.R[4].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.R[4].alpha * (s_first.R[4].T_heatPort - s_first.R[4].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.R[4].R_actual = s_first.R[4].R * (1.0 + s_first.R[4].alpha * (s_first.R[4].T_heatPort - s_first.R[4].T_ref));
 //   s_first.R[4].v = s_first.R[4].R_actual * s_first.R[4].i;
 //   s_first.R[4].LossPower = s_first.R[4].v * s_first.R[4].i;
@@ -4770,7 +4770,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.R[4].p.i + s_first.R[4].n.i;
 //   s_first.R[4].i = s_first.R[4].p.i;
 //   s_first.R[4].T_heatPort = s_first.R[4].T;
-//   assert(1.0 + s_first.G[1].alpha * (s_first.G[1].T_heatPort - s_first.G[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.G[1].alpha * (s_first.G[1].T_heatPort - s_first.G[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.G[1].G_actual = s_first.G[1].G / (1.0 + s_first.G[1].alpha * (s_first.G[1].T_heatPort - s_first.G[1].T_ref));
 //   s_first.G[1].i = s_first.G[1].G_actual * s_first.G[1].v;
 //   s_first.G[1].LossPower = s_first.G[1].v * s_first.G[1].i;
@@ -4778,7 +4778,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.G[1].p.i + s_first.G[1].n.i;
 //   s_first.G[1].i = s_first.G[1].p.i;
 //   s_first.G[1].T_heatPort = s_first.G[1].T;
-//   assert(1.0 + s_first.G[2].alpha * (s_first.G[2].T_heatPort - s_first.G[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.G[2].alpha * (s_first.G[2].T_heatPort - s_first.G[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.G[2].G_actual = s_first.G[2].G / (1.0 + s_first.G[2].alpha * (s_first.G[2].T_heatPort - s_first.G[2].T_ref));
 //   s_first.G[2].i = s_first.G[2].G_actual * s_first.G[2].v;
 //   s_first.G[2].LossPower = s_first.G[2].v * s_first.G[2].i;
@@ -4786,7 +4786,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.G[2].p.i + s_first.G[2].n.i;
 //   s_first.G[2].i = s_first.G[2].p.i;
 //   s_first.G[2].T_heatPort = s_first.G[2].T;
-//   assert(1.0 + s_first.G[3].alpha * (s_first.G[3].T_heatPort - s_first.G[3].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.G[3].alpha * (s_first.G[3].T_heatPort - s_first.G[3].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.G[3].G_actual = s_first.G[3].G / (1.0 + s_first.G[3].alpha * (s_first.G[3].T_heatPort - s_first.G[3].T_ref));
 //   s_first.G[3].i = s_first.G[3].G_actual * s_first.G[3].v;
 //   s_first.G[3].LossPower = s_first.G[3].v * s_first.G[3].i;
@@ -4794,7 +4794,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.G[3].p.i + s_first.G[3].n.i;
 //   s_first.G[3].i = s_first.G[3].p.i;
 //   s_first.G[3].T_heatPort = s_first.G[3].T;
-//   assert(1.0 + s_first.G[4].alpha * (s_first.G[4].T_heatPort - s_first.G[4].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.G[4].alpha * (s_first.G[4].T_heatPort - s_first.G[4].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.G[4].G_actual = s_first.G[4].G / (1.0 + s_first.G[4].alpha * (s_first.G[4].T_heatPort - s_first.G[4].T_ref));
 //   s_first.G[4].i = s_first.G[4].G_actual * s_first.G[4].v;
 //   s_first.G[4].LossPower = s_first.G[4].v * s_first.G[4].i;
@@ -4802,7 +4802,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.G[4].p.i + s_first.G[4].n.i;
 //   s_first.G[4].i = s_first.G[4].p.i;
 //   s_first.G[4].T_heatPort = s_first.G[4].T;
-//   assert(1.0 + s_first.G[5].alpha * (s_first.G[5].T_heatPort - s_first.G[5].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.G[5].alpha * (s_first.G[5].T_heatPort - s_first.G[5].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.G[5].G_actual = s_first.G[5].G / (1.0 + s_first.G[5].alpha * (s_first.G[5].T_heatPort - s_first.G[5].T_ref));
 //   s_first.G[5].i = s_first.G[5].G_actual * s_first.G[5].v;
 //   s_first.G[5].LossPower = s_first.G[5].v * s_first.G[5].i;
@@ -4810,7 +4810,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.G[5].p.i + s_first.G[5].n.i;
 //   s_first.G[5].i = s_first.G[5].p.i;
 //   s_first.G[5].T_heatPort = s_first.G[5].T;
-//   assert(1.0 + s_first.G[6].alpha * (s_first.G[6].T_heatPort - s_first.G[6].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.G[6].alpha * (s_first.G[6].T_heatPort - s_first.G[6].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.G[6].G_actual = s_first.G[6].G / (1.0 + s_first.G[6].alpha * (s_first.G[6].T_heatPort - s_first.G[6].T_ref));
 //   s_first.G[6].i = s_first.G[6].G_actual * s_first.G[6].v;
 //   s_first.G[6].LossPower = s_first.G[6].v * s_first.G[6].i;
@@ -4818,7 +4818,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.G[6].p.i + s_first.G[6].n.i;
 //   s_first.G[6].i = s_first.G[6].p.i;
 //   s_first.G[6].T_heatPort = s_first.G[6].T;
-//   assert(1.0 + s_first.G[7].alpha * (s_first.G[7].T_heatPort - s_first.G[7].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.G[7].alpha * (s_first.G[7].T_heatPort - s_first.G[7].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.G[7].G_actual = s_first.G[7].G / (1.0 + s_first.G[7].alpha * (s_first.G[7].T_heatPort - s_first.G[7].T_ref));
 //   s_first.G[7].i = s_first.G[7].G_actual * s_first.G[7].v;
 //   s_first.G[7].LossPower = s_first.G[7].v * s_first.G[7].i;
@@ -4826,7 +4826,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.G[7].p.i + s_first.G[7].n.i;
 //   s_first.G[7].i = s_first.G[7].p.i;
 //   s_first.G[7].T_heatPort = s_first.G[7].T;
-//   assert(1.0 + s_first.G[8].alpha * (s_first.G[8].T_heatPort - s_first.G[8].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.G[8].alpha * (s_first.G[8].T_heatPort - s_first.G[8].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.G[8].G_actual = s_first.G[8].G / (1.0 + s_first.G[8].alpha * (s_first.G[8].T_heatPort - s_first.G[8].T_ref));
 //   s_first.G[8].i = s_first.G[8].G_actual * s_first.G[8].v;
 //   s_first.G[8].LossPower = s_first.G[8].v * s_first.G[8].i;
@@ -4834,7 +4834,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.G[8].p.i + s_first.G[8].n.i;
 //   s_first.G[8].i = s_first.G[8].p.i;
 //   s_first.G[8].T_heatPort = s_first.G[8].T;
-//   assert(1.0 + s_first.G[9].alpha * (s_first.G[9].T_heatPort - s_first.G[9].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.G[9].alpha * (s_first.G[9].T_heatPort - s_first.G[9].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.G[9].G_actual = s_first.G[9].G / (1.0 + s_first.G[9].alpha * (s_first.G[9].T_heatPort - s_first.G[9].T_ref));
 //   s_first.G[9].i = s_first.G[9].G_actual * s_first.G[9].v;
 //   s_first.G[9].LossPower = s_first.G[9].v * s_first.G[9].i;
@@ -4842,7 +4842,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_first.G[9].p.i + s_first.G[9].n.i;
 //   s_first.G[9].i = s_first.G[9].p.i;
 //   s_first.G[9].T_heatPort = s_first.G[9].T;
-//   assert(1.0 + s_first.G[10].alpha * (s_first.G[10].T_heatPort - s_first.G[10].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_first.G[10].alpha * (s_first.G[10].T_heatPort - s_first.G[10].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_first.G[10].G_actual = s_first.G[10].G / (1.0 + s_first.G[10].alpha * (s_first.G[10].T_heatPort - s_first.G[10].T_ref));
 //   s_first.G[10].i = s_first.G[10].G_actual * s_first.G[10].v;
 //   s_first.G[10].LossPower = s_first.G[10].v * s_first.G[10].i;
@@ -4867,7 +4867,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   s_first.inductance.v[3] = s_first.inductance.Lm[3,1] * der(s_first.inductance.i[1]) + s_first.inductance.Lm[3,2] * der(s_first.inductance.i[2]) + s_first.inductance.Lm[3,3] * der(s_first.inductance.i[3]) + s_first.inductance.Lm[3,4] * der(s_first.inductance.i[4]);
 //   s_first.inductance.v[4] = s_first.inductance.Lm[4,1] * der(s_first.inductance.i[1]) + s_first.inductance.Lm[4,2] * der(s_first.inductance.i[2]) + s_first.inductance.Lm[4,3] * der(s_first.inductance.i[3]) + s_first.inductance.Lm[4,4] * der(s_first.inductance.i[4]);
 //   s_last.M.p.v = 0.0;
-//   assert(1.0 + s_last.R[1].alpha * (s_last.R[1].T_heatPort - s_last.R[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_last.R[1].alpha * (s_last.R[1].T_heatPort - s_last.R[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_last.R[1].R_actual = s_last.R[1].R * (1.0 + s_last.R[1].alpha * (s_last.R[1].T_heatPort - s_last.R[1].T_ref));
 //   s_last.R[1].v = s_last.R[1].R_actual * s_last.R[1].i;
 //   s_last.R[1].LossPower = s_last.R[1].v * s_last.R[1].i;
@@ -4875,7 +4875,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_last.R[1].p.i + s_last.R[1].n.i;
 //   s_last.R[1].i = s_last.R[1].p.i;
 //   s_last.R[1].T_heatPort = s_last.R[1].T;
-//   assert(1.0 + s_last.R[2].alpha * (s_last.R[2].T_heatPort - s_last.R[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_last.R[2].alpha * (s_last.R[2].T_heatPort - s_last.R[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_last.R[2].R_actual = s_last.R[2].R * (1.0 + s_last.R[2].alpha * (s_last.R[2].T_heatPort - s_last.R[2].T_ref));
 //   s_last.R[2].v = s_last.R[2].R_actual * s_last.R[2].i;
 //   s_last.R[2].LossPower = s_last.R[2].v * s_last.R[2].i;
@@ -4883,7 +4883,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_last.R[2].p.i + s_last.R[2].n.i;
 //   s_last.R[2].i = s_last.R[2].p.i;
 //   s_last.R[2].T_heatPort = s_last.R[2].T;
-//   assert(1.0 + s_last.R[3].alpha * (s_last.R[3].T_heatPort - s_last.R[3].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_last.R[3].alpha * (s_last.R[3].T_heatPort - s_last.R[3].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_last.R[3].R_actual = s_last.R[3].R * (1.0 + s_last.R[3].alpha * (s_last.R[3].T_heatPort - s_last.R[3].T_ref));
 //   s_last.R[3].v = s_last.R[3].R_actual * s_last.R[3].i;
 //   s_last.R[3].LossPower = s_last.R[3].v * s_last.R[3].i;
@@ -4891,7 +4891,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = s_last.R[3].p.i + s_last.R[3].n.i;
 //   s_last.R[3].i = s_last.R[3].p.i;
 //   s_last.R[3].T_heatPort = s_last.R[3].T;
-//   assert(1.0 + s_last.R[4].alpha * (s_last.R[4].T_heatPort - s_last.R[4].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + s_last.R[4].alpha * (s_last.R[4].T_heatPort - s_last.R[4].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   s_last.R[4].R_actual = s_last.R[4].R * (1.0 + s_last.R[4].alpha * (s_last.R[4].T_heatPort - s_last.R[4].T_ref));
 //   s_last.R[4].v = s_last.R[4].R_actual * s_last.R[4].i;
 //   s_last.R[4].LossPower = s_last.R[4].v * s_last.R[4].i;
@@ -4932,17 +4932,17 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   s[1].n[2].i + s[2].p[2].i = 0.0;
 //   s[1].n[3].i + s[2].p[3].i = 0.0;
 //   s[1].n[4].i + s[2].p[4].i = 0.0;
-//   (-s[1].n[1].i) + s[1].C[1].p.i + s[1].C[2].p.i + s[1].C[3].p.i + s[1].C[4].p.i + s[1].G[1].p.i + s[1].G[2].p.i + s[1].G[3].p.i + s[1].G[4].p.i + s[1].inductance.n[1].i = 0.0;
-//   (-s[1].n[2].i) + s[1].C[2].n.i + s[1].C[5].p.i + s[1].C[6].p.i + s[1].C[7].p.i + s[1].G[2].n.i + s[1].G[5].p.i + s[1].G[6].p.i + s[1].G[7].p.i + s[1].inductance.n[2].i = 0.0;
-//   (-s[1].n[3].i) + s[1].C[3].n.i + s[1].C[6].n.i + s[1].C[8].p.i + s[1].C[9].p.i + s[1].G[3].n.i + s[1].G[6].n.i + s[1].G[8].p.i + s[1].G[9].p.i + s[1].inductance.n[3].i = 0.0;
-//   (-s[1].n[4].i) + s[1].C[4].n.i + s[1].C[7].n.i + s[1].C[9].n.i + s[1].C[10].p.i + s[1].G[4].n.i + s[1].G[7].n.i + s[1].G[9].n.i + s[1].G[10].p.i + s[1].inductance.n[4].i = 0.0;
-//   (-s[1].p[1].i) + s[1].R[1].p.i = 0.0;
+//   -s[1].n[1].i + s[1].C[1].p.i + s[1].C[2].p.i + s[1].C[3].p.i + s[1].C[4].p.i + s[1].G[1].p.i + s[1].G[2].p.i + s[1].G[3].p.i + s[1].G[4].p.i + s[1].inductance.n[1].i = 0.0;
+//   -s[1].n[2].i + s[1].C[2].n.i + s[1].C[5].p.i + s[1].C[6].p.i + s[1].C[7].p.i + s[1].G[2].n.i + s[1].G[5].p.i + s[1].G[6].p.i + s[1].G[7].p.i + s[1].inductance.n[2].i = 0.0;
+//   -s[1].n[3].i + s[1].C[3].n.i + s[1].C[6].n.i + s[1].C[8].p.i + s[1].C[9].p.i + s[1].G[3].n.i + s[1].G[6].n.i + s[1].G[8].p.i + s[1].G[9].p.i + s[1].inductance.n[3].i = 0.0;
+//   -s[1].n[4].i + s[1].C[4].n.i + s[1].C[7].n.i + s[1].C[9].n.i + s[1].C[10].p.i + s[1].G[4].n.i + s[1].G[7].n.i + s[1].G[9].n.i + s[1].G[10].p.i + s[1].inductance.n[4].i = 0.0;
+//   -s[1].p[1].i + s[1].R[1].p.i = 0.0;
 //   s[1].R[1].n.i + s[1].inductance.p[1].i = 0.0;
-//   (-s[1].p[2].i) + s[1].R[2].p.i = 0.0;
+//   -s[1].p[2].i + s[1].R[2].p.i = 0.0;
 //   s[1].R[2].n.i + s[1].inductance.p[2].i = 0.0;
-//   (-s[1].p[3].i) + s[1].R[3].p.i = 0.0;
+//   -s[1].p[3].i + s[1].R[3].p.i = 0.0;
 //   s[1].R[3].n.i + s[1].inductance.p[3].i = 0.0;
-//   (-s[1].p[4].i) + s[1].R[4].p.i = 0.0;
+//   -s[1].p[4].i + s[1].R[4].p.i = 0.0;
 //   s[1].R[4].n.i + s[1].inductance.p[4].i = 0.0;
 //   s[1].R[1].p.v = s[1].p[1].v;
 //   s[1].R[1].n.v = s[1].inductance.p[1].v;
@@ -5001,17 +5001,17 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   s[2].n[2].i + s[3].p[2].i = 0.0;
 //   s[2].n[3].i + s[3].p[3].i = 0.0;
 //   s[2].n[4].i + s[3].p[4].i = 0.0;
-//   (-s[2].n[1].i) + s[2].C[1].p.i + s[2].C[2].p.i + s[2].C[3].p.i + s[2].C[4].p.i + s[2].G[1].p.i + s[2].G[2].p.i + s[2].G[3].p.i + s[2].G[4].p.i + s[2].inductance.n[1].i = 0.0;
-//   (-s[2].n[2].i) + s[2].C[2].n.i + s[2].C[5].p.i + s[2].C[6].p.i + s[2].C[7].p.i + s[2].G[2].n.i + s[2].G[5].p.i + s[2].G[6].p.i + s[2].G[7].p.i + s[2].inductance.n[2].i = 0.0;
-//   (-s[2].n[3].i) + s[2].C[3].n.i + s[2].C[6].n.i + s[2].C[8].p.i + s[2].C[9].p.i + s[2].G[3].n.i + s[2].G[6].n.i + s[2].G[8].p.i + s[2].G[9].p.i + s[2].inductance.n[3].i = 0.0;
-//   (-s[2].n[4].i) + s[2].C[4].n.i + s[2].C[7].n.i + s[2].C[9].n.i + s[2].C[10].p.i + s[2].G[4].n.i + s[2].G[7].n.i + s[2].G[9].n.i + s[2].G[10].p.i + s[2].inductance.n[4].i = 0.0;
-//   (-s[2].p[1].i) + s[2].R[1].p.i = 0.0;
+//   -s[2].n[1].i + s[2].C[1].p.i + s[2].C[2].p.i + s[2].C[3].p.i + s[2].C[4].p.i + s[2].G[1].p.i + s[2].G[2].p.i + s[2].G[3].p.i + s[2].G[4].p.i + s[2].inductance.n[1].i = 0.0;
+//   -s[2].n[2].i + s[2].C[2].n.i + s[2].C[5].p.i + s[2].C[6].p.i + s[2].C[7].p.i + s[2].G[2].n.i + s[2].G[5].p.i + s[2].G[6].p.i + s[2].G[7].p.i + s[2].inductance.n[2].i = 0.0;
+//   -s[2].n[3].i + s[2].C[3].n.i + s[2].C[6].n.i + s[2].C[8].p.i + s[2].C[9].p.i + s[2].G[3].n.i + s[2].G[6].n.i + s[2].G[8].p.i + s[2].G[9].p.i + s[2].inductance.n[3].i = 0.0;
+//   -s[2].n[4].i + s[2].C[4].n.i + s[2].C[7].n.i + s[2].C[9].n.i + s[2].C[10].p.i + s[2].G[4].n.i + s[2].G[7].n.i + s[2].G[9].n.i + s[2].G[10].p.i + s[2].inductance.n[4].i = 0.0;
+//   -s[2].p[1].i + s[2].R[1].p.i = 0.0;
 //   s[2].R[1].n.i + s[2].inductance.p[1].i = 0.0;
-//   (-s[2].p[2].i) + s[2].R[2].p.i = 0.0;
+//   -s[2].p[2].i + s[2].R[2].p.i = 0.0;
 //   s[2].R[2].n.i + s[2].inductance.p[2].i = 0.0;
-//   (-s[2].p[3].i) + s[2].R[3].p.i = 0.0;
+//   -s[2].p[3].i + s[2].R[3].p.i = 0.0;
 //   s[2].R[3].n.i + s[2].inductance.p[3].i = 0.0;
-//   (-s[2].p[4].i) + s[2].R[4].p.i = 0.0;
+//   -s[2].p[4].i + s[2].R[4].p.i = 0.0;
 //   s[2].R[4].n.i + s[2].inductance.p[4].i = 0.0;
 //   s[2].R[1].p.v = s[2].p[1].v;
 //   s[2].R[1].n.v = s[2].inductance.p[1].v;
@@ -5070,17 +5070,17 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   s[3].n[2].i + s[4].p[2].i = 0.0;
 //   s[3].n[3].i + s[4].p[3].i = 0.0;
 //   s[3].n[4].i + s[4].p[4].i = 0.0;
-//   (-s[3].n[1].i) + s[3].C[1].p.i + s[3].C[2].p.i + s[3].C[3].p.i + s[3].C[4].p.i + s[3].G[1].p.i + s[3].G[2].p.i + s[3].G[3].p.i + s[3].G[4].p.i + s[3].inductance.n[1].i = 0.0;
-//   (-s[3].n[2].i) + s[3].C[2].n.i + s[3].C[5].p.i + s[3].C[6].p.i + s[3].C[7].p.i + s[3].G[2].n.i + s[3].G[5].p.i + s[3].G[6].p.i + s[3].G[7].p.i + s[3].inductance.n[2].i = 0.0;
-//   (-s[3].n[3].i) + s[3].C[3].n.i + s[3].C[6].n.i + s[3].C[8].p.i + s[3].C[9].p.i + s[3].G[3].n.i + s[3].G[6].n.i + s[3].G[8].p.i + s[3].G[9].p.i + s[3].inductance.n[3].i = 0.0;
-//   (-s[3].n[4].i) + s[3].C[4].n.i + s[3].C[7].n.i + s[3].C[9].n.i + s[3].C[10].p.i + s[3].G[4].n.i + s[3].G[7].n.i + s[3].G[9].n.i + s[3].G[10].p.i + s[3].inductance.n[4].i = 0.0;
-//   (-s[3].p[1].i) + s[3].R[1].p.i = 0.0;
+//   -s[3].n[1].i + s[3].C[1].p.i + s[3].C[2].p.i + s[3].C[3].p.i + s[3].C[4].p.i + s[3].G[1].p.i + s[3].G[2].p.i + s[3].G[3].p.i + s[3].G[4].p.i + s[3].inductance.n[1].i = 0.0;
+//   -s[3].n[2].i + s[3].C[2].n.i + s[3].C[5].p.i + s[3].C[6].p.i + s[3].C[7].p.i + s[3].G[2].n.i + s[3].G[5].p.i + s[3].G[6].p.i + s[3].G[7].p.i + s[3].inductance.n[2].i = 0.0;
+//   -s[3].n[3].i + s[3].C[3].n.i + s[3].C[6].n.i + s[3].C[8].p.i + s[3].C[9].p.i + s[3].G[3].n.i + s[3].G[6].n.i + s[3].G[8].p.i + s[3].G[9].p.i + s[3].inductance.n[3].i = 0.0;
+//   -s[3].n[4].i + s[3].C[4].n.i + s[3].C[7].n.i + s[3].C[9].n.i + s[3].C[10].p.i + s[3].G[4].n.i + s[3].G[7].n.i + s[3].G[9].n.i + s[3].G[10].p.i + s[3].inductance.n[4].i = 0.0;
+//   -s[3].p[1].i + s[3].R[1].p.i = 0.0;
 //   s[3].R[1].n.i + s[3].inductance.p[1].i = 0.0;
-//   (-s[3].p[2].i) + s[3].R[2].p.i = 0.0;
+//   -s[3].p[2].i + s[3].R[2].p.i = 0.0;
 //   s[3].R[2].n.i + s[3].inductance.p[2].i = 0.0;
-//   (-s[3].p[3].i) + s[3].R[3].p.i = 0.0;
+//   -s[3].p[3].i + s[3].R[3].p.i = 0.0;
 //   s[3].R[3].n.i + s[3].inductance.p[3].i = 0.0;
-//   (-s[3].p[4].i) + s[3].R[4].p.i = 0.0;
+//   -s[3].p[4].i + s[3].R[4].p.i = 0.0;
 //   s[3].R[4].n.i + s[3].inductance.p[4].i = 0.0;
 //   s[3].R[1].p.v = s[3].p[1].v;
 //   s[3].R[1].n.v = s[3].inductance.p[1].v;
@@ -5139,17 +5139,17 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   s[4].n[2].i + s_last.p[2].i = 0.0;
 //   s[4].n[3].i + s_last.p[3].i = 0.0;
 //   s[4].n[4].i + s_last.p[4].i = 0.0;
-//   (-s[4].n[1].i) + s[4].C[1].p.i + s[4].C[2].p.i + s[4].C[3].p.i + s[4].C[4].p.i + s[4].G[1].p.i + s[4].G[2].p.i + s[4].G[3].p.i + s[4].G[4].p.i + s[4].inductance.n[1].i = 0.0;
-//   (-s[4].n[2].i) + s[4].C[2].n.i + s[4].C[5].p.i + s[4].C[6].p.i + s[4].C[7].p.i + s[4].G[2].n.i + s[4].G[5].p.i + s[4].G[6].p.i + s[4].G[7].p.i + s[4].inductance.n[2].i = 0.0;
-//   (-s[4].n[3].i) + s[4].C[3].n.i + s[4].C[6].n.i + s[4].C[8].p.i + s[4].C[9].p.i + s[4].G[3].n.i + s[4].G[6].n.i + s[4].G[8].p.i + s[4].G[9].p.i + s[4].inductance.n[3].i = 0.0;
-//   (-s[4].n[4].i) + s[4].C[4].n.i + s[4].C[7].n.i + s[4].C[9].n.i + s[4].C[10].p.i + s[4].G[4].n.i + s[4].G[7].n.i + s[4].G[9].n.i + s[4].G[10].p.i + s[4].inductance.n[4].i = 0.0;
-//   (-s[4].p[1].i) + s[4].R[1].p.i = 0.0;
+//   -s[4].n[1].i + s[4].C[1].p.i + s[4].C[2].p.i + s[4].C[3].p.i + s[4].C[4].p.i + s[4].G[1].p.i + s[4].G[2].p.i + s[4].G[3].p.i + s[4].G[4].p.i + s[4].inductance.n[1].i = 0.0;
+//   -s[4].n[2].i + s[4].C[2].n.i + s[4].C[5].p.i + s[4].C[6].p.i + s[4].C[7].p.i + s[4].G[2].n.i + s[4].G[5].p.i + s[4].G[6].p.i + s[4].G[7].p.i + s[4].inductance.n[2].i = 0.0;
+//   -s[4].n[3].i + s[4].C[3].n.i + s[4].C[6].n.i + s[4].C[8].p.i + s[4].C[9].p.i + s[4].G[3].n.i + s[4].G[6].n.i + s[4].G[8].p.i + s[4].G[9].p.i + s[4].inductance.n[3].i = 0.0;
+//   -s[4].n[4].i + s[4].C[4].n.i + s[4].C[7].n.i + s[4].C[9].n.i + s[4].C[10].p.i + s[4].G[4].n.i + s[4].G[7].n.i + s[4].G[9].n.i + s[4].G[10].p.i + s[4].inductance.n[4].i = 0.0;
+//   -s[4].p[1].i + s[4].R[1].p.i = 0.0;
 //   s[4].R[1].n.i + s[4].inductance.p[1].i = 0.0;
-//   (-s[4].p[2].i) + s[4].R[2].p.i = 0.0;
+//   -s[4].p[2].i + s[4].R[2].p.i = 0.0;
 //   s[4].R[2].n.i + s[4].inductance.p[2].i = 0.0;
-//   (-s[4].p[3].i) + s[4].R[3].p.i = 0.0;
+//   -s[4].p[3].i + s[4].R[3].p.i = 0.0;
 //   s[4].R[3].n.i + s[4].inductance.p[3].i = 0.0;
-//   (-s[4].p[4].i) + s[4].R[4].p.i = 0.0;
+//   -s[4].p[4].i + s[4].R[4].p.i = 0.0;
 //   s[4].R[4].n.i + s[4].inductance.p[4].i = 0.0;
 //   s[4].R[1].p.v = s[4].p[1].v;
 //   s[4].R[1].n.v = s[4].inductance.p[1].v;
@@ -5204,21 +5204,21 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   s[4].R[4].p.v = s[4].p[4].v;
 //   s[4].R[4].n.v = s[4].inductance.p[4].v;
 //   s_first.M.p.i + s_first.C[1].n.i + s_first.C[5].n.i + s_first.C[8].n.i + s_first.C[10].n.i + s_first.G[1].n.i + s_first.G[5].n.i + s_first.G[8].n.i + s_first.G[10].n.i = 0.0;
-//   (-p[1].i) + s_first.p[1].i = 0.0;
-//   (-p[2].i) + s_first.p[2].i = 0.0;
-//   (-p[3].i) + s_first.p[3].i = 0.0;
-//   (-p[4].i) + s_first.p[4].i = 0.0;
-//   (-s_first.n[1].i) + s_first.C[1].p.i + s_first.C[2].p.i + s_first.C[3].p.i + s_first.C[4].p.i + s_first.G[1].p.i + s_first.G[2].p.i + s_first.G[3].p.i + s_first.G[4].p.i + s_first.inductance.n[1].i = 0.0;
-//   (-s_first.n[2].i) + s_first.C[2].n.i + s_first.C[5].p.i + s_first.C[6].p.i + s_first.C[7].p.i + s_first.G[2].n.i + s_first.G[5].p.i + s_first.G[6].p.i + s_first.G[7].p.i + s_first.inductance.n[2].i = 0.0;
-//   (-s_first.n[3].i) + s_first.C[3].n.i + s_first.C[6].n.i + s_first.C[8].p.i + s_first.C[9].p.i + s_first.G[3].n.i + s_first.G[6].n.i + s_first.G[8].p.i + s_first.G[9].p.i + s_first.inductance.n[3].i = 0.0;
-//   (-s_first.n[4].i) + s_first.C[4].n.i + s_first.C[7].n.i + s_first.C[9].n.i + s_first.C[10].p.i + s_first.G[4].n.i + s_first.G[7].n.i + s_first.G[9].n.i + s_first.G[10].p.i + s_first.inductance.n[4].i = 0.0;
-//   (-s_first.p[1].i) + s_first.R[1].p.i = 0.0;
+//   -p[1].i + s_first.p[1].i = 0.0;
+//   -p[2].i + s_first.p[2].i = 0.0;
+//   -p[3].i + s_first.p[3].i = 0.0;
+//   -p[4].i + s_first.p[4].i = 0.0;
+//   -s_first.n[1].i + s_first.C[1].p.i + s_first.C[2].p.i + s_first.C[3].p.i + s_first.C[4].p.i + s_first.G[1].p.i + s_first.G[2].p.i + s_first.G[3].p.i + s_first.G[4].p.i + s_first.inductance.n[1].i = 0.0;
+//   -s_first.n[2].i + s_first.C[2].n.i + s_first.C[5].p.i + s_first.C[6].p.i + s_first.C[7].p.i + s_first.G[2].n.i + s_first.G[5].p.i + s_first.G[6].p.i + s_first.G[7].p.i + s_first.inductance.n[2].i = 0.0;
+//   -s_first.n[3].i + s_first.C[3].n.i + s_first.C[6].n.i + s_first.C[8].p.i + s_first.C[9].p.i + s_first.G[3].n.i + s_first.G[6].n.i + s_first.G[8].p.i + s_first.G[9].p.i + s_first.inductance.n[3].i = 0.0;
+//   -s_first.n[4].i + s_first.C[4].n.i + s_first.C[7].n.i + s_first.C[9].n.i + s_first.C[10].p.i + s_first.G[4].n.i + s_first.G[7].n.i + s_first.G[9].n.i + s_first.G[10].p.i + s_first.inductance.n[4].i = 0.0;
+//   -s_first.p[1].i + s_first.R[1].p.i = 0.0;
 //   s_first.R[1].n.i + s_first.inductance.p[1].i = 0.0;
-//   (-s_first.p[2].i) + s_first.R[2].p.i = 0.0;
+//   -s_first.p[2].i + s_first.R[2].p.i = 0.0;
 //   s_first.R[2].n.i + s_first.inductance.p[2].i = 0.0;
-//   (-s_first.p[3].i) + s_first.R[3].p.i = 0.0;
+//   -s_first.p[3].i + s_first.R[3].p.i = 0.0;
 //   s_first.R[3].n.i + s_first.inductance.p[3].i = 0.0;
-//   (-s_first.p[4].i) + s_first.R[4].p.i = 0.0;
+//   -s_first.p[4].i + s_first.R[4].p.i = 0.0;
 //   s_first.R[4].n.i + s_first.inductance.p[4].i = 0.0;
 //   s_first.R[1].p.v = s_first.p[1].v;
 //   s_first.R[1].n.v = s_first.inductance.p[1].v;
@@ -5273,22 +5273,22 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   s_first.R[4].p.v = s_first.p[4].v;
 //   s_first.R[4].n.v = s_first.inductance.p[4].v;
 //   s_last.M.p.i = 0.0;
-//   (-n[1].i) + s_last.n[1].i = 0.0;
-//   (-n[2].i) + s_last.n[2].i = 0.0;
-//   (-n[3].i) + s_last.n[3].i = 0.0;
-//   (-n[4].i) + s_last.n[4].i = 0.0;
+//   -n[1].i + s_last.n[1].i = 0.0;
+//   -n[2].i + s_last.n[2].i = 0.0;
+//   -n[3].i + s_last.n[3].i = 0.0;
+//   -n[4].i + s_last.n[4].i = 0.0;
 //   s_last.R[1].p.i + s_last.inductance.n[1].i = 0.0;
-//   (-s_last.n[1].i) + s_last.R[1].n.i = 0.0;
+//   -s_last.n[1].i + s_last.R[1].n.i = 0.0;
 //   s_last.R[2].p.i + s_last.inductance.n[2].i = 0.0;
-//   (-s_last.n[2].i) + s_last.R[2].n.i = 0.0;
+//   -s_last.n[2].i + s_last.R[2].n.i = 0.0;
 //   s_last.R[3].p.i + s_last.inductance.n[3].i = 0.0;
-//   (-s_last.n[3].i) + s_last.R[3].n.i = 0.0;
+//   -s_last.n[3].i + s_last.R[3].n.i = 0.0;
 //   s_last.R[4].p.i + s_last.inductance.n[4].i = 0.0;
-//   (-s_last.n[4].i) + s_last.R[4].n.i = 0.0;
-//   (-s_last.p[1].i) + s_last.inductance.p[1].i = 0.0;
-//   (-s_last.p[2].i) + s_last.inductance.p[2].i = 0.0;
-//   (-s_last.p[3].i) + s_last.inductance.p[3].i = 0.0;
-//   (-s_last.p[4].i) + s_last.inductance.p[4].i = 0.0;
+//   -s_last.n[4].i + s_last.R[4].n.i = 0.0;
+//   -s_last.p[1].i + s_last.inductance.p[1].i = 0.0;
+//   -s_last.p[2].i + s_last.inductance.p[2].i = 0.0;
+//   -s_last.p[3].i + s_last.inductance.p[3].i = 0.0;
+//   -s_last.p[4].i + s_last.inductance.p[4].i = 0.0;
 //   s_last.inductance.p[1].v = s_last.p[1].v;
 //   s_last.R[1].p.v = s_last.inductance.n[1].v;
 //   s_last.R[1].n.v = s_last.n[1].v;
@@ -5362,278 +5362,278 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   end for;
 // end Modelica.Electrical.Analog.Lines.M_OLine;
 // "
-// "[Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// "[Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
 // "
 // "Check of Modelica.Electrical.Analog.Lines.M_OLine completed successfully.
 // 
-// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '\"Ohm/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '\"Ohm/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '\"Ohm/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '\"Ohm/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '\"H/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '\"H/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '\"H/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '\"H/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '\"H/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '\"H/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '\"H/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '\"H/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '\"H/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '\"H/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '\"S/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '\"S/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '\"S/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '\"S/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '\"S/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '\"S/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '\"S/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '\"S/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '\"S/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '\"S/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '\"F/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '\"F/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '\"F/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '\"F/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '\"F/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '\"F/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '\"F/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '\"F/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '\"F/m\"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '\"F/m\"' for array component, possibly due to missing 'each'.
 // 
@@ -5660,9 +5660,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real v23(quantity = \"ElectricPotential\", unit = \"V\");
 //   Real i1(quantity = \"ElectricCurrent\", unit = \"A\");
 //   Real i2(quantity = \"ElectricCurrent\", unit = \"A\");
-//   parameter Real r(unit = \"Ohm/m\", min = 1e-060, start = 1.0) \"Resistance per meter\";
-//   parameter Real c(unit = \"F/m\", min = 1e-060, start = 1.0) \"Capacitance per meter\";
-//   parameter Real length(quantity = \"Length\", unit = \"m\", min = 1e-060, start = 1.0) \"Length of line\";
+//   parameter Real r(unit = \"Ohm/m\", min = 1e-60, start = 1.0) \"Resistance per meter\";
+//   parameter Real c(unit = \"F/m\", min = 1e-60, start = 1.0) \"Capacitance per meter\";
+//   parameter Real length(quantity = \"Length\", unit = \"m\", min = 1e-60, start = 1.0) \"Length of line\";
 //   parameter Integer N(min = 1, start = 1) \"Number of lumped segments\";
 //   Real R[1].v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real R[1].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
@@ -5700,7 +5700,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real C[1].n.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   parameter Real C[1].C(quantity = \"Capacitance\", unit = \"F\", min = 0.0, start = 1.0) = (c * length) / Real(N) \"Capacitance\";
 // equation
-//   assert(1.0 + R[1].alpha * (R[1].T_heatPort - R[1].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + R[1].alpha * (R[1].T_heatPort - R[1].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   R[1].R_actual = R[1].R * (1.0 + R[1].alpha * (R[1].T_heatPort - R[1].T_ref));
 //   R[1].v = R[1].R_actual * R[1].i;
 //   R[1].LossPower = R[1].v * R[1].i;
@@ -5708,7 +5708,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = R[1].p.i + R[1].n.i;
 //   R[1].i = R[1].p.i;
 //   R[1].T_heatPort = R[1].T;
-//   assert(1.0 + R[2].alpha * (R[2].T_heatPort - R[2].T_ref) >= 1e-015,\"Temperature outside scope of model!\");
+//   assert(1.0 + R[2].alpha * (R[2].T_heatPort - R[2].T_ref) >= 1e-15,\"Temperature outside scope of model!\");
 //   R[2].R_actual = R[2].R * (1.0 + R[2].alpha * (R[2].T_heatPort - R[2].T_ref));
 //   R[2].v = R[2].R_actual * R[2].i;
 //   R[2].LossPower = R[2].v * R[2].i;
@@ -5727,10 +5727,10 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p1.i = 0.0;
 //   p2.i = 0.0;
 //   p3.i = 0.0;
-//   (-p1.i) + R[1].p.i = 0.0;
+//   -p1.i + R[1].p.i = 0.0;
 //   R[1].n.i + R[2].p.i + C[1].p.i = 0.0;
-//   (-p2.i) + R[2].n.i = 0.0;
-//   (-p3.i) + C[1].n.i = 0.0;
+//   -p2.i + R[2].n.i = 0.0;
+//   -p3.i + C[1].n.i = 0.0;
 //   R[1].p.v = p1.v;
 //   C[1].p.v = R[1].n.v;
 //   C[1].p.v = R[2].p.v;
@@ -5988,10 +5988,10 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // class Modelica.Electrical.Analog.Basic.OpAmpDetailed
 //   parameter Real Rdm(quantity = \"Resistance\", unit = \"Ohm\") = 2000000.0 \"input resistance (differential input mode)\";
 //   parameter Real Rcm(quantity = \"Resistance\", unit = \"Ohm\") = 2000000000.0 \"input resistance (common mode)\";
-//   parameter Real Cin(quantity = \"Capacitance\", unit = \"F\", min = 0.0) = 1.4e-012 \"input capacitance\";
+//   parameter Real Cin(quantity = \"Capacitance\", unit = \"F\", min = 0.0) = 1.4e-12 \"input capacitance\";
 //   parameter Real Vos(quantity = \"ElectricPotential\", unit = \"V\") = 0.001 \"input offset voltage\";
-//   parameter Real Ib(quantity = \"ElectricCurrent\", unit = \"A\") = 8e-008 \"input bias current\";
-//   parameter Real Ios(quantity = \"ElectricCurrent\", unit = \"A\") = 2e-008 \"input offset current\";
+//   parameter Real Ib(quantity = \"ElectricCurrent\", unit = \"A\") = 8e-08 \"input bias current\";
+//   parameter Real Ios(quantity = \"ElectricCurrent\", unit = \"A\") = 2e-08 \"input offset current\";
 //   parameter Real vcp(quantity = \"ElectricPotential\", unit = \"V\") = 0.0 \"correction value for limiting by p_supply\";
 //   parameter Real vcm(quantity = \"ElectricPotential\", unit = \"V\") = 0.0 \"correction value for limiting by msupply\";
 //   parameter Real Avd0 = 106.0 \"differential amplifier [dB]\";
@@ -6006,7 +6006,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real Rout(quantity = \"Resistance\", unit = \"Ohm\") = 75.0 \"output resistance\";
 //   parameter Real Imaxso(quantity = \"ElectricCurrent\", unit = \"A\") = 0.025 \"maximal output current (source current)\";
 //   parameter Real Imaxsi(quantity = \"ElectricCurrent\", unit = \"A\") = 0.025 \"maximal output current (sink current)\";
-//   parameter Real Ts(quantity = \"Time\", unit = \"s\") = 1.2e-006 \"sampling time\";
+//   parameter Real Ts(quantity = \"Time\", unit = \"s\") = 1.2e-06 \"sampling time\";
 //   constant Real Pi = 3.141592654;
 //   Real p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
@@ -6054,7 +6054,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   v_pos = p_supply.v;
 //   v_neg = m_supply.v;
 //   p.i = i_vos;
-//   m.i = i_4 + ((-i_r2) - i_c3);
+//   m.i = i_4 + (-i_r2 - i_c3);
 //   0.0 = i_3 + (i_r2 + (i_c3 - i_vos));
 //   p.v - m.v = v_vos + v_in;
 //   v_4 = m.v;

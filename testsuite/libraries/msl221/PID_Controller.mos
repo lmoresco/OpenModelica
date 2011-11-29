@@ -25,13 +25,13 @@ getErrorString();
 //   output Real PI.controlError = PI.u_s - PI.u_m \"Control error (set point - measurement)\";
 //   parameter Integer PI.controllerType(min = 1, max = 4) = 2 \"Type of controller\";
 //   parameter Real PI.k(min = 0.0) = 100.0 \"Gain of controller\";
-//   parameter Real PI.Ti(quantity = \"Time\", unit = \"s\", min = 1e-060) = 0.1 \"Time constant of Integrator block\";
+//   parameter Real PI.Ti(quantity = \"Time\", unit = \"s\", min = 1e-60) = 0.1 \"Time constant of Integrator block\";
 //   parameter Real PI.Td(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.1 \"Time constant of Derivative block\";
 //   parameter Real PI.yMax = 12.0 \"Upper limit of output\";
 //   parameter Real PI.wp(min = 0.0) = 1.0 \"Set-point weight for Proportional block (0..1)\";
 //   parameter Real PI.wd(min = 0.0) = 0.0 \"Set-point weight for Derivative block (0..1)\";
-//   parameter Real PI.Ni(min = 1e-013) = 0.1 \"Ni*Ti is time constant of anti-windup compensation\";
-//   parameter Real PI.Nd(min = 1e-013) = 10.0 \"The higher Nd, the more ideal the derivative block\";
+//   parameter Real PI.Ni(min = 1e-13) = 0.1 \"Ni*Ti is time constant of anti-windup compensation\";
+//   parameter Real PI.Nd(min = 1e-13) = 10.0 \"The higher Nd, the more ideal the derivative block\";
 //   parameter Integer PI.initType(min = 1, max = 5) = 2 \"Type of initialization\";
 //   parameter Boolean PI.limitsAtInit = false \"= false, if limits are ignored during initializiation\";
 //   parameter Real PI.xi_start = 0.0 \"Initial or guess value value for integrator output (= integrator state)\";
@@ -146,8 +146,8 @@ getErrorString();
 //   Real loadTorque.bearing.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   parameter Real loadTorque.tau_constant(quantity = \"Torque\", unit = \"N.m\") = 10.0 \"constant torque (if negative, torque is acting as load)\";
 //   parameter Real kinematicPTP.deltaq[1] = driveAngle \"Distance to move\";
-//   parameter Real kinematicPTP.qd_max[1](min = 1e-060) = 1.0 \"Maximum velocities der(q)\";
-//   parameter Real kinematicPTP.qdd_max[1](min = 1e-060) = 1.0 \"Maximum accelerations der(qd)\";
+//   parameter Real kinematicPTP.qd_max[1](min = 1e-60) = 1.0 \"Maximum velocities der(q)\";
+//   parameter Real kinematicPTP.qdd_max[1](min = 1e-60) = 1.0 \"Maximum accelerations der(qd)\";
 //   parameter Real kinematicPTP.startTime(quantity = \"Time\", unit = \"s\") = 0.5 \"Time instant at which movement starts\";
 //   protected Real kinematicPTP.sd_max;
 //   protected Real kinematicPTP.sdd_max;
@@ -260,13 +260,13 @@ getErrorString();
 // end Modelica.Blocks.Examples.PID_Controller;
 // "
 // "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
-// [Sources.mo:251:5-251:97:writable] Warning: Variable kinematicPTP.qd_max: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Sources.mo:251:5-251:97:writable] Warning: Variable kinematicPTP.qd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Sources.mo:252:5-252:102:writable] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Sources.mo:252:5-252:102:writable] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Sources.mo:251:5-251:97:writable] Warning: Variable kinematicPTP.qd_max: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Sources.mo:251:5-251:97:writable] Warning: Variable kinematicPTP.qd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Sources.mo:252:5-252:102:writable] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [Sources.mo:252:5-252:102:writable] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // "
 // endResult

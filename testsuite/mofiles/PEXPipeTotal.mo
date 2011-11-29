@@ -1036,7 +1036,7 @@ end Toneco_PEXPipe;
 //   output Real dT(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = if noEvent(V_flow >= 0.0) then T - T_a else T_b - T "temperature increase of coolant in flow direction";
 //   protected Real h(quantity = "SpecificEnergy", unit = "J/kg") = medium.cp * T "medium's specific enthalpy";
 //   protected Real T_q(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = T "temperature relevant for heat exchange with ambient";
-//   parameter Real V_flowLaminar(quantity = "VolumeFlowRate", unit = "m3/s", min = 1e-060) = 0.1 "|SimpleFriction|laminar volume flow";
+//   parameter Real V_flowLaminar(quantity = "VolumeFlowRate", unit = "m3/s", min = 1e-60) = 0.1 "|SimpleFriction|laminar volume flow";
 //   parameter Real dpLaminar(quantity = "Pressure", unit = "Pa", displayUnit = "bar") = 0.1 "|SimpleFriction|laminar pressure drop";
 //   parameter Real V_flowNominal(quantity = "VolumeFlowRate", unit = "m3/s") = 1.0 "|SimpleFriction|nominal volume flow";
 //   parameter Real dpNominal(quantity = "Pressure", unit = "Pa", displayUnit = "bar") = 1.0 "|SimpleFriction|nominal pressure drop";

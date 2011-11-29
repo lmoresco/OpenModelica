@@ -110,7 +110,7 @@ end WillowForest;
 //   t = 1 + pre(t);
 //   mbiomass = mbiomasses[t];
 //   c = growthCycles[t];
-//   w = pre(w) + (wGrowth + ((-wMort) - wHarvest));
+//   w = pre(w) + (wGrowth + (-wMort - wHarvest));
 //   wBiomass = wGrowth - wMort;
 //   wGrowth = e[c] * (a[c] * Real(r[t]));
 //   wMort = if c == 1 and t > 1 then (1.0 - h) * (m[t] * (pre(w) + wGrowth)) else m[t] * (pre(w) + wGrowth);

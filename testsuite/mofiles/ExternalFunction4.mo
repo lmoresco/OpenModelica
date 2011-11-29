@@ -85,7 +85,7 @@ end ExternalFunction4;
 //   constant Real r[2,2] = 4.0;
 //   Real r2[1,1] = 1.0;
 //   Real r2[1,2] = 0.0;
-//   Real r2[2,1] = 8.88178419700125e-016;
+//   Real r2[2,1] = 8.88178419700125e-16;
 //   Real r2[2,2] = 1.0;
 // end ExternalFunction4;
 // endResult

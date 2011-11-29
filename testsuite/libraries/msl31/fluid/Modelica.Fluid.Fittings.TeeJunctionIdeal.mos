@@ -28,13 +28,13 @@ checkModel(Modelica.Fluid.Fittings.TeeJunctionIdeal); getErrorString();
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Fluid.Fittings.TeeJunctionIdeal
-//   Real port_1.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if portFlowDirection_1 == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+060, max = if portFlowDirection_1 == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+060) \"Mass flow rate from the connection point into the component\";
+//   Real port_1.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if portFlowDirection_1 == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+60, max = if portFlowDirection_1 == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+60) \"Mass flow rate from the connection point into the component\";
 //   Real port_1.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real port_1.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
-//   Real port_2.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if portFlowDirection_2 == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+060, max = if portFlowDirection_2 == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+060) \"Mass flow rate from the connection point into the component\";
+//   Real port_2.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if portFlowDirection_2 == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+60, max = if portFlowDirection_2 == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+60) \"Mass flow rate from the connection point into the component\";
 //   Real port_2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real port_2.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
-//   Real port_3.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if portFlowDirection_3 == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+060, max = if portFlowDirection_3 == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+060) \"Mass flow rate from the connection point into the component\";
+//   Real port_3.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if portFlowDirection_3 == Modelica.Fluid.Types.PortFlowDirection.Entering then 0.0 else -1e+60, max = if portFlowDirection_3 == Modelica.Fluid.Types.PortFlowDirection.Leaving then 0.0 else 1e+60) \"Mass flow rate from the connection point into the component\";
 //   Real port_3.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real port_3.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   protected parameter enumeration(Entering, Leaving, Bidirectional) portFlowDirection_1 = Modelica.Fluid.Types.PortFlowDirection.Bidirectional \"Flow direction for port_1\";
@@ -44,12 +44,12 @@ checkModel(Modelica.Fluid.Fittings.TeeJunctionIdeal); getErrorString();
 //   port_1.m_flow = 0.0;
 //   port_2.m_flow = 0.0;
 //   port_3.m_flow = 0.0;
-//   (-port_1.m_flow) + (-port_2.m_flow) + (-port_3.m_flow) = 0.0;
+//   -port_1.m_flow + -port_2.m_flow + -port_3.m_flow = 0.0;
 //   port_1.p = port_2.p;
 //   port_1.p = port_3.p;
-//   port_3.h_outflow = (max(port_1.m_flow,1e-015) * port_1.h_outflow + max(port_2.m_flow,1e-015) * port_2.h_outflow) / (max(port_1.m_flow,1e-015) + max(port_2.m_flow,1e-015));
-//   port_2.h_outflow = (max(port_1.m_flow,1e-015) * port_1.h_outflow + max(port_3.m_flow,1e-015) * port_3.h_outflow) / (max(port_1.m_flow,1e-015) + max(port_3.m_flow,1e-015));
-//   port_1.h_outflow = (max(port_2.m_flow,1e-015) * port_2.h_outflow + max(port_3.m_flow,1e-015) * port_3.h_outflow) / (max(port_2.m_flow,1e-015) + max(port_3.m_flow,1e-015));
+//   port_3.h_outflow = (max(port_1.m_flow,1e-15) * port_1.h_outflow + max(port_2.m_flow,1e-15) * port_2.h_outflow) / (max(port_1.m_flow,1e-15) + max(port_2.m_flow,1e-15));
+//   port_2.h_outflow = (max(port_1.m_flow,1e-15) * port_1.h_outflow + max(port_3.m_flow,1e-15) * port_3.h_outflow) / (max(port_1.m_flow,1e-15) + max(port_3.m_flow,1e-15));
+//   port_1.h_outflow = (max(port_2.m_flow,1e-15) * port_2.h_outflow + max(port_3.m_flow,1e-15) * port_3.h_outflow) / (max(port_2.m_flow,1e-15) + max(port_3.m_flow,1e-15));
 // end Modelica.Fluid.Fittings.TeeJunctionIdeal;
 // "
 // ""

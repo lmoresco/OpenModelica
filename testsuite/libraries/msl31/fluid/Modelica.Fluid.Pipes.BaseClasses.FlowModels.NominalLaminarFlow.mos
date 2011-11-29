@@ -114,7 +114,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow); getE
 //   parameter Boolean use_Ib_flows = momentumDynamics <> Modelica.Fluid.Types.Dynamics.SteadyState \"= true to consider differences in flow of momentum through boundaries\";
 //   protected parameter Boolean use_mu_nominal = not show_Res \"= true, if mu_nominal is used, otherwise computed from medium\";
 //   input Real pathLengths[1](quantity = \"Length\", unit = \"m\") \"Lengths along flow path\";
-//   Real m_flows[1](quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+060 else 0.0, max = 100000.0, start = m_flow_start, StateSelect = StateSelect.default) \"mass flow rates between states\";
+//   Real m_flows[1](quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+60 else 0.0, max = 100000.0, start = m_flow_start, StateSelect = StateSelect.default) \"mass flow rates between states\";
 //   Real Is[1](quantity = \"Momentum\", unit = \"kg.m/s\") \"Momentums of flow segments\";
 //   Real Ib_flows[1](quantity = \"Force\", unit = \"N\") \"Flow of momentum across boudaries\";
 //   Real Fs_p[1](quantity = \"Force\", unit = \"N\") \"Pressure forces\";
