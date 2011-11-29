@@ -2,31 +2,20 @@
 //keyword:     fluid
 //status:      correct
 //
-// instantiate/check model example
+// This model can not be instantiated, because it extends from
+// PartialLumpedVolume without redeclaring Medium, and is therefore kind of
+// partial (but it's not used like a partial model...).
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
 setDebugFlags("nogen");
 
-instantiateModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts); getErrorString();
 checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts); getErrorString();
 
 // Result:
 // true
 // ""
 // true
-// ""
-// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
-//   The existing 'inner' components are: 
-//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts.
-//   Check if you have not misspelled the 'outer' component name.
-//   Please declare an 'inner' component with the same name in the top scope.
-//   Continuing flattening by only considering the 'outer' component declaration.
-// [Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts.
-// Warning: Parameter height has neither value nor start value, and is fixed during initialization (fixed=true)
-// [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
-// Error: Error occurred while flattening model Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts
-// "
 // "Check of Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts completed successfully.
 // 
 // Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.

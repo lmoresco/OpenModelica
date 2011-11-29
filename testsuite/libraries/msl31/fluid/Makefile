@@ -5,6 +5,7 @@ Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor.mos \
+Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TriggeredTrapezoid.mos \
 Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks.mos \
 Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation.mos \
@@ -50,7 +51,6 @@ Modelica.Fluid.Valves.ValveCompressible.mos \
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES= \
-Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BatchPlant_StandardWater.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.Test.OneTank.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.Test.TanksWithEmptyingPipe1.mos \
