@@ -275,7 +275,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   FF.RS1.Nor2.auxiliary[1] = FF.RS1.Nor2.x[1];
 //   FF.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF.RS1.Nor2.auxiliary[1],FF.RS1.Nor2.x[2]];
 //   FF.RS1.Nor2.y = pre(D.Tables.NotTable[FF.RS1.Nor2.auxiliary[2]]);
-//   FF.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF.RS1.TD1.x),FF.RS1.TD1.delayTime,FF.RS1.TD1.delayTime)));
+//   FF.RS1.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(FF.RS1.TD1.x),FF.RS1.TD1.delayTime,FF.RS1.TD1.delayTime)));
 //   FF.RS1.TD1.y = if FF.RS1.TD1.delayTime > 0.0 then if time >= FF.RS1.TD1.delayTime then FF.RS1.TD1.x_delayed else FF.RS1.TD1.y0 else pre(FF.RS1.TD1.x);
 //   FF.RS2.Nor1.auxiliary[1] = FF.RS2.Nor1.x[1];
 //   FF.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF.RS2.Nor1.auxiliary[1],FF.RS2.Nor1.x[2]];
@@ -283,7 +283,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   FF.RS2.Nor2.auxiliary[1] = FF.RS2.Nor2.x[1];
 //   FF.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF.RS2.Nor2.auxiliary[1],FF.RS2.Nor2.x[2]];
 //   FF.RS2.Nor2.y = pre(D.Tables.NotTable[FF.RS2.Nor2.auxiliary[2]]);
-//   FF.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF.RS2.TD1.x),FF.RS2.TD1.delayTime,FF.RS2.TD1.delayTime)));
+//   FF.RS2.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(FF.RS2.TD1.x),FF.RS2.TD1.delayTime,FF.RS2.TD1.delayTime)));
 //   FF.RS2.TD1.y = if FF.RS2.TD1.delayTime > 0.0 then if time >= FF.RS2.TD1.delayTime then FF.RS2.TD1.x_delayed else FF.RS2.TD1.y0 else pre(FF.RS2.TD1.x);
 //   FF.And1.auxiliary[1] = FF.And1.x[1];
 //   FF.And1.auxiliary[2] = D.Tables.AndTable[FF.And1.auxiliary[1],FF.And1.x[2]];
@@ -1549,7 +1549,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   FF.RS1.Nor2.auxiliary[1] = FF.RS1.Nor2.x[1];
 //   FF.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF.RS1.Nor2.auxiliary[1],FF.RS1.Nor2.x[2]];
 //   FF.RS1.Nor2.y = pre(D.Tables.NotTable[FF.RS1.Nor2.auxiliary[2]]);
-//   FF.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF.RS1.TD1.x),FF.RS1.TD1.delayTime,FF.RS1.TD1.delayTime)));
+//   FF.RS1.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(FF.RS1.TD1.x),FF.RS1.TD1.delayTime,FF.RS1.TD1.delayTime)));
 //   FF.RS1.TD1.y = if FF.RS1.TD1.delayTime > 0.0 then if time >= FF.RS1.TD1.delayTime then FF.RS1.TD1.x_delayed else FF.RS1.TD1.y0 else pre(FF.RS1.TD1.x);
 //   FF.RS2.Nor1.auxiliary[1] = FF.RS2.Nor1.x[1];
 //   FF.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF.RS2.Nor1.auxiliary[1],FF.RS2.Nor1.x[2]];
@@ -1557,7 +1557,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   FF.RS2.Nor2.auxiliary[1] = FF.RS2.Nor2.x[1];
 //   FF.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF.RS2.Nor2.auxiliary[1],FF.RS2.Nor2.x[2]];
 //   FF.RS2.Nor2.y = pre(D.Tables.NotTable[FF.RS2.Nor2.auxiliary[2]]);
-//   FF.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF.RS2.TD1.x),FF.RS2.TD1.delayTime,FF.RS2.TD1.delayTime)));
+//   FF.RS2.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(FF.RS2.TD1.x),FF.RS2.TD1.delayTime,FF.RS2.TD1.delayTime)));
 //   FF.RS2.TD1.y = if FF.RS2.TD1.delayTime > 0.0 then if time >= FF.RS2.TD1.delayTime then FF.RS2.TD1.x_delayed else FF.RS2.TD1.y0 else pre(FF.RS2.TD1.x);
 //   FF.And1.auxiliary[1] = FF.And1.x[1];
 //   FF.And1.auxiliary[2] = D.Tables.AndTable[FF.And1.auxiliary[1],FF.And1.x[2]];
@@ -2506,7 +2506,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //     end if;
 //   end for;
 //   when {initial(),(Adder.AND.G2.tLH > 0.0 OR Adder.AND.G2.tHL > 0.0) AND change(Adder.AND.G2.x) AND  NOT initial()} then
-//     Adder.AND.G2.x_old := if initial() OR pre(Adder.AND.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder.AND.G2.y0 else pre(Adder.AND.G2.x);
+//     Adder.AND.G2.x_old := if initial() OR pre(Adder.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder.AND.G2.y0 else pre(Adder.AND.G2.x);
 //     Adder.AND.G2.lh := Adder.AND.G2.delayTable[Adder.AND.G2.x_old,Adder.AND.G2.x];
 //     Adder.AND.G2.delayTime := if Adder.AND.G2.lh > 0 then Adder.AND.G2.tLH else if Adder.AND.G2.lh < 0 then Adder.AND.G2.tHL else 0.0;
 //     Adder.AND.G2.t_next := time + Adder.AND.G2.delayTime;
@@ -2518,7 +2518,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder.AND.G2.y := if Adder.AND.G2.tLH > 0.0 OR Adder.AND.G2.tHL > 0.0 then Adder.AND.G2.y_auxiliary else Adder.AND.G2.x;
 //   when {initial(),(Adder.XOR.G2.tLH > 0.0 OR Adder.XOR.G2.tHL > 0.0) AND change(Adder.XOR.G2.x) AND  NOT initial()} then
-//     Adder.XOR.G2.x_old := if initial() OR pre(Adder.XOR.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder.XOR.G2.y0 else pre(Adder.XOR.G2.x);
+//     Adder.XOR.G2.x_old := if initial() OR pre(Adder.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder.XOR.G2.y0 else pre(Adder.XOR.G2.x);
 //     Adder.XOR.G2.lh := Adder.XOR.G2.delayTable[Adder.XOR.G2.x_old,Adder.XOR.G2.x];
 //     Adder.XOR.G2.delayTime := if Adder.XOR.G2.lh > 0 then Adder.XOR.G2.tLH else if Adder.XOR.G2.lh < 0 then Adder.XOR.G2.tHL else 0.0;
 //     Adder.XOR.G2.t_next := time + Adder.XOR.G2.delayTime;
@@ -3515,7 +3515,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF1.RS1.Nor2.auxiliary[1] = Counter.FF1.RS1.Nor2.x[1];
 //   Counter.FF1.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS1.Nor2.auxiliary[1],Counter.FF1.RS1.Nor2.x[2]];
 //   Counter.FF1.RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF1.RS1.Nor2.auxiliary[2]]);
-//   Counter.FF1.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF1.RS1.TD1.x),Counter.FF1.RS1.TD1.delayTime,Counter.FF1.RS1.TD1.delayTime)));
+//   Counter.FF1.RS1.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF1.RS1.TD1.x),Counter.FF1.RS1.TD1.delayTime,Counter.FF1.RS1.TD1.delayTime)));
 //   Counter.FF1.RS1.TD1.y = if Counter.FF1.RS1.TD1.delayTime > 0.0 then if time >= Counter.FF1.RS1.TD1.delayTime then Counter.FF1.RS1.TD1.x_delayed else Counter.FF1.RS1.TD1.y0 else pre(Counter.FF1.RS1.TD1.x);
 //   Counter.FF1.RS2.Nor1.auxiliary[1] = Counter.FF1.RS2.Nor1.x[1];
 //   Counter.FF1.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS2.Nor1.auxiliary[1],Counter.FF1.RS2.Nor1.x[2]];
@@ -3523,7 +3523,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF1.RS2.Nor2.auxiliary[1] = Counter.FF1.RS2.Nor2.x[1];
 //   Counter.FF1.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS2.Nor2.auxiliary[1],Counter.FF1.RS2.Nor2.x[2]];
 //   Counter.FF1.RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF1.RS2.Nor2.auxiliary[2]]);
-//   Counter.FF1.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF1.RS2.TD1.x),Counter.FF1.RS2.TD1.delayTime,Counter.FF1.RS2.TD1.delayTime)));
+//   Counter.FF1.RS2.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF1.RS2.TD1.x),Counter.FF1.RS2.TD1.delayTime,Counter.FF1.RS2.TD1.delayTime)));
 //   Counter.FF1.RS2.TD1.y = if Counter.FF1.RS2.TD1.delayTime > 0.0 then if time >= Counter.FF1.RS2.TD1.delayTime then Counter.FF1.RS2.TD1.x_delayed else Counter.FF1.RS2.TD1.y0 else pre(Counter.FF1.RS2.TD1.x);
 //   Counter.FF1.And1.auxiliary[1] = Counter.FF1.And1.x[1];
 //   Counter.FF1.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And1.auxiliary[1],Counter.FF1.And1.x[2]];
@@ -3547,7 +3547,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF2.RS1.Nor2.auxiliary[1] = Counter.FF2.RS1.Nor2.x[1];
 //   Counter.FF2.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS1.Nor2.auxiliary[1],Counter.FF2.RS1.Nor2.x[2]];
 //   Counter.FF2.RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF2.RS1.Nor2.auxiliary[2]]);
-//   Counter.FF2.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF2.RS1.TD1.x),Counter.FF2.RS1.TD1.delayTime,Counter.FF2.RS1.TD1.delayTime)));
+//   Counter.FF2.RS1.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF2.RS1.TD1.x),Counter.FF2.RS1.TD1.delayTime,Counter.FF2.RS1.TD1.delayTime)));
 //   Counter.FF2.RS1.TD1.y = if Counter.FF2.RS1.TD1.delayTime > 0.0 then if time >= Counter.FF2.RS1.TD1.delayTime then Counter.FF2.RS1.TD1.x_delayed else Counter.FF2.RS1.TD1.y0 else pre(Counter.FF2.RS1.TD1.x);
 //   Counter.FF2.RS2.Nor1.auxiliary[1] = Counter.FF2.RS2.Nor1.x[1];
 //   Counter.FF2.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS2.Nor1.auxiliary[1],Counter.FF2.RS2.Nor1.x[2]];
@@ -3555,7 +3555,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF2.RS2.Nor2.auxiliary[1] = Counter.FF2.RS2.Nor2.x[1];
 //   Counter.FF2.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS2.Nor2.auxiliary[1],Counter.FF2.RS2.Nor2.x[2]];
 //   Counter.FF2.RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF2.RS2.Nor2.auxiliary[2]]);
-//   Counter.FF2.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF2.RS2.TD1.x),Counter.FF2.RS2.TD1.delayTime,Counter.FF2.RS2.TD1.delayTime)));
+//   Counter.FF2.RS2.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF2.RS2.TD1.x),Counter.FF2.RS2.TD1.delayTime,Counter.FF2.RS2.TD1.delayTime)));
 //   Counter.FF2.RS2.TD1.y = if Counter.FF2.RS2.TD1.delayTime > 0.0 then if time >= Counter.FF2.RS2.TD1.delayTime then Counter.FF2.RS2.TD1.x_delayed else Counter.FF2.RS2.TD1.y0 else pre(Counter.FF2.RS2.TD1.x);
 //   Counter.FF2.And1.auxiliary[1] = Counter.FF2.And1.x[1];
 //   Counter.FF2.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And1.auxiliary[1],Counter.FF2.And1.x[2]];
@@ -3579,7 +3579,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF3.RS1.Nor2.auxiliary[1] = Counter.FF3.RS1.Nor2.x[1];
 //   Counter.FF3.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS1.Nor2.auxiliary[1],Counter.FF3.RS1.Nor2.x[2]];
 //   Counter.FF3.RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF3.RS1.Nor2.auxiliary[2]]);
-//   Counter.FF3.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF3.RS1.TD1.x),Counter.FF3.RS1.TD1.delayTime,Counter.FF3.RS1.TD1.delayTime)));
+//   Counter.FF3.RS1.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF3.RS1.TD1.x),Counter.FF3.RS1.TD1.delayTime,Counter.FF3.RS1.TD1.delayTime)));
 //   Counter.FF3.RS1.TD1.y = if Counter.FF3.RS1.TD1.delayTime > 0.0 then if time >= Counter.FF3.RS1.TD1.delayTime then Counter.FF3.RS1.TD1.x_delayed else Counter.FF3.RS1.TD1.y0 else pre(Counter.FF3.RS1.TD1.x);
 //   Counter.FF3.RS2.Nor1.auxiliary[1] = Counter.FF3.RS2.Nor1.x[1];
 //   Counter.FF3.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS2.Nor1.auxiliary[1],Counter.FF3.RS2.Nor1.x[2]];
@@ -3587,7 +3587,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF3.RS2.Nor2.auxiliary[1] = Counter.FF3.RS2.Nor2.x[1];
 //   Counter.FF3.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS2.Nor2.auxiliary[1],Counter.FF3.RS2.Nor2.x[2]];
 //   Counter.FF3.RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF3.RS2.Nor2.auxiliary[2]]);
-//   Counter.FF3.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF3.RS2.TD1.x),Counter.FF3.RS2.TD1.delayTime,Counter.FF3.RS2.TD1.delayTime)));
+//   Counter.FF3.RS2.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF3.RS2.TD1.x),Counter.FF3.RS2.TD1.delayTime,Counter.FF3.RS2.TD1.delayTime)));
 //   Counter.FF3.RS2.TD1.y = if Counter.FF3.RS2.TD1.delayTime > 0.0 then if time >= Counter.FF3.RS2.TD1.delayTime then Counter.FF3.RS2.TD1.x_delayed else Counter.FF3.RS2.TD1.y0 else pre(Counter.FF3.RS2.TD1.x);
 //   Counter.FF3.And1.auxiliary[1] = Counter.FF3.And1.x[1];
 //   Counter.FF3.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And1.auxiliary[1],Counter.FF3.And1.x[2]];
@@ -3755,7 +3755,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Adder1.Adder2.AND.G1.x[2] = Adder1.Adder2.AND.x[2];
 // algorithm
 //   when {initial(),(Adder1.Adder2.AND.G2.tLH > 0.0 OR Adder1.Adder2.AND.G2.tHL > 0.0) AND change(Adder1.Adder2.AND.G2.x) AND  NOT initial()} then
-//     Adder1.Adder2.AND.G2.x_old := if initial() OR pre(Adder1.Adder2.AND.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder1.Adder2.AND.G2.y0 else pre(Adder1.Adder2.AND.G2.x);
+//     Adder1.Adder2.AND.G2.x_old := if initial() OR pre(Adder1.Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder2.AND.G2.y0 else pre(Adder1.Adder2.AND.G2.x);
 //     Adder1.Adder2.AND.G2.lh := Adder1.Adder2.AND.G2.delayTable[Adder1.Adder2.AND.G2.x_old,Adder1.Adder2.AND.G2.x];
 //     Adder1.Adder2.AND.G2.delayTime := if Adder1.Adder2.AND.G2.lh > 0 then Adder1.Adder2.AND.G2.tLH else if Adder1.Adder2.AND.G2.lh < 0 then Adder1.Adder2.AND.G2.tHL else 0.0;
 //     Adder1.Adder2.AND.G2.t_next := time + Adder1.Adder2.AND.G2.delayTime;
@@ -3767,7 +3767,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder1.Adder2.AND.G2.y := if Adder1.Adder2.AND.G2.tLH > 0.0 OR Adder1.Adder2.AND.G2.tHL > 0.0 then Adder1.Adder2.AND.G2.y_auxiliary else Adder1.Adder2.AND.G2.x;
 //   when {initial(),(Adder1.Adder2.XOR.G2.tLH > 0.0 OR Adder1.Adder2.XOR.G2.tHL > 0.0) AND change(Adder1.Adder2.XOR.G2.x) AND  NOT initial()} then
-//     Adder1.Adder2.XOR.G2.x_old := if initial() OR pre(Adder1.Adder2.XOR.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder1.Adder2.XOR.G2.y0 else pre(Adder1.Adder2.XOR.G2.x);
+//     Adder1.Adder2.XOR.G2.x_old := if initial() OR pre(Adder1.Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder2.XOR.G2.y0 else pre(Adder1.Adder2.XOR.G2.x);
 //     Adder1.Adder2.XOR.G2.lh := Adder1.Adder2.XOR.G2.delayTable[Adder1.Adder2.XOR.G2.x_old,Adder1.Adder2.XOR.G2.x];
 //     Adder1.Adder2.XOR.G2.delayTime := if Adder1.Adder2.XOR.G2.lh > 0 then Adder1.Adder2.XOR.G2.tLH else if Adder1.Adder2.XOR.G2.lh < 0 then Adder1.Adder2.XOR.G2.tHL else 0.0;
 //     Adder1.Adder2.XOR.G2.t_next := time + Adder1.Adder2.XOR.G2.delayTime;
@@ -3779,7 +3779,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder1.Adder2.XOR.G2.y := if Adder1.Adder2.XOR.G2.tLH > 0.0 OR Adder1.Adder2.XOR.G2.tHL > 0.0 then Adder1.Adder2.XOR.G2.y_auxiliary else Adder1.Adder2.XOR.G2.x;
 //   when {initial(),(Adder1.Adder1.AND.G2.tLH > 0.0 OR Adder1.Adder1.AND.G2.tHL > 0.0) AND change(Adder1.Adder1.AND.G2.x) AND  NOT initial()} then
-//     Adder1.Adder1.AND.G2.x_old := if initial() OR pre(Adder1.Adder1.AND.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder1.Adder1.AND.G2.y0 else pre(Adder1.Adder1.AND.G2.x);
+//     Adder1.Adder1.AND.G2.x_old := if initial() OR pre(Adder1.Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder1.AND.G2.y0 else pre(Adder1.Adder1.AND.G2.x);
 //     Adder1.Adder1.AND.G2.lh := Adder1.Adder1.AND.G2.delayTable[Adder1.Adder1.AND.G2.x_old,Adder1.Adder1.AND.G2.x];
 //     Adder1.Adder1.AND.G2.delayTime := if Adder1.Adder1.AND.G2.lh > 0 then Adder1.Adder1.AND.G2.tLH else if Adder1.Adder1.AND.G2.lh < 0 then Adder1.Adder1.AND.G2.tHL else 0.0;
 //     Adder1.Adder1.AND.G2.t_next := time + Adder1.Adder1.AND.G2.delayTime;
@@ -3791,7 +3791,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder1.Adder1.AND.G2.y := if Adder1.Adder1.AND.G2.tLH > 0.0 OR Adder1.Adder1.AND.G2.tHL > 0.0 then Adder1.Adder1.AND.G2.y_auxiliary else Adder1.Adder1.AND.G2.x;
 //   when {initial(),(Adder1.Adder1.XOR.G2.tLH > 0.0 OR Adder1.Adder1.XOR.G2.tHL > 0.0) AND change(Adder1.Adder1.XOR.G2.x) AND  NOT initial()} then
-//     Adder1.Adder1.XOR.G2.x_old := if initial() OR pre(Adder1.Adder1.XOR.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder1.Adder1.XOR.G2.y0 else pre(Adder1.Adder1.XOR.G2.x);
+//     Adder1.Adder1.XOR.G2.x_old := if initial() OR pre(Adder1.Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder1.XOR.G2.y0 else pre(Adder1.Adder1.XOR.G2.x);
 //     Adder1.Adder1.XOR.G2.lh := Adder1.Adder1.XOR.G2.delayTable[Adder1.Adder1.XOR.G2.x_old,Adder1.Adder1.XOR.G2.x];
 //     Adder1.Adder1.XOR.G2.delayTime := if Adder1.Adder1.XOR.G2.lh > 0 then Adder1.Adder1.XOR.G2.tLH else if Adder1.Adder1.XOR.G2.lh < 0 then Adder1.Adder1.XOR.G2.tHL else 0.0;
 //     Adder1.Adder1.XOR.G2.t_next := time + Adder1.Adder1.XOR.G2.delayTime;
@@ -7793,7 +7793,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end for;
 //   Set.y := Set.x;
 //   when {initial(),(Adder1.Adder2.AND.G2.tLH > 0.0 OR Adder1.Adder2.AND.G2.tHL > 0.0) AND change(Adder1.Adder2.AND.G2.x) AND  NOT initial()} then
-//     Adder1.Adder2.AND.G2.x_old := if initial() OR pre(Adder1.Adder2.AND.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder1.Adder2.AND.G2.y0 else pre(Adder1.Adder2.AND.G2.x);
+//     Adder1.Adder2.AND.G2.x_old := if initial() OR pre(Adder1.Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder2.AND.G2.y0 else pre(Adder1.Adder2.AND.G2.x);
 //     Adder1.Adder2.AND.G2.lh := Adder1.Adder2.AND.G2.delayTable[Adder1.Adder2.AND.G2.x_old,Adder1.Adder2.AND.G2.x];
 //     Adder1.Adder2.AND.G2.delayTime := if Adder1.Adder2.AND.G2.lh > 0 then Adder1.Adder2.AND.G2.tLH else if Adder1.Adder2.AND.G2.lh < 0 then Adder1.Adder2.AND.G2.tHL else 0.0;
 //     Adder1.Adder2.AND.G2.t_next := time + Adder1.Adder2.AND.G2.delayTime;
@@ -7805,7 +7805,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder1.Adder2.AND.G2.y := if Adder1.Adder2.AND.G2.tLH > 0.0 OR Adder1.Adder2.AND.G2.tHL > 0.0 then Adder1.Adder2.AND.G2.y_auxiliary else Adder1.Adder2.AND.G2.x;
 //   when {initial(),(Adder1.Adder2.XOR.G2.tLH > 0.0 OR Adder1.Adder2.XOR.G2.tHL > 0.0) AND change(Adder1.Adder2.XOR.G2.x) AND  NOT initial()} then
-//     Adder1.Adder2.XOR.G2.x_old := if initial() OR pre(Adder1.Adder2.XOR.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder1.Adder2.XOR.G2.y0 else pre(Adder1.Adder2.XOR.G2.x);
+//     Adder1.Adder2.XOR.G2.x_old := if initial() OR pre(Adder1.Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder2.XOR.G2.y0 else pre(Adder1.Adder2.XOR.G2.x);
 //     Adder1.Adder2.XOR.G2.lh := Adder1.Adder2.XOR.G2.delayTable[Adder1.Adder2.XOR.G2.x_old,Adder1.Adder2.XOR.G2.x];
 //     Adder1.Adder2.XOR.G2.delayTime := if Adder1.Adder2.XOR.G2.lh > 0 then Adder1.Adder2.XOR.G2.tLH else if Adder1.Adder2.XOR.G2.lh < 0 then Adder1.Adder2.XOR.G2.tHL else 0.0;
 //     Adder1.Adder2.XOR.G2.t_next := time + Adder1.Adder2.XOR.G2.delayTime;
@@ -7817,7 +7817,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder1.Adder2.XOR.G2.y := if Adder1.Adder2.XOR.G2.tLH > 0.0 OR Adder1.Adder2.XOR.G2.tHL > 0.0 then Adder1.Adder2.XOR.G2.y_auxiliary else Adder1.Adder2.XOR.G2.x;
 //   when {initial(),(Adder1.Adder1.AND.G2.tLH > 0.0 OR Adder1.Adder1.AND.G2.tHL > 0.0) AND change(Adder1.Adder1.AND.G2.x) AND  NOT initial()} then
-//     Adder1.Adder1.AND.G2.x_old := if initial() OR pre(Adder1.Adder1.AND.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder1.Adder1.AND.G2.y0 else pre(Adder1.Adder1.AND.G2.x);
+//     Adder1.Adder1.AND.G2.x_old := if initial() OR pre(Adder1.Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder1.AND.G2.y0 else pre(Adder1.Adder1.AND.G2.x);
 //     Adder1.Adder1.AND.G2.lh := Adder1.Adder1.AND.G2.delayTable[Adder1.Adder1.AND.G2.x_old,Adder1.Adder1.AND.G2.x];
 //     Adder1.Adder1.AND.G2.delayTime := if Adder1.Adder1.AND.G2.lh > 0 then Adder1.Adder1.AND.G2.tLH else if Adder1.Adder1.AND.G2.lh < 0 then Adder1.Adder1.AND.G2.tHL else 0.0;
 //     Adder1.Adder1.AND.G2.t_next := time + Adder1.Adder1.AND.G2.delayTime;
@@ -7829,7 +7829,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder1.Adder1.AND.G2.y := if Adder1.Adder1.AND.G2.tLH > 0.0 OR Adder1.Adder1.AND.G2.tHL > 0.0 then Adder1.Adder1.AND.G2.y_auxiliary else Adder1.Adder1.AND.G2.x;
 //   when {initial(),(Adder1.Adder1.XOR.G2.tLH > 0.0 OR Adder1.Adder1.XOR.G2.tHL > 0.0) AND change(Adder1.Adder1.XOR.G2.x) AND  NOT initial()} then
-//     Adder1.Adder1.XOR.G2.x_old := if initial() OR pre(Adder1.Adder1.XOR.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder1.Adder1.XOR.G2.y0 else pre(Adder1.Adder1.XOR.G2.x);
+//     Adder1.Adder1.XOR.G2.x_old := if initial() OR pre(Adder1.Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder1.XOR.G2.y0 else pre(Adder1.Adder1.XOR.G2.x);
 //     Adder1.Adder1.XOR.G2.lh := Adder1.Adder1.XOR.G2.delayTable[Adder1.Adder1.XOR.G2.x_old,Adder1.Adder1.XOR.G2.x];
 //     Adder1.Adder1.XOR.G2.delayTime := if Adder1.Adder1.XOR.G2.lh > 0 then Adder1.Adder1.XOR.G2.tLH else if Adder1.Adder1.XOR.G2.lh < 0 then Adder1.Adder1.XOR.G2.tHL else 0.0;
 //     Adder1.Adder1.XOR.G2.t_next := time + Adder1.Adder1.XOR.G2.delayTime;
@@ -7841,7 +7841,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder1.Adder1.XOR.G2.y := if Adder1.Adder1.XOR.G2.tLH > 0.0 OR Adder1.Adder1.XOR.G2.tHL > 0.0 then Adder1.Adder1.XOR.G2.y_auxiliary else Adder1.Adder1.XOR.G2.x;
 //   when {initial(),(Adder2.Adder2.AND.G2.tLH > 0.0 OR Adder2.Adder2.AND.G2.tHL > 0.0) AND change(Adder2.Adder2.AND.G2.x) AND  NOT initial()} then
-//     Adder2.Adder2.AND.G2.x_old := if initial() OR pre(Adder2.Adder2.AND.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder2.Adder2.AND.G2.y0 else pre(Adder2.Adder2.AND.G2.x);
+//     Adder2.Adder2.AND.G2.x_old := if initial() OR pre(Adder2.Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder2.Adder2.AND.G2.y0 else pre(Adder2.Adder2.AND.G2.x);
 //     Adder2.Adder2.AND.G2.lh := Adder2.Adder2.AND.G2.delayTable[Adder2.Adder2.AND.G2.x_old,Adder2.Adder2.AND.G2.x];
 //     Adder2.Adder2.AND.G2.delayTime := if Adder2.Adder2.AND.G2.lh > 0 then Adder2.Adder2.AND.G2.tLH else if Adder2.Adder2.AND.G2.lh < 0 then Adder2.Adder2.AND.G2.tHL else 0.0;
 //     Adder2.Adder2.AND.G2.t_next := time + Adder2.Adder2.AND.G2.delayTime;
@@ -7853,7 +7853,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder2.Adder2.AND.G2.y := if Adder2.Adder2.AND.G2.tLH > 0.0 OR Adder2.Adder2.AND.G2.tHL > 0.0 then Adder2.Adder2.AND.G2.y_auxiliary else Adder2.Adder2.AND.G2.x;
 //   when {initial(),(Adder2.Adder2.XOR.G2.tLH > 0.0 OR Adder2.Adder2.XOR.G2.tHL > 0.0) AND change(Adder2.Adder2.XOR.G2.x) AND  NOT initial()} then
-//     Adder2.Adder2.XOR.G2.x_old := if initial() OR pre(Adder2.Adder2.XOR.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder2.Adder2.XOR.G2.y0 else pre(Adder2.Adder2.XOR.G2.x);
+//     Adder2.Adder2.XOR.G2.x_old := if initial() OR pre(Adder2.Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder2.Adder2.XOR.G2.y0 else pre(Adder2.Adder2.XOR.G2.x);
 //     Adder2.Adder2.XOR.G2.lh := Adder2.Adder2.XOR.G2.delayTable[Adder2.Adder2.XOR.G2.x_old,Adder2.Adder2.XOR.G2.x];
 //     Adder2.Adder2.XOR.G2.delayTime := if Adder2.Adder2.XOR.G2.lh > 0 then Adder2.Adder2.XOR.G2.tLH else if Adder2.Adder2.XOR.G2.lh < 0 then Adder2.Adder2.XOR.G2.tHL else 0.0;
 //     Adder2.Adder2.XOR.G2.t_next := time + Adder2.Adder2.XOR.G2.delayTime;
@@ -7865,7 +7865,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder2.Adder2.XOR.G2.y := if Adder2.Adder2.XOR.G2.tLH > 0.0 OR Adder2.Adder2.XOR.G2.tHL > 0.0 then Adder2.Adder2.XOR.G2.y_auxiliary else Adder2.Adder2.XOR.G2.x;
 //   when {initial(),(Adder2.Adder1.AND.G2.tLH > 0.0 OR Adder2.Adder1.AND.G2.tHL > 0.0) AND change(Adder2.Adder1.AND.G2.x) AND  NOT initial()} then
-//     Adder2.Adder1.AND.G2.x_old := if initial() OR pre(Adder2.Adder1.AND.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder2.Adder1.AND.G2.y0 else pre(Adder2.Adder1.AND.G2.x);
+//     Adder2.Adder1.AND.G2.x_old := if initial() OR pre(Adder2.Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder2.Adder1.AND.G2.y0 else pre(Adder2.Adder1.AND.G2.x);
 //     Adder2.Adder1.AND.G2.lh := Adder2.Adder1.AND.G2.delayTable[Adder2.Adder1.AND.G2.x_old,Adder2.Adder1.AND.G2.x];
 //     Adder2.Adder1.AND.G2.delayTime := if Adder2.Adder1.AND.G2.lh > 0 then Adder2.Adder1.AND.G2.tLH else if Adder2.Adder1.AND.G2.lh < 0 then Adder2.Adder1.AND.G2.tHL else 0.0;
 //     Adder2.Adder1.AND.G2.t_next := time + Adder2.Adder1.AND.G2.delayTime;
@@ -7877,7 +7877,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder2.Adder1.AND.G2.y := if Adder2.Adder1.AND.G2.tLH > 0.0 OR Adder2.Adder1.AND.G2.tHL > 0.0 then Adder2.Adder1.AND.G2.y_auxiliary else Adder2.Adder1.AND.G2.x;
 //   when {initial(),(Adder2.Adder1.XOR.G2.tLH > 0.0 OR Adder2.Adder1.XOR.G2.tHL > 0.0) AND change(Adder2.Adder1.XOR.G2.x) AND  NOT initial()} then
-//     Adder2.Adder1.XOR.G2.x_old := if initial() OR pre(Adder2.Adder1.XOR.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder2.Adder1.XOR.G2.y0 else pre(Adder2.Adder1.XOR.G2.x);
+//     Adder2.Adder1.XOR.G2.x_old := if initial() OR pre(Adder2.Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder2.Adder1.XOR.G2.y0 else pre(Adder2.Adder1.XOR.G2.x);
 //     Adder2.Adder1.XOR.G2.lh := Adder2.Adder1.XOR.G2.delayTable[Adder2.Adder1.XOR.G2.x_old,Adder2.Adder1.XOR.G2.x];
 //     Adder2.Adder1.XOR.G2.delayTime := if Adder2.Adder1.XOR.G2.lh > 0 then Adder2.Adder1.XOR.G2.tLH else if Adder2.Adder1.XOR.G2.lh < 0 then Adder2.Adder1.XOR.G2.tHL else 0.0;
 //     Adder2.Adder1.XOR.G2.t_next := time + Adder2.Adder1.XOR.G2.delayTime;
@@ -7889,7 +7889,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder2.Adder1.XOR.G2.y := if Adder2.Adder1.XOR.G2.tLH > 0.0 OR Adder2.Adder1.XOR.G2.tHL > 0.0 then Adder2.Adder1.XOR.G2.y_auxiliary else Adder2.Adder1.XOR.G2.x;
 //   when {initial(),(Adder3.Adder2.AND.G2.tLH > 0.0 OR Adder3.Adder2.AND.G2.tHL > 0.0) AND change(Adder3.Adder2.AND.G2.x) AND  NOT initial()} then
-//     Adder3.Adder2.AND.G2.x_old := if initial() OR pre(Adder3.Adder2.AND.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder3.Adder2.AND.G2.y0 else pre(Adder3.Adder2.AND.G2.x);
+//     Adder3.Adder2.AND.G2.x_old := if initial() OR pre(Adder3.Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder3.Adder2.AND.G2.y0 else pre(Adder3.Adder2.AND.G2.x);
 //     Adder3.Adder2.AND.G2.lh := Adder3.Adder2.AND.G2.delayTable[Adder3.Adder2.AND.G2.x_old,Adder3.Adder2.AND.G2.x];
 //     Adder3.Adder2.AND.G2.delayTime := if Adder3.Adder2.AND.G2.lh > 0 then Adder3.Adder2.AND.G2.tLH else if Adder3.Adder2.AND.G2.lh < 0 then Adder3.Adder2.AND.G2.tHL else 0.0;
 //     Adder3.Adder2.AND.G2.t_next := time + Adder3.Adder2.AND.G2.delayTime;
@@ -7901,7 +7901,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder3.Adder2.AND.G2.y := if Adder3.Adder2.AND.G2.tLH > 0.0 OR Adder3.Adder2.AND.G2.tHL > 0.0 then Adder3.Adder2.AND.G2.y_auxiliary else Adder3.Adder2.AND.G2.x;
 //   when {initial(),(Adder3.Adder2.XOR.G2.tLH > 0.0 OR Adder3.Adder2.XOR.G2.tHL > 0.0) AND change(Adder3.Adder2.XOR.G2.x) AND  NOT initial()} then
-//     Adder3.Adder2.XOR.G2.x_old := if initial() OR pre(Adder3.Adder2.XOR.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder3.Adder2.XOR.G2.y0 else pre(Adder3.Adder2.XOR.G2.x);
+//     Adder3.Adder2.XOR.G2.x_old := if initial() OR pre(Adder3.Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder3.Adder2.XOR.G2.y0 else pre(Adder3.Adder2.XOR.G2.x);
 //     Adder3.Adder2.XOR.G2.lh := Adder3.Adder2.XOR.G2.delayTable[Adder3.Adder2.XOR.G2.x_old,Adder3.Adder2.XOR.G2.x];
 //     Adder3.Adder2.XOR.G2.delayTime := if Adder3.Adder2.XOR.G2.lh > 0 then Adder3.Adder2.XOR.G2.tLH else if Adder3.Adder2.XOR.G2.lh < 0 then Adder3.Adder2.XOR.G2.tHL else 0.0;
 //     Adder3.Adder2.XOR.G2.t_next := time + Adder3.Adder2.XOR.G2.delayTime;
@@ -7913,7 +7913,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder3.Adder2.XOR.G2.y := if Adder3.Adder2.XOR.G2.tLH > 0.0 OR Adder3.Adder2.XOR.G2.tHL > 0.0 then Adder3.Adder2.XOR.G2.y_auxiliary else Adder3.Adder2.XOR.G2.x;
 //   when {initial(),(Adder3.Adder1.AND.G2.tLH > 0.0 OR Adder3.Adder1.AND.G2.tHL > 0.0) AND change(Adder3.Adder1.AND.G2.x) AND  NOT initial()} then
-//     Adder3.Adder1.AND.G2.x_old := if initial() OR pre(Adder3.Adder1.AND.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder3.Adder1.AND.G2.y0 else pre(Adder3.Adder1.AND.G2.x);
+//     Adder3.Adder1.AND.G2.x_old := if initial() OR pre(Adder3.Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder3.Adder1.AND.G2.y0 else pre(Adder3.Adder1.AND.G2.x);
 //     Adder3.Adder1.AND.G2.lh := Adder3.Adder1.AND.G2.delayTable[Adder3.Adder1.AND.G2.x_old,Adder3.Adder1.AND.G2.x];
 //     Adder3.Adder1.AND.G2.delayTime := if Adder3.Adder1.AND.G2.lh > 0 then Adder3.Adder1.AND.G2.tLH else if Adder3.Adder1.AND.G2.lh < 0 then Adder3.Adder1.AND.G2.tHL else 0.0;
 //     Adder3.Adder1.AND.G2.t_next := time + Adder3.Adder1.AND.G2.delayTime;
@@ -7925,7 +7925,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder3.Adder1.AND.G2.y := if Adder3.Adder1.AND.G2.tLH > 0.0 OR Adder3.Adder1.AND.G2.tHL > 0.0 then Adder3.Adder1.AND.G2.y_auxiliary else Adder3.Adder1.AND.G2.x;
 //   when {initial(),(Adder3.Adder1.XOR.G2.tLH > 0.0 OR Adder3.Adder1.XOR.G2.tHL > 0.0) AND change(Adder3.Adder1.XOR.G2.x) AND  NOT initial()} then
-//     Adder3.Adder1.XOR.G2.x_old := if initial() OR pre(Adder3.Adder1.XOR.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder3.Adder1.XOR.G2.y0 else pre(Adder3.Adder1.XOR.G2.x);
+//     Adder3.Adder1.XOR.G2.x_old := if initial() OR pre(Adder3.Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder3.Adder1.XOR.G2.y0 else pre(Adder3.Adder1.XOR.G2.x);
 //     Adder3.Adder1.XOR.G2.lh := Adder3.Adder1.XOR.G2.delayTable[Adder3.Adder1.XOR.G2.x_old,Adder3.Adder1.XOR.G2.x];
 //     Adder3.Adder1.XOR.G2.delayTime := if Adder3.Adder1.XOR.G2.lh > 0 then Adder3.Adder1.XOR.G2.tLH else if Adder3.Adder1.XOR.G2.lh < 0 then Adder3.Adder1.XOR.G2.tHL else 0.0;
 //     Adder3.Adder1.XOR.G2.t_next := time + Adder3.Adder1.XOR.G2.delayTime;
@@ -7937,7 +7937,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder3.Adder1.XOR.G2.y := if Adder3.Adder1.XOR.G2.tLH > 0.0 OR Adder3.Adder1.XOR.G2.tHL > 0.0 then Adder3.Adder1.XOR.G2.y_auxiliary else Adder3.Adder1.XOR.G2.x;
 //   when {initial(),(Adder4.Adder2.AND.G2.tLH > 0.0 OR Adder4.Adder2.AND.G2.tHL > 0.0) AND change(Adder4.Adder2.AND.G2.x) AND  NOT initial()} then
-//     Adder4.Adder2.AND.G2.x_old := if initial() OR pre(Adder4.Adder2.AND.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder4.Adder2.AND.G2.y0 else pre(Adder4.Adder2.AND.G2.x);
+//     Adder4.Adder2.AND.G2.x_old := if initial() OR pre(Adder4.Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder4.Adder2.AND.G2.y0 else pre(Adder4.Adder2.AND.G2.x);
 //     Adder4.Adder2.AND.G2.lh := Adder4.Adder2.AND.G2.delayTable[Adder4.Adder2.AND.G2.x_old,Adder4.Adder2.AND.G2.x];
 //     Adder4.Adder2.AND.G2.delayTime := if Adder4.Adder2.AND.G2.lh > 0 then Adder4.Adder2.AND.G2.tLH else if Adder4.Adder2.AND.G2.lh < 0 then Adder4.Adder2.AND.G2.tHL else 0.0;
 //     Adder4.Adder2.AND.G2.t_next := time + Adder4.Adder2.AND.G2.delayTime;
@@ -7949,7 +7949,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder4.Adder2.AND.G2.y := if Adder4.Adder2.AND.G2.tLH > 0.0 OR Adder4.Adder2.AND.G2.tHL > 0.0 then Adder4.Adder2.AND.G2.y_auxiliary else Adder4.Adder2.AND.G2.x;
 //   when {initial(),(Adder4.Adder2.XOR.G2.tLH > 0.0 OR Adder4.Adder2.XOR.G2.tHL > 0.0) AND change(Adder4.Adder2.XOR.G2.x) AND  NOT initial()} then
-//     Adder4.Adder2.XOR.G2.x_old := if initial() OR pre(Adder4.Adder2.XOR.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder4.Adder2.XOR.G2.y0 else pre(Adder4.Adder2.XOR.G2.x);
+//     Adder4.Adder2.XOR.G2.x_old := if initial() OR pre(Adder4.Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder4.Adder2.XOR.G2.y0 else pre(Adder4.Adder2.XOR.G2.x);
 //     Adder4.Adder2.XOR.G2.lh := Adder4.Adder2.XOR.G2.delayTable[Adder4.Adder2.XOR.G2.x_old,Adder4.Adder2.XOR.G2.x];
 //     Adder4.Adder2.XOR.G2.delayTime := if Adder4.Adder2.XOR.G2.lh > 0 then Adder4.Adder2.XOR.G2.tLH else if Adder4.Adder2.XOR.G2.lh < 0 then Adder4.Adder2.XOR.G2.tHL else 0.0;
 //     Adder4.Adder2.XOR.G2.t_next := time + Adder4.Adder2.XOR.G2.delayTime;
@@ -7961,7 +7961,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder4.Adder2.XOR.G2.y := if Adder4.Adder2.XOR.G2.tLH > 0.0 OR Adder4.Adder2.XOR.G2.tHL > 0.0 then Adder4.Adder2.XOR.G2.y_auxiliary else Adder4.Adder2.XOR.G2.x;
 //   when {initial(),(Adder4.Adder1.AND.G2.tLH > 0.0 OR Adder4.Adder1.AND.G2.tHL > 0.0) AND change(Adder4.Adder1.AND.G2.x) AND  NOT initial()} then
-//     Adder4.Adder1.AND.G2.x_old := if initial() OR pre(Adder4.Adder1.AND.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder4.Adder1.AND.G2.y0 else pre(Adder4.Adder1.AND.G2.x);
+//     Adder4.Adder1.AND.G2.x_old := if initial() OR pre(Adder4.Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder4.Adder1.AND.G2.y0 else pre(Adder4.Adder1.AND.G2.x);
 //     Adder4.Adder1.AND.G2.lh := Adder4.Adder1.AND.G2.delayTable[Adder4.Adder1.AND.G2.x_old,Adder4.Adder1.AND.G2.x];
 //     Adder4.Adder1.AND.G2.delayTime := if Adder4.Adder1.AND.G2.lh > 0 then Adder4.Adder1.AND.G2.tLH else if Adder4.Adder1.AND.G2.lh < 0 then Adder4.Adder1.AND.G2.tHL else 0.0;
 //     Adder4.Adder1.AND.G2.t_next := time + Adder4.Adder1.AND.G2.delayTime;
@@ -7973,7 +7973,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   end when;
 //   Adder4.Adder1.AND.G2.y := if Adder4.Adder1.AND.G2.tLH > 0.0 OR Adder4.Adder1.AND.G2.tHL > 0.0 then Adder4.Adder1.AND.G2.y_auxiliary else Adder4.Adder1.AND.G2.x;
 //   when {initial(),(Adder4.Adder1.XOR.G2.tLH > 0.0 OR Adder4.Adder1.XOR.G2.tHL > 0.0) AND change(Adder4.Adder1.XOR.G2.x) AND  NOT initial()} then
-//     Adder4.Adder1.XOR.G2.x_old := if initial() OR pre(Adder4.Adder1.XOR.G2.x) == DAE.CAST(ENUM TYPE, 0) then Adder4.Adder1.XOR.G2.y0 else pre(Adder4.Adder1.XOR.G2.x);
+//     Adder4.Adder1.XOR.G2.x_old := if initial() OR pre(Adder4.Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder4.Adder1.XOR.G2.y0 else pre(Adder4.Adder1.XOR.G2.x);
 //     Adder4.Adder1.XOR.G2.lh := Adder4.Adder1.XOR.G2.delayTable[Adder4.Adder1.XOR.G2.x_old,Adder4.Adder1.XOR.G2.x];
 //     Adder4.Adder1.XOR.G2.delayTime := if Adder4.Adder1.XOR.G2.lh > 0 then Adder4.Adder1.XOR.G2.tLH else if Adder4.Adder1.XOR.G2.lh < 0 then Adder4.Adder1.XOR.G2.tHL else 0.0;
 //     Adder4.Adder1.XOR.G2.t_next := time + Adder4.Adder1.XOR.G2.delayTime;
@@ -9838,7 +9838,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF1.RS1.Nor2.auxiliary[1] = Counter.FF1.RS1.Nor2.x[1];
 //   Counter.FF1.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS1.Nor2.auxiliary[1],Counter.FF1.RS1.Nor2.x[2]];
 //   Counter.FF1.RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF1.RS1.Nor2.auxiliary[2]]);
-//   Counter.FF1.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF1.RS1.TD1.x),Counter.FF1.RS1.TD1.delayTime,Counter.FF1.RS1.TD1.delayTime)));
+//   Counter.FF1.RS1.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF1.RS1.TD1.x),Counter.FF1.RS1.TD1.delayTime,Counter.FF1.RS1.TD1.delayTime)));
 //   Counter.FF1.RS1.TD1.y = if Counter.FF1.RS1.TD1.delayTime > 0.0 then if time >= Counter.FF1.RS1.TD1.delayTime then Counter.FF1.RS1.TD1.x_delayed else Counter.FF1.RS1.TD1.y0 else pre(Counter.FF1.RS1.TD1.x);
 //   Counter.FF1.RS2.Nor1.auxiliary[1] = Counter.FF1.RS2.Nor1.x[1];
 //   Counter.FF1.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS2.Nor1.auxiliary[1],Counter.FF1.RS2.Nor1.x[2]];
@@ -9846,7 +9846,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF1.RS2.Nor2.auxiliary[1] = Counter.FF1.RS2.Nor2.x[1];
 //   Counter.FF1.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS2.Nor2.auxiliary[1],Counter.FF1.RS2.Nor2.x[2]];
 //   Counter.FF1.RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF1.RS2.Nor2.auxiliary[2]]);
-//   Counter.FF1.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF1.RS2.TD1.x),Counter.FF1.RS2.TD1.delayTime,Counter.FF1.RS2.TD1.delayTime)));
+//   Counter.FF1.RS2.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF1.RS2.TD1.x),Counter.FF1.RS2.TD1.delayTime,Counter.FF1.RS2.TD1.delayTime)));
 //   Counter.FF1.RS2.TD1.y = if Counter.FF1.RS2.TD1.delayTime > 0.0 then if time >= Counter.FF1.RS2.TD1.delayTime then Counter.FF1.RS2.TD1.x_delayed else Counter.FF1.RS2.TD1.y0 else pre(Counter.FF1.RS2.TD1.x);
 //   Counter.FF1.And1.auxiliary[1] = Counter.FF1.And1.x[1];
 //   Counter.FF1.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And1.auxiliary[1],Counter.FF1.And1.x[2]];
@@ -9870,7 +9870,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF2.RS1.Nor2.auxiliary[1] = Counter.FF2.RS1.Nor2.x[1];
 //   Counter.FF2.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS1.Nor2.auxiliary[1],Counter.FF2.RS1.Nor2.x[2]];
 //   Counter.FF2.RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF2.RS1.Nor2.auxiliary[2]]);
-//   Counter.FF2.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF2.RS1.TD1.x),Counter.FF2.RS1.TD1.delayTime,Counter.FF2.RS1.TD1.delayTime)));
+//   Counter.FF2.RS1.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF2.RS1.TD1.x),Counter.FF2.RS1.TD1.delayTime,Counter.FF2.RS1.TD1.delayTime)));
 //   Counter.FF2.RS1.TD1.y = if Counter.FF2.RS1.TD1.delayTime > 0.0 then if time >= Counter.FF2.RS1.TD1.delayTime then Counter.FF2.RS1.TD1.x_delayed else Counter.FF2.RS1.TD1.y0 else pre(Counter.FF2.RS1.TD1.x);
 //   Counter.FF2.RS2.Nor1.auxiliary[1] = Counter.FF2.RS2.Nor1.x[1];
 //   Counter.FF2.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS2.Nor1.auxiliary[1],Counter.FF2.RS2.Nor1.x[2]];
@@ -9878,7 +9878,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF2.RS2.Nor2.auxiliary[1] = Counter.FF2.RS2.Nor2.x[1];
 //   Counter.FF2.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS2.Nor2.auxiliary[1],Counter.FF2.RS2.Nor2.x[2]];
 //   Counter.FF2.RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF2.RS2.Nor2.auxiliary[2]]);
-//   Counter.FF2.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF2.RS2.TD1.x),Counter.FF2.RS2.TD1.delayTime,Counter.FF2.RS2.TD1.delayTime)));
+//   Counter.FF2.RS2.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF2.RS2.TD1.x),Counter.FF2.RS2.TD1.delayTime,Counter.FF2.RS2.TD1.delayTime)));
 //   Counter.FF2.RS2.TD1.y = if Counter.FF2.RS2.TD1.delayTime > 0.0 then if time >= Counter.FF2.RS2.TD1.delayTime then Counter.FF2.RS2.TD1.x_delayed else Counter.FF2.RS2.TD1.y0 else pre(Counter.FF2.RS2.TD1.x);
 //   Counter.FF2.And1.auxiliary[1] = Counter.FF2.And1.x[1];
 //   Counter.FF2.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And1.auxiliary[1],Counter.FF2.And1.x[2]];
@@ -9902,7 +9902,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF3.RS1.Nor2.auxiliary[1] = Counter.FF3.RS1.Nor2.x[1];
 //   Counter.FF3.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS1.Nor2.auxiliary[1],Counter.FF3.RS1.Nor2.x[2]];
 //   Counter.FF3.RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF3.RS1.Nor2.auxiliary[2]]);
-//   Counter.FF3.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF3.RS1.TD1.x),Counter.FF3.RS1.TD1.delayTime,Counter.FF3.RS1.TD1.delayTime)));
+//   Counter.FF3.RS1.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF3.RS1.TD1.x),Counter.FF3.RS1.TD1.delayTime,Counter.FF3.RS1.TD1.delayTime)));
 //   Counter.FF3.RS1.TD1.y = if Counter.FF3.RS1.TD1.delayTime > 0.0 then if time >= Counter.FF3.RS1.TD1.delayTime then Counter.FF3.RS1.TD1.x_delayed else Counter.FF3.RS1.TD1.y0 else pre(Counter.FF3.RS1.TD1.x);
 //   Counter.FF3.RS2.Nor1.auxiliary[1] = Counter.FF3.RS2.Nor1.x[1];
 //   Counter.FF3.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS2.Nor1.auxiliary[1],Counter.FF3.RS2.Nor1.x[2]];
@@ -9910,7 +9910,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF3.RS2.Nor2.auxiliary[1] = Counter.FF3.RS2.Nor2.x[1];
 //   Counter.FF3.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS2.Nor2.auxiliary[1],Counter.FF3.RS2.Nor2.x[2]];
 //   Counter.FF3.RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF3.RS2.Nor2.auxiliary[2]]);
-//   Counter.FF3.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF3.RS2.TD1.x),Counter.FF3.RS2.TD1.delayTime,Counter.FF3.RS2.TD1.delayTime)));
+//   Counter.FF3.RS2.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF3.RS2.TD1.x),Counter.FF3.RS2.TD1.delayTime,Counter.FF3.RS2.TD1.delayTime)));
 //   Counter.FF3.RS2.TD1.y = if Counter.FF3.RS2.TD1.delayTime > 0.0 then if time >= Counter.FF3.RS2.TD1.delayTime then Counter.FF3.RS2.TD1.x_delayed else Counter.FF3.RS2.TD1.y0 else pre(Counter.FF3.RS2.TD1.x);
 //   Counter.FF3.And1.auxiliary[1] = Counter.FF3.And1.x[1];
 //   Counter.FF3.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And1.auxiliary[1],Counter.FF3.And1.x[2]];
@@ -11968,7 +11968,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF[1].RS1.Nor2.auxiliary[1] = Counter.FF[1].RS1.Nor2.x[1];
 //   Counter.FF[1].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[1].RS1.Nor2.auxiliary[1],Counter.FF[1].RS1.Nor2.x[2]];
 //   Counter.FF[1].RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF[1].RS1.Nor2.auxiliary[2]]);
-//   Counter.FF[1].RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[1].RS1.TD1.x),Counter.FF[1].RS1.TD1.delayTime,Counter.FF[1].RS1.TD1.delayTime)));
+//   Counter.FF[1].RS1.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF[1].RS1.TD1.x),Counter.FF[1].RS1.TD1.delayTime,Counter.FF[1].RS1.TD1.delayTime)));
 //   Counter.FF[1].RS1.TD1.y = if Counter.FF[1].RS1.TD1.delayTime > 0.0 then if time >= Counter.FF[1].RS1.TD1.delayTime then Counter.FF[1].RS1.TD1.x_delayed else Counter.FF[1].RS1.TD1.y0 else pre(Counter.FF[1].RS1.TD1.x);
 //   Counter.FF[1].RS2.Nor1.auxiliary[1] = Counter.FF[1].RS2.Nor1.x[1];
 //   Counter.FF[1].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[1].RS2.Nor1.auxiliary[1],Counter.FF[1].RS2.Nor1.x[2]];
@@ -11976,7 +11976,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF[1].RS2.Nor2.auxiliary[1] = Counter.FF[1].RS2.Nor2.x[1];
 //   Counter.FF[1].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[1].RS2.Nor2.auxiliary[1],Counter.FF[1].RS2.Nor2.x[2]];
 //   Counter.FF[1].RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF[1].RS2.Nor2.auxiliary[2]]);
-//   Counter.FF[1].RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[1].RS2.TD1.x),Counter.FF[1].RS2.TD1.delayTime,Counter.FF[1].RS2.TD1.delayTime)));
+//   Counter.FF[1].RS2.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF[1].RS2.TD1.x),Counter.FF[1].RS2.TD1.delayTime,Counter.FF[1].RS2.TD1.delayTime)));
 //   Counter.FF[1].RS2.TD1.y = if Counter.FF[1].RS2.TD1.delayTime > 0.0 then if time >= Counter.FF[1].RS2.TD1.delayTime then Counter.FF[1].RS2.TD1.x_delayed else Counter.FF[1].RS2.TD1.y0 else pre(Counter.FF[1].RS2.TD1.x);
 //   Counter.FF[1].And1.auxiliary[1] = Counter.FF[1].And1.x[1];
 //   Counter.FF[1].And1.auxiliary[2] = D.Tables.AndTable[Counter.FF[1].And1.auxiliary[1],Counter.FF[1].And1.x[2]];
@@ -12000,7 +12000,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF[2].RS1.Nor2.auxiliary[1] = Counter.FF[2].RS1.Nor2.x[1];
 //   Counter.FF[2].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[2].RS1.Nor2.auxiliary[1],Counter.FF[2].RS1.Nor2.x[2]];
 //   Counter.FF[2].RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF[2].RS1.Nor2.auxiliary[2]]);
-//   Counter.FF[2].RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[2].RS1.TD1.x),Counter.FF[2].RS1.TD1.delayTime,Counter.FF[2].RS1.TD1.delayTime)));
+//   Counter.FF[2].RS1.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF[2].RS1.TD1.x),Counter.FF[2].RS1.TD1.delayTime,Counter.FF[2].RS1.TD1.delayTime)));
 //   Counter.FF[2].RS1.TD1.y = if Counter.FF[2].RS1.TD1.delayTime > 0.0 then if time >= Counter.FF[2].RS1.TD1.delayTime then Counter.FF[2].RS1.TD1.x_delayed else Counter.FF[2].RS1.TD1.y0 else pre(Counter.FF[2].RS1.TD1.x);
 //   Counter.FF[2].RS2.Nor1.auxiliary[1] = Counter.FF[2].RS2.Nor1.x[1];
 //   Counter.FF[2].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[2].RS2.Nor1.auxiliary[1],Counter.FF[2].RS2.Nor1.x[2]];
@@ -12008,7 +12008,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF[2].RS2.Nor2.auxiliary[1] = Counter.FF[2].RS2.Nor2.x[1];
 //   Counter.FF[2].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[2].RS2.Nor2.auxiliary[1],Counter.FF[2].RS2.Nor2.x[2]];
 //   Counter.FF[2].RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF[2].RS2.Nor2.auxiliary[2]]);
-//   Counter.FF[2].RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[2].RS2.TD1.x),Counter.FF[2].RS2.TD1.delayTime,Counter.FF[2].RS2.TD1.delayTime)));
+//   Counter.FF[2].RS2.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF[2].RS2.TD1.x),Counter.FF[2].RS2.TD1.delayTime,Counter.FF[2].RS2.TD1.delayTime)));
 //   Counter.FF[2].RS2.TD1.y = if Counter.FF[2].RS2.TD1.delayTime > 0.0 then if time >= Counter.FF[2].RS2.TD1.delayTime then Counter.FF[2].RS2.TD1.x_delayed else Counter.FF[2].RS2.TD1.y0 else pre(Counter.FF[2].RS2.TD1.x);
 //   Counter.FF[2].And1.auxiliary[1] = Counter.FF[2].And1.x[1];
 //   Counter.FF[2].And1.auxiliary[2] = D.Tables.AndTable[Counter.FF[2].And1.auxiliary[1],Counter.FF[2].And1.x[2]];
@@ -12032,7 +12032,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF[3].RS1.Nor2.auxiliary[1] = Counter.FF[3].RS1.Nor2.x[1];
 //   Counter.FF[3].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[3].RS1.Nor2.auxiliary[1],Counter.FF[3].RS1.Nor2.x[2]];
 //   Counter.FF[3].RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF[3].RS1.Nor2.auxiliary[2]]);
-//   Counter.FF[3].RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[3].RS1.TD1.x),Counter.FF[3].RS1.TD1.delayTime,Counter.FF[3].RS1.TD1.delayTime)));
+//   Counter.FF[3].RS1.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF[3].RS1.TD1.x),Counter.FF[3].RS1.TD1.delayTime,Counter.FF[3].RS1.TD1.delayTime)));
 //   Counter.FF[3].RS1.TD1.y = if Counter.FF[3].RS1.TD1.delayTime > 0.0 then if time >= Counter.FF[3].RS1.TD1.delayTime then Counter.FF[3].RS1.TD1.x_delayed else Counter.FF[3].RS1.TD1.y0 else pre(Counter.FF[3].RS1.TD1.x);
 //   Counter.FF[3].RS2.Nor1.auxiliary[1] = Counter.FF[3].RS2.Nor1.x[1];
 //   Counter.FF[3].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[3].RS2.Nor1.auxiliary[1],Counter.FF[3].RS2.Nor1.x[2]];
@@ -12040,7 +12040,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF[3].RS2.Nor2.auxiliary[1] = Counter.FF[3].RS2.Nor2.x[1];
 //   Counter.FF[3].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[3].RS2.Nor2.auxiliary[1],Counter.FF[3].RS2.Nor2.x[2]];
 //   Counter.FF[3].RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF[3].RS2.Nor2.auxiliary[2]]);
-//   Counter.FF[3].RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[3].RS2.TD1.x),Counter.FF[3].RS2.TD1.delayTime,Counter.FF[3].RS2.TD1.delayTime)));
+//   Counter.FF[3].RS2.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF[3].RS2.TD1.x),Counter.FF[3].RS2.TD1.delayTime,Counter.FF[3].RS2.TD1.delayTime)));
 //   Counter.FF[3].RS2.TD1.y = if Counter.FF[3].RS2.TD1.delayTime > 0.0 then if time >= Counter.FF[3].RS2.TD1.delayTime then Counter.FF[3].RS2.TD1.x_delayed else Counter.FF[3].RS2.TD1.y0 else pre(Counter.FF[3].RS2.TD1.x);
 //   Counter.FF[3].And1.auxiliary[1] = Counter.FF[3].And1.x[1];
 //   Counter.FF[3].And1.auxiliary[2] = D.Tables.AndTable[Counter.FF[3].And1.auxiliary[1],Counter.FF[3].And1.x[2]];
@@ -12064,7 +12064,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF[4].RS1.Nor2.auxiliary[1] = Counter.FF[4].RS1.Nor2.x[1];
 //   Counter.FF[4].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[4].RS1.Nor2.auxiliary[1],Counter.FF[4].RS1.Nor2.x[2]];
 //   Counter.FF[4].RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF[4].RS1.Nor2.auxiliary[2]]);
-//   Counter.FF[4].RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[4].RS1.TD1.x),Counter.FF[4].RS1.TD1.delayTime,Counter.FF[4].RS1.TD1.delayTime)));
+//   Counter.FF[4].RS1.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF[4].RS1.TD1.x),Counter.FF[4].RS1.TD1.delayTime,Counter.FF[4].RS1.TD1.delayTime)));
 //   Counter.FF[4].RS1.TD1.y = if Counter.FF[4].RS1.TD1.delayTime > 0.0 then if time >= Counter.FF[4].RS1.TD1.delayTime then Counter.FF[4].RS1.TD1.x_delayed else Counter.FF[4].RS1.TD1.y0 else pre(Counter.FF[4].RS1.TD1.x);
 //   Counter.FF[4].RS2.Nor1.auxiliary[1] = Counter.FF[4].RS2.Nor1.x[1];
 //   Counter.FF[4].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[4].RS2.Nor1.auxiliary[1],Counter.FF[4].RS2.Nor1.x[2]];
@@ -12072,7 +12072,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_ini
 //   Counter.FF[4].RS2.Nor2.auxiliary[1] = Counter.FF[4].RS2.Nor2.x[1];
 //   Counter.FF[4].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[4].RS2.Nor2.auxiliary[1],Counter.FF[4].RS2.Nor2.x[2]];
 //   Counter.FF[4].RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF[4].RS2.Nor2.auxiliary[2]]);
-//   Counter.FF[4].RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[4].RS2.TD1.x),Counter.FF[4].RS2.TD1.delayTime,Counter.FF[4].RS2.TD1.delayTime)));
+//   Counter.FF[4].RS2.TD1.x_delayed = DAE.CAST(T_ENUMERATION, integer(delay(Real(Counter.FF[4].RS2.TD1.x),Counter.FF[4].RS2.TD1.delayTime,Counter.FF[4].RS2.TD1.delayTime)));
 //   Counter.FF[4].RS2.TD1.y = if Counter.FF[4].RS2.TD1.delayTime > 0.0 then if time >= Counter.FF[4].RS2.TD1.delayTime then Counter.FF[4].RS2.TD1.x_delayed else Counter.FF[4].RS2.TD1.y0 else pre(Counter.FF[4].RS2.TD1.x);
 //   Counter.FF[4].And1.auxiliary[1] = Counter.FF[4].And1.x[1];
 //   Counter.FF[4].And1.auxiliary[2] = D.Tables.AndTable[Counter.FF[4].And1.auxiliary[1],Counter.FF[4].And1.x[2]];

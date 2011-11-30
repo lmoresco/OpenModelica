@@ -883,7 +883,7 @@ checkModel(Modelica.Fluid.Examples.HeatingSystem); getErrorString();
 //     dy_dx := (y1 * h00d) / h + y1d * h10d + (y2 * h01d) / h + y2d * h11d;
 //   else
 //     y := y1 / 2.0 + y2 / 2.0;
-//     dy_dx := 1e+60 * /*REAL*/(sign(y2 - y1));
+//     dy_dx := 1e+60 * /*T_REAL*/(sign(y2 - y1));
 //   end if;
 // end Modelica.Fluid.Utilities.cubicHermite_withDerivative;
 // 
@@ -950,7 +950,7 @@ checkModel(Modelica.Fluid.Examples.HeatingSystem); getErrorString();
 //     mu := xstar - x0;
 //     eta := x1 - xstar;
 //     omega := (3.0 * (y0d + y1d + -2.0 * Delta0) * (xstar - x0) ^ 2.0) / h0 ^ 2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (xstar - x0)) / h0 + y0d;
-//     aux01 := 0.25 * /*REAL*/(sign(Delta0)) * min(abs(omega),abs(Delta0));
+//     aux01 := 0.25 * /*T_REAL*/(sign(Delta0)) * min(abs(omega),abs(Delta0));
 //     if abs(y0d - y1d) <= 1e-13 then
 //       aux02 := y0d;
 //       if y1 > y0 + y0d * (x1 - x0) then
@@ -4898,11 +4898,11 @@ checkModel(Modelica.Fluid.Examples.HeatingSystem); getErrorString();
 // ""
 // "Check of Modelica.Fluid.Examples.HeatingSystem completed successfully.
 // 
-// Error: Internal error elab_builtin_fill_2 failed in component<NO COMPONENT>
-// Error: Internal error elab_builtin_fill_2 failed in componentheater
-// Error: Internal error elab_builtin_fill_2 failed in component<NO COMPONENT>
-// Error: Internal error elab_builtin_fill_2 failed in componentradiator
-// Error: Internal error elab_builtin_fill_2 failed in component<NO COMPONENT>
+// Error: Internal error Static.elabBuiltinFill2 failed in component<NO COMPONENT>
+// Error: Internal error Static.elabBuiltinFill2 failed in componentheater
+// Error: Internal error Static.elabBuiltinFill2 failed in component<NO COMPONENT>
+// Error: Internal error Static.elabBuiltinFill2 failed in componentradiator
+// Error: Internal error Static.elabBuiltinFill2 failed in component<NO COMPONENT>
 // 
 // Class Modelica.Fluid.Examples.HeatingSystem has 579 equation(s) and 573 variable(s).
 // 390 of these are trivial equation(s).

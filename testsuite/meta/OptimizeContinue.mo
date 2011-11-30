@@ -65,7 +65,7 @@ end OptimizeContinue;
 //   constant Real r = 1.0;
 // end OptimizeContinue;
 // [OptimizeContinue.mo:21:5-25:22:writable] Notification: This matchcontinue expression has no overlapping patterns and should be using match instead of matchcontinue.
-// [OptimizeContinue.mo:21:5-25:22:writable] Notification: Converted match expression to switch of type METATYPE.
+// [OptimizeContinue.mo:21:5-25:22:writable] Notification: Converted match expression to switch of type T_METATYPE.
 // [OptimizeContinue.mo:26:5-29:22:writable] Notification: This matchcontinue expression has no overlapping patterns and should be using match instead of matchcontinue.
 // 
 // endResult

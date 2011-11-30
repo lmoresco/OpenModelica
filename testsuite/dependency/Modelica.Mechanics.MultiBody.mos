@@ -159,13 +159,13 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 //   protected Real ysc;
 // algorithm
 //   cc1 := if c1 > 1.0 then 1.0 else if c1 < 0.005 then 0.01 else c1;
-//   yc1 := /*REAL*/(100000 * integer(mod(-0.5 + 100.0 * cc1,100.0)));
+//   yc1 := /*T_REAL*/(100000 * integer(mod(-0.5 + 100.0 * cc1,100.0)));
 //   cc2 := if c2 > 1.0 then 1.0 else if c2 < 0.005 then 0.01 else c2;
-//   yc2 := /*REAL*/(1000 * integer(mod(-0.5 + 100.0 * cc2,100.0)));
+//   yc2 := /*T_REAL*/(1000 * integer(mod(-0.5 + 100.0 * cc2,100.0)));
 //   cc3 := if c3 > 1.0 then 1.0 else if c3 < 0.005 then 0.01 else c3;
-//   yc3 := /*REAL*/(10 * integer(mod(-0.5 + 100.0 * cc3,100.0)));
+//   yc3 := /*T_REAL*/(10 * integer(mod(-0.5 + 100.0 * cc3,100.0)));
 //   csc := if sc > 1.0 then 1.0 else if sc < 0.05 then 0.1 else sc;
-//   ysc := /*REAL*/(integer(mod(-0.5 + 10.0 * csc,10.0)));
+//   ysc := /*T_REAL*/(integer(mod(-0.5 + 10.0 * csc,10.0)));
 //   m := yc1 + yc2 + yc3 + ysc;
 // end Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial;
 // 
@@ -357,13 +357,13 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 //   protected Real ysc;
 // algorithm
 //   cc1 := if c1 > 1.0 then 1.0 else if c1 < 0.005 then 0.01 else c1;
-//   yc1 := /*REAL*/(100000 * integer(mod(-0.5 + 100.0 * cc1,100.0)));
+//   yc1 := /*T_REAL*/(100000 * integer(mod(-0.5 + 100.0 * cc1,100.0)));
 //   cc2 := if c2 > 1.0 then 1.0 else if c2 < 0.005 then 0.01 else c2;
-//   yc2 := /*REAL*/(1000 * integer(mod(-0.5 + 100.0 * cc2,100.0)));
+//   yc2 := /*T_REAL*/(1000 * integer(mod(-0.5 + 100.0 * cc2,100.0)));
 //   cc3 := if c3 > 1.0 then 1.0 else if c3 < 0.005 then 0.01 else c3;
-//   yc3 := /*REAL*/(10 * integer(mod(-0.5 + 100.0 * cc3,100.0)));
+//   yc3 := /*T_REAL*/(10 * integer(mod(-0.5 + 100.0 * cc3,100.0)));
 //   csc := if sc > 1.0 then 1.0 else if sc < 0.05 then 0.1 else sc;
-//   ysc := /*REAL*/(integer(mod(-0.5 + 10.0 * csc,10.0)));
+//   ysc := /*T_REAL*/(integer(mod(-0.5 + 10.0 * csc,10.0)));
 //   m := yc1 + yc2 + yc3 + ysc;
 // end Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial;
 // 

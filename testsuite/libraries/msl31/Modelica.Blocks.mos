@@ -40,7 +40,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // ""
 // "Check of Modelica.Blocks.Continuous.TransferFunction completed successfully.
 // 
-// [Continuous.mo:1226:5-1226:61:writable] Warning: Failed to deduce dimensions of bb due to unknown dimensions of modifier vector(DAE.CAST(/tp:REAL[:, :]/, cat(1,fill(0,max(0,na - nb),1),{{b[1]}}))).
+// [Continuous.mo:1226:5-1226:61:writable] Warning: Failed to deduce dimensions of bb due to unknown dimensions of modifier vector(DAE.CAST(/tp:T_REAL[:, :]/, cat(1,fill(0,max(0,na - nb),1),{{b[1]}}))).
 // [Continuous.mo:1213:5-1215:50:writable] Warning: Failed to deduce dimensions of x_start due to unknown dimensions of modifier fill(0,nx).
 // 
 // Class Modelica.Blocks.Continuous.TransferFunction has 1 equation(s) and 3 variable(s).

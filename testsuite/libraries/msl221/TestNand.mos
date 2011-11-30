@@ -111,7 +111,7 @@ getErrorString();
 //   EGref := EG + (-0.000702 * Tnom ^ 2.0) / (1108.0 + Tnom);
 //   EGval := EG + (-0.000702 * Tdev ^ 2.0) / (1108.0 + Tdev);
 //   PHIval := RTemp * PHI + EGval + -3.0 * Vt * log(RTemp) - RTemp * EGref;
-//   Vfb := VFB + /*REAL*/(Type) * (PHIval / 2.0 + -PHI / 2.0 + EGref / 2.0 + -EGval / 2.0);
+//   Vfb := VFB + /*T_REAL*/(Type) * (PHIval / 2.0 + -PHI / 2.0 + EGref / 2.0 + -EGval / 2.0);
 //   KPval := KP / facTemp;
 //   BETA := (KPval * W) / L;
 //   Sarg := if vbs <= 0.0 then sqrt(PHIval - vbs) else sqrt(PHIval) / (1.0 + vbs / (PHIval * 2.0));
@@ -126,28 +126,28 @@ getErrorString();
 //   end if;
 //   FB := Fn + if noEvent(Sarg > 0.0) then (GAMMA * Fs) / (Sarg * 4.0) else 0.0;
 //   Vbody := GAMMA * Fs * Sarg + Fn * Sarg ^ 2.0;
-//   Vth := Vfb + /*REAL*/(Type) * (PHIval + Vbody - SIGMA * vds);
+//   Vth := Vfb + /*T_REAL*/(Type) * (PHIval + Vbody - SIGMA * vds);
 //   if NFS > 0.0 then
 //     CB := if noEvent(Vbody > 0.0) and noEvent(Sarg > 0.0) then Vbody / (Sarg ^ 2.0 * 2.0) else 0.0;
 //     N := 1.0 + (1.6021892e-19 * NFS) / COX + CB;
-//     Von := /*REAL*/(Type) * Vth + N * Vt;
+//     Von := /*T_REAL*/(Type) * Vth + N * Vt;
 //   else
 //     N := 1.0;
-//     Von := /*REAL*/(Type) * Vth;
+//     Von := /*T_REAL*/(Type) * Vth;
 //   end if;
 //   Vgst := vgs - Von;
 //   vgsx := if vgs > Von then vgs else Von;
-//   FG := 1.0 / (1.0 + THETA * (vgsx - /*REAL*/(Type) * Vth));
+//   FG := 1.0 / (1.0 + THETA * (vgsx - /*T_REAL*/(Type) * Vth));
 //   Us := FG * U0;
 //   BETAval := FG * BETA;
-//   Va := (vgsx - /*REAL*/(Type) * Vth) / (1.0 + FB);
+//   Va := (vgsx - /*T_REAL*/(Type) * Vth) / (1.0 + FB);
 //   Vb := (VMAX * L) / Us;
 //   vdsat := if VMAX > 0.0 then Va + Vb - sqrt(Va ^ 2.0 + Vb ^ 2.0) else Va;
 //   vpof := Va;
 //   vdsx := if vds < vdsat then vds else vdsat;
 //   Fd := if vdsx > 0.0 and VMAX > 0.0 then 1.0 / (1.0 + vdsx / Vb) else 1.0;
 //   BETAeff := Fd * BETAval;
-//   cdlin := vdsx * (vgsx + (-1.0 - FB * vdsx) / 2.0 - /*REAL*/(Type) * Vth);
+//   cdlin := vdsx * (vgsx + (-1.0 - FB * vdsx) / 2.0 - /*T_REAL*/(Type) * Vth);
 //   idlin := BETAeff * cdlin;
 //   if vds > vdsat then
 //     if VMAX > 0.0 then

@@ -117,7 +117,7 @@ simulate(testRandom2, stopTime=3); getErrorString();
 //       seedOut[i] := 1;
 //     end if;
 //   end for;
-//   x := rem(/*REAL*/(seedOut[1]) / 30269.0 + /*REAL*/(seedOut[2]) / 30307.0 + /*REAL*/(seedOut[3]) / 30323.0,1.0);
+//   x := rem(/*T_REAL*/(seedOut[1]) / 30269.0 + /*T_REAL*/(seedOut[2]) / 30307.0 + /*T_REAL*/(seedOut[3]) / 30323.0,1.0);
 // end random;
 // 
 // function testRandom3

@@ -178,7 +178,7 @@ end FunctionSimplex;
 //   for j in 1:N loop
 //     for k in 1:M loop
 //       if j <> p and k <> q then
-//         a[j,k] := a[j,k] + -0.3 * /*REAL*/(j);
+//         a[j,k] := a[j,k] + -0.3 * /*T_REAL*/(j);
 //       end if;
 //     end for;
 //   end for;

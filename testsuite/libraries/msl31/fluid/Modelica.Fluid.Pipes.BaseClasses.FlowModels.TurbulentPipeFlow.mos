@@ -142,7 +142,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow); getEr
 //     mu := xstar - x0;
 //     eta := x1 - xstar;
 //     omega := (3.0 * (y0d + y1d + -2.0 * Delta0) * (xstar - x0) ^ 2.0) / h0 ^ 2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (xstar - x0)) / h0 + y0d;
-//     aux01 := 0.25 * /*REAL*/(sign(Delta0)) * min(abs(omega),abs(Delta0));
+//     aux01 := 0.25 * /*T_REAL*/(sign(Delta0)) * min(abs(omega),abs(Delta0));
 //     if abs(y0d - y1d) <= 1e-13 then
 //       aux02 := y0d;
 //       if y1 > y0 + y0d * (x1 - x0) then

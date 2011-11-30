@@ -1052,7 +1052,7 @@ algorithm
       Option<DAE.Exp> i_initialValue;
       String i_displayUnit;
       String i_unit;
-      DAE.ExpType i_type__;
+      DAE.Type i_type__;
       SimCode.SimVar i_simVar;
 
     case ( txt,
@@ -1281,7 +1281,7 @@ end getAliasVar;
 
 public function ScalarVariableType
   input Tpl.Text in_txt;
-  input DAE.ExpType in_a_type__;
+  input DAE.Type in_a_type__;
   input String in_a_unit;
   input String in_a_displayUnit;
   input Option<DAE.Exp> in_a_initialValue;
@@ -1299,7 +1299,7 @@ algorithm
       Boolean a_isFixed;
 
     case ( txt,
-           DAE.ET_INT(),
+           DAE.T_INTEGER(varLst = _),
            _,
            _,
            _,
@@ -1309,7 +1309,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.ET_REAL(),
+           DAE.T_REAL(varLst = _),
            a_unit,
            a_displayUnit,
            a_initialValue,
@@ -1323,7 +1323,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.ET_BOOL(),
+           DAE.T_BOOL(varLst = _),
            _,
            _,
            _,
@@ -1333,7 +1333,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.ET_STRING(),
+           DAE.T_STRING(varLst = _),
            _,
            _,
            _,
@@ -1343,7 +1343,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.ET_ENUMERATION(path = _),
+           DAE.T_ENUMERATION(index = _),
            _,
            _,
            _,

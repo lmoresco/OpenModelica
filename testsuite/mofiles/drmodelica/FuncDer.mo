@@ -59,7 +59,7 @@ end FuncDer;
 //   input Boolean linear;
 //   output Real y;
 // algorithm
-//   y := exp(x) + /*REAL*/(i1);
+//   y := exp(x) + /*T_REAL*/(i1);
 // end h0;
 // 
 // function h1

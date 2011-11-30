@@ -60,7 +60,7 @@ end Sequence;
 //   input Real[3] angles = {4.0,5.0,6.0};
 //   output Real r;
 // algorithm
-//   r := /*REAL*/(sequence[1]) * angles[3] + /*REAL*/(sequence[2]) * angles[2] + /*REAL*/(sequence[3]) * angles[1];
+//   r := /*T_REAL*/(sequence[1]) * angles[3] + /*T_REAL*/(sequence[2]) * angles[2] + /*T_REAL*/(sequence[3]) * angles[1];
 // end axesRot;
 // 
 // function axesRotations "Inline before index reduction" "Return fixed rotation object to rotate in sequence around fixed angles along 3 axes"

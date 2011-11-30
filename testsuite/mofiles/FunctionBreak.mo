@@ -35,7 +35,7 @@ end FunctionBreak;
 // algorithm
 //   i := 0;
 //   a := y + -1.0;
-//   while /*REAL*/(i) / 10.0 < y loop
+//   while /*T_REAL*/(i) / 10.0 < y loop
 //     a := 0.5 + a;
 //     if a > y then
 //       break;

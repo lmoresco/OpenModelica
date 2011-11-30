@@ -14,8 +14,8 @@ protected
   HashTable2.HashTable ht;
 algorithm
   wild := DAE.WILD();
-  abc := DAE.CREF_IDENT("abc",DAE.ET_INT(),{});
-  def := DAE.CREF_IDENT("def",DAE.ET_INT(),{});
+  abc := DAE.CREF_IDENT("abc",DAE.T_INTEGER_DEFAULT,{});
+  def := DAE.CREF_IDENT("def",DAE.T_INTEGER_DEFAULT,{});
   lst := {};
   ht := emptyHashTable();
   ht := add((wild,DAE.ICONST(i)),ht);

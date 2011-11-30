@@ -73,7 +73,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   output Real[nTable, 2] table \"Friction table\";
 // algorithm
 //   for i in 1:nTable loop
-//     table[i,1] := (v_max * /*REAL*/(i + -1)) / /*REAL*/(nTable + -1);
+//     table[i,1] := (v_max * /*T_REAL*/(i + -1)) / /*T_REAL*/(nTable + -1);
 //     table[i,2] := F_Coulomb + F_prop * table[i,1] + F_Stribeck * exp(-fexp * table[i,1]);
 //   end for;
 // end Modelica.Mechanics.Translational.Examples.Utilities.GenerateStribeckFrictionTable;
