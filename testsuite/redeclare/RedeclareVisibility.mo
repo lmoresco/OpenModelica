@@ -1,8 +1,8 @@
 // name:     RedeclareVisibility
 // keywords: redeclare, modification, constant
-// status:   incorrect
+// status:   correct
 // 
-// Checks that it's not allowed to redeclare a protected element.
+// Checks that it's allowed to redeclare a protected element.
 // 
 
 model m
@@ -14,12 +14,7 @@ model RedeclareVisibility
 end RedeclareVisibility;
 
 // Result:
-// Error processing file: RedeclareVisibility.mo
-// [RedeclareVisibility.mo:13:3-13:38:writable] Notification: From here:
-// [RedeclareVisibility.mo:9:13-9:31:writable] Error: Redeclaration of protected component x is not allowed.
-// 
-// # Error encountered! Exiting...
-// # Please check the error message and the flags.
-// 
-// Execution failed!
+// class RedeclareVisibility
+//   Real x;
+// end RedeclareVisibility;
 // endResult

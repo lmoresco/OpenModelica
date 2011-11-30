@@ -107,6 +107,7 @@ BooleanLiterals.mo \
 BooleanRanges.mo \
 Break.mo \
 Cardinality.mo \
+Cardinality2.mo \
 Cat1.mo \
 Ceil.mo \
 CheckInstantiationLimit.mo \
