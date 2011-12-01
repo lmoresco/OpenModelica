@@ -1666,7 +1666,7 @@ algorithm
                                     "#define $P$START"
                                 }, false));
         txt = cref(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" data->simulationInfo."));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" data->modelData."));
         txt = Tpl.writeStr(txt, a_arrayName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("Data["));
         txt = Tpl.writeStr(txt, intString(i_index));
@@ -9880,10 +9880,8 @@ algorithm
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc2\" -lSimulationRuntimeC "));
         txt = Tpl.writeStr(txt, i_makefileParams_ldflags);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " -ldl\n",
-                                    "SENDDATALIBS="
-                                }, false));
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("SENDDATALIBS="));
         txt = Tpl.writeStr(txt, i_makefileParams_senddatalibs);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({

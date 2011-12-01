@@ -5273,7 +5273,7 @@ algorithm
            _ )
       equation
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU: "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU: clean "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5325,7 +5325,7 @@ algorithm
                                     "\n"
                                 }, true));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5333,7 +5333,7 @@ algorithm
         txt = Tpl.writeStr(txt, i_platform);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("/\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.libs "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5341,7 +5341,7 @@ algorithm
         txt = Tpl.writeStr(txt, i_platform);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("/\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".c "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5349,7 +5349,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(".c\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.c "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5357,7 +5357,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_FMU.c\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.c "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5365,7 +5365,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_functions.c\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.h "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5373,7 +5373,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_functions.h\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.c "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5381,7 +5381,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.c\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp modelDescription.xml "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv modelDescription.xml "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("/modelDescription.xml\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
@@ -5391,15 +5391,11 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".fmu && zip -r ../"));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ".fmu *\n",
-                                    "#"
-                                }, false));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".fmu *\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" rm -rf "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" rm -f "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5834,7 +5830,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".o\n",
                                     "\n",
-                                    "PHONY: "
+                                    "PHONY: clean "
                                 }, false));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_FMU\n"));
