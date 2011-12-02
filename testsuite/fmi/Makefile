@@ -1,4 +1,4 @@
-TEST = ../rtest -v
+TEST = ../rtest +simCodeTarget=c -v
 
 TESTFILES = \
 BouncingBall.mos \
