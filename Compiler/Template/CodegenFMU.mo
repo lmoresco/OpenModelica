@@ -5162,15 +5162,11 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".fmu&& zip -r ../"));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ".fmu *\n",
-                                    "#"
-                                }, false));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".fmu *\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" rm -rf "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" rm -f "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5831,9 +5827,8 @@ algorithm
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "_functions.h\n",
-                                    "clean:\n",
-                                    "#"
-                                }, false));
+                                    "clean:\n"
+                                }, true));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" @rm -f "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
