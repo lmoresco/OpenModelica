@@ -42952,6 +42952,7 @@ algorithm
       Tpl.Text txt;
       Integer a_classIndex;
       String a_classType;
+      Option<DAE.Exp> i_nominalValue;
       Boolean i_isFixed;
       Option<DAE.Exp> i_initialValue;
       String i_displayUnit;
@@ -42960,7 +42961,7 @@ algorithm
       SimCode.SimVar i_simVar;
 
     case ( txt,
-           (i_simVar as SimCode.SIMVAR(type_ = i_type__, unit = i_unit, displayUnit = i_displayUnit, initialValue = i_initialValue, isFixed = i_isFixed)),
+           (i_simVar as SimCode.SIMVAR(type_ = i_type__, unit = i_unit, displayUnit = i_displayUnit, initialValue = i_initialValue, isFixed = i_isFixed, nominalValue = i_nominalValue)),
            a_classIndex,
            a_classType )
       equation
@@ -42968,7 +42969,7 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = ScalarVariableAttribute(txt, i_simVar, a_classIndex, a_classType);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(">\n"));
-        txt = ScalarVariableType(txt, i_type__, i_unit, i_displayUnit, i_initialValue, i_isFixed);
+        txt = ScalarVariableType(txt, i_type__, i_unit, i_displayUnit, i_initialValue, i_isFixed, i_nominalValue);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("</ScalarVariable>"));
@@ -43285,27 +43286,32 @@ public function ScalarVariableType
   input String in_a_displayUnit;
   input Option<DAE.Exp> in_a_initialValue;
   input Boolean in_a_isFixed;
+  input Option<DAE.Exp> in_a_nominalValue;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_type__, in_a_unit, in_a_displayUnit, in_a_initialValue, in_a_isFixed)
+  matchcontinue(in_txt, in_a_type__, in_a_unit, in_a_displayUnit, in_a_initialValue, in_a_isFixed, in_a_nominalValue)
     local
       Tpl.Text txt;
       String a_unit;
       String a_displayUnit;
       Option<DAE.Exp> a_initialValue;
       Boolean a_isFixed;
+      Option<DAE.Exp> a_nominalValue;
 
     case ( txt,
            DAE.T_INTEGER(varLst = _),
            a_unit,
            a_displayUnit,
            a_initialValue,
-           a_isFixed )
+           a_isFixed,
+           a_nominalValue )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Integer "));
         txt = ScalarVariableTypeCommonAttribute(txt, a_initialValue, a_isFixed);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeRealAttribute(txt, a_unit, a_displayUnit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" />"));
@@ -43316,10 +43322,13 @@ algorithm
            a_unit,
            a_displayUnit,
            a_initialValue,
-           a_isFixed )
+           a_isFixed,
+           a_nominalValue )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Real "));
         txt = ScalarVariableTypeCommonAttribute(txt, a_initialValue, a_isFixed);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeRealAttribute(txt, a_unit, a_displayUnit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" />"));
@@ -43330,10 +43339,13 @@ algorithm
            a_unit,
            a_displayUnit,
            a_initialValue,
-           a_isFixed )
+           a_isFixed,
+           a_nominalValue )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Boolean "));
         txt = ScalarVariableTypeCommonAttribute(txt, a_initialValue, a_isFixed);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeRealAttribute(txt, a_unit, a_displayUnit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" />"));
@@ -43344,10 +43356,13 @@ algorithm
            a_unit,
            a_displayUnit,
            a_initialValue,
-           a_isFixed )
+           a_isFixed,
+           a_nominalValue )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<String "));
         txt = ScalarVariableTypeCommonAttribute(txt, a_initialValue, a_isFixed);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeRealAttribute(txt, a_unit, a_displayUnit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" />"));
@@ -43358,16 +43373,20 @@ algorithm
            a_unit,
            a_displayUnit,
            a_initialValue,
-           a_isFixed )
+           a_isFixed,
+           a_nominalValue )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Integer "));
         txt = ScalarVariableTypeCommonAttribute(txt, a_initialValue, a_isFixed);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeRealAttribute(txt, a_unit, a_displayUnit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" />"));
       then txt;
 
     case ( txt,
+           _,
            _,
            _,
            _,
@@ -43420,7 +43439,39 @@ algorithm
   end matchcontinue;
 end ScalarVariableTypeCommonAttribute;
 
-protected function fun_955
+public function ScalarVariableTypeNominalAttribute
+  input Tpl.Text in_txt;
+  input Option<DAE.Exp> in_a_nominalValue;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_nominalValue)
+    local
+      Tpl.Text txt;
+      DAE.Exp i_exp;
+
+    case ( txt,
+           SOME(i_exp) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("nominal=\""));
+        txt = initValXml(txt, i_exp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
+      then txt;
+
+    case ( txt,
+           NONE() )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("nominal=\"1.0\""));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end ScalarVariableTypeNominalAttribute;
+
+protected function fun_956
   input Tpl.Text in_txt;
   input String in_a_unit;
 
@@ -43444,9 +43495,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_955;
+end fun_956;
 
-protected function fun_956
+protected function fun_957
   input Tpl.Text in_txt;
   input String in_a_displayUnit;
 
@@ -43472,7 +43523,7 @@ algorithm
         txt = Tpl.popBlock(txt);
       then txt;
   end matchcontinue;
-end fun_956;
+end fun_957;
 
 public function ScalarVariableTypeRealAttribute
   input Tpl.Text txt;
@@ -43484,13 +43535,13 @@ protected
   Tpl.Text l_displayUnit__;
   Tpl.Text l_unit__;
 algorithm
-  l_unit__ := fun_955(Tpl.emptyTxt, a_unit);
-  l_displayUnit__ := fun_956(Tpl.emptyTxt, a_displayUnit);
+  l_unit__ := fun_956(Tpl.emptyTxt, a_unit);
+  l_displayUnit__ := fun_957(Tpl.emptyTxt, a_displayUnit);
   out_txt := Tpl.writeText(txt, l_unit__);
   out_txt := Tpl.writeText(out_txt, l_displayUnit__);
 end ScalarVariableTypeRealAttribute;
 
-protected function fun_958
+protected function fun_959
   input Tpl.Text in_txt;
   input Integer in_mArg;
 
@@ -43519,7 +43570,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \"Array of temporaries\");"));
       then txt;
   end matchcontinue;
-end fun_958;
+end fun_959;
 
 public function addRootsTempArray
   input Tpl.Text txt;
@@ -43530,7 +43581,7 @@ protected
 algorithm
   System.tmpTickResetIndex(0, 2);
   ret_0 := System.tmpTickIndex(1);
-  out_txt := fun_958(txt, ret_0);
+  out_txt := fun_959(txt, ret_0);
 end addRootsTempArray;
 
 end CodegenC;
