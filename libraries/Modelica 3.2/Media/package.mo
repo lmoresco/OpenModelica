@@ -6514,7 +6514,7 @@ quantities are assumed to be constant.
       extends Modelica.Icons.Function;
       input AbsolutePressure p "Pressure";
       input SpecificEnthalpy h "Specific enthalpy";
-      input MassFraction X[nX] "Mass fractions";
+      input MassFraction X[:] "Mass fractions";
       output Temperature T "Temperature";
     algorithm
       T := h/cp_const + T0;

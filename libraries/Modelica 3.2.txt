@@ -1,6 +1,10 @@
 A full copy of Modelica Standard Library 3.2 build 5:
  http://www.modelica.org/libraries/Modelica
 
+Added by perost, 2011-12-05
+Modelica/Media/package.mo Changed nX to : in function ending with X in
+PartialSimpleIdealGasMedium to make them have the correct dimensions.
+
 Added by perost, 2011-11-28
 Modelica/Media/package.mo Changed nX to : in function ending with X in
 PartialTwoPhaseMedium to make them have the correct dimensions.
