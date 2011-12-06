@@ -32,7 +32,8 @@ interactive-simulation.log \
 msl31simulation.log \
 msl31media.log \
 msl31mediasimulation.log \
-msl31fluid.log
+msl31fluid.log \
+siemens.log
 
 
 SIMULATIONLOGS = \
@@ -163,6 +164,9 @@ msl31mediasimulation.log: omc-diff
 	@echo $@ done
 msl31fluid.log: omc-diff
 	$(MAKE) -C libraries/msl31/fluid -f Makefile test > $@
+	@echo $@ done
+siemens.log: omc-diff
+	$(MAKE) -C siemens -f Makefile test > $@
 	@echo $@ done
 fmi.log: omc-diff
 	$(MAKE) -C fmi -f Makefile test > $@
