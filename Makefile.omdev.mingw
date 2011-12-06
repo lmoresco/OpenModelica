@@ -57,6 +57,7 @@ omdev_extra_dlls:
 	(cp -pf $(OMDEV)/lib/mico-msys-mingw/static/libmico2313.a $(builddir_lib)/omc/)
 	(cp -pufr $(OMDEV)/tools/xsltproc $(builddir_lib)/omc/libexec/)
 	(cp -pufr $(OMDEV)/tools/gnuplot $(builddir_lib)/omc/libexec/)
+	(cp -pf $(OMDEV)/tools/mingw/bin/libiconv-2.dll $(builddir_bin)/)
 
 omc: c_runtime docs omdev_extra_dlls breakprocess fmi
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw release)
