@@ -25,7 +25,7 @@ end ModifyConstant3;
 
 // Result:
 // Error processing file: ModifyConstant3.mo
-// [ModifyConstant3.mo:14:32-14:32:writable] Error: Missing token: RPAR
+// [ModifyConstant3.mo:14:32-14:32:writable] Error: Missing token: ')'
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
