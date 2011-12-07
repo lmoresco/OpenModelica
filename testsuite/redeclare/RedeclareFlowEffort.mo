@@ -17,7 +17,7 @@ equation
 end RedeclareFlowEffort;
 // Result:
 // Error processing file: RedeclareFlowEffort.mo
-// [RedeclareFlowEffort.mo:8:1-11:14:writable] Warning: Connector Connector is not balanced: The number of potential variables (0) is not equal to the number of flow variables (2).
+// [RedeclareFlowEffort.mo:8:1-11:14:writable] Error: Connector Connector is not balanced: The number of potential variables (0) is not equal to the number of flow variables (2).
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
