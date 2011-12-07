@@ -1,0 +1,51 @@
+// name:     paralleFlowEVA_test
+// keywords: fluid media siemens
+// status:   correct
+// 
+// Siemens fluid test.
+//
+
+loadModel(Modelica);
+loadFile("SiemensPowerOMCtest/package.mo");
+getErrorString();
+instantiateModel(SiemensPowerOMCtest.Components.HeatExchanger.Tests.paralleFlowEVA_test);
+getErrorString();
+checkModel(SiemensPowerOMCtest.Components.HeatExchanger.Tests.paralleFlowEVA_test);
+getErrorString();
+// Result:
+// true
+// true
+// ""
+// ""
+// "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4055:5-4056:75:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:176:5-176:27:writable] Error: No constant value for variable data in scope Modelica.Media.IdealGases.Common.SingleGasNasa.specificEnthalpy.
+// Warning: Parameter EVA1.geoPipe has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter EVA1.geoFins has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter EVA1.geoFGZ has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter EVA1.propertiesMetal has neither value nor start value, and is fixed during initialization (fixed=true)
+// [package.mo:534:5-535:65:writable] Error: No constant value for variable data.R in scope Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate.
+// [FlueGasZoneSingleTube.mo:72:3-74:94:writable] Error: Type mismatch in modifier of component EVA1.flueGasZone[1]TWall_start, declared type H2OMedium.Temperature[numberOfTubeNodes], got modifier EVA1.flueGasZone[1].T_start of type #T_UNKNOWN#
+// Error: Error occurred while flattening model SiemensPowerOMCtest.Components.HeatExchanger.Tests.paralleFlowEVA_test
+// "
+// "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4055:5-4056:75:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:176:5-176:27:writable] Error: No constant value for variable data in scope Modelica.Media.IdealGases.Common.SingleGasNasa.specificEnthalpy.
+// [package.mo:534:5-535:65:writable] Error: No constant value for variable data.R in scope Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate.
+// [FlueGasZoneSingleTube.mo:72:3-74:94:writable] Error: Type mismatch in modifier of component EVA1.flueGasZone[1]TWall_start, declared type H2OMedium.Temperature[numberOfTubeNodes], got modifier EVA1.flueGasZone[1].T_start of type #T_UNKNOWN#
+// Error: Error occurred while flattening model SiemensPowerOMCtest.Components.HeatExchanger.Tests.paralleFlowEVA_test
+// "
+// ""
+// endResult

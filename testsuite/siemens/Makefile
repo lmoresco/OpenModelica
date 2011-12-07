@@ -5,7 +5,8 @@ valve_test.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES=
+FAILINGTESTFILES= \
+paralleFlowEVA_test.mos \
 
 .PHONY : test
 
