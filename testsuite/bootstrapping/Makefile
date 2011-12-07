@@ -6,6 +6,7 @@ DumpTest.mos \
 GraphTest.mos \
 HashTableTest.mos \
 MainTest.mos \
+PriorityQueue.mos \
 SimCodeTest.mos \
 SimplifyTest.mos \
 SusanTest.mos \
