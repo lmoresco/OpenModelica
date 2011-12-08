@@ -4,9 +4,7 @@
 //
 // TODO: Make me faster; I'm slow
 
-loadFile("../../Compiler/Util/PriorityQueue.mo");getErrorString();
-loadFile("../../Compiler/Util/List.mo");getErrorString();
-loadFile("../../Compiler/Util/Util.mo");getErrorString();
+runScript("LoadCompilerSources.mos");
 e:=PriorityQueue.empty;getErrorString();
 q:=PriorityQueue.insert((1,{}),e);getErrorString();
 PriorityQueue.findMin(q);getErrorString();
@@ -31,12 +29,9 @@ PriorityQueue.findMin(q);getErrorString();
 q:=PriorityQueue.deleteMin(q);getErrorString();
 PriorityQueue.findMin(q);getErrorString();
 // Result:
-// true
-// ""
-// true
-// ""
-// true
-// ""
+// Loaded all files without error
+// "true
+// "
 // {}
 // ""
 // {record PriorityQueue.Tree.NODE
