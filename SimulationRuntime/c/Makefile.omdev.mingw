@@ -20,6 +20,7 @@ INTERACTIVELIBS =
 LIBSENDDATA = libsendData.a
 CONFIG_H=$(top_builddir)/Compiler/runtime/config.h
 LIBF2C=simulation/libf2c/libf2c.a
+EXTERNALCMAKEFILE=Makefile.omdev.mingw 
 
 include Makefile.common
 
