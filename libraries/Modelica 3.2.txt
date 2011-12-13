@@ -1,6 +1,13 @@
 A full copy of Modelica Standard Library 3.2 build 5:
  http://www.modelica.org/libraries/Modelica
 
+Fixed by Martin Sjolund, 2010-10-26
+[Modelica 3.2/Electrical/QuasiStationary/MultiPhase.mo:1872:7-1873:76:writable] Warning: connect(currentP, currentP) connects the same connector instance! The connect equation will be ignored.
+[Modelica 3.2/Electrical/Digital.mo:5309:11-5312:35:writable] Warning: connect(dataOut, dataOut) connects the same connector instance! The connect equation will be ignored.
+[Modelica 3.2/Electrical/Digital.mo:6206:11-6209:35:writable] Warning: connect(dataOut, dataOut) connects the same connector instance! The connect equation will be ignored.
+[Modelica 3.2/Electrical/Digital.mo:6678:11-6681:35:writable] Warning: connect(dataOut, dataOut) connects the same connector instance! The connect equation will be ignored.
+[Modelica 3.2/Electrical/Machines.mo:3880:9-3883:33:writable] Warning: connect(plug_rn, plug_rn) connects the same connector instance! The connect equation will be ignored.
+
 Added by perost, 2011-12-05
 Modelica/Media/package.mo Changed nX to : in function ending with X in
 PartialSimpleIdealGasMedium to make them have the correct dimensions.

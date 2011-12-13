@@ -5306,10 +5306,6 @@ Clock transition definitions:
             strength=strength)
             annotation (Placement(transformation(extent={{-78,-23},{18,74}})));
         equation
-          connect(dataOut, dataOut) annotation (Line(
-              points={{92,40},{92,40}},
-              color={127,0,127},
-              smooth=Smooth.None));
           connect(delay.y, dataOut) annotation (Line(
               points={{75.01,40},{92,40}},
               color={127,0,127},
@@ -6203,10 +6199,6 @@ Clock transition definitions:
             annotation (Placement(transformation(extent={{-78,-23},{18,74}})));
         equation
 
-          connect(dataOut, dataOut) annotation (Line(
-              points={{92,40},{92,40}},
-              color={127,0,127},
-              smooth=Smooth.None));
           connect(delay.y, dataOut) annotation (Line(
               points={{72.08,40},{92,40}},
               color={127,0,127},
@@ -6675,10 +6667,6 @@ Clock transition definitions:
             annotation (Placement(transformation(extent={{-78,-23},{18,74}})));
         equation
 
-          connect(dataOut, dataOut) annotation (Line(
-              points={{92,40},{92,40}},
-              color={127,0,127},
-              smooth=Smooth.None));
           connect(delay.y, dataOut) annotation (Line(
               points={{72.08,40},{92,40}},
               color={127,0,127},
