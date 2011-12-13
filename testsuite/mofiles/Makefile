@@ -485,6 +485,10 @@ NotEquals.mo \
 Not.mo \
 NumericFunctions.mo \
 Operators.mo \
+OperatorComponents.mo \
+OperatorFunction1.mo \
+OperatorOverloadComplex.mo \
+OperatorSimple.mo \
 Or.mo \
 OutputDeclConnector.mo \
 OutputDeclRecord.mo \
@@ -661,11 +665,8 @@ Inline5.mo \
 Inline6.mo \
 InnerClass1.mo \
 NonExpModif2.mo \
-OperatorComponents.mo \
-OperatorFunction1.mo \
 OperatorFunction2.mo \
 OperatorIllegal.mo \
-OperatorSimple.mo \
 ReplaceFunction.mo \
 ScopeDeclaration4.mo \
 Units1.mo \

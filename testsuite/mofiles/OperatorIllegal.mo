@@ -5,7 +5,7 @@
 // extending from a record containing operator overloads should be illegal
 //
 
-record Rec
+operator record Rec
   Real r;
   operator '+'
     function add

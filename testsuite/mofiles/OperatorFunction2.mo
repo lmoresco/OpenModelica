@@ -5,7 +5,7 @@
 // tests the shorthand operator function keyword, extension should be illegal
 //
 
-record Rec
+operator record Rec
   Real r;
   operator function '+'
     input Rec r1;
