@@ -15,11 +15,11 @@ getDocumentationAnnotation(Modelica.Math.Matrices.LAPACK.dgeev);
 // <p>
 // This package contains external Modelica functions as interface to the
 // LAPACK library
-// (<a href=\\\"http://www.netlib.org/lapack\\\">http://www.netlib.org/lapack</a>)
+// (<a href=\"http://www.netlib.org/lapack\">http://www.netlib.org/lapack</a>)
 // that provides FORTRAN subroutines to solve linear algebra
 // tasks. Usually, these functions are not directly called, but only via
 // the much more convenient interface of
-// <a href=\\\"Modelica://Modelica.Math.Matrices\\\">Modelica.Math.Matrices</a>.
+// <a href=\"Modelica://Modelica.Math.Matrices\">Modelica.Math.Matrices</a>.
 // The documentation of the LAPACK functions is a copy of the original
 // FORTRAN code.
 // </p>
