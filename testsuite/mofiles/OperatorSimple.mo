@@ -29,7 +29,7 @@ equation
   c3 = c1 * c2;
 end OperatorSimple;
 
- // Result:
+// Result:
 // function Complex "Automatically generated record constructor for Complex"
 //   input Real re;
 //   input Real im;
