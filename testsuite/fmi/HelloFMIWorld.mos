@@ -2,9 +2,10 @@
 // keywords: fmu export
 // status: correct
 // teardown_command: rm -rf binaries sources modelDescription.xml HelloFMIWorld.fmu HelloFMIWorldFMUImport.mo fmu*.log FMUImport_* HelloFMIWorld_* HelloFMIWorld.log HelloFMIWorld.libs HelloFMIWorld HelloFMIWorld.exe HelloFMIWorld.cpp HelloFMIWorld.makefile output.log HelloFMIWorld/*
-//
+// cflags: +simCodeTarget=C
 // Event handling
 //
+
 loadFile("HelloFMIWorld.mo");
 translateModelFMU(HelloFMIWorld);
 getErrorString();

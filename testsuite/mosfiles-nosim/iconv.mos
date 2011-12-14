@@ -5,7 +5,12 @@ a:=iconv("jag kan skriva едц",from="ISO-8859-1");getErrorString();
 b:=iconv("jag kan skriva ГҐГ¤Г¶",from="UTF-8",to="UTF-16");getErrorString();
 c:=iconv("jag kan skriva ГҐГ¤Г¶",from="UTF-8",to="ISO-8859-1");getErrorString();
 d:=iconv(c,from="ISO-8859-1");getErrorString();
-e:=iconv("jag kan skriva едц",from="UTF-8");getErrorString();
+e:=iconv("jag kan skriva едц",from="UTF-8");
+echo(false);
+str := getErrorString();
+a := strtok(str, ":");
+echo(true);
+a[2];
 loadString("model M String s = \"jag kan skriva едц\"; end M;",encoding="ISO-8859-1");getErrorString();
 list();
 
@@ -20,8 +25,8 @@ list();
 // "jag kan skriva ГҐГ¤Г¶"
 // ""
 // ""
-// "Error: iconv("jag kan skriva едц",to="UTF-8",from="UTF-8") failed: Invalid or incomplete multibyte or wide character
-// "
+// true
+// " iconv(\"jag kan skriva едц\",to=\"UTF-8\",from=\"UTF-8\") failed"
 // true
 // ""
 // "model M

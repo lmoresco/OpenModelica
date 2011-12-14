@@ -32,7 +32,7 @@ ANTLR_LIBP = -L$(OMDEV)/lib/antlr-msys-mingw/
 LIBSOCKET = -lwsock32
 
 SHELL	= /bin/sh
-CC	= gcc
+CC	= cc
 CFLAGS	= $(USE_CORBA) -DMINGW32
 RMLHOME	= $(OMDEV)/tools/rml/
 RMLINC	= -I$(RMLHOME)/include/plain

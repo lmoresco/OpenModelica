@@ -29,13 +29,13 @@ equation
   c3 = c1 * c2;
 end OperatorSimple;
 
-// Result:
+ // Result:
 // function Complex "Automatically generated record constructor for Complex"
 //   input Real re;
 //   input Real im;
 //   output Complex res;
 // end Complex;
-//
+// 
 // function Complex.'*'.mul
 //   input Complex c1;
 //   input Complex c2;
@@ -43,7 +43,7 @@ end OperatorSimple;
 // algorithm
 //   result := Complex(c1.re * c2.re - c1.im * c2.im,c1.re * c2.im + c1.im * c2.re);
 // end Complex.'*'.mul;
-//
+// 
 // class OperatorSimple
 //   Real c1.re;
 //   Real c1.im;
@@ -59,4 +59,3 @@ end OperatorSimple;
 //   c3 = Complex.'*'.mul(c1,c2);
 // end OperatorSimple;
 // endResult
- 

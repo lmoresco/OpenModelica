@@ -12,15 +12,19 @@ INCS =  -I"../../../build/include/omc"
 CXXINCS =  -I"."
 BIN  = ../../../build/bin/fmigenerator.exe
 LIB  = ../../../build/lib/omc/libfmuWrapper.a
+LIB2  = ../../../build/lib/omc2/libfmuWrapper.a
 CXXFLAGS = $(CXXINCS)  
 CFLAGS = $(INCS)  
 RM = rm -f
 
 .PHONY: all all-before all-after clean clean-custom
 
-all: fmuModelica.h all-before $(BIN) all-after $(LIB)
+all: fmuModelica.h all-before $(BIN) all-after $(LIB) $(LIB2)
 
 $(LIB): fmuWrapper.o
+	$(AR) $@ $<
+	
+$(LIB2): fmuWrapper.o
 	$(AR) $@ $<
 
 fmuModelica.h: fmuModelica.tmp

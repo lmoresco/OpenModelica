@@ -29,8 +29,9 @@ OMCCORBASRC = omc_communication.o omc_communication_impl.o Corba_omc.o
 
 SHELL	= /bin/sh
 CC	= gcc 
+CXX = g++
 IDL	= $(OMDEV)/bin/mico/idl
-CFLAGS	+= -I$(RMLINCLUDE) -I../../ -I../../c_runtime -I../../c_runtime/meta -I../ $(CORBAINCL)
+CFLAGS	+= -I$(RMLINCLUDE) -I../../ -I../../c_runtime -I../../c_runtime/meta -I../../c_runtime/meta/gc -I../ $(CORBAINCL)
 CXXFLAGS = $(CFLAGS)
 
 include Makefile.common

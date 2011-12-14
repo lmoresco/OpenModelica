@@ -77,6 +77,10 @@ end PackageParameterModel;
 // [PackageParameter.mo:27:3-27:24:writable] Error: Variable n.i not found in scope PackageParameterModel
 // Error: Variable n.i in package PackageParameterModel.n is not constant
 // [PackageParameter.mo:27:3-27:24:writable] Error: Variable n.i not found in scope PackageParameterModel
+// Error: Variable n.i in package PackageParameterModel.n is not constant
+// [PackageParameter.mo:27:3-27:24:writable] Error: Variable n.i not found in scope PackageParameterModel
+// Error: Variable n.i in package PackageParameterModel.n is not constant
+// [PackageParameter.mo:27:3-27:24:writable] Error: Variable n.i not found in scope PackageParameterModel
 // [PackageParameter.mo:28:3-28:39:writable] Error: Class P3.f not found in scope PackageParameterModel (looking for a function or record).
 // 
 // # Error encountered! Exiting...

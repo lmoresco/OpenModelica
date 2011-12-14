@@ -2,9 +2,10 @@
 // keywords: fmu export
 // status: correct
 // teardown_command: rm -rf binaries sources modelDescription.xml BouncingBall.fmu BouncingBallFMUImport.mo fmu*.log FMUImport_* BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall BouncingBall.exe BouncingBall.cpp BouncingBall.makefile output.log BouncingBall/*
-//
+// cflags: +simCodeTarget=C
 // Event handling in FMU Import
 //
+
 loadFile("BouncingBall.mo");
 translateModelFMU(BouncingBall); getErrorString();
 importFMU("BouncingBall.fmu"); getErrorString();
