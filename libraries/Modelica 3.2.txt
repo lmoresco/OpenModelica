@@ -16,9 +16,6 @@ PartialTwoPhaseMedium to make them have the correct dimensions.
 
 - Make standardOrderComponents in PartialMedium.BaseProperties replaceable.
 
-Added by sjoelund.se, 2011-10-04
-Modelica/Electrical/Analog/Lines.mo fixed according to https://trac.modelica.org/Modelica/ticket/485
-
 Modified by Martin Sjolund, 2011-05-25
 - Fix syntax error (.123 = 0.123), in Modelica.Math.Nonlinear
 
