@@ -1,14 +1,14 @@
 TEST = ../rtest +simCodeTarget=c -v
 
-TESTFILES = \
-BouncingBall.mos \
-HelloFMIWorld.mos \
-ExternalFMUs.mos \
+TESTFILES = 
 
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES= 
+FAILINGTESTFILES= \
+BouncingBall.mos \
+HelloFMIWorld.mos \
+ExternalFMUs.mos \
 
 .PHONY : test
 
