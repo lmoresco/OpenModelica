@@ -2,12 +2,15 @@ within Modelica;
 package Math "Library of mathematical functions (e.g., sin, cos) and of functions operating on vectors and matrices"
 import SI = Modelica.SIunits;
 
+
 extends Modelica.Icons.Package;
+
 
 package Vectors "Library of functions operating on vectors"
   extends Modelica.Icons.Package;
 
   function toString "Convert a real vector in to a string representation"
+    extends Modelica.Icons.Function;
     import Modelica.Utilities.Strings;
 
     input Real v[:] "Real vector";
@@ -211,7 +214,7 @@ Note, for any vector norm the following inequality holds:
   end norm;
 
   function length
-    "Return length of a vectorReturn length of a vector (better as norm(), if further symbolic processing is performed)"
+    "Return length of a vector (better as norm(), if further symbolic processing is performed)"
     extends Modelica.Icons.Function;
     input Real v[:] "Vector";
     output Real result "Length of vector v";
@@ -446,7 +449,8 @@ can be provided as third argument of the function. Default is \"eps = 0\".
   end find;
 
   function interpolate "Interpolate in a vector"
-    input Real x[ :]
+    extends Modelica.Icons.Function;
+    input Real x[:]
       "Abszissa table vector (strict monotonically increasing values required)";
     input Real y[ size(x,1)] "Ordinate table vector";
     input Real xi "Desired abszissa value";
@@ -525,6 +529,7 @@ if many interpolations take place.
   end interpolate;
 
   function relNodePositions "Return vector of relative node positions (0..1)"
+    extends Modelica.Icons.Function;
     input Integer nNodes
       "Number of nodes (including node at left and right position)";
     output Real xsi[nNodes] "Relative node positions";
@@ -584,8 +589,8 @@ at the left and at the right side of the pipe), see next figure:
       extends Modelica.Icons.Package;
   function householderVector
       "Calculate a normalized householder vector to reflect vector a onto vector b"
-
-      import Modelica.Math.Vectors.norm;
+    extends Modelica.Icons.Function;
+    import Modelica.Math.Vectors.norm;
 
     input Real a[:] "Real vector to be reflected";
     input Real b[size(a, 1)] "Real vector b vector a is mapped onto";
@@ -656,6 +661,7 @@ with scalar c, |c| = ||<b>a</b>|| / ||<b>b</b>||. <b>Q</b>*<b>a</b> is the refle
 
     function householderReflection
       "Reflect a vector a on a plane with orthogonal vector u"
+      extends Modelica.Icons.Function;
       import Modelica.Math.Vectors;
 
       input Real a[:] "Real vector a to be reflected";
@@ -724,7 +730,7 @@ where <b>Q</b> is an orthogonal matrix, i.e.
 
       encapsulated function roots
       "Compute zeros of a polynomial where the highest coefficient is assumed as not to be zero"
-      import Modelica.Math.Matrices;
+       import Modelica.Math.Matrices;
 
         input Real p[:]
         "Vector with polynomial coefficients p[1]*x^n + p[2]*x^(n-1) + p[n]*x +p[n-1]";
@@ -843,12 +849,14 @@ This library provides functions operating on vectors:
 </HTML>"));
 end Vectors;
 
+
 package Matrices "Library of functions operating on matrices"
   package Examples
     "Examples demonstrating the usage of the Math.Matrices functions"
     extends Modelica.Icons.ExamplesPackage;
     function solveLinearEquations
       "Demonstrate the solution of linear equation systems"
+      extends Modelica.Icons.Function;
       import Modelica.Utilities.Streams.print;
       // solve and solve2
     protected
@@ -903,6 +911,7 @@ Matrices.leastSquares and Matrices.leastSquares2.
   end Examples;
 
   function toString "Convert a matrix into its string representation "
+    extends Modelica.Icons.Function;
     import Modelica.Utilities.Strings;
 
     input Real M[:,:] "Real matrix";
@@ -2106,6 +2115,7 @@ called as: <code>(,R,p) = QR(A)</code>.
   end QR;
 
   function hessenberg "Return upper Hessenberg form of a matrix"
+    extends Modelica.Icons.Function;
     import Modelica;
     import Modelica.Math.Matrices;
 
@@ -2180,6 +2190,7 @@ by function \"Utilities.toUpperHessenberg()\". The transformation matrix <b>U</b
 
   function realSchur
     "Return the real Schur form (rsf) S of a square matrix A, A=QZ*S*QZ'"
+    extends Modelica.Icons.Function;
     import Modelica.Math.Matrices;
 
     input Real A[:,size(A, 1)] "Square matrix";
@@ -2280,6 +2291,7 @@ The calculation in lapack.dgees is performed stepwise, i.e., using the internal 
 
   function cholesky
     "Return the Cholesky factorization of a symmetric positive definite matrix"
+    extends Modelica.Icons.Function;
     import Modelica.Math.Matrices.LAPACK;
     input Real A[:,size(A, 1)] "Symmetric positive definite matrix";
     input Boolean upper=true
@@ -2740,7 +2752,8 @@ For more details, see <a href=\"http://en.wikipedia.org/wiki/Condition_number\">
     output Real rcond "Reciprocal condition number of A";
     output Integer info "Information";
   protected
-    Real LU[:,:] "LU factorization of matrix A, returned by dgetrf";
+    Real LU[size(A,1),size(A,1)]
+      "LU factorization of matrix A, returned by dgetrf";
     Real anorm "Norm of matrix A";
     String normspec= if inf then "I" else "1" "Specifies the norm 1 or inf";
 
@@ -3426,6 +3439,7 @@ is, e.g., described in
 
   function continuousLyapunov
     "Return solution X of the continuous-time Lyapunov equation X*A + A'*X = C"
+    extends Modelica.Icons.Function;
     import Modelica.Math.Matrices;
 
     input Real A[:,size(A, 1)] "Square matrix A in X*A + A'*X = C";
@@ -3629,6 +3643,7 @@ The boolean input \"ATisSchur\" indicates to omit the transformation to Schur in
 
   function continuousSylvester
     "Return solution X of the continuous-time Sylvester equation A*X + X*B = C"
+    extends Modelica.Icons.Function;
     import Modelica.Math.Matrices;
 
     input Real A[:,:] "Square matrix A";
@@ -3770,6 +3785,7 @@ for more information.
 
   function continuousRiccati
     "Return solution X of the continuous-time algebraic Riccati equation A'*X + X*A - X*B*inv(R)*B'*X + Q = 0 (care)"
+    extends Modelica.Icons.Function;
     import Modelica.Math.Matrices;
 
     input Real A[:,size(A, 1)] "Square matrix A in CARE";
@@ -3781,8 +3797,8 @@ for more information.
   protected
     Integer n=size(A, 1);
     Real G[size(A, 1),size(A, 1)]=B*Modelica.Math.Matrices.solve2(R, transpose(B));
-    Real H[:,:]=[A,-G; -Q,-transpose(A)];
-    Real H_RSF[:,:]=H;
+    Real H[2*size(A, 1),2*size(A, 1)]=[A,-G; -Q,-transpose(A)];
+    Real H_RSF[2*size(A, 1),2*size(A, 1)]=H;
     Real Z[size(H, 1),size(H, 2)];
     Real Z11[size(A, 1),size(A, 2)];
     Real Z21[size(A, 1),size(A, 2)];
@@ -3955,6 +3971,7 @@ X = [2.0, 1.0;
 
   function discreteLyapunov
     "Return solution X of the discrete-time Lyapunov equation A'*X*A + sgn*X = C"
+    extends Modelica.Icons.Function;
     import Modelica.Math.Matrices;
 
     input Real A[:,size(A, 1)] "Square matrix A in A'*X*A + sgn*X = C";
@@ -4122,6 +4139,7 @@ The boolean input \"ATisSchur\" indicates to omit the transformation to Schur in
 
   function discreteSylvester
     "Return solution of the discrete-time Sylvester equation A*X*B + sgn*X = C"
+    extends Modelica.Icons.Function;
     import Modelica.Math.Matrices;
 
     input Real A[:,size(A, 1)] "Square matrix A in A*X*B + sgn*X = C";
@@ -4312,7 +4330,7 @@ The boolean inputs \"AisHess\" and \"BTisSchur\" indicate to omit one or both of
 
   function discreteRiccati
     "Return solution of discrete-time algebraic Riccati equation A'*X*A - X - A'*X*B*inv(R + B'*X*B)*B'*X*A + Q = 0 (dare)"
-
+    extends Modelica.Icons.Function;
     import Modelica.Math.Matrices;
     input Real A[:,size(A, 1)] "Square matrix A in DARE";
     input Real B[size(A, 1),:] "Matrix B in DARE";
@@ -4323,7 +4341,7 @@ The boolean inputs \"AisHess\" and \"BTisSchur\" indicate to omit one or both of
   protected
     Integer n=size(A, 1);
     Real G[size(A, 1),size(A, 1)]=B*Matrices.solve2(R, transpose(B));
-    Real AT[:,:]=transpose(A);
+    Real AT[n,n]=transpose(A);
     Real LU[n,n];
     Integer p[n];
     Real H[2*n,2*n];
@@ -4679,7 +4697,7 @@ to the original matrix are given, such that
   end sort;
 
   function flipLeftRight "Flip the columns of a matrix in left/right direction"
-
+    extends Modelica.Icons.Function;
     input Real A[:,:] "Matrix to be flipped";
     output Real Aflip[size(A, 1),size(A, 2)] "Flipped matrix";
   algorithm
@@ -4725,7 +4743,7 @@ Function <b>flipLeftRight</b> computes from matrix <b>A</b> a matrix <b>A_flr</b
   end flipLeftRight;
 
   function flipUpDown "Flip the rows of a matrix in up/down direction"
-
+    extends Modelica.Icons.Function;
     input Real A[:,:] "Matrix to be flipped";
     output Real Aflip[size(A, 1),size(A, 2)] "Flipped matrix";
   algorithm
@@ -6515,6 +6533,7 @@ INFO    (output) INTEGER
 
     function dgees
       "Computes real Schur form T of  real nonsymmetric matrix A, and, optionally, the matrix of Schur vectors Z as well as the eigenvalues"
+      extends Modelica.Icons.Function;
 
       input Real A[:,size(A,1)] "Square matrix";
       output Real T[size(A, 1), size(A, 2)]=A "Real Schur form with A = Z*T*Z'";
@@ -6685,6 +6704,7 @@ int c_inter_dgees_(char *jobvs, char *sort, integer *n, doublereal *a, integer *
     end dgees;
 
     function dtrsen "Reorder the real Schur factorization of a real matrix"
+      extends Modelica.Icons.Function;
 
       input String job="N" "Specifies the usage of a condition number";
       input String compq="V" "Is \"V\" if Schur vector matrix is to be updated";
@@ -7200,6 +7220,7 @@ int c_inter_dgees_(char *jobvs, char *sort, integer *n, doublereal *a, integer *
 
     function dtrsyl
       "Solve the real Sylvester matrix equation op(A)*X + X*op(B) = scale*C or op(A)*X - X*op(B) = scale*C"
+      extends Modelica.Icons.Function;
 
       input Real A[:,:] "Upper quais-triangular matrix";
       input Real B[:,:] "Upper quais-triangular matrix";
@@ -7374,6 +7395,8 @@ int c_inter_dgees_(char *jobvs, char *sort, integer *n, doublereal *a, integer *
 
     function dhseqr
       "Compute eingenvalues of a matrix H using lapack routine DHSEQR for Hessenberg form matrix"
+      extends Modelica.Icons.Function;
+
       input Real H[:,size(H, 1)] "Matrix H with Hessenberg form";
       input Boolean eigenValuesOnly=true
         "True to compute the eigenvalues. False to compute the Schur form too";
@@ -7498,6 +7521,7 @@ int c_inter_dgees_(char *jobvs, char *sort, integer *n, doublereal *a, integer *
     end dhseqr;
 
     function dlange "Norm of a matrix"
+      extends Modelica.Icons.Function;
 
       input Real A[:,:] "Real matrix A";
       input String norm="1" "specifies the norm, i.e., 1, I, F, M";
@@ -7588,6 +7612,7 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
 
     function dgecon
       "Estimates the reciprocal of the condition number of a general real matrix A"
+      extends Modelica.Icons.Function;
 
       input Real LU_of_A[:,:] "LU factroization of a real matrix A";
       input Boolean inf=false
@@ -7667,6 +7692,7 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
 
     function dgehrd
       "reduces a real general matrix A to upper Hessenberg form H by an orthogonal similarity transformation:  Q' * A * Q = H"
+      extends Modelica.Icons.Function;
 
       input Real A[:,size(A, 2)];
       input Integer ilo=1
@@ -7787,6 +7813,7 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
     end dgehrd;
 
     function dgeqrf "computes a QR factorization without pivoting"
+      extends Modelica.Icons.Function;
 
       input Real A[:,:] "Square or rectangular matrix";
       output Real Aout[size(A, 1),size(A, 2)]=A
@@ -7872,6 +7899,7 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
 
     function dgeevx
       "Compute the eigenvalues and the (real) left and right eigenvectors of matrix A, using lapack routine dgeevx "
+      extends Modelica.Icons.Function;
 
       input Real A[:,size(A, 1)];
       output Real alphaReal[size(A, 1)]
@@ -8261,6 +8289,7 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
     end dgesdd;
 
     function dggev "Compute generalized eigenvalues for a (A,B) system"
+      extends Modelica.Icons.Function;
 
       input Real A[:,size(A, 1)];
       input Real B[size(A, 1),size(A, 1)];
@@ -8428,6 +8457,7 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
 
     function dggevx
       "Compute generalized eigenvalues for a (A,B) system, using lapack routine dggevx"
+      extends Modelica.Icons.Function;
 
       input Real A[:,size(A, 1)];
       input Real B[size(A, 1),size(A, 1)];
@@ -8727,7 +8757,8 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
 "));
     end dggevx;
 
-    function dhgeqz "Compute generalized eigenvalues for a (A,B) system"
+   function dhgeqz "Compute generalized eigenvalues for a (A,B) system"
+   extends Modelica.Icons.Function;
 
       input Real A[:,size(A, 1)];
       input Real B[size(A, 1),size(A, 1)];
@@ -8965,6 +8996,7 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
 
     function dormhr
       "overwrites the general real M-by-N matrix C with Q * C or C * Q or Q' * C or C * Q', where Q is an orthogonal matrix as returne by dgehrd"
+   extends Modelica.Icons.Function;
 
       input Real C[:,:];
       input Real A[:,:];
@@ -9094,6 +9126,7 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
 
     function dormqr
       "overwrites the general real M-by-N matrix C with Q * C or C * Q or Q' * C or C * Q', where Q is an orthogonal matrix of a QR factorization as returned by dgeqrf"
+   extends Modelica.Icons.Function;
 
       input Real C[:,:];
       input Real A[:,:];
@@ -9216,6 +9249,8 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
 
     function dtrevc
       "Compute the right and/or left eigenvectors of a real upper quasi-triangular matrix T"
+      extends Modelica.Icons.Function;
+
       input Real T[:,size(T, 1)] "Upper quasie triangular matrix";
       input String side="R" "Specify which eigenvectors";
       input String howmny="B" "Specify how many eigenvectors";
@@ -9380,8 +9415,8 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
 
     function dpotrf
       "Computes the Cholesky factorization of a real symmetric positive definite matrix A"
-
       extends Modelica.Icons.Function;
+
       input Real A[:, size(A,1)] "Real symmetric positive definite matrix A";
       input Boolean upper=true "True if the upper triangle of A is provided";
 
@@ -9444,6 +9479,7 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
 
     function dtrsm
       "Solve one of the matrix equations  op( A )*X = alpha*B,   or   X*op( A ) = alpha*B, where A is triangular matrix. BLAS routine"
+      extends Modelica.Icons.Function;
 
       input Real A[:,:] "Input matrix A";
       input Real B[:,:] "Input matrix B";
@@ -9552,6 +9588,7 @@ fprintf(fileptr,\"anorm=%f \\n\",*anorm);
 
     function dorghr
       "Generates a real orthogonal matrix Q which is defined as the product of IHI-ILO elementary reflectors of order N, as returned by DGEHRD"
+      extends Modelica.Icons.Function;
 
       input Real A[:,size(A, 1)] "Square matrix with the elementary reflectors";
       input Integer ilo=1
@@ -9985,6 +10022,7 @@ The algorithm is taken from [1] and [2].
 
     function householderReflection
       "Reflect each of the vectors a_i of matrix  A=[a_1, a_2, ..., a_n] on a plane with orthogonal vector u"
+      extends Modelica.Icons.Function;
       import Modelica.Math.Vectors;
 
       input Real A[:,:] "Rectangular matrix";
@@ -10061,6 +10099,7 @@ Householder reflection is widely used in numerical linear algebra, e.g., to perf
 
     function householderSimilarityTransformation
       "Perform the similarity transformation S*A*S of matrix A with symmetric householder matrix S = I - 2u*u'"
+      extends Modelica.Icons.Function;
 
       import Modelica;
       import Modelica.Math.Vectors;
@@ -10071,14 +10110,22 @@ Householder reflection is widely used in numerical linear algebra, e.g., to perf
 
     protected
       Integer na=size(A, 1);
-      Real S[:,:]=-2*matrix(u)*transpose(matrix(u))/(Vectors.length(u)*Vectors.length(u))
-        "Symmetric matrix";
+      Real S[na,na] "Symmetric matrix";
       Integer i;
     algorithm
-      for i in 1:na loop
-        S[i, i] := 1.0 + S[i, i];
-      end for;
-      SAS := S*A*S;
+      if na > 0 then
+         S:=-2*matrix(u)*transpose(matrix(u))/(Vectors.length(u)*Vectors.length(
+          u));
+         for i in 1:na loop
+           S[i, i] := 1.0 + S[i, i];
+         end for;
+         SAS := S*A*S;
+      else
+         SAS :=fill(
+              0.0,
+              0,
+              0);
+      end if;
 
       annotation (Documentation(info="<html>
 <h4>Syntax</h4>
@@ -10137,6 +10184,8 @@ This transformation is widely used for transforming non-symmetric matrices to a 
 
     function toUpperHessenberg
       "Transform a real square matrix A to upper Hessenberg form H by orthogonal similarity transformation:  Q' * A * Q = H"
+      extends Modelica.Icons.Function;
+
       import Modelica.Math.Matrices;
       import Modelica.Math.Matrices.LAPACK;
 
@@ -10216,6 +10265,8 @@ See <a href=\"modelica://Modelica.Math.Matrices.LAPACK.dgehrd\">Matrices.Lapack.
 
     function eigenvaluesHessenberg
       "Compute eigenvalues of an upper Hessenberg form matrix"
+      extends Modelica.Icons.Function;
+
       import Modelica.Math.Matrices.Utilities;
       import Modelica.Math.Matrices.LAPACK;
       input Real H[:,size(H, 1)] "Hessenberg matrix H";
@@ -10293,6 +10344,7 @@ See <a href=\"modelica://Modelica.Math.Matrices.LAPACK.dhseqr\">Matrices.Lapack.
 
     function reorderRSF
       "Reorders a real Schur form to clusters of stable and unstable eigenvalues"
+      extends Modelica.Icons.Function;
 
       import Modelica.Math.Matrices.LAPACK;
 
@@ -10312,7 +10364,7 @@ See <a href=\"modelica://Modelica.Math.Matrices.LAPACK.dhseqr\">Matrices.Lapack.
 
     protected
       Integer n=size(T, 2);
-      Boolean select[:]=fill(false, size(T, 2));
+      Boolean select[size(T, 2)]=fill(false, size(T, 2));
       Integer i;
     algorithm
       if iscontinuous then
@@ -10641,6 +10693,7 @@ Note: A' is a short hand notation of transpose(A):
 "));
 end Matrices;
 
+
 function isEqual "Determine if two Real scalars are numerically identical"
   extends Modelica.Icons.Function;
   input Real s1 "First scalar";
@@ -10683,6 +10736,7 @@ can be provided as third argument of the function. Default is \"eps = 0\".
 </p>
 </HTML>"));
 end isEqual;
+
 
 function sin "Sine"
   extends baseIcon1;
@@ -10763,6 +10817,7 @@ This function returns y = sin(u), with -&infin; &lt; u &lt; &infin;:
 </html>"), Library="ModelicaExternalC");
 end sin;
 
+
 function cos "Cosine"
   extends baseIcon1;
   input SI.Angle u;
@@ -10837,6 +10892,7 @@ This function returns y = cos(u), with -&infin; &lt; u &lt; &infin;:
 </p>
 </html>"), Library="ModelicaExternalC");
 end cos;
+
 
 function tan "Tangent (u shall not be -pi/2, pi/2, 3*pi/2, ...)"
   extends baseIcon2;
@@ -10915,6 +10971,7 @@ This function returns y = tan(u), with -&infin; &lt; u &lt; &infin;
 </p>
 </html>"), Library="ModelicaExternalC");
 end tan;
+
 
 function asin "Inverse sine (-1 <= u <= 1)"
   extends baseIcon2;
@@ -10995,6 +11052,7 @@ This function returns y = asin(u), with -1 &le; u &le; +1:
 </html>"), Library="ModelicaExternalC");
 end asin;
 
+
 function acos "Inverse cosine (-1 <= u <= 1)"
   extends baseIcon2;
   input Real u;
@@ -11070,6 +11128,7 @@ This function returns y = acos(u), with -1 &le; u &le; +1:
 </html>"), Library="ModelicaExternalC");
 end acos;
 
+
 function atan "Inverse tangent"
   extends baseIcon2;
   input Real u;
@@ -11138,6 +11197,7 @@ This function returns y = atan(u), with -&infin; &lt; u &lt; &infin;:
 </p>
 </html>"), Library="ModelicaExternalC");
 end atan;
+
 
 function atan2 "Four quadrant inverse tangent"
   extends baseIcon2;
@@ -11238,6 +11298,7 @@ u1 = sin(y) and u2 = cos(y):
 </HTML>
 "),        Library="ModelicaExternalC");
 end atan2;
+
 
 function atan3
   "Four quadrant inverse tangent (select solution that is closest to given angle y0)"
@@ -11343,6 +11404,7 @@ shall be returned:
 "));
 end atan3;
 
+
 function sinh "Hyperbolic sine"
   extends baseIcon2;
   input Real u;
@@ -11423,6 +11485,7 @@ This function returns y = sinh(u), with -&infin; &lt; u &lt; &infin;:
 </p>
 </html>"), Library="ModelicaExternalC");
 end sinh;
+
 
 function cosh "Hyperbolic cosine"
   extends baseIcon2;
@@ -11505,6 +11568,7 @@ This function returns y = cosh(u), with -&infin; &lt; u &lt; &infin;:
 </html>"), Library="ModelicaExternalC");
 end cosh;
 
+
 function tanh "Hyperbolic tangent"
   extends baseIcon2;
   input Real u;
@@ -11573,6 +11637,7 @@ This function returns y = tanh(u), with -&infin; &lt; u &lt; &infin;:
 </p>
 </html>"), Library="ModelicaExternalC");
 end tanh;
+
 
 function asinh "Inverse of sinh (area hyperbolic sine)"
   extends Modelica.Math.baseIcon2;
@@ -11656,6 +11721,7 @@ asinh(u) (-&infin; &lt; u &lt; &infin;):
 </p>
 </html>"));
 end asinh;
+
 
 function acosh "Inverse of cosh (area hyperbolic cosine)"
   import Modelica.Utilities.Streams.*;
@@ -11751,6 +11817,7 @@ can become close to 1:
 </html>"));
 end acosh;
 
+
 function exp "Exponential, base e"
   extends baseIcon2;
   input Real u;
@@ -11829,6 +11896,7 @@ This function returns y = exp(u), with -&infin; &lt; u &lt; &infin;:
 </p>
 </html>"), Library="ModelicaExternalC");
 end exp;
+
 
 function log "Natural (base e) logarithm (u shall be > 0)"
   extends baseIcon1;
@@ -11911,6 +11979,7 @@ with u &gt; 0:
 </html>"), Library="ModelicaExternalC");
 end log;
 
+
 function log10 "Base 10 logarithm (u shall be > 0)"
   extends baseIcon1;
   input Real u;
@@ -11992,6 +12061,7 @@ with u &gt; 0:
 </html>"), Library="ModelicaExternalC");
 end log10;
 
+
 partial function baseIcon1
   "Basic icon for mathematical function with y-axis on left side"
 
@@ -12034,6 +12104,7 @@ It is expected, that an x-axis is added and a plot of the function.
 </html>"));
 end baseIcon1;
 
+
 partial function baseIcon2
   "Basic icon for mathematical function with y-axis in middle"
 
@@ -12073,6 +12144,7 @@ It is expected, that an x-axis is added and a plot of the function.
 </p>
 </html>"));
 end baseIcon2;
+
 
 function tempInterpol1
   "Temporary function for linear interpolation (will be removed)"
@@ -12130,6 +12202,7 @@ algorithm
 
 </html>"));
 end tempInterpol1;
+
 
 function tempInterpol2
   "Temporary function for vectorized linear interpolation (will be removed)"
@@ -12189,6 +12262,7 @@ algorithm
 
 </html>"));
 end tempInterpol2;
+
 
 annotation (
   Invisible=true,

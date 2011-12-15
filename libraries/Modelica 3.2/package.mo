@@ -2346,8 +2346,8 @@ Incorporation of bug fixes (subversion \"commit\") shall be performed in the fol
      Example:
          <pre>  annotation(version      = \"3.1\",
              versionDate  = \"2009-06-22\",
-             versionBuild = 3,
-             dateModified = \"2009-08-28 07:40:19Z\",
+             versionBuild = 4,
+             dateModified = \"2011-06-28 08:50:00Z\",
              revisionId   = \"$I&#8203;d::                                       $\")</pre>
      The \"revisionId\" field is a bit special though. If written like in the example above it will be automatically
      expanded to:
@@ -2378,6 +2378,135 @@ more of the following changes.
 </ul>
 </html>"));
 end VersionManagement;
+
+class Version_3_2_BugFixes "Version 3.2 with bug fixes (Sept. 4, 2011)"
+  extends Modelica.Icons.ReleaseNotes;
+
+   annotation (Documentation(info="<html>
+
+<p>
+Below the bug fixes are summarized that have been incorporated into the
+maintenance branch of Version 3.2. All these changes are backwards compatible.
+</p>
+
+<p><br>
+The following <b style=\"color:red\">critical errors</b> have been fixed (i.e., errors
+that can lead to wrong simulation results):
+</p>
+<table border=\"1\" cellspacing=0 cellpadding=2 style=\"border-collapse:collapse;\">
+<tr><td colspan=\"2\"><b>Modelica.Magnetic.FundamentalWave.</b></td></tr>
+<tr><td valign=\"top\">&lt;core conductance&gt;</td>
+    <td valign=\"top\"> Corrected bug in calculation of the winding model core conductance.</td></tr>
+
+<tr><td colspan=\"2\"><b>Modelica.Electrical.Machines.Thermal.SynchronousInductionMachines.</b></td></tr>
+<tr><td valign=\"top\">ThermalAmbientSMPM</td>
+    <td valign=\"top\"> Corrected a bug of optional temperature input for PM temperature.</td></tr>
+
+</table>
+
+<p><br>
+The following <b style=\"color:red\">uncritical errors</b> have been fixed (i.e., errors
+that do <b style=\"color:red\">not</b> lead to wrong simulation results, but, e.g.,
+units are wrong or errors in documentation):
+</p>
+
+<table border=\"1\" cellspacing=0 cellpadding=2 style=\"border-collapse:collapse;\">
+<tr><td colspan=\"2\"><b>Modelica.</b></td></tr>
+<tr><td valign=\"top\">&lt;several models&gt; </td>
+    <td valign=\"top\"> <a href=\"http://trac.modelica.org/Modelica/ticket/568\">#568</a>
+                      In Electrical.QuasiStationary, Mechanics.Translational,
+                      Thermal.FluidHeatFlow unsafe equations in the declaration section
+                      (like \"Real s_rel = sa - sb\") have been changed so that the equation
+                      is moved in the equation section and can then no longer be (accidentally)
+                      modified when using the model.</td></tr>
+
+<tr><td colspan=\"2\"><b>Modelica.Blocks.</b></td></tr>
+<tr><td valign=\"top\">PlugToPins</td>
+    <td valign=\"top\"> Corrected icons (removed unused k)</td></tr>
+<tr><td valign=\"top\">Interfaces<br>Math<br>MathInteger</td>
+    <td valign=\"top\"> Replaced non-standard annotation \"realString\" by \"String\".</td></tr>
+
+<tr><td colspan=\"2\"><b>Modelica.Electrical.Digital.</b></td></tr>
+<tr><td valign=\"top\">Registers.DFFREG<br />
+		       Registers.DLATREG<br />
+		       Registers.DLATREGSRH</td>
+    <td valign=\"top\"> <a href=\"http://trac.modelica.org/Modelica/ticket/642\">#642</a> Superfluous self-connects were removed.</td></tr>
+
+<tr><td colspan=\"2\"><b>Modelica.Electrical.Machines.Basic.Continuous.</b></td></tr>
+<tr><td valign=\"top\">PID<br>LimPID</td>
+    <td valign=\"top\"> <a href=\"http://trac.modelica.org/Modelica/ticket/574\">#574</a>
+                      Changed so that they don't treat Modelica.Blocks.Types.Init and
+                      Modelica.Blocks.Types.InitPID as interchangeable.</td></tr>
+
+<tr><td colspan=\"2\"><b>Modelica.Electrical.Machines.</b></td></tr>
+<tr><td valign=\"top\">Interfaces.PartialBasicMachine<br>
+                     &lt;heat ports of loss models&gt;</td>
+    <td valign=\"top\"> <a href=\"http://trac.modelica.org/Modelica/ticket/570\">#570</a>
+                      This model was changed from version 3.1 to 3.2 in not backwards
+                      compatible way by adding a \"friction\" component with a heatPort in 3.2 and
+                      this heatPort is always active. If a user model is baed on
+                      PartialBasicMachine, and MSL is changed from 3.1 to 3.2, then suddenly an
+                      element is added with a heatPort, and this heatPort is not connected.
+                      This gives a singular system during translation. This has been fixed
+                      by making the heatPort of the \"friction\" element optional
+                      with the default that the heatPort is not present</td></tr>
+<tr><td valign=\"top\">BasicMachines.AsynchronousInductionMachines.AIM_SlipRing</td>
+    <td valign=\"top\"> <a href=\"http://trac.modelica.org/Modelica/ticket/642\">#642</a> A superfluous self-connect was removed></td.</tr>
+
+<tr><td colspan=\"2\"><b>Modelica.Electrical.QuasiStationary.</b></td></tr>
+<tr><td valign=\"top\">MultiPhase.Sensors.PowerSensor</td>
+    <td valign=\"top\"> <a href=\"http://trac.modelica.org/Modelica/ticket/642\">#642</a> A superfluous self-connect was removed></td.</tr>
+
+<tr><td colspan=\"2\"><b>Modelica.Math.</b><br />
+		      <b>Modelica.ComplexMath.</b><td></tr>
+<tr><td valign=\"top\">&lt;*&gt;</td>
+    <td valign=\"top\"> <a href=\"http://trac.modelica.org/Modelica/ticket/636\">#636</a> Not all functions extended from <code>Modelica.Icons.Function</code></td></tr>
+
+<tr><td colspan=\"2\"><b>Modelica.Math.Matrices.</b></td></tr>
+<tr><td valign=\"top\"> rcond<br>
+                      discreteRiccati </td>
+    <td valign=\"top\"> The unspecified dimensions in an array in the protected section
+                      replaced by concrete dimensions.</td></tr>
+<tr><td colspan=\"2\"><b>Modelica.Math.Matrices.Utilities.</b></td></tr>
+<tr><td valign=\"top\"> householderSimilarityTransformation</td>
+    <td valign=\"top\"> The unspecified dimensions in an array in the protected section
+                      replaced by concrete dimensions.</td> </tr>
+<tr><td colspan=\"2\"><b>Modelica.Math.Vectors.</b></td></tr>
+<tr><td valign=\"top\"> length </td>
+    <td valign=\"top\"> <a href=\"http://trac.modelica.org/Modelica/ticket/550\">#550</a>
+                      Error in description string corrected.</td></tr>
+
+<tr><td colspan=\"2\"><b>Modelica.Mechanics.Translational.Interfaces.</b></td></tr>
+<tr><td valign=\"top\"> PartialCompliant<br>
+                      PartialCompliantWithRelativeStates
+                       </td>
+    <td valign=\"top\"> <a href=\"http://trac.modelica.org/Modelica/ticket/446\">#446</a>
+                      The type of \"s_rel\" has been changed from Modelica.SIunits.Distance to
+                      Modelica.SIunits.Position in order that also negativ values of s_rel
+                      are possible.</td></tr>
+
+<tr><td colspan=\"2\"><b>Modelica.Medium.</b></td></tr>
+<tr><td valign=\"top\"> &lt;Several medium models&gt;</td>
+    <td valign=\"top\"> Added min/max limits to Temperature and AbsolutePressure types.</td></tr>
+
+<tr><td colspan=\"2\"><b>Modelica.SIunits.</b></td></tr>
+<tr><td valign=\"top\"> &lt;Several fluid types&gt; </td>
+    <td valign=\"top\"> <a href=\"http://trac.modelica.org/Modelica/ticket/487\">#487</a>
+                      Added default min/max/nominal/start values
+                      for pressure, temperature, specific enthalpy, specific entropy
+                      and density should have meaningful min, max, nominal and start,
+                      so that solvers can improve the chances of
+                      convergence when solving nonlinear equations involving iteration variables of
+                      those types. The preferred way to handle this issue is to use Medium-specific
+                      types, by redeclaring the types in Modelica.Media.Interfaces.PartialMedium for
+                      the specific use case, and using those types inside models. However, sometimes
+                      people just use, e.g., SIunits.Temperature. Since this is legal, reasonable
+                      default attributes must be provided to avoid numerical problems due to division
+                      by zero, bad scaling, or grossly out-of-range values. </td></tr>
+</table>
+
+</html>"));
+end Version_3_2_BugFixes;
 
 class Version_3_2 "Version 3.2 (Oct. 25, 2010)"
   extends Modelica.Icons.ReleaseNotes;
@@ -7376,10 +7505,10 @@ end UsersGuide;
 annotation (
 preferredView="info",
 version="3.2",
-versionBuild=5,
+versionBuild=10,
 versionDate="2010-10-25",
-dateModified = "2010-10-25 21:19:49Z",
-revisionId="$Id:: package.mo 4336 2010-10-25 21:24:28Z #$",
+dateModified = "2011-11-22 13:12:00Z",
+revisionId="$Id:: package.mo 4735 2011-11-22 13:36:32Z #$",
 uses(Complex(version="1.0"), ModelicaServices(version="1.1")),
 conversion(
  noneFromVersion="3.1",
@@ -7435,7 +7564,7 @@ that are directly usable (= number of public, non-partial classes).
 <p>
 <b>Licensed by the Modelica Association under the Modelica License 2</b><br>
 Copyright &copy; 1998-2010, ABB, AIT, T.&nbsp;B&ouml;drich, DLR, Dassault Syst&egrave;mes AB, Fraunhofer, A.Haumer, Modelon,
-TU Hamburg-Harburg, Politecnico di Milano.
+TU Hamburg-Harburg, Politecnico di Milano, XRG Simulation.
 </p>
 
 <p>

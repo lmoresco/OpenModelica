@@ -987,15 +987,17 @@ argument):</p>
       final quantity="Density",
       final unit="kg/m3",
       displayUnit="g/cm3",
-      min=0);
+      min=1e-6,
+      max=30e3);
   type RelativeDensity = Real (
       final quantity="RelativeDensity",
       final unit="1",
-      min=0);
+      min=1e-6);
   type SpecificVolume = Real (
       final quantity="SpecificVolume",
       final unit="m3/kg",
-      min=0);
+      min=3e-5,
+      max=1e6);
   type LinearDensity = Real (
       final quantity="LinearDensity",
       final unit="kg/m",
@@ -1027,8 +1029,13 @@ argument):</p>
   type Pressure = Real (
       final quantity="Pressure",
       final unit="Pa",
+      min = -10000e5,
+      max = 10000e5,
+      nominal = 1e5,
+      start = 1e5,
       displayUnit="bar");
-  type AbsolutePressure = Pressure (min=0);
+  type AbsolutePressure = Pressure (min=2000, max = 10000e5);
+  type PressureDifference = Pressure (min = -10000e5, max = 10000e5);
   type BulkModulus = AbsolutePressure;
   type Stress = Real (final unit="Pa");
   type NormalStress = Stress;
@@ -1080,8 +1087,10 @@ argument):</p>
   type ThermodynamicTemperature = Real (
       final quantity="ThermodynamicTemperature",
       final unit="K",
-      min = 0,
+      min = 1,
+      max = 6000,
       start = 288.15,
+      nominal = 300,
       displayUnit="degC")
     "Absolute temperature (use type TemperatureDifference for relative temperatures)"
                                                                                                         annotation(__Dymola_absoluteValue=true);
@@ -1089,7 +1098,12 @@ argument):</p>
   type Temperature = ThermodynamicTemperature;
   type TemperatureDifference = Real (
       final quantity="ThermodynamicTemperature",
-      final unit="K") annotation(__Dymola_absoluteValue=false);
+      final unit="K",
+      min = -2000,
+      max = 2000,
+      nominal = 1,
+      start = 1,
+      displayUnit="K") annotation(__Dymola_absoluteValue=false);
   type Temp_C = SIunits.Conversions.NonSIunits.Temperature_degC;
   type TemperatureSlope = Real (final quantity="TemperatureSlope",
       final unit="K/s");
@@ -1137,14 +1151,16 @@ argument):</p>
              "1");
   type Entropy = Real (final quantity="Entropy", final unit="J/K");
   type EntropyFlowRate = Real (final quantity="EntropyFlowRate", final unit="J/(K.s)");
-  type SpecificEntropy = Real (final quantity="SpecificEntropy", final unit=
-          "J/(kg.K)");
+  type SpecificEntropy = Real (final quantity="SpecificEntropy",
+                               final unit="J/(kg.K)",
+                               nominal = 1000);
   type InternalEnergy = Heat;
   type Enthalpy = Heat;
   type HelmholtzFreeEnergy = Heat;
   type GibbsFreeEnergy = Heat;
-  type SpecificEnergy = Real (final quantity="SpecificEnergy", final unit=
-          "J/kg");
+  type SpecificEnergy = Real (final quantity="SpecificEnergy",
+                              final unit="J/kg",
+                              nominal = 1e6);
   type SpecificInternalEnergy = SpecificEnergy;
   type SpecificEnthalpy = SpecificEnergy;
   type SpecificHelmholtzFreeEnergy = SpecificEnergy;
@@ -1350,11 +1366,7 @@ argument):</p>
   type RefractiveIndex = Real (final quantity="RefractiveIndex", final unit="1");
 
   // Acoustics (chapter 7 of ISO 31-1992)
-  type StaticPressure = Real (
-      final quantity="Pressure",
-      final unit="Pa",
-      displayUnit="bar",
-      min=0);
+  type StaticPressure = Pressure;
   type SoundPressure = StaticPressure;
   type SoundParticleDisplacement = Real (final quantity="Length", final unit=
           "m");
@@ -1407,8 +1419,7 @@ argument):</p>
       min=0);
   type MolarMass = Real (final quantity="MolarMass", final unit="kg/mol",min=0);
   type MolarVolume = Real (final quantity="MolarVolume", final unit="m3/mol", min=0);
-  type MolarInternalEnergy = Real (final quantity="MolarInternalEnergy", final unit=
-             "J/mol");
+  type MolarInternalEnergy = Real (final quantity="MolarEnergy", final unit="J/mol", nominal=2e4);
   type MolarHeatCapacity = Real (final quantity="MolarHeatCapacity", final unit=
          "J/(mol.K)");
   type MolarEntropy = Real (final quantity="MolarEntropy", final unit=
@@ -1421,20 +1432,22 @@ argument):</p>
         final unit="m-3");
   type MassConcentration = Real (final quantity="MassConcentration", final unit=
          "kg/m3");
-  type MassFraction = Real (final quantity="MassFraction", final unit="1");
+  type MassFraction = Real (final quantity="MassFraction", final unit="1",
+                            min=0, max=1,
+                            nominal = 0.01,
+                            start = 0.2);
   type Concentration = Real (final quantity="Concentration", final unit=
           "mol/m3");
   type VolumeFraction = Real (final quantity="VolumeFraction", final unit="1");
-  type MoleFraction = Real (final quantity="MoleFraction", final unit="1");
+  type MoleFraction = Real (final quantity="MoleFraction", final unit="1",
+                            min = 0, max = 1,
+                            nominal = 0.01,
+                            start = 0.2);
   type ChemicalPotential = Real (final quantity="ChemicalPotential", final unit=
          "J/mol");
   type AbsoluteActivity = Real (final quantity="AbsoluteActivity", final unit=
           "1");
-  type PartialPressure = Real (
-      final quantity="Pressure",
-      final unit="Pa",
-      displayUnit="bar",
-      min=0);
+  type PartialPressure = Pressure;
   type Fugacity = Real (final quantity="Fugacity", final unit="Pa");
   type StandardAbsoluteActivity = Real (final quantity=
           "StandardAbsoluteActivity", final unit="1");
@@ -1872,6 +1885,7 @@ Copyright &copy; 1998-2010, Modelica Association and DLR.
 </p>
 </html>", revisions="<html>
 <ul>
+<li><i>May 25, 2011</i> by Stefan Wischhusen:<br/>Added molar units for energy and enthalpy.</li>
 <li><i>Jan. 27, 2010</i> by Christian Kral:<br/>Added complex units.</li>
 <li><i>Dec. 14, 2005</i> by <a href=\"http://www.robotic.dlr.de/Martin.Otter/\">Martin Otter</a>:<br/>Add User&#39;;s Guide and removed &quot;min&quot; values for Resistance and Conductance.</li>
 <li><i>October 21, 2002</i> by <a href=\"http://www.robotic.dlr.de/Martin.Otter/\">Martin Otter</a> and <a href=\"http://www.robotic.dlr.de/Christian.Schweiger/\">Christian Schweiger</a>:<br/>Added new package <b>Conversions</b>. Corrected typo <i>Wavelenght</i>.</li>
