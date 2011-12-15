@@ -43327,13 +43327,13 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Integer "));
         txt = ScalarVariableTypeStartAttribute(txt, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeFixedAttribute(txt, a_isFixed);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeMinAttribute(txt, a_minValue);
+        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeMaxAttribute(txt, a_maxValue);
+        txt = ScalarVariableTypeIntegerMinAttribute(txt, a_minValue);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = ScalarVariableTypeIntegerMaxAttribute(txt, a_maxValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeUnitAttribute(txt, a_unit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
@@ -43354,13 +43354,13 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Real "));
         txt = ScalarVariableTypeStartAttribute(txt, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeFixedAttribute(txt, a_isFixed);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeMinAttribute(txt, a_minValue);
+        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeMaxAttribute(txt, a_maxValue);
+        txt = ScalarVariableTypeRealMinAttribute(txt, a_minValue);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = ScalarVariableTypeRealMaxAttribute(txt, a_maxValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeUnitAttribute(txt, a_unit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
@@ -43381,9 +43381,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Boolean "));
         txt = ScalarVariableTypeStartAttribute(txt, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeFixedAttribute(txt, a_isFixed);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeUnitAttribute(txt, a_unit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
@@ -43404,9 +43404,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<String "));
         txt = ScalarVariableTypeStartAttribute(txt, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeFixedAttribute(txt, a_isFixed);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeUnitAttribute(txt, a_unit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
@@ -43427,9 +43427,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Integer "));
         txt = ScalarVariableTypeStartAttribute(txt, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeFixedAttribute(txt, a_isFixed);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeUnitAttribute(txt, a_unit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
@@ -43500,6 +43500,17 @@ algorithm
   end matchcontinue;
 end ScalarVariableTypeStartAttribute;
 
+public function ScalarVariableTypeFixedAttribute
+  input Tpl.Text txt;
+  input Boolean a_isFixed;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING("fixed=\""));
+  out_txt := Tpl.writeStr(out_txt, Tpl.booleanString(a_isFixed));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\""));
+end ScalarVariableTypeFixedAttribute;
+
 public function ScalarVariableTypeNominalAttribute
   input Tpl.Text in_txt;
   input Option<DAE.Exp> in_a_nominalValue;
@@ -43531,17 +43542,6 @@ algorithm
       then txt;
   end matchcontinue;
 end ScalarVariableTypeNominalAttribute;
-
-public function ScalarVariableTypeFixedAttribute
-  input Tpl.Text txt;
-  input Boolean a_isFixed;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING("fixed=\""));
-  out_txt := Tpl.writeStr(out_txt, Tpl.booleanString(a_isFixed));
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\""));
-end ScalarVariableTypeFixedAttribute;
 
 protected function fun_958
   input Tpl.Text in_txt;
@@ -43619,7 +43619,7 @@ algorithm
   out_txt := Tpl.writeText(txt, l_displayUnit__);
 end ScalarVariableTypeDisplayUnitAttribute;
 
-public function ScalarVariableTypeMinAttribute
+public function ScalarVariableTypeIntegerMinAttribute
   input Tpl.Text in_txt;
   input Option<DAE.Exp> in_a_minValue;
 
@@ -43641,15 +43641,17 @@ algorithm
 
     case ( txt,
            NONE() )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("min=\"-2147483648\""));
       then txt;
 
     case ( txt,
            _ )
       then txt;
   end matchcontinue;
-end ScalarVariableTypeMinAttribute;
+end ScalarVariableTypeIntegerMinAttribute;
 
-public function ScalarVariableTypeMaxAttribute
+public function ScalarVariableTypeIntegerMaxAttribute
   input Tpl.Text in_txt;
   input Option<DAE.Exp> in_a_maxValue;
 
@@ -43671,15 +43673,81 @@ algorithm
 
     case ( txt,
            NONE() )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("max=\"2147483647\""));
       then txt;
 
     case ( txt,
            _ )
       then txt;
   end matchcontinue;
-end ScalarVariableTypeMaxAttribute;
+end ScalarVariableTypeIntegerMaxAttribute;
 
-protected function fun_964
+public function ScalarVariableTypeRealMinAttribute
+  input Tpl.Text in_txt;
+  input Option<DAE.Exp> in_a_minValue;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_minValue)
+    local
+      Tpl.Text txt;
+      DAE.Exp i_exp;
+
+    case ( txt,
+           SOME(i_exp) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("min=\""));
+        txt = initValXml(txt, i_exp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
+      then txt;
+
+    case ( txt,
+           NONE() )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("min=\"-1.7976931348623157E+308\""));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end ScalarVariableTypeRealMinAttribute;
+
+public function ScalarVariableTypeRealMaxAttribute
+  input Tpl.Text in_txt;
+  input Option<DAE.Exp> in_a_maxValue;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_maxValue)
+    local
+      Tpl.Text txt;
+      DAE.Exp i_exp;
+
+    case ( txt,
+           SOME(i_exp) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("max=\""));
+        txt = initValXml(txt, i_exp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
+      then txt;
+
+    case ( txt,
+           NONE() )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("max=\"1.7976931348623157E+308\""));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end ScalarVariableTypeRealMaxAttribute;
+
+protected function fun_966
   input Tpl.Text in_txt;
   input Integer in_mArg;
 
@@ -43708,7 +43776,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \"Array of temporaries\");"));
       then txt;
   end matchcontinue;
-end fun_964;
+end fun_966;
 
 public function addRootsTempArray
   input Tpl.Text txt;
@@ -43719,7 +43787,7 @@ protected
 algorithm
   System.tmpTickResetIndex(0, 2);
   ret_0 := System.tmpTickIndex(1);
-  out_txt := fun_964(txt, ret_0);
+  out_txt := fun_966(txt, ret_0);
 end addRootsTempArray;
 
 end CodegenC;
