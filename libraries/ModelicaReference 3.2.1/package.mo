@@ -6275,5 +6275,5 @@ It is based on the
     </tr>
 </table>
 </html>"),
-  uses(Modelica(version="3.2")));
+  uses(Modelica(version="3.2")),version="3.2.1");
 end ModelicaReference;
