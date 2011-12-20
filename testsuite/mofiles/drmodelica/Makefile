@@ -22,7 +22,6 @@ ArrayFieldSlice.mo \
 ArrayIndex.mo \
 ArrayMult.mo \
 ArrayReduce.mo \
-ArraysInitIllegal.mo \
 ArraysInitLegal.mo \
 AssertTest.mo \
 AssertTest1.mo \
@@ -66,7 +65,6 @@ MoonLanding.mo \
 MRFcall.mo \
 MultFuncCall.mo \
 OneArgBaseFunction.mo \
-PointSum.mo \
 PolynomialEvaluator1.mo \
 PolynomialEvaluator2.mo \
 PolynomialEvaluator3.mo \

@@ -1,22 +1,24 @@
 // name:     ArrayModification2
-// keywords: array,modification
-// status:   correct
-// origstatus:   correct,incomplete model
+// keywords: array, modification
+// status:   incorrect
 // 
-// Simple equation modification of array elements.
+// Subscripted modifiers are not allowed.
 // 
 
 class ArrayModification2
   class A
     Real x[3];
   end A;
-  A a(x[2] = 1.0, x[3] = 2.0);
+  
+  extends A(x[2] = 1.0);
 end ArrayModification2;
 
 // Result:
-// class ArrayModification2
-//   Real a.x[1];
-//   Real a.x[2] = 1.0;
-//   Real a.x[3] = 2.0;
-// end ArrayModification2;
+// Error processing file: ArrayModification2.mo
+// [ArrayModification2.mo:13:13-13:23:writable] Error: Subscripted modifier is illegal.
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult
