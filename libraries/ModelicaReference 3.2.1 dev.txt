@@ -1,2 +1,0 @@
-- Added version annotation
-- Removed uses annotation
