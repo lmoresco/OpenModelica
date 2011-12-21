@@ -17631,31 +17631,99 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {"",""}
+// {"<html>
+// <table border=1 cellspacing=0 cellpadding=2>
+// <tr><th><b>Types.ResolveInFrameA.</b></th><th><b>Meaning</b></th></tr>
+// <tr><td valign=\"top\">world</td>
+//     <td valign=\"top\">Resolve vector in world frame</td></tr>
+// 
+// <tr><td valign=\"top\">frame_a</td>
+//     <td valign=\"top\">Resolve vector in frame_a</td></tr>
+// 
+// <tr><td valign=\"top\">frame_resolve</td>
+//     <td valign=\"top\">Resolve vector in frame_resolve (frame_resolve must be connected)</td></tr>
+// </table>
+// </html>",""}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"",""}
+// {"<html>
+// <table border=1 cellspacing=0 cellpadding=2>
+// <tr><th><b>Types.ResolveInFrameB.</b></th><th><b>Meaning</b></th></tr>
+// <tr><td valign=\"top\">world</td>
+//     <td valign=\"top\">Resolve vector in world frame</td></tr>
+// 
+// <tr><td valign=\"top\">frame_b</td>
+//     <td valign=\"top\">Resolve vector in frame_b</td></tr>
+// 
+// <tr><td valign=\"top\">frame_resolve</td>
+//     <td valign=\"top\">Resolve vector in frame_resolve (frame_resolve must be connected)</td></tr>
+// </table>
+// </html>",""}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"",""}
+// {"<html>
+// <table border=1 cellspacing=0 cellpadding=2>
+// <tr><th><b>Types.ResolveInFrameAB.</b></th><th><b>Meaning</b></th></tr>
+// <tr><td valign=\"top\">world</td>
+//     <td valign=\"top\">Resolve vector in world frame</td></tr>
+// 
+// <tr><td valign=\"top\">frame_a</td>
+//     <td valign=\"top\">Resolve vector in frame_a</td></tr>
+// 
+// <tr><td valign=\"top\">frame_b</td>
+//     <td valign=\"top\">Resolve vector in frame_b</td></tr>
+// 
+// <tr><td valign=\"top\">frame_resolve</td>
+//     <td valign=\"top\">Resolve vector in frame_resolve (frame_resolve must be connected)</td></tr>
+// </table>
+// </html>",""}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"",""}
+// {"<html>
+// <table border=1 cellspacing=0 cellpadding=2>
+// <tr><th><b>Types.RotationTypes.</b></th><th><b>Meaning</b></th></tr>
+// <tr><td valign=\"top\">RotationAxis</td>
+//     <td valign=\"top\">frame_b is defined by rotating the coordinate system along
+//         an axis fixed in frame_a and with a fixed angle.</td></tr>
+// 
+// <tr><td valign=\"top\">TwoAxesVectors</td>
+//     <td valign=\"top\">frame_b is defined by resolving two vectors of frame_b in frame_a.</td></tr>
+// 
+// <tr><td valign=\"top\">PlanarRotationSequence</td>
+//     <td valign=\"top\">frame_b is defined by rotating the coordinate system along
+//         3 consecutive axes vectors with fixed rotation angles
+//         (e.g. Cardan or Euler angle sequence rotation).</td></tr>
+// </table>
+// </html>",""}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"",""}
+// {"<html>
+// <table border=1 cellspacing=0 cellpadding=2>
+// <tr><th><b>Types.GravityTypes.</b></th><th><b>Meaning</b></th></tr>
+// <tr><td valign=\"top\">NoGravity</td>
+//     <td valign=\"top\">No gravity field</td></tr>
+// 
+// <tr><td valign=\"top\">UniformGravity</td>
+//     <td valign=\"top\">Gravity field is described by a vector of constant gravity acceleration</td></tr>
+// 
+// <tr><td valign=\"top\">PointGravity</td>
+//     <td valign=\"top\">Central gravity field. The gravity acceleration vector is directed to
+//         the field center and the gravity is proportional to 1/r^2, where
+//         r is the distance to the field center.</td></tr>
+// </table>
+// </html>",""}
 // ""
 // {}
 // ""
@@ -20195,7 +20263,27 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {"",""}
+// {"<html>
+// <p><b>Code Table:</b></p>
+// 
+// <table border=1 cellspacing=0 cellpadding=2>
+//   <tr><td valign=\"top\"><b>Logic value</b></td>
+//       <td valign=\"top\"><b>Meaning</b></td>
+//   </tr>
+// 
+//   <tr><td valign=\"top\">'U'</td> <td valign=\"top\">Uninitialized</td></tr>
+//   <tr><td valign=\"top\">'X'</td> <td valign=\"top\">Forcing Unknown</td></tr>
+//   <tr><td valign=\"top\">'0'</td> <td valign=\"top\">Forcing 0</td></tr>
+//   <tr><td valign=\"top\">'1'</td> <td valign=\"top\">Forcing 1</td></tr>
+//   <tr><td valign=\"top\">'Z'</td> <td valign=\"top\">High Impedance</td></tr>
+//   <tr><td valign=\"top\">'W'</td> <td valign=\"top\">Weak Unknown</td></tr>
+//   <tr><td valign=\"top\">'L'</td> <td valign=\"top\">Weak 0</td></tr>
+//   <tr><td valign=\"top\">'H'</td> <td valign=\"top\">Weak 1</td></tr>
+//   <tr><td valign=\"top\">'-'</td> <td valign=\"top\">Don't care</td></tr>
+// </table>
+// 
+// 
+// </html>",""}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -21731,31 +21819,51 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {"",""}
+// {"<html>
+// 
+// </html>",""}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"",""}
+// {"<html>
+// 
+// </html>",""}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"",""}
+// {"<html>
+// 
+// </html>",""}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"",""}
+// {"<html>
+// <p>
+// This initialization type is identical to Types.Init and has just one
+// additional option <b>DoNotUse_InitialIntegratorState</b>. This option
+// is introduced in order that the default initialization for the
+// Continuous.PID and Continuous.LimPID blocks are backward
+// compatible. In Modelica 2.2, the integrators have been initialized
+// with their given states where as the D-part has not been initialized.
+// The option \"DoNotUse_InitialIntegratorState\" leads to this
+// initialization definition.
+// </p>
+// 
+// </html>",""}
 // ""
 // {}
 // ""
 // {}
 // ""
-// {"",""}
+// {"<html>
+// 
+// </html>",""}
 // ""
 // {}
 // ""
