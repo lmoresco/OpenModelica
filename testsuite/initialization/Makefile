@@ -1,7 +1,10 @@
-TEST = ../rtest -v
+TEST = ../rtest -v +simCodeTarget=c
 
 TESTFILES = \
 _forest.mos \
+_scaling1.mos \
+_scaling2.mos \
+_nominal.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

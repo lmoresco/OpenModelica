@@ -4,8 +4,9 @@
 // cflags:
 // teardown_command: rm forest* output.log
 // 
-//  Case for initialization of forest model
+//  case for initialization of forest model
 //
+
 loadFile("_forest1.mo");
 simulate(forest);
 readFile("output.log");
