@@ -256,6 +256,7 @@ EquationIf2.mo \
 EquationIf3.mo \
 EquationIf4.mo \
 ErrorExternalAlgorithm.mo \
+ErrorExternalModel.mo \
 ErrorMultipleClasses.mo \
 EventFunctions.mo \
 Exp.mo \
