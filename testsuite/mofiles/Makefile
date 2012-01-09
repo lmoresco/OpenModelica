@@ -557,6 +557,7 @@ Sinh.mo \
 Sin.mo \
 Skew.mo \
 SmallLinsys.mo \
+Splice.mo \
 Sqrt.mo \
 StaticAssertSuccess.mo \
 StringBoolean.mo \
