@@ -42,7 +42,7 @@ CORBALIB=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313
 #endif
 
 LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml_g $(LIBSOCKET) $(CORBALIBS) -lsqlite3 -llpsolve55 -lregex -llapack-mingw -ltmglib-mingw -lblas-mingw -lf2c
-PLTPKGFLAGS = -static-libgcc -L../../build/lib/omc -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32 -lRpcrt4
+PLTPKGFLAGS = -static-libgcc -L../../build/lib/omc -luuid -lole32 -lws2_32 -lRpcrt4
 
 PROG = omcd.exe
 # There is now debug in OMDev-mingw
