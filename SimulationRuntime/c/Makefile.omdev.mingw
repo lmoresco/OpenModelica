@@ -17,15 +17,11 @@ CFLAGS = -O3 -falign-functions -msse2 -mfpmath=sse
 
 LIBMAKEFILE = Makefile.omdev.mingw
 INTERACTIVELIBS = 
-LIBSENDDATA = libsendData.a
 CONFIG_H=$(top_builddir)/Compiler/runtime/config.h
 LIBF2C=simulation/libf2c/libf2c.a
 EXTERNALCMAKEFILE=Makefile.omdev.mingw 
 
 include Makefile.common
-
-libsendData.a : sendData/sendData.cpp sendData/sendData.h sendData/sendData.pro
-	$(MAKE) -C sendData -f Makefile.Release.mingw
 
 omdevinstall:
 	cp omdev_qtdeps/*.a ${builddir_lib}

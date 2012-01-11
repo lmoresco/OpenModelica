@@ -52,5 +52,5 @@ RMLCFLAGS = -Wr,-ftrace,$(RMLC_INCLUDE_ALL_DIRS)
 MAKETARGET = Makefile.omdev.mingw
 include $(srcdir)/Makefile.compiler_subdirs.common
 
-$(PROG): $(SRCO) $(SUBDIRS) ../../build/lib/omc/libsendData.a
+$(PROG): $(SRCO) $(SUBDIRS)
 	g++ -Wl,--stack,7340032,--large-address-aware -pg -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi -liconv
