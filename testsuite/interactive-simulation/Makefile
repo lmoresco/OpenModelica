@@ -1,5 +1,5 @@
 # makefile for interactive simulation
-TEST = ../rtest -v
+TEST = ../rtest -v +simCodeTarget=c
 PATH := ./:${PATH}
 
 TESTFILES = testCompileInteractive.mos

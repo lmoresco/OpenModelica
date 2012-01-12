@@ -10,14 +10,19 @@ val(x,{0.0,0.5,1.0});
 // true
 // record SimulationResult
 //     resultFile = "NonLinSysFailed_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'NonLinSysFailed', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
-//     messages = "Error solving nonlinear system residualFunc2 at time 0
-// Error solving nonlinear system residualFunc2 at time 0
-// Error solving nonlinear system residualFunc2 at time 0
-// Error solving nonlinear system residualFunc2 at time 0.002
-// Error solving nonlinear system residualFunc2 at time 0.002
-// Error in Simulation. Solver exit with error.
+// simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'NonLinSysFailed', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+// messages = "warning | Error solving nonlinear system  at time 0
 // 
+// warning | Error solving nonlinear system  at time 0
+// 
+// warning | Error solving nonlinear system  at time 0
+// 
+// warning | Error solving nonlinear system  at time 0.002
+// 
+// warning | Error solving nonlinear system  at time 0.002
+// 
+// info | model terminate | Simulation terminated at time 0.002
+//
 // "
 // end SimulationResult;
 // {1.57063878666939,NaN,NaN}

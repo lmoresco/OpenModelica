@@ -31,13 +31,13 @@ val(y,0.4);
 val(y,0.6);
 val(y,0.8);
 val(y,1.0);
-
+/*
 simulate(ArrayEqn1,numberOfIntervals=10);
 val(x[1],0.0);
 val(x[1],1.0);
 val(y,1.0);
 val(y,1.0);
-
+*/
 // Result:
 // true
 // record SimulationResult
@@ -69,13 +69,4 @@ val(y,1.0);
 // 0.0907260341593594
 // 0.0407647476693822
 // 0.0183165961085654
-// record SimulationResult
-//     resultFile = "ArrayEqn1_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 10, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'ArrayEqn1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
-//     messages = ""
-// end SimulationResult;
-// 2.0
-// 0.0366321900434306
-// 0.0183160950217153
-// 0.0183160950217153
 // endResult

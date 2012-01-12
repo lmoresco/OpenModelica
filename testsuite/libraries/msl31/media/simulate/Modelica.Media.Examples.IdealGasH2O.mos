@@ -19,11 +19,11 @@ simulate(Modelica.Media.Examples.IdealGasH2O);
 //     resultFile = "Modelica.Media.Examples.IdealGasH2O_res.mat",
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.IdealGasH2O', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = " DASSL--  NEQ (=I1) .LE. 0
-//       In above message,  I1 =         0
-// | error | DDASRT: The code has encountered trouble from which it cannot recover.
-// 
-// Error in Simulation. Solver exit with error.
-// 
+//      In above message,  I1 =         0
+// warning | DDASRT: The code has encountered trouble from which it cannot recover.
+// info    | DASRT can't continue. time = 0.002000
+// info    | model terminate | Simulation terminated at time 0.002
+//
 // "
 // end SimulationResult;
 // endResult

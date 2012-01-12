@@ -1,4 +1,4 @@
-TEST = ../rtest -v +simCodeTarget=c
+TEST = ../rtest -v 
 
 TESTFILES = \
 _forest.mos \
