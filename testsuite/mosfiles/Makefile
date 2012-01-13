@@ -89,6 +89,7 @@ Pendulum.mos \
 PolynomialEvaluatorA.mos PolynomialEvaluatorB.mos \
 PolynomialEvaluator1.mos PolynomialEvaluator2.mos PolynomialEvaluator3.mos \
 PreAndAliasedVar.mos \
+PreMatrix.mos \
 Random.mos \
 RedeclarePackage.mos \
 Reductions.mos \
