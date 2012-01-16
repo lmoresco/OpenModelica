@@ -32,4 +32,4 @@ clean:
 	$(RM) -rf *.o *.a SampleClient/client*
 
 install: libinteractive.a
-	cp libinteractive.a $(top_builddir)/build/lib/omc2/
+	cp libinteractive.a $(top_builddir)/build/lib/omc/
