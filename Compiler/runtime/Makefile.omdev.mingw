@@ -31,7 +31,7 @@ SHELL	= /bin/sh
 CC	= gcc 
 CXX = g++
 IDL	= $(OMDEV)/bin/mico/idl
-CFLAGS	+= -I$(RMLINCLUDE) -I../../ -I../../c_runtime -I../../c_runtime/meta -I../../c_runtime/meta/gc -I../ $(CORBAINCL)
+CFLAGS	+= -I$(RMLINCLUDE) -I -I$(top_builddir) -I$(top_builddir)/SimulationRuntime/c -I$(top_builddir)/SimulationRuntime/c/simulation/results -I$(top_builddir)/SimulationRuntime/c/util -I$(top_builddir)/SimulationRuntime/c/meta -I$(top_builddir)/SimulationRuntime/c/meta/gc -I../ $(CORBAINCL)
 CXXFLAGS = $(CFLAGS)
 
 include Makefile.common
