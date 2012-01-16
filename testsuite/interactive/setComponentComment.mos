@@ -29,7 +29,7 @@ updateComponent(wrong, Modelica.Electrical.Analog.Basic.EMF, model1, comment="Ne
 // 
 // "
 // ""
-// {{Modelica.Electrical.Analog.Basic.EMF,emf1,"", "public", false, false, false, false, "unspecified", "none", "unspecified",{}}}
+// {{Modelica.Electrical.Analog.Basic.EMF,emf1,"", "public", false, false, false, false, "unspecified", "unspecified", "none", "unspecified",{}}}
 // ""
 // Ok
 // ""
@@ -39,7 +39,7 @@ updateComponent(wrong, Modelica.Electrical.Analog.Basic.EMF, model1, comment="Ne
 // 
 // "
 // ""
-// {{Modelica.Electrical.Analog.Basic.EMF,emf1,"An EMF Component", "public", false, false, false, false, "unspecified", "none", "unspecified",{}}}
+// {{Modelica.Electrical.Analog.Basic.EMF,emf1,"An EMF Component", "public", false, false, false, false, "unspecified", "unspecified", "none", "unspecified",{}}}
 // ""
 // true
 // ""
@@ -49,7 +49,7 @@ updateComponent(wrong, Modelica.Electrical.Analog.Basic.EMF, model1, comment="Ne
 // 
 // "
 // ""
-// {{Modelica.Electrical.Analog.Basic.EMF,emf1,"An EMF Component", "public", false, false, false, false, "unspecified", "none", "unspecified",{}}}
+// {{Modelica.Electrical.Analog.Basic.EMF,emf1,"An EMF Component", "public", false, false, false, false, "unspecified", "unspecified", "none", "unspecified",{}}}
 // ""
 // true
 // ""
@@ -59,7 +59,7 @@ updateComponent(wrong, Modelica.Electrical.Analog.Basic.EMF, model1, comment="Ne
 // 
 // "
 // ""
-// {{Modelica.Electrical.Analog.Basic.EMF,emf1,"New Comment", "public", false, false, false, false, "unspecified", "none", "unspecified",{}}}
+// {{Modelica.Electrical.Analog.Basic.EMF,emf1,"New Comment", "public", false, false, false, false, "unspecified", "unspecified", "none", "unspecified",{}}}
 // ""
 // false
 // ""

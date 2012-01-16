@@ -12,16 +12,16 @@ setAnnotationVersion("2.x");
 
 createModel(A);                                                                            getErrorString();
 addComponent(x,Real,A);                                                                    getErrorString();
-setComponentProperties(A ,x,{false,false,false,false},{""},{true,true},{""});              getErrorString();
+setComponentProperties(A ,x,{false,false,false,false},{""},{""},{true,true},{""});              getErrorString();
 getComponents(A);                                                                          getErrorString();
 // test the setting of "stream"
-setComponentProperties(A ,x,{true,false,true,true,true},{""},{true,true},{"input"});       getErrorString();
+setComponentProperties(A ,x,{true,false,true,true,true},{""},{""},{true,true},{"input"});       getErrorString();
 getComponents(A);                                                                          getErrorString();
-setComponentProperties(A ,x,{true,true,true,true},{"parameter"},{true,true},{"input"});    getErrorString();
+setComponentProperties(A ,x,{true,true,true,true},{""},{"parameter"},{true,true},{"input"});    getErrorString();
 getComponents(A);                                                                          getErrorString();
-setComponentProperties(A ,x,{true,true,false,true},{"constant"},{false,true},{"output"});  getErrorString();
+setComponentProperties(A ,x,{true,true,false,true},{""},{"constant"},{false,true},{"output"});  getErrorString();
 getComponents(A);                                                                          getErrorString();
-setComponentProperties(A ,x,{true,false,false,false},{"discrete"},{true,false},{""});      getErrorString();
+setComponentProperties(A ,x,{true,false,false,false},{""},{"discrete"},{true,false},{""});      getErrorString();
 getComponents(A);                                                                          getErrorString();
 updateComponent(x,Integer,A);                                                              getErrorString();
 getComponents(A);                                                                          getErrorString();
@@ -38,7 +38,7 @@ setClassComment(A,"this is the class A");                                       
 getClassInformation(A);                                                                    getErrorString();
 getComponents(A);                                                                          getErrorString();
 addComponent(y,Real,A);                                                                    getErrorString();
-setComponentProperties(A ,y,{true,false,true,false,false},{""},{false,false},{""});        getErrorString();
+setComponentProperties(A ,y,{true,false,true,false,false},{""},{""},{false,false},{""});        getErrorString();
 list(A);                                                                                   getErrorString();
 
 // clear all
@@ -51,16 +51,16 @@ setAnnotationVersion("3.x");
 
 createModel(A);                                                                            getErrorString();
 addComponent(x,Real,A);                                                                    getErrorString();
-setComponentProperties(A ,x,{false,false,false,false},{""},{true,true},{""});              getErrorString();
+setComponentProperties(A ,x,{false,false,false,false},{""},{""},{true,true},{""});              getErrorString();
 getComponents(A);                                                                          getErrorString();
 // test the setting of "stream"
-setComponentProperties(A ,x,{true,false,true,true,true},{""},{true,true},{"input"});       getErrorString();
+setComponentProperties(A ,x,{true,false,true,true,true},{""},{""},{true,true},{"input"});       getErrorString();
 getComponents(A);                                                                          getErrorString();
-setComponentProperties(A ,x,{true,true,true,true},{"parameter"},{true,true},{"input"});    getErrorString();
+setComponentProperties(A ,x,{true,true,true,true},{""},{"parameter"},{true,true},{"input"});    getErrorString();
 getComponents(A);                                                                          getErrorString();
-setComponentProperties(A ,x,{true,true,false,true},{"constant"},{false,true},{"output"});  getErrorString();
+setComponentProperties(A ,x,{true,true,false,true},{""},{"constant"},{false,true},{"output"});  getErrorString();
 getComponents(A);                                                                          getErrorString();
-setComponentProperties(A ,x,{true,false,false,false},{"discrete"},{true,false},{""});      getErrorString();
+setComponentProperties(A ,x,{true,false,false,false},{""},{"discrete"},{true,false},{""});      getErrorString();
 getComponents(A);                                                                          getErrorString();
 updateComponent(x,Integer,A);                                                              getErrorString();
 getComponents(A);                                                                          getErrorString();
@@ -77,7 +77,7 @@ setClassComment(A,"this is the class A");                                       
 getClassInformation(A);                                                                    getErrorString();
 getComponents(A);                                                                          getErrorString();
 addComponent(y,Real,A);                                                                    getErrorString();
-setComponentProperties(A ,y,{true,false,true,false,false},{""},{false,false},{""});        getErrorString();
+setComponentProperties(A ,y,{true,false,true,false,false},{""},{""},{false,false},{""});        getErrorString();
 list(A);                                                                                   getErrorString();
 
 
@@ -90,27 +90,27 @@ list(A);                                                                        
 // ""
 // Ok
 // ""
-// {{Real,x,"", "public", false, false, false, false, "unspecified", "innerouter", "unspecified",{}}}
+// {{Real,x,"", "public", false, false, false, false, "unspecified", "unspecified", "innerouter", "unspecified",{}}}
 // ""
 // Ok
 // ""
-// {{Real,x,"", "protected", true, false, true, true, "unspecified", "innerouter", "input",{}}}
+// {{Real,x,"", "protected", true, false, true, true, "unspecified", "unspecified", "innerouter", "input",{}}}
 // ""
 // Ok
 // ""
-// {{Real,x,"", "protected", true, true, false, true, "parameter", "innerouter", "input",{}}}
+// {{Real,x,"", "protected", true, true, false, true, "unspecified", "parameter", "innerouter", "input",{}}}
 // ""
 // Ok
 // ""
-// {{Real,x,"", "public", true, true, false, true, "constant", "outer", "output",{}}}
+// {{Real,x,"", "public", true, true, false, true, "unspecified", "constant", "outer", "output",{}}}
 // ""
 // Ok
 // ""
-// {{Real,x,"", "public", true, false, false, false, "discrete", "inner", "unspecified",{}}}
+// {{Real,x,"", "public", true, false, false, false, "unspecified", "discrete", "inner", "unspecified",{}}}
 // ""
 // true
 // ""
-// {{Integer,x,"", "public", true, false, false, false, "discrete", "inner", "unspecified",{}}}
+// {{Integer,x,"", "public", true, false, false, false, "unspecified", "discrete", "inner", "unspecified",{}}}
 // ""
 // Ok
 // ""
@@ -146,7 +146,7 @@ list(A);                                                                        
 // ""
 // {"model","this is the class A","",{false,false,false},{"writable",0,0,0,0},{}}
 // ""
-// {{Integer,x,"comment for x", "public", true, false, false, false, "discrete", "inner", "unspecified",{}}}
+// {{Integer,x,"comment for x", "public", true, false, false, false, "unspecified", "discrete", "inner", "unspecified",{}}}
 // ""
 // true
 // ""
@@ -170,27 +170,27 @@ list(A);                                                                        
 // ""
 // Ok
 // ""
-// {{Real,x,"", "public", false, false, false, false, "unspecified", "innerouter", "unspecified",{}}}
+// {{Real,x,"", "public", false, false, false, false, "unspecified", "unspecified", "innerouter", "unspecified",{}}}
 // ""
 // Ok
 // ""
-// {{Real,x,"", "protected", true, false, true, true, "unspecified", "innerouter", "input",{}}}
+// {{Real,x,"", "protected", true, false, true, true, "unspecified", "unspecified", "innerouter", "input",{}}}
 // ""
 // Ok
 // ""
-// {{Real,x,"", "protected", true, true, false, true, "parameter", "innerouter", "input",{}}}
+// {{Real,x,"", "protected", true, true, false, true, "unspecified", "parameter", "innerouter", "input",{}}}
 // ""
 // Ok
 // ""
-// {{Real,x,"", "public", true, true, false, true, "constant", "outer", "output",{}}}
+// {{Real,x,"", "public", true, true, false, true, "unspecified", "constant", "outer", "output",{}}}
 // ""
 // Ok
 // ""
-// {{Real,x,"", "public", true, false, false, false, "discrete", "inner", "unspecified",{}}}
+// {{Real,x,"", "public", true, false, false, false, "unspecified", "discrete", "inner", "unspecified",{}}}
 // ""
 // true
 // ""
-// {{Integer,x,"", "public", true, false, false, false, "discrete", "inner", "unspecified",{}}}
+// {{Integer,x,"", "public", true, false, false, false, "unspecified", "discrete", "inner", "unspecified",{}}}
 // ""
 // Ok
 // ""
@@ -226,7 +226,7 @@ list(A);                                                                        
 // ""
 // {"model","this is the class A","",{false,false,false},{"writable",0,0,0,0},{}}
 // ""
-// {{Integer,x,"comment for x", "public", true, false, false, false, "discrete", "inner", "unspecified",{}}}
+// {{Integer,x,"comment for x", "public", true, false, false, false, "unspecified", "discrete", "inner", "unspecified",{}}}
 // ""
 // true
 // ""

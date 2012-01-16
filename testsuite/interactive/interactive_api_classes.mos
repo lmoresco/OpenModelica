@@ -120,7 +120,7 @@ getClassNames(A);
 // ""
 // 2
 // 1
-// {{Real,z,"", "public", false, false, false, false, "unspecified", "none", "unspecified",{}},{Integer,x,"", "public", false, false, false, false, "unspecified", "none", "unspecified",{}}}
+// {{Real,z,"", "public", false, false, false, false, "unspecified", "unspecified", "none", "unspecified",{}},{Integer,x,"", "public", false, false, false, false, "unspecified", "unspecified", "none", "unspecified",{}}}
 // Ok
 // Ok
 // {a.n[1],b.z[2], ""}
@@ -164,7 +164,7 @@ getClassNames(A);
 // ""
 // 2
 // 1
-// {{Real,z,"", "public", false, false, false, false, "unspecified", "none", "unspecified",{}},{Integer,x,"", "public", false, false, false, false, "unspecified", "none", "unspecified",{}}}
+// {{Real,z,"", "public", false, false, false, false, "unspecified", "unspecified", "none", "unspecified",{}},{Integer,x,"", "public", false, false, false, false, "unspecified", "unspecified", "none", "unspecified",{}}}
 // Ok
 // Ok
 // {a.n[1],b.z[2], ""}
