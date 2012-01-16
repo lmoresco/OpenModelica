@@ -450,12 +450,12 @@ algorithm
                                     "#endif\n",
                                     "\n",
                                     "/* forward the main in the simulation runtime */\n",
-                                    "extern int _main_SimulationRuntime(int argc, char**argv, _X_DATA *data);\n",
+                                    "extern int _main_SimulationRuntime(int argc, char**argv, DATA *data);\n",
                                     "\n",
                                     "/* call the simulation runtime main from our main! */\n",
                                     "int main(int argc, char**argv)\n",
                                     "{\n",
-                                    "  _X_DATA data;\n",
+                                    "  DATA data;\n",
                                     "  initializeDataStruc_X_(&data);\n",
                                     "  return _main_SimulationRuntime(argc, argv, &data);\n",
                                     "}\n"
@@ -767,7 +767,7 @@ public function functionInitializeDataStruc
   output Tpl.Text out_txt;
 algorithm
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                   "void initializeDataStruc_X_(_X_DATA *data)\n",
+                                   "void initializeDataStruc_X_(DATA *data)\n",
                                    "{\n",
                                    "  ASSERT(data,\"Error while initialize Data\");\n"
                                }, true));
@@ -797,7 +797,7 @@ algorithm
            a_allEquations )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "void initializeDataStruc_X_2(_X_DATA *data)\n",
+                                    "void initializeDataStruc_X_2(DATA *data)\n",
                                     "{\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
@@ -2614,7 +2614,7 @@ algorithm
         l_ctorCalls = Tpl.popIter(l_ctorCalls);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "/* Has to be performed after _init.xml file has been read */\n",
-                                    "void callExternalObjectConstructors(_X_DATA *data)\n",
+                                    "void callExternalObjectConstructors(DATA *data)\n",
                                     "{\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
@@ -2695,7 +2695,7 @@ algorithm
            SimCode.EXTOBJINFO(vars = i_extObjInfo_vars) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "void callExternalObjectDestructors(_X_DATA *data)\n",
+                                    "void callExternalObjectDestructors(DATA *data)\n",
                                     "{\n",
                                     "  if (data->simulationInfo.extObjs) {\n"
                                 }, true));
@@ -2775,7 +2775,7 @@ algorithm
            SimCode.MODELINFO(vars = SimCode.SIMVARS(inputVars = i_vars_inputVars)) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "int input_function(_X_DATA *data)\n",
+                                    "int input_function(DATA *data)\n",
                                     "{\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
@@ -2849,7 +2849,7 @@ algorithm
            SimCode.MODELINFO(vars = SimCode.SIMVARS(outputVars = i_vars_outputVars)) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "int output_function(_X_DATA *data)\n",
+                                    "int output_function(DATA *data)\n",
                                     "{\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
@@ -2905,7 +2905,7 @@ algorithm
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                    "/* Initializes the raw time events of the simulation using the now\n",
                                    "   calcualted parameters. */\n",
-                                   "void function_sampleInit(_X_DATA *data)\n",
+                                   "void function_sampleInit(DATA *data)\n",
                                    "{\n"
                                }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
@@ -2980,7 +2980,7 @@ algorithm
   out_txt := Tpl.writeText(txt, l_tmp);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "int function_updateSample(_X_DATA *data)\n",
+                                       "int function_updateSample(DATA *data)\n",
                                        "{\n",
                                        "  state mem_state;\n"
                                    }, true));
@@ -3111,7 +3111,7 @@ algorithm
   out_txt := Tpl.writeText(txt, l_tmp);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "int initial_function(_X_DATA *data)\n",
+                                       "int initial_function(DATA *data)\n",
                                        "{\n"
                                    }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
@@ -3231,7 +3231,7 @@ algorithm
   (l_body, l_varDecls) := lm_97(l_body, a_residualEquations, l_varDecls);
   l_body := Tpl.popIter(l_body);
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                   "int initial_residual(_X_DATA *data, double $P$_lambda, double* initialResiduals)\n",
+                                   "int initial_residual(DATA *data, double $P$_lambda, double* initialResiduals)\n",
                                    "{\n",
                                    "  int i = 0;\n",
                                    "  state mem_state;\n"
@@ -3442,7 +3442,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "(int *n, double* xloc, double* res, int* iflag, void* userdata)\n",
                                     "{\n",
-                                    "  _X_DATA *data = ((_X_DATA*)userdata);\n",
+                                    "  DATA *data = ((DATA*)userdata);\n",
                                     "  state mem_state;\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
@@ -3635,7 +3635,7 @@ algorithm
   out_txt := Tpl.writeText(txt, l_tmp);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "int bound_parameters(_X_DATA *data)\n",
+                                       "int bound_parameters(DATA *data)\n",
                                        "{\n",
                                        "  state mem_state;\n"
                                    }, true));
@@ -3750,7 +3750,7 @@ algorithm
   l_varDecls := Tpl.emptyTxt;
   (l_storePart, l_varDecls) := fun_109(Tpl.emptyTxt, a_delayed, l_varDecls);
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                   "int function_storeDelayed(_X_DATA *data)\n",
+                                   "int function_storeDelayed(DATA *data)\n",
                                    "{\n",
                                    "  state mem_state;\n"
                                }, true));
@@ -4300,7 +4300,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("static void functionODE_system"));
   out_txt := Tpl.writeStr(out_txt, intString(a_n));
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "(_X_DATA *data,int omc_thread_number)\n",
+                                       "(DATA *data,int omc_thread_number)\n",
                                        "{\n"
                                    }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
@@ -4576,7 +4576,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "// we need to access the inline define that we compiled the simulation with\n",
                                     "// from the simulation runtime.\n",
-                                    "int functionODE_inline(_X_DATA* data, double stepSize)\n",
+                                    "int functionODE_inline(DATA* data, double stepSize)\n",
                                     "{\n",
                                     "  state mem_state;\n"
                                 }, true));
@@ -4608,7 +4608,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "// we need to access the inline define that we compiled the simulation with\n",
                                     "// from the simulation runtime.\n",
-                                    "int functionODE_inline(_X_DATA* data, double stepSize)\n",
+                                    "int functionODE_inline(DATA* data, double stepSize)\n",
                                     "{\n",
                                     "  state mem_state;\n"
                                 }, true));
@@ -4638,7 +4638,7 @@ algorithm
            _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "int functionODE_inline(_X_DATA* data, double stepSize)\n",
+                                    "int functionODE_inline(DATA* data, double stepSize)\n",
                                     "{\n",
                                     "  return 0;\n",
                                     "}"
@@ -4686,7 +4686,7 @@ algorithm
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("static void (*functionODE_systems["));
   out_txt := Tpl.writeText(out_txt, l_nFuncs);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE("])(_X_DATA *, int) = {\n"));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE("])(DATA *, int) = {\n"));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
   out_txt := Tpl.writeText(out_txt, l_funcNames);
   out_txt := Tpl.softNewLine(out_txt);
@@ -4706,7 +4706,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
                                        "}\n",
                                        "\n",
-                                       "int functionODE(_X_DATA *data)\n",
+                                       "int functionODE(DATA *data)\n",
                                        "{\n",
                                        "  int id,th_id;\n",
                                        "  state mem_state; /* We need to have separate memory pools for separate systems... */\n",
@@ -4803,7 +4803,7 @@ algorithm
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
                                        "/* for continuous time variables */\n",
-                                       "int functionAlgebraics(_X_DATA *data)\n",
+                                       "int functionAlgebraics(DATA *data)\n",
                                        "{\n",
                                        "  state mem_state;\n"
                                    }, true));
@@ -4889,7 +4889,7 @@ algorithm
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
                                        "/* for continuous time variables */\n",
-                                       "int functionAliasEquations(_X_DATA *data)\n",
+                                       "int functionAliasEquations(DATA *data)\n",
                                        "{\n",
                                        "  state mem_state;\n"
                                    }, true));
@@ -5021,7 +5021,7 @@ algorithm
   out_txt := Tpl.writeText(txt, l_tmp);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "int functionDAE(_X_DATA *data, int *needToIterate)\n",
+                                       "int functionDAE(DATA *data, int *needToIterate)\n",
                                        "{\n",
                                        "  state mem_state;\n"
                                    }, true));
@@ -5058,7 +5058,7 @@ algorithm
   l_varDecls := Tpl.emptyTxt;
   (l_zeroCrossingsCode, l_varDecls) := zeroCrossingsTpl2(Tpl.emptyTxt, a_zeroCrossings, l_varDecls);
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                   "int function_onlyZeroCrossings(_X_DATA *data, double *gout,double *t)\n",
+                                   "int function_onlyZeroCrossings(DATA *data, double *gout,double *t)\n",
                                    "{\n",
                                    "  state mem_state;\n"
                                }, true));
@@ -5183,7 +5183,7 @@ algorithm
   l_changediscreteVars := lm_141(l_changediscreteVars, a_discreteModelVars);
   l_changediscreteVars := Tpl.popIter(l_changediscreteVars);
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                   "int checkForDiscreteChanges(_X_DATA *data)\n",
+                                   "int checkForDiscreteChanges(DATA *data)\n",
                                    "{\n",
                                    "  int needToIterate = 0;\n",
                                    "\n"
@@ -5354,7 +5354,7 @@ algorithm
   l_algAndEqAssertsPart := Tpl.popIter(l_algAndEqAssertsPart);
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                    "/* for continuous time variables */\n",
-                                   "int checkForAsserts(_X_DATA *data)\n",
+                                   "int checkForAsserts(DATA *data)\n",
                                    "{\n"
                                }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
@@ -5966,7 +5966,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("int functionJac"));
   out_txt := Tpl.writeStr(out_txt, a_matrixName);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "_0(_X_DATA* data, double *seed, double *out_col)\n",
+                                       "_0(DATA* data, double *seed, double *out_col)\n",
                                        "{\n",
                                        "  state mem_state;\n"
                                    }, true));
@@ -6231,7 +6231,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("int functionJac"));
         txt = Tpl.writeStr(txt, a_matrixname);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "(_X_DATA* data, double* jac){\n",
+                                    "(DATA* data, double* jac){\n",
                                     "   return 0;\n",
                                     "}"
                                 }, false));
@@ -6264,7 +6264,7 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("int functionJac"));
         txt = Tpl.writeStr(txt, a_matrixname);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("(_X_DATA* data, double* jac){\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("(DATA* data, double* jac){\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(3));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("double seed["));
         txt = Tpl.writeText(txt, l_index__);
@@ -6965,7 +6965,7 @@ algorithm
                                         "void eqFunction_"
                                     }, false));
         a_eqs = Tpl.writeText(a_eqs, l_ix);
-        a_eqs = Tpl.writeTok(a_eqs, Tpl.ST_LINE("(_X_DATA *data, _OMC_SEED_HACK) {\n"));
+        a_eqs = Tpl.writeTok(a_eqs, Tpl.ST_LINE("(DATA *data, _OMC_SEED_HACK) {\n"));
         a_eqs = Tpl.pushBlock(a_eqs, Tpl.BT_INDENT(2));
         a_eqs = Tpl.writeText(a_eqs, l_varD);
         a_eqs = Tpl.softNewLine(a_eqs);
