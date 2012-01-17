@@ -64,6 +64,7 @@ OFILES = $(MISC) $(POW) $(CX) $(DCX) $(REAL) $(DBL) $(INT) \
 all: f2c.h signal1.h sysdep1.h libf2c.a
 
 libf2c.a: $(OFILES)
+	rm -f libf2c.a
 	ar r libf2c.a $?
 	-ranlib libf2c.a
 
@@ -209,4 +210,4 @@ check:
 	cmp xsum0.out xsum1.out && mv xsum1.out xsum.out || diff xsum[01].out
 
 makefile.u: makefile.u.in
-	(cd ../../; ./config.status)
+	(cd ../../../../; ./config.status)
