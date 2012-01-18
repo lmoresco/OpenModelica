@@ -324,5 +324,5 @@ end Test;
 //   c7 = Complex.'-'.subtract(Complex.'+'(Complex.'*'.multiply(Complex.'*'.multiply(Complex.'/'(c6,c5),Complex.'^'(c4,c3)),Complex.'constructor'.fromReal(1.0,0.0)),c2),c1);
 // end Test;
 // [OperatorOverloadComplex.mo:169:4-169:21:writable] Error: Function argument im was not given by the function call, and does not have a default value.
-//
+// 
 // endResult
