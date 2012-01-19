@@ -4,7 +4,7 @@ function myExtFunction
   input String str;
   input Real t := 0.0;
   output String out;
-  external "C" annotation(Library = "ModelicaUtilities.myExtFunction.c");
+  external "C" annotation(Library = {"ModelicaUtilities.myExtFunction.c","ModelicaExternalC"});
 end myExtFunction;
 
   String p;
