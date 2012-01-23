@@ -25,6 +25,12 @@ if ($?) {
   exit 2;
 }
 
+# Windows (MinGW) prints 3 digits exponent ( vs *nix 2) by default 
+# and perl prints them as mistmatches if there are other actuall mistmatches. 
+# makes actuall testsuite mistmatches harder to find
+# print only 2 exponent digits
+$ENV{'PRINTF_EXPONENT_DIGITS'} = 2;
+
 $successes=0;
 $total=0;
 $setbaseline=0;
