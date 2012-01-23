@@ -901,8 +901,8 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   parameter Boolean tank1.heatTransfer.use_k = tank1.use_HeatTransfer \"= true to use k value for thermal isolation\";
 //   parameter Real tank1.heatTransfer.k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
 //   parameter Real tank1.heatTransfer.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
-//   input Real tank1.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
-//   input Real tank1.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   input Real tank1.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = tank1.medium.state.p \"Absolute pressure of medium\";
+//   input Real tank1.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = tank1.medium.state.T \"Temperature of medium\";
 //   input Real tank1.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = tank1.crossArea + 2.0 * (sqrt(3.14159265358979 * tank1.crossArea) * tank1.level) \"Heat transfer areas\";
 //   output Real tank1.heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real tank1.heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
@@ -1062,8 +1062,8 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 //   parameter Boolean tank2.heatTransfer.use_k = tank2.use_HeatTransfer \"= true to use k value for thermal isolation\";
 //   parameter Real tank2.heatTransfer.k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
 //   parameter Real tank2.heatTransfer.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
-//   input Real tank2.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
-//   input Real tank2.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   input Real tank2.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = tank2.medium.state.p \"Absolute pressure of medium\";
+//   input Real tank2.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = tank2.medium.state.T \"Temperature of medium\";
 //   input Real tank2.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = tank2.crossArea + 2.0 * (sqrt(3.14159265358979 * tank2.crossArea) * tank2.level) \"Heat transfer areas\";
 //   output Real tank2.heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real tank2.heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
@@ -1421,8 +1421,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 // of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
 //   assert(tank1.medium.p >= 0.0,\"Pressure (= \" + String(tank1.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
 // (Temperature = \" + String(tank1.medium.T,0,true,6) + \" K)\");
-//   tank1.heatTransfer.states[1].p = tank1.medium.state.p;
-//   tank1.heatTransfer.states[1].T = tank1.medium.state.T;
 //   tank1.heatTransfer.Ts[1] = tank1.heatTransfer.heatPorts[1].T;
 //   tank1.heatTransfer.Q_flows[1] = tank1.heatTransfer.heatPorts[1].Q_flow;
 //   tank1.V = tank1.crossArea * tank1.level;
@@ -1519,8 +1517,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 // of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
 //   assert(tank2.medium.p >= 0.0,\"Pressure (= \" + String(tank2.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
 // (Temperature = \" + String(tank2.medium.T,0,true,6) + \" K)\");
-//   tank2.heatTransfer.states[1].p = tank2.medium.state.p;
-//   tank2.heatTransfer.states[1].T = tank2.medium.state.T;
 //   tank2.heatTransfer.Ts[1] = tank2.heatTransfer.heatPorts[1].T;
 //   tank2.heatTransfer.Q_flows[1] = tank2.heatTransfer.heatPorts[1].Q_flow;
 //   tank2.V = tank2.crossArea * tank2.level;

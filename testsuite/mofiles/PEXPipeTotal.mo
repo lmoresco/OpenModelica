@@ -980,22 +980,7 @@ end Toneco;
 model Toneco_PEXPipe
   extends Toneco.PEXPipe;
 end Toneco_PEXPipe;
-// function Modelica.Thermal.FluidHeatFlow.Media.Medium "Automatically generated record constructor for Modelica.Thermal.FluidHeatFlow.Media.Medium"
-// input Real(quantity="Density", unit="kg/m3", displayUnit="g/cm3", min=0.0) rho = 1.0;
-// input Real(quantity="SpecificHeatCapacity", unit="J/(kg.K)") cp = 1.0;
-// input Real(quantity="SpecificHeatCapacity", unit="J/(kg.K)") cv = 1.0;
-// input Real(quantity="ThermalConductivity", unit="W/(m.K)") lamda = 1.0;
-// input Real(quantity="KinematicViscosity", unit="m2/s", min=0.0) nue = 1.0;
-// output Medium res;
-// end Modelica.Thermal.FluidHeatFlow.Media.Medium;
-// 
-// function Modelica.SIunits.Conversions.from_degC
-// input Real Celsius(quantity = "ThermodynamicTemperature", unit = "degC") "Celsius value";
-// output Real Kelvin(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Kelvin value";
-// algorithm
-//   Kelvin := Celsius - -273.15;
-// end Modelica.SIunits.Conversions.from_degC;
-// 
+ 
 // Result:
 // function Modelica.Math.asin
 //   input Real u;
@@ -1046,20 +1031,20 @@ end Toneco_PEXPipe;
 //   Real Q_friction(quantity = "Power", unit = "W");
 //   protected parameter Real k(fixed = false);
 //   parameter Real h_g(quantity = "Length", unit = "m") = 0.0 "geodetic height (heigth difference from flowPort_a to flowPort_b)";
-//   parameter Real flowPort_a.medium.rho(quantity = "Density", unit = "kg/m3", displayUnit = "g/cm3", min = 0.0) = 1 "density";
-//   parameter Real flowPort_a.medium.cp(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1 "specific heat capacity at constant pressure";
-//   parameter Real flowPort_a.medium.cv(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1 "specific heat capacity at constant volume";
-//   parameter Real flowPort_a.medium.lamda(quantity = "ThermalConductivity", unit = "W/(m.K)") = 1 "thermal conductivity";
-//   parameter Real flowPort_a.medium.nue(quantity = "KinematicViscosity", unit = "m2/s", min = 0.0) = 1 "kinematic viscosity";
+//   parameter Real flowPort_a.medium.rho(quantity = "Density", unit = "kg/m3", displayUnit = "g/cm3", min = 0.0) = medium.rho "density";
+//   parameter Real flowPort_a.medium.cp(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = medium.cp "specific heat capacity at constant pressure";
+//   parameter Real flowPort_a.medium.cv(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = medium.cv "specific heat capacity at constant volume";
+//   parameter Real flowPort_a.medium.lamda(quantity = "ThermalConductivity", unit = "W/(m.K)") = medium.lamda "thermal conductivity";
+//   parameter Real flowPort_a.medium.nue(quantity = "KinematicViscosity", unit = "m2/s", min = 0.0) = medium.nue "kinematic viscosity";
 //   Real flowPort_a.p(quantity = "Pressure", unit = "Pa", displayUnit = "bar");
 //   Real flowPort_a.m_flow(quantity = "MassFlowRate", unit = "kg/s");
 //   Real flowPort_a.h(quantity = "SpecificEnergy", unit = "J/kg");
 //   Real flowPort_a.H_flow(quantity = "EnthalpyFlowRate", unit = "W");
-//   parameter Real flowPort_b.medium.rho(quantity = "Density", unit = "kg/m3", displayUnit = "g/cm3", min = 0.0) = 1 "density";
-//   parameter Real flowPort_b.medium.cp(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1 "specific heat capacity at constant pressure";
-//   parameter Real flowPort_b.medium.cv(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1 "specific heat capacity at constant volume";
-//   parameter Real flowPort_b.medium.lamda(quantity = "ThermalConductivity", unit = "W/(m.K)") = 1 "thermal conductivity";
-//   parameter Real flowPort_b.medium.nue(quantity = "KinematicViscosity", unit = "m2/s", min = 0.0) = 1 "kinematic viscosity";
+//   parameter Real flowPort_b.medium.rho(quantity = "Density", unit = "kg/m3", displayUnit = "g/cm3", min = 0.0) = medium.rho "density";
+//   parameter Real flowPort_b.medium.cp(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = medium.cp "specific heat capacity at constant pressure";
+//   parameter Real flowPort_b.medium.cv(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = medium.cv "specific heat capacity at constant volume";
+//   parameter Real flowPort_b.medium.lamda(quantity = "ThermalConductivity", unit = "W/(m.K)") = medium.lamda "thermal conductivity";
+//   parameter Real flowPort_b.medium.nue(quantity = "KinematicViscosity", unit = "m2/s", min = 0.0) = medium.nue "kinematic viscosity";
 //   Real flowPort_b.p(quantity = "Pressure", unit = "Pa", displayUnit = "bar");
 //   Real flowPort_b.m_flow(quantity = "MassFlowRate", unit = "kg/s");
 //   Real flowPort_b.h(quantity = "SpecificEnergy", unit = "J/kg");

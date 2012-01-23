@@ -2177,11 +2177,11 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutl
 //   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) heatTransfer.system.massDynamics = heatTransfer.system.energyDynamics \"Default formulation of mass balances\";
 //   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) heatTransfer.system.substanceDynamics = heatTransfer.system.massDynamics \"Default formulation of substance balances\";
 //   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) heatTransfer.system.traceDynamics = heatTransfer.system.massDynamics \"Default formulation of trace substance balances\";
-//   input Integer heatTransfer.states[1].phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
-//   input Real heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   input Real heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
-//   input Real heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
-//   input Real heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
+//   input Integer heatTransfer.states[1].phase(min = 0, max = 2) = medium.state.phase \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
+//   input Real heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = medium.state.h \"specific enthalpy\";
+//   input Real heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = medium.state.d \"density\";
+//   input Real heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = medium.state.T \"temperature\";
+//   input Real heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = medium.state.p \"pressure\";
 //   input Real heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = crossArea + 2.0 * (sqrt(3.14159265358979 * crossArea) * level) \"Heat transfer areas\";
 //   output Real heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
@@ -2245,11 +2245,6 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutl
 // of medium \" + \"WaterIF97\" + \" is not in the range 0..1\");
 //   assert(medium.p >= 0.0,\"Pressure (= \" + String(medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"WaterIF97\" + \"\\\" is negative
 // (Temperature = \" + String(medium.T,0,true,6) + \" K)\");
-//   heatTransfer.states[1].phase = medium.state.phase;
-//   heatTransfer.states[1].h = medium.state.h;
-//   heatTransfer.states[1].d = medium.state.d;
-//   heatTransfer.states[1].T = medium.state.T;
-//   heatTransfer.states[1].p = medium.state.p;
 //   heatTransfer.Ts[1] = heatTransfer.heatPorts[1].T;
 //   heatTransfer.Q_flows[1] = heatTransfer.heatPorts[1].Q_flow + heatTransfer.k * (heatTransfer.surfaceAreas[1] * (heatTransfer.T_ambient - heatTransfer.heatPorts[1].T));
 //   InnerTankTop[1].m_flow_negative = pre(InnerTankTop[1].m_flow_negative) and not InnerTankTop[1].port.p > InnerTankTop[1].p_ambient or InnerTankTop[1].port.m_flow < -1e-06;

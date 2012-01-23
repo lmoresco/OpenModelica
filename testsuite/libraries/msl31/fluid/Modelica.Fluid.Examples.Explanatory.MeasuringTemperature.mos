@@ -2875,12 +2875,12 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   parameter Boolean openTankCold2.heatTransfer.use_k = openTankCold2.use_HeatTransfer \"= true to use k value for thermal isolation\";
 //   parameter Real openTankCold2.heatTransfer.k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
 //   parameter Real openTankCold2.heatTransfer.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
-//   input Integer openTankCold2.heatTransfer.states[1].phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
-//   input Real openTankCold2.heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   input Real openTankCold2.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
-//   input Real openTankCold2.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
-//   input Real openTankCold2.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
-//   input Real openTankCold2.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = openTankCold2.crossArea + 2.0 * (sqrt(3.141592653589793 * openTankCold2.crossArea) * openTankCold2.level) \"Heat transfer areas\";
+//   input Integer openTankCold2.heatTransfer.states[1].phase(min = 0, max = 2) = openTankCold2.medium.state.phase \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
+//   input Real openTankCold2.heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = openTankCold2.medium.state.h \"specific enthalpy\";
+//   input Real openTankCold2.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = openTankCold2.medium.state.d \"density\";
+//   input Real openTankCold2.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = openTankCold2.medium.state.T \"temperature\";
+//   input Real openTankCold2.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = openTankCold2.medium.state.p \"pressure\";
+//   input Real openTankCold2.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = openTankCold2.crossArea + 2.0 * (sqrt(3.14159265358979 * openTankCold2.crossArea) * openTankCold2.level) \"Heat transfer areas\";
 //   output Real openTankCold2.heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real openTankCold2.heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real openTankCold2.heatTransfer.heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
@@ -2963,12 +2963,12 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   parameter Boolean openTankCold1.heatTransfer.use_k = openTankCold1.use_HeatTransfer \"= true to use k value for thermal isolation\";
 //   parameter Real openTankCold1.heatTransfer.k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
 //   parameter Real openTankCold1.heatTransfer.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
-//   input Integer openTankCold1.heatTransfer.states[1].phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
-//   input Real openTankCold1.heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   input Real openTankCold1.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
-//   input Real openTankCold1.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
-//   input Real openTankCold1.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
-//   input Real openTankCold1.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = openTankCold1.crossArea + 2.0 * (sqrt(3.141592653589793 * openTankCold1.crossArea) * openTankCold1.level) \"Heat transfer areas\";
+//   input Integer openTankCold1.heatTransfer.states[1].phase(min = 0, max = 2) = openTankCold1.medium.state.phase \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
+//   input Real openTankCold1.heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = openTankCold1.medium.state.h \"specific enthalpy\";
+//   input Real openTankCold1.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = openTankCold1.medium.state.d \"density\";
+//   input Real openTankCold1.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = openTankCold1.medium.state.T \"temperature\";
+//   input Real openTankCold1.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = openTankCold1.medium.state.p \"pressure\";
+//   input Real openTankCold1.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = openTankCold1.crossArea + 2.0 * (sqrt(3.14159265358979 * openTankCold1.crossArea) * openTankCold1.level) \"Heat transfer areas\";
 //   output Real openTankCold1.heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real openTankCold1.heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real openTankCold1.heatTransfer.heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
@@ -3051,12 +3051,12 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   parameter Boolean openTankHot1.heatTransfer.use_k = openTankHot1.use_HeatTransfer \"= true to use k value for thermal isolation\";
 //   parameter Real openTankHot1.heatTransfer.k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
 //   parameter Real openTankHot1.heatTransfer.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
-//   input Integer openTankHot1.heatTransfer.states[1].phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
-//   input Real openTankHot1.heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   input Real openTankHot1.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
-//   input Real openTankHot1.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
-//   input Real openTankHot1.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
-//   input Real openTankHot1.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = openTankHot1.crossArea + 2.0 * (sqrt(3.141592653589793 * openTankHot1.crossArea) * openTankHot1.level) \"Heat transfer areas\";
+//   input Integer openTankHot1.heatTransfer.states[1].phase(min = 0, max = 2) = openTankHot1.medium.state.phase \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
+//   input Real openTankHot1.heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = openTankHot1.medium.state.h \"specific enthalpy\";
+//   input Real openTankHot1.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = openTankHot1.medium.state.d \"density\";
+//   input Real openTankHot1.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = openTankHot1.medium.state.T \"temperature\";
+//   input Real openTankHot1.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = openTankHot1.medium.state.p \"pressure\";
+//   input Real openTankHot1.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = openTankHot1.crossArea + 2.0 * (sqrt(3.14159265358979 * openTankHot1.crossArea) * openTankHot1.level) \"Heat transfer areas\";
 //   output Real openTankHot1.heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real openTankHot1.heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real openTankHot1.heatTransfer.heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
@@ -3139,12 +3139,12 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   parameter Boolean openTankHot2.heatTransfer.use_k = openTankHot2.use_HeatTransfer \"= true to use k value for thermal isolation\";
 //   parameter Real openTankHot2.heatTransfer.k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
 //   parameter Real openTankHot2.heatTransfer.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
-//   input Integer openTankHot2.heatTransfer.states[1].phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
-//   input Real openTankHot2.heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   input Real openTankHot2.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
-//   input Real openTankHot2.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
-//   input Real openTankHot2.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
-//   input Real openTankHot2.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = openTankHot2.crossArea + 2.0 * (sqrt(3.141592653589793 * openTankHot2.crossArea) * openTankHot2.level) \"Heat transfer areas\";
+//   input Integer openTankHot2.heatTransfer.states[1].phase(min = 0, max = 2) = openTankHot2.medium.state.phase \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
+//   input Real openTankHot2.heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = openTankHot2.medium.state.h \"specific enthalpy\";
+//   input Real openTankHot2.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = openTankHot2.medium.state.d \"density\";
+//   input Real openTankHot2.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = openTankHot2.medium.state.T \"temperature\";
+//   input Real openTankHot2.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = openTankHot2.medium.state.p \"pressure\";
+//   input Real openTankHot2.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = openTankHot2.crossArea + 2.0 * (sqrt(3.14159265358979 * openTankHot2.crossArea) * openTankHot2.level) \"Heat transfer areas\";
 //   output Real openTankHot2.heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real openTankHot2.heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real openTankHot2.heatTransfer.heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
@@ -3310,12 +3310,12 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   parameter Boolean openTankCold3.heatTransfer.use_k = openTankCold3.use_HeatTransfer \"= true to use k value for thermal isolation\";
 //   parameter Real openTankCold3.heatTransfer.k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
 //   parameter Real openTankCold3.heatTransfer.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
-//   input Integer openTankCold3.heatTransfer.states[1].phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
-//   input Real openTankCold3.heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   input Real openTankCold3.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
-//   input Real openTankCold3.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
-//   input Real openTankCold3.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
-//   input Real openTankCold3.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = openTankCold3.crossArea + 2.0 * (sqrt(3.141592653589793 * openTankCold3.crossArea) * openTankCold3.level) \"Heat transfer areas\";
+//   input Integer openTankCold3.heatTransfer.states[1].phase(min = 0, max = 2) = openTankCold3.medium.state.phase \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
+//   input Real openTankCold3.heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = openTankCold3.medium.state.h \"specific enthalpy\";
+//   input Real openTankCold3.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = openTankCold3.medium.state.d \"density\";
+//   input Real openTankCold3.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = openTankCold3.medium.state.T \"temperature\";
+//   input Real openTankCold3.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = openTankCold3.medium.state.p \"pressure\";
+//   input Real openTankCold3.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = openTankCold3.crossArea + 2.0 * (sqrt(3.14159265358979 * openTankCold3.crossArea) * openTankCold3.level) \"Heat transfer areas\";
 //   output Real openTankCold3.heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real openTankCold3.heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real openTankCold3.heatTransfer.heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
@@ -3398,12 +3398,12 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   parameter Boolean openTankHot3.heatTransfer.use_k = openTankHot3.use_HeatTransfer \"= true to use k value for thermal isolation\";
 //   parameter Real openTankHot3.heatTransfer.k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
 //   parameter Real openTankHot3.heatTransfer.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
-//   input Integer openTankHot3.heatTransfer.states[1].phase(min = 0, max = 2) \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
-//   input Real openTankHot3.heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-//   input Real openTankHot3.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"density\";
-//   input Real openTankHot3.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
-//   input Real openTankHot3.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
-//   input Real openTankHot3.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = openTankHot3.crossArea + 2.0 * (sqrt(3.141592653589793 * openTankHot3.crossArea) * openTankHot3.level) \"Heat transfer areas\";
+//   input Integer openTankHot3.heatTransfer.states[1].phase(min = 0, max = 2) = openTankHot3.medium.state.phase \"phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g. interactive use\";
+//   input Real openTankHot3.heatTransfer.states[1].h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = openTankHot3.medium.state.h \"specific enthalpy\";
+//   input Real openTankHot3.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = openTankHot3.medium.state.d \"density\";
+//   input Real openTankHot3.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = openTankHot3.medium.state.T \"temperature\";
+//   input Real openTankHot3.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = openTankHot3.medium.state.p \"pressure\";
+//   input Real openTankHot3.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = openTankHot3.crossArea + 2.0 * (sqrt(3.14159265358979 * openTankHot3.crossArea) * openTankHot3.level) \"Heat transfer areas\";
 //   output Real openTankHot3.heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real openTankHot3.heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real openTankHot3.heatTransfer.heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
@@ -3502,11 +3502,6 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 // of medium \" + \"WaterIF97\" + \" is not in the range 0..1\");
 //   assert(openTankCold2.medium.p >= 0.0,\"Pressure (= \" + String(openTankCold2.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"WaterIF97\" + \"\\\" is negative
 // (Temperature = \" + String(openTankCold2.medium.T,0,true,6) + \" K)\");
-//   openTankCold2.heatTransfer.states[1].phase = openTankCold2.medium.state.phase;
-//   openTankCold2.heatTransfer.states[1].h = openTankCold2.medium.state.h;
-//   openTankCold2.heatTransfer.states[1].d = openTankCold2.medium.state.d;
-//   openTankCold2.heatTransfer.states[1].T = openTankCold2.medium.state.T;
-//   openTankCold2.heatTransfer.states[1].p = openTankCold2.medium.state.p;
 //   openTankCold2.heatTransfer.Ts[1] = openTankCold2.heatTransfer.heatPorts[1].T;
 //   openTankCold2.heatTransfer.Q_flows[1] = openTankCold2.heatTransfer.heatPorts[1].Q_flow;
 //   openTankCold2.V = openTankCold2.crossArea * openTankCold2.level;
@@ -3563,11 +3558,6 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 // of medium \" + \"WaterIF97\" + \" is not in the range 0..1\");
 //   assert(openTankCold1.medium.p >= 0.0,\"Pressure (= \" + String(openTankCold1.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"WaterIF97\" + \"\\\" is negative
 // (Temperature = \" + String(openTankCold1.medium.T,0,true,6) + \" K)\");
-//   openTankCold1.heatTransfer.states[1].phase = openTankCold1.medium.state.phase;
-//   openTankCold1.heatTransfer.states[1].h = openTankCold1.medium.state.h;
-//   openTankCold1.heatTransfer.states[1].d = openTankCold1.medium.state.d;
-//   openTankCold1.heatTransfer.states[1].T = openTankCold1.medium.state.T;
-//   openTankCold1.heatTransfer.states[1].p = openTankCold1.medium.state.p;
 //   openTankCold1.heatTransfer.Ts[1] = openTankCold1.heatTransfer.heatPorts[1].T;
 //   openTankCold1.heatTransfer.Q_flows[1] = openTankCold1.heatTransfer.heatPorts[1].Q_flow;
 //   openTankCold1.V = openTankCold1.crossArea * openTankCold1.level;
@@ -3624,11 +3614,6 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 // of medium \" + \"WaterIF97\" + \" is not in the range 0..1\");
 //   assert(openTankHot1.medium.p >= 0.0,\"Pressure (= \" + String(openTankHot1.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"WaterIF97\" + \"\\\" is negative
 // (Temperature = \" + String(openTankHot1.medium.T,0,true,6) + \" K)\");
-//   openTankHot1.heatTransfer.states[1].phase = openTankHot1.medium.state.phase;
-//   openTankHot1.heatTransfer.states[1].h = openTankHot1.medium.state.h;
-//   openTankHot1.heatTransfer.states[1].d = openTankHot1.medium.state.d;
-//   openTankHot1.heatTransfer.states[1].T = openTankHot1.medium.state.T;
-//   openTankHot1.heatTransfer.states[1].p = openTankHot1.medium.state.p;
 //   openTankHot1.heatTransfer.Ts[1] = openTankHot1.heatTransfer.heatPorts[1].T;
 //   openTankHot1.heatTransfer.Q_flows[1] = openTankHot1.heatTransfer.heatPorts[1].Q_flow;
 //   openTankHot1.V = openTankHot1.crossArea * openTankHot1.level;
@@ -3685,11 +3670,6 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 // of medium \" + \"WaterIF97\" + \" is not in the range 0..1\");
 //   assert(openTankHot2.medium.p >= 0.0,\"Pressure (= \" + String(openTankHot2.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"WaterIF97\" + \"\\\" is negative
 // (Temperature = \" + String(openTankHot2.medium.T,0,true,6) + \" K)\");
-//   openTankHot2.heatTransfer.states[1].phase = openTankHot2.medium.state.phase;
-//   openTankHot2.heatTransfer.states[1].h = openTankHot2.medium.state.h;
-//   openTankHot2.heatTransfer.states[1].d = openTankHot2.medium.state.d;
-//   openTankHot2.heatTransfer.states[1].T = openTankHot2.medium.state.T;
-//   openTankHot2.heatTransfer.states[1].p = openTankHot2.medium.state.p;
 //   openTankHot2.heatTransfer.Ts[1] = openTankHot2.heatTransfer.heatPorts[1].T;
 //   openTankHot2.heatTransfer.Q_flows[1] = openTankHot2.heatTransfer.heatPorts[1].Q_flow;
 //   openTankHot2.V = openTankHot2.crossArea * openTankHot2.level;
@@ -3812,11 +3792,6 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 // of medium \" + \"WaterIF97\" + \" is not in the range 0..1\");
 //   assert(openTankCold3.medium.p >= 0.0,\"Pressure (= \" + String(openTankCold3.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"WaterIF97\" + \"\\\" is negative
 // (Temperature = \" + String(openTankCold3.medium.T,0,true,6) + \" K)\");
-//   openTankCold3.heatTransfer.states[1].phase = openTankCold3.medium.state.phase;
-//   openTankCold3.heatTransfer.states[1].h = openTankCold3.medium.state.h;
-//   openTankCold3.heatTransfer.states[1].d = openTankCold3.medium.state.d;
-//   openTankCold3.heatTransfer.states[1].T = openTankCold3.medium.state.T;
-//   openTankCold3.heatTransfer.states[1].p = openTankCold3.medium.state.p;
 //   openTankCold3.heatTransfer.Ts[1] = openTankCold3.heatTransfer.heatPorts[1].T;
 //   openTankCold3.heatTransfer.Q_flows[1] = openTankCold3.heatTransfer.heatPorts[1].Q_flow;
 //   openTankCold3.V = openTankCold3.crossArea * openTankCold3.level;
@@ -3873,11 +3848,6 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 // of medium \" + \"WaterIF97\" + \" is not in the range 0..1\");
 //   assert(openTankHot3.medium.p >= 0.0,\"Pressure (= \" + String(openTankHot3.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"WaterIF97\" + \"\\\" is negative
 // (Temperature = \" + String(openTankHot3.medium.T,0,true,6) + \" K)\");
-//   openTankHot3.heatTransfer.states[1].phase = openTankHot3.medium.state.phase;
-//   openTankHot3.heatTransfer.states[1].h = openTankHot3.medium.state.h;
-//   openTankHot3.heatTransfer.states[1].d = openTankHot3.medium.state.d;
-//   openTankHot3.heatTransfer.states[1].T = openTankHot3.medium.state.T;
-//   openTankHot3.heatTransfer.states[1].p = openTankHot3.medium.state.p;
 //   openTankHot3.heatTransfer.Ts[1] = openTankHot3.heatTransfer.heatPorts[1].T;
 //   openTankHot3.heatTransfer.Q_flows[1] = openTankHot3.heatTransfer.heatPorts[1].Q_flow;
 //   openTankHot3.V = openTankHot3.crossArea * openTankHot3.level;

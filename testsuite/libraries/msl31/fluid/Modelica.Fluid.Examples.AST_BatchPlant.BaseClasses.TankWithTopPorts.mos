@@ -16,9 +16,7 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts);
 // true
 // ""
 // true
-// "Check of Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts completed successfully.
-// 
-// Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
 //   The existing 'inner' components are: 
 //     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts.
 //   Check if you have not misspelled the 'outer' component name.
@@ -32,11 +30,28 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts);
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
-// [AST_BatchPlant.mo:1944:5-1949:11:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts.
-// [Interfaces.mo:613:7-614:108:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts.
-// 
-// Class Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts has 20 equation(s) and 23 variable(s).
-// 11 of these are trivial equation(s).
+// Warning: No corresponding 'inner' declaration found for component heatTransfer.system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.HeatTransfer.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
+// Warning: No corresponding 'inner' declaration found for component heatTransfer.system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts.HeatTransfer.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component heatTransfer.system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.HeatTransfer.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Error: Error occurred while flattening model Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts
 // "
 // ""
 // endResult
+ 
+// 

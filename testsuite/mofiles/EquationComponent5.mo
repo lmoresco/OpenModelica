@@ -18,10 +18,7 @@ end EquationComponent5;
 // class EquationComponent5
 //   Real a.x;
 //   Real a.y;
-//   Real b.x;
-//   Real b.y;
-// equation
-//   b.x = a.x;
-//   b.y = a.y;
+//   Real b.x = a.x;
+//   Real b.y = a.y;
 // end EquationComponent5;
 // endResult
