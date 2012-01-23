@@ -2,7 +2,7 @@
 // keywords: forest, initialization
 // status: correct
 // cflags:
-// teardown_command: rm forest* output.log
+// teardown_command: rm forest* output.log _forest.h
 // 
 //  case for initialization of forest model
 //

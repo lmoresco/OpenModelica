@@ -2,6 +2,7 @@ TEST = ../rtest -v
 
 TESTFILES = \
 _forest.mos \
+_startValue.mos \
 _scaling1.mos \
 _scaling2.mos \
 _nominal.mos
