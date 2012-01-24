@@ -22156,7 +22156,7 @@ algorithm
   ret_1 := Algorithm.getStatementSource(a_stmt);
   ret_2 := DAEUtil.getElementSourceFileInfo(ret_1);
   out_txt := modelicaLine(txt, ret_2);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE("#\n"));
+  out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeText(out_txt, l_res);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := endModelicaLine(out_txt);
