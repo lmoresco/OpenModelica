@@ -2,7 +2,7 @@ CPPFLAGS=-I../../build/include/omc
 
 LDFLAGS=-L../../build/lib/omc -L./ -lomcruntime -lomparse -lSimulationRuntimeC ../../Compiler/modpar/libmodparomc.a -lm \
 -lantlr3 -lmainrecords -lmico2313 -lregex -lwsock32 -llpsolve55 \
--lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32 -lRpcrt4 -lshlwapi -liconv \
+-luuid -lole32 -lws2_32 -lRpcrt4 -lshlwapi -liconv \
 -Wl,--stack,16777216,--large-address-aware -llapack-mingw -ltmglib-mingw -lblas-mingw -lf2c
 CFLAGS=-ggdb -O0 -falign-functions -static-libgcc 
 #CFLAGS=-O3 -falign-functions -v -Q -ftime-report -fmem-report -fpre-ipa-mem-report -fpost-ipa-mem-report -static-libgcc 
