@@ -1,8 +1,7 @@
 // name:     HelloFMIWorld
 // keywords: fmu export
 // status: correct
-// teardown_command: rm -rf binaries sources modelDescription.xml HelloFMIWorld.fmu HelloFMIWorldFMUImport.mo fmu*.log FMUImport_* HelloFMIWorld_* HelloFMIWorld.log HelloFMIWorld.libs HelloFMIWorld HelloFMIWorld.exe HelloFMIWorld.cpp HelloFMIWorld.makefile output.log HelloFMIWorld/*
-// cflags: +simCodeTarget=C
+// teardown_command: rm -rf binaries sources modelDescription.xml HelloFMIWorld.fmu HelloFMIWorldFMUImport.mo fmu*.log FMUImport_* HelloFMIWorld_* HelloFMIWorld.log HelloFMIWorld.libs HelloFMIWorld HelloFMIWorld.exe HelloFMIWorld.so HelloFMIWorld.c _HelloFMIWorld.h _FMUImport_HelloFMIWorld.FMUBlock.h HelloFMIWorld.makefile output.log HelloFMIWorld/*
 // Event handling
 //
 

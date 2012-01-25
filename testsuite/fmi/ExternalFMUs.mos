@@ -1,7 +1,7 @@
 // name:     externalFMUs
 // keywords: fmu import
 // status: correct
-// teardown_command: rm -rf rm -rf dsres.mat CPUCooling_04b_CoolingFinFMUImport.mo vanDerPolFMUImport.mo documentation model.png binaries sources modelDescription.xml bouncingBall.fmu bouncingBallFMUImport.mo fmu*.log FMUImport_* bouncingBall_* bouncingBall.log bouncingBall.libs bouncingBall bouncingBall.exe bouncingBall.cpp bouncingBall.makefile output.log bouncingBall/*
+// teardown_command: rm -rf rm -rf dsres.mat CPUCooling_04b_CoolingFinFMUImport.mo vanDerPolFMUImport.mo documentation model.png binaries sources modelDescription.xml bouncingBall.fmu bouncingBallFMUImport.mo fmu*.log FMUImport_* bouncingBall_* bouncingBall.log bouncingBall.libs bouncingBall bouncingBall.exe bouncingBall.cpp bouncingBall.makefile output.log bouncingBall/* _FMUImport_bouncingBall.FMUBlock.h _FMUImport_CPUCooling_04b_CoolingFin.FMUBlock.h  _FMUImport_vanDerPol.FMUBlock.h
 //
 // 
 
