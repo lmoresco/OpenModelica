@@ -39927,7 +39927,7 @@ algorithm
     case ( txt,
            DAE.DIM_UNKNOWN() )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(":"));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6408, 39), "Unknown dimensions may not be part of generated code. This is most likely an error on the part of OpenModelica. Please submit a bug-report.");
       then txt;
 
     case ( txt,
