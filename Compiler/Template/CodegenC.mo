@@ -459,7 +459,7 @@ algorithm
                                     "int main(int argc, char**argv)\n",
                                     "{\n",
                                     "  DATA data;\n",
-                                    "  initializeDataStruc_X_(&data);\n",
+                                    "  setupDataStruc(&data);\n",
                                     "  return _main_SimulationRuntime(argc, argv, &data);\n",
                                     "}\n"
                                 }, true));
@@ -771,7 +771,7 @@ public function functionInitializeDataStruc
   output Tpl.Text out_txt;
 algorithm
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                   "void initializeDataStruc_X_(DATA *data)\n",
+                                   "void setupDataStruc(DATA *data)\n",
                                    "{\n",
                                    "  ASSERT(data,\"Error while initialize Data\");\n"
                                }, true));
@@ -801,7 +801,7 @@ algorithm
            a_allEquations )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "void initializeDataStruc_X_2(DATA *data)\n",
+                                    "void setupDataStruc2(DATA *data)\n",
                                     "{\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
@@ -39927,7 +39927,7 @@ algorithm
     case ( txt,
            DAE.DIM_UNKNOWN() )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6408, 39), "Unknown dimensions may not be part of generated code. This is most likely an error on the part of OpenModelica. Please submit a bug-report.");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6408, 39), "Unknown dimensions may not be part of generated code. This is most likely an error on the part of OpenModelica. Please submit a detailed bug-report.");
       then txt;
 
     case ( txt,
@@ -43215,15 +43215,13 @@ algorithm
            a_minValue,
            a_maxValue,
            a_initialValue,
-           a_nominalValue,
+           _,
            a_isFixed )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Integer "));
         txt = ScalarVariableTypeStartAttribute(txt, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeFixedAttribute(txt, a_isFixed);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeIntegerMinAttribute(txt, a_minValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
@@ -43269,15 +43267,13 @@ algorithm
            _,
            _,
            a_initialValue,
-           a_nominalValue,
+           _,
            a_isFixed )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Boolean "));
         txt = ScalarVariableTypeStartAttribute(txt, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeFixedAttribute(txt, a_isFixed);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeUnitAttribute(txt, a_unit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
@@ -43292,15 +43288,13 @@ algorithm
            _,
            _,
            a_initialValue,
-           a_nominalValue,
+           _,
            a_isFixed )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<String "));
         txt = ScalarVariableTypeStartAttribute(txt, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeFixedAttribute(txt, a_isFixed);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeUnitAttribute(txt, a_unit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
@@ -43315,15 +43309,13 @@ algorithm
            _,
            _,
            a_initialValue,
-           a_nominalValue,
+           _,
            a_isFixed )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Integer "));
         txt = ScalarVariableTypeStartAttribute(txt, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeFixedAttribute(txt, a_isFixed);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue, a_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeUnitAttribute(txt, a_unit);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
@@ -43405,51 +43397,14 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\""));
 end ScalarVariableTypeFixedAttribute;
 
-public function ScalarVariableTypeNominalAttribute
+protected function fun_946
   input Tpl.Text in_txt;
   input Option<DAE.Exp> in_a_nominalValue;
-  input Option<DAE.Exp> in_a_startValue;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_nominalValue, in_a_startValue)
-    local
-      Tpl.Text txt;
-      Option<DAE.Exp> a_startValue;
-      DAE.Exp i_exp;
-
-    case ( txt,
-           SOME(i_exp),
-           _ )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("nominal=\""));
-        txt = initValXml(txt, i_exp);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
-      then txt;
-
-    case ( txt,
-           NONE(),
-           a_startValue )
-      equation
-        txt = ScalarVariableTypeNominalAttribute1(txt, a_startValue);
-      then txt;
-
-    case ( txt,
-           _,
-           _ )
-      then txt;
-  end matchcontinue;
-end ScalarVariableTypeNominalAttribute;
-
-public function ScalarVariableTypeNominalAttribute1
-  input Tpl.Text in_txt;
-  input Option<DAE.Exp> in_a_startValue;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_startValue)
+  matchcontinue(in_txt, in_a_nominalValue)
     local
       Tpl.Text txt;
       DAE.Exp i_exp;
@@ -43472,7 +43427,17 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end ScalarVariableTypeNominalAttribute1;
+end fun_946;
+
+public function ScalarVariableTypeNominalAttribute
+  input Tpl.Text txt;
+  input Option<DAE.Exp> a_nominalValue;
+  input Option<DAE.Exp> a_startValue;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt := fun_946(txt, a_nominalValue);
+end ScalarVariableTypeNominalAttribute;
 
 protected function fun_948
   input Tpl.Text in_txt;
