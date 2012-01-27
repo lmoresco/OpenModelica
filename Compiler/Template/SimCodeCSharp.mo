@@ -112,7 +112,7 @@ algorithm
       list<list<SimCode.SimEqSystem>> i_odeEquations;
       list<SimCode.SimEqSystem> i_parameterEquations;
       list<SimCode.SimEqSystem> i_residualEquations;
-      list<SimCode.SimEqSystem> i_initialEquations;
+      list<SimCode.SimEqSystem> i_startValueEquations;
       list<SimCode.SimEqSystem> i_sampleEquations;
       list<SimCode.SampleCondition> i_sampleConditions;
       list<SimCode.SimEqSystem> i_allEquations;
@@ -123,7 +123,7 @@ algorithm
       Tpl.Text l_fbody;
 
     case ( txt,
-           (i_simCode as SimCode.SIMCODE(modelInfo = (i_modelInfo as SimCode.MODELINFO(name = i_modelInfo_name)), extObjInfo = i_extObjInfo, allEquations = i_allEquations, sampleConditions = i_sampleConditions, sampleEquations = i_sampleEquations, initialEquations = i_initialEquations, residualEquations = i_residualEquations, parameterEquations = i_parameterEquations, odeEquations = i_odeEquations, algebraicEquations = i_algebraicEquations, removedEquations = i_removedEquations, whenClauses = i_whenClauses, helpVarInfo = i_helpVarInfo, zeroCrossings = i_zeroCrossings)) )
+           (i_simCode as SimCode.SIMCODE(modelInfo = (i_modelInfo as SimCode.MODELINFO(name = i_modelInfo_name)), extObjInfo = i_extObjInfo, allEquations = i_allEquations, sampleConditions = i_sampleConditions, sampleEquations = i_sampleEquations, startValueEquations = i_startValueEquations, residualEquations = i_residualEquations, parameterEquations = i_parameterEquations, odeEquations = i_odeEquations, algebraicEquations = i_algebraicEquations, removedEquations = i_removedEquations, whenClauses = i_whenClauses, helpVarInfo = i_helpVarInfo, zeroCrossings = i_zeroCrossings)) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("// Simulation code for "));
         txt = dotPath(txt, i_modelInfo_name);
@@ -173,7 +173,7 @@ algorithm
         txt = functionStoreDelayed(txt, i_simCode);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-        txt = functionInitial(txt, i_initialEquations, i_simCode);
+        txt = functionInitial(txt, i_startValueEquations, i_simCode);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = functionInitialResidual(txt, i_residualEquations, i_simCode);
@@ -4648,7 +4648,7 @@ end lm_142;
 
 public function functionInitial
   input Tpl.Text txt;
-  input list<SimCode.SimEqSystem> a_initialEquations;
+  input list<SimCode.SimEqSystem> a_startValueEquations;
   input SimCode.SimCode a_simCode;
 
   output Tpl.Text out_txt;
@@ -4662,7 +4662,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, c_localRepresentationArrayDefines);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.pushIter(out_txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  out_txt := lm_141(out_txt, a_initialEquations, a_simCode);
+  out_txt := lm_141(out_txt, a_startValueEquations, a_simCode);
   out_txt := Tpl.popIter(out_txt);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
@@ -4671,7 +4671,7 @@ algorithm
                                    }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
   out_txt := Tpl.pushIter(out_txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  out_txt := lm_142(out_txt, a_initialEquations, a_simCode);
+  out_txt := lm_142(out_txt, a_startValueEquations, a_simCode);
   out_txt := Tpl.popIter(out_txt);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.popBlock(out_txt);

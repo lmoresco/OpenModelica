@@ -273,7 +273,7 @@ algorithm
       list<list<SimCode.SimEqSystem>> i_odeEquations;
       list<SimCode.SimEqSystem> i_parameterEquations;
       list<SimCode.SimEqSystem> i_residualEquations;
-      list<SimCode.SimEqSystem> i_initialEquations;
+      list<SimCode.SimEqSystem> i_startValueEquations;
       SimCode.DelayedExpression i_delayedExps;
       list<SimCode.SimEqSystem> i_sampleEquations;
       list<SimCode.SampleCondition> i_sampleConditions;
@@ -289,7 +289,7 @@ algorithm
       list<SimCode.SimEqSystem> ret_0;
 
     case ( txt,
-           (i_simCode as SimCode.SIMCODE(externalFunctionIncludes = i_externalFunctionIncludes, fileNamePrefix = i_fileNamePrefix, modelInfo = i_modelInfo, allEquations = i_allEquations, jacobianMatrixes = i_jacobianMatrixes, extObjInfo = i_extObjInfo, sampleConditions = i_sampleConditions, sampleEquations = i_sampleEquations, delayedExps = i_delayedExps, initialEquations = i_initialEquations, residualEquations = i_residualEquations, parameterEquations = i_parameterEquations, odeEquations = i_odeEquations, simulationSettingsOpt = i_simulationSettingsOpt, algebraicEquations = i_algebraicEquations, removedEquations = i_removedEquations, whenClauses = i_whenClauses, helpVarInfo = i_helpVarInfo, zeroCrossings = i_zeroCrossings, discreteModelVars = i_discreteModelVars, algorithmAndEquationAsserts = i_algorithmAndEquationAsserts)),
+           (i_simCode as SimCode.SIMCODE(externalFunctionIncludes = i_externalFunctionIncludes, fileNamePrefix = i_fileNamePrefix, modelInfo = i_modelInfo, allEquations = i_allEquations, jacobianMatrixes = i_jacobianMatrixes, extObjInfo = i_extObjInfo, sampleConditions = i_sampleConditions, sampleEquations = i_sampleEquations, delayedExps = i_delayedExps, startValueEquations = i_startValueEquations, residualEquations = i_residualEquations, parameterEquations = i_parameterEquations, odeEquations = i_odeEquations, simulationSettingsOpt = i_simulationSettingsOpt, algebraicEquations = i_algebraicEquations, removedEquations = i_removedEquations, whenClauses = i_whenClauses, helpVarInfo = i_helpVarInfo, zeroCrossings = i_zeroCrossings, discreteModelVars = i_discreteModelVars, algorithmAndEquationAsserts = i_algorithmAndEquationAsserts)),
            a_guid )
       equation
         txt = simulationFileHeader(txt, i_simCode);
@@ -349,7 +349,7 @@ algorithm
         txt = functionStoreDelayed(txt, i_delayedExps);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-        txt = functionInitial(txt, i_initialEquations);
+        txt = functionInitial(txt, i_startValueEquations);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = functionInitialResidual(txt, i_residualEquations);
@@ -4185,7 +4185,7 @@ end lm_131;
 
 public function functionInitial
   input Tpl.Text txt;
-  input list<SimCode.SimEqSystem> a_initialEquations;
+  input list<SimCode.SimEqSystem> a_startValueEquations;
 
   output Tpl.Text out_txt;
 protected
@@ -4196,7 +4196,7 @@ algorithm
   l_varDecls := Tpl.emptyTxt;
   l_tmp := Tpl.emptyTxt;
   l_eqPart := Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (l_eqPart, l_tmp, l_varDecls) := lm_130(l_eqPart, a_initialEquations, l_tmp, l_varDecls);
+  (l_eqPart, l_tmp, l_varDecls) := lm_130(l_eqPart, a_startValueEquations, l_tmp, l_varDecls);
   l_eqPart := Tpl.popIter(l_eqPart);
   out_txt := Tpl.writeText(txt, l_tmp);
   out_txt := Tpl.softNewLine(out_txt);
@@ -4212,7 +4212,7 @@ algorithm
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_NEW_LINE());
   out_txt := Tpl.pushIter(out_txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  out_txt := lm_131(out_txt, a_initialEquations);
+  out_txt := lm_131(out_txt, a_startValueEquations);
   out_txt := Tpl.popIter(out_txt);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
