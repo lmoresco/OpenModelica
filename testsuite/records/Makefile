@@ -5,6 +5,7 @@ TESTFILES = \
  EmptyRecordTestConstructor.mos   EmptyRecordTestInput.mos \
  SimpleRecordTestConstructor.mos SimpleRecordTestInput.mos \
  NestedRecordTestConstructor.mos  NestedRecordTestInput.mos \
+ OperatorOverloadComplex.mo OperatorOverloadComplexArray.mo \
  RecordClassModOutput.mo \
  RecordModifications.mo \
  RecordParameters.mos RecordVariability.mo \

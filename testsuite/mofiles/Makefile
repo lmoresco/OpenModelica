@@ -474,7 +474,6 @@ NumericFunctions.mo \
 Operators.mo \
 OperatorComponents.mo \
 OperatorFunction1.mo \
-OperatorOverloadComplex.mo \
 OperatorSimple.mo \
 Or.mo \
 OutputDeclConnector.mo \
