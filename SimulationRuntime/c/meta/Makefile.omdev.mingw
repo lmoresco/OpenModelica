@@ -1,26 +1,11 @@
 CC = gcc
 ANSI= #-ansi
-CFLAGS   := -O3 -march=native -fPIC -Wall $(ANSI) -pedantic $(EXTRA_CFLAGS)
-CPPFLAGS :=  -Wall $(ANSI) $(EXTRA_CFLAGS) -I. -I.. -I../util/
+CFLAGS   := -O3 -march=native -fPIC -Wall $(ANSI) -pedantic $(EXTRA_CFLAGS) 
+CPPFLAGS :=  -Wall $(ANSI) $(EXTRA_CFLAGS) -I. -I.. -I../util/ 
 AR = ar -ru
 FFLAGS  = -O -fexceptions
 
 include ../Makefile.objs
-
-META_HFILES = \
-rml_compatibility.h \
-meta_modelica_builtin.h \
-meta_modelica_builtin_boxptr.h \
-meta_modelica_gc.h \
-meta_modelica_real.h \
-meta_modelica_string_lit.h \
-meta_modelica.h \
-meta_modelica_gc_stack.h \
-meta_modelica_gc_list.h \
-meta_modelica_gc_roots.h \
-meta_modelica_gc_pages.h \
-meta_modelica_gc_stats.h \
-meta_modelica_gc_settings.h  
 
 .PHONY : all clean
 

@@ -1,7 +1,31 @@
 
 #Files for meta folder
-META_OBJS = meta_modelica_builtin.o meta_modelica_gc_pages.o meta_modelica_gc_stats.o meta_modelica_catch.o meta_modelica_gc_roots.o meta_modelica.o meta_modelica_gc_list.o  meta_modelica_gc_settings.o  meta_modelica_real.o meta_modelica_gc.o meta_modelica_gc_stack.o meta_modelica_string_lit.o
-META_HFILES = rml_compatibility.h meta_modelica_builtin.h meta_modelica_builtin_boxptr.h meta_modelica_gc.h meta_modelica_real.h meta_modelica_string_lit.h meta_modelica.h meta_modelica_gc_stack.h meta_modelica_gc_list.h meta_modelica_gc_roots.h meta_modelica_gc_pages.h meta_modelica_gc_stats.h meta_modelica_gc_settings.h  
+META_OBJS = \
+meta_modelica_builtin.o \
+meta_modelica_string_lit.o \
+realString.o \
+meta_modelica_catch.o \
+meta_modelica.o \
+meta_modelica_real.o \
+gc/gc.o \
+gc/common.o  \
+gc/roots.o \
+gc/generational.o  \
+gc/marksweep.o 
+
+META_HFILES = \
+rml_compatibility.h \
+meta_modelica_builtin.h \
+meta_modelica_builtin_boxptr.h \
+meta_modelica_real.h \
+meta_modelica_string_lit.h \
+meta_modelica.h \
+gc/gc.h \
+gc/common.h \
+gc/generational.h \
+gc/marksweep.h \
+gc/roots.h 
+
 
 # Files for util functions
 UTIL_OBJS = base_array.o boolean_array.o division.o error.o index_spec.o integer_array.o java_interface.o list.o memory_pool.o modelica_string.o modelinfo.o read_write.o real_array.o ringbuffer.o rtclock.o string_array.o utility.o varinfo.o
