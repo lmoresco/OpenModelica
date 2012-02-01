@@ -21641,7 +21641,7 @@ algorithm
         txt = Tpl.writeText(txt, l_num);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" && !(iter"));
         txt = Tpl.writeText(txt, l_num);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("++ > max_iter"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" > max_iter"));
         txt = Tpl.writeText(txt, l_num);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "))\n",
@@ -21685,7 +21685,14 @@ algorithm
         txt = Tpl.writeText(txt, l_numDiscVarsStr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(",iter"));
         txt = Tpl.writeText(txt, l_num);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("));\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
+        txt = Tpl.writeText(txt, l_valuesLenStr);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "));\n",
+                                    "iter"
+                                }, false));
+        txt = Tpl.writeText(txt, l_num);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("++;\n"));
         txt = Tpl.popBlock(txt);
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("  }\n"));
@@ -21694,8 +21701,10 @@ algorithm
         txt = Tpl.writeText(txt, l_num);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(">max_iter"));
         txt = Tpl.writeText(txt, l_num);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" && (restart"));
+        txt = Tpl.writeText(txt, l_num);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ")\n",
+                                    " == true) )\n",
                                     "{\n",
                                     "    throw std::runtime_error(\"Number of iteration steps exceeded for discrete varibales check . \");\n",
                                     "}\n",
@@ -25080,7 +25089,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Nested array subscripting *should* have been handled by the routine creating the asub, but for some reason it was not: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4119, 11), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4120, 11), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -25119,7 +25128,7 @@ algorithm
         txt_6 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("ASUB_EASY_CASE "));
         ret_6 = ExpressionDump.printExpStr(i_exp);
         txt_6 = Tpl.writeStr(txt_6, ret_6);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4148, 11), Tpl.textString(txt_6));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4149, 11), Tpl.textString(txt_6));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -25162,7 +25171,7 @@ algorithm
         txt_12 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("OTHER_ASUB "));
         ret_12 = ExpressionDump.printExpStr(i_exp);
         txt_12 = Tpl.writeStr(txt_12, ret_12);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4166, 11), Tpl.textString(txt_12));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4167, 11), Tpl.textString(txt_12));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_646;
@@ -31291,7 +31300,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 5174, 12), "algStmtTupleAssign failed");
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 5175, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
