@@ -20,6 +20,7 @@ loadFile("../../Compiler/BackEnd/PartFn.mo");
 loadFile("../../Compiler/BackEnd/SimCode.mo");
 loadFile("../../Compiler/BackEnd/TaskGraphExt.mo");
 loadFile("../../Compiler/BackEnd/TaskGraph.mo");
+loadFile("../../Compiler/BackEnd/Uncertainties.mo");
 loadFile("../../Compiler/BackEnd/XMLDump.mo");
 "FrontEnd";
 loadFile("../../Compiler/FrontEnd/AbsynDep.mo");
