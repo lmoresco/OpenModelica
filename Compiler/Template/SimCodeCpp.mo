@@ -2183,7 +2183,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 468, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 469, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_76;
@@ -2261,7 +2261,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 475, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 476, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_79;
@@ -2420,7 +2420,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external C type "));
         ret_0 = ExpressionDump.typeString(i_type);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 517, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 518, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_82;
@@ -2599,13 +2599,13 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Expression types are unsupported as return arguments "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 527, 36), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 528, 36), Tpl.textString(txt_0));
       then txt;
 
     case ( txt,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 528, 14), "Unsupported return argument");
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 529, 14), "Unsupported return argument");
       then txt;
   end matchcontinue;
 end extReturnType;
@@ -7900,40 +7900,45 @@ end isLinearCode;
 protected function lm_207
   input Tpl.Text in_txt;
   input list<DAE.ComponentRef> in_items;
+  input SimCode.SimCode in_a_simCode;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_items)
+  matchcontinue(in_txt, in_items, in_a_simCode)
     local
       Tpl.Text txt;
       list<DAE.ComponentRef> rest;
+      SimCode.SimCode a_simCode;
       Integer x_i0;
       DAE.ComponentRef i_name;
       Tpl.Text l_namestr;
 
     case ( txt,
-           {} )
+           {},
+           _ )
       then txt;
 
     case ( txt,
-           i_name :: rest )
+           i_name :: rest,
+           a_simCode )
       equation
         x_i0 = Tpl.getIteri_i0(txt);
-        l_namestr = cref(Tpl.emptyTxt, i_name);
+        l_namestr = cref1(Tpl.emptyTxt, i_name, a_simCode);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_xd["));
         txt = Tpl.writeStr(txt, intString(x_i0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = "));
         txt = Tpl.writeText(txt, l_namestr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
         txt = Tpl.nextIter(txt);
-        txt = lm_207(txt, rest);
+        txt = lm_207(txt, rest, a_simCode);
       then txt;
 
     case ( txt,
-           _ :: rest )
+           _ :: rest,
+           a_simCode )
       equation
-        txt = lm_207(txt, rest);
+        txt = lm_207(txt, rest, a_simCode);
       then txt;
   end matchcontinue;
 end lm_207;
@@ -8082,14 +8087,14 @@ algorithm
 
     case ( txt,
            SimCode.SES_NONLINEAR(crefs = i_crefs),
-           _ )
+           a_simCode )
       equation
         ret_1 = listLength(i_crefs);
         l_size = Tpl.writeStr(Tpl.emptyTxt, intString(ret_1));
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_207(txt, i_crefs);
+        txt = lm_207(txt, i_crefs, a_simCode);
         txt = Tpl.popIter(txt);
         txt = Tpl.popBlock(txt);
       then txt;
@@ -8138,27 +8143,31 @@ end initAlgloopEquation;
 protected function lm_212
   input Tpl.Text in_txt;
   input list<DAE.ComponentRef> in_items;
+  input SimCode.SimCode in_a_simCode;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_items)
+  matchcontinue(in_txt, in_items, in_a_simCode)
     local
       Tpl.Text txt;
       list<DAE.ComponentRef> rest;
+      SimCode.SimCode a_simCode;
       Integer x_i0;
       DAE.ComponentRef i_name;
       Tpl.Text l_namestr;
 
     case ( txt,
-           {} )
+           {},
+           _ )
       then txt;
 
     case ( txt,
-           i_name :: rest )
+           i_name :: rest,
+           a_simCode )
       equation
         x_i0 = Tpl.getIteri_i0(txt);
-        l_namestr = cref(Tpl.emptyTxt, i_name);
+        l_namestr = cref1(Tpl.emptyTxt, i_name, a_simCode);
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("doubleUnknowns["));
         txt = Tpl.writeStr(txt, intString(x_i0));
@@ -8167,13 +8176,14 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
         txt = Tpl.popBlock(txt);
         txt = Tpl.nextIter(txt);
-        txt = lm_212(txt, rest);
+        txt = lm_212(txt, rest, a_simCode);
       then txt;
 
     case ( txt,
-           _ :: rest )
+           _ :: rest,
+           a_simCode )
       equation
-        txt = lm_212(txt, rest);
+        txt = lm_212(txt, rest, a_simCode);
       then txt;
   end matchcontinue;
 end lm_212;
@@ -8241,14 +8251,14 @@ algorithm
 
     case ( txt,
            SimCode.SES_NONLINEAR(crefs = i_crefs),
-           _ )
+           a_simCode )
       equation
         ret_1 = listLength(i_crefs);
         l_size = Tpl.writeStr(Tpl.emptyTxt, intString(ret_1));
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_212(txt, i_crefs);
+        txt = lm_212(txt, i_crefs, a_simCode);
         txt = Tpl.popIter(txt);
         txt = Tpl.popBlock(txt);
       then txt;
@@ -8586,39 +8596,44 @@ end writeAlgloopvars2;
 protected function lm_222
   input Tpl.Text in_txt;
   input list<DAE.ComponentRef> in_items;
+  input SimCode.SimCode in_a_simCode;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_items)
+  matchcontinue(in_txt, in_items, in_a_simCode)
     local
       Tpl.Text txt;
       list<DAE.ComponentRef> rest;
+      SimCode.SimCode a_simCode;
       Integer x_i0;
       DAE.ComponentRef i_name;
       Tpl.Text l_namestr;
 
     case ( txt,
-           {} )
+           {},
+           _ )
       then txt;
 
     case ( txt,
-           i_name :: rest )
+           i_name :: rest,
+           a_simCode )
       equation
         x_i0 = Tpl.getIteri_i0(txt);
-        l_namestr = cref(Tpl.emptyTxt, i_name);
+        l_namestr = cref1(Tpl.emptyTxt, i_name, a_simCode);
         txt = Tpl.writeText(txt, l_namestr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("  = doubleUnknowns["));
         txt = Tpl.writeStr(txt, intString(x_i0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("];"));
         txt = Tpl.nextIter(txt);
-        txt = lm_222(txt, rest);
+        txt = lm_222(txt, rest, a_simCode);
       then txt;
 
     case ( txt,
-           _ :: rest )
+           _ :: rest,
+           a_simCode )
       equation
-        txt = lm_222(txt, rest);
+        txt = lm_222(txt, rest, a_simCode);
       then txt;
   end matchcontinue;
 end lm_222;
@@ -8685,14 +8700,14 @@ algorithm
 
     case ( txt,
            SimCode.SES_NONLINEAR(crefs = i_crefs),
-           _ )
+           a_simCode )
       equation
         ret_1 = listLength(i_crefs);
         l_size = Tpl.writeStr(Tpl.emptyTxt, intString(ret_1));
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_222(txt, i_crefs);
+        txt = lm_222(txt, i_crefs, a_simCode);
         txt = Tpl.popIter(txt);
         txt = Tpl.popBlock(txt);
       then txt;
@@ -16445,12 +16460,6 @@ algorithm
     local
       Tpl.Text txt;
       DAE.ComponentRef i_cr;
-
-    case ( txt,
-           (i_cr as DAE.CREF_IDENT(ident = "xloc")) )
-      equation
-        txt = crefStr(txt, i_cr);
-      then txt;
 
     case ( txt,
            DAE.CREF_IDENT(ident = "time") )
@@ -29240,9 +29249,9 @@ algorithm
 
     case ( txt,
            (i_cr as DAE.CREF_IDENT(ident = "xloc")),
-           _ )
+           a_simCode )
       equation
-        txt = crefStr(txt, i_cr);
+        txt = representationCref(txt, i_cr, a_simCode);
       then txt;
 
     case ( txt,
@@ -29305,7 +29314,6 @@ algorithm
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
         txt = cref(txt, a_inCref);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.popBlock(txt);
       then txt;
   end matchcontinue;
