@@ -7477,7 +7477,7 @@ algorithm
       then txt;
 
     case ( txt,
-           (i_mat, i_vars, i_name, _, _) :: rest )
+           (i_mat, i_vars, i_name, _, _, _) :: rest )
       equation
         txt = generateMatrix(txt, i_mat, i_vars, i_name);
         txt = Tpl.nextIter(txt);
