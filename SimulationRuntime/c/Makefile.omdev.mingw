@@ -13,7 +13,7 @@ builddir_inc=$(top_builddir)/build/include/omc
 
 CC = gcc
 FC = g77
-CFLAGS = -g -O0 -falign-functions -msse2 -mfpmath=sse
+CFLAGS = -falign-functions -msse2 -mfpmath=sse
 
 LIBMAKEFILE = Makefile.omdev.mingw
 INTERACTIVELIBS = 
