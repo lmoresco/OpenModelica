@@ -27,6 +27,7 @@ Identifier.mo \
 IfElseIf.mo \
 MetaModelicaMatchElse.mo \
 MetaModelicaStringOpModelicaLexer.mo \
+MissingEquation.mo \
 MissingSemicolon.mo \
 ModifyConstant3.mo \
 OptionalOutput.mos \
