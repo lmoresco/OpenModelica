@@ -12,8 +12,9 @@ end S;
 
 // Result:
 // Error processing file: StreamUnbalancedConnector.mo
-// [StreamUnbalancedConnector.mo:8:1-11:6:writable] Error: Connector S is not balanced: The number of potential variables (1) is not equal to the number of flow variables (0).
-// [StreamUnbalancedConnector.mo:8:1-11:6:writable] Error: Connector S is not balanced: A stream connector must have exactly one flow variable, this connector has 0 flow variables.
+// [StreamUnbalancedConnector.mo:8:1-11:6:writable] Warning: Connector S is not balanced: The number of potential variables (1) is not equal to the number of flow variables (0).
+// [StreamUnbalancedConnector.mo:8:1-11:6:writable] Error: Invalid stream connector S: A stream connector must have exactly one flow variable, this connector has 0 flow variables.
+// 
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
