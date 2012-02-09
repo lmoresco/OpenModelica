@@ -46,7 +46,6 @@ algorithm
   matchcontinue(in_txt, in_a_code)
     local
       Tpl.Text txt;
-      list<SimCode.SimEqSystem> i_sc_removedEquations;
       list<SimCode.SimEqSystem> i_sc_allEquations;
       list<SimCode.SimVar> i_vars_constVars;
       list<SimCode.SimVar> i_vars_jacobianVars;
@@ -70,7 +69,7 @@ algorithm
       Absyn.Path i_mi_name;
 
     case ( txt,
-           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, intAlgVars = i_vars_intAlgVars, boolAlgVars = i_vars_boolAlgVars, inputVars = i_vars_inputVars, outputVars = i_vars_outputVars, aliasVars = i_vars_aliasVars, intAliasVars = i_vars_intAliasVars, boolAliasVars = i_vars_boolAliasVars, paramVars = i_vars_paramVars, intParamVars = i_vars_intParamVars, boolParamVars = i_vars_boolParamVars, stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars, stringAliasVars = i_vars_stringAliasVars, extObjVars = i_vars_extObjVars, jacobianVars = i_vars_jacobianVars, constVars = i_vars_constVars), name = i_mi_name), allEquations = i_sc_allEquations, removedEquations = i_sc_removedEquations) )
+           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, intAlgVars = i_vars_intAlgVars, boolAlgVars = i_vars_boolAlgVars, inputVars = i_vars_inputVars, outputVars = i_vars_outputVars, aliasVars = i_vars_aliasVars, intAliasVars = i_vars_intAliasVars, boolAliasVars = i_vars_boolAliasVars, paramVars = i_vars_paramVars, intParamVars = i_vars_intParamVars, boolParamVars = i_vars_boolParamVars, stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars, stringAliasVars = i_vars_stringAliasVars, extObjVars = i_vars_extObjVars, jacobianVars = i_vars_jacobianVars, constVars = i_vars_constVars), name = i_mi_name), allEquations = i_sc_allEquations) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("SimCode: "));
         txt = SimCodeC.dotPath(txt, i_mi_name);
@@ -114,9 +113,6 @@ algorithm
         txt = dumpVars(txt, i_vars_constVars);
         txt = Tpl.softNewLine(txt);
         txt = dumpEqs(txt, i_sc_allEquations);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/* Removed Equations */\n"));
-        txt = dumpEqs(txt, i_sc_removedEquations);
       then txt;
 
     case ( txt,

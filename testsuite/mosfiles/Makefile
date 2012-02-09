@@ -4,6 +4,7 @@ TESTFILES = \
 ABCDsystem.plt.mos \
 ABCDsystem.csv.mos \
 ABCDsystem.empty.mos \
+ActivateWhenEquation.mos \
 AliasEquations.mos \
 AlgorithmArrayEqn.mos \
 AlgorithmCondAssign1.mos \
@@ -21,6 +22,7 @@ ASubIfExp.mos \
 BooleanArray.mos \
 BouncingBall.mos BouncingBall2.mos BouncingBallExamples.mos \
 BuiltinMath.mos \
+Bug1687.mos \
 CheckEvents.mos \
 ComplexNumbers.mos \
 ComplexTypeEquationCount.mos \
@@ -129,10 +131,9 @@ ZeroCross.mos \
 # Run make testfailing
 FAILINGTESTFILES= MoonAndEarth.mos \
 JoinThreeVectors2.mos StatementCall.mos \
-OneArgBaseFunction.mos \
 ArrayFieldSlice.mos \
 AppendElement.mos \
-ActivateWhenEquation.mos Enum8.mos  \
+Enum8.mos  \
 ForIterator2.mos \
 TankPIDOPRI5.mos TanksConnectedPIDOPRI5.mos\
 SpaceProbe.mos \

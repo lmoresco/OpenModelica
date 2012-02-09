@@ -360,7 +360,6 @@ algorithm
       Tpl.Text txt;
       BackendQSS.QSSinfo a_qssInfo;
       String a_guid;
-      list<DAE.Statement> i_algorithmAndEquationAsserts;
       list<DAE.ComponentRef> i_discreteModelVars;
       list<SimCode.SimEqSystem> i_removedEquations;
       list<SimCode.SimEqSystem> i_algebraicEquations;
@@ -393,7 +392,7 @@ algorithm
       list<SimCode.SimEqSystem> ret_0;
 
     case ( txt,
-           (i_simCode as SimCode.SIMCODE(modelInfo = (i_modelInfo as SimCode.MODELINFO(varInfo = SimCode.VARINFO(numZeroCrossings = i_modelInfo_varInfo_numZeroCrossings, numStateVars = i_modelInfo_varInfo_numStateVars), name = i_modelInfo_name, directory = i_modelInfo_directory)), fileNamePrefix = i_fileNamePrefix, jacobianMatrixes = i_jacobianMatrixes, allEquations = i_allEquations, residualEquations = i_residualEquations, externalFunctionIncludes = i_externalFunctionIncludes, odeEquations = i_odeEquations, zeroCrossings = i_zeroCrossings, whenClauses = i_whenClauses, helpVarInfo = i_helpVarInfo, extObjInfo = i_extObjInfo, sampleConditions = i_sampleConditions, sampleEquations = i_sampleEquations, delayedExps = i_delayedExps, startValueEquations = i_startValueEquations, parameterEquations = i_parameterEquations, algebraicEquations = i_algebraicEquations, removedEquations = i_removedEquations, discreteModelVars = i_discreteModelVars, algorithmAndEquationAsserts = i_algorithmAndEquationAsserts)),
+           (i_simCode as SimCode.SIMCODE(modelInfo = (i_modelInfo as SimCode.MODELINFO(varInfo = SimCode.VARINFO(numZeroCrossings = i_modelInfo_varInfo_numZeroCrossings, numStateVars = i_modelInfo_varInfo_numStateVars), name = i_modelInfo_name, directory = i_modelInfo_directory)), fileNamePrefix = i_fileNamePrefix, jacobianMatrixes = i_jacobianMatrixes, allEquations = i_allEquations, residualEquations = i_residualEquations, externalFunctionIncludes = i_externalFunctionIncludes, odeEquations = i_odeEquations, zeroCrossings = i_zeroCrossings, whenClauses = i_whenClauses, helpVarInfo = i_helpVarInfo, extObjInfo = i_extObjInfo, sampleConditions = i_sampleConditions, sampleEquations = i_sampleEquations, delayedExps = i_delayedExps, startValueEquations = i_startValueEquations, parameterEquations = i_parameterEquations, algebraicEquations = i_algebraicEquations, removedEquations = i_removedEquations, discreteModelVars = i_discreteModelVars)),
            a_qssInfo,
            a_guid )
       equation
@@ -676,10 +675,10 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = SimCodeC.functionCheckForDiscreteChanges(txt, i_discreteModelVars);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-        txt = SimCodeC.functionAssertsforCheck(txt, i_algorithmAndEquationAsserts);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
+                                    "\n"
+                                }, true));
         txt = SimCodeC.generateLinearMatrixes(txt, i_jacobianMatrixes);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());

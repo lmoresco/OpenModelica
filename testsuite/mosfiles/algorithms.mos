@@ -24,7 +24,7 @@ val(u,0.0);
 
 // Alg4 - single algorithm with wrong causality
 simulate(Alg4);
-/*
+
 // Alg5 - continues algorithms
 simulate(Alg5);
 val(x1,0.0);
@@ -33,7 +33,7 @@ val(x1,1.0);
 val(x2,0.0);
 val(x2,0.5);
 val(x2,1.0);
-val(x1,0.0);
+val(y1,0.0);
 val(y1,0.5);
 val(y1,1.0);
 val(y2,0.0);
@@ -46,14 +46,6 @@ val(x4,0.0);
 val(x4,0.5);
 val(x4,1.0);
 
-simulate(Alg7);
-val(y,0.0);
-val(y,0.5);
-val(y,1.0);
-val(x,0.0);
-val(x,0.5);
-val(x,1.0);
-*/
 
 // Result:
 // true
@@ -81,7 +73,8 @@ val(x,1.0);
 //     resultFile = "",
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Alg4', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = "Simulation failed for model: Alg4
-// Error: Internal error Inverse Algorithm needs to be solved for in   x := 1.0 + y;
+// Error: Internal error Inverse Algorithm needs to be solved for in   x := $_start(x);
+// x := 1.0 + y;
 // . This is not implemented yet.
 // 
 // Error: Internal error SimCode.createSingleAlgorithmCode failed!
@@ -90,4 +83,27 @@ val(x,1.0);
 // Error: Internal error Transformation from optimised DAE to simulation code structure failed
 // "
 // end SimulationResult;
+// record SimulationResult
+//     resultFile = "Alg5_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Alg5', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 0.1224090895290468
+// 0.4596922009045177
+// 0.0
+// 0.12240908952904753
+// 0.45969220091674334
+// 0.0
+// 0.4794255386041834
+// 0.841470984648068
+// 0.0
+// 0.479425538604203
+// 0.8414709848078965
+// 1.0
+// 1.5
+// 2.0
+// 0.0
+// 0.0
+// 0.0
 // endResult
