@@ -5,7 +5,7 @@
 # for both UNIX/Linux and Windows platforms.
 
 CC = gcc
-CFLAGS = -O3 -march=native -fPIC -I.. -I../util -D_POSIX_ -Dstatic=
+CFLAGS = -O3 -march=native -fPIC -I.. -I../util -D_POSIX_
 
 include Makefile.common
  
