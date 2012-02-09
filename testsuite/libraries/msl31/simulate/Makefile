@@ -17,6 +17,7 @@ Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.mos \
+Modelica.Mechanics.MultiBody.Frames.mos \
 Modelica.Mechanics.Rotational.Examples.RollingWheel.mos \
 Modelica.Mechanics.Translational.Examples.Accelerate.mos \
 Modelica.Mechanics.Translational.Examples.Brake.mos \
