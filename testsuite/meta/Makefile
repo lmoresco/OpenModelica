@@ -23,6 +23,7 @@ ErrorInvalidPattern3.mo \
 ErrorInvalidPattern4.mo \
 ErrorLocalElement1.mo \
 ErrorLocalElement2.mo \
+ErrorLocalElement3.mo \
 ErrorMatchInOut1.mo \
 ErrorMatchNumOutput.mos \
 ErrorNone.mos \
