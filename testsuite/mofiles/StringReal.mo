@@ -25,7 +25,7 @@ end StringReal;
 //   String s3;
 // equation
 //   s1 = "111.222";
-//   s2 = "3.14159265";
+//   s2 = "3.142";
 //   r = 1234.5678;
 //   s3 = String(r,0,true,6);
 // end StringReal;

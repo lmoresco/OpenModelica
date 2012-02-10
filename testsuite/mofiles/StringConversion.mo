@@ -15,6 +15,6 @@ end StringConversion;
 // class StringConversion
 //   String s1 = "true";
 //   String s2 = "        4711";
-//   String s3 = "3.14159265";
+//   String s3 = "3.142";
 // end StringConversion;
 // endResult
