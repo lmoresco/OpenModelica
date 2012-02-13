@@ -32041,6 +32041,7 @@ algorithm
            SimCode.SIMULATION(genDiscrete = _),
            a_funName )
       equation
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "#ifdef _OMC_MEASURE_TIME\n",
                                     "SIM_PROF_TICK_FN("
@@ -32133,6 +32134,7 @@ algorithm
            SimCode.SIMULATION(genDiscrete = _),
            a_funName )
       equation
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "#ifdef _OMC_MEASURE_TIME\n",
                                     "SIM_PROF_ACC_FN("
