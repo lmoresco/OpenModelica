@@ -223,3 +223,9 @@ if($use_db) {
 unlink("Compiler");
 # Clean up the temporary rtest directory, so it doesn't get overrun.
 rmtree("/tmp/omc-rtest");
+
+if(@failed_tests) {
+  print "\nexit with non-zero because we have failing tests!\n";
+  exit 7;
+}
+

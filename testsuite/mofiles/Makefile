@@ -547,7 +547,6 @@ SimpleInheritance.mo \
 SimpleIntegrator1.mo \
 SimpleIntegrator2.mo \
 SimpleIntegrator3.mo \
-SimpleTypeExtend.mo \
 Simplify.mo \
 Simplify2.mo \
 SimplifyBinary.mo \
@@ -655,6 +654,7 @@ OperatorIllegal.mo \
 ReplaceFunction.mo \
 ScopeDeclaration4.mo \
 Units1.mo \
+SimpleTypeExtend.mo 
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \

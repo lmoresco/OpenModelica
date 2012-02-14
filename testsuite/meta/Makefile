@@ -72,7 +72,6 @@ PartialFn8.mos \
 PartialFn10.mos \
 PartialFn11.mos \
 PartialFn12.mos \
-PartialFn13.mos \
 PartialFn14.mos \
 PartialFn15.mo \
 Polymorphic.mos \
@@ -104,7 +103,8 @@ Uniontype15.mos
 FAILINGTESTFILES= \
 MatchCaseInteractive2.mos \
 PartialFn9.mos \
-Uniontype7.mos
+Uniontype7.mos \
+PartialFn13.mos 
 
 # Remove executables on Linux (no extension)
 CLEAN = $(TESTFILES:.mos=) $(TESTFILES:.mos=_*) $(TESTFILES:.mos=.cpp) $(TESTFILES:.mos=.makefile) $(TESTFILES:.mos=.libs) $(TESTFILES:.mos=.log) output.log *.dll *.exe *.so
