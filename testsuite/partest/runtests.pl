@@ -37,6 +37,7 @@ use Time::HiRes qw( usleep ualarm gettimeofday tv_interval nanosleep
 use Fcntl;
 
 my $use_db = 1;
+my $nocolour = '';
 my $fast = 0;
 
 # Default is two threads.
@@ -54,6 +55,9 @@ for(@ARGV){
   }
   elsif(/-nodb/) {
     $use_db = 0;
+  }
+  elsif(/-nocolour/) {
+    $nocolour = '--no-colour';
   }
 }
 
@@ -131,7 +135,7 @@ sub run_tests {
     (my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
 
     my $t0 = [gettimeofday];
-    my $x = system("$testscript $test_full") >> 8;
+    my $x = system("$testscript $test_full $nocolour") >> 8;
     my $elapsed = tv_interval ( $t0, [gettimeofday]);
 
     if($use_db) {

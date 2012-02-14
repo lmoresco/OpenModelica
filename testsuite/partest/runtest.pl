@@ -13,6 +13,7 @@ use feature "switch";
 
 # Get the testcase to run from the command line argument.
 my $test_full = $ARGV[0];
+my $no_colour = @ARGV>1 && $ARGV[1] =~ "--no-colour";
 # Extract the directory and test name.
 (my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
 # Add a random number to the temporary directory, to avoid problems with rtest
@@ -115,9 +116,13 @@ sub enter_sandbox {
 
   unless($open_ret) {#or die "Couldn't open $test: $!\n";
     print " ";
-    print color 'red on_blue';
-    print "[$test]";
-    print color 'reset';
+    if ($no_colour) {
+      print "[$test] FAILED\n";
+    } else {
+      print color 'red on_blue';
+      print "[$test]";
+      print color 'reset';
+    }
     exit_sandbox();
     exit 0; 
   }
@@ -224,20 +229,38 @@ while(<$test_log>) {
   }
   if(/== (\d) out of 1 tests failed.*time: (\d*)/) {
     $time = $2;
-    if($1 =~ /0/) {
-      print color 'green';
-    } else {
-      if($erroneous == 0) {
-        system("cp $test.test_log $fail_log");
-        print color 'red';
-        $exit_status = 0;
+    if (!$no_colour) {
+      if($1 =~ /0/) {
+        print color 'green';
       } else {
-        system("cp $test.test_log $fail_log");
-        print color 'magenta';
+        if($erroneous == 0) {
+          system("cp $test.test_log $fail_log");
+          print color 'red';
+          $exit_status = 0;
+        } else {
+          system("cp $test.test_log $fail_log");
+          print color 'magenta';
+        }
       }
+      print " ";
     }
-    print " [$test:$time]";
-    print color 'reset';
+    print "[$test:$time]";
+    if ($no_colour) {
+      if($1 =~ /0/) {
+        print " OK\n";
+      } else {
+        if($erroneous == 0) {
+          system("cp $test.test_log $fail_log");
+          print " Failed\n";
+          $exit_status = 0;
+        } else {
+          system("cp $test.test_log $fail_log");
+          print " Erroneous\n";
+        }
+      }
+    } else {
+      print color 'reset';
+    }
   }
 }
 
