@@ -296,6 +296,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
 // [Interfaces.mo:73:3-109:14:writable] Warning: Connector Modelica.Mechanics.MultiBody.Interfaces.Frame_b is not balanced: The number of potential variables (15) is not equal to the number of flow variables (6).
+// Error: Class .Modelica.Mechanics.MultiBody.Frames.Internal.resolve2_der not found in scope Modelica.Mechanics.MultiBody.Frames.
 // [Interfaces.mo:613:5-613:68:writable] Error: Class Frames.resolve2 not found in scope Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce (looking for a function or record).
 // [Interfaces.mo:580:3-664:23:writable] Error: Illegal to instantiate partial class PartialLineForce
 // Error: Error occurred while flattening model Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce
