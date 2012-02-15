@@ -53,7 +53,6 @@ omdev_extra_dlls:
 	echo Copying needed .dlls to the build/bin directory
 	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
 	(cp -puf $(OMDEV)/tools/mingw/lib/libregex.a $(builddir_lib)/omc)
-	(cp -pf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
 	(cp -pf $(OMDEV)/lib/mico-msys-mingw/static/libmico2313.a $(builddir_lib)/omc/)
 	(cp -pufr $(OMDEV)/tools/xsltproc $(builddir_lib)/omc/libexec/)
 	(cp -pufr $(OMDEV)/tools/gnuplot $(builddir_lib)/omc/libexec/)
