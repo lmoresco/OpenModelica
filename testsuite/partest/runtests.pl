@@ -225,7 +225,6 @@ unlink("Compiler");
 rmtree("/tmp/omc-rtest");
 
 if(@failed_tests) {
-  print "\nexit with non-zero because we have failing tests!\n";
   exit 7;
 }
 

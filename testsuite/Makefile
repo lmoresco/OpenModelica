@@ -24,6 +24,7 @@ fmi.log
 SLOWLOGS = \
 bootstrapping.log \
 msl31.log \
+msl32.log \
 multibody.log \
 msl221.log \
 msl221simulation.log \
@@ -153,6 +154,9 @@ multibody.log: omc-diff
 msl31.log: omc-diff
 	$(MAKE) -C libraries/msl31 -f Makefile test > $@
 	@echo $@ done
+msl32.log: omc-diff
+	$(MAKE) -C libraries/msl32 -f Makefile test > $@
+	@echo $@ done
 msl31simulation.log: omc-diff
 	$(MAKE) -C libraries/msl31/simulate -f Makefile test > $@
 	@echo $@ done
@@ -181,4 +185,5 @@ failingtest: omc-diff
 	cd ../../biochem; $(MAKE) -f Makefile failingtest; \
 	cd ../multibody; $(MAKE) -f Makefile failingtest; \
 	cd ../msl31; $(MAKE) -f Makefile failingtest;
+	cd ../msl32; $(MAKE) -f Makefile failingtest;
 
