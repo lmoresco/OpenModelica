@@ -89,6 +89,7 @@ Uniontype3.mos \
 Uniontype4.mos \
 Uniontype5.mos \
 Uniontype6.mos \
+Uniontype7.mos \
 Uniontype8.mos \
 Uniontype9.mos \
 Uniontype10.mos \
@@ -103,7 +104,6 @@ Uniontype15.mos
 FAILINGTESTFILES= \
 MatchCaseInteractive2.mos \
 PartialFn9.mos \
-Uniontype7.mos \
 PartialFn13.mos 
 
 # Remove executables on Linux (no extension)
