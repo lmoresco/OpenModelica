@@ -19,7 +19,8 @@ modelicaML.log \
 drmodelica.log \
 streams.log \
 redeclare.log \
-fmi.log
+fmi.log \
+PlanarMechanics.log 
 
 SLOWLOGS = \
 bootstrapping.log \
@@ -174,6 +175,9 @@ siemens.log: omc-diff
 	@echo $@ done
 fmi.log: omc-diff
 	$(MAKE) -C fmi -f Makefile test > $@
+	@echo $@ done
+PlanarMechanics.log: omc-diff
+	$(MAKE) -C 3rdParty/PlanarMechanics -f Makefile test > $@
 	@echo $@ done
 failingtest: omc-diff
 	cd mofiles; $(MAKE) -f Makefile failingtest; \
