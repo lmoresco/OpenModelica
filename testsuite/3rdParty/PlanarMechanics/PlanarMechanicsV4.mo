@@ -2648,7 +2648,7 @@ package PlanarMechanicsV4 "A planar mechanical library for didactical purposes"
             rotation=270,
             origin={-30,60})));
       Modelica.Blocks.Continuous.PID PID(
-        Ti=1000000000000,
+        Ti=1000000000000.0,
         k=320*9.81*5,
         Td=0.2) annotation (Placement(transformation(extent={{40,70},{20,90}})));
     equation

@@ -40,7 +40,6 @@ instantiateModel(PlanarMechanicsV4.Examples.InvertedCraneCrab); getErrorString()
 // [PlanarMechanicsV4.mo:4475:24-4475:26:writable] Warning: Treating .8 as 0.8. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [PlanarMechanicsV4.mo:4502:24-4502:26:writable] Warning: Treating .8 as 0.8. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [PlanarMechanicsV4.mo:5781:24-5781:26:writable] Warning: Treating .8 as 0.8. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [PlanarMechanicsV4.mo:2651:12-2651:25:writable] Warning: Modelica only supports 32-bit signed integers! Transforming: 1000000000000 into a real
 // "
 // "function Modelica.Math.Vectors.length \"Inline before index reduction\" \"Return length of a vectorReturn length of a vector (better as norm(), if further symbolic processing is performed)\"
 //   input Real[:] v \"Vector\";
