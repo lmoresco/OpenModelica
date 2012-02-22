@@ -642,7 +642,12 @@ algorithm
                                 }, true));
         txt = dimension1(txt, i_simCode);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("//Number of residues\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_dimZeroFunc= "));
+        txt = zerocrosslength(txt, i_simCode);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ";\n",
+                                    "//Number of residues\n"
+                                }, true));
         txt = fun_40(txt, i_modelInfo_labels, i_allEquations);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
@@ -2195,7 +2200,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 475, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 476, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_76;
@@ -2273,7 +2278,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 482, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 483, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_79;
@@ -2432,7 +2437,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external C type "));
         ret_0 = ExpressionDump.typeString(i_type);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 524, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 525, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_82;
@@ -2611,13 +2616,13 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Expression types are unsupported as return arguments "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 534, 36), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 535, 36), Tpl.textString(txt_0));
       then txt;
 
     case ( txt,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 535, 14), "Unsupported return argument");
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 536, 14), "Unsupported return argument");
       then txt;
   end matchcontinue;
 end extReturnType;
@@ -7366,9 +7371,8 @@ algorithm
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeText(txt, l_initFunctions);
         txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("checkConditions(0,true);\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeText(txt, l_initZeroCrossings);
-        txt = Tpl.softNewLine(txt);
         txt = Tpl.writeText(txt, l_initTimeEventFunctions);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeText(txt, l_initEventHandling);
@@ -7395,14 +7399,10 @@ algorithm
         txt = Tpl.writeText(txt, l_initBoundParameters);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " _initial=true;\n",
-                                    "update(ALL);\n"
-                                }, true));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "_initial=false;\n",
-                                    "  }"
+                                    "saveConditions();\n",
+                                    " }"
                                 }, false));
+        txt = Tpl.popBlock(txt);
       then txt;
 
     case ( txt,
@@ -18640,8 +18640,6 @@ algorithm
   matchcontinue(in_txt, in_a_simCode)
     local
       Tpl.Text txt;
-      SimCode.SimCode i_simCode;
-      list<BackendDAE.ZeroCrossing> i_zeroCrossings;
       list<SimCode.SimVar> i_vars_stateVars;
       list<SimCode.SimVar> i_vars_boolAlgVars;
       list<SimCode.SimVar> i_vars_intAlgVars;
@@ -18653,7 +18651,7 @@ algorithm
       Tpl.Text txt_0;
 
     case ( txt,
-           (i_simCode as SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(vars = SimCode.SIMVARS(algVars = i_vars_algVars, intAlgVars = i_vars_intAlgVars, boolAlgVars = i_vars_boolAlgVars, stateVars = i_vars_stateVars), name = i_modelInfo_name), zeroCrossings = i_zeroCrossings)) )
+           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(vars = SimCode.SIMVARS(algVars = i_vars_algVars, intAlgVars = i_vars_intAlgVars, boolAlgVars = i_vars_boolAlgVars, stateVars = i_vars_stateVars), name = i_modelInfo_name)) )
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("void "));
@@ -18686,13 +18684,9 @@ algorithm
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     " _event_handling.saveH();\n",
-                                    " //save all zero crossing condtions\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = saveconditionvar(txt, i_zeroCrossings, i_simCode);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("}"));
+                                    "\n",
+                                    "}"
+                                }, false));
         txt = Tpl.popBlock(txt);
       then txt;
 
@@ -24667,7 +24661,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Nested array subscripting *should* have been handled by the routine creating the asub, but for some reason it was not: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4124, 11), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4126, 11), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -24706,7 +24700,7 @@ algorithm
         txt_6 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("ASUB_EASY_CASE "));
         ret_6 = ExpressionDump.printExpStr(i_exp);
         txt_6 = Tpl.writeStr(txt_6, ret_6);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4153, 11), Tpl.textString(txt_6));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4155, 11), Tpl.textString(txt_6));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -24749,7 +24743,7 @@ algorithm
         txt_12 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("OTHER_ASUB "));
         ret_12 = ExpressionDump.printExpStr(i_exp);
         txt_12 = Tpl.writeStr(txt_12, ret_12);
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4171, 11), Tpl.textString(txt_12));
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 4173, 11), Tpl.textString(txt_12));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_631;
@@ -26181,8 +26175,9 @@ algorithm
         (l_eStart, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_start, SimCode.contextOther, l_preExp, a_varDecls, a_simCode);
         (l_eInterval, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_interval, SimCode.contextOther, l_preExp, a_varDecls, a_simCode);
         (l_eIndex, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_index, SimCode.contextOther, l_preExp, a_varDecls, a_simCode);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeText(txt, l_eIndex);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -29099,8 +29094,7 @@ algorithm
       equation
         ret_1 = listLength(i_zeroCrossings);
         l_size = Tpl.writeStr(Tpl.emptyTxt, intString(ret_1));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("return "));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(3));
         txt = Tpl.writeText(txt, l_size);
         txt = Tpl.popBlock(txt);
       then txt;
@@ -29121,24 +29115,20 @@ algorithm
   matchcontinue(in_txt, in_a_simCode)
     local
       Tpl.Text txt;
-      SimCode.SimCode i_simCode;
       Absyn.Path i_modelInfo_name;
 
     case ( txt,
-           (i_simCode as SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(name = i_modelInfo_name))) )
+           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(name = i_modelInfo_name)) )
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("int "));
         txt = lastIdentOfPath(txt, i_modelInfo_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "::getDimZeroFunc()\n",
-                                    " {\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(3));
-        txt = zerocrosslength(txt, i_simCode);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(";\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" }"));
+                                    " {\n",
+                                    "   return _dimZeroFunc;\n",
+                                    " }"
+                                }, false));
         txt = Tpl.popBlock(txt);
       then txt;
 
@@ -29734,8 +29724,9 @@ algorithm
            DAE.LESS(ty = DAE.T_BOOL(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
@@ -29749,24 +29740,27 @@ algorithm
            DAE.LESS(ty = DAE.T_INTEGER(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.LESS(ty = DAE.T_REAL(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.GREATER(ty = DAE.T_BOOL(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
@@ -29780,24 +29774,27 @@ algorithm
            DAE.GREATER(ty = DAE.T_INTEGER(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.GREATER(ty = DAE.T_REAL(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.LESSEQ(ty = DAE.T_BOOL(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
@@ -29811,24 +29808,27 @@ algorithm
            DAE.LESSEQ(ty = DAE.T_INTEGER(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.LESSEQ(ty = DAE.T_REAL(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.GREATEREQ(ty = DAE.T_BOOL(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
@@ -29842,80 +29842,90 @@ algorithm
            DAE.GREATEREQ(ty = DAE.T_INTEGER(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.GREATEREQ(ty = DAE.T_REAL(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.EQUAL(ty = DAE.T_BOOL(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.EQUAL(ty = DAE.T_STRING(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.EQUAL(ty = DAE.T_INTEGER(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.EQUAL(ty = DAE.T_REAL(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.NEQUAL(ty = DAE.T_BOOL(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.NEQUAL(ty = DAE.T_STRING(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.NEQUAL(ty = DAE.T_INTEGER(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
            DAE.NEQUAL(ty = DAE.T_REAL(varLst = _)),
            a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_conditions1["));
         txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
 
     case ( txt,
@@ -31141,7 +31151,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 5261, 12), "algStmtTupleAssign failed");
+        txt = error(txt, Tpl.sourceInfo("SimCodeCpp.tpl", 5263, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
@@ -33249,10 +33259,10 @@ algorithm
         txt = Tpl.writeText(txt, l_e2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ");\n",
-                                    "_condition"
+                                    "_conditions1["
                                 }, false));
         txt = Tpl.writeStr(txt, intString(i_zerocrossingIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("="));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]="));
         txt = Tpl.writeText(txt, l_res);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(";\n"));
         txt = Tpl.popBlock(txt);
@@ -33318,20 +33328,27 @@ algorithm
                                     "int iter=0;\n",
                                     "while(restart && !(iter++ > 10))\n",
                                     "{\n",
-                                    "\n"
+                                    "     saveAll();\n"
                                 }, true));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(8));
         txt = Tpl.writeText(txt, a_zeroCrossingsCode);
         txt = Tpl.softNewLine(txt);
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("double h["));
         txt = helpvarlength(txt, i_simCode);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("];\n"));
         txt = helpvarvector(txt, i_whenClauses, i_simCode);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " _event_handling.setHelpVars(h);\n",
-                                    "//iterate and handle all events inside the eventqueue\n",
-                                    "restart=_event_handling.IterateEventQueue(events,update_event);\n",
-                                    "}\n",
+                                    "     _event_handling.setHelpVars(h);\n",
+                                    "    //iterate and handle all events inside the eventqueue\n",
+                                    "    restart=_event_handling.IterateEventQueue(events,update_event);\n"
+                                }, true));
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    " }\n",
+                                    "  saveConditions();\n",
                                     " resetTimeEvents();\n",
                                     "if(iter>10){\n",
                                     " throw std::runtime_error(\"Number of event iteration steps exceeded. \");}\n"
@@ -33689,11 +33706,9 @@ algorithm
            a_zerocrossingIndex )
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if(_event_handling.pre(_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if(_conditions0["));
         txt = Tpl.writeStr(txt, intString(a_zerocrossingIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",\"_condition"));
-        txt = Tpl.writeStr(txt, intString(a_zerocrossingIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("\"))\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("])\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(7));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("f["));
         txt = Tpl.writeStr(txt, intString(a_index1));
@@ -33724,11 +33739,9 @@ algorithm
            a_zerocrossingIndex )
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if(_event_handling.pre(_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if(_conditions0["));
         txt = Tpl.writeStr(txt, intString(a_zerocrossingIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",\"_condition"));
-        txt = Tpl.writeStr(txt, intString(a_zerocrossingIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("\"))\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("])\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(7));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("f["));
         txt = Tpl.writeStr(txt, intString(a_index1));
@@ -33759,11 +33772,9 @@ algorithm
            a_zerocrossingIndex )
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if(_event_handling.pre(_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if(_conditions0["));
         txt = Tpl.writeStr(txt, intString(a_zerocrossingIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",\"_condition"));
-        txt = Tpl.writeStr(txt, intString(a_zerocrossingIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("\"))\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("])\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(7));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("f["));
         txt = Tpl.writeStr(txt, intString(a_index1));
@@ -33794,11 +33805,9 @@ algorithm
            a_zerocrossingIndex )
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if(_event_handling.pre(_condition"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if(_conditions0["));
         txt = Tpl.writeStr(txt, intString(a_zerocrossingIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",\"_condition"));
-        txt = Tpl.writeStr(txt, intString(a_zerocrossingIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("\"))\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("])\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(7));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("f["));
         txt = Tpl.writeStr(txt, intString(a_index1));
@@ -34205,9 +34214,7 @@ protected
 algorithm
   l_conditionvariable := conditionvarZero(Tpl.emptyTxt, a_zeroCrossings, a_simCode);
   l_conditionvarsample := conditionvarSample(Tpl.emptyTxt, a_sampleConditions, a_simCode);
-  out_txt := Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-  out_txt := Tpl.writeText(out_txt, l_conditionvariable);
-  out_txt := Tpl.softNewLine(out_txt);
+  out_txt := Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
   out_txt := Tpl.writeText(out_txt, l_conditionvarsample);
   out_txt := Tpl.popBlock(out_txt);
 end conditionvariable;
