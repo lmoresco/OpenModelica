@@ -34,7 +34,7 @@ public import DAEDump;
 public import Algorithm;
 public import DAEUtil;
 public import Types;
-public import SimCodeC;
+public import CodegenC;
 
 public function dumpSimCode
   input Tpl.Text in_txt;
@@ -72,7 +72,7 @@ algorithm
            SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, intAlgVars = i_vars_intAlgVars, boolAlgVars = i_vars_boolAlgVars, inputVars = i_vars_inputVars, outputVars = i_vars_outputVars, aliasVars = i_vars_aliasVars, intAliasVars = i_vars_intAliasVars, boolAliasVars = i_vars_boolAliasVars, paramVars = i_vars_paramVars, intParamVars = i_vars_intParamVars, boolParamVars = i_vars_boolParamVars, stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars, stringAliasVars = i_vars_stringAliasVars, extObjVars = i_vars_extObjVars, jacobianVars = i_vars_jacobianVars, constVars = i_vars_constVars), name = i_mi_name), allEquations = i_sc_allEquations) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("SimCode: "));
-        txt = SimCodeC.dotPath(txt, i_mi_name);
+        txt = CodegenC.dotPath(txt, i_mi_name);
         txt = Tpl.softNewLine(txt);
         txt = dumpVars(txt, i_vars_stateVars);
         txt = Tpl.softNewLine(txt);
@@ -144,7 +144,7 @@ algorithm
     case ( txt,
            SimCode.SIMVAR(name = i_v_name, comment = i_v_comment, aliasvar = i_v_aliasvar, source = i_v_source) :: rest )
       equation
-        txt = SimCodeC.crefStr(txt, i_v_name);
+        txt = CodegenC.crefStr(txt, i_v_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, i_v_comment);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
@@ -191,14 +191,14 @@ algorithm
            SimCode.ALIAS(varName = i_varName) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("alias of "));
-        txt = SimCodeC.crefStr(txt, i_varName);
+        txt = CodegenC.crefStr(txt, i_varName);
       then txt;
 
     case ( txt,
            SimCode.NEGATEDALIAS(varName = i_varName) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("alias of -"));
-        txt = SimCodeC.crefStr(txt, i_varName);
+        txt = CodegenC.crefStr(txt, i_varName);
       then txt;
 
     case ( txt,
@@ -377,7 +377,7 @@ algorithm
     case ( txt,
            i_cr :: rest )
       equation
-        txt = SimCodeC.crefStr(txt, i_cr);
+        txt = CodegenC.crefStr(txt, i_cr);
         txt = Tpl.nextIter(txt);
         txt = lm_36(txt, rest);
       then txt;
@@ -468,7 +468,7 @@ algorithm
            SimCode.SES_SIMPLE_ASSIGN(cref = i_e_cref, exp = i_e_exp, source = i_e_source) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("eq: "));
-        txt = SimCodeC.crefStr(txt, i_e_cref);
+        txt = CodegenC.crefStr(txt, i_e_cref);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
         ret_1 = ExpressionDump.printExpStr(i_e_exp);
         txt = Tpl.writeStr(txt, ret_1);
@@ -563,7 +563,7 @@ algorithm
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("when: conditions\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = SimCodeC.crefStr(txt, i_e_left);
+        txt = CodegenC.crefStr(txt, i_e_left);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
         ret_3 = ExpressionDump.printExpStr(i_e_right);
         txt = Tpl.writeStr(txt, ret_3);
@@ -644,7 +644,7 @@ algorithm
            Absyn.WITHIN(path = i_path) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("within "));
-        txt = SimCodeC.dotPath(txt, i_path);
+        txt = CodegenC.dotPath(txt, i_path);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
       then txt;
 
@@ -706,7 +706,7 @@ algorithm
     case ( txt,
            SOME(i_cr) :: rest )
       equation
-        txt = SimCodeC.crefStr(txt, i_cr);
+        txt = CodegenC.crefStr(txt, i_cr);
         txt = lm_43(txt, rest);
       then txt;
 
@@ -769,7 +769,7 @@ algorithm
     case ( txt,
            i_p :: rest )
       equation
-        txt = SimCodeC.dotPath(txt, i_p);
+        txt = CodegenC.dotPath(txt, i_p);
         txt = Tpl.nextIter(txt);
         txt = lm_45(txt, rest);
       then txt;
@@ -927,7 +927,7 @@ algorithm
     case ( txt,
            i_v :: rest )
       equation
-        txt = SimCodeC.crefStr(txt, i_v);
+        txt = CodegenC.crefStr(txt, i_v);
         txt = Tpl.nextIter(txt);
         txt = lm_49(txt, rest);
       then txt;
@@ -1129,7 +1129,7 @@ algorithm
     case ( txt,
            i_cr :: rest )
       equation
-        txt = SimCodeC.crefStr(txt, i_cr);
+        txt = CodegenC.crefStr(txt, i_cr);
         txt = Tpl.nextIter(txt);
         txt = lm_55(txt, rest);
       then txt;
@@ -1252,7 +1252,7 @@ algorithm
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("  simple equation: "));
-        txt = SimCodeC.crefStr(txt, i_op_cr);
+        txt = CodegenC.crefStr(txt, i_op_cr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
         ret_6 = ExpressionDump.printExpStr(i_op_exp);
         txt = Tpl.writeStr(txt, ret_6);
@@ -1317,7 +1317,7 @@ algorithm
         txt = Tpl.writeStr(txt, ret_8);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("=>\n"));
-        txt = SimCodeC.crefStr(txt, i_op_cr);
+        txt = CodegenC.crefStr(txt, i_op_cr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
         ret_9 = ExpressionDump.printExpStr(i_op_res);
         txt = Tpl.writeStr(txt, ret_9);
@@ -1341,7 +1341,7 @@ algorithm
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("d/d"));
-        txt = SimCodeC.crefStr(txt, i_op_cr);
+        txt = CodegenC.crefStr(txt, i_op_cr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         ret_10 = ExpressionDump.printExpStr(i_op_before);
         txt = Tpl.writeStr(txt, ret_10);
@@ -1382,7 +1382,7 @@ algorithm
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("  dummy derivative: "));
-        txt = SimCodeC.crefStr(txt, i_op_chosen);
+        txt = CodegenC.crefStr(txt, i_op_chosen);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" from candidates: "));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         txt = lm_55(txt, i_op_candidates);

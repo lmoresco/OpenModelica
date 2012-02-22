@@ -540,7 +540,7 @@ algorithm
   end matchcontinue;
 end fun_36;
 
-public function pupulateModelInfo
+public function populateModelInfo
   input Tpl.Text in_txt;
   input SimCode.ModelInfo in_a_modelInfo;
   input String in_a_fileNamePrefix;
@@ -752,7 +752,7 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end pupulateModelInfo;
+end populateModelInfo;
 
 public function functionInitializeDataStruc
   input Tpl.Text txt;
@@ -770,7 +770,7 @@ algorithm
                                    "  ASSERT(data,\"Error while initialize Data\");\n"
                                }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
-  out_txt := pupulateModelInfo(out_txt, a_modelInfo, a_fileNamePrefix, a_guid, a_allEquations, a_delayed);
+  out_txt := populateModelInfo(out_txt, a_modelInfo, a_fileNamePrefix, a_guid, a_allEquations, a_delayed);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.popBlock(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("}"));
