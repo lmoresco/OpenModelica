@@ -16501,7 +16501,7 @@ algorithm
     case ( txt,
            i_cr )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_"));
         txt = crefToCStr(txt, i_cr);
       then txt;
   end matchcontinue;
@@ -16538,7 +16538,7 @@ algorithm
     case ( txt,
            i_cr )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_"));
         txt = crefToCStr(txt, i_cr);
       then txt;
   end matchcontinue;
@@ -16570,7 +16570,7 @@ algorithm
       equation
         txt = Tpl.writeStr(txt, i_ident);
         txt = subscriptsToCStr(txt, i_subscriptLst);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$P"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_P_"));
         txt = crefToCStr(txt, i_componentRef);
       then txt;
 
@@ -16716,7 +16716,7 @@ algorithm
     case ( txt,
            i_cr )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_"));
         txt = crefToCStr1(txt, i_cr);
       then txt;
   end matchcontinue;
@@ -16747,7 +16747,7 @@ algorithm
       equation
         txt = Tpl.writeStr(txt, i_ident);
         txt = subscriptsToCStr(txt, i_subscriptLst);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$P"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_P_"));
         txt = crefToCStr1(txt, i_componentRef);
       then txt;
 
@@ -20462,7 +20462,7 @@ public function arrayCrefCStr
 
   output Tpl.Text out_txt;
 algorithm
-  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING("$"));
+  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING("_"));
   out_txt := arrayCrefCStr2(out_txt, a_cr);
 end arrayCrefCStr;
 
@@ -20493,7 +20493,7 @@ algorithm
       equation
         ret_1 = System.unquoteIdentifier(i_ident);
         txt = Tpl.writeStr(txt, ret_1);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$P"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_P_"));
         txt = arrayCrefCStr2(txt, i_componentRef);
       then txt;
 
@@ -35887,11 +35887,11 @@ algorithm
            i_label :: rest )
       equation
         x_index0 = Tpl.getIteri_i0(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(&$"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(&"));
         txt = Tpl.writeStr(txt, i_label);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_1,"));
         txt = Tpl.writeStr(txt, intString(x_index0));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",&$"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",&"));
         txt = Tpl.writeStr(txt, i_label);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_2)"));
         txt = Tpl.nextIter(txt);
@@ -36043,7 +36043,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "::getLabels()\n",
                                     "{\n",
-                                    "   label_list_type $labels = tuple_list_of\n"
+                                    "   label_list_type labels = tuple_list_of\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(3));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
@@ -36051,7 +36051,7 @@ algorithm
         txt = Tpl.popIter(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ";\n",
-                                    "return $labels;\n"
+                                    "return labels;\n"
                                 }, true));
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
