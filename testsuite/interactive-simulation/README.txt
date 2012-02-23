@@ -15,7 +15,7 @@ user: anonymous
 pass: none   <-- write "none" without quotes here
 
 An already build application test executable for Windows is in:
-https://openmodelica.ida.liu.se/svn/OpenModelica/trunk/c_runtime/interactive/SampleClient 
+https://openmodelica.ida.liu.se/svn/OpenModelica/trunk/SimulationRuntime/interactive/SampleClient 
 directory
 
 Code:

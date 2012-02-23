@@ -57,13 +57,13 @@ omdev_extra_dlls:
 	(cp -pufr $(OMDEV)/tools/xsltproc $(builddir_lib)/omc/libexec/)
 	(cp -pufr $(OMDEV)/tools/gnuplot $(builddir_lib)/omc/libexec/)
 
-omc: c_runtime docs omdev_extra_dlls breakprocess fmi
+omc: interactive docs omdev_extra_dlls breakprocess fmi
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw release)
 
-omcd: c_runtime docs omdev_extra_dlls breakprocess fmi
+omcd: interactive docs omdev_extra_dlls breakprocess fmi
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw debug)
 
-omc_profiler: c_runtime docs omdev_extra_dlls breakprocess fmi
+omc_profiler: interactive docs omdev_extra_dlls breakprocess fmi
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw profiler)
 
 

@@ -26,10 +26,10 @@ run-bash-guard: client$(EXT) TwoTanks.TanksConnectedPI$(EXT) interactive-simulat
 TwoTanks.TanksConnectedPI$(EXT): TwoTanks/* buildModel.mos
 	../../build/bin/omc +std=2.x buildModel.mos
 
-client$(EXT): ../../c_runtime/interactive/*.c* ../../c_runtime/interactive/*.h*
-	g++ -o client$(EXT) ../../c_runtime/interactive/client.cpp -I../../c_runtime/interactive/ \
-	../../c_runtime/interactive/thread.cpp \
-	../../c_runtime/interactive/socket.cpp $(LDFLAGS)
+client$(EXT): ../../SimulationRuntime/interactive/*.c* ../../SimulationRuntime//interactive/*.h*
+	g++ -o client$(EXT) ../../SimulationRuntime/interactive/client.cpp -I../../SimulationRuntime/interactive/ \
+	../../SimulationRuntime/interactive/thread.cpp \
+	../../SimulationRuntime/interactive/socket.cpp $(LDFLAGS)
 
 clean: 
 	rm -f TwoTanks.TanksConnectedPI* client.* 
