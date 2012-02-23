@@ -67,6 +67,7 @@ loadFile("../../Compiler/FrontEnd/PrefixUtil.mo");
 loadFile("../../Compiler/FrontEnd/SCodeDependency.mo");
 loadFile("../../Compiler/FrontEnd/SCodeDump.mo");
 loadFile("../../Compiler/FrontEnd/SCodeEnv.mo");
+loadFile("../../Compiler/FrontEnd/SCodeExpand.mo");
 loadFile("../../Compiler/FrontEnd/SCodeFlattenExtends.mo");
 loadFile("../../Compiler/FrontEnd/SCodeFlattenImports.mo");
 loadFile("../../Compiler/FrontEnd/SCodeFlatten.mo");
