@@ -103,7 +103,7 @@ loadFile("../../Compiler/Script/Interactive.mo");
 loadFile("../../Compiler/Script/Refactor.mo");
 "Template";
 loadFile("../../Compiler/Template/CodegenC.mo");
-loadFile("../../Compiler/Template/CodeGenAdevs.mo");
+loadFile("../../Compiler/Template/CodegenAdevs.mo");
 loadFile("../../Compiler/Template/CodegenFMU.mo");
 loadFile("../../Compiler/Template/CodegenQSS.mo");
 loadFile("../../Compiler/Template/CodegenCpp.mo");
