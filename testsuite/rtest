@@ -55,7 +55,7 @@ $statusfilter = "all";
 $eps_mo = 1.0e-7;
 $eps_mos = 5e-3;
 $set_modelica_lib = 1;
-$OMCEXE = "omc"
+$OMCEXE = "omc";
 
 # Creates a baseline, i.e. the stores the actual result as the expected result
 sub setbaselineone
