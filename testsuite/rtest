@@ -35,6 +35,7 @@ $successes=0;
 $total=0;
 $setbaseline=0;
 $verbose="yes";
+$returnwitherror=0;
 $pager="cat";
 $log="";
 $tmpdir = "/tmp/omc-rtest-".(getlogin()||getpwuid($<)||"unknown")."/$dirname";
@@ -161,7 +162,7 @@ sub runone
 
     if ($info{"status"} eq "erroneous") {
       print "erroneous\n";
-      return 1;
+      return 0;
     }
 
     if ( $retval != 0 ) {
@@ -331,6 +332,8 @@ while ($#ARGV >= 0) {
     
     if ($arg =~ m/^\+/) {
       $omcflags .= " $arg";
+    } elsif ($arg eq "--return-with-error-code") {
+      $returnwitherror=1;
     } elsif ($arg eq "-v") {
       $verbose="yes";
     } elsif ($arg eq "-b") {
@@ -430,3 +433,6 @@ if ($collectkeys || $collectcases) {
     printf "\n== %d out of %d tests failed [%s, time: %d]\n", $total-$successes, $total, $dirname, $end_t;
 }
 
+if ($returnwitherror && $total!=$successes) {
+  exit 1;
+}
