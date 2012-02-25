@@ -36,14 +36,14 @@ end RedeclareFunction;
 //   input Real[2] a;
 //   output Real b;
 // algorithm
-//   b := {a[1],a[2]} * /*/tp:T_REAL[2]/*/(1:2);
+//   b := {a[1],a[2]} * 1.0:2.0;
 // end RedeclareFunction.B.A2.f;
 // 
 // function RedeclareFunction.B.A3.f
 //   input Real[3] a;
 //   output Real b;
 // algorithm
-//   b := {a[1],a[2],a[3]} * /*/tp:T_REAL[3]/*/(1:3);
+//   b := {a[1],a[2],a[3]} * 1.0:3.0;
 // end RedeclareFunction.B.A3.f;
 // 
 // class RedeclareFunction
