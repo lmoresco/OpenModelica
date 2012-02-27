@@ -571,6 +571,7 @@ SubScript2.mo \
 SubScript3.mo \
 SubscriptEval.mo \
 Sum.mo \
+SumVar.mo \
 Switch.mo \
 Tanh.mo \
 Tan.mo \
