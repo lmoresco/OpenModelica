@@ -10836,7 +10836,7 @@ algorithm
                                     "    virtual void checkConditions(unsigned int, bool all);\n",
                                     "    virtual void saveConditions();\n",
                                     "    //Called to handle all  events occured at same time\n",
-                                    "    virtual void handleSystemEvents(const bool* events,update_events_type update_event);\n",
+                                    "    virtual void handleSystemEvents(const bool* events);\n",
                                     "    //Called to handle an event\n",
                                     "    virtual void handleEvent(unsigned long index);\n",
                                     "    //Checks if a discrete variable has changed and triggers an event\n",
@@ -33740,7 +33740,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("void "));
         txt = lastIdentOfPath(txt, i_modelInfo_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "::handleSystemEvents(const bool* events,update_events_type update_event)\n",
+                                    "::handleSystemEvents(const bool* events)\n",
                                     "{\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
@@ -33765,7 +33765,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "     _event_handling.setHelpVars(h);\n",
                                     "    //iterate and handle all events inside the eventqueue\n",
-                                    "    restart=_event_handling.IterateEventQueue(events,update_event);\n",
+                                    "    restart=_event_handling.IterateEventQueue(_conditions1);\n",
                                     "    saveAll();\n"
                                 }, true));
         txt = Tpl.popBlock(txt);
