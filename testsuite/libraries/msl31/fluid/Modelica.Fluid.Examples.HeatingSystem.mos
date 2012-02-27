@@ -3562,7 +3562,7 @@ checkModel(Modelica.Fluid.Examples.HeatingSystem); getErrorString();
 //   input Real tank.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = tank.medium.state.d \"density\";
 //   input Real tank.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = tank.medium.state.T \"temperature\";
 //   input Real tank.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = tank.medium.state.p \"pressure\";
-//   input Real tank.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = tank.crossArea + 2.0 * (sqrt(3.14159265358979 * tank.crossArea) * tank.level) \"Heat transfer areas\";
+//   input Real tank.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = tank.crossArea + 2.0 * (sqrt(3.141592653589793 * tank.crossArea) * tank.level) \"Heat transfer areas\";
 //   output Real tank.heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real tank.heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real tank.heatTransfer.heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
@@ -3643,7 +3643,7 @@ checkModel(Modelica.Fluid.Examples.HeatingSystem); getErrorString();
 //   input Real pump.heatTransfer.states[1].d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) = pump.medium.state.d \"density\";
 //   input Real pump.heatTransfer.states[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = pump.medium.state.T \"temperature\";
 //   input Real pump.heatTransfer.states[1].p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = pump.medium.state.p \"pressure\";
-//   input Real pump.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = 12.5663706143592 * (0.238732414637843 * pump.V) ^ 0.666666666666667 \"Heat transfer areas\";
+//   input Real pump.heatTransfer.surfaceAreas[1](quantity = \"Area\", unit = \"m2\") = 12.566370614359172 * (0.238732414637843 * pump.V) ^ 0.6666666666666666 \"Heat transfer areas\";
 //   output Real pump.heatTransfer.Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
 //   Real pump.heatTransfer.heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real pump.heatTransfer.heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
@@ -4842,7 +4842,6 @@ checkModel(Modelica.Fluid.Examples.HeatingSystem); getErrorString();
 // Error: Internal error Static.elabBuiltinFill2 failed in componentheater
 // Error: Internal error Static.elabBuiltinFill2 failed in component<NO COMPONENT>
 // Error: Internal error Static.elabBuiltinFill2 failed in componentradiator
-// Error: Internal error Static.elabBuiltinFill2 failed in component<NO COMPONENT>
 // 
 // Class Modelica.Fluid.Examples.HeatingSystem has 579 equation(s) and 573 variable(s).
 // 372 of these are trivial equation(s).

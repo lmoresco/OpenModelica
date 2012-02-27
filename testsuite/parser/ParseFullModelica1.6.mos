@@ -1218,7 +1218,7 @@ list();
 //         Math.Add addD(k1 = wd, k2 = -1) annotation(extent = [-80,-10;-60,10]);
 //         Math.Gain P annotation(extent = [-40,40;-20,60]);
 //         Integrator I(k = {1 / Ti}) annotation(extent = [-40,-60;-20,-40]);
-//         Derivative D(k = {Td}, T = {max([Td / Nd,1e-014])}) annotation(extent = [-40,-10;-20,10]);
+//         Derivative D(k = {Td}, T = {max([Td / Nd,0.00000000000001])}) annotation(extent = [-40,-10;-20,10]);
 //         Math.Gain gainPID(k = {k}) annotation(extent = [30,-10;50,10]);
 //         Math.Add3 addPID annotation(extent = [0,-10;20,10]);
 //         Math.Add3 addI(k2 = -1) annotation(extent = [-80,-60;-60,-40]);
@@ -1998,6 +1998,29 @@ list();
 //         replaceable type SignalType = Real;
 //         extends SignalType;
 //       end RealPort;
+//       /*connector RealPort \"Connector with input signals of type Real\"
+//     parameter Integer n=1 \"Dimension of signal vector\";
+//     replaceable type SignalType = Real \"type of signal\";
+//     SignalType signal[n] \"Real input signals\";
+// 
+//     annotation (
+//       Icon(
+//         Polygon(
+//           points=[-100, 100; 100, 0; -100, -100; -100, 100],
+//           style(color=3, fillColor=3))),
+//       Diagram(
+//         Polygon(
+//           points=[-100, 100; 100, 0; -100, -100; -100, 100],
+//           style(color=3, fillColor=3)),
+//         Text(
+//           extent=[-100, -120; 100, -220],
+//           string=\"%name\",
+//           style(color=3))),
+//       Terminal(
+//         Polygon(
+//           points=[-100, 100; 100, 0; -100, -100; -100, 100],
+//           style(color=3, fillColor=3))));
+//   end RealPort; */
 //       connector BooleanPort = Boolean \"Boolean port (both input/output possible)\";
 //       connector IntegerPort = Integer \"Integer port (both input/output possible)\";
 //       package BusAdaptors \"Components to send signals to the bus or receive signals from the bus\"
@@ -3625,6 +3648,8 @@ list();
 //         sdd = if time < startTime then 0 else if noWphase then if time < Ta1 + startTime then sdd_max else if time < Te + startTime then -sdd_max else 0 else if time < Ta2 + startTime then sdd_max else if time < Tv + startTime then 0 else if time < Te + startTime then -sdd_max else 0;
 //         outPort.signal = p_deltaq * sdd;
 //       end KinematicPTP;
+//       // acceleration
+//       // path-acceleration
 //       block TimeTable \"Generate a (possibly discontinuous) signal by linear interpolation in a table\"
 //         parameter Real table[:,2] = [0,0;1,1;2,4] \"Table matrix (time = first column)\";
 //         parameter Real offset[1] = {0} \"Offset of output signal\";
@@ -3756,6 +3781,15 @@ list();
 //           end if;
 //           b:=b - a * startTime;
 //         end getInterpolationCoefficients;
+//         // Take into account startTime \"a*(time - startTime) + b\"
+//         // Interpolation interval is not big enough, use \"next\" value
+//         // Determine interpolation coefficients
+//         // Define next time event, if last table entry not reached
+//         // in the table may be identical due to a discontinuous point.
+//         // Find next time event instant. Note, that two consecutive time instants
+//         // Special action if table has only one row
+//         // First event not yet reached
+//         // in case there are no more time events
 //       algorithm
 //         when {time >= pre(nextEvent),initial()} then
 //                   (a,b,nextEvent,last):=getInterpolationCoefficients(table, scalar(offset), scalar(startTime), time, last, 100 * Modelica.Constants.eps);
@@ -4020,12 +4054,12 @@ list();
 // </dl>
 // </HTML>
 // \"), Window(x = 0.28, y = 0.08, width = 0.6, height = 0.6), Diagram);
-//             Semiconductors.PMOS TP1(W = 6.5e-006, L = 3.1e-006, Beta = 1.05e-005, Vt = -1, K2 = 0.41, K5 = 0.8385, dW = -2.5e-006, dL = -2.1e-006) annotation(extent = [10,60;30,80]);
-//             Semiconductors.PMOS TP2(W = 6.5e-006, L = 3.1e-006, Beta = 1.05e-005, Vt = -1, K2 = 0.41, K5 = 0.8385, dW = -2.5e-006, dL = -2.1e-006) annotation(extent = [-40,45;-20,65]);
-//             Semiconductors.NMOS TN1(W = 6.5e-006, L = 3.1e-006, Beta = 4.1e-005, Vt = 0.8, K2 = 1.144, K5 = 0.7311, dW = -2.5e-006, dL = -1.5e-006) annotation(extent = [10,15;30,35]);
-//             Semiconductors.NMOS TN2(W = 6.5e-006, L = 3.1e-006, Beta = 4.1e-005, Vt = 0.8, K2 = 1.144, K5 = 0.7311, dW = -2.5e-006, dL = -1.5e-006) annotation(extent = [10,-25;30,-5]);
-//             Basic.Capacitor C4(C = 4e-014) annotation(extent = [50,20;70,40], rotation = -90);
-//             Basic.Capacitor C7(C = 4e-014) annotation(extent = [45,-60;65,-40], rotation = -90);
+//             Semiconductors.PMOS TP1(W = 0.0000065, L = 0.0000031, Beta = 0.0000105, Vt = -1, K2 = 0.41, K5 = 0.8385, dW = -0.0000025, dL = -0.0000021) annotation(extent = [10,60;30,80]);
+//             Semiconductors.PMOS TP2(W = 0.0000065, L = 0.0000031, Beta = 0.0000105, Vt = -1, K2 = 0.41, K5 = 0.8385, dW = -0.0000025, dL = -0.0000021) annotation(extent = [-40,45;-20,65]);
+//             Semiconductors.NMOS TN1(W = 0.0000065, L = 0.0000031, Beta = 0.000041, Vt = 0.8, K2 = 1.144, K5 = 0.7311, dW = -0.0000025, dL = -0.0000015) annotation(extent = [10,15;30,35]);
+//             Semiconductors.NMOS TN2(W = 0.0000065, L = 0.0000031, Beta = 0.000041, Vt = 0.8, K2 = 1.144, K5 = 0.7311, dW = -0.0000025, dL = -0.0000015) annotation(extent = [10,-25;30,-5]);
+//             Basic.Capacitor C4(C = 0.00000000000004) annotation(extent = [50,20;70,40], rotation = -90);
+//             Basic.Capacitor C7(C = 0.00000000000004) annotation(extent = [45,-60;65,-40], rotation = -90);
 //             Basic.Ground Gnd annotation(extent = [40,-25;50,-15]);
 //             Basic.Ground Gnd2 annotation(extent = [55,0;65,10]);
 //             Basic.Ground Gnd3 annotation(extent = [50,-80;60,-70]);
@@ -4085,8 +4119,8 @@ list();
 //             annotation(Coordsys(extent = [-100,-100;100,100], grid = [2,2], component = [20,20]), Icon(Rectangle(extent = [-80,80;80,-80]), Line(points = [80,60;100,60]), Line(points = [80,-60;100,-60]), Line(points = [-100,0;-80,0]), Line(points = [-60,0;-10,0]), Line(points = [-10,40;-10,-40]), Line(points = [60,60;40,60;-10,10]), Line(points = [-10,-10;40,-60;60,-60])), Window(x = 0.25, y = 0.24, width = 0.6, height = 0.6));
 //             Basic.Resistor rtb(R = 0.05) annotation(extent = [-80,-10;-60,10]);
 //             Basic.Resistor rtc(R = 0.1) annotation(extent = [40,0;60,20]);
-//             Basic.Capacitor ct(C = 1e-010) annotation(extent = [-50,-40;-30,-20], rotation = -90);
-//             Semiconductors.NPN Tr(Bf = 50, Br = 0.1, Is = 1e-016, Vak = 0.02, Tauf = 1.2e-010, Taur = 5e-009, Ccs = 1e-012, Cje = 4e-013, Cjc = 5e-013, Phie = 0.8, Me = 0.4, Phic = 0.8, Mc = 0.333, Gbc = 1e-015, Gbe = 1e-015, Vt = 0.02585) annotation(extent = [-20,-20;20,20]);
+//             Basic.Capacitor ct(C = 0.0000000001) annotation(extent = [-50,-40;-30,-20], rotation = -90);
+//             Semiconductors.NPN Tr(Bf = 50, Br = 0.1, Is = 0.0000000000000001, Vak = 0.02, Tauf = 0.00000000012, Taur = 0.000000005, Ccs = 0.000000000001, Cje = 0.0000000000004, Cjc = 0.0000000000005, Phie = 0.8, Me = 0.4, Phic = 0.8, Mc = 0.333, Gbc = 0.000000000000001, Gbe = 0.000000000000001, Vt = 0.02585) annotation(extent = [-20,-20;20,20]);
 //             Basic.Ground Ground1 annotation(extent = [-50,-80;-30,-60]);
 //             Interfaces.Pin c annotation(extent = [90,50;110,70]);
 //             Interfaces.Pin b annotation(extent = [-110,-10;-90,10]);
@@ -4508,17 +4542,17 @@ list();
 // </HTML>
 // \"), Window(x = 0.35, y = 0.01, width = 0.45, height = 0.61));
 //           Sources.ExpSineVoltage V1(V = 0.2, freqHz = 200000000.0, damping = 10000000.0) annotation(extent = [-100,-60;-80,-40], rotation = -90);
-//           Sources.RampVoltage V2(V = 15, duration = 1e-009) annotation(extent = [70,40;90,60], rotation = -90);
-//           Sources.RampCurrent I1(I = 0.16, duration = 1e-009) annotation(extent = [-20,-60;0,-40], rotation = -90);
+//           Sources.RampVoltage V2(V = 15, duration = 0.000000001) annotation(extent = [70,40;90,60], rotation = -90);
+//           Sources.RampCurrent I1(I = 0.16, duration = 0.000000001) annotation(extent = [-20,-60;0,-40], rotation = -90);
 //           Basic.Resistor R1(R = 0.0001) annotation(extent = [-90,-20;-70,0]);
 //           Basic.Resistor R2(R = 100) annotation(extent = [-50,20;-30,40], rotation = -90);
 //           Basic.Resistor R3(R = 0.0001) annotation(extent = [70,-20;90,0]);
 //           Basic.Resistor R4(R = 100) annotation(extent = [30,20;50,40], rotation = -90);
-//           Basic.Capacitor C1(C = 1e-010) annotation(extent = [-70,-60;-50,-40], rotation = -90);
-//           Basic.Capacitor C4(C = 1e-010) annotation(extent = [10,-14;30,6]);
-//           Basic.Capacitor C5(C = 1e-010) annotation(extent = [0,-60;20,-40], rotation = -90);
-//           Basic.Capacitor C2(C = 1e-010) annotation(extent = [-30,-14;-10,6]);
-//           Basic.Capacitor C3(C = 1e-010) annotation(extent = [50,-60;70,-40], rotation = -90);
+//           Basic.Capacitor C1(C = 0.0000000001) annotation(extent = [-70,-60;-50,-40], rotation = -90);
+//           Basic.Capacitor C4(C = 0.0000000001) annotation(extent = [10,-14;30,6]);
+//           Basic.Capacitor C5(C = 0.0000000001) annotation(extent = [0,-60;20,-40], rotation = -90);
+//           Basic.Capacitor C2(C = 0.0000000001) annotation(extent = [-30,-14;-10,6]);
+//           Basic.Capacitor C3(C = 0.0000000001) annotation(extent = [50,-60;70,-40], rotation = -90);
 //           Basic.Ground Gnd1 annotation(extent = [-95,-80;-85,-70]);
 //           Basic.Ground Gnd9 annotation(extent = [75,20;85,30]);
 //           Basic.Ground Gnd3 annotation(extent = [-15,-20;-5,-10]);
@@ -4560,7 +4594,7 @@ list();
 //           Modelica.Electrical.Analog.Basic.Ground G annotation(extent = [-80,-40;-60,-20]);
 //           Modelica.Electrical.Analog.Sources.SineVoltage Sin(V = 5) annotation(extent = [-80,-10;-60,10], rotation = 270);
 //           annotation(Diagram(Text(extent = [-100,100;-6,72], string = \"Heating MOS Inverter\")));
-//           Modelica.Electrical.Analog.Basic.Capacitor Capacitor1(C = 1e-005) annotation(extent = [20,0;40,20], rotation = 270);
+//           Modelica.Electrical.Analog.Basic.Capacitor Capacitor1(C = 0.00001) annotation(extent = [20,0;40,20], rotation = 270);
 //           Modelica.Thermal.HeatTransfer.HeatCapacitor HeatCapacitor1(C = 0.01) annotation(extent = [60,-70;80,-50], rotation = 270);
 //           Modelica.Thermal.HeatTransfer.ThermalConductor TC1(G = 0.01) annotation(extent = [0,-50;20,-30], rotation = 0);
 //           Semiconductors.HeatingPMOS H_PMOS annotation(extent = [-40,40;-20,60]);
@@ -4654,8 +4688,8 @@ list();
 //           Modelica.Electrical.Analog.Basic.Ground Gnd5 annotation(extent = [-26,-76;-6,-56]);
 //           Modelica.Electrical.Analog.Basic.Ground Gnd6 annotation(extent = [50,6;70,26]);
 //           Modelica.Electrical.Analog.Basic.Ground Gnd7 annotation(extent = [-80,2;-60,22]);
-//           Semiconductors.HeatingNPN T1(Bf = 100, Br = 1, Is = 1e-014, Vak = 0, Tauf = 0, Taur = 0, Ccs = CapVal, Cje = CapVal, Cjc = CapVal, Phie = 1, Me = 0.5, Phic = 1, Mc = 0.5, Gbc = 1e-012, Gbe = 1e-012, EMax = 40) annotation(extent = [-20,48;0,68]);
-//           Semiconductors.HeatingNPN T2(Bf = 100, Br = 1, Is = 1e-014, Vak = 0, Tauf = 0, Taur = 0, Ccs = CapVal, Cje = CapVal, Cjc = CapVal, Phie = 1, Me = 0.5, Phic = 1, Mc = 0.5, Gbc = 1e-012, Gbe = 1e-012, EMax = 40) annotation(extent = [20,-22;40,-2]);
+//           Semiconductors.HeatingNPN T1(Bf = 100, Br = 1, Is = 0.00000000000001, Vak = 0, Tauf = 0, Taur = 0, Ccs = CapVal, Cje = CapVal, Cjc = CapVal, Phie = 1, Me = 0.5, Phic = 1, Mc = 0.5, Gbc = 0.000000000001, Gbe = 0.000000000001, EMax = 40) annotation(extent = [-20,48;0,68]);
+//           Semiconductors.HeatingNPN T2(Bf = 100, Br = 1, Is = 0.00000000000001, Vak = 0, Tauf = 0, Taur = 0, Ccs = CapVal, Cje = CapVal, Cjc = CapVal, Phie = 1, Me = 0.5, Phic = 1, Mc = 0.5, Gbc = 0.000000000001, Gbe = 0.000000000001, EMax = 40) annotation(extent = [20,-22;40,-2]);
 //         equation
 //           connect(Gnd1.p,V1.n) annotation(points = [-90,-2;-90,8]);
 //           connect(V1.p,R1.p) annotation(points = [-90,28;-90,58]);
@@ -4773,9 +4807,9 @@ list();
 // </dl>
 // </HTML>
 // \"), Window(x = 0.36, y = 0.01, width = 0.44, height = 0.6));
-//           Sources.TrapezoidVoltage VIN1(V = 3.5, startTime = 2e-008, rising = 1e-009, width = 1.9e-008, falling = 1e-009, period = 4e-008) annotation(extent = [-80,10;-60,30], rotation = -90);
-//           Sources.TrapezoidVoltage VIN2(V = 3.5, startTime = 1e-008, rising = 1e-009, width = 1.9e-008, falling = 1e-009, period = 4e-008) annotation(extent = [-80,-40;-60,-20], rotation = -90);
-//           Sources.RampVoltage VDD(V = 5, duration = 1e-009) annotation(extent = [40,60;60,80], rotation = -90);
+//           Sources.TrapezoidVoltage VIN1(V = 3.5, startTime = 0.00000002, rising = 0.000000001, width = 0.000000019, falling = 0.000000001, period = 0.00000004) annotation(extent = [-80,10;-60,30], rotation = -90);
+//           Sources.TrapezoidVoltage VIN2(V = 3.5, startTime = 0.00000001, rising = 0.000000001, width = 0.000000019, falling = 0.000000001, period = 0.00000004) annotation(extent = [-80,-40;-60,-20], rotation = -90);
+//           Sources.RampVoltage VDD(V = 5, duration = 0.000000001) annotation(extent = [40,60;60,80], rotation = -90);
 //           Basic.Ground Gnd1 annotation(extent = [45,43;55,53]);
 //           Basic.Ground Gnd4 annotation(extent = [-75,-5;-65,5]);
 //           Basic.Ground Gnd5 annotation(extent = [-75,-55;-65,-45]);
@@ -4793,7 +4827,7 @@ list();
 //           import Modelica.Electrical.Analog.Ideal;
 //           parameter Modelica.SIunits.Voltage VAC = 400 \"RMS line-to-line\";
 //           parameter Modelica.SIunits.Frequency f = 50 \"line frequency\";
-//           parameter Modelica.SIunits.Inductance LAC = 6e-005 \"line inductor\";
+//           parameter Modelica.SIunits.Inductance LAC = 0.00006 \"line inductor\";
 //           parameter Modelica.SIunits.Resistance Roff = 0.001 \"diode forward resistance\";
 //           parameter Modelica.SIunits.Conductance Gon = 0.001 \"diode backward conductance\";
 //           parameter Modelica.SIunits.Voltage Vknee = 2 \"diode threshold voltage\";
@@ -4803,7 +4837,7 @@ list();
 //           output Modelica.SIunits.Current iAC[3];
 //           output Modelica.SIunits.Voltage uAC[3];
 //           output Modelica.SIunits.Power Losses;
-//           annotation(Diagram(Text(extent = [-80,90;80,70], string = \"Rectifier\", style(color = 0, rgbcolor = {0,0,0})), Line(points = [-16,18;-16,2;-18,6;-14,6;-16,2], style(color = 0, rgbcolor = {0,0,0})), Line(points = [-30,22;-26,20;-30,18;-30,22], style(color = 0, rgbcolor = {0,0,0})), Line(points = [32,30;32,-30;30,-26;34,-26;32,-30], style(color = 0, rgbcolor = {0,0,0})), Text(extent = [-38,16;-22,8], string = \"iAC\", style(color = 0, rgbcolor = {0,0,0})), Text(extent = [-14,8;2,0], string = \"uAC\", style(color = 0, rgbcolor = {0,0,0})), Text(extent = [22,-16;38,-24], string = \"uDC\", style(color = 0, rgbcolor = {0,0,0}))), experiment(StopTime = 0.1, Interval = 1e-005), experimentSetupOutput(doublePrecision = true, states = false, derivatives = false, inputs = false, auxiliaries = false), Documentation(info = \"<HTML>
+//           annotation(Diagram(Text(extent = [-80,90;80,70], string = \"Rectifier\", style(color = 0, rgbcolor = {0,0,0})), Line(points = [-16,18;-16,2;-18,6;-14,6;-16,2], style(color = 0, rgbcolor = {0,0,0})), Line(points = [-30,22;-26,20;-30,18;-30,22], style(color = 0, rgbcolor = {0,0,0})), Line(points = [32,30;32,-30;30,-26;34,-26;32,-30], style(color = 0, rgbcolor = {0,0,0})), Text(extent = [-38,16;-22,8], string = \"iAC\", style(color = 0, rgbcolor = {0,0,0})), Text(extent = [-14,8;2,0], string = \"uAC\", style(color = 0, rgbcolor = {0,0,0})), Text(extent = [22,-16;38,-24], string = \"uDC\", style(color = 0, rgbcolor = {0,0,0}))), experiment(StopTime = 0.1, Interval = 0.00001), experimentSetupOutput(doublePrecision = true, states = false, derivatives = false, inputs = false, auxiliaries = false), Documentation(info = \"<HTML>
 // <P>
 // The rectifier example shows a B6 diode bridge fed by a three phase sinusoidal voltage, loaded by a DC current.<br>
 // DC capacitors start at ideal no-load voltage, thus making easier initial transient.
@@ -4860,12 +4894,12 @@ list();
 //           connect(SineVoltage2.p,Inductor2.p) annotation(points = [-70,0;-60,0], style(color = 3, rgbcolor = {0,0,255}));
 //           connect(SineVoltage3.p,Inductor3.p) annotation(points = [-70,-20;-60,-20], style(color = 3, rgbcolor = {0,0,255}));
 //           connect(IdealDiode1.p,IdealDiode4.n) annotation(points = [-20,30;-20,-30], style(color = 3, rgbcolor = {0,0,255}));
-//           connect(IdealDiode2.p,IdealDiode5.n) annotation(points = [-6.12303e-016,30;0,16;1.76911e-022,0;6.12303e-016,0;6.12303e-016,-30], style(color = 3, rgbcolor = {0,0,255}));
+//           connect(IdealDiode2.p,IdealDiode5.n) annotation(points = [-0.000000000000000612303,30;0,16;0.000000000000000000000176911,0;0.000000000000000612303,0;0.000000000000000612303,-30], style(color = 3, rgbcolor = {0,0,255}));
 //           connect(IdealDiode3.p,IdealDiode6.n) annotation(points = [20,30;20,-30], style(color = 3, rgbcolor = {0,0,255}));
-//           connect(IdealDiode1.n,IdealDiode2.n) annotation(points = [-20,50;6.12303e-016,50], style(color = 3, rgbcolor = {0,0,255}));
-//           connect(IdealDiode2.n,IdealDiode3.n) annotation(points = [6.12303e-016,50;20,50], style(color = 3, rgbcolor = {0,0,255}));
-//           connect(IdealDiode4.p,IdealDiode5.p) annotation(points = [-20,-50;-6.12303e-016,-50], style(color = 3, rgbcolor = {0,0,255}));
-//           connect(IdealDiode5.p,IdealDiode6.p) annotation(points = [-6.12303e-016,-50;20,-50], style(color = 3, rgbcolor = {0,0,255}));
+//           connect(IdealDiode1.n,IdealDiode2.n) annotation(points = [-20,50;0.000000000000000612303,50], style(color = 3, rgbcolor = {0,0,255}));
+//           connect(IdealDiode2.n,IdealDiode3.n) annotation(points = [0.000000000000000612303,50;20,50], style(color = 3, rgbcolor = {0,0,255}));
+//           connect(IdealDiode4.p,IdealDiode5.p) annotation(points = [-20,-50;-0.000000000000000612303,-50], style(color = 3, rgbcolor = {0,0,255}));
+//           connect(IdealDiode5.p,IdealDiode6.p) annotation(points = [-0.000000000000000612303,-50;20,-50], style(color = 3, rgbcolor = {0,0,255}));
 //           connect(Capacitor2.n,IdealDiode6.p) annotation(points = [40,-50;20,-50], style(color = 3, rgbcolor = {0,0,255}));
 //           connect(IdealDiode3.n,Capacitor1.p) annotation(points = [20,50;40,50], style(color = 3, rgbcolor = {0,0,255}));
 //           connect(Capacitor1.n,Capacitor2.p) annotation(points = [40,30;40,-30], style(color = 3, rgbcolor = {0,0,255}));
@@ -4874,7 +4908,7 @@ list();
 //           connect(SignalCurrent1.n,Capacitor2.n) annotation(points = [60,-10;60,-50;40,-50], style(color = 3, rgbcolor = {0,0,255}));
 //           connect(Constant1.outPort,SignalCurrent1.inPort) annotation(points = [79,0;79,0.05;67.05,0.05], style(color = 3, rgbcolor = {0,0,255}));
 //           connect(Inductor1.n,IdealDiode1.p) annotation(points = [-40,20;-20,20;-20,30], style(color = 3, rgbcolor = {0,0,255}));
-//           connect(Inductor2.n,IdealDiode2.p) annotation(points = [-40,0;-6.12303e-016,0;-6.12303e-016,30], style(color = 3, rgbcolor = {0,0,255}));
+//           connect(Inductor2.n,IdealDiode2.p) annotation(points = [-40,0;-0.000000000000000612303,0;-0.000000000000000612303,30], style(color = 3, rgbcolor = {0,0,255}));
 //           connect(Inductor3.n,IdealDiode3.p) annotation(points = [-40,-20;20,-20;20,30], style(color = 3, rgbcolor = {0,0,255}));
 //         end Rectifier;
 //         model ShowSaturatingInductor \"Simple demo to show behaviour of SaturatingInductor component\"
@@ -5056,6 +5090,9 @@ list();
 //             heatPort.T = T_ref;
 //           end if;
 //         end HeatingResistor;
+//         /* heatPort is not connected resulting in the
+//          implicit equation 'heatPort.Q_dot = 0'
+//       */
 //         model Conductor \"Ideal linear electrical conductor\"
 //           extends Interfaces.OnePort;
 //           parameter SI.Conductance G = 1 \"Conductance\";
@@ -5443,6 +5480,7 @@ list();
 //           Q = C * v;
 //           i = der(Q);
 //         end VariableCapacitor;
+//         // protect solver from index change
 //         model VariableInductor \"Ideal linear electrical inductor with variable inductance\"
 //           extends Modelica.Electrical.Analog.Interfaces.OnePort;
 //           Modelica.Blocks.Interfaces.InPort L_Port(final n = 1) annotation(extent = [-10,90;10,110], rotation = -90);
@@ -5483,6 +5521,7 @@ list();
 //           Psi = L * i;
 //           v = der(Psi);
 //         end VariableInductor;
+//         // protect solver from index change
 //       end Basic;
 //       package Ideal
 //         extends Modelica.Icons.Library;
@@ -5543,8 +5582,8 @@ list();
 // \"));
 //         model IdealThyristor \"Ideal thyristor\"
 //           extends Modelica.Electrical.Analog.Interfaces.OnePort;
-//           parameter Modelica.SIunits.Resistance Roff(final min = 0) = 1e-005 \"Closed thyristor resistance\";
-//           parameter Modelica.SIunits.Conductance Gon(final min = 0) = 1e-005 \"Opened thyristor conductance\";
+//           parameter Modelica.SIunits.Resistance Roff(final min = 0) = 0.00001 \"Closed thyristor resistance\";
+//           parameter Modelica.SIunits.Conductance Gon(final min = 0) = 0.00001 \"Opened thyristor conductance\";
 //           parameter Modelica.SIunits.Voltage Vknee(final min = 0) = 0 \"Forward threshold voltage\";
 //           Boolean off(start = true) \"Switching state\";
 //         protected
@@ -5588,8 +5627,8 @@ list();
 //         end IdealThyristor;
 //         model IdealGTOThyristor \"Ideal GTO thyristor\"
 //           extends Modelica.Electrical.Analog.Interfaces.OnePort;
-//           parameter Modelica.SIunits.Resistance Roff(final min = 0) = 1e-005 \"Closed thyristor resistance\";
-//           parameter Modelica.SIunits.Conductance Gon(final min = 0) = 1e-005 \"Opened thyristor conductance\";
+//           parameter Modelica.SIunits.Resistance Roff(final min = 0) = 0.00001 \"Closed thyristor resistance\";
+//           parameter Modelica.SIunits.Conductance Gon(final min = 0) = 0.00001 \"Opened thyristor conductance\";
 //           parameter Modelica.SIunits.Voltage Vknee(final min = 0) = 0 \"Forward threshold voltage\";
 //           Boolean off(start = true) \"Switching state\";
 //         protected
@@ -5634,8 +5673,8 @@ list();
 //         end IdealGTOThyristor;
 //         model IdealSwitch \"Ideal electrical switch\"
 //           extends Interfaces.OnePort;
-//           parameter SI.Resistance Roff(final min = 0) = 1e-005 \"Closed switch resistance\";
-//           parameter SI.Conductance Gon(final min = 0) = 1e-005 \"Opened switch conductance\";
+//           parameter SI.Resistance Roff(final min = 0) = 0.00001 \"Closed switch resistance\";
+//           parameter SI.Conductance Gon(final min = 0) = 0.00001 \"Opened switch conductance\";
 //         protected
 //           Real s \"Auxiliary variable\";
 //           Boolean off;
@@ -5663,8 +5702,8 @@ list();
 //           i = s * (if off then Gon else 1);
 //         end IdealSwitch;
 //         model IdealCommutingSwitch \"Ideal commuting switch\"
-//           parameter SI.Resistance Ron(final min = 0) = 1e-005 \"Closed switch resistance\";
-//           parameter SI.Conductance Goff(final min = 0) = 1e-005 \"Opened switch conductance\";
+//           parameter SI.Resistance Ron(final min = 0) = 0.00001 \"Closed switch resistance\";
+//           parameter SI.Conductance Goff(final min = 0) = 0.00001 \"Opened switch conductance\";
 //           annotation(Documentation(info = \"<HTML>
 // <P>
 // The commuting switch has a positive pin p and two negative pins n1 and n2. 
@@ -5701,8 +5740,8 @@ list();
 //           n2.i = -s2 * (if off then 1 else Goff);
 //         end IdealCommutingSwitch;
 //         model IdealIntermediateSwitch \"Ideal intermediate switch\"
-//           parameter SI.Resistance Ron(final min = 0) = 1e-005 \"Closed switch resistance\";
-//           parameter SI.Conductance Goff(final min = 0) = 1e-005 \"Opened switch conductance\";
+//           parameter SI.Resistance Ron(final min = 0) = 0.00001 \"Closed switch resistance\";
+//           parameter SI.Conductance Goff(final min = 0) = 0.00001 \"Opened switch conductance\";
 //           annotation(Documentation(info = \"<HTML>
 // <P>
 // The intermediate switch has four switching contact pins p1, p2, n1, and n2. 
@@ -5756,8 +5795,8 @@ list();
 //         end IdealIntermediateSwitch;
 //         model ControlledIdealSwitch \"Controlled ideal switch\"
 //           parameter SI.Voltage level = 0.5 \"Switch level\";
-//           parameter SI.Resistance Roff(final min = 0) = 1e-005 \"Closed switch resistance\";
-//           parameter SI.Conductance Gon(final min = 0) = 1e-005 \"Opened switch conductance\";
+//           parameter SI.Resistance Roff(final min = 0) = 0.00001 \"Closed switch resistance\";
+//           parameter SI.Conductance Gon(final min = 0) = 0.00001 \"Opened switch conductance\";
 //         protected
 //           Real s \"Auxiliary variable\";
 //           annotation(Documentation(info = \"<html>
@@ -5780,8 +5819,8 @@ list();
 //         end ControlledIdealSwitch;
 //         model ControlledIdealCommutingSwitch \"Controlled ideal commuting switch\"
 //           parameter SI.Voltage level = 0.5 \"Switch level\";
-//           parameter SI.Resistance Ron(final min = 0) = 1e-005 \"Closed switch resistance\";
-//           parameter SI.Conductance Goff(final min = 0) = 1e-005 \"Opened switch conductance\";
+//           parameter SI.Resistance Ron(final min = 0) = 0.00001 \"Closed switch resistance\";
+//           parameter SI.Conductance Goff(final min = 0) = 0.00001 \"Opened switch conductance\";
 //           annotation(Documentation(info = \"<HTML>
 // <P>
 // The commuting switch has a positive pin p and two negative pins n1 and n2. 
@@ -5819,8 +5858,8 @@ list();
 //         end ControlledIdealCommutingSwitch;
 //         model ControlledIdealIntermediateSwitch \"Controlled ideal intermediate switch\"
 //           parameter SI.Voltage level = 0.5 \"Switch level\";
-//           parameter SI.Resistance Ron(final min = 0) = 1e-005 \"Closed switch resistance\";
-//           parameter SI.Conductance Goff(final min = 0) = 1e-005 \"Opened switch conductance\";
+//           parameter SI.Resistance Ron(final min = 0) = 0.00001 \"Closed switch resistance\";
+//           parameter SI.Conductance Goff(final min = 0) = 0.00001 \"Opened switch conductance\";
 //           annotation(Documentation(info = \"<HTML>
 // <P>
 // The intermediate switch has four switching contact pins p1, p2, n1, and n2. 
@@ -5948,8 +5987,8 @@ list();
 //         end IdealOpAmpLimited;
 //         model IdealDiode \"Ideal diode\"
 //           extends Modelica.Electrical.Analog.Interfaces.OnePort;
-//           parameter Modelica.SIunits.Resistance Roff(final min = 0) = 1e-005 \"Forward state-on differential resistance (closed diode resistance)\";
-//           parameter Modelica.SIunits.Conductance Gon(final min = 0) = 1e-005 \"Backward state-off conductance (opened diode conductance)\";
+//           parameter Modelica.SIunits.Resistance Roff(final min = 0) = 0.00001 \"Forward state-on differential resistance (closed diode resistance)\";
+//           parameter Modelica.SIunits.Conductance Gon(final min = 0) = 0.00001 \"Backward state-off conductance (opened diode conductance)\";
 //           parameter Modelica.SIunits.Voltage Vknee(final min = 0) = 0 \"Forward threshold voltage\";
 //           Boolean off(start = true) \"Switching state\";
 //         protected
@@ -6055,8 +6094,8 @@ list();
 //         end Short;
 //         model IdealOpener \"Ideal electrical opener\"
 //           extends Interfaces.OnePort;
-//           parameter SI.Resistance Ron(final min = 0) = 1e-005 \"Closed switch resistance\" annotation(extent = [-56.6667,10;-10,56.6667]);
-//           parameter SI.Conductance Goff(final min = 0) = 1e-005 \"Opened switch conductance\" annotation(extent = [10,10;56.6667,56.6667]);
+//           parameter SI.Resistance Ron(final min = 0) = 0.00001 \"Closed switch resistance\" annotation(extent = [-56.6667,10;-10,56.6667]);
+//           parameter SI.Conductance Goff(final min = 0) = 0.00001 \"Opened switch conductance\" annotation(extent = [10,10;56.6667,56.6667]);
 //           Modelica.Blocks.Interfaces.BooleanInPort control(final n = 1) \"true => switch open, false => p--n connected\" annotation(extent = [-10,50;10,70], rotation = -90);
 //         protected
 //           Real s \"Auxiliary variable\";
@@ -6087,8 +6126,8 @@ list();
 //         end IdealOpener;
 //         model IdealCloser \"Ideal electrical closer\"
 //           extends Interfaces.OnePort;
-//           parameter SI.Resistance Ron(final min = 0) = 1e-005 \"Closed switch resistance\" annotation(extent = [-56.6667,10;-10,56.6667]);
-//           parameter SI.Conductance Goff(final min = 0) = 1e-005 \"Opened switch conductance\" annotation(extent = [10,10;56.6667,56.6667]);
+//           parameter SI.Resistance Ron(final min = 0) = 0.00001 \"Closed switch resistance\" annotation(extent = [-56.6667,10;-10,56.6667]);
+//           parameter SI.Conductance Goff(final min = 0) = 0.00001 \"Opened switch conductance\" annotation(extent = [10,10;56.6667,56.6667]);
 //           Modelica.Blocks.Interfaces.BooleanInPort control(final n = 1) \"true => switch open, false => p--n connected\" annotation(extent = [-10,50;10,70], rotation = -90);
 //         protected
 //           Real s \"Auxiliary variable\";
@@ -6119,8 +6158,8 @@ list();
 //         end IdealCloser;
 //         model ControlledIdealOpener \"Controlled ideal electrical opener\"
 //           parameter SI.Voltage level = 0.5 \"Switch level\" annotation(extent = [-56.6667,10;-10,56.6667]);
-//           parameter SI.Resistance Ron(final min = 0) = 1e-005 \"Closed switch resistance\" annotation(extent = [10,10;56.6667,56.6667]);
-//           parameter SI.Conductance Goff(final min = 0) = 1e-005 \"Opened switch conductance\" annotation(extent = [-56.6667,-56.6667;-10,-10]);
+//           parameter SI.Resistance Ron(final min = 0) = 0.00001 \"Closed switch resistance\" annotation(extent = [10,10;56.6667,56.6667]);
+//           parameter SI.Conductance Goff(final min = 0) = 0.00001 \"Opened switch conductance\" annotation(extent = [-56.6667,-56.6667;-10,-10]);
 //         protected
 //           Real s \"Auxiliary variable\";
 //           annotation(Documentation(info = \"
@@ -6155,8 +6194,8 @@ list();
 //         end ControlledIdealOpener;
 //         model ControlledIdealCloser \"Controlled ideal electrical closer\"
 //           parameter SI.Voltage level = 0.5 \"Switch level\" annotation(extent = [-56.6667,10;-10,56.6667]);
-//           parameter SI.Resistance Ron(final min = 0) = 1e-005 \"Closed switch resistance\" annotation(extent = [10,10;56.6667,56.6667]);
-//           parameter SI.Conductance Goff(final min = 0) = 1e-005 \"Opened switch conductance\" annotation(extent = [-56.6667,-56.6667;-10,-10]);
+//           parameter SI.Resistance Ron(final min = 0) = 0.00001 \"Closed switch resistance\" annotation(extent = [10,10;56.6667,56.6667]);
+//           parameter SI.Conductance Goff(final min = 0) = 0.00001 \"Opened switch conductance\" annotation(extent = [-56.6667,-56.6667;-10,-10]);
 //         protected
 //           Real s \"Auxiliary variable\";
 //           annotation(Documentation(info = \"
@@ -6376,6 +6415,7 @@ list();
 // </HTML>
 // \"));
 //         model OLine \"Lossy Transmission Line\"
+//           //extends Interfaces.ThreePol;
 //           Interfaces.Pin p1 annotation(extent = [-110,-10;-90,10]);
 //           Interfaces.Pin p2 annotation(extent = [90,-10;110,10]);
 //           Interfaces.Pin p3 annotation(extent = [-10,-110;10,-90]);
@@ -6437,6 +6477,7 @@ list();
 //           connect(L[N + 1].n,p2);
 //         end OLine;
 //         model ULine \"Lossy RC Line\"
+//           //extends Interfaces.ThreePol;
 //           Interfaces.Pin p1 annotation(extent = [-110,-10;-90,10]);
 //           Interfaces.Pin p2 annotation(extent = [90,-10;110,10]);
 //           Interfaces.Pin p3 annotation(extent = [-10,-110;10,-90]);
@@ -6659,7 +6700,7 @@ list();
 // </html>\"));
 //         model Diode \"Simple diode\"
 //           extends Modelica.Electrical.Analog.Interfaces.OnePort;
-//           parameter SIunits.Current Ids = 1e-006 \"Saturation current\";
+//           parameter SIunits.Current Ids = 0.000001 \"Saturation current\";
 //           parameter SIunits.Voltage Vt = 0.04 \"Voltage equivalent of temperature (kT/qn)\";
 //           parameter Real Maxexp(final min = Modelica.Constants.SMALL) = 15 \"Max. exponent for linear continuation\";
 //           parameter SIunits.Resistance R = 100000000.0 \"Parallel ohmic resistance\";
@@ -6683,6 +6724,7 @@ list();
 //           i = if v / Vt > Maxexp then Ids * (exp(Maxexp) * (1 + v / Vt - Maxexp) - 1) + v / R else Ids * (exp(v / Vt) - 1) + v / R;
 //         end Diode;
 //         model PMOS \"Simple MOS Transistor\"
+//           // 6.12.2001 parameter RDS added, Clauss    
 //           annotation(Documentation(info = \"
 // <HTML>
 // <P>
@@ -6720,14 +6762,14 @@ list();
 //           Interfaces.Pin G \"Gate\" annotation(extent = [-90,-40;-110,-60]);
 //           Interfaces.Pin S \"Source\" annotation(extent = [90,-40;110,-60]);
 //           Interfaces.Pin B \"Bulk\" annotation(extent = [90,-10;110,10]);
-//           parameter SIunits.Length W = 2e-005 \"Width\";
-//           parameter SIunits.Length L = 6e-006 \"Length\";
-//           parameter SIunits.Transconductance Beta = 1.05e-005 \"Transconductance parameter\";
+//           parameter SIunits.Length W = 0.00002 \"Width\";
+//           parameter SIunits.Length L = 0.000006 \"Length\";
+//           parameter SIunits.Transconductance Beta = 0.0000105 \"Transconductance parameter\";
 //           parameter SIunits.Voltage Vt = -1.0 \"Zero bias threshold voltage\";
 //           parameter Real K2 = 0.41 \"Bulk threshold parameter\";
 //           parameter Real K5 = 0.839 \"Reduction of pinch-off region\";
-//           parameter SIunits.Length dW = -2.5e-006 \"Narrowing of channel\";
-//           parameter SIunits.Length dL = -2.1e-006 \"Shortening of channel\";
+//           parameter SIunits.Length dW = -0.0000025 \"Narrowing of channel\";
+//           parameter SIunits.Length dL = -0.0000021 \"Shortening of channel\";
 //           parameter SIunits.Resistance RDS = 10000000.0 \"Drain-Source-Resistance\";
 //         protected
 //           Real v;
@@ -6739,7 +6781,7 @@ list();
 //           Real id;
 //           Real gds;
 //         equation
-//           gds = if RDS < 1e-020 and RDS > -1e-020 then 1e+020 else 1 / RDS;
+//           gds = if RDS < 1e-20 and RDS > -1e-20 then 1e+20 else 1 / RDS;
 //           v = (Beta * (W + dW)) / (L + dL);
 //           ud = if D.v > S.v then S.v else D.v;
 //           us = if D.v > S.v then D.v else S.v;
@@ -6752,7 +6794,10 @@ list();
 //           S.i = if D.v > S.v then id else -id;
 //           B.i = 0;
 //         end PMOS;
+//         //assert (W + dW > 0, \"Effective width  must be positive\");
+//         //assert (L + dL > 0, \"Effective length must be positive\");
 //         model NMOS \"Simple MOS Transistor\"
+//           // 6.12.2001 parameter RDS added, Clauss    
 //           annotation(Documentation(info = \"
 // <HTML>
 // <P>
@@ -6800,14 +6845,14 @@ list();
 //           Interfaces.Pin G \"Gate\" annotation(extent = [-90,-40;-110,-60]);
 //           Interfaces.Pin S \"Source\" annotation(extent = [90,-40;110,-60]);
 //           Interfaces.Pin B \"Bulk\" annotation(extent = [90,-10;110,10]);
-//           parameter SIunits.Length W = 2e-005 \"Width\";
-//           parameter SIunits.Length L = 6e-006 \"Length\";
-//           parameter SIunits.Transconductance Beta = 4.1e-005 \"Transconductance parameter\";
+//           parameter SIunits.Length W = 0.00002 \"Width\";
+//           parameter SIunits.Length L = 0.000006 \"Length\";
+//           parameter SIunits.Transconductance Beta = 0.000041 \"Transconductance parameter\";
 //           parameter SIunits.Voltage Vt = 0.8 \"Zero bias threshold voltage\";
 //           parameter Real K2 = 1.144 \"Bulk threshold parameter\";
 //           parameter Real K5 = 0.7311 \"Reduction of pinch-off region\";
-//           parameter SIunits.Length dW = -2.5e-006 \"narrowing of channel\";
-//           parameter SIunits.Length dL = -1.5e-006 \"shortening of channel\";
+//           parameter SIunits.Length dW = -0.0000025 \"narrowing of channel\";
+//           parameter SIunits.Length dL = -0.0000015 \"shortening of channel\";
 //           parameter SIunits.Resistance RDS = 10000000.0 \"Drain-Source-Resistance\";
 //         protected
 //           Real v;
@@ -6819,7 +6864,7 @@ list();
 //           Real id;
 //           Real gds;
 //         equation
-//           gds = if RDS < 1e-020 and RDS > -1e-020 then 1e+020 else 1 / RDS;
+//           gds = if RDS < 1e-20 and RDS > -1e-20 then 1e+20 else 1 / RDS;
 //           v = (Beta * (W + dW)) / (L + dL);
 //           ud = if D.v < S.v then S.v else D.v;
 //           us = if D.v < S.v then D.v else S.v;
@@ -6832,22 +6877,24 @@ list();
 //           S.i = if D.v < S.v then id else -id;
 //           B.i = 0;
 //         end NMOS;
+//         //assert (W + dW > 0, \"Effective width  must be positive\");
+//         //assert (L + dL > 0, \"Effective length must be positive\");
 //         model NPN \"Simple BJT according to Ebers-Moll\"
 //           parameter Real Bf = 50 \"Forward beta\";
 //           parameter Real Br = 0.1 \"Reverse beta\";
-//           parameter SIunits.Current Is = 1e-016 \"Transport saturation current\";
+//           parameter SIunits.Current Is = 0.0000000000000001 \"Transport saturation current\";
 //           parameter SIunits.InversePotential Vak = 0.02 \"Early voltage (inverse), 1/Volt\";
-//           parameter SIunits.Time Tauf = 1.2e-010 \"Ideal forward transit time\";
-//           parameter SIunits.Time Taur = 5e-009 \"Ideal reverse transit time\";
-//           parameter SIunits.Capacitance Ccs = 1e-012 \"Collector-substrat(ground) cap.\";
-//           parameter SIunits.Capacitance Cje = 4e-013 \"Base-emitter zero bias depletion cap.\";
-//           parameter SIunits.Capacitance Cjc = 5e-013 \"Base-coll. zero bias depletion cap.\";
+//           parameter SIunits.Time Tauf = 0.00000000012 \"Ideal forward transit time\";
+//           parameter SIunits.Time Taur = 0.000000005 \"Ideal reverse transit time\";
+//           parameter SIunits.Capacitance Ccs = 0.000000000001 \"Collector-substrat(ground) cap.\";
+//           parameter SIunits.Capacitance Cje = 0.0000000000004 \"Base-emitter zero bias depletion cap.\";
+//           parameter SIunits.Capacitance Cjc = 0.0000000000005 \"Base-coll. zero bias depletion cap.\";
 //           parameter SIunits.Voltage Phie = 0.8 \"Base-emitter diffusion voltage\";
 //           parameter Real Me = 0.4 \"Base-emitter gradation exponent\";
 //           parameter SIunits.Voltage Phic = 0.8 \"Base-collector diffusion voltage\";
 //           parameter Real Mc = 0.333 \"Base-collector gradation exponent\";
-//           parameter SIunits.Conductance Gbc = 1e-015 \"Base-collector conductance\";
-//           parameter SIunits.Conductance Gbe = 1e-015 \"Base-emitter conductance\";
+//           parameter SIunits.Conductance Gbc = 0.000000000000001 \"Base-collector conductance\";
+//           parameter SIunits.Conductance Gbe = 0.000000000000001 \"Base-emitter conductance\";
 //           parameter SIunits.Voltage Vt = 0.02585 \"Voltage equivalent of temperature\";
 //           parameter Real EMin = -100 \"if x < EMin, the exp(x) function is linearized\";
 //           parameter Real EMax = 40 \"if x > EMax, the exp(x) function is linearized\";
@@ -6918,19 +6965,19 @@ list();
 //         model PNP \"Simple BJT according to Ebers-Moll\"
 //           parameter Real Bf = 50 \"Forward beta\";
 //           parameter Real Br = 0.1 \"Reverse beta\";
-//           parameter SIunits.Current Is = 1e-016 \"Transport saturation current\";
+//           parameter SIunits.Current Is = 0.0000000000000001 \"Transport saturation current\";
 //           parameter SIunits.InversePotential Vak = 0.02 \"Early voltage (inverse), 1/Volt\";
-//           parameter SIunits.Time Tauf = 1.2e-010 \"Ideal forward transit time\";
-//           parameter SIunits.Time Taur = 5e-009 \"Ideal reverse transit time\";
-//           parameter SIunits.Capacitance Ccs = 1e-012 \"Collector-substrat(ground) cap.\";
-//           parameter SIunits.Capacitance Cje = 4e-013 \"Base-emitter zero bias depletion cap.\";
-//           parameter SIunits.Capacitance Cjc = 5e-013 \"Base-coll. zero bias depletion cap.\";
+//           parameter SIunits.Time Tauf = 0.00000000012 \"Ideal forward transit time\";
+//           parameter SIunits.Time Taur = 0.000000005 \"Ideal reverse transit time\";
+//           parameter SIunits.Capacitance Ccs = 0.000000000001 \"Collector-substrat(ground) cap.\";
+//           parameter SIunits.Capacitance Cje = 0.0000000000004 \"Base-emitter zero bias depletion cap.\";
+//           parameter SIunits.Capacitance Cjc = 0.0000000000005 \"Base-coll. zero bias depletion cap.\";
 //           parameter SIunits.Voltage Phie = 0.8 \"Base-emitter diffusion voltage\";
 //           parameter Real Me = 0.4 \"Base-emitter gradation exponent\";
 //           parameter SIunits.Voltage Phic = 0.8 \"Base-collector diffusion voltage\";
 //           parameter Real Mc = 0.333 \"Base-collector gradation exponent\";
-//           parameter SIunits.Conductance Gbc = 1e-015 \"Base-collector conductance\";
-//           parameter SIunits.Conductance Gbe = 1e-015 \"Base-emitter conductance\";
+//           parameter SIunits.Conductance Gbc = 0.000000000000001 \"Base-collector conductance\";
+//           parameter SIunits.Conductance Gbe = 0.000000000000001 \"Base-emitter conductance\";
 //           parameter SIunits.Voltage Vt = 0.02585 \"Voltage equivalent of temperature\";
 //           parameter Real EMin = -100 \"if x < EMin, the exp(x) function is linearized\";
 //           parameter Real EMax = 40 \"if x > EMax, the exp(x) function is linearized\";
@@ -7000,7 +7047,8 @@ list();
 //         model HeatingDiode \"Simple diode with heating port\"
 //           extends Modelica.Electrical.Analog.Interfaces.OnePort;
 //           Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a heatPort(T(start = 300.15)) annotation(extent = [-10,-90;10,-110], rotation = -90);
-//           parameter Modelica.SIunits.Current Ids = 1e-006 \"Saturation current\";
+//           parameter Modelica.SIunits.Current Ids = 0.000001 \"Saturation current\";
+//           /* parameter Modelica.SIunits.Voltage Vt=0.04 \"Voltage equivalent of temperature (kT/qn)\"; */
 //           parameter Real Maxexp(final min = Modelica.Constants.SMALL) = 15 \"Max. exponent for linear continuation\";
 //           parameter Modelica.SIunits.Resistance R = 100000000.0 \"Parallel ohmic resistance\";
 //           parameter Real EG = 1.11 \"activation energy\";
@@ -7010,8 +7058,8 @@ list();
 //           Modelica.SIunits.Temperature vt_t \"Temperature voltage\";
 //           Modelica.SIunits.Current id \"diode current\";
 //         protected
-//           Real k = 1.380662e-023 \"Boltzmann's constant, J/K\";
-//           Real q = 1.6021892e-019 \"Electron charge, As\";
+//           Real k = 0.00000000000000000000001380662 \"Boltzmann's constant, J/K\";
+//           Real q = 0.00000000000000000016021892 \"Electron charge, As\";
 //           Modelica.SIunits.Temperature htemp \"auxiliary temperature\";
 //           Real aux;
 //           Real auxp;
@@ -7115,14 +7163,14 @@ list();
 //           Modelica.Electrical.Analog.Interfaces.Pin S \"Source\" annotation(extent = [90,-40;110,-60]);
 //           Modelica.Electrical.Analog.Interfaces.Pin B \"Bulk\" annotation(extent = [90,-10;110,10]);
 //           Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a heatPort(T(start = 300.15)) annotation(extent = [-10,-90;10,-110], rotation = -90);
-//           parameter Modelica.SIunits.Length W = 2e-005 \"Width\";
-//           parameter Modelica.SIunits.Length L = 6e-006 \"Length\";
-//           parameter Modelica.SIunits.Transconductance Beta = 4.1e-005 \"Transconductance parameter\";
+//           parameter Modelica.SIunits.Length W = 0.00002 \"Width\";
+//           parameter Modelica.SIunits.Length L = 0.000006 \"Length\";
+//           parameter Modelica.SIunits.Transconductance Beta = 0.000041 \"Transconductance parameter\";
 //           parameter Modelica.SIunits.Voltage Vt = 0.8 \"Zero bias threshold voltage\";
 //           parameter Real K2 = 1.144 \"Bulk threshold parameter\";
 //           parameter Real K5 = 0.7311 \"Reduction of pinch-off region\";
-//           parameter Modelica.SIunits.Length dW = -2.5e-006 \"narrowing of channel\";
-//           parameter Modelica.SIunits.Length dL = -1.5e-006 \"shortening of channel\";
+//           parameter Modelica.SIunits.Length dW = -0.0000025 \"narrowing of channel\";
+//           parameter Modelica.SIunits.Length dL = -0.0000015 \"shortening of channel\";
 //           parameter Modelica.SIunits.Resistance RDS = 10000000.0 \"Drain-Source-Resistance\";
 //           parameter Modelica.SIunits.Temperature Tnom = 300.15 \"Parameter measurement temperature\";
 //           parameter Real kvt = -0.00696 \"fitting parameter for Vt\";
@@ -7143,7 +7191,7 @@ list();
 //           assert(L + dL > 0, \"Effective length must be positive\");
 //           assert(W + dW > 0, \"Effective width  must be positive\");
 //           assert(heatPort.T > 0, \"temperature must be positive\");
-//           gds = if RDS < 1e-020 and RDS > -1e-020 then 1e+020 else 1 / RDS;
+//           gds = if RDS < 1e-20 and RDS > -1e-20 then 1e+20 else 1 / RDS;
 //           v = (beta_t * (W + dW)) / (L + dL);
 //           ud = if D.v < S.v then S.v else D.v;
 //           us = if D.v < S.v then D.v else S.v;
@@ -7161,6 +7209,7 @@ list();
 //           heatPort.Q_dot = -D.i * (D.v - S.v);
 //         end HeatingNMOS;
 //         model HeatingPMOS \"Simple PMOS Transistor with heating port\"
+//           // 6.12.2001 parameter RDS added, Clauss    
 //           annotation(Documentation(info = \"
 // <HTML>
 // <P>
@@ -7210,14 +7259,14 @@ list();
 //           Modelica.Electrical.Analog.Interfaces.Pin S \"Source\" annotation(extent = [90,-40;110,-60]);
 //           Modelica.Electrical.Analog.Interfaces.Pin B \"Bulk\" annotation(extent = [90,-10;110,10]);
 //           Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a heatPort(T(start = 300.15)) annotation(extent = [-10,-90;10,-110], rotation = -90);
-//           parameter Modelica.SIunits.Length W = 2e-005 \"Width\";
-//           parameter Modelica.SIunits.Length L = 6e-006 \"Length\";
-//           parameter Modelica.SIunits.Transconductance Beta = 1.05e-005 \"Transconductance parameter\";
+//           parameter Modelica.SIunits.Length W = 0.00002 \"Width\";
+//           parameter Modelica.SIunits.Length L = 0.000006 \"Length\";
+//           parameter Modelica.SIunits.Transconductance Beta = 0.0000105 \"Transconductance parameter\";
 //           parameter Modelica.SIunits.Voltage Vt = -1.0 \"Zero bias threshold voltage\";
 //           parameter Real K2 = 0.41 \"Bulk threshold parameter\";
 //           parameter Real K5 = 0.839 \"Reduction of pinch-off region\";
-//           parameter Modelica.SIunits.Length dW = -2.5e-006 \"Narrowing of channel\";
-//           parameter Modelica.SIunits.Length dL = -2.1e-006 \"Shortening of channel\";
+//           parameter Modelica.SIunits.Length dW = -0.0000025 \"Narrowing of channel\";
+//           parameter Modelica.SIunits.Length dL = -0.0000021 \"Shortening of channel\";
 //           parameter Modelica.SIunits.Resistance RDS = 10000000.0 \"Drain-Source-Resistance\";
 //           parameter Modelica.SIunits.Temperature Tnom = 300.15 \"Parameter measurement temperature\";
 //           parameter Real kvt = -0.0029 \"fitting parameter for Vt\";
@@ -7238,7 +7287,7 @@ list();
 //           assert(L + dL > 0, \"Effective length must be positive\");
 //           assert(W + dW > 0, \"Effective width  must be positive\");
 //           assert(heatPort.T > 0, \"temperature must be positive\");
-//           gds = if RDS < 1e-020 and RDS > -1e-020 then 1e+020 else 1 / RDS;
+//           gds = if RDS < 1e-20 and RDS > -1e-20 then 1e+20 else 1 / RDS;
 //           v = (beta_t * (W + dW)) / (L + dL);
 //           ud = if D.v > S.v then S.v else D.v;
 //           us = if D.v > S.v then D.v else S.v;
@@ -7258,19 +7307,19 @@ list();
 //         model HeatingNPN \"Simple NPN BJT according to Ebers-Moll with heating port\"
 //           parameter Real Bf = 50 \"Forward beta\";
 //           parameter Real Br = 0.1 \"Reverse beta\";
-//           parameter Modelica.SIunits.Current Is = 1e-016 \"Transport saturation current\";
+//           parameter Modelica.SIunits.Current Is = 0.0000000000000001 \"Transport saturation current\";
 //           parameter Modelica.SIunits.InversePotential Vak = 0.02 \"Early voltage (inverse), 1/Volt\";
-//           parameter Modelica.SIunits.Time Tauf = 1.2e-010 \"Ideal forward transit time\";
-//           parameter Modelica.SIunits.Time Taur = 5e-009 \"Ideal reverse transit time\";
-//           parameter Modelica.SIunits.Capacitance Ccs = 1e-012 \"Collector-substrat(ground) cap.\";
-//           parameter Modelica.SIunits.Capacitance Cje = 4e-013 \"Base-emitter zero bias depletion cap.\";
-//           parameter Modelica.SIunits.Capacitance Cjc = 5e-013 \"Base-coll. zero bias depletion cap.\";
+//           parameter Modelica.SIunits.Time Tauf = 0.00000000012 \"Ideal forward transit time\";
+//           parameter Modelica.SIunits.Time Taur = 0.000000005 \"Ideal reverse transit time\";
+//           parameter Modelica.SIunits.Capacitance Ccs = 0.000000000001 \"Collector-substrat(ground) cap.\";
+//           parameter Modelica.SIunits.Capacitance Cje = 0.0000000000004 \"Base-emitter zero bias depletion cap.\";
+//           parameter Modelica.SIunits.Capacitance Cjc = 0.0000000000005 \"Base-coll. zero bias depletion cap.\";
 //           parameter Modelica.SIunits.Voltage Phie = 0.8 \"Base-emitter diffusion voltage\";
 //           parameter Real Me = 0.4 \"Base-emitter gradation exponent\";
 //           parameter Modelica.SIunits.Voltage Phic = 0.8 \"Base-collector diffusion voltage\";
 //           parameter Real Mc = 0.333 \"Base-collector gradation exponent\";
-//           parameter Modelica.SIunits.Conductance Gbc = 1e-015 \"Base-collector conductance\";
-//           parameter Modelica.SIunits.Conductance Gbe = 1e-015 \"Base-emitter conductance\";
+//           parameter Modelica.SIunits.Conductance Gbc = 0.000000000000001 \"Base-collector conductance\";
+//           parameter Modelica.SIunits.Conductance Gbe = 0.000000000000001 \"Base-emitter conductance\";
 //           parameter Real EMin = -100 \"if x < EMin, the exp(x) function is linearized\";
 //           parameter Real EMax = 40 \"if x > EMax, the exp(x) function is linearized\";
 //           parameter Modelica.SIunits.Temperature Tnom = 300.15 \"Parameter measurement temperature\";
@@ -7279,8 +7328,9 @@ list();
 //           parameter Real EG = 1.11 \"Energy gap for temperature effect on Is\";
 //           parameter Real NF = 1.0 \"Forward current emission coefficient\";
 //           parameter Real NR = 1.0 \"Reverse current emission coefficient\";
-//           parameter Real K = 1.3806226e-023 \"Boltzmann's constant\";
-//           parameter Real q = 1.6021918e-019 \"Elementary electronic charge\";
+//           parameter Real K = 0.000000000000000000000013806226 \"Boltzmann's constant\";
+//           parameter Real q = 0.00000000000000000016021918 \"Elementary electronic charge\";
+//           /*protected*/
 //           Real vbc;
 //           Real vbe;
 //           Real qbk;
@@ -7365,19 +7415,19 @@ list();
 //         model HeatingPNP \"Simple PNP BJT according to Ebers-Moll with heating port\"
 //           parameter Real Bf = 50 \"Forward beta\";
 //           parameter Real Br = 0.1 \"Reverse beta\";
-//           parameter Modelica.SIunits.Current Is = 1e-016 \"Transport saturation current\";
+//           parameter Modelica.SIunits.Current Is = 0.0000000000000001 \"Transport saturation current\";
 //           parameter Modelica.SIunits.InversePotential Vak = 0.02 \"Early voltage (inverse), 1/Volt\";
-//           parameter Modelica.SIunits.Time Tauf = 1.2e-010 \"Ideal forward transit time\";
-//           parameter Modelica.SIunits.Time Taur = 5e-009 \"Ideal reverse transit time\";
-//           parameter Modelica.SIunits.Capacitance Ccs = 1e-012 \"Collector-substrat(ground) cap.\";
-//           parameter Modelica.SIunits.Capacitance Cje = 4e-013 \"Base-emitter zero bias depletion cap.\";
-//           parameter Modelica.SIunits.Capacitance Cjc = 5e-013 \"Base-coll. zero bias depletion cap.\";
+//           parameter Modelica.SIunits.Time Tauf = 0.00000000012 \"Ideal forward transit time\";
+//           parameter Modelica.SIunits.Time Taur = 0.000000005 \"Ideal reverse transit time\";
+//           parameter Modelica.SIunits.Capacitance Ccs = 0.000000000001 \"Collector-substrat(ground) cap.\";
+//           parameter Modelica.SIunits.Capacitance Cje = 0.0000000000004 \"Base-emitter zero bias depletion cap.\";
+//           parameter Modelica.SIunits.Capacitance Cjc = 0.0000000000005 \"Base-coll. zero bias depletion cap.\";
 //           parameter Modelica.SIunits.Voltage Phie = 0.8 \"Base-emitter diffusion voltage\";
 //           parameter Real Me = 0.4 \"Base-emitter gradation exponent\";
 //           parameter Modelica.SIunits.Voltage Phic = 0.8 \"Base-collector diffusion voltage\";
 //           parameter Real Mc = 0.333 \"Base-collector gradation exponent\";
-//           parameter Modelica.SIunits.Conductance Gbc = 1e-015 \"Base-collector conductance\";
-//           parameter Modelica.SIunits.Conductance Gbe = 1e-015 \"Base-emitter conductance\";
+//           parameter Modelica.SIunits.Conductance Gbc = 0.000000000000001 \"Base-collector conductance\";
+//           parameter Modelica.SIunits.Conductance Gbe = 0.000000000000001 \"Base-emitter conductance\";
 //           parameter Real EMin = -100 \"if x < EMin, the exp(x) function is linearized\";
 //           parameter Real EMax = 40 \"if x > EMax, the exp(x) function is linearized\";
 //           parameter Modelica.SIunits.Temperature Tnom = 300.15 \"Parameter measurement temperature\";
@@ -7386,8 +7436,8 @@ list();
 //           parameter Real EG = 1.11 \"Energy gap for temperature effect on Is\";
 //           parameter Real NF = 1.0 \"Forward current emission coefficient\";
 //           parameter Real NR = 1.0 \"Reverse current emission coefficient\";
-//           parameter Real K = 1.3806226e-023 \"Boltzmann's constant\";
-//           parameter Real q = 1.6021918e-019 \"Elementary electronic charge\";
+//           parameter Real K = 0.000000000000000000000013806226 \"Boltzmann's constant\";
+//           parameter Real q = 0.00000000000000000016021918 \"Elementary electronic charge\";
 //         protected
 //           Real vcb;
 //           Real veb;
@@ -8358,8 +8408,8 @@ list();
 // </HTML>\"));
 //         model IdealThyristor \"Multiphase ideal thyristor\"
 //           extends Interfaces.TwoPlug;
-//           parameter Modelica.SIunits.Resistance Roff[m](final min = zeros(m)) = fill(1e-005, m) \"Closed thyristor resistance\";
-//           parameter Modelica.SIunits.Conductance Gon[m](final min = zeros(m)) = fill(1e-005, m) \"Opened thyristor conductance\";
+//           parameter Modelica.SIunits.Resistance Roff[m](final min = zeros(m)) = fill(0.00001, m) \"Closed thyristor resistance\";
+//           parameter Modelica.SIunits.Conductance Gon[m](final min = zeros(m)) = fill(0.00001, m) \"Opened thyristor conductance\";
 //           parameter Modelica.SIunits.Voltage Vknee[m](final min = zeros(m)) = zeros(m) \"Treshold voltage\";
 //           Modelica.Blocks.Interfaces.BooleanInPort firePort(final n = m) annotation(extent = [60,90;80,110], rotation = -90);
 //           Modelica.Electrical.Analog.Ideal.IdealThyristor idealThyristor[m](final Roff = Roff, final Gon = Gon, final Vknee = Vknee) annotation(extent = [-10,-10;10,10]);
@@ -8375,8 +8425,8 @@ list();
 //         end IdealThyristor;
 //         model IdealGTOThyristor \"Multiphase ideal GTO thyristor\"
 //           extends Interfaces.TwoPlug;
-//           parameter Modelica.SIunits.Resistance Roff[m](final min = zeros(m)) = fill(1e-005, m) \"Closed thyristor resistance\";
-//           parameter Modelica.SIunits.Conductance Gon[m](final min = zeros(m)) = fill(1e-005, m) \"Opened thyristor conductance\";
+//           parameter Modelica.SIunits.Resistance Roff[m](final min = zeros(m)) = fill(0.00001, m) \"Closed thyristor resistance\";
+//           parameter Modelica.SIunits.Conductance Gon[m](final min = zeros(m)) = fill(0.00001, m) \"Opened thyristor conductance\";
 //           parameter Modelica.SIunits.Voltage Vknee[m](final min = zeros(m)) = zeros(m) \"Treshold voltage\";
 //           Modelica.Blocks.Interfaces.BooleanInPort firePort(final n = m) annotation(extent = [60,90;80,110], rotation = -90);
 //           Modelica.Electrical.Analog.Ideal.IdealGTOThyristor idealGTOThyristor[m](final Roff = Roff, final Gon = Gon, final Vknee = Vknee) annotation(extent = [-10,-10;10,10]);
@@ -8392,8 +8442,8 @@ list();
 //         end IdealGTOThyristor;
 //         model IdealCommutingSwitch \"Multiphase ideal commuting switch\"
 //           parameter Integer m(final min = 1) = 3 \"number of phases\";
-//           parameter Modelica.SIunits.Resistance Ron[m](final min = zeros(m)) = fill(1e-005, m) \"Closed switch resistance\";
-//           parameter Modelica.SIunits.Conductance Goff[m](final min = zeros(m)) = fill(1e-005, m) \"Opened switch conductance\";
+//           parameter Modelica.SIunits.Resistance Ron[m](final min = zeros(m)) = fill(0.00001, m) \"Closed switch resistance\";
+//           parameter Modelica.SIunits.Conductance Goff[m](final min = zeros(m)) = fill(0.00001, m) \"Opened switch conductance\";
 //           Modelica.Blocks.Interfaces.BooleanInPort control(final n = m) annotation(extent = [-10,88;10,108], rotation = -90);
 //           Interfaces.PositivePlug plug_p(final m = m) annotation(extent = [-110,-10;-90,10]);
 //           Interfaces.NegativePlug plug_n2(final m = m) annotation(extent = [90,-10;110,10]);
@@ -8412,8 +8462,8 @@ list();
 //         end IdealCommutingSwitch;
 //         model IdealIntermediateSwitch \"Multiphase ideal intermediate switch\"
 //           parameter Integer m(final min = 1) = 3 \"number of phases\";
-//           parameter Modelica.SIunits.Resistance Ron[m](final min = zeros(m)) = fill(1e-005, m) \"Closed switch resistance\";
-//           parameter Modelica.SIunits.Conductance Goff[m](final min = zeros(m)) = fill(1e-005, m) \"Opened switch conductance\";
+//           parameter Modelica.SIunits.Resistance Ron[m](final min = zeros(m)) = fill(0.00001, m) \"Closed switch resistance\";
+//           parameter Modelica.SIunits.Conductance Goff[m](final min = zeros(m)) = fill(0.00001, m) \"Opened switch conductance\";
 //           Modelica.Blocks.Interfaces.BooleanInPort control(final n = m) annotation(extent = [-10,88;10,108], rotation = -90);
 //           Interfaces.PositivePlug plug_p1(final m = m) annotation(extent = [-110,40;-90,60]);
 //           Interfaces.PositivePlug plug_p2(final m = m) annotation(extent = [-110,-10;-90,10]);
@@ -8434,8 +8484,8 @@ list();
 //         end IdealIntermediateSwitch;
 //         model IdealDiode \"Multiphase ideal diode\"
 //           extends Interfaces.TwoPlug;
-//           parameter Modelica.SIunits.Resistance Roff[m](final min = zeros(m)) = fill(1e-005, m) \"Closed diode resistance\";
-//           parameter Modelica.SIunits.Conductance Gon[m](final min = zeros(m)) = fill(1e-005, m) \"Opened diode conductance\";
+//           parameter Modelica.SIunits.Resistance Roff[m](final min = zeros(m)) = fill(0.00001, m) \"Closed diode resistance\";
+//           parameter Modelica.SIunits.Conductance Gon[m](final min = zeros(m)) = fill(0.00001, m) \"Opened diode conductance\";
 //           parameter Modelica.SIunits.Voltage Vknee[m](final min = zeros(m)) = zeros(m) \"Treshold voltage\";
 //           Modelica.Electrical.Analog.Ideal.IdealDiode idealDiode[m](final Roff = Roff, final Gon = Gon, final Vknee = Vknee) annotation(extent = [-10,-10;10,10]);
 //           annotation(Icon(Text(extent = [-80,-60;80,-100], string = \"%name\"), Line(points = [-90,0;40,0]), Polygon(points = [30,0;-30,40;-30,-40;30,0], style(color = 3, gradient = 0, fillColor = 7)), Line(points = [30,40;30,-40], style(color = 3)), Line(points = [40,0;90,0]), Text(extent = [-100,100;60,60], string = \"m=%m\")), Documentation(info = \"<HTML>
@@ -8488,8 +8538,8 @@ list();
 //         end Short;
 //         model IdealOpener \"Multiphase ideal opener\"
 //           extends Interfaces.TwoPlug;
-//           parameter Modelica.SIunits.Resistance Ron[m](final min = zeros(m)) = fill(1e-005, m) \"Closed switch resistance\";
-//           parameter Modelica.SIunits.Conductance Goff[m](final min = zeros(m)) = fill(1e-005, m) \"Opened switch conductance\";
+//           parameter Modelica.SIunits.Resistance Ron[m](final min = zeros(m)) = fill(0.00001, m) \"Closed switch resistance\";
+//           parameter Modelica.SIunits.Conductance Goff[m](final min = zeros(m)) = fill(0.00001, m) \"Opened switch conductance\";
 //           Modelica.Blocks.Interfaces.BooleanInPort control(final n = m) annotation(extent = [-10,88;10,108], rotation = -90);
 //           Modelica.Electrical.Analog.Ideal.IdealOpener idealOpener[m](final Ron = Ron, final Goff = Goff) annotation(extent = [-10,-10;10,10]);
 //           annotation(Icon(Text(extent = [-80,-60;80,-100], string = \"%name\"), Line(points = [-90,0;-44,0]), Ellipse(extent = [-44,4;-36,-4]), Line(points = [-37,2;40,50]), Line(points = [0,88;0,26]), Line(points = [40,0;90,0]), Text(extent = [-100,100;-20,60], style(color = 3, fillColor = 3, fillPattern = 1), string = \"m=\"), Text(extent = [20,100;100,60], style(color = 3, fillColor = 3, fillPattern = 1), string = \"%m\"), Line(points = [40,20;40,0])), Documentation(info = \"<HTML>
@@ -8504,8 +8554,8 @@ list();
 //         end IdealOpener;
 //         model IdealCloser \"Multiphase ideal closer\"
 //           extends Interfaces.TwoPlug;
-//           parameter Modelica.SIunits.Resistance Ron[m](final min = zeros(m)) = fill(1e-005, m) \"Closed switch resistance\";
-//           parameter Modelica.SIunits.Conductance Goff[m](final min = zeros(m)) = fill(1e-005, m) \"Opened switch conductance\";
+//           parameter Modelica.SIunits.Resistance Ron[m](final min = zeros(m)) = fill(0.00001, m) \"Closed switch resistance\";
+//           parameter Modelica.SIunits.Conductance Goff[m](final min = zeros(m)) = fill(0.00001, m) \"Opened switch conductance\";
 //           Modelica.Blocks.Interfaces.BooleanInPort control(final n = m) annotation(extent = [-10,88;10,108], rotation = -90);
 //           Modelica.Electrical.Analog.Ideal.IdealCloser idealCloser[m](final Ron = Ron, final Goff = Goff) annotation(extent = [-10,-10;10,10]);
 //           annotation(Icon(Text(extent = [-80,-60;80,-100], string = \"%name\"), Line(points = [-90,0;-44,0]), Ellipse(extent = [-44,4;-36,-4]), Line(points = [-37,2;40,50]), Line(points = [0,88;0,26]), Line(points = [40,0;90,0]), Text(extent = [-100,100;-20,60], style(color = 3, fillColor = 3, fillPattern = 1), string = \"m=\"), Text(extent = [20,100;100,60], style(color = 3, fillColor = 3, fillPattern = 1), string = \"%m\")), Documentation(info = \"<HTML>
@@ -9090,6 +9140,13 @@ list();
 // 
 //       end if;
 //     end tempInterpol1;
+//     // Interpolate
+//     // Get interpolation data
+//     // if table[i, 1] = table[i+1, 1] we require i>1 and i+1<n
+//     // Interior means that
+//     // in the interior to allow discontinuities.
+//     // Supports duplicate table[i, 1] values
+//     // Search interval
 //     function tempInterpol2 \"temporary routine for vectorized linear interpolation (will be removed)\"
 //       input Real u \"input value (first column of table)\";
 //       input Real table[:,:] \"table to be interpolated\";
@@ -9127,6 +9184,13 @@ list();
 // 
 //       end if;
 //     end tempInterpol2;
+//     // Interpolate
+//     // Get interpolation data
+//     // if table[i, 1] = table[i+1, 1] we require i>1 and i+1<n
+//     // Interior means that
+//     // in the interior to allow discontinuities.
+//     // Supports duplicate table[i, 1] values
+//     // Search interval
 //   end Math;
 //   package Mechanics \"Library for mechanical systems\"
 //     extends Modelica.Icons.Library2;
@@ -9813,7 +9877,7 @@ list();
 //           connect(torque.flange_b,inertia3.flange_a) annotation(points = [-35,0;-25,0], style(color = 0));
 //           connect(inertia3.flange_b,clutch.flange_a) annotation(points = [-15,0;-5,0], style(color = 0));
 //           connect(clutch.flange_b,inertia2.flange_a) annotation(points = [5,0;15,0], style(color = 0));
-//           connect(const.outPort,clutch.inPort) annotation(points = [3.36767e-016,19.5;3.36767e-016,12.25;0,12.25;0,5.5], style(color = 3));
+//           connect(const.outPort,clutch.inPort) annotation(points = [0.000000000000000336767,19.5;0.000000000000000336767,12.25;0,12.25;0,5.5], style(color = 3));
 //           connect(inertia2.flange_b,spring.flange_a) annotation(points = [25,0;35,0], style(color = 0));
 //           connect(spring.flange_b,brake.flange_a) annotation(points = [45,0;55,0], style(color = 0));
 //           connect(brake.flange_b,inertia1.flange_a) annotation(points = [65,0;75,0], style(color = 0));
@@ -10327,7 +10391,7 @@ list();
 //           end Adapter;
 //         equation
 //           tau_support = -adapter.flange_b.tau;
-//           connect(adapter.flange_a,bearing) annotation(points = [-6.12303e-016,-70;0,-70;0,-100], style(color = 0));
+//           connect(adapter.flange_a,bearing) annotation(points = [-0.000000000000000612303,-70;0,-70;0,-100], style(color = 0));
 //           annotation(Documentation(info = \"<html>
 // <p>
 // This is a 1D rotational component with two flanges and an additional bearing flange.
@@ -10345,12 +10409,14 @@ list();
 //         end TwoFlangesAndBearingH;
 //         partial model FrictionBase \"Base class of Coulomb friction elements\"
 //           parameter SI.AngularVelocity w_small = 1 \"Relative angular velocity near to zero (see model info text)\";
+//           // Equations to define the following variables have to be defined in subclasses
 //           SI.AngularVelocity w_relfric \"Relative angular velocity between frictional surfaces\";
 //           SI.AngularAcceleration a_relfric \"Relative angular acceleration between frictional surfaces\";
 //           SI.Torque tau \"Friction torque (positive, if directed in opposite direction of w_rel)\";
 //           SI.Torque tau0 \"Friction torque for w=0 and forward sliding\";
 //           SI.Torque tau0_max \"Maximum friction torque for w=0 and locked\";
 //           Boolean free \"true, if frictional element is not active\";
+//           // Equations to define the following variables are given in this class
 //           Real sa \"Path parameter of friction characteristic tau = f(a_relfric)\";
 //           Boolean startForward(start = false, fixed = true) \"true, if w_rel=0 and start of forward sliding or w_rel > w_small\";
 //           Boolean startBackward(start = false, fixed = true) \"true, if w_rel=0 and start of backward sliding or w_rel < -w_small\";
@@ -10368,6 +10434,17 @@ list();
 //           a_relfric = if locked then 0 else if free then sa else if startForward then sa - tau0 else if startBackward then sa + tau0 else if pre(mode) == Forward then sa - tau0 else sa + tau0;
 //           mode = if free then Free else if (pre(mode) == Forward or pre(mode) == Free or startForward) and w_relfric > 0 then Forward else if (pre(mode) == Backward or pre(mode) == Free or startBackward) and w_relfric < 0 then Backward else Stuck;
 //         end FrictionBase;
+//         // finite state machine to determine configuration
+//         /* Friction torque has to be defined in a subclass. Example for a clutch:
+//        tau = if locked then sa else if free then 0 else cgeo*fn*
+//             (if startForward then   Math.tempInterpol1( w_relfric, mue_pos, 2) else
+//              if startBackward then -Math.tempInterpol1(-w_relfric, mue_pos, 2) else
+//              if pre(mode) == Forward then  Math.tempInterpol1( w_relfric, mue_pos, 2)
+//                                      else -Math.tempInterpol1(-w_relfric, mue_pos, 2)); */
+//         /* Friction characteristic
+//       (locked is introduced to help the Modelica translator determining
+//       the different structural configurations, if for each configuration
+//       special code shall be generated) */
 //         partial model AbsoluteSensor \"Base class to measure a single absolute flange variable\"
 //           extends Modelica.Icons.RotationalSensor;
 //           Flange_a flange_a \"(left) flange to be measured (flange axis directed INTO cut plane)\" annotation(extent = [-110,-10;-90,10]);
@@ -10468,6 +10545,7 @@ list();
 //       end IdealGear;
 //       model IdealPlanetary \"Ideal planetary gear box\"
 //         parameter Real ratio = 100 / 50 \"number of ring_teeth/sun_teeth (e.g. ratio=100/50)\";
+//         // kinematic relationship
 //         Interfaces.Flange_a sun \"sun flange (flange axis directed INTO cut plane)\" annotation(extent = [-110,-10;-90,10]);
 //         Interfaces.Flange_a carrier \"carrier flange (flange axis directed INTO cut plane)\" annotation(extent = [-90,30;-110,50]);
 //         Interfaces.Flange_b ring \"ring flange (flange axis directed OUT OF cut plane)\" annotation(extent = [110,-10;90,10]);
@@ -10531,6 +10609,7 @@ list();
 //         ring.tau = ratio * sun.tau;
 //         carrier.tau = -(1 + ratio) * sun.tau;
 //       end IdealPlanetary;
+//       // torque balance (no inertias)
 //       model IdealGearR2T \"Gearbox transforming rotational into translational motion\"
 //         parameter Real ratio(final unit = \"rad/m\") = 1 \"transmission ratio (flange_a.phi/flange_b.s)\";
 //         SI.Torque tau_support;
@@ -10659,7 +10738,9 @@ list();
 //         SI.AngularVelocity w_rel \"Relative angular velocity between flange_b and flange_a\";
 //       protected
 //         SI.Angle b2 = b / 2;
-//         constant SI.Angle b_min = 1e-010 \"minimum backlash\";
+//         // number of state events if backlash b is set to zero.
+//         // A minimum backlash is defined in order to avoid an infinite
+//         constant SI.Angle b_min = 0.0000000001 \"minimum backlash\";
 //         annotation(Coordsys(extent = [-100,-100;100,100], grid = [1,1], component = [20,20]), Window(x = 0.45, y = 0.01, width = 0.44, height = 0.65), Documentation(info = \"<html>
 // <p>
 // This element consists of a <b>backlash</b> element <b>connected in series</b>
@@ -10814,6 +10895,10 @@ list();
 //         0 = flange_a.tau + flange_b.tau - tau;
 //         tau = if locked then sa else if startForward then Modelica.Math.tempInterpol1(w, tau_pos, 2) else if startBackward then -Modelica.Math.tempInterpol1(-w, tau_pos, 2) else if pre(mode) == Forward then Modelica.Math.tempInterpol1(w, tau_pos, 2) else -Modelica.Math.tempInterpol1(-w, tau_pos, 2);
 //       end BearingFriction;
+//       // Friction torque
+//       // Equilibrium of torques
+//       // Angular velocity and angular acceleration of flanges
+//       // Constant auxiliary variables
 //       model Clutch \"Clutch based on Coulomb friction \"
 //         extends Interfaces.Compliant;
 //         parameter Real mue_pos[:,:] = [0,0.5] \"[w,mue] positive sliding friction coefficient (w_rel>=0)\";
@@ -10951,6 +11036,10 @@ list();
 //         tau0_max = peak * tau0;
 //         tau = if locked then sa else if free then 0 else cgeo * fn * (if startForward then Modelica.Math.tempInterpol1(w_rel, mue_pos, 2) else if startBackward then -Modelica.Math.tempInterpol1(-w_rel, mue_pos, 2) else if pre(mode) == Forward then Modelica.Math.tempInterpol1(w_rel, mue_pos, 2) else -Modelica.Math.tempInterpol1(-w_rel, mue_pos, 2));
 //       end Clutch;
+//       // friction torque
+//       // Normal force and friction torque for w_rel=0
+//       // Relative quantities
+//       // Constant auxiliary variable
 //       model OneWayClutch \"Series connection of freewheel and clutch\"
 //         extends Interfaces.Compliant;
 //         parameter Real mue_pos[:,:] = [0,0.5] \"[w,mue] positive sliding friction coefficient (w_rel>=0)\";
@@ -11102,6 +11191,16 @@ list();
 //         tau = if locked then sa else if free then 0 else cgeo * fn * Modelica.Math.tempInterpol1(w_rel, mue_pos, 2);
 //         stuck = locked or w_rel <= 0;
 //       end OneWayClutch;
+//       // Determine configuration
+//       // acceleration and friction torque
+//       /* Friction characteristic
+//        (locked is introduced to help the Modelica translator determining
+//        the different structural configurations, if for each configuration
+//        special code shall be generated)
+//     */
+//       // Normal force and friction torque for w_rel=0
+//       // Relative quantities
+//       // Constant auxiliary variable
 //       model Brake \"Brake based on Coulomb friction \"
 //         extends Interfaces.TwoFlangesAndBearing;
 //         parameter Real mue_pos[:,:] = [0,0.5] \"[w,mue] positive sliding friction coefficient (w_rel>=0)\";
@@ -11114,6 +11213,7 @@ list();
 //         SI.AngularAcceleration a \"Absolute angular acceleration of flange_a and flange_b\";
 //         Real mue0 \"Friction coefficient for w=0 and forward sliding\";
 //         SI.Force fn \"Normal force (=fn_max*inPort.signal)\";
+//         // Constant auxiliary variable
 //         Modelica.Blocks.Interfaces.InPort inPort(final n = 1) \"Normalized force signal (= normal_force/fn_max; brake is active if > 0)\" annotation(extent = [-20,130;20,90], rotation = 90);
 //         annotation(Coordsys(extent = [-100,-100;100,100], grid = [2,2], component = [20,20]), Window(x = 0.05, y = 0.01, width = 0.74, height = 0.71), Icon(Polygon(points = [-37,-55;-37,-90;37,-90;37,-55;33,-55;33,-86;-33,-86;-33,-55;-37,-55], style(color = 8, fillColor = 8)), Rectangle(extent = [-90,10;-20,-10], style(gradient = 2, fillColor = 8, fillPattern = 1)), Rectangle(extent = [-20,60;20,-60], style(gradient = 2, fillColor = 8, fillPattern = 1)), Rectangle(extent = [20,10;90,-10], style(gradient = 2, fillColor = 8, fillPattern = 1)), Polygon(points = [40,-40;70,-30;70,-50;40,-40], style(fillColor = 3, fillPattern = 1)), Rectangle(extent = [30,-25;40,-55], style(color = 0, fillColor = 0, fillPattern = 1)), Polygon(points = [-40,-40;-70,-30;-70,-50;-40,-40], style(fillColor = 3, fillPattern = 1)), Rectangle(extent = [-40,-25;-30,-55], style(color = 0, fillColor = 0, fillPattern = 1)), Line(points = [0,90;80,70;80,-40;70,-40]), Line(points = [0,90;-80,70;-80,-40;-70,-40], style(pattern = 1, thickness = 1, arrow = 0)), Text(extent = [0,-200;0,-140], string = \"%name\")), Documentation(info = \"<html>
 // <p>
@@ -11244,6 +11344,9 @@ list();
 //         free = fn <= 0;
 //         tau = if locked then sa else if free then 0 else cgeo * fn * (if startForward then Modelica.Math.tempInterpol1(w, mue_pos, 2) else if startBackward then -Modelica.Math.tempInterpol1(-w, mue_pos, 2) else if pre(mode) == Forward then Modelica.Math.tempInterpol1(w, mue_pos, 2) else -Modelica.Math.tempInterpol1(-w, mue_pos, 2));
 //       end Brake;
+//       // friction torque
+//       // Torque equilibrium, normal force and friction torque for w_rel=0
+//       // Angular velocity and angular acceleration of flanges flange_a and flange_b
 //       model LossyGear \"Gear with mesh efficiency and bearing friction (stuck/rolling possible)\"
 //         extends Interfaces.TwoFlangesAndBearing;
 //         parameter Real i = 1 \"Transmission ratio (flange_a.phi/flange_b.phi)\";
@@ -11472,6 +11575,17 @@ list();
 //         a_a = if locked then 0 else sa - tauLoss;
 //         mode = if ideal then Free else if (pre(mode) == Forward or startForward) and w_a > 0 then Forward else if (pre(mode) == Backward or startBackward) and w_a < 0 then Backward else Stuck;
 //       end LossyGear;
+//       /* Finite state machine to fix configuration after the computation above
+//        The above equations are only dependent on pre(mode) and not on the actual
+//        value of mode. This prevents loops. So mode can be determined in one step. */
+//       /* Parameterized curve description a_a = f1(sa), tauLoss = f2(sa)
+//        In comparison to Modelica.Mechanics.Rotational.FrictionBase it is possible
+//        to simplify the following expression as mode == Stuck is assured in case
+//        of startForward or startBackward */
+//       // Determine rolling/stuck mode when w_rel = 0
+//       // Torque Losses
+//       // Speed for friction element
+//       // Torque balance (no inertias)
 //       model GearEfficiency \"Obsolete component (use model LossyGear instead)\"
 //         extends Interfaces.TwoFlangesAndBearing;
 //         parameter Real eta(min = Modelica.Constants.small, max = 1) = 1 \"Efficiency\";
@@ -11594,9 +11708,9 @@ list();
 //         connect(gearEfficiency.flange_b,bearingFriction.flange_a) annotation(points = [-10,0;10,0], style(color = 0));
 //         connect(bearingFriction.flange_b,elastoBacklash.flange_a) annotation(points = [30,0;50,0], style(color = 0));
 //         connect(elastoBacklash.flange_b,flange_b) annotation(points = [70,0;100,0], style(color = 0));
-//         connect(gearRatio.bearing,adapter.flange_b) annotation(points = [-60,-10;-60,-40;6.12303e-016,-40;6.12303e-016,-50], style(color = 0));
-//         connect(gearEfficiency.bearing,adapter.flange_b) annotation(points = [-20,-10;-20,-40;6.12303e-016,-40;6.12303e-016,-50], style(color = 0));
-//         connect(bearingFriction.bearing,adapter.flange_b) annotation(points = [20,-10;20,-40;6.12303e-016,-40;6.12303e-016,-50], style(color = 0));
+//         connect(gearRatio.bearing,adapter.flange_b) annotation(points = [-60,-10;-60,-40;0.000000000000000612303,-40;0.000000000000000612303,-50], style(color = 0));
+//         connect(gearEfficiency.bearing,adapter.flange_b) annotation(points = [-20,-10;-20,-40;0.000000000000000612303,-40;0.000000000000000612303,-50], style(color = 0));
+//         connect(bearingFriction.bearing,adapter.flange_b) annotation(points = [20,-10;20,-40;0.000000000000000612303,-40;0.000000000000000612303,-50], style(color = 0));
 //       end Gear;
 //       model Gear2 \"Realistic model of a gearbox (based on LossyGear)\"
 //         extends Interfaces.TwoFlangesAndBearingH;
@@ -11644,7 +11758,7 @@ list();
 //         connect(flange_a,lossyGear.flange_a) annotation(points = [-100,0;-60,0], style(color = 0));
 //         connect(lossyGear.flange_b,elastoBacklash.flange_a) annotation(points = [-20,0;20,0], style(color = 0));
 //         connect(elastoBacklash.flange_b,flange_b) annotation(points = [60,0;100,0], style(color = 0));
-//         connect(lossyGear.bearing,adapter.flange_b) annotation(points = [-40,-20;-40,-40;6.12303e-016,-40;6.12303e-016,-50], style(color = 0));
+//         connect(lossyGear.bearing,adapter.flange_b) annotation(points = [-40,-20;-40,-40;0.000000000000000612303,-40;0.000000000000000612303,-50], style(color = 0));
 //       end Gear2;
 //       model Position \"Forced movement of a flange according to a reference angle signal\"
 //         parameter Boolean exact = false \"true/false exact treatment/filtering the input signal\";
@@ -11722,6 +11836,7 @@ list();
 //           phi = phi_ref;
 //         end if;
 //       end Position;
+//       // Filter: a = phi_ref/(1 + (af/w_crit)*s + (bf/w_crit^2)*s^2)
 //       model Speed \"Forced movement of a flange according to a reference angular velocity signal\"
 //         parameter Boolean exact = false \"true/false exact treatment/filtering the input signal\";
 //         parameter SI.Frequency f_crit = 50 \"if exact=false, critical frequency of filter to filter input signal\";
@@ -11801,6 +11916,7 @@ list();
 //           w = w_ref;
 //         end if;
 //       end Speed;
+//       // Filter: a = phi_ref/(1 + (af/w_crit)*s + (bf/w_crit^2)*s^2)
 //       model Accelerate \"Forced movement of a flange according to an acceleration signal\"
 //         parameter SI.Angle phi_start = 0 \"Start angle\";
 //         parameter SI.AngularVelocity w_start = 0 \"Start angular velocity\";
@@ -13021,12 +13137,14 @@ list();
 //           parameter SI.Position smax = 25 \"right stop for (right end of) sliding mass\";
 //           parameter SI.Position smin = -25 \"left stop for (left end of) sliding mass\";
 //           parameter SI.Velocity v_small = 0.001 \"Relative velocity near to zero (see model info text)\";
+//           // Equations to define the following variables have to be defined in subclasses
 //           SI.Velocity v_relfric \"Relative velocity between frictional surfaces\";
 //           SI.Acceleration a_relfric \"Relative acceleration between frictional surfaces\";
 //           SI.Force f \"Friction force (positive, if directed in opposite direction of v_rel)\";
 //           SI.Force f0 \"Friction force for v=0 and forward sliding\";
 //           SI.Force f0_max \"Maximum friction force for v=0 and locked\";
 //           Boolean free \"true, if frictional element is not active\";
+//           // Equations to define the following variables are given in this class
 //           Real sa \"Path parameter of friction characteristic f = f(a_relfric)\";
 //           Boolean startForward \"true, if v_rel=0 and start of forward sliding or v_rel > v_small\";
 //           Boolean startBackward \"true, if v_rel=0 and start of backward sliding or v_rel < -v_small\";
@@ -13052,6 +13170,19 @@ list();
 //           a_relfric = if locked then 0 else if free then sa else if startForward then sa - f0 else if startBackward then sa + f0 else if pre(mode) == Forward then sa - f0 else sa + f0;
 //           mode = if free then Free else if (pre(mode) == Forward or pre(mode) == Free or startForward) and v_relfric > 0 and s < smax - L / 2 then Forward else if (pre(mode) == Backward or pre(mode) == Free or startBackward) and v_relfric < 0 and s > smin + L / 2 then Backward else Stuck;
 //         end FrictionBase;
+//         // finite state machine to determine configuration
+//         /* Friction torque has to be defined in a subclass. Example for a clutch:
+//        f = if locked then sa else if free then 0 else cgeo*fn*
+//                 (if startForward  then  Math.tempInterpol1( w_relfric, mue_pos, 2)
+//              else if startBackward then -Math.tempInterpol1(-w_relfric, mue_pos, 2)
+//              else if pre(mode) == Forward then Math.tempInterpol1(w_relfric, mue_pos, 2)
+//              else -Math.tempInterpol1(-w_relfric, mue_pos, 2));
+//   */
+//         /* Friction characteristic
+//      (locked is introduced to help the Modelica translator determining
+//       the different structural configurations, if for each configuration
+//       special code shall be generated)
+//   */
 //       end Interfaces;
 //       model SlidingMass \"Sliding mass with inertia\"
 //         extends Interfaces.Rigid;
@@ -13201,6 +13332,11 @@ list();
 //         
 //         end when;
 //       end Stop;
+//       // Define events for hard stops and reinitiliaze the state variables velocity v and position s
+//       // Friction force
+//       // Equilibrium of forces
+//       // Velocity and acceleration of flanges
+//       // Constant auxiliary variables
 //       model Rod \"Rod without inertia\"
 //         extends Interfaces.Rigid;
 //         annotation(Coordsys(extent = [-100,-100;100,100], grid = [1,1], component = [20,20]), Window(x = 0.23, y = 0.06, width = 0.7, height = 0.63), Documentation(info = \"<html>
@@ -13375,6 +13511,7 @@ list();
 //           s = s_ref;
 //         end if;
 //       end Position;
+//       // Filter: a = s_ref/(1 + (af/w_crit)*S + (bf/w_crit^2)*S^2)
 //       model Accelerate \"Forced movement of a flange according to an acceleration signal\"
 //         parameter SI.Position s_start = 0 \"Start position\";
 //         parameter SI.Velocity v_start = 0 \"Start velocity\";
@@ -14818,25 +14955,33 @@ list();
 //     import SI = Modelica.SIunits;
 //     import NonSI = Modelica.SIunits.Conversions.NonSIunits;
 //     extends Modelica.Icons.Library2;
+//     // Mathematical constants
 //     constant Real e = Modelica.Math.exp(1.0);
 //     constant Real pi = 2 * Modelica.Math.asin(1.0);
+//     // 3.14159265358979;
 //     constant Real D2R = pi / 180 \"Degree to Radian\";
 //     constant Real R2D = 180 / pi \"Radian to Degree\";
-//     constant Real eps = 1e-015 \"Biggest number such that 1.0 + eps = 1.0\";
-//     constant Real small = 1e-060 \"Smallest number such that small and -small are representable on the machine\";
-//     constant Real inf = 1e+060 \"Biggest Real number such that inf and -inf are representable on the machine\";
+//     // machine where the Modelica translator is running)
+//     // (the definition is a temporary fix since not adapted to the
+//     // Machine dependent constants
+//     constant Real eps = 0.000000000000001 \"Biggest number such that 1.0 + eps = 1.0\";
+//     constant Real small = 1e-60 \"Smallest number such that small and -small are representable on the machine\";
+//     constant Real inf = 1e+60 \"Biggest Real number such that inf and -inf are representable on the machine\";
 //     constant Integer Integer_inf = 1073741823 \"Biggest Integer number such that Integer_inf and -Integer_inf are representable on the machine\";
+//     // (name, value, description from http://physics.nist.gov/cuu/Constants/)
+//     // Constants of nature
 //     constant SI.Velocity c = 299792458 \"Speed of light in vacuum\";
 //     constant SI.Acceleration g_n = 9.80665 \"Standard acceleration of gravity on earth\";
-//     constant Real G(final unit = \"m3/(kg.s2)\") = 6.673e-011 \"Newtonian constant of gravitation\";
-//     constant Real h(final unit = \"J.s\") = 6.62606876e-034 \"Planck constant\";
-//     constant Real k(final unit = \"J/K\") = 1.3806503e-023 \"Boltzmann constant\";
+//     constant Real G(final unit = \"m3/(kg.s2)\") = 0.00000000006673 \"Newtonian constant of gravitation\";
+//     constant Real h(final unit = \"J.s\") = 6.62606876e-34 \"Planck constant\";
+//     constant Real k(final unit = \"J/K\") = 0.000000000000000000000013806503 \"Boltzmann constant\";
 //     constant Real R(final unit = \"J/(mol.K)\") = 8.314472 \"Molar gas constant\";
-//     constant Real sigma(final unit = \"W/(m2.K4)\") = 5.6704e-008 \"Stefan-Boltzmann constant\";
-//     constant Real N_A(final unit = \"1/mol\") = 6.02214199e+023 \"Avogadro constant\";
-//     constant Real mue_0(final unit = \"N/A2\") = 4 * pi * 1e-007 \"Magnetic constant\";
+//     constant Real sigma(final unit = \"W/(m2.K4)\") = 0.000000056704 \"Stefan-Boltzmann constant\";
+//     constant Real N_A(final unit = \"1/mol\") = 6.02214199e+23 \"Avogadro constant\";
+//     constant Real mue_0(final unit = \"N/A2\") = 4 * pi * 0.0000001 \"Magnetic constant\";
 //     constant Real epsilon_0(final unit = \"F/m\") = 1 / (mue_0 * c * c) \"Electric constant\";
 //     constant NonSI.Temperature_degC T_zero = -273.15 \"Absolute zero temperature\";
+//     // For compatibility with previous versions (do not use in new models)
 //     constant Real E = e;
 //     constant Real PI = pi;
 //     constant Real EPS = eps;
@@ -15379,6 +15524,7 @@ list();
 // </HTML>
 // \"));
 //     end Conversions;
+//     // Space and Time (chapter 1 of ISO 31-1992)
 //     type Angle = Real(final quantity = \"Angle\", final unit = \"rad\", displayUnit = \"deg\");
 //     type SolidAngle = Real(final quantity = \"SolidAngle\", final unit = \"sr\");
 //     type Length = Real(final quantity = \"Length\", final unit = \"m\");
@@ -15398,11 +15544,13 @@ list();
 //     type AngularAcceleration = Real(final quantity = \"AngularAcceleration\", final unit = \"rad/s2\");
 //     type Velocity = Real(final quantity = \"Velocity\", final unit = \"m/s\");
 //     type Acceleration = Real(final quantity = \"Acceleration\", final unit = \"m/s2\");
+//     // Periodic and related phenomens (chapter 2 of ISO 31-1992)
 //     type Period = Real(final quantity = \"Time\", final unit = \"s\");
 //     type Frequency = Real(final quantity = \"Frequency\", final unit = \"Hz\");
 //     type AngularFrequency = Real(final quantity = \"AngularFrequency\", final unit = \"s-1\");
 //     type Wavelength = Real(final quantity = \"Wavelength\", final unit = \"m\");
 //     type Wavelenght = Wavelength;
+//     // For compatibility reasons only
 //     type WaveNumber = Real(final quantity = \"WaveNumber\", final unit = \"m-1\");
 //     type CircularWaveNumber = Real(final quantity = \"CircularWaveNumber\", final unit = \"rad/m\");
 //     type AmplitudeLevelDifference = Real(final quantity = \"AmplitudeLevelDifference\", final unit = \"dB\");
@@ -15412,7 +15560,9 @@ list();
 //     type AttenuationCoefficient = Real(final quantity = \"AttenuationCoefficient\", final unit = \"m-1\");
 //     type PhaseCoefficient = Real(final quantity = \"PhaseCoefficient\", final unit = \"m-1\");
 //     type PropagationCoefficient = Real(final quantity = \"PropagationCoefficient\", final unit = \"m-1\");
+//     // added to ISO-chapter
 //     type Damping = DampingCoefficient;
+//     // Mechanics (chapter 3 of ISO 31-1992)
 //     type Mass = Real(quantity = \"Mass\", final unit = \"kg\", min = 0);
 //     type Density = Real(final quantity = \"Density\", final unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0);
 //     type RelativeDensity = Real(final quantity = \"RelativeDensity\", final unit = \"1\", min = 0);
@@ -15460,8 +15610,10 @@ list();
 //     type Efficiency = Real(final quantity = \"Efficiency\", final unit = \"1\", min = 0);
 //     type MassFlowRate = Real(quantity = \"MassFlowRate\", final unit = \"kg/s\");
 //     type VolumeFlowRate = Real(final quantity = \"VolumeFlowRate\", final unit = \"m3/s\");
+//     // added to ISO-chapter 3
 //     type MomentumFlux = Real(final quantity = \"MomentumFlux\", final unit = \"N\");
 //     type AngularMomentumFlux = Real(final quantity = \"AngularMomentumFlux\", final unit = \"N.m\");
+//     // Heat (chapter 4 of ISO 31-1992)
 //     type ThermodynamicTemperature = Real(final quantity = \"ThermodynamicTemperature\", final unit = \"K\", min = 0, displayUnit = \"degC\");
 //     type Temp_K = ThermodynamicTemperature;
 //     type Temperature = ThermodynamicTemperature;
@@ -15505,12 +15657,14 @@ list();
 //     type SpecificGibbsFreeEnergy = SpecificEnergy;
 //     type MassieuFunction = Real(final quantity = \"MassieuFunction\", final unit = \"J/K\");
 //     type PlanckFunction = Real(final quantity = \"PlanckFunction\", final unit = \"J/K\");
+//     // added to ISO-chapter 4
 //     type DerDensityByEnthalpy = Real(final unit = \"kg.s^2/m^5\");
 //     type DerDensityByPressure = Real(final unit = \"s^2/m^2\");
 //     type DerDensityByTemperature = Real(final unit = \"kg/(m^3.K)\");
 //     type DerEnthalpyByPressure = Real(final unit = \"J.m.s^2/kg^2\");
 //     type DerEnergyByDensity = Real(final unit = \"J.m^3/kg\");
 //     type DerEnergyByPressure = Real(final unit = \"J.m.s^2/kg\");
+//     // Electricity and Magnetism (chapter 5 of ISO 31-1992)
 //     type ElectricCurrent = Real(final quantity = \"ElectricCurrent\", final unit = \"A\");
 //     type Current = ElectricCurrent;
 //     type ElectricCharge = Real(final quantity = \"ElectricCharge\", final unit = \"C\");
@@ -15576,8 +15730,10 @@ list();
 //     type ApparentPower = Real(final quantity = \"Power\", final unit = \"VA\");
 //     type ReactivePower = Real(final quantity = \"Power\", final unit = \"var\");
 //     type PowerFactor = Real(final quantity = \"PowerFactor\", final unit = \"1\");
+//     // added to ISO-chapter 5
 //     type Transconductance = Real(final quantity = \"Transconductance\", final unit = \"A/(V*V)\");
 //     type InversePotential = Real(final quantity = \"InversePotential\", final unit = \"1/V\");
+//     // Light and Related Electromagnetic Radiations (chapter 6 of ISO 31-1992)\"
 //     type RadiantEnergy = Real(final quantity = \"Energy\", final unit = \"J\");
 //     type RadiantEnergyDensity = Real(final quantity = \"EnergyDensity\", final unit = \"J/m3\");
 //     type SpectralRadiantEnergyDensity = Real(final quantity = \"SpectralRadiantEnergyDensity\", final unit = \"J/m4\");
@@ -15611,6 +15767,7 @@ list();
 //     type LinearAbsorptionCoefficient = Real(final quantity = \"LinearAbsorptionCoefficient\", final unit = \"m-1\");
 //     type MolarAbsorptionCoefficient = Real(final quantity = \"MolarAbsorptionCoefficient\", final unit = \"m2/mol\");
 //     type RefractiveIndex = Real(final quantity = \"RefractiveIndex\", final unit = \"1\");
+//     // Acoustics (chapter 7 of ISO 31-1992)
 //     type StaticPressure = Real(final quantity = \"Pressure\", final unit = \"Pa\", displayUnit = \"bar\", min = 0);
 //     type SoundPressure = StaticPressure;
 //     type SoundParticleDisplacement = Real(final quantity = \"Length\", final unit = \"m\");
@@ -15634,6 +15791,7 @@ list();
 //     type ReverberationTime = Real(final quantity = \"Time\", final unit = \"s\");
 //     type LoundnessLevel = Real(final quantity = \"LoundnessLevel\", final unit = \"phon\");
 //     type Loundness = Real(final quantity = \"Loundness\", final unit = \"sone\");
+//     // Physical chemistry and molecular physics (chapter 8 of ISO 31-1992)
 //     type RelativeAtomicMass = Real(final quantity = \"RelativeAtomicMass\", final unit = \"1\");
 //     type RelativeMolecularMass = Real(final quantity = \"RelativeMolecularMass\", final unit = \"1\");
 //     type NumberOfMolecules = Real(final quantity = \"NumberOfMolecules\", final unit = \"1\");
@@ -15686,6 +15844,7 @@ list();
 //     type ElectrolyticConductivity = Real(final quantity = \"ElectrolyticConductivity\", final unit = \"S/m\");
 //     type MolarConductivity = Real(final quantity = \"MolarConductivity\", final unit = \"S.m2/mol\");
 //     type TransportNumberOfIonic = Real(final quantity = \"TransportNumberOfIonic\", final unit = \"1\");
+//     // Atomic and Nuclear Physics (chapter 9 of ISO 31-1992)
 //     type ProtonNumber = Real(final quantity = \"ProtonNumber\", final unit = \"1\");
 //     type NeutronNumber = Real(final quantity = \"NeutronNumber\", final unit = \"1\");
 //     type NucleonNumber = Real(final quantity = \"NucleonNumber\", final unit = \"1\");
@@ -15722,6 +15881,7 @@ list();
 //     type AlphaDisintegrationEnergy = Real(final quantity = \"Energy\", final unit = \"J\");
 //     type MaximumBetaParticleEnergy = Real(final quantity = \"Energy\", final unit = \"J\");
 //     type BetaDisintegrationEnergy = Real(final quantity = \"Energy\", final unit = \"J\");
+//     // Nuclear Reactions and Ionizing Radiations (chapter 10 of ISO 31-1992)
 //     type ReactionEnergy = Real(final quantity = \"Energy\", final unit = \"J\");
 //     type ResonanceEnergy = Real(final quantity = \"Energy\", final unit = \"J\");
 //     type CrossSection = Real(final quantity = \"Area\", final unit = \"m2\");
@@ -15782,6 +15942,8 @@ list();
 //     type MassEnergyTransferCoefficient = Real(final quantity = \"MassEnergyTransferCoefficient\", final unit = \"m2/kg\");
 //     type Exposure = Real(final quantity = \"Exposure\", final unit = \"C/kg\");
 //     type ExposureRate = Real(final quantity = \"ExposureRate\", final unit = \"C/(kg.s)\");
+//     // Characteristic Numbers (chapter 12 of ISO 31-1992)
+//     // chapter 11 is not defined in ISO 31-1992
 //     type ReynoldsNumber = Real(final quantity = \"ReynoldsNumber\", final unit = \"1\");
 //     type EulerNumber = Real(final quantity = \"EulerNumber\", final unit = \"1\");
 //     type FroudeNumber = Real(final quantity = \"FroudeNumber\", final unit = \"1\");
@@ -15795,6 +15957,9 @@ list();
 //     type RayleighNumber = Real(final quantity = \"RayleighNumber\", final unit = \"1\");
 //     type NusseltNumber = Real(final quantity = \"NusseltNumber\", final unit = \"1\");
 //     type BiotNumber = NusseltNumber;
+//     // for convective transport of heat.
+//     // the Nusselt number is reserved
+//     // The Biot number (Bi) is used when
 //     type StantonNumber = Real(final quantity = \"StantonNumber\", final unit = \"1\");
 //     type FourierNumberOfMassTransfer = Real(final quantity = \"FourierNumberOfMassTransfer\", final unit = \"1\");
 //     type PecletNumberOfMassTransfer = Real(final quantity = \"PecletNumberOfMassTransfer\", final unit = \"1\");
@@ -15808,6 +15973,7 @@ list();
 //     type AlfvenNumber = Real(final quantity = \"AlfvenNumber\", final unit = \"1\");
 //     type HartmannNumber = Real(final quantity = \"HartmannNumber\", final unit = \"1\");
 //     type CowlingNumber = Real(final quantity = \"CowlingNumber\", final unit = \"1\");
+//     // Solid State Physics (chapter 13 of ISO 31-1992)
 //     type BraggAngle = Angle;
 //     type OrderOfReflexion = Real(final quantity = \"OrderOfReflexion\", final unit = \"1\");
 //     type ShortRangeOrderParameter = Real(final quantity = \"RangeOrderParameter\", final unit = \"1\");

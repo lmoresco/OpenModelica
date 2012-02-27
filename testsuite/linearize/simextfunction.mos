@@ -26,7 +26,7 @@ readFile("output.log"); // Check that output log is emtpy
 // true
 // record SimulationResult
 //     resultFile = "extfunction_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'extfunction', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'extfunction', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // Linearization will performed at point of time: 0
@@ -35,11 +35,14 @@ readFile("output.log"); // Check that output log is emtpy
 // true
 // "model linear_extfunction
 //   parameter Integer n = 2;
+//   // states 
 //   parameter Integer k = 0;
+//   // top-level inputs 
 //   parameter Integer l = 0;
+//   // top-level outputs 
 //   parameter Real x0[2] = {1,-1};
 //   parameter Real u0[0] = array(i for i in 1:0);
-//   parameter Real A[2,2] = [0.54030230586814,0.841470984807897;0.841470981782777,0.54030230586814];
+//   parameter Real A[2,2] = [0.5403023058681398,0.8414709848078965;0.841470981782777,0.5403023058681398];
 //   parameter Real B[2,0] = zeros(2, 0);
 //   parameter Real C[0,2] = zeros(0, 2);
 //   parameter Real D[0,0] = zeros(0, 0);
@@ -56,7 +59,7 @@ readFile("output.log"); // Check that output log is emtpy
 // "
 // record SimulationResult
 //     resultFile = "linear_extfunction_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl2', fileNamePrefix = 'linear_extfunction', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl2', fileNamePrefix = 'linear_extfunction', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -66,11 +69,14 @@ readFile("output.log"); // Check that output log is emtpy
 // true
 // "model linear_extfunction
 //   parameter Integer n = 2;
+//   // states 
 //   parameter Integer k = 0;
+//   // top-level inputs 
 //   parameter Integer l = 0;
-//   parameter Real x0[2] = {1.39899231649436,-1.39899231649436};
+//   // top-level outputs 
+//   parameter Real x0[2] = {1.398992316494363,-1.398992316494363};
 //   parameter Real u0[0] = array(i for i in 1:0);
-//   parameter Real A[2,2] = [0.170960077876204,1.37839629090226;1.37839629987813,0.170960077876204];
+//   parameter Real A[2,2] = [0.1709600778762038,1.378396290902256;1.378396299878126,0.1709600778762038];
 //   parameter Real B[2,0] = zeros(2, 0);
 //   parameter Real C[0,2] = zeros(0, 2);
 //   parameter Real D[0,0] = zeros(0, 0);
@@ -87,7 +93,7 @@ readFile("output.log"); // Check that output log is emtpy
 // "
 // record SimulationResult
 //     resultFile = "linear_extfunction_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl2', fileNamePrefix = 'linear_extfunction', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl2', fileNamePrefix = 'linear_extfunction', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""

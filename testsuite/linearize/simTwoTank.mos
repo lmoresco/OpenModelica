@@ -19,7 +19,7 @@ readFile("output.log"); // Check that output log is emtpy
 // true
 // record SimulationResult
 //     resultFile = "twoflattankmodel_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'twoflattankmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'twoflattankmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // Linearization will performed at point of time: 0
@@ -28,8 +28,11 @@ readFile("output.log"); // Check that output log is emtpy
 // true
 // "model linear_twoflattankmodel
 //   parameter Integer n = 2;
+//   // states 
 //   parameter Integer k = 1;
+//   // top-level inputs 
 //   parameter Integer l = 1;
+//   // top-level outputs 
 //   parameter Real x0[2] = {2,1};
 //   parameter Real u0[1] = {0};
 //   parameter Real A[2,2] = [-0.5,0.5;2,-3];
@@ -51,7 +54,7 @@ readFile("output.log"); // Check that output log is emtpy
 // "
 // record SimulationResult
 //     resultFile = "linear_twoflattankmodel_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl2', fileNamePrefix = 'linear_twoflattankmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl2', fileNamePrefix = 'linear_twoflattankmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""

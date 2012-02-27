@@ -19,7 +19,7 @@ echo(false); // turns of output
 // true
 // record SimulationResult
 //     resultFile = "linearmodel_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'linearmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'linearmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // Linearization will performed at point of time: 0
@@ -28,8 +28,11 @@ echo(false); // turns of output
 // true
 // "model linear_linearmodel
 //   parameter Integer n = 4;
+//   // states 
 //   parameter Integer k = 0;
+//   // top-level inputs 
 //   parameter Integer l = 0;
+//   // top-level outputs 
 //   parameter Real x0[4] = {1,-2,3,-5};
 //   parameter Real u0[0] = array(i for i in 1:0);
 //   parameter Real A[4,4] = [-3,2,0,0;-7,0,-5,1;-1,0,-1,4;0,1,-1,5];
@@ -51,7 +54,7 @@ echo(false); // turns of output
 // "
 // record SimulationResult
 //     resultFile = "linear_linearmodel_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl2', fileNamePrefix = 'linear_linearmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl2', fileNamePrefix = 'linear_linearmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""
