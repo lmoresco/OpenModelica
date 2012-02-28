@@ -7391,8 +7391,7 @@ algorithm
         txt = helpvarlength(txt, i_simCode);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ");\n",
-                                    "saveAll();\n",
-                                    "vector<unsigned int> var_ouputs_idx;\n"
+                                    "  vector<unsigned int> var_ouputs_idx;\n"
                                 }, true));
         txt = Tpl.writeText(txt, l_initOutputIndices);
         txt = Tpl.softNewLine(txt);
@@ -10829,7 +10828,7 @@ algorithm
                                     "    //Provide number (dimension) of zero functions\n",
                                     "    virtual int getDimZeroFunc();\n",
                                     "    //Provides current values of root/zero functions\n",
-                                    "     virtual void giveZeroFunc(double* f,const double& eps);\n",
+                                    "     virtual void giveZeroFunc(double* f);\n",
                                     "    virtual void giveConditions(bool* c);\n",
                                     "    virtual void setConditions(bool* c);\n",
                                     "    //Called to check conditions for event-handling\n",
@@ -24852,7 +24851,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Nested array subscripting *should* have been handled by the routine creating the asub, but for some reason it was not: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4133, 11), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4132, 11), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -24891,7 +24890,7 @@ algorithm
         txt_6 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("ASUB_EASY_CASE "));
         ret_6 = ExpressionDump.printExpStr(i_exp);
         txt_6 = Tpl.writeStr(txt_6, ret_6);
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4162, 11), Tpl.textString(txt_6));
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4161, 11), Tpl.textString(txt_6));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -24934,7 +24933,7 @@ algorithm
         txt_12 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("OTHER_ASUB "));
         ret_12 = ExpressionDump.printExpStr(i_exp);
         txt_12 = Tpl.writeStr(txt_12, ret_12);
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4180, 11), Tpl.textString(txt_12));
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4179, 11), Tpl.textString(txt_12));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_634;
@@ -31574,7 +31573,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 5288, 12), "algStmtTupleAssign failed");
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 5287, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
@@ -33766,7 +33765,7 @@ algorithm
                                     "     _event_handling.setHelpVars(h);\n",
                                     "    //iterate and handle all events inside the eventqueue\n",
                                     "    restart=_event_handling.IterateEventQueue(_conditions1);\n",
-                                    "    saveAll();\n"
+                                    "\n"
                                 }, true));
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
@@ -34006,7 +34005,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("void "));
         txt = lastIdentOfPath(txt, i_modelInfo_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "::giveZeroFunc(double* f,const double& eps)\n",
+                                    "::giveZeroFunc(double* f)\n",
                                     " {\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
@@ -35962,7 +35961,10 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.writeText(txt, a_varDecls);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("if(IContinous::RANKING) checkConditions(0,true);\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    " saveAll();\n",
+                                    "if(IContinous::RANKING) checkConditions(0,true);\n"
+                                }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.writeText(txt, a_all__equations);
         txt = Tpl.softNewLine(txt);
