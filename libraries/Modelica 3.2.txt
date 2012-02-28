@@ -1,6 +1,9 @@
 A full copy of Modelica Standard Library 3.2 build 10:
  http://www.modelica.org/libraries/Modelica
 
+Added by sjoelund.se, 2012-02-28
+Modelica/Mechanics/Multibody/package.mo: and gravityType == 2 then 1 else 0 => gravityType == GravityTypes.UniformGravity
+
 Fixed by Martin Sjolund, 2010-10-26
 [Modelica 3.2/Electrical/Digital.mo:5309:11-5312:35:writable] Warning: connect(dataOut, dataOut) connects the same connector instance! The connect equation will be ignored.
 [Modelica 3.2/Electrical/Digital.mo:6206:11-6209:35:writable] Warning: connect(dataOut, dataOut) connects the same connector instance! The connect equation will be ignored.

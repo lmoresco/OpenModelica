@@ -237,7 +237,7 @@ of 1-dim. rotational, 1-dim. translational, and
         parameter SI.Length gravityLineLength=max(0, gravityArrowLength - gravityHeadLength);
         Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape gravityArrowLine(shapeType="cylinder", length=gravityLineLength, width=gravityArrowDiameter, height=gravityArrowDiameter, lengthDirection=n, widthDirection={0,1,0}, color=gravityArrowColor, r_shape=gravityArrowTail, specularCoefficient=0) if enableAnimation and animateGravity and gravityType == GravityTypes.UniformGravity;
         Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape gravityArrowHead(shapeType="cone", length=gravityHeadLength, width=gravityHeadWidth, height=gravityHeadWidth, lengthDirection=n, widthDirection={0,1,0}, color=gravityArrowColor, r_shape=gravityArrowTail + Modelica.Math.Vectors.normalize(n)*gravityLineLength, specularCoefficient=0) if enableAnimation and animateGravity and gravityType == GravityTypes.UniformGravity;
-        parameter Integer ndim_pointGravity=if enableAnimation and animateGravity and gravityType == 2 then 1 else 0;
+        parameter Integer ndim_pointGravity=if enableAnimation and animateGravity and gravityType == GravityTypes.UniformGravity then 1 else 0;
         Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape gravitySphere(shapeType="sphere", r_shape={-gravitySphereDiameter/2,0,0}, lengthDirection={1,0,0}, length=gravitySphereDiameter, width=gravitySphereDiameter, height=gravitySphereDiameter, color=gravitySphereColor, specularCoefficient=0) if enableAnimation and animateGravity and gravityType == GravityTypes.PointGravity;
         function gravityAcceleration= gravityAccelerationTypes(gravityType=gravityType, g=g*Modelica.Math.Vectors.normalize(n), mue=mue);
       protected 
