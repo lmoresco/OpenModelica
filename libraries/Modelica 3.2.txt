@@ -3,6 +3,7 @@ A full copy of Modelica Standard Library 3.2 build 10:
 
 Added by sjoelund.se, 2012-02-28
 Modelica/Mechanics/Multibody/package.mo: and gravityType == 2 then 1 else 0 => gravityType == GravityTypes.UniformGravity
+Modelica/Mechanics/Multibody/Parts.mo: rotationType == 1,2 => rotationType == Types.RotationTypes.RotationAxis,TwoAxesVectors
 
 Fixed by Martin Sjolund, 2010-10-26
 [Modelica 3.2/Electrical/Digital.mo:5309:11-5312:35:writable] Warning: connect(dataOut, dataOut) connects the same connector instance! The connect equation will be ignored.
