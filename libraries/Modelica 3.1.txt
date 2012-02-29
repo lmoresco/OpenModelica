@@ -3,6 +3,9 @@ A full copy of Modelica Standard Library 3.1 from:
 
 Revision 4084
 
+Added by sjoelund.se, 2012-02-29
+Modelica/Media/Air.mo: refChoice=3 => refChoice=ReferenceEnthalpy.UserDefined, and import ReferenceEnthalpy
+
 Added by sjoelund.se, 2012-02-28
 Modelica/Mechanics/Multibody/package.mo: and gravityType == 2 then 1 else 0 => gravityType == GravityTypes.UniformGravity
 Modelica/Mechanics/Multibody/Parts.mo: rotationType == 1,2 => rotationType == Types.RotationTypes.RotationAxis,TwoAxesVectors
