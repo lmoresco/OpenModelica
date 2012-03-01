@@ -1,4 +1,4 @@
-LOGS = elementary.log loops.log rotational3deffects.log systems.log checkingModels.log
+	LOGS = elementary.log loops.log rotational3deffects.log systems.log checkingModels.log
 .PHONY : all failingtest elementary.log loops.log rotational3deffects.log systems.log checkingModels.log
 
 all : test
@@ -16,6 +16,12 @@ systems.log:
 checkingModels.log:
 	$(MAKE) -C checkingModels -f Makefile test > $@
 
+clean: 
+	$(MAKE) -C elementary -f Makefile clean
+	$(MAKE) -C loops -f Makefile clean
+	$(MAKE) -C rotational3deffects -f Makefile clean
+	$(MAKE) -C systems -f Makefile clean
+	$(MAKE) -C checkingModels -f Makefile clean
 	
 failingtest:
 	cd elementary; $(MAKE) -f Makefile failingtest; \

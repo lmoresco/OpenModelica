@@ -52,6 +52,19 @@ msl31simulation.log
 
 all : test
 
+# This will run the test with 5 threads (cores + 1)
+# If you have more cores increase it.
+# or just run "make -jN" on the command line if you have N-1 cores
+threaded : 
+	@echo running the testsuite with multiple MAKE threads.
+	@echo This is not an official OM test. Run the normal test before commites.
+	@echo If some tests fail with this just run them individualy. Most probably 
+	@echo they will work.
+	@echo This threaded version still have some issues. However if it succedes 
+	@echo then there is no need to run the serial one. Except when you are COMMITING changes.
+	$(MAKE) -j5 clean
+	$(MAKE) -j5 test
+
 omc-diff :
 	$(MAKE) -C difftool
 test : fast.logs slow.logs
@@ -190,4 +203,42 @@ failingtest: omc-diff
 	cd ../multibody; $(MAKE) -f Makefile failingtest; \
 	cd ../msl31; $(MAKE) -f Makefile failingtest;
 	cd ../msl32; $(MAKE) -f Makefile failingtest;
+	
 
+clean: clean_g_1 clean_g_2 clean_g_3 clean_g_4 
+
+clean_g_1  : 
+	$(MAKE) -C streams -f Makefile clean
+	$(MAKE) -C redeclare -f Makefile clean
+	$(MAKE) -C mofiles -f Makefile clean
+
+clean_g_2 :
+	$(MAKE) -C parser -f Makefile clean
+	$(MAKE) -C dependency -f Makefile clean
+	$(MAKE) -C interactive -f Makefile clean
+	$(MAKE) -C interactive-simulation -f Makefile clean
+	$(MAKE) -C mofiles/msl -f Makefile clean
+	$(MAKE) -C mosfiles -f Makefile clean
+	$(MAKE) -C mosfiles-msl22 -f Makefile clean
+	$(MAKE) -C mosfiles-nosim -f Makefile clean
+	$(MAKE) -C meta -f Makefile clean
+	$(MAKE) -C records -f Makefile clean
+	$(MAKE) -C expandable -f Makefile clean
+	$(MAKE) -C initialization -f Makefile clean
+
+clean_g_3 :	
+	$(MAKE) -C mofiles/drmodelica -f Makefile clean
+	$(MAKE) -C linearize -f Makefile clean
+	$(MAKE) -C modelicaML -f Makefile clean
+	$(MAKE) -C bootstrapping -f Makefile clean
+	$(MAKE) -C libraries/msl221 -f Makefile clean
+	$(MAKE) -C libraries/msl221/modelicaAdditions -f Makefile clean
+	$(MAKE) -C libraries/biochem -f Makefile clean
+
+clean_g_4:	
+	$(MAKE) -C libraries/multibody -f Makefile clean
+	$(MAKE) -C libraries/msl31 -f Makefile clean
+	$(MAKE) -C libraries/msl32 -f Makefile clean
+	$(MAKE) -C siemens -f Makefile clean
+	$(MAKE) -C fmi -f Makefile clean
+	$(MAKE) -C 3rdParty/PlanarMechanics -f Makefile clean
