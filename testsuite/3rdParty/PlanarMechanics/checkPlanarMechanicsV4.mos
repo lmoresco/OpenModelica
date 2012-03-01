@@ -87,84 +87,84 @@ checkModel(PlanarMechanicsV4.Examples.InvertedCraneCrab); getErrorString();
 // 
 // 
 // Class PlanarMechanicsV4.Examples.FreeWheel has 271 equation(s) and 271 variable(s).
-// 156 of these are trivial equation(s).
+// 150 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.FreeWheelwithFriction completed successfully.
 // 
 // 
 // Class PlanarMechanicsV4.Examples.FreeWheelwithFriction has 276 equation(s) and 276 variable(s).
-// 156 of these are trivial equation(s).
+// 150 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.TestIdealWheel completed successfully.
 // 
 // 
 // Class PlanarMechanicsV4.Examples.TestIdealWheel has 434 equation(s) and 434 variable(s).
-// 262 of these are trivial equation(s).
+// 256 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.TestDryFrictionWheel completed successfully.
 // 
 // 
 // Class PlanarMechanicsV4.Examples.TestDryFrictionWheel has 439 equation(s) and 439 variable(s).
-// 262 of these are trivial equation(s).
+// 256 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.TestSlipBasedWheel completed successfully.
 // 
 // 
 // Class PlanarMechanicsV4.Examples.TestSlipBasedWheel has 444 equation(s) and 444 variable(s).
-// 264 of these are trivial equation(s).
+// 258 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.WheelBasedCranCrab completed successfully.
 // 
 // 
 // Class PlanarMechanicsV4.Examples.WheelBasedCranCrab has 475 equation(s) and 475 variable(s).
-// 304 of these are trivial equation(s).
+// 288 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.CounterSpin completed successfully.
 // 
 // 
 // Class PlanarMechanicsV4.Examples.CounterSpin has 199 equation(s) and 199 variable(s).
-// 125 of these are trivial equation(s).
+// 109 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.SingleTrackWithEngine completed successfully.
 // 
 // 
 // Class PlanarMechanicsV4.Examples.SingleTrackWithEngine has 756 equation(s) and 756 variable(s).
-// 438 of these are trivial equation(s).
+// 426 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.SingleTrackFixedSteering completed successfully.
 // 
 // 
 // Class PlanarMechanicsV4.Examples.SingleTrackFixedSteering has 625 equation(s) and 625 variable(s).
-// 357 of these are trivial equation(s).
+// 345 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.SingleTrackFixedSteeringFriction completed successfully.
 // 
 // 
 // Class PlanarMechanicsV4.Examples.SingleTrackFixedSteeringFriction has 635 equation(s) and 635 variable(s).
-// 357 of these are trivial equation(s).
+// 345 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.SimpleCarWithDifferentialGear completed successfully.
 // 
 // 
 // Class PlanarMechanicsV4.Examples.SimpleCarWithDifferentialGear has 1730 equation(s) and 1730 variable(s).
-// 993 of these are trivial equation(s).
+// 969 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.TwoTrackStaticLoad completed successfully.
 // 
 // 
 // Class PlanarMechanicsV4.Examples.TwoTrackStaticLoad has 2763 equation(s) and 2763 variable(s).
-// 1586 of these are trivial equation(s).
+// 1562 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.TwoTrackStaticLoad3D completed successfully.
@@ -182,8 +182,8 @@ checkModel(PlanarMechanicsV4.Examples.InvertedCraneCrab); getErrorString();
 // [parts.mo:712:5-714:42:writable] Warning: Variable simpleChassis3D.dynamicLoad.phi_d: Non-array modification 'if simpleChassis3D.dynamicLoad.enforceStates then if simpleChassis3D.dynamicLoad.useQuaternions then StateSelect.never else StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
 // 
 // 
-// Class PlanarMechanicsV4.Examples.TwoTrackStaticLoad3D has 3335 equation(s) and 3346 variable(s).
-// 1958 of these are trivial equation(s).
+// Class PlanarMechanicsV4.Examples.TwoTrackStaticLoad3D has 3346 equation(s) and 3346 variable(s).
+// 1934 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.ControlledCraneCrab completed successfully.
