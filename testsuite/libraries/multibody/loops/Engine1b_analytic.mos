@@ -6965,7 +6965,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic has 3326 equation(s) and 3326 variable(s).
-// 2345 of these are trivial equation(s).
+// 2369 of these are trivial equation(s).
 // "
 // ""
 // endResult
