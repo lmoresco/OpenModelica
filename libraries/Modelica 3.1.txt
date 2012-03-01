@@ -3,6 +3,9 @@ A full copy of Modelica Standard Library 3.1 from:
 
 Revision 4084
 
+Added by sjoelund.se, 2012-03-01
+Modelica/Electrical/Digital.mo x_delayed = integer(delay(x, delayTime)) => Integer(x_delayed) = integer(delay(Integer(x), delayTime));
+
 Added by sjoelund.se, 2012-02-29
 Modelica/Media/Air.mo: refChoice=3 => refChoice=ReferenceEnthalpy.UserDefined, and import ReferenceEnthalpy
 

@@ -2075,7 +2075,7 @@ This package contains interface definitions
       D.Interfaces.Logic x_delayed;
 
     equation
-      x_delayed = integer(delay(x, delayTime));
+      Integer(x_delayed) = integer(delay(Integer(x), delayTime));
       y = if delayTime > 0 then
               (if time >= delayTime then x_delayed else y0) else
                 pre(x);
@@ -2809,7 +2809,7 @@ AndGate with n input values, composed by And and sensitive intertial delay.
         annotation (Line(points={{0,0},{28,0}}, color={127,0,127}));
       connect(G2.y, y)
         annotation (Line(points={{60,0},{100,0}}, color={127,0,127}));
-      annotation (Diagram(coordinateSystem(
+      annotation (extent=[0, -20; 40, 20], Diagram(coordinateSystem(
               preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
                                                    graphics),
         Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{
@@ -2869,7 +2869,20 @@ NandGate with n input values, composed by Nand and sensitive intertial delay.
        realized.</li>
 </ul>
 </HTML>
-"));
+"),     Icon(
+          Text(
+            extent=[-40,80; 40,40],
+            style(color=0, thickness=0.5),
+            string="&",
+            lineColor={0,0,255}),
+          Text(
+            extent=[-20, -40; 20, -80],
+            style(color=0, thickness=0.5),
+            string="Gate",
+            lineColor={0,0,255}),
+          Ellipse(extent=[60, -10; 40, 10], style(color=0, thickness=0.5),
+            lineColor={0,0,255})),
+        Diagram);
     end NandGate;
 
     model OrGate "OrGate with multiple input"
@@ -3888,7 +3901,8 @@ If the signal width is greater than 1 this conversion is done for each signal.
       for i in 1:n loop
         y[i] = if x[i] then L.'1' else L.'0';
       end for;
-      annotation (Documentation(info="<HTML>
+      annotation (extent=[40, -10; 60, 10],
+        Documentation(info="<HTML>
 <P>
 Conversion of a Boolean input into a digital output without any delay according to:
 </P>
@@ -3910,7 +3924,8 @@ If the signal width is greater than 1 this conversion is done for each signal.
        by Christoph Clauss<br>
        initially modelled.</li>
 </ul>
-</HTML>"),        
+</HTML>"),
+        extent=[-60, -10; -40, 10],
         Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{
                 100,100}}), graphics={
             Polygon(
@@ -4025,7 +4040,7 @@ If the signal width is greater than 1 this conversion is done for each signal.
         y[i] = if x[i] > upper_limit then upper_value else
           if x[i] < lower_limit then lower_value else middle_value;
       end for;
-      annotation (
+      annotation (extent=[40, -10; 60, 10],
         Documentation(info="<HTML>
 <P>
 Conversion of a real input into a digital output without any delay according to:
@@ -4050,6 +4065,7 @@ If the signal width is greater than 1 this conversion is done for each signal.
        initially modelled.</li>
 </ul>
 </HTML>"),
+        extent=[-60, -10; -40, 10],
         Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{
                 100,100}}), graphics={
             Polygon(
