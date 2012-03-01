@@ -36341,9 +36341,9 @@ algorithm
         x_index0 = Tpl.getIteri_i0(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
         txt = Tpl.writeStr(txt, intString(x_index0));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",&"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",&_"));
         txt = Tpl.writeStr(txt, i_label);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_1,&"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_1,&_"));
         txt = Tpl.writeStr(txt, i_label);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_2)"));
         txt = Tpl.nextIter(txt);
