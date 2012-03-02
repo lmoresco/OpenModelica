@@ -26,6 +26,7 @@ OverloadingFunc.mos \
 QuotedFunction.mos \
 Return.mos \
 SolveLinearSystem.mos \
+StringArrayReturn.mos \
 TestLoadModel.mos \
 UnpOpPrecedence.mos \
 UnusedVariable.mos \
