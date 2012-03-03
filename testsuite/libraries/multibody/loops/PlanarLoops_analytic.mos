@@ -8999,7 +8999,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic has 5034 equation(s) and 5034 variable(s).
-// 3420 of these are trivial equation(s).
+// 3348 of these are trivial equation(s).
 // "
 // ""
 // endResult

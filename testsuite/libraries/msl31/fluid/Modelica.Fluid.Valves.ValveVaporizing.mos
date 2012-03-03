@@ -2103,7 +2103,7 @@ checkModel(Modelica.Fluid.Valves.ValveVaporizing); getErrorString();
 //   Continuing flattening by only considering the 'outer' component declaration.
 // 
 // Class Modelica.Fluid.Valves.ValveVaporizing has 28 equation(s) and 28 variable(s).
-// 18 of these are trivial equation(s).
+// 8 of these are trivial equation(s).
 // "
 // ""
 // endResult

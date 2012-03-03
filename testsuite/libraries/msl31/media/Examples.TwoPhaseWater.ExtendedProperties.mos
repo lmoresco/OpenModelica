@@ -2696,7 +2696,7 @@ checkModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties); getErrorSt
 // 
 // 
 // Class Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties has 51 equation(s) and 51 variable(s).
-// 21 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // endResult
