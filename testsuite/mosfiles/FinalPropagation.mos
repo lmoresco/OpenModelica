@@ -60,6 +60,8 @@ checkModel(FinalPropagation); getErrorString();
 // ===============
 // Algorithms:
 // ===============
+// Complex Equations:
+// ===============
 // "Check of FinalPropagation completed successfully.
 // 
 // 
