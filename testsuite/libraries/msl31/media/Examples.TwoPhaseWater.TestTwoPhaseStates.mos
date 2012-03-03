@@ -2700,7 +2700,7 @@ checkModel(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates); getErrorSt
 // 
 // 
 // Class Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates has 53 equation(s) and 53 variable(s).
-// 24 of these are trivial equation(s).
+// 9 of these are trivial equation(s).
 // "
 // ""
 // endResult
