@@ -6,14 +6,14 @@ Modelica.Media.Examples.TestOnly.N2AsMix.mos \
 Modelica.Media.Examples.TwoPhaseWater.mos \
 Modelica.Media.Incompressible.Examples.Glycol47.mos \
 Modelica.Media.Water.StandardWater.mos \
+Modelica.Media.Examples.MoistAir.mos \
+Modelica.Media.Examples.SimpleLiquidWater.mos \
+Modelica.Media.Examples.IdealGasH2O.mos \
 
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
-Modelica.Media.Examples.MoistAir.mos \
-Modelica.Media.Examples.SimpleLiquidWater.mos \
-Modelica.Media.Examples.IdealGasH2O.mos \
 Modelica.Media.Examples.MixtureGases.mos \
 Modelica.Media.Examples.TestOnly.FlueGas.mos \
 Modelica.Media.Examples.TestOnly.IdealGasN2.mos \
