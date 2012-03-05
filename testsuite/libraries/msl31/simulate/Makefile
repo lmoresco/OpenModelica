@@ -46,7 +46,6 @@ Modelica.Electrical.Digital.Examples.Counter.mos \
 Modelica.Electrical.Digital.Examples.Counter3.mos \
 Modelica.Electrical.Digital.Examples.FlipFlop.mos \
 Modelica.Electrical.Digital.Examples.FullAdder.mos \
-Modelica.Electrical.Digital.Examples.HalfAdder.mos \
 Modelica.Electrical.Digital.Examples.Multiplexer.mos
 
 
@@ -106,6 +105,7 @@ Modelica.Electrical.Analog.Examples.OvervoltageProtection.mos \
 Modelica.Electrical.Analog.Examples.Rectifier.mos \
 Modelica.Electrical.Analog.Examples.ShowVariableResistor.mos \
 Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.mos \
+Modelica.Electrical.Digital.Examples.HalfAdder.mos \
 Modelica.Electrical.Machines.Examples.DCEE_Start.mos \
 Modelica.Electrical.Machines.Examples.DCPM_Start.mos \
 Modelica.Electrical.Machines.Examples.DCSE_Start.mos \
