@@ -15,12 +15,12 @@ refactorClass(connecttest);
 // true
 // true
 // model connecttest
+//   // name:     refactorGraphAnn2
+//   // keywords: annotation
+//   // status:   correct
 //   // 
 //   // Graphical  class annotations of old standard to be refactored into a new on.
 //   // 
-//   // status:   correct
-//   // keywords: annotation
-//   // name:     refactorGraphAnn2
 //   annotation(uses(Modelica(version = "1.6"), ModelicaAdditions(version = "1.5")), Diagram);
 //   Modelica.Electrical.Analog.Basic.Conductor conductor annotation(extent = [24,54;44,74]);
 //   Modelica.Electrical.Analog.Basic.Resistor resistor annotation(rotation = 180, extent = [-18,18;0,94]);
