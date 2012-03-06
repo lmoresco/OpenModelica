@@ -14,44 +14,9 @@ simulate(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates);
 // true
 // ""
 // true
-// Evaluating: simulate(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates)
 // record SimulationResult
-//     resultFile = "",
+//     resultFile = "Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates_res.mat",
 //     simulationOptions = "startTime = 0.0, stopTime = 22.0, numberOfIntervals = 2500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
-//     messages = "Simulation failed for model: Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates
-// Warning: Alias variables medium.p = medium.sat.psat have start values 700.0 != 100000.0. Use value from medium.p.
-// 
-// Warning: Alias variables medium.p = medium.state.p have start values 700.0 != 100000.0. Use value from medium.p.
-// 
-// Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-// gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.o Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c
-// In file included from Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:10:
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates_functions.c: In function '_Modelica_Media_Water_IF97__Utilities_dynamicViscosity':
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates_functions.c:8380: warning: passing argument 1 of 'real_get' discards qualifiers from pointer target type
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/real_array.h:46: note: expected 'struct real_array_t *' but argument is of type 'const struct real_array *'
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates_functions.c: In function '_Modelica_Media_Water_IF97__Utilities_BaseIF97_Transport_visc__dTp':
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates_functions.c:8698: warning: passing argument 1 of 'real_get' discards qualifiers from pointer target type
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/real_array.h:46: note: expected 'struct real_array_t *' but argument is of type 'const struct real_array *'
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates_functions.c: In function '_Modelica_Media_Water_IF97__Utilities_thermalConductivity':
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates_functions.c:9965: warning: passing argument 1 of 'real_get' discards qualifiers from pointer target type
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/real_array.h:46: note: expected 'struct real_array_t *' but argument is of type 'const struct real_array *'
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c: In function 'eqFunction_0':
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:1125: error: '$Pbpro$Pd' undeclared (first use in this function)
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:1125: error: (Each undeclared identifier is reported only once
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:1125: error: for each function it appears in.)
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c: In function 'eqFunction_1':
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:1132: error: '$Pbpro$Ph' undeclared (first use in this function)
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c: In function 'eqFunction_2':
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:1139: error: '$Pbpro$Pd' undeclared (first use in this function)
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c: In function 'eqFunction_3':
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:1146: error: '$Pbpro$Ph' undeclared (first use in this function)
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c: In function 'eqFunction_4':
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:1153: error: '$Pbpro$Pd' undeclared (first use in this function)
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c: In function 'eqFunction_5':
-// Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.c:1160: error: '$Pbpro$Ph' undeclared (first use in this function)
-// mingw32-make[1]: *** [Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.o] Error 1
-// mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-// 
-// "
+//     messages = "",
 // end SimulationResult;
 // endResult

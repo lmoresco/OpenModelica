@@ -9,6 +9,10 @@ Modelica.Media.Water.StandardWater.mos \
 Modelica.Media.Examples.MoistAir.mos \
 Modelica.Media.Examples.SimpleLiquidWater.mos \
 Modelica.Media.Examples.IdealGasH2O.mos \
+Modelica.Media.Examples.TestOnly.IdealGasN2.mos \
+Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater.mos \
+Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.mos \
+Modelica.Media.Incompressible.Examples.TestGlycol.mos \
 
 
 # test that currently fail. Move up when fixed. 
@@ -16,7 +20,6 @@ Modelica.Media.Examples.IdealGasH2O.mos \
 FAILINGTESTFILES=  \
 Modelica.Media.Examples.MixtureGases.mos \
 Modelica.Media.Examples.TestOnly.FlueGas.mos \
-Modelica.Media.Examples.TestOnly.IdealGasN2.mos \
 Modelica.Media.Examples.TestOnly.IdealGasN2Mix.mos \
 Modelica.Media.Examples.TestOnly.MixIdealGasAir.mos \
 Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa.mos \
@@ -28,16 +31,13 @@ Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas.mos \
 Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition.mos \
 Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.mos \
 Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Glycol47.mos \
-Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater.mos \
 Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.mos \
 Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam.mos \
 Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph.mos \
 Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT.mos \
 Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph.mos \
 Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.mos \
-Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.mos \
 Modelica.Media.Examples.WaterIF97.mos \
-Modelica.Media.Incompressible.Examples.TestGlycol.mos \
 
 
 # Dependency files that are not .mo .mos or Makefile
