@@ -5,7 +5,6 @@ CauerLowPassOPV2.mos \
 CauerLowPassSC2.mos \
 ChuaCircuit2.mos \
 HeatingMOSInverter2.mos \
-HeatingRectifier2.mos \
 ShowVariableResistor2.mos \
 
 # test that currently fail. Move up when fixed. 
@@ -19,6 +18,7 @@ Rectifier2.mos \
 ShowSaturatingInductor2.mos \
 SwitchWithArc2.mos \
 ThyristorBehaviourTest2.mos \
+HeatingRectifier2.mos
 
 
 # Dependency files that are not .mo .mos or Makefile
