@@ -15,6 +15,6 @@ end MaxArray;
 //   Real r1 = time;
 //   Real r2 = max(2.0 * time,time);
 //   enumeration(A, B, C) e1 = MaxArray.E.A;
-//   enumeration(A, B, C) e2 = max(MaxArray.E.A,MaxArray.E.C);
+//   enumeration(A, B, C) e2 = MaxArray.E.C;
 // end MaxArray;
 // endResult
