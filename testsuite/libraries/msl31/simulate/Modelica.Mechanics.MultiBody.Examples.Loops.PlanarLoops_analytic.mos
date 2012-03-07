@@ -9,7 +9,7 @@
 
 loadModel(Modelica,{"3.1"});
 
-checkModel(Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic);
+simulate(Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic);
 
 
 // Result:

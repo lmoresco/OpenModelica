@@ -64,15 +64,9 @@ Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour.mos
 Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke.mos \
 Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2.mos \
-Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.mos \
-Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic.mos \
-Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic.mos \
-Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.mos \
-Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot.mos \
 Modelica.Mechanics.Rotational.Examples.CoupledClutches.mos \
-Modelica.Mechanics.Translational.Examples.PreLoad.mos \
 Modelica.StateGraph.Examples.ControlledTanks.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.mos \
@@ -124,7 +118,11 @@ Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.mos \
+Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic.mos \
+Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1.mos \
+Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.mos \
+Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GyroscopicEffects.mos \
@@ -141,6 +139,7 @@ Modelica.Mechanics.Translational.Examples.ElastoGap.mos \
 Modelica.Mechanics.Translational.Examples.Friction.mos \
 Modelica.Mechanics.Translational.Examples.Oscillator.mos \
 Modelica.Mechanics.Translational.Examples.Sensors.mos \
+Modelica.Mechanics.Translational.Examples.PreLoad.mos \
 Modelica.StateGraph.Examples.ExecutionPaths.mos \
 Modelica.StateGraph.Examples.FirstExample.mos \
 Modelica.StateGraph.Examples.FirstExample_Variant2.mos \
