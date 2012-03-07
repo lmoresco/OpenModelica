@@ -17,7 +17,7 @@ simulate(Modelica.Media.Examples.TestOnly.MixIdealGasAir);
 // Evaluating: simulate(Modelica.Media.Examples.TestOnly.MixIdealGasAir)
 // record SimulationResult
 //     resultFile = "",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.TestOnly.MixIdealGasAir', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.TestOnly.MixIdealGasAir', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = "Simulation failed for model: Modelica.Media.Examples.TestOnly.MixIdealGasAir
 // [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
@@ -43,59 +43,36 @@ simulate(Modelica.Media.Examples.TestOnly.MixIdealGasAir);
 // 
 // Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
 // gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.TestOnly.MixIdealGasAir.o Modelica.Media.Examples.TestOnly.MixIdealGasAir.c
-// In file included from Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:10:
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_h__TX':
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:260: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:261: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_dynamicViscosity':
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:383: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:383: error: expected expression before ')' token
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:383: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:383: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:383: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:383: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_gasMixtureViscosity':
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:471: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:471: error: expected expression before ')' token
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:472: warning: passing argument 2 of 'cat_modelica_string' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/modelica_string.h:87: note: expected 'modelica_string_const' but argument is of type 'int'
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:479: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:479: error: expected expression before ')' token
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:480: warning: passing argument 2 of 'cat_modelica_string' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/modelica_string.h:87: note: expected 'modelica_string_const' but argument is of type 'int'
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_isentropicEnthalpyApproximation':
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:682: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:683: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_specificHeatCapacityCp':
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1103: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1104: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_specificEntropy':
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1178: error: '_MMX' undeclared (first use in this function)
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1178: error: (Each undeclared identifier is reported only once
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1178: error: for each function it appears in.)
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_s__TX':
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1222: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1223: error: expected expression before 'struct'
+// In file included from Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:15:
 // Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_thermalConductivity':
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1262: error: 'modelica_struct' undeclared (first use in this function)
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1262: error: expected ';' before 'Modelica_Media_IdealGases_Common_DataRecord'
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1295: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1295: error: expected expression before ')' token
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1296: warning: passing argument 2 of 'cat_modelica_string' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/modelica_string.h:87: note: expected 'modelica_string_const' but argument is of type 'int'
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1303: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1303: error: expected expression before ')' token
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1303: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1303: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1303: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1303: error: lvalue required as unary '&' operand
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1319: error: 'tmp6' undeclared (first use in this function)
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_Examples_TestOnly_MixIdealGasAir_Medium_specificHeatCapacityCv':
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1398: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1399: error: expected expression before 'struct'
-// In file included from Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:10:
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1384: error: 'modelica_struct' undeclared (first use in this function)
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1384: error: (Each undeclared identifier is reported only once
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1384: error: for each function it appears in.)
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1384: error: expected ';' before 'Modelica_Media_IdealGases_Common_DataRecord'
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1433: error: 'tmp4' undeclared (first use in this function)
+// In file included from Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:15:
 // Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c: In function '_Modelica_Media_IdealGases_Common_SingleGasNasa_thermalConductivityEstimate':
-// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1762: error: '_data' undeclared (first use in this function)
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir_functions.c:1802: error: '_data' undeclared (first use in this function)
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir.c: In function 'eqFunction_12':
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:537: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:537: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir.c: In function 'eqFunction_27':
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:878: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:878: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir.c: In function 'eqFunction_48':
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:1316: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:1316: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir.c: In function 'eqFunction_65':
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:1671: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.TestOnly.MixIdealGasAir.c:1671: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
 // mingw32-make[1]: *** [Modelica.Media.Examples.TestOnly.MixIdealGasAir.o] Error 1
 // mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
 // 

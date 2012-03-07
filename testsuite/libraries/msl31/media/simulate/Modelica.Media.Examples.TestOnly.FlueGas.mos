@@ -16,64 +16,8 @@ simulate(Modelica.Media.Examples.TestOnly.FlueGas);
 // true
 // Evaluating: simulate(Modelica.Media.Examples.TestOnly.FlueGas)
 // record SimulationResult
-//     resultFile = "",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.TestOnly.FlueGas', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
-//     messages = "Simulation failed for model: Modelica.Media.Examples.TestOnly.FlueGas
-// [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:985:5-985:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
-// 	first element is:  input ThermodynamicState state	second element is: input .Modelica.Media.Examples.TestOnly.FlueGas.Medium.ThermodynamicState state	Modelica specification requires that elements are exactly identical.
-// Warning: Alias variables medium2.p = medium2.state.p have start values 200000.0 != 100000.0. Use value from medium2.p.
-// 
-// Warning: Alias variables medium2.X[1] = medium2.Xi[1] have start values 0.2 != 0.768. Use value from medium2.X[1].
-// 
-// Warning: Alias variables medium2.X[2] = medium2.Xi[2] have start values 0.1 != 0.232. Use value from medium2.X[2].
-// 
-// Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-// gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.TestOnly.FlueGas.o Modelica.Media.Examples.TestOnly.FlueGas.c
-// In file included from Modelica.Media.Examples.TestOnly.FlueGas.c:10:
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c: In function '_Modelica_Media_Examples_TestOnly_FlueGas_Medium_h__TX':
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:216: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:217: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:218: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:219: error: expected expression before 'struct'
-// In file included from Modelica.Media.Examples.TestOnly.FlueGas.c:10:
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c: In function '_Modelica_Media_Examples_TestOnly_FlueGas_Medium_isentropicEnthalpyApproximation':
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:449: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:450: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:451: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:452: error: expected expression before 'struct'
-// In file included from Modelica.Media.Examples.TestOnly.FlueGas.c:10:
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c: In function '_Modelica_Media_Examples_TestOnly_FlueGas_Medium_specificHeatCapacityCp':
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:688: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:689: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:690: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:691: error: expected expression before 'struct'
-// In file included from Modelica.Media.Examples.TestOnly.FlueGas.c:10:
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c: In function '_Modelica_Media_Examples_TestOnly_FlueGas_Medium_specificEntropy':
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:785: error: '_MMX' undeclared (first use in this function)
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:785: error: (Each undeclared identifier is reported only once
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:785: error: for each function it appears in.)
-// In file included from Modelica.Media.Examples.TestOnly.FlueGas.c:10:
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c: In function '_Modelica_Media_Examples_TestOnly_FlueGas_Medium_s__TX':
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:831: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:832: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:833: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:834: error: expected expression before 'struct'
-// In file included from Modelica.Media.Examples.TestOnly.FlueGas.c:10:
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c: In function '_Modelica_Media_Examples_TestOnly_FlueGas_Medium_specificHeatCapacityCv':
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:881: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:882: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:883: error: expected expression before 'struct'
-// Modelica.Media.Examples.TestOnly.FlueGas_functions.c:884: error: expected expression before 'struct'
-// mingw32-make[1]: *** [Modelica.Media.Examples.TestOnly.FlueGas.o] Error 1
-// mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-// 
-// "
+//     resultFile = "Modelica.Media.Examples.TestOnly.FlueGas_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.TestOnly.FlueGas', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = ""
 // end SimulationResult;
 // endResult

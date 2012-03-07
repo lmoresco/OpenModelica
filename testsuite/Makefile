@@ -20,7 +20,8 @@ drmodelica.log \
 streams.log \
 redeclare.log \
 fmi.log \
-PlanarMechanics.log 
+PlanarMechanics.log \
+TestMedia.log  
 
 SLOWLOGS = \
 bootstrapping.log \
@@ -191,6 +192,9 @@ fmi.log: omc-diff
 	@echo $@ done
 PlanarMechanics.log: omc-diff
 	$(MAKE) -C 3rdParty/PlanarMechanics -f Makefile test > $@
+	@echo $@ done
+TestMedia.log: omc-diff
+	$(MAKE) -C 3rdParty/TestMedia -f Makefile test > $@
 	@echo $@ done
 failingtest: omc-diff
 	cd mofiles; $(MAKE) -f Makefile failingtest; \

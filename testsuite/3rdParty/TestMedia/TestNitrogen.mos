@@ -1,0 +1,124 @@
+// name: TestNitrogen.mos [instantiate/check/simulate]
+// status: correct
+// teardown_command: rm -rf *TestMedia.TestModels* output.log
+// provided by Francesco Casella
+//
+
+loadModel(Modelica); getErrorString();
+loadFile("TestMedia.mo"); getErrorString();
+
+instantiateModel(TestMedia.TestModels.TestNitrogen); getErrorString();
+checkModel(TestMedia.TestModels.TestNitrogen); getErrorString();
+simulate(TestMedia.TestModels.TestNitrogen); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.log
+//   input Real u;
+//   output Real y;
+// 
+//   external \"C\" y = log(u);
+// end Modelica.Math.log;
+// 
+// function Modelica.Media.IdealGases.Common.DataRecord \"Automatically generated record constructor for Modelica.Media.IdealGases.Common.DataRecord\"
+//   input String name;
+//   input Real(quantity=\"MolarMass\", unit=\"kg/mol\", min=0.0) MM;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") Hf;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") H0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") Tlimit;
+//   input Real[7] alow;
+//   input Real[2] blow;
+//   input Real[7] ahigh;
+//   input Real[2] bhigh;
+//   input Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") R;
+//   output DataRecord res;
+// end Modelica.Media.IdealGases.Common.DataRecord;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// function TestMedia.TestModels.TestNitrogen.Medium.ThermodynamicState \"Automatically generated record constructor for TestMedia.TestModels.TestNitrogen.Medium.ThermodynamicState\"
+//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+//   output ThermodynamicState res;
+// end TestMedia.TestModels.TestNitrogen.Medium.ThermodynamicState;
+// 
+// function TestMedia.TestModels.TestNitrogen.Medium.density \"return density of ideal gas\"
+//   input TestMedia.TestModels.TestNitrogen.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
+// algorithm
+//   d := state.p / (state.T * 296.803386950531);
+// end TestMedia.TestModels.TestNitrogen.Medium.density;
+// 
+// function TestMedia.TestModels.TestNitrogen.Medium.h_T \"Compute specific enthalpy from temperature and gas data; reference is decided by the
+//     refChoice input, or by the referenceChoice package constant by default\"
+//   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
+//   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
+//   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = TestMedia.TestModels.TestNitrogen.Medium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
+//   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at temperature T\";
+// algorithm
+//   h := if T < data.Tlimit then (data.R * (T * (data.blow[1] + data.alow[2] * log(T) + T * (data.alow[3] + T * (0.5 * data.alow[4] + T * (0.333333333333333 * data.alow[5] + T * (0.25 * data.alow[6] + 0.2 * data.alow[7] * T))))) - data.alow[1])) / T else (data.R * (T * (data.bhigh[1] + data.ahigh[2] * log(T) + T * (data.ahigh[3] + T * (0.5 * data.ahigh[4] + T * (0.333333333333333 * data.ahigh[5] + T * (0.25 * data.ahigh[6] + 0.2 * data.ahigh[7] * T))))) - data.ahigh[1])) / T + if exclEnthForm then -data.Hf else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K then data.H0 else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_off else 0.0;
+// end TestMedia.TestModels.TestNitrogen.Medium.h_T;
+// 
+// function TestMedia.TestModels.TestNitrogen.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output TestMedia.TestModels.TestNitrogen.Medium.ThermodynamicState state;
+// algorithm
+//   state := TestMedia.TestModels.TestNitrogen.Medium.ThermodynamicState(p,T);
+// end TestMedia.TestModels.TestNitrogen.Medium.setState_pTX;
+// 
+// function TestMedia.TestModels.TestNitrogen.Medium.specificEnthalpy \"Return specific enthalpy\"
+//   input TestMedia.TestModels.TestNitrogen.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := TestMedia.TestModels.TestNitrogen.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-05,-9.62579362e-09,2.519705809e-12},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-07,-1.923105485e-11,1.061954386e-15},{12832.10415,-15.86640027},296.803386950531),state.T,true,TestMedia.TestModels.TestNitrogen.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+// end TestMedia.TestModels.TestNitrogen.Medium.specificEnthalpy;
+// 
+// class TestMedia.TestModels.TestNitrogen
+//   Real state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0);
+//   Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0);
+//   Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0);
+//   Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0);
+// equation
+//   T = 300.0 + 300.0 * time;
+//   p = 100000.0;
+//   state = TestMedia.TestModels.TestNitrogen.Medium.setState_pTX(p,T,{1.0});
+//   d = TestMedia.TestModels.TestNitrogen.Medium.density(state);
+//   h = TestMedia.TestModels.TestNitrogen.Medium.specificEnthalpy(state);
+// end TestMedia.TestModels.TestNitrogen;
+// "
+// ""
+// "Check of TestMedia.TestModels.TestNitrogen completed successfully.
+// 
+// 
+// Class TestMedia.TestModels.TestNitrogen has 6 equation(s) and 6 variable(s).
+// 3 of these are trivial equation(s).
+// "
+// ""
+// record SimulationResult
+//     resultFile = "TestMedia.TestModels.TestNitrogen_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'TestMedia.TestModels.TestNitrogen', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = ""
+// end SimulationResult;
+// ""
+// endResult

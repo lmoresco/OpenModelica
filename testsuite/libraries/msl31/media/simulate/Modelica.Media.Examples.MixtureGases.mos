@@ -15,20 +15,9 @@ simulate(Modelica.Media.Examples.MixtureGases);
 // ""
 // true
 // Evaluating: simulate(Modelica.Media.Examples.MixtureGases)
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
-// eqns =4
 // record SimulationResult
 //     resultFile = "",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.MixtureGases', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.MixtureGases', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = "Simulation failed for model: Modelica.Media.Examples.MixtureGases
 // [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
@@ -54,117 +43,475 @@ simulate(Modelica.Media.Examples.MixtureGases);
 // 
 // Warning: Alias variables medium1.X[2] = medium1.Xi[2] have start values 0.2 != 0.232. Use value from medium1.X[2].
 // 
-// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
-// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
-// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
-// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
-// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
-// m2 = medium2.d * V;
-// medium2.d = medium2.p / (medium2.T * 518.279116793808);
-// medium2.u = medium2.h + -518.279116793808 * medium2.T;
-// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
-// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
-// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
-// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
-// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
-// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
-// m2 = medium2.d * V;
-// medium2.d = medium2.p / (medium2.T * 518.279116793808);
-// medium2.u = medium2.h + -518.279116793808 * medium2.T;
-// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
-// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
-// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
-// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
-// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
-// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
-// m2 = medium2.d * V;
-// medium2.d = medium2.p / (medium2.T * 518.279116793808);
-// medium2.u = medium2.h + -518.279116793808 * medium2.T;
-// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
-// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
-// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
-// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
-// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
-// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
-// m2 = medium2.d * V;
-// medium2.d = medium2.p / (medium2.T * 518.279116793808);
-// medium2.u = medium2.h + -518.279116793808 * medium2.T;
-// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
-// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
-// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
-// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
-// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
-// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
-// m2 = medium2.d * V;
-// medium2.d = medium2.p / (medium2.T * 518.279116793808);
-// medium2.u = medium2.h + -518.279116793808 * medium2.T;
-// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
-// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
-// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
-// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
-// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
-// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
-// m2 = medium2.d * V;
-// medium2.d = medium2.p / (medium2.T * 518.279116793808);
-// medium2.u = medium2.h + -518.279116793808 * medium2.T;
-// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
-// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
-// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
-// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
-// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
-// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
-// m2 = medium2.d * V;
-// medium2.d = medium2.p / (medium2.T * 518.279116793808);
-// medium2.u = medium2.h + -518.279116793808 * medium2.T;
-// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
-// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
-// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
-// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
-// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
-// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
-// m2 = medium2.d * V;
-// medium2.d = medium2.p / (medium2.T * 518.279116793808);
-// medium2.u = medium2.h + -518.279116793808 * medium2.T;
-// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
-// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
-// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
-// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
-// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
-// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
-// m2 = medium2.d * V;
-// medium2.d = medium2.p / (medium2.T * 518.279116793808);
-// medium2.u = medium2.h + -518.279116793808 * medium2.T;
-// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
-// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
-// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
-// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
-// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
-// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
-// m2 = medium2.d * V;
-// medium2.d = medium2.p / (medium2.T * 518.279116793808);
-// medium2.u = medium2.h + -518.279116793808 * medium2.T;
-// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
-// Error: Derivative of expression Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0) is non-existent
-// [package.mo:782:5-782:19:writable] Error: Internal error - Derive.differentiateEquationTime failed.
-// Error: Internal error -BackendDAETranfrom.differentiateEqns failed!
-// Error: Internal error - BackendDAETransform.reduceIndexDummyDer failed!
-// [package.mo:2361:5-2361:22:writable] Error: Model is structurally singular, error found sorting equations U2 = m2 * medium2.u;
-// m2 = medium2.d * V;
-// medium2.d = medium2.p / (medium2.T * 518.279116793808);
-// medium2.u = medium2.h + -518.279116793808 * medium2.T;
-// medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{0.1,0.1,0.1,0.2,0.2,0.3},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//  for variables m2(9), medium2.u(5), medium2.d(3), medium2.h(2), 
-// Error: Internal error Transformation Module failed!
+// Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
+// gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.MixtureGases.o Modelica.Media.Examples.MixtureGases.c
+// In file included from Modelica.Media.Examples.MixtureGases.c:15:
+// Modelica.Media.Examples.MixtureGases_functions.c: In function '_Modelica_Media_Examples_MixtureGases_Medium1_thermalConductivity':
+// Modelica.Media.Examples.MixtureGases_functions.c:1170: error: 'modelica_struct' undeclared (first use in this function)
+// Modelica.Media.Examples.MixtureGases_functions.c:1170: error: (Each undeclared identifier is reported only once
+// Modelica.Media.Examples.MixtureGases_functions.c:1170: error: for each function it appears in.)
+// Modelica.Media.Examples.MixtureGases_functions.c:1170: error: expected ';' before 'Modelica_Media_IdealGases_Common_DataRecord'
+// Modelica.Media.Examples.MixtureGases_functions.c:1219: error: 'tmp4' undeclared (first use in this function)
+// In file included from Modelica.Media.Examples.MixtureGases.c:15:
+// Modelica.Media.Examples.MixtureGases_functions.c: In function '_Modelica_Media_Examples_MixtureGases_Medium2_thermalConductivity':
+// Modelica.Media.Examples.MixtureGases_functions.c:1905: error: 'modelica_struct' undeclared (first use in this function)
+// Modelica.Media.Examples.MixtureGases_functions.c:1905: error: expected ';' before 'Modelica_Media_IdealGases_Common_DataRecord'
+// In file included from Modelica.Media.Examples.MixtureGases.c:15:
+// Modelica.Media.Examples.MixtureGases_functions.c:1954: error: 'tmp4' undeclared (first use in this function)
+// In file included from Modelica.Media.Examples.MixtureGases.c:15:
+// Modelica.Media.Examples.MixtureGases_functions.c: In function '_Modelica_Media_IdealGases_Common_SingleGasNasa_thermalConductivityEstimate':
+// Modelica.Media.Examples.MixtureGases_functions.c:2285: error: '_data' undeclared (first use in this function)
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_20':
+// Modelica.Media.Examples.MixtureGases.c:611: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:611: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_24':
+// Modelica.Media.Examples.MixtureGases.c:651: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:651: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_25':
+// Modelica.Media.Examples.MixtureGases.c:683: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:683: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:683: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:683: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:683: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:683: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:687: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:687: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:687: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:687: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:687: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:687: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:694: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:694: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:694: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:694: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:694: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:694: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:698: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:698: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:698: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:698: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:698: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:698: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_26':
+// Modelica.Media.Examples.MixtureGases.c:719: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:719: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_27':
+// Modelica.Media.Examples.MixtureGases.c:728: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:728: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_31':
+// Modelica.Media.Examples.MixtureGases.c:768: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:768: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_32':
+// Modelica.Media.Examples.MixtureGases.c:828: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:828: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:828: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:828: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:828: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:828: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:832: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:832: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:832: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:832: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:832: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:832: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:839: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:839: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:839: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:839: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:839: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:839: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:843: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:843: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:843: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:843: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:843: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:843: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:850: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:850: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:850: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:850: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:850: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:850: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:854: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:854: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:854: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:854: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:854: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:854: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:861: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:861: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:861: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:861: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:861: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:861: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:865: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:865: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:865: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:865: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:865: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:865: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:872: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:872: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:872: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:872: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:872: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:872: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:876: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:876: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:876: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:876: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:876: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:876: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:883: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:883: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:883: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:883: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:883: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:883: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:887: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:887: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:887: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:887: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:887: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:887: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_33':
+// Modelica.Media.Examples.MixtureGases.c:908: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:908: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_83':
+// Modelica.Media.Examples.MixtureGases.c:2257: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2257: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_88':
+// Modelica.Media.Examples.MixtureGases.c:2304: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2304: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_89':
+// Modelica.Media.Examples.MixtureGases.c:2364: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2364: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2364: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2364: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2364: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2364: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2368: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2368: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2368: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2368: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2368: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2368: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2375: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2375: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2375: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2375: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2375: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2375: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2379: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2379: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2379: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2379: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2379: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2379: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2386: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2386: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2386: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2386: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2386: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2386: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2390: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2390: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2390: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2390: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2390: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2390: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2397: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2397: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2397: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2397: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2397: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2397: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2401: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2401: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2401: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2401: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2401: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2401: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2408: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2408: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2408: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2408: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2408: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2408: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2412: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2412: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2412: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2412: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2412: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2412: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2419: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2419: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2419: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2419: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2419: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2419: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2423: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2423: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2423: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2423: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2423: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2423: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_90':
+// Modelica.Media.Examples.MixtureGases.c:2444: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2444: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_99':
+// Modelica.Media.Examples.MixtureGases.c:2655: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2655: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_104':
+// Modelica.Media.Examples.MixtureGases.c:2702: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2702: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_105':
+// Modelica.Media.Examples.MixtureGases.c:2734: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2734: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2734: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2734: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2734: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2734: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2738: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2738: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2738: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2738: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2738: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2738: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2745: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2745: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2745: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2745: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2745: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2745: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2749: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2749: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2749: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2749: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c:2749: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2749: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// Modelica.Media.Examples.MixtureGases.c: In function 'eqFunction_106':
+// Modelica.Media.Examples.MixtureGases.c:2770: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
+// Modelica.Media.Examples.MixtureGases.c:2770: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
+// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
+// mingw32-make[1]: *** [Modelica.Media.Examples.MixtureGases.o] Error 1
+// mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
+// 
 // "
 // end SimulationResult;
 // endResult
