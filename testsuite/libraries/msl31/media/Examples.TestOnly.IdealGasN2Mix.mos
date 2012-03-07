@@ -243,7 +243,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:985:5-985:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
+// [package.mo:986:5-986:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
 // 	first element is:  input ThermodynamicState state	second element is: input .Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state	Modelica specification requires that elements are exactly identical.
 // "
 // "Check of Modelica.Media.Examples.TestOnly.IdealGasN2Mix completed successfully.
@@ -255,7 +255,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:985:5-985:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
+// [package.mo:986:5-986:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
 // 	first element is:  input ThermodynamicState state	second element is: input .Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state	Modelica specification requires that elements are exactly identical.
 // 
 // Class Modelica.Media.Examples.TestOnly.IdealGasN2Mix has 21 equation(s) and 21 variable(s).

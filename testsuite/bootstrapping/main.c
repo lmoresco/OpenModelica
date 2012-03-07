@@ -41,6 +41,12 @@ int rml_execution_failed(mmc_GC_local_state_type local_GC_state)
 
 int main(int argc, char **argv)
 {
+  if (!mmc_GC_state)
+  {
+    mmc_GC_init(mmc_GC_settings_default);
+  }
+  
+  {
   mmc_GC_local_state_type local_GC_state = mmc_GC_save_roots_state("top"); /* push the first mark */
   void *lst = mmc_mk_nil();
   int i = 0;
@@ -55,6 +61,7 @@ int main(int argc, char **argv)
   _Main_main(lst);
 
   MMC_CATCH_TOP(return rml_execution_failed(local_GC_state));
+  }
 
   return 0;
 }

@@ -1,7 +1,7 @@
 //name:        simulate(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT)
 //keyword:     simulation
 //status:      correct
- //teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+//teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
 // instantiate/check model example
 //
 
@@ -19,8 +19,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_p
 //     resultFile = "",
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = "Simulation failed for model: Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT
-// Error: Error building simulator. Buildlog: mingw32-make[1]: Entering directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
-// gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.o Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c
+// Error: Error building simulator. Buildlog: gcc  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc\" -I.    -c -o Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.o Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c
 // Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_0':
 // Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:323: error: 'Modelica_Media_Water_StandardWater_molarMass_rettype' undeclared (first use in this function)
 // Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:323: error: (Each undeclared identifier is reported only once
@@ -35,76 +34,7 @@ simulate(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_p
 // Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:359: error: 'Modelica_Media_Water_StandardWater_molarMass_rettype' undeclared (first use in this function)
 // Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:359: error: expected ';' before 'tmp5'
 // Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:362: error: 'tmp5' undeclared (first use in this function)
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_57':
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:895: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:895: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_60':
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:918: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:918: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_62':
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:934: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:934: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_65':
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:970: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:970: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_66':
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:991: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:991: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:993: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:993: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_68':
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1063: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1063: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_81':
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1323: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1323: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_86':
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1372: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1372: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_92':
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1436: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1436: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_94':
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1452: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1452: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_97':
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1488: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1488: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c: In function 'eqFunction_98':
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1509: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1509: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1511: warning: passing argument 3 of 'division_error' makes pointer from integer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'const char *' but argument is of type 'int'
-// Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.c:1511: warning: passing argument 4 of 'division_error' makes integer from pointer without a cast
-// c:/bin/cygwin/home/adrpo/dev/OpenModelica/build/include/omc/division.h:41: note: expected 'long int' but argument is of type 'char *'
-// mingw32-make[1]: *** [Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.o] Error 1
-// mingw32-make[1]: Leaving directory `c:/bin/cygwin/home/adrpo/dev/OpenModelica/testsuite/libraries/msl31/media/simulate'
+// mingw32-make: *** [Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.o] Error 1
 // 
 // "
 // end SimulationResult;

@@ -29,14 +29,13 @@ Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph.mos \
 Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT.mos \
 Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph.mos \
 Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties.mos \
-Modelica.Media.Examples.WaterIF97.mos
-
+Modelica.Media.Examples.WaterIF97.mos \
+Modelica.Media.Examples.MixtureGases.mos \
+Modelica.Media.Examples.TestOnly.MixIdealGasAir.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
-Modelica.Media.Examples.MixtureGases.mos \
-Modelica.Media.Examples.TestOnly.MixIdealGasAir.mos \
 Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.mos
 
 # Dependency files that are not .mo .mos or Makefile

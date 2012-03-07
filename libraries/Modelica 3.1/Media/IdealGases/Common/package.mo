@@ -525,6 +525,7 @@ transform the formula to SI units:
   function thermalConductivityEstimate
     "Thermal conductivity of polyatomic gases(Eucken and Modified Eucken correlation)"
     extends Modelica.Icons.Function;
+    input IdealGases.Common.DataRecord data "Ideal gas data";
     input SpecificHeatCapacity Cp "Constant pressure heat capacity";
     input DynamicViscosity eta "Dynamic viscosity";
     input Integer method(min=1,max=2)=1
@@ -554,7 +555,7 @@ thermal conductivity (lambda) at low temperatures.
   algorithm
     assert(fluidConstants[1].hasCriticalData,
     "Failed to compute thermalConductivity: For the species \"" + mediumName + "\" no critical data is available.");
-    lambda := thermalConductivityEstimate(specificHeatCapacityCp(state),
+    lambda := thermalConductivityEstimate(data, specificHeatCapacityCp(state),
       dynamicViscosity(state), method=method);
     annotation (smoothOrder=2);
   end thermalConductivity;
@@ -1357,7 +1358,7 @@ end lowPressureThermalConductivity;
                        fluidConstants[i].acentricFactor,
                        fluidConstants[i].dipoleMoment);
     cp[i] := SingleGasNasa.cp_T(data[i],state.T);
-    lambdaX[i] :=SingleGasNasa.thermalConductivityEstimate(Cp=cp[i], eta=
+    lambdaX[i] :=SingleGasNasa.thermalConductivityEstimate(data[i],Cp=cp[i], eta=
           eta[i], method=method);
       end for;
       lambda := lowPressureThermalConductivity(massToMoleFractions(state.X,
