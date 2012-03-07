@@ -9,7 +9,6 @@ Modelica.Blocks.Examples.ShowLogicalSources.mos \
 Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.mos \
 Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
 Modelica.Electrical.Analog.Examples.NandGate.mos \
-Modelica.Electrical.Digital.Examples.Adder4.mos \
 Modelica.Electrical.Machines.Examples.TransformerTestbench.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant.mos \
@@ -99,6 +98,7 @@ Modelica.Electrical.Analog.Examples.OvervoltageProtection.mos \
 Modelica.Electrical.Analog.Examples.Rectifier.mos \
 Modelica.Electrical.Analog.Examples.ShowVariableResistor.mos \
 Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.mos \
+Modelica.Electrical.Digital.Examples.Adder4.mos \
 Modelica.Electrical.Digital.Examples.HalfAdder.mos \
 Modelica.Electrical.Machines.Examples.DCEE_Start.mos \
 Modelica.Electrical.Machines.Examples.DCPM_Start.mos \
