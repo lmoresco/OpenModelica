@@ -1,4 +1,4 @@
-//name:        simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air)
+//name:        buildModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air)
 //keyword:     simulation
 //status:      correct
 //teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
@@ -8,18 +8,12 @@
 loadModel(Modelica,{"3.1"}); getErrorString();
 setDebugFlags("showStatement");
 
-simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air);
+buildModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air);
 
 // Result:
 // true
 // ""
 // true
-// Evaluating: simulate(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air)
-// record SimulationResult
-//     resultFile = "",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
-//     messages = "Simulation execution failed for model: Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air
-// warning | division by zero in partial equation: ($DER.volume.U - $DER.volume.m * volume.medium.u) / volume.m because volume.m == 0
-// "
-// end SimulationResult;
+// Evaluating: buildModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air)
+// {"Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air","Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air_init.xml"}
 // endResult

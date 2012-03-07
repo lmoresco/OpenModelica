@@ -1,4 +1,4 @@
-//name:        simulate(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir)
+//name:        buildModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir)
 //keyword:     simulation
 //status:      correct
 //teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
@@ -8,19 +8,12 @@
 loadModel(Modelica,{"3.1"}); getErrorString();
 setDebugFlags("showStatement");
 
-simulate(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir);
+buildModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir);
 
 // Result:
 // true
 // ""
 // true
-// Evaluating: simulate(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir)
-// record SimulationResult
-//     resultFile = "",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
-//     messages = "Simulation execution failed for model: Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir
-// warning | Error solving nonlinear system SES_ALGORITHM 2 at time 0
-// warning | division by zero in partial equation: ($DER.volume.mXi[1] - $DER.volume.m * volume.medium.Xi[1]) / volume.m because volume.m == 0
-// "
-// end SimulationResult;
+// Evaluating: buildModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir)
+// {"Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir","Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir_init.xml"}
 // endResult

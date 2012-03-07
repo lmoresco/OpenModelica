@@ -1,4 +1,4 @@
-//name:        simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT)
+//name:        buildModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT)
 //keyword:     simulate
 //status:      correct
 //teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
@@ -8,22 +8,12 @@
 loadModel(Modelica,{"3.1"}); getErrorString();
 setDebugFlags("showStatement");
 
-simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT);
+buildModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT);
 
 // Result:
 // true
 // ""
 // true
-// Evaluating: simulate(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT)
-// record SimulationResult
-//     resultFile = "",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
-//     messages = "Simulation execution failed for model: Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT
-// warning | Error solving nonlinear system SES_SIMPLE_ASSIGN 1 at time 0
-// warning | fxr = 1.#QNAN
-// warning | fxk = 5.13135e-304
-// throw   | [line] 509 | [file] math-support/initialization.c
-//         | undefined error in NelderMeadOptimization
-// "
-// end SimulationResult;
+// Evaluating: buildModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT)
+// {"Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT","Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT_init.xml"}
 // endResult

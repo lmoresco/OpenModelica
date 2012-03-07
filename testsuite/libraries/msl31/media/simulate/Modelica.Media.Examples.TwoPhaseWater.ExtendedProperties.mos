@@ -1,4 +1,4 @@
-//name:        simulate(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties)
+//name:        buildModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties)
 //keyword:     simulation
 //status:      correct
 //teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
@@ -8,20 +8,12 @@
 loadModel(Modelica,{"3.1"}); getErrorString();
 setDebugFlags("showStatement");
 
-simulate(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties);
+buildModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties);
 
 // Result:
 // true
 // ""
 // true
-// Evaluating: simulate(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties)
-// record SimulationResult
-//     resultFile = "Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
-//     messages = "[package.mo:2456:7-2456:26:writable] warning | Simulation call assert() at time 0.002000
-// Level : error
-// Message : Variable s_d out of limittimitnput temperature (= 1.#QNAN K) is higher than the limit of 1073.15 K)e)ssure)ulation: p = 0 Pa, Tc = 1.#QNAN K
-// info    | model terminate | Simulation terminated at time 0.002
-// "
-// end SimulationResult;
+// Evaluating: buildModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties)
+// {"Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties","Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties_init.xml"}
 // endResult

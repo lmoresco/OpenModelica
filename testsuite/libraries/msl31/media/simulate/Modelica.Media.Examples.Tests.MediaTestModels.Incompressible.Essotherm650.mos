@@ -1,4 +1,4 @@
-//name:        simulate(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650)
+//name:        buildModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650)
 //keyword:     simulation
 //status:      correct
 //teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
@@ -8,21 +8,12 @@
 loadModel(Modelica,{"3.1"}); getErrorString();
 setDebugFlags("showStatement");
 
-simulate(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650);
+buildModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650);
 
 // Result:
 // true
 // ""
 // true
-// Evaluating: simulate(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650)
-// record SimulationResult
-//     resultFile = "Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
-//     messages = "warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// info    | model terminate | Simulation terminated at time 0.002
-// "
-// end SimulationResult;
+// Evaluating: buildModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650)
+// {"Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650","Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650_init.xml"}
 // endResult
