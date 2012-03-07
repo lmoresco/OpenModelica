@@ -39703,11 +39703,12 @@ algorithm
     local
       Tpl.Text txt;
       DAE.Type i_ty;
+      DAE.Type i_t;
 
     case ( txt,
-           DAE.T_ARRAY(ty = i_ty) )
+           DAE.T_ARRAY(ty = (i_t as DAE.T_COMPLEX(complexClassType = _))) )
       equation
-        txt = expTypeShort(txt, i_ty);
+        txt = expTypeShort(txt, i_t);
       then txt;
 
     case ( txt,
