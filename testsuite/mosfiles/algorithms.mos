@@ -78,7 +78,7 @@ val(x4,1.0);
 // . This is not implemented yet.
 // 
 // Error: Internal error SimCode.createSingleAlgorithmCode failed!
-// Error: Internal error createOdeSystem failed
+// Error: Internal error createOdeSystem failed for Algorithm 0 {1}
 // Error: Internal error createEquations failed
 // Error: Internal error Transformation from optimised DAE to simulation code structure failed
 // "
