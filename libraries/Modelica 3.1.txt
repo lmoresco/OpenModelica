@@ -3,6 +3,9 @@ A full copy of Modelica Standard Library 3.1 from:
 
 Revision 4084
 
+Added by sjoelund.se, 2012-03-09
+- OpenModelica r11357: Fix tons of integer literals to become enumeration literals in order to avoid type issues
+
 Added by adrpo, 2012-03-07
 - fix a Modelica.Media bug in the library, see ticket: https://trac.modelica.org/Modelica/ticket/710
 Modified : Modelica/Media/IdealGases/Common/package.mo
