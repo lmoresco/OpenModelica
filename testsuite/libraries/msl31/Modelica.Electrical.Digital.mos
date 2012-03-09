@@ -1033,7 +1033,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //     end if;
 //   end for;
 //   when {initial(),(Adder.AND.G2.tLH > 0.0 or Adder.AND.G2.tHL > 0.0) and change(Adder.AND.G2.x) and not initial()} then
-//     Adder.AND.G2.x_old := if initial() or pre(Adder.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder.AND.G2.y0 else pre(Adder.AND.G2.x);
+//     Adder.AND.G2.x_old := if initial() or pre(Adder.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder.AND.G2.y0 else pre(Adder.AND.G2.x);
 //     Adder.AND.G2.lh := Adder.AND.G2.delayTable[Adder.AND.G2.x_old,Adder.AND.G2.x];
 //     Adder.AND.G2.delayTime := if Adder.AND.G2.lh > 0 then Adder.AND.G2.tLH else if Adder.AND.G2.lh < 0 then Adder.AND.G2.tHL else 0.0;
 //     Adder.AND.G2.t_next := time + Adder.AND.G2.delayTime;
@@ -1045,7 +1045,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder.AND.G2.y := if Adder.AND.G2.tLH > 0.0 or Adder.AND.G2.tHL > 0.0 then Adder.AND.G2.y_auxiliary else Adder.AND.G2.x;
 //   when {initial(),(Adder.XOR.G2.tLH > 0.0 or Adder.XOR.G2.tHL > 0.0) and change(Adder.XOR.G2.x) and not initial()} then
-//     Adder.XOR.G2.x_old := if initial() or pre(Adder.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder.XOR.G2.y0 else pre(Adder.XOR.G2.x);
+//     Adder.XOR.G2.x_old := if initial() or pre(Adder.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder.XOR.G2.y0 else pre(Adder.XOR.G2.x);
 //     Adder.XOR.G2.lh := Adder.XOR.G2.delayTable[Adder.XOR.G2.x_old,Adder.XOR.G2.x];
 //     Adder.XOR.G2.delayTime := if Adder.XOR.G2.lh > 0 then Adder.XOR.G2.tLH else if Adder.XOR.G2.lh < 0 then Adder.XOR.G2.tHL else 0.0;
 //     Adder.XOR.G2.t_next := time + Adder.XOR.G2.delayTime;
@@ -2064,7 +2064,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   Adder1.c_in = Counter.q0;
 // algorithm
 //   when {initial(),(Adder1.Adder2.AND.G2.tLH > 0.0 or Adder1.Adder2.AND.G2.tHL > 0.0) and change(Adder1.Adder2.AND.G2.x) and not initial()} then
-//     Adder1.Adder2.AND.G2.x_old := if initial() or pre(Adder1.Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder2.AND.G2.y0 else pre(Adder1.Adder2.AND.G2.x);
+//     Adder1.Adder2.AND.G2.x_old := if initial() or pre(Adder1.Adder2.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder1.Adder2.AND.G2.y0 else pre(Adder1.Adder2.AND.G2.x);
 //     Adder1.Adder2.AND.G2.lh := Adder1.Adder2.AND.G2.delayTable[Adder1.Adder2.AND.G2.x_old,Adder1.Adder2.AND.G2.x];
 //     Adder1.Adder2.AND.G2.delayTime := if Adder1.Adder2.AND.G2.lh > 0 then Adder1.Adder2.AND.G2.tLH else if Adder1.Adder2.AND.G2.lh < 0 then Adder1.Adder2.AND.G2.tHL else 0.0;
 //     Adder1.Adder2.AND.G2.t_next := time + Adder1.Adder2.AND.G2.delayTime;
@@ -2076,7 +2076,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder1.Adder2.AND.G2.y := if Adder1.Adder2.AND.G2.tLH > 0.0 or Adder1.Adder2.AND.G2.tHL > 0.0 then Adder1.Adder2.AND.G2.y_auxiliary else Adder1.Adder2.AND.G2.x;
 //   when {initial(),(Adder1.Adder2.XOR.G2.tLH > 0.0 or Adder1.Adder2.XOR.G2.tHL > 0.0) and change(Adder1.Adder2.XOR.G2.x) and not initial()} then
-//     Adder1.Adder2.XOR.G2.x_old := if initial() or pre(Adder1.Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder2.XOR.G2.y0 else pre(Adder1.Adder2.XOR.G2.x);
+//     Adder1.Adder2.XOR.G2.x_old := if initial() or pre(Adder1.Adder2.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder1.Adder2.XOR.G2.y0 else pre(Adder1.Adder2.XOR.G2.x);
 //     Adder1.Adder2.XOR.G2.lh := Adder1.Adder2.XOR.G2.delayTable[Adder1.Adder2.XOR.G2.x_old,Adder1.Adder2.XOR.G2.x];
 //     Adder1.Adder2.XOR.G2.delayTime := if Adder1.Adder2.XOR.G2.lh > 0 then Adder1.Adder2.XOR.G2.tLH else if Adder1.Adder2.XOR.G2.lh < 0 then Adder1.Adder2.XOR.G2.tHL else 0.0;
 //     Adder1.Adder2.XOR.G2.t_next := time + Adder1.Adder2.XOR.G2.delayTime;
@@ -2088,7 +2088,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder1.Adder2.XOR.G2.y := if Adder1.Adder2.XOR.G2.tLH > 0.0 or Adder1.Adder2.XOR.G2.tHL > 0.0 then Adder1.Adder2.XOR.G2.y_auxiliary else Adder1.Adder2.XOR.G2.x;
 //   when {initial(),(Adder1.Adder1.AND.G2.tLH > 0.0 or Adder1.Adder1.AND.G2.tHL > 0.0) and change(Adder1.Adder1.AND.G2.x) and not initial()} then
-//     Adder1.Adder1.AND.G2.x_old := if initial() or pre(Adder1.Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder1.AND.G2.y0 else pre(Adder1.Adder1.AND.G2.x);
+//     Adder1.Adder1.AND.G2.x_old := if initial() or pre(Adder1.Adder1.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder1.Adder1.AND.G2.y0 else pre(Adder1.Adder1.AND.G2.x);
 //     Adder1.Adder1.AND.G2.lh := Adder1.Adder1.AND.G2.delayTable[Adder1.Adder1.AND.G2.x_old,Adder1.Adder1.AND.G2.x];
 //     Adder1.Adder1.AND.G2.delayTime := if Adder1.Adder1.AND.G2.lh > 0 then Adder1.Adder1.AND.G2.tLH else if Adder1.Adder1.AND.G2.lh < 0 then Adder1.Adder1.AND.G2.tHL else 0.0;
 //     Adder1.Adder1.AND.G2.t_next := time + Adder1.Adder1.AND.G2.delayTime;
@@ -2100,7 +2100,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder1.Adder1.AND.G2.y := if Adder1.Adder1.AND.G2.tLH > 0.0 or Adder1.Adder1.AND.G2.tHL > 0.0 then Adder1.Adder1.AND.G2.y_auxiliary else Adder1.Adder1.AND.G2.x;
 //   when {initial(),(Adder1.Adder1.XOR.G2.tLH > 0.0 or Adder1.Adder1.XOR.G2.tHL > 0.0) and change(Adder1.Adder1.XOR.G2.x) and not initial()} then
-//     Adder1.Adder1.XOR.G2.x_old := if initial() or pre(Adder1.Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder1.XOR.G2.y0 else pre(Adder1.Adder1.XOR.G2.x);
+//     Adder1.Adder1.XOR.G2.x_old := if initial() or pre(Adder1.Adder1.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder1.Adder1.XOR.G2.y0 else pre(Adder1.Adder1.XOR.G2.x);
 //     Adder1.Adder1.XOR.G2.lh := Adder1.Adder1.XOR.G2.delayTable[Adder1.Adder1.XOR.G2.x_old,Adder1.Adder1.XOR.G2.x];
 //     Adder1.Adder1.XOR.G2.delayTime := if Adder1.Adder1.XOR.G2.lh > 0 then Adder1.Adder1.XOR.G2.tLH else if Adder1.Adder1.XOR.G2.lh < 0 then Adder1.Adder1.XOR.G2.tHL else 0.0;
 //     Adder1.Adder1.XOR.G2.t_next := time + Adder1.Adder1.XOR.G2.delayTime;
@@ -4244,7 +4244,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end for;
 //   Set.y := Set.x;
 //   when {initial(),(Adder1.Adder2.AND.G2.tLH > 0.0 or Adder1.Adder2.AND.G2.tHL > 0.0) and change(Adder1.Adder2.AND.G2.x) and not initial()} then
-//     Adder1.Adder2.AND.G2.x_old := if initial() or pre(Adder1.Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder2.AND.G2.y0 else pre(Adder1.Adder2.AND.G2.x);
+//     Adder1.Adder2.AND.G2.x_old := if initial() or pre(Adder1.Adder2.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder1.Adder2.AND.G2.y0 else pre(Adder1.Adder2.AND.G2.x);
 //     Adder1.Adder2.AND.G2.lh := Adder1.Adder2.AND.G2.delayTable[Adder1.Adder2.AND.G2.x_old,Adder1.Adder2.AND.G2.x];
 //     Adder1.Adder2.AND.G2.delayTime := if Adder1.Adder2.AND.G2.lh > 0 then Adder1.Adder2.AND.G2.tLH else if Adder1.Adder2.AND.G2.lh < 0 then Adder1.Adder2.AND.G2.tHL else 0.0;
 //     Adder1.Adder2.AND.G2.t_next := time + Adder1.Adder2.AND.G2.delayTime;
@@ -4256,7 +4256,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder1.Adder2.AND.G2.y := if Adder1.Adder2.AND.G2.tLH > 0.0 or Adder1.Adder2.AND.G2.tHL > 0.0 then Adder1.Adder2.AND.G2.y_auxiliary else Adder1.Adder2.AND.G2.x;
 //   when {initial(),(Adder1.Adder2.XOR.G2.tLH > 0.0 or Adder1.Adder2.XOR.G2.tHL > 0.0) and change(Adder1.Adder2.XOR.G2.x) and not initial()} then
-//     Adder1.Adder2.XOR.G2.x_old := if initial() or pre(Adder1.Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder2.XOR.G2.y0 else pre(Adder1.Adder2.XOR.G2.x);
+//     Adder1.Adder2.XOR.G2.x_old := if initial() or pre(Adder1.Adder2.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder1.Adder2.XOR.G2.y0 else pre(Adder1.Adder2.XOR.G2.x);
 //     Adder1.Adder2.XOR.G2.lh := Adder1.Adder2.XOR.G2.delayTable[Adder1.Adder2.XOR.G2.x_old,Adder1.Adder2.XOR.G2.x];
 //     Adder1.Adder2.XOR.G2.delayTime := if Adder1.Adder2.XOR.G2.lh > 0 then Adder1.Adder2.XOR.G2.tLH else if Adder1.Adder2.XOR.G2.lh < 0 then Adder1.Adder2.XOR.G2.tHL else 0.0;
 //     Adder1.Adder2.XOR.G2.t_next := time + Adder1.Adder2.XOR.G2.delayTime;
@@ -4268,7 +4268,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder1.Adder2.XOR.G2.y := if Adder1.Adder2.XOR.G2.tLH > 0.0 or Adder1.Adder2.XOR.G2.tHL > 0.0 then Adder1.Adder2.XOR.G2.y_auxiliary else Adder1.Adder2.XOR.G2.x;
 //   when {initial(),(Adder1.Adder1.AND.G2.tLH > 0.0 or Adder1.Adder1.AND.G2.tHL > 0.0) and change(Adder1.Adder1.AND.G2.x) and not initial()} then
-//     Adder1.Adder1.AND.G2.x_old := if initial() or pre(Adder1.Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder1.AND.G2.y0 else pre(Adder1.Adder1.AND.G2.x);
+//     Adder1.Adder1.AND.G2.x_old := if initial() or pre(Adder1.Adder1.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder1.Adder1.AND.G2.y0 else pre(Adder1.Adder1.AND.G2.x);
 //     Adder1.Adder1.AND.G2.lh := Adder1.Adder1.AND.G2.delayTable[Adder1.Adder1.AND.G2.x_old,Adder1.Adder1.AND.G2.x];
 //     Adder1.Adder1.AND.G2.delayTime := if Adder1.Adder1.AND.G2.lh > 0 then Adder1.Adder1.AND.G2.tLH else if Adder1.Adder1.AND.G2.lh < 0 then Adder1.Adder1.AND.G2.tHL else 0.0;
 //     Adder1.Adder1.AND.G2.t_next := time + Adder1.Adder1.AND.G2.delayTime;
@@ -4280,7 +4280,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder1.Adder1.AND.G2.y := if Adder1.Adder1.AND.G2.tLH > 0.0 or Adder1.Adder1.AND.G2.tHL > 0.0 then Adder1.Adder1.AND.G2.y_auxiliary else Adder1.Adder1.AND.G2.x;
 //   when {initial(),(Adder1.Adder1.XOR.G2.tLH > 0.0 or Adder1.Adder1.XOR.G2.tHL > 0.0) and change(Adder1.Adder1.XOR.G2.x) and not initial()} then
-//     Adder1.Adder1.XOR.G2.x_old := if initial() or pre(Adder1.Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.Adder1.XOR.G2.y0 else pre(Adder1.Adder1.XOR.G2.x);
+//     Adder1.Adder1.XOR.G2.x_old := if initial() or pre(Adder1.Adder1.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder1.Adder1.XOR.G2.y0 else pre(Adder1.Adder1.XOR.G2.x);
 //     Adder1.Adder1.XOR.G2.lh := Adder1.Adder1.XOR.G2.delayTable[Adder1.Adder1.XOR.G2.x_old,Adder1.Adder1.XOR.G2.x];
 //     Adder1.Adder1.XOR.G2.delayTime := if Adder1.Adder1.XOR.G2.lh > 0 then Adder1.Adder1.XOR.G2.tLH else if Adder1.Adder1.XOR.G2.lh < 0 then Adder1.Adder1.XOR.G2.tHL else 0.0;
 //     Adder1.Adder1.XOR.G2.t_next := time + Adder1.Adder1.XOR.G2.delayTime;
@@ -4292,7 +4292,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder1.Adder1.XOR.G2.y := if Adder1.Adder1.XOR.G2.tLH > 0.0 or Adder1.Adder1.XOR.G2.tHL > 0.0 then Adder1.Adder1.XOR.G2.y_auxiliary else Adder1.Adder1.XOR.G2.x;
 //   when {initial(),(Adder2.Adder2.AND.G2.tLH > 0.0 or Adder2.Adder2.AND.G2.tHL > 0.0) and change(Adder2.Adder2.AND.G2.x) and not initial()} then
-//     Adder2.Adder2.AND.G2.x_old := if initial() or pre(Adder2.Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder2.Adder2.AND.G2.y0 else pre(Adder2.Adder2.AND.G2.x);
+//     Adder2.Adder2.AND.G2.x_old := if initial() or pre(Adder2.Adder2.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder2.Adder2.AND.G2.y0 else pre(Adder2.Adder2.AND.G2.x);
 //     Adder2.Adder2.AND.G2.lh := Adder2.Adder2.AND.G2.delayTable[Adder2.Adder2.AND.G2.x_old,Adder2.Adder2.AND.G2.x];
 //     Adder2.Adder2.AND.G2.delayTime := if Adder2.Adder2.AND.G2.lh > 0 then Adder2.Adder2.AND.G2.tLH else if Adder2.Adder2.AND.G2.lh < 0 then Adder2.Adder2.AND.G2.tHL else 0.0;
 //     Adder2.Adder2.AND.G2.t_next := time + Adder2.Adder2.AND.G2.delayTime;
@@ -4304,7 +4304,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder2.Adder2.AND.G2.y := if Adder2.Adder2.AND.G2.tLH > 0.0 or Adder2.Adder2.AND.G2.tHL > 0.0 then Adder2.Adder2.AND.G2.y_auxiliary else Adder2.Adder2.AND.G2.x;
 //   when {initial(),(Adder2.Adder2.XOR.G2.tLH > 0.0 or Adder2.Adder2.XOR.G2.tHL > 0.0) and change(Adder2.Adder2.XOR.G2.x) and not initial()} then
-//     Adder2.Adder2.XOR.G2.x_old := if initial() or pre(Adder2.Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder2.Adder2.XOR.G2.y0 else pre(Adder2.Adder2.XOR.G2.x);
+//     Adder2.Adder2.XOR.G2.x_old := if initial() or pre(Adder2.Adder2.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder2.Adder2.XOR.G2.y0 else pre(Adder2.Adder2.XOR.G2.x);
 //     Adder2.Adder2.XOR.G2.lh := Adder2.Adder2.XOR.G2.delayTable[Adder2.Adder2.XOR.G2.x_old,Adder2.Adder2.XOR.G2.x];
 //     Adder2.Adder2.XOR.G2.delayTime := if Adder2.Adder2.XOR.G2.lh > 0 then Adder2.Adder2.XOR.G2.tLH else if Adder2.Adder2.XOR.G2.lh < 0 then Adder2.Adder2.XOR.G2.tHL else 0.0;
 //     Adder2.Adder2.XOR.G2.t_next := time + Adder2.Adder2.XOR.G2.delayTime;
@@ -4316,7 +4316,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder2.Adder2.XOR.G2.y := if Adder2.Adder2.XOR.G2.tLH > 0.0 or Adder2.Adder2.XOR.G2.tHL > 0.0 then Adder2.Adder2.XOR.G2.y_auxiliary else Adder2.Adder2.XOR.G2.x;
 //   when {initial(),(Adder2.Adder1.AND.G2.tLH > 0.0 or Adder2.Adder1.AND.G2.tHL > 0.0) and change(Adder2.Adder1.AND.G2.x) and not initial()} then
-//     Adder2.Adder1.AND.G2.x_old := if initial() or pre(Adder2.Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder2.Adder1.AND.G2.y0 else pre(Adder2.Adder1.AND.G2.x);
+//     Adder2.Adder1.AND.G2.x_old := if initial() or pre(Adder2.Adder1.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder2.Adder1.AND.G2.y0 else pre(Adder2.Adder1.AND.G2.x);
 //     Adder2.Adder1.AND.G2.lh := Adder2.Adder1.AND.G2.delayTable[Adder2.Adder1.AND.G2.x_old,Adder2.Adder1.AND.G2.x];
 //     Adder2.Adder1.AND.G2.delayTime := if Adder2.Adder1.AND.G2.lh > 0 then Adder2.Adder1.AND.G2.tLH else if Adder2.Adder1.AND.G2.lh < 0 then Adder2.Adder1.AND.G2.tHL else 0.0;
 //     Adder2.Adder1.AND.G2.t_next := time + Adder2.Adder1.AND.G2.delayTime;
@@ -4328,7 +4328,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder2.Adder1.AND.G2.y := if Adder2.Adder1.AND.G2.tLH > 0.0 or Adder2.Adder1.AND.G2.tHL > 0.0 then Adder2.Adder1.AND.G2.y_auxiliary else Adder2.Adder1.AND.G2.x;
 //   when {initial(),(Adder2.Adder1.XOR.G2.tLH > 0.0 or Adder2.Adder1.XOR.G2.tHL > 0.0) and change(Adder2.Adder1.XOR.G2.x) and not initial()} then
-//     Adder2.Adder1.XOR.G2.x_old := if initial() or pre(Adder2.Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder2.Adder1.XOR.G2.y0 else pre(Adder2.Adder1.XOR.G2.x);
+//     Adder2.Adder1.XOR.G2.x_old := if initial() or pre(Adder2.Adder1.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder2.Adder1.XOR.G2.y0 else pre(Adder2.Adder1.XOR.G2.x);
 //     Adder2.Adder1.XOR.G2.lh := Adder2.Adder1.XOR.G2.delayTable[Adder2.Adder1.XOR.G2.x_old,Adder2.Adder1.XOR.G2.x];
 //     Adder2.Adder1.XOR.G2.delayTime := if Adder2.Adder1.XOR.G2.lh > 0 then Adder2.Adder1.XOR.G2.tLH else if Adder2.Adder1.XOR.G2.lh < 0 then Adder2.Adder1.XOR.G2.tHL else 0.0;
 //     Adder2.Adder1.XOR.G2.t_next := time + Adder2.Adder1.XOR.G2.delayTime;
@@ -4340,7 +4340,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder2.Adder1.XOR.G2.y := if Adder2.Adder1.XOR.G2.tLH > 0.0 or Adder2.Adder1.XOR.G2.tHL > 0.0 then Adder2.Adder1.XOR.G2.y_auxiliary else Adder2.Adder1.XOR.G2.x;
 //   when {initial(),(Adder3.Adder2.AND.G2.tLH > 0.0 or Adder3.Adder2.AND.G2.tHL > 0.0) and change(Adder3.Adder2.AND.G2.x) and not initial()} then
-//     Adder3.Adder2.AND.G2.x_old := if initial() or pre(Adder3.Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder3.Adder2.AND.G2.y0 else pre(Adder3.Adder2.AND.G2.x);
+//     Adder3.Adder2.AND.G2.x_old := if initial() or pre(Adder3.Adder2.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder3.Adder2.AND.G2.y0 else pre(Adder3.Adder2.AND.G2.x);
 //     Adder3.Adder2.AND.G2.lh := Adder3.Adder2.AND.G2.delayTable[Adder3.Adder2.AND.G2.x_old,Adder3.Adder2.AND.G2.x];
 //     Adder3.Adder2.AND.G2.delayTime := if Adder3.Adder2.AND.G2.lh > 0 then Adder3.Adder2.AND.G2.tLH else if Adder3.Adder2.AND.G2.lh < 0 then Adder3.Adder2.AND.G2.tHL else 0.0;
 //     Adder3.Adder2.AND.G2.t_next := time + Adder3.Adder2.AND.G2.delayTime;
@@ -4352,7 +4352,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder3.Adder2.AND.G2.y := if Adder3.Adder2.AND.G2.tLH > 0.0 or Adder3.Adder2.AND.G2.tHL > 0.0 then Adder3.Adder2.AND.G2.y_auxiliary else Adder3.Adder2.AND.G2.x;
 //   when {initial(),(Adder3.Adder2.XOR.G2.tLH > 0.0 or Adder3.Adder2.XOR.G2.tHL > 0.0) and change(Adder3.Adder2.XOR.G2.x) and not initial()} then
-//     Adder3.Adder2.XOR.G2.x_old := if initial() or pre(Adder3.Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder3.Adder2.XOR.G2.y0 else pre(Adder3.Adder2.XOR.G2.x);
+//     Adder3.Adder2.XOR.G2.x_old := if initial() or pre(Adder3.Adder2.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder3.Adder2.XOR.G2.y0 else pre(Adder3.Adder2.XOR.G2.x);
 //     Adder3.Adder2.XOR.G2.lh := Adder3.Adder2.XOR.G2.delayTable[Adder3.Adder2.XOR.G2.x_old,Adder3.Adder2.XOR.G2.x];
 //     Adder3.Adder2.XOR.G2.delayTime := if Adder3.Adder2.XOR.G2.lh > 0 then Adder3.Adder2.XOR.G2.tLH else if Adder3.Adder2.XOR.G2.lh < 0 then Adder3.Adder2.XOR.G2.tHL else 0.0;
 //     Adder3.Adder2.XOR.G2.t_next := time + Adder3.Adder2.XOR.G2.delayTime;
@@ -4364,7 +4364,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder3.Adder2.XOR.G2.y := if Adder3.Adder2.XOR.G2.tLH > 0.0 or Adder3.Adder2.XOR.G2.tHL > 0.0 then Adder3.Adder2.XOR.G2.y_auxiliary else Adder3.Adder2.XOR.G2.x;
 //   when {initial(),(Adder3.Adder1.AND.G2.tLH > 0.0 or Adder3.Adder1.AND.G2.tHL > 0.0) and change(Adder3.Adder1.AND.G2.x) and not initial()} then
-//     Adder3.Adder1.AND.G2.x_old := if initial() or pre(Adder3.Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder3.Adder1.AND.G2.y0 else pre(Adder3.Adder1.AND.G2.x);
+//     Adder3.Adder1.AND.G2.x_old := if initial() or pre(Adder3.Adder1.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder3.Adder1.AND.G2.y0 else pre(Adder3.Adder1.AND.G2.x);
 //     Adder3.Adder1.AND.G2.lh := Adder3.Adder1.AND.G2.delayTable[Adder3.Adder1.AND.G2.x_old,Adder3.Adder1.AND.G2.x];
 //     Adder3.Adder1.AND.G2.delayTime := if Adder3.Adder1.AND.G2.lh > 0 then Adder3.Adder1.AND.G2.tLH else if Adder3.Adder1.AND.G2.lh < 0 then Adder3.Adder1.AND.G2.tHL else 0.0;
 //     Adder3.Adder1.AND.G2.t_next := time + Adder3.Adder1.AND.G2.delayTime;
@@ -4376,7 +4376,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder3.Adder1.AND.G2.y := if Adder3.Adder1.AND.G2.tLH > 0.0 or Adder3.Adder1.AND.G2.tHL > 0.0 then Adder3.Adder1.AND.G2.y_auxiliary else Adder3.Adder1.AND.G2.x;
 //   when {initial(),(Adder3.Adder1.XOR.G2.tLH > 0.0 or Adder3.Adder1.XOR.G2.tHL > 0.0) and change(Adder3.Adder1.XOR.G2.x) and not initial()} then
-//     Adder3.Adder1.XOR.G2.x_old := if initial() or pre(Adder3.Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder3.Adder1.XOR.G2.y0 else pre(Adder3.Adder1.XOR.G2.x);
+//     Adder3.Adder1.XOR.G2.x_old := if initial() or pre(Adder3.Adder1.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder3.Adder1.XOR.G2.y0 else pre(Adder3.Adder1.XOR.G2.x);
 //     Adder3.Adder1.XOR.G2.lh := Adder3.Adder1.XOR.G2.delayTable[Adder3.Adder1.XOR.G2.x_old,Adder3.Adder1.XOR.G2.x];
 //     Adder3.Adder1.XOR.G2.delayTime := if Adder3.Adder1.XOR.G2.lh > 0 then Adder3.Adder1.XOR.G2.tLH else if Adder3.Adder1.XOR.G2.lh < 0 then Adder3.Adder1.XOR.G2.tHL else 0.0;
 //     Adder3.Adder1.XOR.G2.t_next := time + Adder3.Adder1.XOR.G2.delayTime;
@@ -4388,7 +4388,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder3.Adder1.XOR.G2.y := if Adder3.Adder1.XOR.G2.tLH > 0.0 or Adder3.Adder1.XOR.G2.tHL > 0.0 then Adder3.Adder1.XOR.G2.y_auxiliary else Adder3.Adder1.XOR.G2.x;
 //   when {initial(),(Adder4.Adder2.AND.G2.tLH > 0.0 or Adder4.Adder2.AND.G2.tHL > 0.0) and change(Adder4.Adder2.AND.G2.x) and not initial()} then
-//     Adder4.Adder2.AND.G2.x_old := if initial() or pre(Adder4.Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder4.Adder2.AND.G2.y0 else pre(Adder4.Adder2.AND.G2.x);
+//     Adder4.Adder2.AND.G2.x_old := if initial() or pre(Adder4.Adder2.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder4.Adder2.AND.G2.y0 else pre(Adder4.Adder2.AND.G2.x);
 //     Adder4.Adder2.AND.G2.lh := Adder4.Adder2.AND.G2.delayTable[Adder4.Adder2.AND.G2.x_old,Adder4.Adder2.AND.G2.x];
 //     Adder4.Adder2.AND.G2.delayTime := if Adder4.Adder2.AND.G2.lh > 0 then Adder4.Adder2.AND.G2.tLH else if Adder4.Adder2.AND.G2.lh < 0 then Adder4.Adder2.AND.G2.tHL else 0.0;
 //     Adder4.Adder2.AND.G2.t_next := time + Adder4.Adder2.AND.G2.delayTime;
@@ -4400,7 +4400,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder4.Adder2.AND.G2.y := if Adder4.Adder2.AND.G2.tLH > 0.0 or Adder4.Adder2.AND.G2.tHL > 0.0 then Adder4.Adder2.AND.G2.y_auxiliary else Adder4.Adder2.AND.G2.x;
 //   when {initial(),(Adder4.Adder2.XOR.G2.tLH > 0.0 or Adder4.Adder2.XOR.G2.tHL > 0.0) and change(Adder4.Adder2.XOR.G2.x) and not initial()} then
-//     Adder4.Adder2.XOR.G2.x_old := if initial() or pre(Adder4.Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder4.Adder2.XOR.G2.y0 else pre(Adder4.Adder2.XOR.G2.x);
+//     Adder4.Adder2.XOR.G2.x_old := if initial() or pre(Adder4.Adder2.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder4.Adder2.XOR.G2.y0 else pre(Adder4.Adder2.XOR.G2.x);
 //     Adder4.Adder2.XOR.G2.lh := Adder4.Adder2.XOR.G2.delayTable[Adder4.Adder2.XOR.G2.x_old,Adder4.Adder2.XOR.G2.x];
 //     Adder4.Adder2.XOR.G2.delayTime := if Adder4.Adder2.XOR.G2.lh > 0 then Adder4.Adder2.XOR.G2.tLH else if Adder4.Adder2.XOR.G2.lh < 0 then Adder4.Adder2.XOR.G2.tHL else 0.0;
 //     Adder4.Adder2.XOR.G2.t_next := time + Adder4.Adder2.XOR.G2.delayTime;
@@ -4412,7 +4412,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder4.Adder2.XOR.G2.y := if Adder4.Adder2.XOR.G2.tLH > 0.0 or Adder4.Adder2.XOR.G2.tHL > 0.0 then Adder4.Adder2.XOR.G2.y_auxiliary else Adder4.Adder2.XOR.G2.x;
 //   when {initial(),(Adder4.Adder1.AND.G2.tLH > 0.0 or Adder4.Adder1.AND.G2.tHL > 0.0) and change(Adder4.Adder1.AND.G2.x) and not initial()} then
-//     Adder4.Adder1.AND.G2.x_old := if initial() or pre(Adder4.Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder4.Adder1.AND.G2.y0 else pre(Adder4.Adder1.AND.G2.x);
+//     Adder4.Adder1.AND.G2.x_old := if initial() or pre(Adder4.Adder1.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder4.Adder1.AND.G2.y0 else pre(Adder4.Adder1.AND.G2.x);
 //     Adder4.Adder1.AND.G2.lh := Adder4.Adder1.AND.G2.delayTable[Adder4.Adder1.AND.G2.x_old,Adder4.Adder1.AND.G2.x];
 //     Adder4.Adder1.AND.G2.delayTime := if Adder4.Adder1.AND.G2.lh > 0 then Adder4.Adder1.AND.G2.tLH else if Adder4.Adder1.AND.G2.lh < 0 then Adder4.Adder1.AND.G2.tHL else 0.0;
 //     Adder4.Adder1.AND.G2.t_next := time + Adder4.Adder1.AND.G2.delayTime;
@@ -4424,7 +4424,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder4.Adder1.AND.G2.y := if Adder4.Adder1.AND.G2.tLH > 0.0 or Adder4.Adder1.AND.G2.tHL > 0.0 then Adder4.Adder1.AND.G2.y_auxiliary else Adder4.Adder1.AND.G2.x;
 //   when {initial(),(Adder4.Adder1.XOR.G2.tLH > 0.0 or Adder4.Adder1.XOR.G2.tHL > 0.0) and change(Adder4.Adder1.XOR.G2.x) and not initial()} then
-//     Adder4.Adder1.XOR.G2.x_old := if initial() or pre(Adder4.Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder4.Adder1.XOR.G2.y0 else pre(Adder4.Adder1.XOR.G2.x);
+//     Adder4.Adder1.XOR.G2.x_old := if initial() or pre(Adder4.Adder1.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder4.Adder1.XOR.G2.y0 else pre(Adder4.Adder1.XOR.G2.x);
 //     Adder4.Adder1.XOR.G2.lh := Adder4.Adder1.XOR.G2.delayTable[Adder4.Adder1.XOR.G2.x_old,Adder4.Adder1.XOR.G2.x];
 //     Adder4.Adder1.XOR.G2.delayTime := if Adder4.Adder1.XOR.G2.lh > 0 then Adder4.Adder1.XOR.G2.tLH else if Adder4.Adder1.XOR.G2.lh < 0 then Adder4.Adder1.XOR.G2.tHL else 0.0;
 //     Adder4.Adder1.XOR.G2.t_next := time + Adder4.Adder1.XOR.G2.delayTime;
@@ -6409,7 +6409,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   AND.x[2] = a;
 // algorithm
 //   when {initial(),(AND.G2.tLH > 0.0 or AND.G2.tHL > 0.0) and change(AND.G2.x) and not initial()} then
-//     AND.G2.x_old := if initial() or pre(AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then AND.G2.y0 else pre(AND.G2.x);
+//     AND.G2.x_old := if initial() or pre(AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then AND.G2.y0 else pre(AND.G2.x);
 //     AND.G2.lh := AND.G2.delayTable[AND.G2.x_old,AND.G2.x];
 //     AND.G2.delayTime := if AND.G2.lh > 0 then AND.G2.tLH else if AND.G2.lh < 0 then AND.G2.tHL else 0.0;
 //     AND.G2.t_next := time + AND.G2.delayTime;
@@ -6421,7 +6421,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   AND.G2.y := if AND.G2.tLH > 0.0 or AND.G2.tHL > 0.0 then AND.G2.y_auxiliary else AND.G2.x;
 //   when {initial(),(XOR.G2.tLH > 0.0 or XOR.G2.tHL > 0.0) and change(XOR.G2.x) and not initial()} then
-//     XOR.G2.x_old := if initial() or pre(XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then XOR.G2.y0 else pre(XOR.G2.x);
+//     XOR.G2.x_old := if initial() or pre(XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then XOR.G2.y0 else pre(XOR.G2.x);
 //     XOR.G2.lh := XOR.G2.delayTable[XOR.G2.x_old,XOR.G2.x];
 //     XOR.G2.delayTime := if XOR.G2.lh > 0 then XOR.G2.tLH else if XOR.G2.lh < 0 then XOR.G2.tHL else 0.0;
 //     XOR.G2.t_next := time + XOR.G2.delayTime;
@@ -6941,7 +6941,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   Adder2.b = c_in;
 // algorithm
 //   when {initial(),(Adder2.AND.G2.tLH > 0.0 or Adder2.AND.G2.tHL > 0.0) and change(Adder2.AND.G2.x) and not initial()} then
-//     Adder2.AND.G2.x_old := if initial() or pre(Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder2.AND.G2.y0 else pre(Adder2.AND.G2.x);
+//     Adder2.AND.G2.x_old := if initial() or pre(Adder2.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder2.AND.G2.y0 else pre(Adder2.AND.G2.x);
 //     Adder2.AND.G2.lh := Adder2.AND.G2.delayTable[Adder2.AND.G2.x_old,Adder2.AND.G2.x];
 //     Adder2.AND.G2.delayTime := if Adder2.AND.G2.lh > 0 then Adder2.AND.G2.tLH else if Adder2.AND.G2.lh < 0 then Adder2.AND.G2.tHL else 0.0;
 //     Adder2.AND.G2.t_next := time + Adder2.AND.G2.delayTime;
@@ -6953,7 +6953,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder2.AND.G2.y := if Adder2.AND.G2.tLH > 0.0 or Adder2.AND.G2.tHL > 0.0 then Adder2.AND.G2.y_auxiliary else Adder2.AND.G2.x;
 //   when {initial(),(Adder2.XOR.G2.tLH > 0.0 or Adder2.XOR.G2.tHL > 0.0) and change(Adder2.XOR.G2.x) and not initial()} then
-//     Adder2.XOR.G2.x_old := if initial() or pre(Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder2.XOR.G2.y0 else pre(Adder2.XOR.G2.x);
+//     Adder2.XOR.G2.x_old := if initial() or pre(Adder2.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder2.XOR.G2.y0 else pre(Adder2.XOR.G2.x);
 //     Adder2.XOR.G2.lh := Adder2.XOR.G2.delayTable[Adder2.XOR.G2.x_old,Adder2.XOR.G2.x];
 //     Adder2.XOR.G2.delayTime := if Adder2.XOR.G2.lh > 0 then Adder2.XOR.G2.tLH else if Adder2.XOR.G2.lh < 0 then Adder2.XOR.G2.tHL else 0.0;
 //     Adder2.XOR.G2.t_next := time + Adder2.XOR.G2.delayTime;
@@ -6965,7 +6965,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder2.XOR.G2.y := if Adder2.XOR.G2.tLH > 0.0 or Adder2.XOR.G2.tHL > 0.0 then Adder2.XOR.G2.y_auxiliary else Adder2.XOR.G2.x;
 //   when {initial(),(Adder1.AND.G2.tLH > 0.0 or Adder1.AND.G2.tHL > 0.0) and change(Adder1.AND.G2.x) and not initial()} then
-//     Adder1.AND.G2.x_old := if initial() or pre(Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.AND.G2.y0 else pre(Adder1.AND.G2.x);
+//     Adder1.AND.G2.x_old := if initial() or pre(Adder1.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder1.AND.G2.y0 else pre(Adder1.AND.G2.x);
 //     Adder1.AND.G2.lh := Adder1.AND.G2.delayTable[Adder1.AND.G2.x_old,Adder1.AND.G2.x];
 //     Adder1.AND.G2.delayTime := if Adder1.AND.G2.lh > 0 then Adder1.AND.G2.tLH else if Adder1.AND.G2.lh < 0 then Adder1.AND.G2.tHL else 0.0;
 //     Adder1.AND.G2.t_next := time + Adder1.AND.G2.delayTime;
@@ -6977,7 +6977,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder1.AND.G2.y := if Adder1.AND.G2.tLH > 0.0 or Adder1.AND.G2.tHL > 0.0 then Adder1.AND.G2.y_auxiliary else Adder1.AND.G2.x;
 //   when {initial(),(Adder1.XOR.G2.tLH > 0.0 or Adder1.XOR.G2.tHL > 0.0) and change(Adder1.XOR.G2.x) and not initial()} then
-//     Adder1.XOR.G2.x_old := if initial() or pre(Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder1.XOR.G2.y0 else pre(Adder1.XOR.G2.x);
+//     Adder1.XOR.G2.x_old := if initial() or pre(Adder1.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder1.XOR.G2.y0 else pre(Adder1.XOR.G2.x);
 //     Adder1.XOR.G2.lh := Adder1.XOR.G2.delayTable[Adder1.XOR.G2.x_old,Adder1.XOR.G2.x];
 //     Adder1.XOR.G2.delayTime := if Adder1.XOR.G2.lh > 0 then Adder1.XOR.G2.tLH else if Adder1.XOR.G2.lh < 0 then Adder1.XOR.G2.tHL else 0.0;
 //     Adder1.XOR.G2.t_next := time + Adder1.XOR.G2.delayTime;
@@ -8003,7 +8003,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   Adder[2].c_out = c_out;
 // algorithm
 //   when {initial(),(Adder[1].Adder2.AND.G2.tLH > 0.0 or Adder[1].Adder2.AND.G2.tHL > 0.0) and change(Adder[1].Adder2.AND.G2.x) and not initial()} then
-//     Adder[1].Adder2.AND.G2.x_old := if initial() or pre(Adder[1].Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder[1].Adder2.AND.G2.y0 else pre(Adder[1].Adder2.AND.G2.x);
+//     Adder[1].Adder2.AND.G2.x_old := if initial() or pre(Adder[1].Adder2.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder[1].Adder2.AND.G2.y0 else pre(Adder[1].Adder2.AND.G2.x);
 //     Adder[1].Adder2.AND.G2.lh := Adder[1].Adder2.AND.G2.delayTable[Adder[1].Adder2.AND.G2.x_old,Adder[1].Adder2.AND.G2.x];
 //     Adder[1].Adder2.AND.G2.delayTime := if Adder[1].Adder2.AND.G2.lh > 0 then Adder[1].Adder2.AND.G2.tLH else if Adder[1].Adder2.AND.G2.lh < 0 then Adder[1].Adder2.AND.G2.tHL else 0.0;
 //     Adder[1].Adder2.AND.G2.t_next := time + Adder[1].Adder2.AND.G2.delayTime;
@@ -8015,7 +8015,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder[1].Adder2.AND.G2.y := if Adder[1].Adder2.AND.G2.tLH > 0.0 or Adder[1].Adder2.AND.G2.tHL > 0.0 then Adder[1].Adder2.AND.G2.y_auxiliary else Adder[1].Adder2.AND.G2.x;
 //   when {initial(),(Adder[1].Adder2.XOR.G2.tLH > 0.0 or Adder[1].Adder2.XOR.G2.tHL > 0.0) and change(Adder[1].Adder2.XOR.G2.x) and not initial()} then
-//     Adder[1].Adder2.XOR.G2.x_old := if initial() or pre(Adder[1].Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder[1].Adder2.XOR.G2.y0 else pre(Adder[1].Adder2.XOR.G2.x);
+//     Adder[1].Adder2.XOR.G2.x_old := if initial() or pre(Adder[1].Adder2.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder[1].Adder2.XOR.G2.y0 else pre(Adder[1].Adder2.XOR.G2.x);
 //     Adder[1].Adder2.XOR.G2.lh := Adder[1].Adder2.XOR.G2.delayTable[Adder[1].Adder2.XOR.G2.x_old,Adder[1].Adder2.XOR.G2.x];
 //     Adder[1].Adder2.XOR.G2.delayTime := if Adder[1].Adder2.XOR.G2.lh > 0 then Adder[1].Adder2.XOR.G2.tLH else if Adder[1].Adder2.XOR.G2.lh < 0 then Adder[1].Adder2.XOR.G2.tHL else 0.0;
 //     Adder[1].Adder2.XOR.G2.t_next := time + Adder[1].Adder2.XOR.G2.delayTime;
@@ -8027,7 +8027,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder[1].Adder2.XOR.G2.y := if Adder[1].Adder2.XOR.G2.tLH > 0.0 or Adder[1].Adder2.XOR.G2.tHL > 0.0 then Adder[1].Adder2.XOR.G2.y_auxiliary else Adder[1].Adder2.XOR.G2.x;
 //   when {initial(),(Adder[1].Adder1.AND.G2.tLH > 0.0 or Adder[1].Adder1.AND.G2.tHL > 0.0) and change(Adder[1].Adder1.AND.G2.x) and not initial()} then
-//     Adder[1].Adder1.AND.G2.x_old := if initial() or pre(Adder[1].Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder[1].Adder1.AND.G2.y0 else pre(Adder[1].Adder1.AND.G2.x);
+//     Adder[1].Adder1.AND.G2.x_old := if initial() or pre(Adder[1].Adder1.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder[1].Adder1.AND.G2.y0 else pre(Adder[1].Adder1.AND.G2.x);
 //     Adder[1].Adder1.AND.G2.lh := Adder[1].Adder1.AND.G2.delayTable[Adder[1].Adder1.AND.G2.x_old,Adder[1].Adder1.AND.G2.x];
 //     Adder[1].Adder1.AND.G2.delayTime := if Adder[1].Adder1.AND.G2.lh > 0 then Adder[1].Adder1.AND.G2.tLH else if Adder[1].Adder1.AND.G2.lh < 0 then Adder[1].Adder1.AND.G2.tHL else 0.0;
 //     Adder[1].Adder1.AND.G2.t_next := time + Adder[1].Adder1.AND.G2.delayTime;
@@ -8039,7 +8039,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder[1].Adder1.AND.G2.y := if Adder[1].Adder1.AND.G2.tLH > 0.0 or Adder[1].Adder1.AND.G2.tHL > 0.0 then Adder[1].Adder1.AND.G2.y_auxiliary else Adder[1].Adder1.AND.G2.x;
 //   when {initial(),(Adder[1].Adder1.XOR.G2.tLH > 0.0 or Adder[1].Adder1.XOR.G2.tHL > 0.0) and change(Adder[1].Adder1.XOR.G2.x) and not initial()} then
-//     Adder[1].Adder1.XOR.G2.x_old := if initial() or pre(Adder[1].Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder[1].Adder1.XOR.G2.y0 else pre(Adder[1].Adder1.XOR.G2.x);
+//     Adder[1].Adder1.XOR.G2.x_old := if initial() or pre(Adder[1].Adder1.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder[1].Adder1.XOR.G2.y0 else pre(Adder[1].Adder1.XOR.G2.x);
 //     Adder[1].Adder1.XOR.G2.lh := Adder[1].Adder1.XOR.G2.delayTable[Adder[1].Adder1.XOR.G2.x_old,Adder[1].Adder1.XOR.G2.x];
 //     Adder[1].Adder1.XOR.G2.delayTime := if Adder[1].Adder1.XOR.G2.lh > 0 then Adder[1].Adder1.XOR.G2.tLH else if Adder[1].Adder1.XOR.G2.lh < 0 then Adder[1].Adder1.XOR.G2.tHL else 0.0;
 //     Adder[1].Adder1.XOR.G2.t_next := time + Adder[1].Adder1.XOR.G2.delayTime;
@@ -8051,7 +8051,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder[1].Adder1.XOR.G2.y := if Adder[1].Adder1.XOR.G2.tLH > 0.0 or Adder[1].Adder1.XOR.G2.tHL > 0.0 then Adder[1].Adder1.XOR.G2.y_auxiliary else Adder[1].Adder1.XOR.G2.x;
 //   when {initial(),(Adder[2].Adder2.AND.G2.tLH > 0.0 or Adder[2].Adder2.AND.G2.tHL > 0.0) and change(Adder[2].Adder2.AND.G2.x) and not initial()} then
-//     Adder[2].Adder2.AND.G2.x_old := if initial() or pre(Adder[2].Adder2.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder[2].Adder2.AND.G2.y0 else pre(Adder[2].Adder2.AND.G2.x);
+//     Adder[2].Adder2.AND.G2.x_old := if initial() or pre(Adder[2].Adder2.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder[2].Adder2.AND.G2.y0 else pre(Adder[2].Adder2.AND.G2.x);
 //     Adder[2].Adder2.AND.G2.lh := Adder[2].Adder2.AND.G2.delayTable[Adder[2].Adder2.AND.G2.x_old,Adder[2].Adder2.AND.G2.x];
 //     Adder[2].Adder2.AND.G2.delayTime := if Adder[2].Adder2.AND.G2.lh > 0 then Adder[2].Adder2.AND.G2.tLH else if Adder[2].Adder2.AND.G2.lh < 0 then Adder[2].Adder2.AND.G2.tHL else 0.0;
 //     Adder[2].Adder2.AND.G2.t_next := time + Adder[2].Adder2.AND.G2.delayTime;
@@ -8063,7 +8063,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder[2].Adder2.AND.G2.y := if Adder[2].Adder2.AND.G2.tLH > 0.0 or Adder[2].Adder2.AND.G2.tHL > 0.0 then Adder[2].Adder2.AND.G2.y_auxiliary else Adder[2].Adder2.AND.G2.x;
 //   when {initial(),(Adder[2].Adder2.XOR.G2.tLH > 0.0 or Adder[2].Adder2.XOR.G2.tHL > 0.0) and change(Adder[2].Adder2.XOR.G2.x) and not initial()} then
-//     Adder[2].Adder2.XOR.G2.x_old := if initial() or pre(Adder[2].Adder2.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder[2].Adder2.XOR.G2.y0 else pre(Adder[2].Adder2.XOR.G2.x);
+//     Adder[2].Adder2.XOR.G2.x_old := if initial() or pre(Adder[2].Adder2.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder[2].Adder2.XOR.G2.y0 else pre(Adder[2].Adder2.XOR.G2.x);
 //     Adder[2].Adder2.XOR.G2.lh := Adder[2].Adder2.XOR.G2.delayTable[Adder[2].Adder2.XOR.G2.x_old,Adder[2].Adder2.XOR.G2.x];
 //     Adder[2].Adder2.XOR.G2.delayTime := if Adder[2].Adder2.XOR.G2.lh > 0 then Adder[2].Adder2.XOR.G2.tLH else if Adder[2].Adder2.XOR.G2.lh < 0 then Adder[2].Adder2.XOR.G2.tHL else 0.0;
 //     Adder[2].Adder2.XOR.G2.t_next := time + Adder[2].Adder2.XOR.G2.delayTime;
@@ -8075,7 +8075,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder[2].Adder2.XOR.G2.y := if Adder[2].Adder2.XOR.G2.tLH > 0.0 or Adder[2].Adder2.XOR.G2.tHL > 0.0 then Adder[2].Adder2.XOR.G2.y_auxiliary else Adder[2].Adder2.XOR.G2.x;
 //   when {initial(),(Adder[2].Adder1.AND.G2.tLH > 0.0 or Adder[2].Adder1.AND.G2.tHL > 0.0) and change(Adder[2].Adder1.AND.G2.x) and not initial()} then
-//     Adder[2].Adder1.AND.G2.x_old := if initial() or pre(Adder[2].Adder1.AND.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder[2].Adder1.AND.G2.y0 else pre(Adder[2].Adder1.AND.G2.x);
+//     Adder[2].Adder1.AND.G2.x_old := if initial() or pre(Adder[2].Adder1.AND.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder[2].Adder1.AND.G2.y0 else pre(Adder[2].Adder1.AND.G2.x);
 //     Adder[2].Adder1.AND.G2.lh := Adder[2].Adder1.AND.G2.delayTable[Adder[2].Adder1.AND.G2.x_old,Adder[2].Adder1.AND.G2.x];
 //     Adder[2].Adder1.AND.G2.delayTime := if Adder[2].Adder1.AND.G2.lh > 0 then Adder[2].Adder1.AND.G2.tLH else if Adder[2].Adder1.AND.G2.lh < 0 then Adder[2].Adder1.AND.G2.tHL else 0.0;
 //     Adder[2].Adder1.AND.G2.t_next := time + Adder[2].Adder1.AND.G2.delayTime;
@@ -8087,7 +8087,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   end when;
 //   Adder[2].Adder1.AND.G2.y := if Adder[2].Adder1.AND.G2.tLH > 0.0 or Adder[2].Adder1.AND.G2.tHL > 0.0 then Adder[2].Adder1.AND.G2.y_auxiliary else Adder[2].Adder1.AND.G2.x;
 //   when {initial(),(Adder[2].Adder1.XOR.G2.tLH > 0.0 or Adder[2].Adder1.XOR.G2.tHL > 0.0) and change(Adder[2].Adder1.XOR.G2.x) and not initial()} then
-//     Adder[2].Adder1.XOR.G2.x_old := if initial() or pre(Adder[2].Adder1.XOR.G2.x) == DAE.CAST(T_ENUMERATION, 0) then Adder[2].Adder1.XOR.G2.y0 else pre(Adder[2].Adder1.XOR.G2.x);
+//     Adder[2].Adder1.XOR.G2.x_old := if initial() or pre(Adder[2].Adder1.XOR.G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then Adder[2].Adder1.XOR.G2.y0 else pre(Adder[2].Adder1.XOR.G2.x);
 //     Adder[2].Adder1.XOR.G2.lh := Adder[2].Adder1.XOR.G2.delayTable[Adder[2].Adder1.XOR.G2.x_old,Adder[2].Adder1.XOR.G2.x];
 //     Adder[2].Adder1.XOR.G2.delayTime := if Adder[2].Adder1.XOR.G2.lh > 0 then Adder[2].Adder1.XOR.G2.tLH else if Adder[2].Adder1.XOR.G2.lh < 0 then Adder[2].Adder1.XOR.G2.tHL else 0.0;
 //     Adder[2].Adder1.XOR.G2.t_next := time + Adder[2].Adder1.XOR.G2.delayTime;
@@ -9197,7 +9197,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') x_old(start = y0, fixed = true);
 // algorithm
 //   when {initial(),(tLH > 0.0 or tHL > 0.0) and change(x) and not initial()} then
-//     x_old := if initial() or pre(x) == DAE.CAST(T_ENUMERATION, 0) then y0 else pre(x);
+//     x_old := if initial() or pre(x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then y0 else pre(x);
 //     lh := delayTable[x_old,x];
 //     delayTime := if lh > 0 then tLH else if lh < 0 then tHL else 0.0;
 //     t_next := time + delayTime;
@@ -9476,7 +9476,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   G1.y = G2.x;
 // algorithm
 //   when {initial(),(G2.tLH > 0.0 or G2.tHL > 0.0) and change(G2.x) and not initial()} then
-//     G2.x_old := if initial() or pre(G2.x) == DAE.CAST(T_ENUMERATION, 0) then G2.y0 else pre(G2.x);
+//     G2.x_old := if initial() or pre(G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then G2.y0 else pre(G2.x);
 //     G2.lh := G2.delayTable[G2.x_old,G2.x];
 //     G2.delayTime := if G2.lh > 0 then G2.tLH else if G2.lh < 0 then G2.tHL else 0.0;
 //     G2.t_next := time + G2.delayTime;
@@ -9619,7 +9619,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   G1.y = G2.x;
 // algorithm
 //   when {initial(),(G2.tLH > 0.0 or G2.tHL > 0.0) and change(G2.x) and not initial()} then
-//     G2.x_old := if initial() or pre(G2.x) == DAE.CAST(T_ENUMERATION, 0) then G2.y0 else pre(G2.x);
+//     G2.x_old := if initial() or pre(G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then G2.y0 else pre(G2.x);
 //     G2.lh := G2.delayTable[G2.x_old,G2.x];
 //     G2.delayTime := if G2.lh > 0 then G2.tLH else if G2.lh < 0 then G2.tHL else 0.0;
 //     G2.t_next := time + G2.delayTime;
@@ -9762,7 +9762,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   G2.y = y;
 // algorithm
 //   when {initial(),(G2.tLH > 0.0 or G2.tHL > 0.0) and change(G2.x) and not initial()} then
-//     G2.x_old := if initial() or pre(G2.x) == DAE.CAST(T_ENUMERATION, 0) then G2.y0 else pre(G2.x);
+//     G2.x_old := if initial() or pre(G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then G2.y0 else pre(G2.x);
 //     G2.lh := G2.delayTable[G2.x_old,G2.x];
 //     G2.delayTime := if G2.lh > 0 then G2.tLH else if G2.lh < 0 then G2.tHL else 0.0;
 //     G2.t_next := time + G2.delayTime;
@@ -9905,7 +9905,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   G2.y = y;
 // algorithm
 //   when {initial(),(G2.tLH > 0.0 or G2.tHL > 0.0) and change(G2.x) and not initial()} then
-//     G2.x_old := if initial() or pre(G2.x) == DAE.CAST(T_ENUMERATION, 0) then G2.y0 else pre(G2.x);
+//     G2.x_old := if initial() or pre(G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then G2.y0 else pre(G2.x);
 //     G2.lh := G2.delayTable[G2.x_old,G2.x];
 //     G2.delayTime := if G2.lh > 0 then G2.tLH else if G2.lh < 0 then G2.tHL else 0.0;
 //     G2.t_next := time + G2.delayTime;
@@ -10048,7 +10048,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   G2.y = y;
 // algorithm
 //   when {initial(),(G2.tLH > 0.0 or G2.tHL > 0.0) and change(G2.x) and not initial()} then
-//     G2.x_old := if initial() or pre(G2.x) == DAE.CAST(T_ENUMERATION, 0) then G2.y0 else pre(G2.x);
+//     G2.x_old := if initial() or pre(G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then G2.y0 else pre(G2.x);
 //     G2.lh := G2.delayTable[G2.x_old,G2.x];
 //     G2.delayTime := if G2.lh > 0 then G2.tLH else if G2.lh < 0 then G2.tHL else 0.0;
 //     G2.t_next := time + G2.delayTime;
@@ -10191,7 +10191,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   G2.y = y;
 // algorithm
 //   when {initial(),(G2.tLH > 0.0 or G2.tHL > 0.0) and change(G2.x) and not initial()} then
-//     G2.x_old := if initial() or pre(G2.x) == DAE.CAST(T_ENUMERATION, 0) then G2.y0 else pre(G2.x);
+//     G2.x_old := if initial() or pre(G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then G2.y0 else pre(G2.x);
 //     G2.lh := G2.delayTable[G2.x_old,G2.x];
 //     G2.delayTime := if G2.lh > 0 then G2.tLH else if G2.lh < 0 then G2.tHL else 0.0;
 //     G2.t_next := time + G2.delayTime;
@@ -10334,7 +10334,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   G1.y = G2.x;
 // algorithm
 //   when {initial(),(G2.tLH > 0.0 or G2.tHL > 0.0) and change(G2.x) and not initial()} then
-//     G2.x_old := if initial() or pre(G2.x) == DAE.CAST(T_ENUMERATION, 0) then G2.y0 else pre(G2.x);
+//     G2.x_old := if initial() or pre(G2.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then G2.y0 else pre(G2.x);
 //     G2.lh := G2.delayTable[G2.x_old,G2.x];
 //     G2.delayTime := if G2.lh > 0 then G2.tLH else if G2.lh < 0 then G2.tHL else 0.0;
 //     G2.t_next := time + G2.delayTime;
@@ -10464,7 +10464,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   G1.x = x;
 // algorithm
 //   when {initial(),(G1.tLH > 0.0 or G1.tHL > 0.0) and change(G1.x) and not initial()} then
-//     G1.x_old := if initial() or pre(G1.x) == DAE.CAST(T_ENUMERATION, 0) then G1.y0 else pre(G1.x);
+//     G1.x_old := if initial() or pre(G1.x) == Modelica.Electrical.Digital.Interfaces.Logic.'U' then G1.y0 else pre(G1.x);
 //     G1.lh := G1.delayTable[G1.x_old,G1.x];
 //     G1.delayTime := if G1.lh > 0 then G1.tLH else if G1.lh < 0 then G1.tHL else 0.0;
 //     G1.t_next := time + G1.delayTime;
