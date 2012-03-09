@@ -1882,6 +1882,5 @@ getErrorString();
 // end BioChem.Examples.MassAction.UniBi;
 // "
 // "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // "
 // endResult

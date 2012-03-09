@@ -618,7 +618,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   parameter Real iv4 = 0.148871;
 //   parameter Real iv5 = 4.34299;
 //   parameter Real iv6 = 0.00406177;
-//   parameter Real iv7 = 1.72073e-05;
+//   parameter Real iv7 = 0.0000172073;
 //   parameter Real iv8 = 0.0695775;
 //   parameter Real iv9 = 28.2621;
 //   parameter Real iv10 = 0.000398124;
@@ -1093,7 +1093,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytosol.jatpase.rr = (cytosol.jatpase.KcatATPase * cytosol.jatpase.s1.c) / (0.05 + cytosol.jatpase.s1.c);
 //   cytosol.jatpase.s1.r = cytosol.jatpase.nS1 * cytosol.jatpase.rr;
 //   cytosol.jatpase.p1.r = (-cytosol.jatpase.nP1) * cytosol.jatpase.rr;
-//   cytosol.jck.rr = (cytosol.jck.KcatCK * (1.84331797235023 * (cytosol.jck.s1.c * cytosol.jck.s2.c) + -293.33 * (cytosol.jck.p1.c * cytosol.jck.p2.c))) / (1.0 + (cytosol.jck.s2.c / 34.9 + (cytosol.jck.p2.c / 0.8 + (cytosol.jck.s1.c * (1.43 + cytosol.jck.s2.c / 10.85) + cytosol.jck.p1.c * (16.7 + (cytosol.jck.p2.c / 0.1 + cytosol.jck.s2.c / 2.1))))));
+//   cytosol.jck.rr = (cytosol.jck.KcatCK * (1.8433179723502304 * (cytosol.jck.s1.c * cytosol.jck.s2.c) + -293.33 * (cytosol.jck.p1.c * cytosol.jck.p2.c))) / (1.0 + (cytosol.jck.s2.c / 34.9 + (cytosol.jck.p2.c / 0.8 + (cytosol.jck.s1.c * (1.43 + cytosol.jck.s2.c / 10.85) + cytosol.jck.p1.c * (16.7 + (cytosol.jck.p2.c / 0.1 + cytosol.jck.s2.c / 2.1))))));
 //   cytosol.jck.s1.r = cytosol.jck.nS1 * cytosol.jck.rr;
 //   cytosol.jck.s2.r = cytosol.jck.nS2 * cytosol.jck.rr;
 //   cytosol.jck.p1.r = (-cytosol.jck.nP1) * cytosol.jck.rr;
@@ -1993,7 +1993,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.InsulinSignaling_Sedaghat completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.InsulinSignaling_Sedaghat has 141 equation(s) and 141 variable(s).
 // 95 of these are trivial equation(s).
@@ -2001,7 +2000,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.Glycolysis completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.Glycolysis has 170 equation(s) and 170 variable(s).
 // 116 of these are trivial equation(s).
@@ -2009,7 +2007,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.EnzMM completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.EnzMM has 22 equation(s) and 22 variable(s).
 // 16 of these are trivial equation(s).
@@ -2017,7 +2014,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.GMO.cell completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.GMO.cell has 96 equation(s) and 96 variable(s).
 // 63 of these are trivial equation(s).
@@ -2025,14 +2021,12 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.centralMetabolism completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.centralMetabolism has 0 equation(s) and 0 variable(s).
 // 0 of these are trivial equation(s).
 // "
 // "Check of BioChem.Examples.centralMetabolism.cytosol completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.centralMetabolism.cytosol has 320 equation(s) and 320 variable(s).
 // 213 of these are trivial equation(s).
@@ -2040,7 +2034,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.CircadianOscillator.Container completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.CircadianOscillator.Container has 252 equation(s) and 252 variable(s).
 // 175 of these are trivial equation(s).
@@ -2048,7 +2041,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.CircadianOscillator.Nucleus completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.CircadianOscillator.Nucleus has 99 equation(s) and 101 variable(s).
 // 68 of these are trivial equation(s).
@@ -2056,7 +2048,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.CircadianOscillator.Cytoplasm completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.CircadianOscillator.Cytoplasm has 140 equation(s) and 142 variable(s).
 // 96 of these are trivial equation(s).
@@ -2064,7 +2055,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.CellDivison.cell completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.CellDivison.cell has 148 equation(s) and 148 variable(s).
 // 99 of these are trivial equation(s).
@@ -2072,7 +2062,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.CaOscillations.Cytosol completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.CaOscillations.Cytosol has 60 equation(s) and 60 variable(s).
 // 41 of these are trivial equation(s).
@@ -2080,7 +2069,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.CaOscillations.Endoplasmic_Reticulum completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.CaOscillations.Endoplasmic_Reticulum has 34 equation(s) and 35 variable(s).
 // 22 of these are trivial equation(s).
@@ -2096,7 +2084,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction has 7 equation(s) and 7 variable(s).
 // 4 of these are trivial equation(s).
@@ -2104,7 +2091,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.UtilizationReaction completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.UtilizationReaction has 11 equation(s) and 11 variable(s).
 // 6 of these are trivial equation(s).
@@ -2112,7 +2098,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.signaltosubstance completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.signaltosubstance has 7 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).
@@ -2120,7 +2105,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.U_ii_reaction completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.U_ii_reaction has 7 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).
@@ -2128,7 +2112,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.ActivationReaction completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.ActivationReaction has 9 equation(s) and 9 variable(s).
 // 6 of these are trivial equation(s).
@@ -2136,7 +2119,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.MM_insulin completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.MM_insulin has 9 equation(s) and 9 variable(s).
 // 6 of these are trivial equation(s).
@@ -2144,7 +2126,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.GlucoseUptakeReaction completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.GlucoseUptakeReaction has 9 equation(s) and 9 variable(s).
 // 6 of these are trivial equation(s).
@@ -2152,7 +2133,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.MassAction.UniUni completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.MassAction.UniUni has 745 equation(s) and 745 variable(s).
 // 572 of these are trivial equation(s).
@@ -2160,7 +2140,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.MassAction.UniBi completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.MassAction.UniBi has 945 equation(s) and 945 variable(s).
 // 732 of these are trivial equation(s).
@@ -2168,7 +2147,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.MultiCompartments.GlucoseMetabolism completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.MultiCompartments.GlucoseMetabolism has 385 equation(s) and 385 variable(s).
 // 267 of these are trivial equation(s).
@@ -2176,7 +2154,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.MultiCompartments.BigCompartmentReversible completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.MultiCompartments.BigCompartmentReversible has 26 equation(s) and 26 variable(s).
 // 19 of these are trivial equation(s).
@@ -2184,7 +2161,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.MultiCompartments.BigCompartmentIrreversible completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.MultiCompartments.BigCompartmentIrreversible has 26 equation(s) and 26 variable(s).
 // 19 of these are trivial equation(s).
@@ -2192,7 +2168,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.MultiCompartments.Utilities.TCA completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.MultiCompartments.Utilities.TCA has 206 equation(s) and 206 variable(s).
 // 146 of these are trivial equation(s).
@@ -2200,7 +2175,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.MultiCompartments.Utilities.SmallCompartment completed successfully.
 // 
-// [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class BioChem.Examples.MultiCompartments.Utilities.SmallCompartment has 10 equation(s) and 10 variable(s).
 // 8 of these are trivial equation(s).
