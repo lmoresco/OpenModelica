@@ -3161,7 +3161,7 @@ If time is less than <i>Tdel</i> the initial value <i>initout</i> holds.
 
         algorithm
           when {initial(),(tLH > 0 or tHL > 0) and change(x) and not initial()} then
-            y_old := if initial() or pre(y) == 0 then y0 else pre(y);  //nicht pre(x), Bezugspunkt ist das aktuelle Ausgangssiganl (Donath, 08.09.09)
+            y_old := if initial() or pre(y) == L.'U' then y0 else pre(y);  //nicht pre(x), Bezugspunkt ist das aktuelle Ausgangssiganl (Donath, 08.09.09)
             lh := delayTable[y_old, x];
             delayTime := if (lh > 0) then tLH else (if (lh < 0) then tHL else 0);
             t_next := time + delayTime;
@@ -4859,7 +4859,7 @@ If the signal width is greater than 1 this conversion is done for each signal.
           parameter Integer n(final min=1, start=2) "signal width";
         equation
           for i in 1:n loop
-            y[i] = if x[i] == 4 or x[i] == 8 then true else false;
+            y[i] = if x[i] == L.'1' or x[i] == L.'H' then true else false;
           end for;
           annotation (Documentation(info="<HTML>
 <P>
@@ -5306,6 +5306,10 @@ Clock transition definitions:
             strength=strength)
             annotation (Placement(transformation(extent={{-78,-23},{18,74}})));
         equation
+          connect(dataOut, dataOut) annotation (Line(
+              points={{92,40},{92,40}},
+              color={127,0,127},
+              smooth=Smooth.None));
           connect(delay.y, dataOut) annotation (Line(
               points={{75.01,40},{92,40}},
               color={127,0,127},
@@ -6199,6 +6203,10 @@ Clock transition definitions:
             annotation (Placement(transformation(extent={{-78,-23},{18,74}})));
         equation
 
+          connect(dataOut, dataOut) annotation (Line(
+              points={{92,40},{92,40}},
+              color={127,0,127},
+              smooth=Smooth.None));
           connect(delay.y, dataOut) annotation (Line(
               points={{72.08,40},{92,40}},
               color={127,0,127},
@@ -6667,6 +6675,10 @@ Clock transition definitions:
             annotation (Placement(transformation(extent={{-78,-23},{18,74}})));
         equation
 
+          connect(dataOut, dataOut) annotation (Line(
+              points={{92,40},{92,40}},
+              color={127,0,127},
+              smooth=Smooth.None));
           connect(delay.y, dataOut) annotation (Line(
               points={{72.08,40},{92,40}},
               color={127,0,127},
