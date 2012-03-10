@@ -1,14 +1,14 @@
 // Name:     BouncingBall2
 // keywords: equations when
 // status:   correct
-// teardown_command: rm -rf BouncingBall.makefile BouncingBall.libs BouncingBall.log BouncingBall BouncingBall.exe BouncingBall.cpp BouncingBall.plt BouncingBall_* output.log 
+// teardown_command: rm -rf BouncingBall2.makefile BouncingBall2.libs BouncingBall2.log BouncingBall2 BouncingBall2.exe BouncingBall2.cpp BouncingBall2.plt BouncingBall2_* output.log 
 // 
 //  Tests when, elsewhen
 // Drmodelica: 9.1 reinit (p. 296)
 //
 
 loadFile("BouncingBall2.mo");
-simulate(BouncingBall,numberOfIntervals=5, tolerance=1e-5); // 2 intervals == 3 values
+simulate(BouncingBall2,numberOfIntervals=5, tolerance=1e-5); // 2 intervals == 3 values
 val(height,0.0);
 val(height,0.2);
 val(height,0.4);
@@ -25,8 +25,8 @@ val(velocity,1.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "BouncingBall_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 5, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'BouncingBall', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     resultFile = "BouncingBall2_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 5, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'BouncingBall2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 1.0

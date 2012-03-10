@@ -5,7 +5,7 @@
 // Drmodelica: 9.1 reinit (p. 296)
 // 
 
-model BouncingBall 		"The bouncing ball model"
+model BouncingBall2 		"The bouncing ball model"
   constant Real g = 9.81;	// Gravitational acceleration
   parameter Real c = 0.9;	// Elasticity constant of ball
   parameter Real radius = 0.1;	// Radius of the ball
@@ -17,10 +17,10 @@ equation
   when height <= radius then 
     reinit(velocity, -c*pre(velocity));
   end when;
-end BouncingBall;
+end BouncingBall2;
 
 
-// class BouncingBall
+// class BouncingBall2
 // constant Real g = 9.81;
 // parameter Real c = 0.9;
 // parameter Real radius = 0.1;
@@ -32,4 +32,4 @@ end BouncingBall;
 //   when height <= radius then
 //   reinit(velocity,(-c) * pre(velocity));
 //   end when;
-// end BouncingBall;
+// end BouncingBall2;
