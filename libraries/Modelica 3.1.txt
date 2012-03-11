@@ -3,6 +3,13 @@ A full copy of Modelica Standard Library 3.1 from:
 
 Revision 4084
 
+OpenModelica r11366
+Author: Frenkel TUD
+Date: den 11 mars 2012 13:58:36
+Message:
+- add missing inline annotation in function World.gravityAccelerationTypes
+Modified : /trunk/libraries/Modelica 3.1/Mechanics/MultiBody/package.mo
+
 Added by sjoelund.se, 2012-03-09
 - OpenModelica r11357: Fix tons of integer literals to become enumeration literals in order to avoid type issues
 
