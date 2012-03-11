@@ -183,7 +183,7 @@ checkModel(PlanarMechanicsV4.Examples.InvertedCraneCrab); getErrorString();
 // 
 // 
 // Class PlanarMechanicsV4.Examples.TwoTrackStaticLoad3D has 3346 equation(s) and 3346 variable(s).
-// 1958 of these are trivial equation(s).
+// 1961 of these are trivial equation(s).
 // "
 // ""
 // "Check of PlanarMechanicsV4.Examples.ControlledCraneCrab completed successfully.

@@ -481,7 +481,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   Real axis.gear.bearingFriction.flange_b.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real axis.gear.bearingFriction.flange_b.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   protected Real axis.gear.bearingFriction.phi_support(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute angle of support flange\";
-//   parameter Real axis.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000.0 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
+//   parameter Real axis.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
 //   Real axis.gear.bearingFriction.w_relfric(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Relative angular velocity between frictional surfaces\";
 //   Real axis.gear.bearingFriction.a_relfric(quantity = \"AngularAcceleration\", unit = \"rad/s2\") \"Relative angular acceleration between frictional surfaces\";
 //   Real axis.gear.bearingFriction.tau0(quantity = \"Torque\", unit = \"N.m\") \"Friction torque for w=0 and forward sliding\";
@@ -1551,7 +1551,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   parameter Real mechanics.world.n[1](unit = \"1\") = 0.0 \"Direction of gravity resolved in world frame (gravity = g*n/length(n))\";
 //   parameter Real mechanics.world.n[2](unit = \"1\") = -1.0 \"Direction of gravity resolved in world frame (gravity = g*n/length(n))\";
 //   parameter Real mechanics.world.n[3](unit = \"1\") = 0.0 \"Direction of gravity resolved in world frame (gravity = g*n/length(n))\";
-//   parameter Real mechanics.world.mue(unit = \"m3/s2\", min = 0.0) = 398600000000000.0 \"Gravity field constant (default = field constant of earth)\";
+//   parameter Real mechanics.world.mue(unit = \"m3/s2\", min = 0.0) = 398600000000000 \"Gravity field constant (default = field constant of earth)\";
 //   parameter Boolean mechanics.world.driveTrainMechanics3D = true \"= true, if 3-dim. mechanical effects of Parts.Mounting1D/Rotor1D/BevelGear1D shall be taken into account\";
 //   parameter Boolean mechanics.world.axisShowLabels = true \"= true, if labels shall be shown\";
 //   input Integer mechanics.world.axisColor_x[1](min = 0, max = 255) = 0 \"Color of x-arrow\";
@@ -6169,7 +6169,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   Real axis1.gear.bearingFriction.flange_b.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real axis1.gear.bearingFriction.flange_b.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   protected Real axis1.gear.bearingFriction.phi_support(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute angle of support flange\";
-//   parameter Real axis1.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000.0 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
+//   parameter Real axis1.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
 //   Real axis1.gear.bearingFriction.w_relfric(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Relative angular velocity between frictional surfaces\";
 //   Real axis1.gear.bearingFriction.a_relfric(quantity = \"AngularAcceleration\", unit = \"rad/s2\") \"Relative angular acceleration between frictional surfaces\";
 //   Real axis1.gear.bearingFriction.tau0(quantity = \"Torque\", unit = \"N.m\") \"Friction torque for w=0 and forward sliding\";
@@ -6582,7 +6582,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   Real axis2.gear.bearingFriction.flange_b.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real axis2.gear.bearingFriction.flange_b.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   protected Real axis2.gear.bearingFriction.phi_support(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute angle of support flange\";
-//   parameter Real axis2.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000.0 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
+//   parameter Real axis2.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
 //   Real axis2.gear.bearingFriction.w_relfric(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Relative angular velocity between frictional surfaces\";
 //   Real axis2.gear.bearingFriction.a_relfric(quantity = \"AngularAcceleration\", unit = \"rad/s2\") \"Relative angular acceleration between frictional surfaces\";
 //   Real axis2.gear.bearingFriction.tau0(quantity = \"Torque\", unit = \"N.m\") \"Friction torque for w=0 and forward sliding\";
@@ -6995,7 +6995,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   Real axis3.gear.bearingFriction.flange_b.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real axis3.gear.bearingFriction.flange_b.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   protected Real axis3.gear.bearingFriction.phi_support(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute angle of support flange\";
-//   parameter Real axis3.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000.0 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
+//   parameter Real axis3.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
 //   Real axis3.gear.bearingFriction.w_relfric(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Relative angular velocity between frictional surfaces\";
 //   Real axis3.gear.bearingFriction.a_relfric(quantity = \"AngularAcceleration\", unit = \"rad/s2\") \"Relative angular acceleration between frictional surfaces\";
 //   Real axis3.gear.bearingFriction.tau0(quantity = \"Torque\", unit = \"N.m\") \"Friction torque for w=0 and forward sliding\";
@@ -7390,7 +7390,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   Real axis4.gear.bearingFriction.flange_b.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real axis4.gear.bearingFriction.flange_b.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   protected Real axis4.gear.bearingFriction.phi_support(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute angle of support flange\";
-//   parameter Real axis4.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000.0 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
+//   parameter Real axis4.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
 //   Real axis4.gear.bearingFriction.w_relfric(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Relative angular velocity between frictional surfaces\";
 //   Real axis4.gear.bearingFriction.a_relfric(quantity = \"AngularAcceleration\", unit = \"rad/s2\") \"Relative angular acceleration between frictional surfaces\";
 //   Real axis4.gear.bearingFriction.tau0(quantity = \"Torque\", unit = \"N.m\") \"Friction torque for w=0 and forward sliding\";
@@ -7785,7 +7785,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   Real axis5.gear.bearingFriction.flange_b.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real axis5.gear.bearingFriction.flange_b.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   protected Real axis5.gear.bearingFriction.phi_support(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute angle of support flange\";
-//   parameter Real axis5.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000.0 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
+//   parameter Real axis5.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
 //   Real axis5.gear.bearingFriction.w_relfric(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Relative angular velocity between frictional surfaces\";
 //   Real axis5.gear.bearingFriction.a_relfric(quantity = \"AngularAcceleration\", unit = \"rad/s2\") \"Relative angular acceleration between frictional surfaces\";
 //   Real axis5.gear.bearingFriction.tau0(quantity = \"Torque\", unit = \"N.m\") \"Friction torque for w=0 and forward sliding\";
@@ -8180,7 +8180,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   Real axis6.gear.bearingFriction.flange_b.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real axis6.gear.bearingFriction.flange_b.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   protected Real axis6.gear.bearingFriction.phi_support(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute angle of support flange\";
-//   parameter Real axis6.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000.0 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
+//   parameter Real axis6.gear.bearingFriction.w_small(quantity = \"AngularVelocity\", unit = \"rad/s\") = 10000000000 \"Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)\";
 //   Real axis6.gear.bearingFriction.w_relfric(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Relative angular velocity between frictional surfaces\";
 //   Real axis6.gear.bearingFriction.a_relfric(quantity = \"AngularAcceleration\", unit = \"rad/s2\") \"Relative angular acceleration between frictional surfaces\";
 //   Real axis6.gear.bearingFriction.tau0(quantity = \"Torque\", unit = \"N.m\") \"Friction torque for w=0 and forward sliding\";
@@ -12710,7 +12710,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot has 4828 equation(s) and 4828 variable(s).
-// 3584 of these are trivial equation(s).
+// 3608 of these are trivial equation(s).
 // "
 // ""
 // endResult
