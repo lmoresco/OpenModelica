@@ -188,7 +188,7 @@ sub run_tests {
         print $XMLOUT $data;
         print $XMLOUT '</failure>';
       }
-      print $XMLOUT "</test>\n";
+      print $XMLOUT "</testcase>\n";
     }
   }
 }
