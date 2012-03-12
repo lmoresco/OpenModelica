@@ -173,7 +173,7 @@ sub run_tests {
     }
     if($withxml) {
       lock($xmlfile_mutex);
-      print $XMLOUT "<test classname=\"$test_dir\" name=\"$test\">";
+      print $XMLOUT "<testcase classname=\"$test_dir\" name=\"$test\">";
       if ($x == 0) {
         print $XMLOUT '<failure type="Failure">';
         my $filename = "$test_dir$test.test_log";
