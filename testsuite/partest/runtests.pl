@@ -176,7 +176,7 @@ sub run_tests {
       my $classname =~ m"^./libraries";
       # Replace ./abc/def with abc.def
       $classname =~ s/\.//g;
-      $classname =~ s,/,.,g;
+      $classname =~ s,/,_,g;
       print $XMLOUT "<testcase classname=\"$test_dir\" name=\"$test\">";
       if ($x == 0) {
         print $XMLOUT '<failure type="Failure">';
