@@ -4340,7 +4340,7 @@ algorithm
     case ( txt,
            SCode.FR_EXTERNAL_FUNCTION() )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("external function"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("function"));
       then txt;
 
     case ( txt,
