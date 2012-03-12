@@ -173,6 +173,10 @@ sub run_tests {
     }
     if($withxml) {
       lock($xmlfile_mutex);
+      my $classname =~ m"^./libraries";
+      # Replace ./abc/def with abc.def
+      $classname =~ s/\.//g;
+      $classname =~ s,/,.,g;
       print $XMLOUT "<testcase classname=\"$test_dir\" name=\"$test\">";
       if ($x == 0) {
         print $XMLOUT '<failure type="Failure">';
