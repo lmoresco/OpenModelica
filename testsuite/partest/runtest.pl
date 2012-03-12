@@ -210,7 +210,7 @@ $ENV{'PATH'} = "./:" . $ENV{'PATH'};
 my $sandbox_needed = needs_sandbox();
 
 enter_sandbox() if $sandbox_needed;
-chdir("../" . $test_dir) if !$sandbox_needed;
+chdir($test_dir) if !$sandbox_needed;
 
 my $fail_log = ($sandbox_needed ? "../" : "") . "$test.fail_log";
 
@@ -218,7 +218,8 @@ my $fail_log = ($sandbox_needed ? "../" : "") . "$test.fail_log";
 unlink("$fail_log");
 
 # Determine the full path to rtest.
-my $test_suit_path_rel = "../" x ($test_full =~ tr/\///);
+my $n = ($test_full =~ tr/\///) - ($sandbox_needed ? 0 : 1);
+my $test_suit_path_rel = "../" x $n;
 
 my $rtest = $test_suit_path_rel . "rtest -v -nolib ";
 
@@ -226,7 +227,8 @@ my $rtest = $test_suit_path_rel . "rtest -v -nolib ";
 $rtest = $rtest . " +g=MetaModelica " if $test_dir eq "./meta";
 
 # Run the testscript and redirect output to a logfile.
-system("$rtest $test > $test.test_log 2>&1");
+my $cmd = "$rtest $test > $test.test_log 2>&1";
+system("$cmd");
 
 # Read the logfile and see if the test succeeded or failed.
 open(my $test_log, "<", "$test.test_log") or die "Couldn't open test log $test.log: $!\n";

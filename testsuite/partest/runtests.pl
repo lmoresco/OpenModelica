@@ -83,6 +83,7 @@ my $test_queue = Thread::Queue->new();
 my $tests_failed :shared = 0;
 my @failed_tests :shared;
 my $testscript = cwd() . "/runtest.pl";
+my $testsuite_root = cwd() . "/../";
 my %test_map :shared;
 my $xmlfile_mutex :shared;
 my $XMLOUT;
@@ -159,7 +160,8 @@ sub run_tests {
     (my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
 
     my $t0 = [gettimeofday];
-    my $x = system("$testscript $test_full $nocolour $withxmlcmd") >> 8;
+    my $cmd = "$testscript $test_full $nocolour $withxmlcmd";
+    my $x = system("$cmd") >> 8;
     my $elapsed = tv_interval ( $t0, [gettimeofday]);
 
     if($use_db) {
@@ -175,7 +177,7 @@ sub run_tests {
     }
     if($withxml) {
       lock($xmlfile_mutex);
-      my $filename = "$test_full.result.xml";
+      my $filename = "$testsuite_root$test_full.result.xml";
       my $data;
       if (open my $fh, '<', $filename) {
         $data = do { local $/; <$fh> };
@@ -186,6 +188,7 @@ sub run_tests {
         $classname =~ s,\./,,g;
         $classname =~ s,/,.,g;
         $data = "<testcase classname=\"$classname\" name=\"$test\"><failure type=\"Result not found\">Result xml-file not found</failure></testcase>";
+        print "\nERROR: Result xml not found: $filename. Command was: $cmd. Retval is: $x. Cwd is: ".cwd()."\n";
       }
       print $XMLOUT $data;
     }
