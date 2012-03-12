@@ -33,8 +33,6 @@ my $test_id = int(rand(9999));
 # Build the full path to the temporary directory to run the test in.
 my $tmp_path_full = $test_dir . "/" . $test . "_temp" . $test_id;
 
-my $test_suit_path_rel = "../" x ($test_full =~ tr/\///);
-
 # Makes a symbolic link to a file.
 sub make_link {
   my $file = shift;
@@ -212,6 +210,7 @@ $ENV{'PATH'} = "./:" . $ENV{'PATH'};
 my $sandbox_needed = needs_sandbox();
 
 enter_sandbox() if $sandbox_needed;
+chdir("../" . $test_dir) if !$sandbox_needed;
 
 my $fail_log = ($sandbox_needed ? "../" : "") . "$test.fail_log";
 
@@ -219,6 +218,8 @@ my $fail_log = ($sandbox_needed ? "../" : "") . "$test.fail_log";
 unlink("$fail_log");
 
 # Determine the full path to rtest.
+my $test_suit_path_rel = "../" x (($sandbox_needed ? 0 : -1) + ($test_full =~ tr/\///));
+
 my $rtest = $test_suit_path_rel . "rtest -v -nolib ";
 
 # If we're in meta, append the MetaModelica flag to rtest.
@@ -274,7 +275,6 @@ while(<$test_log>) {
     }
   }
 }
-
 
 if ($withxml) {
   eval { require XML::Entities; 1; };
