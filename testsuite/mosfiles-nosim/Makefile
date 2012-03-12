@@ -37,9 +37,7 @@ TransformerYY.mos \
 AIMC_DOL.mos \
 ZeroDims.mos \
 ZeroRange.mos \
-vaporizing.mos \
-instHumMod.mos \
-checkHumMod.mos 
+vaporizing.mos 
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

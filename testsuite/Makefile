@@ -21,7 +21,7 @@ streams.log \
 redeclare.log \
 fmi.log \
 PlanarMechanics.log \
-TestMedia.log  
+TestMedia.log 
 
 SLOWLOGS = \
 bootstrapping.log \
@@ -36,8 +36,8 @@ msl31simulation.log \
 msl31media.log \
 msl31mediasimulation.log \
 msl31fluid.log \
-siemens.log
-
+siemens.log \
+hummod.log
 
 SIMULATIONLOGS = \
 linearize.log \
@@ -185,7 +185,10 @@ msl31fluid.log: omc-diff
 	$(MAKE) -C libraries/msl31/fluid -f Makefile test > $@
 	@echo $@ done
 siemens.log: omc-diff
-	$(MAKE) -C siemens -f Makefile test > $@
+	$(MAKE) -C 3rdParty/siemens -f Makefile test > $@
+	@echo $@ done
+hummod.log: omc-diff
+	$(MAKE) -C 3rdParty/HumMod -f Makefile test > $@
 	@echo $@ done
 fmi.log: omc-diff
 	$(MAKE) -C fmi -f Makefile test > $@
