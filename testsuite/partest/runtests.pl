@@ -44,6 +44,7 @@ my $fast = 0;
 my $thread_count = 2;
 my $check_proc_cpu = 1;
 my $withxml = 0;
+my $withxmlcmd = 0;
 
 # Check for the -f flag.
 for(@ARGV){
@@ -62,6 +63,7 @@ for(@ARGV){
   }
   elsif(/-with-xml/) {
     $withxml = 1;
+    $withxmlcmd = '-with-xml';
   }
 }
 
@@ -157,7 +159,7 @@ sub run_tests {
     (my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
 
     my $t0 = [gettimeofday];
-    my $x = system("$testscript $test_full $nocolour") >> 8;
+    my $x = system("$testscript $test_full $nocolour $withxmlcmd") >> 8;
     my $elapsed = tv_interval ( $t0, [gettimeofday]);
 
     if($use_db) {
@@ -173,26 +175,19 @@ sub run_tests {
     }
     if($withxml) {
       lock($xmlfile_mutex);
-      my $classname =~ m"^./libraries";
-      # Replace ./abc/def with abc.def
-      $classname =~ s/\.//g;
-      $classname =~ s,/,_,g;
-      print $XMLOUT "<testcase classname=\"$test_dir\" name=\"$test\">";
-      if ($x == 0) {
-        print $XMLOUT '<failure type="Failure">';
-        my $filename = "$test_dir$test.test_log";
-        open my $fh, '<', $filename;
-        my $data;
-        if (!$fh) {
-          $data = 'Unknown result';
-        } else {
-          $data = do { local $/; <$fh> };
-          $data = XML::Entities::numify('all', $data);
-        }
-        print $XMLOUT $data;
-        print $XMLOUT '</failure>';
+      my $filename = "$test_full.result.xml";
+      my $data;
+      if (open my $fh, '<', $filename) {
+        $data = do { local $/; <$fh> };
+        $data = XML::Entities::numify('all', $data);
+      } else {
+        my $classname = $test_dir;
+        # Replace ./abc/def with abc.def
+        $classname =~ s,\./,,g;
+        $classname =~ s,/,.,g;
+        $data = "<testcase classname=\"$classname\" name=\"$test\"><failure type=\"Result not found\">Result xml-file not found</failure></testcase>";
       }
-      print $XMLOUT "</testcase>\n";
+      print $XMLOUT $data;
     }
   }
 }

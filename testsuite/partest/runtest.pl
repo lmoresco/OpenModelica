@@ -13,7 +13,18 @@ use feature "switch";
 
 # Get the testcase to run from the command line argument.
 my $test_full = $ARGV[0];
-my $no_colour = @ARGV>1 && $ARGV[1] =~ "--no-colour";
+my $no_colour = 0;
+my $withxml = 0;
+
+for(@ARGV){
+  if(/--no-colour/) {
+    $no_colour = 1;
+  }
+  elsif(/-with-xml/) {
+    $withxml = 1;
+  }
+}
+
 # Extract the directory and test name.
 (my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
 # Add a random number to the temporary directory, to avoid problems with rtest
@@ -264,6 +275,48 @@ while(<$test_log>) {
   }
 }
 
+
+if ($withxml) {
+  eval { require XML::Entities; 1; };
+
+  if(!$@) {
+    XML::Entities->import();
+  } else {
+    print "Error: Could not load XML::Entities module.\n";
+    exit 1;
+  }
+
+  my $xml_log = ($sandbox_needed ? "../" : "") . "$test.result.xml";
+  my $XMLOUT;
+  open $XMLOUT, '>', $xml_log or die "Couldn't open result.xml: $!";
+  binmode $XMLOUT;
+  my $classname = $test_dir;
+  # Replace ./abc/def with abc.def
+  $classname =~ s,\./,,g;
+  $classname =~ s,/,.,g;
+      
+  print $XMLOUT "<testcase classname=\"$classname\" name=\"$test\" time=\"$time\">";
+  if ($erroneous == 1) {
+    print $XMLOUT '<skipped />';
+  }
+  elsif ($exit_status == 0) {
+    print $XMLOUT '<failure type="Failure">Output mismatch (see stdout for details)</failure>';
+    print $XMLOUT '<system-out>';
+    open my $fh, '<', $fail_log;
+    my $data;
+    if (!$fh) {
+      $data = 'Unknown result';
+    } else {
+      $data = do { local $/; <$fh> };
+      $data = XML::Entities::numify('all', $data);
+    }
+    print $XMLOUT $data;
+    print $XMLOUT '</system-out>';
+  }
+  print $XMLOUT "</testcase>\n";
+  close $XMLOUT;
+}
+
 exit_sandbox() if $sandbox_needed;
 
 if ($exit_status == 0) {
@@ -274,6 +327,6 @@ if ($exit_status == 0) {
   } elsif ($time > 100) {
     exit 100;
   }
-  exit $time
+  exit $time;
 }
 
