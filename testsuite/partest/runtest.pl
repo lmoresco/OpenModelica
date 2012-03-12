@@ -218,7 +218,7 @@ my $fail_log = ($sandbox_needed ? "../" : "") . "$test.fail_log";
 unlink("$fail_log");
 
 # Determine the full path to rtest.
-my $test_suit_path_rel = "../" x (($sandbox_needed ? 0 : -1) + ($test_full =~ tr/\///));
+my $test_suit_path_rel = "../" x ($test_full =~ tr/\///);
 
 my $rtest = $test_suit_path_rel . "rtest -v -nolib ";
 
