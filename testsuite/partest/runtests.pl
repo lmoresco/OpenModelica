@@ -43,6 +43,7 @@ my $fast = 0;
 # Default is two threads.
 my $thread_count = 2;
 my $check_proc_cpu = 1;
+my $withxml = 0;
 
 # Check for the -f flag.
 for(@ARGV){
@@ -58,6 +59,9 @@ for(@ARGV){
   }
   elsif(/-nocolour/) {
     $nocolour = '--no-colour';
+  }
+  elsif(/-with-xml/) {
+    $withxml = 1;
   }
 }
 
@@ -78,6 +82,23 @@ my $tests_failed :shared = 0;
 my @failed_tests :shared;
 my $testscript = cwd() . "/runtest.pl";
 my %test_map :shared;
+my $xmlfile_mutex :shared;
+my $XMLOUT;
+
+if ($withxml) {
+  eval { require XML::Entities; 1; };
+
+  if(!$@) {
+    XML::Entities->import();
+  } else {
+    print "Error: Could not load XML::Entities module.\n";
+    exit 1;
+  }
+
+  open $XMLOUT, '>', 'result.xml' or die "Couldn't open result.xml: $!";
+  binmode $XMLOUT;
+  print $XMLOUT "<testsuite>\n";
+}
 
 if($use_db) {
   tie (my %db_map, "MLDBM", "../runtest.db", O_RDWR|O_CREAT, 0664);
@@ -92,6 +113,7 @@ sub read_makefile {
   return if($fast == 1 and $dir =~ m"^./libraries"); # Skip libraries if -f is given.
   return if($fast == 1 and $dir eq "./bootstrapping"); # Skip libraries if -f is given.
   return if($fast == 1 and $dir eq "./meta"); # Skip libraries if -f is given.
+  return if($fast == 1 and $dir =~ m"^./3rdParty"); # Skip libraries if -f is given.
 
   open(my $in, "<", "$dir/Makefile") or die "Couldn't open $dir/Makefile: $!";
 
@@ -148,6 +170,25 @@ sub run_tests {
       $tests_failed++;
       lock(@failed_tests);
       push @failed_tests, $test_full;
+    }
+    if($withxml) {
+      lock($xmlfile_mutex);
+      print $XMLOUT "<test classname=\"$test_dir\" name=\"$test\">";
+      if ($x == 0) {
+        print $XMLOUT '<failure type="Failure">';
+        my $filename = "$test_dir$test.test_log";
+        open my $fh, '<', $filename;
+        my $data;
+        if (!$fh) {
+          $data = 'Unknown result';
+        } else {
+          $data = do { local $/; <$fh> };
+          $data = XML::Entities::numify('all', $data);
+        }
+        print $XMLOUT $data;
+        print $XMLOUT '</failure>';
+      }
+      print $XMLOUT "</test>\n";
     }
   }
 }
@@ -218,6 +259,10 @@ print "\n$tests_failed of $test_count failed\n";
 if($use_db) {
   tie (my %db_map, "MLDBM", "runtest.db", O_RDWR|O_CREAT, 0664);
   %db_map = %test_map;
+}
+
+if($withxml) {
+  print $XMLOUT "</testsuite>\n";
 }
 
 unlink("Compiler");
