@@ -234,20 +234,20 @@ open(my $test_log, "<", "$test.test_log") or die "Couldn't open test log $test.l
 my $exit_status = 1;
 my $erroneous = 0;
 my $time = 0;
-my $success = 1;
+my $nfailed = 1;
 
 while(<$test_log>) {
   if(/\.\.\. erroneous/) {
     $erroneous = 1;
   }
   elsif(/== (\d) out of 1 tests failed.*time: (\d*)/) {
-    $success = $1;
+    $nfailed = $1;
     $time = $2;
   }
 }
 
 if (!$no_colour) {
-  if($success =~ /0/) {
+  if($nfailed =~ /0/) {
     print color 'green';
   } else {
     if($erroneous == 0) {
@@ -263,7 +263,7 @@ if (!$no_colour) {
 }
 print "[$test:$time]";
 if ($no_colour) {
-  if($1 =~ /0/) {
+  if($nfailed =~ /0/) {
     print " OK\n";
   } else {
     if($erroneous == 0) {
