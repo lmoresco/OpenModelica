@@ -234,46 +234,49 @@ open(my $test_log, "<", "$test.test_log") or die "Couldn't open test log $test.l
 my $exit_status = 1;
 my $erroneous = 0;
 my $time = 0;
+my $success = 1;
 
 while(<$test_log>) {
   if(/\.\.\. erroneous/) {
     $erroneous = 1;
   }
-  if(/== (\d) out of 1 tests failed.*time: (\d*)/) {
+  elsif(/== (\d) out of 1 tests failed.*time: (\d*)/) {
+    $success = $1;
     $time = $2;
-    if (!$no_colour) {
-      if($1 =~ /0/) {
-        print color 'green';
-      } else {
-        if($erroneous == 0) {
-          system("cp $test.test_log $fail_log");
-          print color 'red';
-          $exit_status = 0;
-        } else {
-          system("cp $test.test_log $fail_log");
-          print color 'magenta';
-        }
-      }
-      print " ";
-    }
-    print "[$test:$time]";
-    if ($no_colour) {
-      if($1 =~ /0/) {
-        print " OK\n";
-      } else {
-        if($erroneous == 0) {
-          system("cp $test.test_log $fail_log");
-          print " Failed\n";
-          $exit_status = 0;
-        } else {
-          system("cp $test.test_log $fail_log");
-          print " Erroneous\n";
-        }
-      }
+  }
+}
+
+if (!$no_colour) {
+  if($success =~ /0/) {
+    print color 'green';
+  } else {
+    if($erroneous == 0) {
+      system("cp $test.test_log $fail_log");
+      print color 'red';
+      $exit_status = 0;
     } else {
-      print color 'reset';
+      system("cp $test.test_log $fail_log");
+      print color 'magenta';
     }
   }
+  print " ";
+}
+print "[$test:$time]";
+if ($no_colour) {
+  if($1 =~ /0/) {
+    print " OK\n";
+  } else {
+    if($erroneous == 0) {
+      system("cp $test.test_log $fail_log");
+      print " Failed\n";
+      $exit_status = 0;
+    } else {
+      system("cp $test.test_log $fail_log");
+      print " Erroneous\n";
+    }
+  }
+} else {
+  print color 'reset';
 }
 
 if ($withxml) {
