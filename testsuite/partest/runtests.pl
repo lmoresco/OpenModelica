@@ -183,7 +183,7 @@ sub run_tests {
         $data = do { local $/; <$fh> };
         $data = XML::Entities::numify('all', $data);
       }
-      if ($data == "") {
+      if ($data eq "") {
         my $classname = $test_dir;
         # Replace ./abc/def with abc.def
         $classname =~ s,\./,,g;
