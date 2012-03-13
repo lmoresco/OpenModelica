@@ -101,12 +101,12 @@ algorithm
   
   
    while (Util.isListEmpty(tokens)==false) loop
-	   if (debug) then 
-	     print("\nTokens remaining:");
-	     print(intString(listLength(tokens)));   
+     if (debug) then 
+       print("\nTokens remaining:");
+       print(intString(listLength(tokens)));   
      end if;
     // printAny("\nTokens remaining:");
-	  // printAny(intString(listLength(tokens))); 
+    // printAny(intString(listLength(tokens))); 
      (tokens,env,result,ast) := processToken(tokens,env,pt);
      if (result==false) then 
        break; 
@@ -208,11 +208,11 @@ function processToken
                 //printAny("\n Syntax Error found yyerrlab5:" + intString(errSt));
              end if;
              if (errSt>=0) then
-	             (env2,semVal,result) = errorHandler(cTok,env,pt);
-			         ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
+               (env2,semVal,result) = errorHandler(cTok,env,pt);
+               ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
              else
-		            result=false;
-		         end if;		         
+                result=false;
+             end if;             
            end if;
              if (debug) then
                print(" REDUCE4");
@@ -222,42 +222,42 @@ function processToken
                program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
              
          else  
-	         n = mm_table[n+1];
-	         if (n<=0) then
-	           if (n==0 or n==cTableNinf) then
-	             // Error Handler
-	             if (debug) then
-	                print("\n Syntax Error found yyerrlab4:" + intString(n));
-	             end if;
-	             if (errSt>=0) then  
-	                (env2,semVal,result) = errorHandler(cTok,env,pt);
-	             else
-	                result = false;
-	             end if;   
-			         ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
-	           end if;
-	             n = -n;
-	             if (debug) then
-	               print(" REDUCE5");
-	             end if;  
-	             env2=reduce(n,env,pt);
-	             ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
+           n = mm_table[n+1];
+           if (n<=0) then
+             if (n==0 or n==cTableNinf) then
+               // Error Handler
+               if (debug) then
+                  print("\n Syntax Error found yyerrlab4:" + intString(n));
+               end if;
+               if (errSt>=0) then  
+                  (env2,semVal,result) = errorHandler(cTok,env,pt);
+               else
+                  result = false;
+               end if;   
+               ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
+             end if;
+               n = -n;
+               if (debug) then
+                 print(" REDUCE5");
+               end if;  
+               env2=reduce(n,env,pt);
+               ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
             
-	         else
-	           if (debug) then
-	             print(" SHIFT");
-	           end if;
-	           if (errSt<0) then // reduce the shift error lookup
-	             if (debug) then
-	               print("\n***-RECOVERY TOKEN INSERTED IS SHIFTED-***");
-	             end if;  
-	              errSt = maxErrRecShift;
-	           end if;  
-	           cSt = n;
-	           stateStk = cSt::stateStk;
-	           env2 = ENV(c,nt,stateStk,errStk,errSt,sSt,cSt,rest,rest,astStk,debug,stateSkBk,astSkBk);
+           else
+             if (debug) then
+               print(" SHIFT");
+             end if;
+             if (errSt<0) then // reduce the shift error lookup
+               if (debug) then
+                 print("\n***-RECOVERY TOKEN INSERTED IS SHIFTED-***");
+               end if;  
+                errSt = maxErrRecShift;
+             end if;  
+             cSt = n;
+             stateStk = cSt::stateStk;
+             env2 = ENV(c,nt,stateStk,errStk,errSt,sSt,cSt,rest,rest,astStk,debug,stateSkBk,astSkBk);
             
-	         end if;
+           end if;
          end if; 
          if (result==true and errSt>maxErrRecShift) then //stops when it finds and error                 
             if (debug) then 
@@ -282,26 +282,26 @@ function processToken
      case (_,_,_,false,true)
        equation      
           n = mm_defact[cSt+1];
-				  if (n == 0) then
-				    // Error Handler
+          if (n == 0) then
+            // Error Handler
              if (debug) then
                 print("\n Syntax Error found yyerrlab3:" + intString(n));
              end if;  
              if (errSt>=0) then  
-	                (env2,semVal,result) = errorHandler(cTok,env,pt);
-	                ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
-	             else
-	                result = false;
-	             end if; 		         
-				  end if;
-				   // reduce; 
-				   if (debug) then
-				      print("REDUCE3");
-				   end if;   
-				   
-				   env2=reduce(n,env,pt);
-				   
-				   if (result==true) then //stops when it finds and error             
+                  (env2,semVal,result) = errorHandler(cTok,env,pt);
+                  ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
+               else
+                  result = false;
+               end if;              
+          end if;
+           // reduce; 
+           if (debug) then
+              print("REDUCE3");
+           end if;   
+           
+           env2=reduce(n,env,pt);
+           
+           if (result==true) then //stops when it finds and error             
               (rest,env2,result,ast) = processToken(tokens,env2,pt);
            end if;
          
@@ -327,86 +327,86 @@ function processToken
              print("[n:" + intString(n) + "-");
           end if;   
 
-			    n = n + tok;
-			    if (debug) then
-			       print("NT:" + intString(n) + "]");
-			    end if;
-			    chkVal = n+1;
-			    if (chkVal<=0) then
-			       chkVal = 1;
-			    end if;   
+          n = n + tok;
+          if (debug) then
+             print("NT:" + intString(n) + "]");
+          end if;
+          chkVal = n+1;
+          if (chkVal<=0) then
+             chkVal = 1;
+          end if;   
          if (n < 0 or ParseTableModelica.YYLAST < n or mm_check[chkVal] <> tok) then
            //goto yydefault;
            n = mm_defact[cSt+1];
            if (n==0) then
-	             // Error Handler
-	             if (debug) then
-	                print("\n Syntax Error found yyerrlab2:" + intString(n));
-	             end if; 
-	             if (errSt>=0) then  
-	                (env2,semVal,result) = errorHandler(cTok,env,pt);
-	                ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
-	             else
-	                errSt = maxErrRecShift;
-	                result = false;
-	             end if;			           
+               // Error Handler
+               if (debug) then
+                  print("\n Syntax Error found yyerrlab2:" + intString(n));
+               end if; 
+               if (errSt>=0) then  
+                  (env2,semVal,result) = errorHandler(cTok,env,pt);
+                  ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
+               else
+                  errSt = maxErrRecShift;
+                  result = false;
+               end if;                 
            else
-	             if (debug) then 
-	                print(" REDUCE2");
-	             end if;
-	             env2=reduce(n,env,pt);
-	             ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
-	             rest = tokens;
+               if (debug) then 
+                  print(" REDUCE2");
+               end if;
+               env2=reduce(n,env,pt);
+               ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
+               rest = tokens;
            end if; 
          else  
            // try to get the value for the action in the table array
-	         n = mm_table[n+1];
-	         if (n<=0) then
-	           // 
-	           if (n==0 or n==cTableNinf) then
-	             // Error Handler
-	             if (debug) then
-		             print("\n Syntax Error found yyerrlab:" + intString(n));
-		           end if;
-		           if (errSt>=0) then  
-	                (env2,semVal,result) = errorHandler(cTok,env,pt);
-	                ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
-	             else
-	                result = false;
-	                errSt = maxErrRecShift;
-	             end if; 		             
-		         else
-	             n = -n;
-	             if (debug) then
-	                 print(" REDUCE");
-	             end if;    
-	             env2=reduce(n,env,pt);
-	             ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
-	             rest = tokens;
-	           end if;  
-	         else
-	           if (debug) then
-	              print(" SHIFT1");
-	           end if;   
-	           cSt = n;
-	           stateStk = cSt::stateStk;
-	           idVal = semVal;
-	           (astStk) = ParseCodeModelica.push(astStk,idVal,cTok);
-	           astSkBk = astStk;
-	           stateSkBk = stateStk;
-	           if (errSt<>0) then // reduce the shift error lookup
-	              errSt = errSt - 1;
-	           end if;
-	           env2 = ENV(c,nt,stateStk,errStk,errSt,sSt,cSt,rest,rest,astStk,debug,stateSkBk,astSkBk);     
-	         end if;
+           n = mm_table[n+1];
+           if (n<=0) then
+             // 
+             if (n==0 or n==cTableNinf) then
+               // Error Handler
+               if (debug) then
+                 print("\n Syntax Error found yyerrlab:" + intString(n));
+               end if;
+               if (errSt>=0) then  
+                  (env2,semVal,result) = errorHandler(cTok,env,pt);
+                  ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
+               else
+                  result = false;
+                  errSt = maxErrRecShift;
+               end if;                  
+             else
+               n = -n;
+               if (debug) then
+                   print(" REDUCE");
+               end if;    
+               env2=reduce(n,env,pt);
+               ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
+               rest = tokens;
+             end if;  
+           else
+             if (debug) then
+                print(" SHIFT1");
+             end if;   
+             cSt = n;
+             stateStk = cSt::stateStk;
+             idVal = semVal;
+             (astStk) = ParseCodeModelica.push(astStk,idVal,cTok);
+             astSkBk = astStk;
+             stateSkBk = stateStk;
+             if (errSt<>0) then // reduce the shift error lookup
+                errSt = errSt - 1;
+             end if;
+             env2 = ENV(c,nt,stateStk,errStk,errSt,sSt,cSt,rest,rest,astStk,debug,stateSkBk,astSkBk);     
+           end if;
          end if;
          
          
          if (errSt<>0 or listLength(rest)==0) then
-	         if ((result==true) and (errSt>maxErrRecShift)) then //stops when it finds and error             
-	           (rest,env2,result,ast) = processToken(rest,env2,pt);
-	         end if;
-	       end if;
+           if ((result==true) and (errSt>maxErrRecShift)) then //stops when it finds and error             
+             (rest,env2,result,ast) = processToken(rest,env2,pt);
+           end if;
+         end if;
      then (rest,result);
     end matchcontinue;
    // return the AST  
@@ -445,9 +445,9 @@ algorithm
         program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk):= env;
   
   if (debug) then
-	   print("\nERROR RECOVERY INITIATED:");
-	   print("\n[State:" + intString(cSt) +"]{" + printStack(stateStk,"") + "}\n");
-	   print("\n[StateStack Backup:{" + printStack(stateSkBk,"") + "}\n");
+     print("\nERROR RECOVERY INITIATED:");
+     print("\n[State:" + intString(cSt) +"]{" + printStack(stateStk,"") + "}\n");
+     print("\n[StateStack Backup:{" + printStack(stateSkBk,"") + "}\n");
   end if;
   semVal := OMCCTypes.printToken(currTok);
   (errorMsg,result) := matchcontinue(errSt==0,prog)
@@ -588,9 +588,9 @@ function checkCandidates
       if (checkToken(i,env,pt,action)==true) then
          //name := mm_tname[i-255];
          if (j<=maxCandidateTokens) then
-	         tokVal := getTokenSemValue(i-255,pt);
-	         resCandidates := tokVal::resCandidates;
-	         j := j+1;
+           tokVal := getTokenSemValue(i-255,pt);
+           resCandidates := tokVal::resCandidates;
+           j := j+1;
          else
            i := numTokens+1;  
          end if;
@@ -635,15 +635,15 @@ function checkToken
   // restore back up configuration and run the machine again to check candidate
    if (Util.isListEmpty(prog)==false) then 
      cTok::prog := prog;
-	   if (debug) then
-	      print("\n **** Last token: " + OMCCTypes.printToken(cTok));
-	   end if;   
-	   info := OMCCTypes.INFO("",false,1,1,1,1,OMCCTypes.getTimeStamp()); //fake position
-	   candTok := OMCCTypes.TOKEN(mm_tname[chkTok-255],chkTok,{65},info);
+     if (debug) then
+        print("\n **** Last token: " + OMCCTypes.printToken(cTok));
+     end if;   
+     info := OMCCTypes.INFO("",false,1,1,1,1,OMCCTypes.getTimeStamp()); //fake position
+     candTok := OMCCTypes.TOKEN(mm_tname[chkTok-255],chkTok,{65},info);
    else
      if (debug) then
-	      print("\n Creating Fake Token position");
-	   end if; 
+        print("\n Creating Fake Token position");
+     end if; 
      info := OMCCTypes.INFO("",false,1,1,1,1,OMCCTypes.getTimeStamp()); //fake position
      candTok := OMCCTypes.TOKEN(mm_tname[chkTok-255],chkTok,{65},info);
    end if;
@@ -726,41 +726,41 @@ function reduce
    ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,sState=sSt,errMessages=errStk,errStatus=errSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,
       isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk):= env;
    if rule > 0 then
-		   len := mm_r2[rule];
-		   if (debug) then
-		      print("[Reducing(l:" + intString(len) + ",r:" + intString(rule) +")]");
-		   end if;   
-		   redStk := {};
-		   for i in 1:len loop
-		      val::stateStk := stateStk;
-		   end for;
-		  if (errSt>=0) then
-		    (astStk,error,errMsg) := ParseCodeModelica.actionRed(rule,astStk,mm_r2);
-		  end if;
-		   if (error) then
-		      errStk := errMsg::errStk;
-		      errSt := maxErrShiftToken;
-		   end if;
-		  
-		   cSt::_ := stateStk;
-		  
-		   n := mm_r1[rule];
-		  
-		   nSt := mm_pgoto[n - ParseTableModelica.YYNTOKENS + 1];
-		   nSt := nSt + cSt;
-		   chkVal := nSt +1;
-		   if (chkVal<=0) then
-		      chkVal := 1;
-		   end if;
-		   if ( (nSt >=0) and (nSt <= ParseTableModelica.YYLAST) and (mm_check[chkVal] == cSt) ) then
-		      cSt := mm_table[nSt+1];
-		   else
-		      cSt := mm_defgoto[n - ParseTableModelica.YYNTOKENS+1];
-		   end if;
-		   if (debug) then
-		     print("[nState:" + intString(cSt) + "]");
-		   end if;  
-		   stateStk := cSt::stateStk;
+       len := mm_r2[rule];
+       if (debug) then
+          print("[Reducing(l:" + intString(len) + ",r:" + intString(rule) +")]");
+       end if;   
+       redStk := {};
+       for i in 1:len loop
+          val::stateStk := stateStk;
+       end for;
+      if (errSt>=0) then
+        (astStk,error,errMsg) := ParseCodeModelica.actionRed(rule,astStk,mm_r2);
+      end if;
+       if (error) then
+          errStk := errMsg::errStk;
+          errSt := maxErrShiftToken;
+       end if;
+      
+       cSt::_ := stateStk;
+      
+       n := mm_r1[rule];
+      
+       nSt := mm_pgoto[n - ParseTableModelica.YYNTOKENS + 1];
+       nSt := nSt + cSt;
+       chkVal := nSt +1;
+       if (chkVal<=0) then
+          chkVal := 1;
+       end if;
+       if ( (nSt >=0) and (nSt <= ParseTableModelica.YYLAST) and (mm_check[chkVal] == cSt) ) then
+          cSt := mm_table[nSt+1];
+       else
+          cSt := mm_defgoto[n - ParseTableModelica.YYNTOKENS+1];
+       end if;
+       if (debug) then
+         print("[nState:" + intString(cSt) + "]");
+       end if;  
+       stateStk := cSt::stateStk;
    end if;
     env2 := ENV(cTok,nTk,stateStk,errStk,errSt,sSt,cSt,prog,prgBk,astStk,debug,stateSkBk,astSkBk);
    

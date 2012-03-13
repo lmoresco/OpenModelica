@@ -20,37 +20,37 @@ package ParserGenerator
     //open bison file
     if (outFileName<>"" and stringLength(outFileName)<15) then
       if (debug==true) then
-	       print("\nGenerating Parser from " + bisonFile);
-	    end if;   
-	    bisonCode := System.readFile(bisonFile);
-	    print("\nReading BISON grammar file " + bisonFile);
-	    res1 := buildParseTable(bisonCode,"ParseTable" + outFileName);
-	    if (debug==true) then
-	       print("\nGenerating Token from " + bisonFile);
-	    end if;   
-	    res2 := buildTokens(bisonCode,"Token" + outFileName);
-	    if (debug==true) then
-	      print("\nGenerating ParserCode from " + bisonFile);
-	    end if;  
-	    res3 := buildParserCode(bisonCode,grammarFile,outFileName);
-	    if (debug==true) then
-	       print("\nBuild Parser ...");
-	    end if;   
-	    res4 := buildParser(outFileName);
-	    
-	    result := "Parser Built";
-	    if (res1==false) then
-	       result := result + "\nParseTable"+ outFileName +".mo could not be generated."; 
-	    end if;
-	    if (res2==false) then
-	       result := result + "\nToken"+ outFileName +".mo could not be generated."; 
-	    end if;
-	    if (res3==false) then
-	       result := result + "\nParseCode"+ outFileName +".mo could not be generated."; 
-	    end if;
-	    if (res4==false) then
-	       result := result + "\nParser"+ outFileName +".mo could not be generated."; 
-	    end if;
+         print("\nGenerating Parser from " + bisonFile);
+      end if;   
+      bisonCode := System.readFile(bisonFile);
+      print("\nReading BISON grammar file " + bisonFile);
+      res1 := buildParseTable(bisonCode,"ParseTable" + outFileName);
+      if (debug==true) then
+         print("\nGenerating Token from " + bisonFile);
+      end if;   
+      res2 := buildTokens(bisonCode,"Token" + outFileName);
+      if (debug==true) then
+        print("\nGenerating ParserCode from " + bisonFile);
+      end if;  
+      res3 := buildParserCode(bisonCode,grammarFile,outFileName);
+      if (debug==true) then
+         print("\nBuild Parser ...");
+      end if;   
+      res4 := buildParser(outFileName);
+      
+      result := "Parser Built";
+      if (res1==false) then
+         result := result + "\nParseTable"+ outFileName +".mo could not be generated."; 
+      end if;
+      if (res2==false) then
+         result := result + "\nToken"+ outFileName +".mo could not be generated."; 
+      end if;
+      if (res3==false) then
+         result := result + "\nParseCode"+ outFileName +".mo could not be generated."; 
+      end if;
+      if (res4==false) then
+         result := result + "\nParser"+ outFileName +".mo could not be generated."; 
+      end if;
     else
       result := "Parser can not be generated. Invalid name";
     end if;
@@ -105,7 +105,7 @@ package ParserGenerator
     ar1 := System.stringFindString(grammarFile,re);
     ar1 := System.substring(ar1,3,stringLength(ar1));
     ar1 := System.stringFindString(ar1,re);
-	  ar1 := System.substring(ar1,3,stringLength(ar1));
+    ar1 := System.substring(ar1,3,stringLength(ar1));
     parserCodeIncluded := System.stringReplace(parserCodeIncluded,"%epilogue%",ar1);
     
   
@@ -140,57 +140,57 @@ package ParserGenerator
       end if;   
       numRules := findValue(bisonCode,"YYNRULES");
       re := "switch (yyn)";
-		  rest := System.stringFindString(bisonCode,re);
-		  
+      rest := System.stringFindString(bisonCode,re);
+      
       for i in 2:numRules loop
         cp := "\n       case (";
-		    resTable := cp::resTable;
-		    cp := intString(i);
-		    resTable := cp::resTable;
-		    cp := ",_) // ";
-		    resTable := cp::resTable;
-		    
-		    re := "case " + intString(i) + ":";
-		    if (debug==true) then
-		       print("\n" + re);
-		       printAny("\n" + re);  
-		    end if;   
-		    pos := System.stringFind(bisonCode,re);
-		    if (pos<0) then
-		        print("\nError in rule " + intString(i) + ". Case not found."); 
-		    end if;
-		    rest := System.stringFindString(bisonCode,re);
-		    
-		    re := "#line";
-		    pos := System.stringFind(rest,re);
-		    pos2 := System.stringFind(rest,".y");
-		    cp := System.substring(rest,pos+1,pos2+3); 
-		    resTable := cp::resTable;
-		    pos2 := System.stringFind(rest,";}");
-		    rest := System.substring(rest,1,pos2+3);
-		    //re := "{[^}]*;}";
-		    re := "{.*;}";
-		    (numMatches,resultRegex) := System.regex(rest,re,1,false,false);
-		    rest::_ := resultRegex;
-		    if (numMatches > 0) then
-		        cp := "\n         equation \n";
-		        resTable := cp::resTable;
-		        if (debug==true) then
-				       print("\n Rule:" + rest);
-				    end if;   
-				    (cp,numReduce,types) := processRule(rest,types);
-				    if (maxReduce < numReduce) then
-				        maxReduce := numReduce;
-				    end if;
-		        resTable := cp::resTable;
-		        cp := "\n           then ();\n ";
-		        resTable := cp::resTable;
-				else
-				  if (debug==true) then
-				    print("\nNot Found");
-				  end if;  
-		    end if;
-		     
+        resTable := cp::resTable;
+        cp := intString(i);
+        resTable := cp::resTable;
+        cp := ",_) // ";
+        resTable := cp::resTable;
+        
+        re := "case " + intString(i) + ":";
+        if (debug==true) then
+           print("\n" + re);
+           printAny("\n" + re);  
+        end if;   
+        pos := System.stringFind(bisonCode,re);
+        if (pos<0) then
+            print("\nError in rule " + intString(i) + ". Case not found."); 
+        end if;
+        rest := System.stringFindString(bisonCode,re);
+        
+        re := "#line";
+        pos := System.stringFind(rest,re);
+        pos2 := System.stringFind(rest,".y");
+        cp := System.substring(rest,pos+1,pos2+3); 
+        resTable := cp::resTable;
+        pos2 := System.stringFind(rest,";}");
+        rest := System.substring(rest,1,pos2+3);
+        //re := "{[^}]*;}";
+        re := "{.*;}";
+        (numMatches,resultRegex) := System.regex(rest,re,1,false,false);
+        rest::_ := resultRegex;
+        if (numMatches > 0) then
+            cp := "\n         equation \n";
+            resTable := cp::resTable;
+            if (debug==true) then
+               print("\n Rule:" + rest);
+            end if;   
+            (cp,numReduce,types) := processRule(rest,types);
+            if (maxReduce < numReduce) then
+                maxReduce := numReduce;
+            end if;
+            resTable := cp::resTable;
+            cp := "\n           then ();\n ";
+            resTable := cp::resTable;
+        else
+          if (debug==true) then
+            print("\nNot Found");
+          end if;  
+        end if;
+         
      
       end for;
         resTable := listReverse(resTable);
@@ -285,15 +285,15 @@ package ParserGenerator
          resTable := cp::resTable; 
        else
          i := numTk;   
-	       while (i>0) loop
-	           cp := reduceToken(rule,i);
-	           resTable := cp::resTable;
-	           typeTok := findTypeToken(rule,i);
-	           if (Util.listContains(typeTok,types2)==false) then
-	               types2 := typeTok::types2;
-	           end if;
-	         i := i-1;
-	       end while;
+         while (i>0) loop
+             cp := reduceToken(rule,i);
+             resTable := cp::resTable;
+             typeTok := findTypeToken(rule,i);
+             if (Util.listContains(typeTok,types2)==false) then
+                 types2 := typeTok::types2;
+             end if;
+           i := i-1;
+         end while;
        end if;
        
        cp := "           // build \n";
@@ -310,53 +310,53 @@ package ParserGenerator
          
          cp := rule;
          if (numTk>0) then 
-		       for i in 1:numTk loop
-		           cp := replaceTokenVal(cp,i);
-		           if (debug==true) then
-		              print("\n" + cp);
-		           end if;   
-		       end for;
-		     end if;
-	       //replace result type
-	       re := "(yyval)[" + tokRes + "]";
-	       cp := System.stringReplace(cp,re,"v" + tokRes);
-	       if (tokRes=="String") then // default token
-	          re := "(yyval)";
-	          cp := System.stringReplace(cp,re,"v" + tokRes);
-	       end if;
+           for i in 1:numTk loop
+               cp := replaceTokenVal(cp,i);
+               if (debug==true) then
+                  print("\n" + cp);
+               end if;   
+           end for;
+         end if;
+         //replace result type
+         re := "(yyval)[" + tokRes + "]";
+         cp := System.stringReplace(cp,re,"v" + tokRes);
+         if (tokRes=="String") then // default token
+            re := "(yyval)";
+            cp := System.stringReplace(cp,re,"v" + tokRes);
+         end if;
          cp := System.stringReplace(cp,";}","");
          cp := System.stringReplace(cp,"{ ","           ");
          if (debug==true) then
-	          print("\n replaceTokenVal:" + cp);
-	       end if;   
-	       resTable := cp::resTable;
-	       cp := "\n           // push Result \n           ";
-	       resTable := cp::resTable;
-	       cp := "sk" +tokRes + "= v" + tokRes + "::sk" + tokRes + "; \n";
-	       resTable := cp::resTable; 
-	     else
-	         // root node
-	        cp := rule;
-	       if (numTk>0) then 
-		       for i in 1:numTk loop
-		           cp := replaceTokenVal(cp,i);
-		           if (debug==true) then
-		             print("\n" + cp);
-		           end if;  
-		       end for;
-		     end if;  
-	       //replace result type
-	       re := "{ (absyntree)[" + tokRes + "]";
-	       cp := System.stringReplace(cp,re,"           v" + tokRes);
+            print("\n replaceTokenVal:" + cp);
+         end if;   
+         resTable := cp::resTable;
+         cp := "\n           // push Result \n           ";
+         resTable := cp::resTable;
+         cp := "sk" +tokRes + "= v" + tokRes + "::sk" + tokRes + "; \n";
+         resTable := cp::resTable; 
+       else
+           // root node
+          cp := rule;
+         if (numTk>0) then 
+           for i in 1:numTk loop
+               cp := replaceTokenVal(cp,i);
+               if (debug==true) then
+                 print("\n" + cp);
+               end if;  
+           end for;
+         end if;  
+         //replace result type
+         re := "{ (absyntree)[" + tokRes + "]";
+         cp := System.stringReplace(cp,re,"           v" + tokRes);
          cp := System.stringReplace(cp,";}","");
          if (debug==true) then
-	          print("\n replaceTokenRoot:" + cp);
-	       end if;    
-	       resTable := cp::resTable;
-	       cp := "\n           // push Result \n           ";
-	       resTable := cp::resTable;
-	       cp := "sk" +tokRes + "= v" + tokRes + "::sk" + tokRes + "; \n";
-	       resTable := cp::resTable;  
+            print("\n replaceTokenRoot:" + cp);
+         end if;    
+         resTable := cp::resTable;
+         cp := "\n           // push Result \n           ";
+         resTable := cp::resTable;
+         cp := "sk" +tokRes + "= v" + tokRes + "::sk" + tokRes + "; \n";
+         resTable := cp::resTable;  
        end if;
        
       
@@ -415,13 +415,13 @@ package ParserGenerator
     pos := System.stringFind(rule,re);
     if (pos>=0) then
       rest := System.stringFindString(rule,re);
-	    pos2 := System.stringFind(rest,"]");
-	    typeTok := System.substring(rest,stringLength(re)+1,pos2);
+      pos2 := System.stringFind(rest,"]");
+      typeTok := System.substring(rest,stringLength(re)+1,pos2);
     elseif (posAST>=0) then
-	    re := "(absyntree)[";
-	    rest := System.stringFindString(rule,re);
-	    pos2 := System.stringFind(rest,"]");
-	    typeTok := System.substring(rest,stringLength(re)+1,pos2);
+      re := "(absyntree)[";
+      rest := System.stringFindString(rule,re);
+      pos2 := System.stringFind(rest,"]");
+      typeTok := System.substring(rest,stringLength(re)+1,pos2);
     else
       if (pos2>=0) then
          typeTok := "String";
@@ -469,15 +469,15 @@ package ParserGenerator
     if (pos<0) then
        num := 0;
     else
-	    rest := System.stringFindString(rule,re);
-	    pos2 := System.stringFind(rest,")]");
-	    
-	    val := System.substring(rest,stringLength(re)+1,pos2);
-	    if (debug==true) then
-	       print("\n found numTokens:" + val);
-	    end if;    
-	    num := stringInt(val);
-	  end if;    
+      rest := System.stringFindString(rule,re);
+      pos2 := System.stringFind(rest,")]");
+      
+      val := System.substring(rest,stringLength(re)+1,pos2);
+      if (debug==true) then
+         print("\n found numTokens:" + val);
+      end if;    
+      num := stringInt(val);
+    end if;    
   end numTokens;
   
  function findValue
@@ -514,9 +514,9 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,"{");
-	    pos2 := System.stringFind(rest,"}");
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,"{");
+      pos2 := System.stringFind(rest,"}");
     end if;
     rest := System.substring(rest,pos1+2,pos2-4);
     tokens := System.strtok(rest,",");
@@ -639,11 +639,11 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable;
     end if;
    
     cp := "};\n\nconstant list<Integer> yyprhs = {\n"; 
@@ -653,11 +653,11 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable;
     end if;  
     
     cp := "};\n\nconstant list<Integer> yyrhs = "; 
@@ -667,11 +667,11 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,"{");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+1,pos2+1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,"{");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+1,pos2+1); 
+      resTable := ar1::resTable;
     end if; 
        
     cp := ";\n\nconstant list<Integer> yyrline :=  {\n"; 
@@ -681,12 +681,12 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable;
-	  end if;  
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable;
+    end if;  
     
   cp := "};\n\nconstant list<String> yytname = {\n"; 
     resTable := cp::resTable;
@@ -697,11 +697,11 @@ package ParserGenerator
     rest::_ := resultRegex;
     //print("\nNumMatches:" + intString(numMatches) + "\n" + rest);
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,", 0");
-	    ar1 := System.substring(rest,pos1+2,pos2); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,", 0");
+      ar1 := System.substring(rest,pos1+2,pos2); 
+      resTable := ar1::resTable;
     end if;
   
     cp := "};\n\nconstant list<Integer> yytoknum = {\n"; 
@@ -711,11 +711,11 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable;
     end if;
   
     cp := "};\n\nconstant list<Integer> yyr1 = {\n"; 
@@ -725,11 +725,11 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable;
     end if;
   
     cp := "};\n\nconstant list<Integer> yyr2 = {\n"; 
@@ -739,12 +739,12 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable; 
-	  end if;  
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable; 
+    end if;  
     
     cp := "};\n\nconstant list<Integer> yydefact = "; 
     resTable := cp::resTable;
@@ -753,12 +753,12 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,"{");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+1,pos2+1); 
-	    resTable := ar1::resTable;
-	  end if;  
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,"{");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+1,pos2+1); 
+      resTable := ar1::resTable;
+    end if;  
 
     cp := ";\n\nconstant list<Integer> yydefgoto = "; 
     resTable := cp::resTable;
@@ -767,11 +767,11 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,"{");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+1,pos2+1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,"{");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+1,pos2+1); 
+      resTable := ar1::resTable;
     end if; 
        
     cp := ";\n\nconstant list<Integer> yypact = "; 
@@ -781,11 +781,11 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,"{");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+1,pos2+1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,"{");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+1,pos2+1); 
+      resTable := ar1::resTable;
     end if;
   
     cp := ";\n\nconstant list<Integer> yypgoto = "; 
@@ -795,11 +795,11 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,"{");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+1,pos2+1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,"{");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+1,pos2+1); 
+      resTable := ar1::resTable;
     end if;
   
     cp := ";\n\nconstant list<Integer> yytable = "; 
@@ -809,11 +809,11 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,"{");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+1,pos2+1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,"{");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+1,pos2+1); 
+      resTable := ar1::resTable;
     end if;
         
     cp := ";\n\nconstant list<Integer> yycheck ="; 
@@ -823,11 +823,11 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then    
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,"{");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+1,pos2+1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,"{");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+1,pos2+1); 
+      resTable := ar1::resTable;
     end if;
   
     cp := ";\n\nconstant list<Integer> yystos = "; 
@@ -837,11 +837,11 @@ package ParserGenerator
     (numMatches,resultRegex) := System.regex(bisonCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then 
-	    //rest := System.stringFindString(bisonCode,re);
-	    pos1 := System.stringFind(rest,"{");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := System.substring(rest,pos1+1,pos2+1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(bisonCode,re);
+      pos1 := System.stringFind(rest,"{");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := System.substring(rest,pos1+1,pos2+1); 
+      resTable := ar1::resTable;
     end if;
                     
     cp := ";\n\nend " + outFileName + ";";
@@ -881,12 +881,12 @@ public function substring3
      chars := stringListStringChar(inString);
      for i in 1:stop loop
         c::chars := chars;
-		    if (i>=start) then
-		       result := c::result;
-		    end if;
-		 end for;
-		 result := listReverse(result);
-		 outString := stringCharListString(result);  
+        if (i>=start) then
+           result := c::result;
+        end if;
+     end for;
+     result := listReverse(result);
+     outString := stringCharListString(result);  
   end substring3; 
 
 end ParserGenerator;

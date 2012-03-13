@@ -29,12 +29,12 @@ algorithm
          0 = System.systemCall("bison parser" + parser +".y --output=parser" + parser +".c");
            
          str = LexerGenerator.genLexer("lexer"+ parser +".c", "lexer"+ parser +".l", parser);
-	       print("\nResult:" + str);
-	       str = ParserGenerator.genParser("parser"+ parser +".c","parser"+ parser +".y",parser);
-  	     print("\nResult:" + str); 
+         print("\nResult:" + str);
+         str = ParserGenerator.genParser("parser"+ parser +".c","parser"+ parser +".y",parser);
+         print("\nResult:" + str); 
  
-	      
-  	    print("\n 9 Files Generated for the language grammar:" + parser);
+        
+        print("\n 9 Files Generated for the language grammar:" + parser);
          printUsage();
       then ();
   case _

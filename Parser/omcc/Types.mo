@@ -130,8 +130,8 @@ function printTokens
    algorithm 
      outList := "";
      while (Util.isListEmpty(inList)==false) loop
-	     c::inList := inList;
-	     outList := outList + printToken(c);
+       c::inList := inList;
+       outList := outList + printToken(c);
      end while; 
   end printTokens; 
   

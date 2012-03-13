@@ -22,20 +22,20 @@ package LexerGenerator
     end if;  
     if (outFileName<>"" and stringLength(outFileName)<15) then
       print("\nReading FLEX grammar file " + flexFile +" ...");
-	    flexCode := System.readFile(flexFile);
-	    if (debug==true) then
-	      print("\nBuild Lex Table ...");
-      end if;	      
-	    resBol := buildLexTable(flexCode,"LexTable" + outFileName);
-	    if (debug==true) then
-	       print("\nBuild Lexer ...");
-	    end if;   
-	    resBol := buildLexer(outFileName);
-	    if (debug==true) then
-	       print("\nBuild LexerCode ...");
-	    end if;
-	    resBol := buildLexerCode(flexCode,grammarFile,outFileName);
-	    result := "Lexer Built";
+      flexCode := System.readFile(flexFile);
+      if (debug==true) then
+        print("\nBuild Lex Table ...");
+      end if;        
+      resBol := buildLexTable(flexCode,"LexTable" + outFileName);
+      if (debug==true) then
+         print("\nBuild Lexer ...");
+      end if;   
+      resBol := buildLexer(outFileName);
+      if (debug==true) then
+         print("\nBuild LexerCode ...");
+      end if;
+      resBol := buildLexerCode(flexCode,grammarFile,outFileName);
+      result := "Lexer Built";
     else
       result := "Invalid language grammar name";
     end if;
@@ -75,7 +75,7 @@ package LexerGenerator
     ar1 := System.stringFindString(grammarFile,re);
     ar1 := System.substring(ar1,3,stringLength(ar1));
     ar1 := System.stringFindString(ar1,re);
-	  ar1 := System.substring(ar1,3,stringLength(ar1));
+    ar1 := System.substring(ar1,3,stringLength(ar1));
     lexerCodeIncluded := System.stringReplace(lexerCodeIncluded,"%epilogue%",ar1);
     
   
@@ -106,107 +106,107 @@ package LexerGenerator
       //print("\nFind value ...");
       numRules := findValue(flexCode,"YY_NUM_RULES");
       re := "/* beginning of action switch */";
-		  rest := System.stringFindString(flexCode,re);
-		  if (debug==true) then
-		      print("\nbeginning of action switch"); 
-		    end if; 
+      rest := System.stringFindString(flexCode,re);
+      if (debug==true) then
+          print("\nbeginning of action switch"); 
+        end if; 
       for i in 1:numRules loop
         cp := "       case (";
-		    resTable := cp::resTable;
-		    cp := intString(i);
-		    resTable := cp::resTable;
-		    cp := ") // ";
-		    resTable := cp::resTable;
-		    
-		    re := "case " + intString(i) + ":";
-		    rest := System.stringFindString(flexCode,re);
-		    if (debug==true) then
-		      print("\n" +re); 
-		    end if; 
-		    re := "#line";
-		    pos := System.stringFind(rest,re);
-		    pos2 := System.stringFind(rest,".l");
-		    cp := substring2(rest,pos+1,pos2+3); 
-		    resTable := cp::resTable;
-		    //posReturn,posKeepBuffer,posBreak
-		    posReturn := System.stringFind(rest,"return ");
-		    posBreak := System.stringFind(rest,"YY_BREAK");
-		    posBegin := System.stringFind(rest,"BEGIN");
-		    posKeepBuffer := System.stringFind(rest,"keepBuffer");
-		    posCode := System.stringFind(rest,";}");
-		    //print("\n posR:" + intString(posReturn) + ":" + "posBr:" + intString(posBreak) + ":" + "posB:" + intString(posBegin) + ":" + "posC:" + intString(posCode) ); 
-		    
-		    cp := "\n         equation";
-				resTable := cp::resTable;
-				if (posBreak > posReturn or (posBreak > posCode and posCode>0)) then
-					cp := "\n           info = Lexer"+ outFileName +".getInfo(tb,mm_sPos,mm_linenr,fileNm);";
-			    resTable := cp::resTable;
-			  end if;
-		    if (posBegin < posBreak and posBegin>=0) then // starts BEGIN switch start state
-				    // find token
+        resTable := cp::resTable;
+        cp := intString(i);
+        resTable := cp::resTable;
+        cp := ") // ";
+        resTable := cp::resTable;
+        
+        re := "case " + intString(i) + ":";
+        rest := System.stringFindString(flexCode,re);
+        if (debug==true) then
+          print("\n" +re); 
+        end if; 
+        re := "#line";
+        pos := System.stringFind(rest,re);
+        pos2 := System.stringFind(rest,".l");
+        cp := substring2(rest,pos+1,pos2+3); 
+        resTable := cp::resTable;
+        //posReturn,posKeepBuffer,posBreak
+        posReturn := System.stringFind(rest,"return ");
+        posBreak := System.stringFind(rest,"YY_BREAK");
+        posBegin := System.stringFind(rest,"BEGIN");
+        posKeepBuffer := System.stringFind(rest,"keepBuffer");
+        posCode := System.stringFind(rest,";}");
+        //print("\n posR:" + intString(posReturn) + ":" + "posBr:" + intString(posBreak) + ":" + "posB:" + intString(posBegin) + ":" + "posC:" + intString(posCode) ); 
+        
+        cp := "\n         equation";
+        resTable := cp::resTable;
+        if (posBreak > posReturn or (posBreak > posCode and posCode>0)) then
+          cp := "\n           info = Lexer"+ outFileName +".getInfo(tb,mm_sPos,mm_linenr,fileNm);";
+          resTable := cp::resTable;
+        end if;
+        if (posBegin < posBreak and posBegin>=0) then // starts BEGIN switch start state
+            // find token
             pos := System.stringFind(rest,"(");
-				    pos2 := System.stringFind(rest,")");
-				    cp := substring2(rest,pos+2,pos2); 
-				   
+            pos2 := System.stringFind(rest,")");
+            cp := substring2(rest,pos+2,pos2); 
+           
             valBegin := findValue(flexCode,cp);
             valBegin := 1+2*valBegin;
             if (debug==true) then
-				       print("\n BEGIN at" + intString(valBegin));
-				    end if; 
+               print("\n BEGIN at" + intString(valBegin));
+            end if; 
             cp := "\n           mm_startSt = " + intString(valBegin) +";";
-				    resTable := cp::resTable;
-				end if; 
-				
-				if (posKeepBuffer < posBreak and posKeepBuffer>=0) then // starts keepbuffer switch start state
-				    // print keep buffer
-				    if (debug==true) then
-				       print("\n keepbuffer");
-				    end if; 
-				    
+            resTable := cp::resTable;
+        end if; 
+        
+        if (posKeepBuffer < posBreak and posKeepBuffer>=0) then // starts keepbuffer switch start state
+            // print keep buffer
+            if (debug==true) then
+               print("\n keepbuffer");
+            end if; 
+            
             cp := "\n           bufferRet = buffer;";
-				    resTable := cp::resTable;
-				end if;
-				
-				if (posBreak > posCode and posCode>0) then
-		        if (debug==true) then
-				       print("\nFound code");
-				    end if; 
-		        re := "{.*;}";
-				    (numMatches,resultRegex) := System.regex(rest,re,1,false,false);
-				    code::_ := resultRegex;
-				    code := System.substring(code,2,stringLength(code)-2);
-				    cp := "\n          ";
-				    resTable := cp::resTable;  
-				    resTable := code::resTable;
+            resTable := cp::resTable;
+        end if;
+        
+        if (posBreak > posCode and posCode>0) then
+            if (debug==true) then
+               print("\nFound code");
+            end if; 
+            re := "{.*;}";
+            (numMatches,resultRegex) := System.regex(rest,re,1,false,false);
+            code::_ := resultRegex;
+            code := System.substring(code,2,stringLength(code)-2);
+            cp := "\n          ";
+            resTable := cp::resTable;  
+            resTable := code::resTable;
         end if;
       
-				if (debug==true) then
-				   print("\nSearch return");
-				end if;  
-		   if (posBreak > posReturn) then
-		        cp := "\n           act2 = Token";
-				    resTable := cp::resTable;  
-				    resTable := outFileName::resTable;
-				    cp := ".";
-				    resTable := cp::resTable;
-				    // find token
-				    temp := System.stringFindString(rest,"return");
-				    pos2 := System.stringFind(temp,";");
-				    cp := substring2(temp,8,pos2);
-				    if (debug==true) then
-				       print("\nFound token:" + cp);
-				    end if;    
-		        resTable := cp::resTable;
-		        
-		        cp := ";\n           tok = OMCCTypes.TOKEN(tokName[act2-nameSpan],act2,listReverse(buffer),info);\n         then (SOME(tok));\n ";
-		        resTable := cp::resTable;
-				else
-				    //print("NONE");
-		        cp := "\n         then (NONE());\n";
-				    resTable := cp::resTable;  
-		    end if;
-		    
-		    
+        if (debug==true) then
+           print("\nSearch return");
+        end if;  
+       if (posBreak > posReturn) then
+            cp := "\n           act2 = Token";
+            resTable := cp::resTable;  
+            resTable := outFileName::resTable;
+            cp := ".";
+            resTable := cp::resTable;
+            // find token
+            temp := System.stringFindString(rest,"return");
+            pos2 := System.stringFind(temp,";");
+            cp := substring2(temp,8,pos2);
+            if (debug==true) then
+               print("\nFound token:" + cp);
+            end if;    
+            resTable := cp::resTable;
+            
+            cp := ";\n           tok = OMCCTypes.TOKEN(tokName[act2-nameSpan],act2,listReverse(buffer),info);\n         then (SOME(tok));\n ";
+            resTable := cp::resTable;
+        else
+            //print("NONE");
+            cp := "\n         then (NONE());\n";
+            resTable := cp::resTable;  
+        end if;
+        
+        
       end for;
         resTable := listReverse(resTable);
         caseAction := stringCharListString(resTable);
@@ -304,14 +304,14 @@ package LexerGenerator
     (numMatches,resultRegex) := System.regex(flexCode,re,1,false,false);
     ar1::_ := resultRegex;
     if (numMatches > 0) then
-	    pos1 := System.stringFind(ar1,",");
-	    pos2 := System.stringFind(ar1,"}");
-	    ar1 := substring2(ar1,pos1+2,pos2-1); 
+      pos1 := System.stringFind(ar1,",");
+      pos2 := System.stringFind(ar1,"}");
+      ar1 := substring2(ar1,pos1+2,pos2-1); 
     else
       ar1 := "";
     end if;
-	  resTable := ar1::resTable;
-	    
+    resTable := ar1::resTable;
+      
     
     cp := "};\n\nconstant list<Integer> yy_accept := {"; 
     resTable := cp::resTable;
@@ -319,11 +319,11 @@ package LexerGenerator
     (numMatches,resultRegex) := System.regex(flexCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(flexCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := substring2(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(flexCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := substring2(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable;
     end if; 
     cp := "};\n\nconstant list<Integer> yy_ec := {"; 
     resTable := cp::resTable;
@@ -332,11 +332,11 @@ package LexerGenerator
     (numMatches,resultRegex) := System.regex(flexCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(flexCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := substring2(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(flexCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := substring2(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable;
     end if;
     cp := "};\n\nconstant list<Integer> yy_meta := {"; 
     resTable := cp::resTable;
@@ -345,11 +345,11 @@ package LexerGenerator
     (numMatches,resultRegex) := System.regex(flexCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(flexCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := substring2(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(flexCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := substring2(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable;
     end if;
     
     cp := "};\n\nconstant list<Integer> yy_base := {"; 
@@ -360,11 +360,11 @@ package LexerGenerator
     (numMatches,resultRegex) := System.regex(flexCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(flexCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := substring2(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(flexCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := substring2(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable;
     end if;
     
     cp := "};\n\nconstant list<Integer> yy_def := {"; 
@@ -374,11 +374,11 @@ package LexerGenerator
     (numMatches,resultRegex) := System.regex(flexCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(flexCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := substring2(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(flexCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := substring2(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable;
     end if;
   
     cp := "};\n\nconstant list<Integer> yy_nxt := {"; 
@@ -391,11 +391,11 @@ package LexerGenerator
        print("\nREST next" + rest);
     end if;   
     if (numMatches > 0) then
-	    //rest := System.stringFindString(flexCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := substring2(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable;
+      //rest := System.stringFindString(flexCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := substring2(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable;
     end if;
   
     cp := "};\n\nconstant list<Integer> yy_chk := {"; 
@@ -405,11 +405,11 @@ package LexerGenerator
     (numMatches,resultRegex) := System.regex(flexCode,re,1,false,false);
     rest::_ := resultRegex;
     if (numMatches > 0) then
-	    //rest := System.stringFindString(flexCode,re);
-	    pos1 := System.stringFind(rest,",");
-	    pos2 := System.stringFind(rest,"}");
-	    ar1 := substring2(rest,pos1+2,pos2-1); 
-	    resTable := ar1::resTable; 
+      //rest := System.stringFindString(flexCode,re);
+      pos1 := System.stringFind(rest,",");
+      pos2 := System.stringFind(rest,"}");
+      ar1 := substring2(rest,pos1+2,pos2-1); 
+      resTable := ar1::resTable; 
     end if;
    
            
@@ -449,12 +449,12 @@ public function substring2
      chars := stringListStringChar(inString);
      for i in 1:stop loop
         c::chars := chars;
-		    if (i>=start) then
-		       result := c::result;
-		    end if;
-		 end for;
-		 result := listReverse(result);
-		 outString := stringCharListString(result);  */
+        if (i>=start) then
+           result := c::result;
+        end if;
+     end for;
+     result := listReverse(result);
+     outString := stringCharListString(result);  */
   end substring2;
 
 end LexerGenerator;

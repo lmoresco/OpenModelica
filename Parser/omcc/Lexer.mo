@@ -123,13 +123,13 @@ algorithm
   
   tokens := {};
   if (debug) then
-	  print("\n TOTAL Chars:");
-		print(intString(listLength(program)));   
-	end if;
+    print("\n TOTAL Chars:");
+    print(intString(listLength(program)));   
+  end if;
   while (Util.isListEmpty(program)==false) loop
-	   if (debug) then 
-	     print("\nChars remaining:");
-	     print(intString(listLength(program)));   
+     if (debug) then 
+       print("\nChars remaining:");
+       print(intString(listLength(program)));   
      end if;
      cTok::program := program;
      cProg := {cTok};
@@ -228,28 +228,28 @@ algorithm
           baseCond = mm_base[mm_currSt];
           if (baseCond==mm_finish) then
              if (debug==true) then
-		          print("\n[RESTORE=" + intString(mm_accept[mm_currSt]) + "]");
-		        end if;  
-		        (env2,act) = findRule(lexTables,env2);
-		        
-		       
-		        
-		        (otok,env2) = LexerCode.action(act,env2);
-		        
-		        // read the env
-		        ENV(startSt=mm_startSt,currSt=mm_currSt,pos=mm_pos,sPos=mm_sPos,ePos=mm_ePos,
-		          linenr=mm_linenr,  buff=buffer,bkBuf=bkBuffer,stateSk=states,isDebugging=debug,fileName=fileNm) = env2;
-		     
-		        //restore the program
-		        program2 = bkBuffer;
-		        //restart current state
-		        env2 = ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_pos,mm_linenr,buffer,{},{mm_startSt},debug,fileNm);
-		        lToken = Util.listConsOption(otok,tokens);
-		        if(debug) then
-		          print("\n CountTokens:" + intString(listLength(lToken)));
-		        end if;
-		      else
-		         program2 = rest; // consume the character  
+              print("\n[RESTORE=" + intString(mm_accept[mm_currSt]) + "]");
+            end if;  
+            (env2,act) = findRule(lexTables,env2);
+            
+           
+            
+            (otok,env2) = LexerCode.action(act,env2);
+            
+            // read the env
+            ENV(startSt=mm_startSt,currSt=mm_currSt,pos=mm_pos,sPos=mm_sPos,ePos=mm_ePos,
+              linenr=mm_linenr,  buff=buffer,bkBuf=bkBuffer,stateSk=states,isDebugging=debug,fileName=fileNm) = env2;
+         
+            //restore the program
+            program2 = bkBuffer;
+            //restart current state
+            env2 = ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_pos,mm_linenr,buffer,{},{mm_startSt},debug,fileNm);
+            lToken = Util.listConsOption(otok,tokens);
+            if(debug) then
+              print("\n CountTokens:" + intString(listLength(lToken)));
+            end if;
+          else
+             program2 = rest; // consume the character  
           end if;
           
         then (lToken,program2);
