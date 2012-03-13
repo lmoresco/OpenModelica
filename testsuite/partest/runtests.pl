@@ -178,11 +178,12 @@ sub run_tests {
     if($withxml) {
       lock($xmlfile_mutex);
       my $filename = "$testsuite_root$test_full.result.xml";
-      my $data;
+      my $data = "";
       if (open my $fh, '<', $filename) {
         $data = do { local $/; <$fh> };
         $data = XML::Entities::numify('all', $data);
-      } else {
+      }
+      if ($data == "") {
         my $classname = $test_dir;
         # Replace ./abc/def with abc.def
         $classname =~ s,\./,,g;
@@ -190,7 +191,7 @@ sub run_tests {
         $data = "<testcase classname=\"$classname\" name=\"$test\"><failure type=\"Result not found\">Result xml-file not found</failure></testcase>";
         print "\nERROR: Result xml not found: $filename. Command was: $cmd. Retval is: $x. Cwd is: ".cwd()."\n";
       }
-      print $XMLOUT $data;
+      print $XMLOUT "$data\n";
     }
   }
 }
