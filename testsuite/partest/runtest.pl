@@ -282,15 +282,6 @@ if ($no_colour) {
 }
 
 if ($withxml) {
-  eval { require XML::Entities; 1; };
-
-  if(!$@) {
-    XML::Entities->import();
-  } else {
-    print "Error: Could not load XML::Entities module.\n";
-    exit 1;
-  }
-
   my $xml_log = ($sandbox_needed ? "../" : "") . "$test.result.xml";
   my $XMLOUT;
   open $XMLOUT, '>', $xml_log or die "Couldn't open result.xml: $!";
@@ -313,7 +304,11 @@ if ($withxml) {
       $data = 'Unknown result';
     } else {
       $data = do { local $/; <$fh> };
-      $data = XML::Entities::numify('all', $data);
+      $data =~ s/&/&amp;/g;
+      $data =~ s/</&lt;/g;
+      $data =~ s/>/&gt;/g;
+      $data =~ s/"/&quot;/g;
+      $data =~ s/'/&apos;/g;
     }
     print $XMLOUT $data;
     print $XMLOUT '</system-out>';
