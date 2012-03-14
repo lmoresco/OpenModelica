@@ -1,6 +1,17 @@
 A full copy of Modelica Standard Library 3.2 build 10:
  http://www.modelica.org/libraries/Modelica
 
+
+Added by adrpo for hkiel 
+OpenModelica r11414
+Author: hkiel
+Date: den 14 mars 2012 09:38:19
+Message:
+- replaced integers by their appropriate enumeration values
+----
+Modified : /trunk/libraries/Modelica 3.2/Electrical/Analog/Ideal.mo
+Modified : /trunk/libraries/Modelica 3.2/Electrical/Digital.mo
+
 Added by sjoelund.se, 2012-03-01
 Modelica/Electrical/Digital.mo x_delayed = integer(delay(x, delayTime)) => Integer(x_delayed) = integer(delay(Integer(x), delayTime));
 
