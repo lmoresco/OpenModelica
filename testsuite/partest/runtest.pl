@@ -213,9 +213,11 @@ enter_sandbox() if $sandbox_needed;
 chdir($test_dir) if !$sandbox_needed;
 
 my $fail_log = ($sandbox_needed ? "../" : "") . "$test.fail_log";
+my $xml_log = ($sandbox_needed ? "../" : "") . "$test.result.xml";
 
 # Clean up fail logs from previous runs.
 unlink("$fail_log");
+unlink("$xml_log") if $withxml;
 
 # Determine the full path to rtest.
 my $n = ($test_full =~ tr/\///) - ($sandbox_needed ? 0 : 1);
@@ -282,7 +284,6 @@ if ($no_colour) {
 }
 
 if ($withxml) {
-  my $xml_log = ($sandbox_needed ? "../" : "") . "$test.result.xml";
   my $XMLOUT;
   open $XMLOUT, '>', $xml_log or die "Couldn't open result.xml: $!";
   binmode $XMLOUT, ":encoding(UTF-8)";

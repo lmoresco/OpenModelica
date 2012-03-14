@@ -85,23 +85,6 @@ my @failed_tests :shared;
 my $testscript = cwd() . "/runtest.pl";
 my $testsuite_root = cwd() . "/../";
 my %test_map :shared;
-my $xmlfile_mutex :shared;
-my $XMLOUT;
-
-if ($withxml) {
-  eval { require XML::Entities; 1; };
-
-  if(!$@) {
-    XML::Entities->import();
-  } else {
-    print "Error: Could not load XML::Entities module.\n";
-    exit 1;
-  }
-
-  open $XMLOUT, '>', 'result.xml' or die "Couldn't open result.xml: $!";
-  binmode $XMLOUT;
-  print $XMLOUT "<testsuite>\n";
-}
 
 if($use_db) {
   tie (my %db_map, "MLDBM", "../runtest.db", O_RDWR|O_CREAT, 0664);
@@ -175,24 +158,6 @@ sub run_tests {
       lock(@failed_tests);
       push @failed_tests, $test_full;
     }
-    if($withxml) {
-      lock($xmlfile_mutex);
-      my $filename = "$testsuite_root$test_full.result.xml";
-      my $data = "";
-      if (open my $fh, '<', $filename) {
-        $data = do { local $/; <$fh> };
-        $data = XML::Entities::numify('all', $data);
-      }
-      if ($data !~ m,^<testcase.*</testcase,) {
-        my $classname = $test_dir;
-        # Replace ./abc/def with abc.def
-        $classname =~ s,\./,,g;
-        $classname =~ s,/,.,g;
-        $data = "<testcase classname=\"$classname\" name=\"$test\"><failure type=\"Result not found\">Result xml-file not found</failure></testcase>";
-        print "\nERROR: Result xml not found: $filename. Command was: $cmd. Retval is: $x. Cwd is: ".cwd(). "data is: $data\n";
-      }
-      print $XMLOUT "$data\n";
-    }
   }
 }
 
@@ -264,7 +229,32 @@ if($use_db) {
   %db_map = %test_map;
 }
 
+# Read the files in serial; seems to get issues otherwise
 if($withxml) {
+  open my $XMLOUT, '>', 'result.xml' or die "Couldn't open result.xml: $!";
+  binmode $XMLOUT, ":encoding(UTF-8)";
+  print $XMLOUT "<testsuite>\n";
+
+  foreach(@test_list) {
+    my $test_full = $_;
+    (my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
+    my $filename = "$testsuite_root$test_full.result.xml";
+    
+    my $data = "";
+    if (open my $fh, '<', $filename) {
+      $data = do { local $/; <$fh> };
+    }
+    if ($data !~ m,^<testcase.*</testcase,) {
+      my $classname = $test_dir;
+      # Replace ./abc/def with abc.def
+      $classname =~ s,\./,,g;
+      $classname =~ s,/,.,g;
+      $data = "<testcase classname=\"$classname\" name=\"$test\"><failure type=\"Result not found\">Result xml-file not found</failure></testcase>";
+      print "\nERROR: Result xml not found: $filename. Cwd is: ".cwd(). "data is: $data\n";
+    }
+    print $XMLOUT "$data";
+  }
+
   print $XMLOUT "</testsuite>\n";
 }
 
