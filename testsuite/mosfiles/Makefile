@@ -25,6 +25,7 @@ BuiltinMath.mos \
 Bug1687.mos \
 CheckEvents.mos \
 ComplexNumbers.mos \
+ComplexSystem.mos \
 ComplexTypeEquationCount.mos \
 ConstructFunc.mos \
 constantLinSys.mos \
