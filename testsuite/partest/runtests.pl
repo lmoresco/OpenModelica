@@ -231,7 +231,9 @@ if($use_db) {
 
 # Read the files in serial; seems to get issues otherwise
 if($withxml) {
-  open my $XMLOUT, '>', 'result.xml' or die "Couldn't open result.xml: $!";
+  unlink("result.xml");
+  unlink("partest/result.xml");
+  open my $XMLOUT, '>', "$testsuite_root/partest/result.xml" or die "Couldn't open result.xml: $!";
   binmode $XMLOUT, ":encoding(UTF-8)";
   print $XMLOUT "<testsuite>\n";
 
