@@ -285,7 +285,7 @@ if ($withxml) {
   my $xml_log = ($sandbox_needed ? "../" : "") . "$test.result.xml";
   my $XMLOUT;
   open $XMLOUT, '>', $xml_log or die "Couldn't open result.xml: $!";
-  binmode $XMLOUT;
+  binmode $XMLOUT, ":encoding(UTF-8)";
   my $classname = $test_dir;
   # Replace ./abc/def with abc.def
   $classname =~ s,\./,,g;
