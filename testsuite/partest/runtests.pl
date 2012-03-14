@@ -183,13 +183,13 @@ sub run_tests {
         $data = do { local $/; <$fh> };
         $data = XML::Entities::numify('all', $data);
       }
-      if ($data eq "") {
+      if ($data !~ m,^<testcase.*</testcase,) {
         my $classname = $test_dir;
         # Replace ./abc/def with abc.def
         $classname =~ s,\./,,g;
         $classname =~ s,/,.,g;
         $data = "<testcase classname=\"$classname\" name=\"$test\"><failure type=\"Result not found\">Result xml-file not found</failure></testcase>";
-        print "\nERROR: Result xml not found: $filename. Command was: $cmd. Retval is: $x. Cwd is: ".cwd()."\n";
+        print "\nERROR: Result xml not found: $filename. Command was: $cmd. Retval is: $x. Cwd is: ".cwd(). "data is: $data\n";
       }
       print $XMLOUT "$data\n";
     }
