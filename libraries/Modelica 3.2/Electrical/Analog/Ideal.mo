@@ -2540,7 +2540,7 @@ behavior is <b> not </b> modelled. The parameters are not temperature dependent.
    end for;
 
   algorithm
-    when (trig==4 or trig==8) then
+    when (trig==Modelica.Electrical.Digital.Interfaces.Logic.'1' or trig==Modelica.Electrical.Digital.Interfaces.Logic.'H') then
       z:=if u>VRefLow then integer((u-VRefLow)/(VRefHigh-VRefLow)*(2^N - 1) + 0.5) else 0;
       for i in 1:N loop
         y[i] :=if mod(z, 2) > 0 then L.'1' else L.'0';
