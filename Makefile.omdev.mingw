@@ -52,6 +52,16 @@ settings:
 omdev_extra_dlls:
 	echo Copying needed .dlls to the build/bin directory
 	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
+	(cp -puf $(OMDEV)/lib/omniORB-4.1.6-msvc-10/bin/x86_win32/omniORB416_vc10_rt.dll $(builddir_bin)/)
+	(cp -puf $(OMDEV)/lib/omniORB-4.1.6-msvc-10/bin/x86_win32/omnithread34_vc10_rt.dll $(builddir_bin)/)
+	(cp -puf $(OMDEV)/lib/omniORB-4.1.6-msvc-10/lib/x86_win32/_omnipy.pyd $(builddir_lib)/)
+	(cp -puf $(OMDEV)/lib/omniORB-4.1.6-msvc-10/lib/python/omniORB/__init__.py $(builddir_lib)/python/omniORB/)
+	(cp -puf $(OMDEV)/lib/omniORB-4.1.6-msvc-10/lib/python/omniORB/boxes_idl.py $(builddir_lib)/python/omniORB/)
+	(cp -puf $(OMDEV)/lib/omniORB-4.1.6-msvc-10/lib/python/omniORB/CORBA.py $(builddir_lib)/python/omniORB/)
+	(cp -puf $(OMDEV)/lib/omniORB-4.1.6-msvc-10/lib/python/omniORB/corbaidl_idl.py $(builddir_lib)/python/omniORB/)
+	(cp -puf $(OMDEV)/lib/omniORB-4.1.6-msvc-10/lib/python/omniORB/minorCodes.py $(builddir_lib)/python/omniORB/)
+	(cp -puf $(OMDEV)/lib/omniORB-4.1.6-msvc-10/lib/python/omniORB/PortableServer.py $(builddir_lib)/python/omniORB/)
+	(cp -puf $(OMDEV)/lib/omniORB-4.1.6-msvc-10/lib/python/omniORB/tcInternal.py $(builddir_lib)/python/omniORB/)
 	(cp -puf $(OMDEV)/tools/mingw/lib/libregex.a $(builddir_lib)/omc)
 	(cp -pf $(OMDEV)/lib/mico-msys-mingw/static/libmico2313.a $(builddir_lib)/omc/)
 	(cp -pufr $(OMDEV)/tools/xsltproc $(builddir_lib)/omc/libexec/)
