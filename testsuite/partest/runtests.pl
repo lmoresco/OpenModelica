@@ -246,13 +246,13 @@ if($withxml) {
     if (open my $fh, '<', $filename) {
       $data = do { local $/; <$fh> };
     }
-    if ($data !~ m,^<testcase.*</testcase,) {
+    if ($data !~ m,^<testcase.*>, || $data !~ m,</testcase>,) {
       my $classname = $test_dir;
       # Replace ./abc/def with abc.def
       $classname =~ s,\./,,g;
       $classname =~ s,/,.,g;
-      $data = "<testcase classname=\"$classname\" name=\"$test\"><failure type=\"Result not found\">Result xml-file not found</failure></testcase>";
       print "\nERROR: Result xml not found: $filename. Cwd is: ".cwd(). "data is: $data\n";
+      $data = "<testcase classname=\"$classname\" name=\"$test\"><failure type=\"Result not found\">Result xml-file not found</failure></testcase>";
     }
     print $XMLOUT "$data";
   }
