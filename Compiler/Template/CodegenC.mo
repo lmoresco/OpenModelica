@@ -10310,7 +10310,11 @@ algorithm
       Option<SimCode.SimulationSettings> i_sopt;
       list<String> i_makefileParams_libs;
       String i_modelInfo_directory;
-      String ret_7;
+      String ret_11;
+      Boolean ret_10;
+      Boolean ret_9;
+      Boolean ret_8;
+      Boolean ret_7;
       Boolean ret_6;
       Boolean ret_5;
       Tpl.Text l_extraCflags;
@@ -10383,13 +10387,17 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("MAINFILE=$(FILEPREFIX)"));
         ret_5 = Config.acceptMetaModelicaGrammar();
-        txt = fun_257(txt, ret_5);
+        ret_6 = Flags.isSet(Flags.GEN_DEBUG_SYMBOLS);
+        ret_7 = boolOr(ret_5, ret_6);
+        txt = fun_257(txt, ret_7);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".c\n",
                                     "MAINOBJ=$(FILEPREFIX)"
                                 }, false));
-        ret_6 = Config.acceptMetaModelicaGrammar();
-        txt = fun_258(txt, ret_6);
+        ret_8 = Config.acceptMetaModelicaGrammar();
+        ret_9 = Flags.isSet(Flags.GEN_DEBUG_SYMBOLS);
+        ret_10 = boolOr(ret_8, ret_9);
+        txt = fun_258(txt, ret_10);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".o\n",
                                     "GENERATEDFILES=$(MAINFILE) $(FILEPREFIX)_functions.c $(FILEPREFIX)_functions.h $(FILEPREFIX)_records.c $(FILEPREFIX).makefile\n",
@@ -10413,8 +10421,8 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeText(txt, l_libsPos2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) -linteractive $(SENDDATALIBS) "));
-        ret_7 = System.os();
-        txt = fun_259(txt, ret_7);
+        ret_11 = System.os();
+        txt = fun_259(txt, ret_11);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
@@ -11522,6 +11530,8 @@ algorithm
       String i_makefileParams_cxxcompiler;
       String i_makefileParams_ccompiler;
       list<String> i_makefileParams_libs;
+      Boolean ret_3;
+      Boolean ret_2;
       Boolean ret_1;
       Tpl.Text l_libsStr;
 
@@ -11575,7 +11585,9 @@ algorithm
                                 }, false));
         txt = Tpl.writeStr(txt, i_name);
         ret_1 = Config.acceptMetaModelicaGrammar();
-        txt = fun_285(txt, ret_1);
+        ret_2 = Flags.isSet(Flags.GEN_DEBUG_SYMBOLS);
+        ret_3 = boolOr(ret_1, ret_2);
+        txt = fun_285(txt, ret_3);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".c\n",
                                     "\n",
