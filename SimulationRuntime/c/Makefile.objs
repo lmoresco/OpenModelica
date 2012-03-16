@@ -27,7 +27,7 @@ gc/roots.h
 
 
 # Files for util functions
-UTIL_OBJS = base_array.o boolean_array.o division.o omc_error.o index_spec.o integer_array.o java_interface.o list.o memory_pool.o modelica_string.o modelinfo.o read_write.o read_matlab4.o real_array.o ringbuffer.o rtclock.o string_array.o utility.o varinfo.o
+UTIL_OBJS = base_array.o boolean_array.o omc_error.o division.o index_spec.o integer_array.o java_interface.o list.o memory_pool.o modelica_string.o modelinfo.o read_write.o read_matlab4.o real_array.o ringbuffer.o rtclock.o string_array.o utility.o varinfo.o
 UTIL_HFILES = base_array.h boolean_array.h division.h omc_error.h index_spec.h integer_array.h java_interface.h jni.h jni_md.h jni_md_solaris.h jni_md_windows.h list.h memory_pool.h modelica.h modelica_string.h modelinfo.h read_write.h read_matlab4.h real_array.h ringbuffer.h rtclock.h string_array.h utility.h varinfo.h 
 
 # Files for math-support 
