@@ -496,7 +496,7 @@ algorithm
                                     "#include \"openmodelica_func.h\"\n",
                                     "#include \"simulation_data.h\"\n",
                                     "#include \"simulation_runtime.h\"\n",
-                                    "#include \"error.h\"\n",
+                                    "#include \"omc_error.h\"\n",
                                     "\n",
                                     "#include <assert.h>\n",
                                     "#include <string.h>\n",

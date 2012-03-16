@@ -1612,7 +1612,7 @@ algorithm
                                     "#include \"openmodelica.h\"\n",
                                     "#include \"openmodelica_func.h\"\n",
                                     "#include \"simulation_data.h\"\n",
-                                    "#include \"error.h\"\n",
+                                    "#include \"omc_error.h\"\n",
                                     "#include \"fmiModelTypes.h\"\n",
                                     "#include \"fmiModelFunctions.h\"\n",
                                     "#include \""
