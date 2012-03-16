@@ -32,7 +32,7 @@ CC	= gcc
 CXX = g++
 IDL	= $(OMDEV)/bin/mico/idl
 IDLPYTHON = $(OMDEV)/lib/omniORB-4.1.6-msvc-10/bin/x86_win32/omniidl -bpython
-IDLPYTHONTARGET = $(builddir_share)/omc/scripts/ompython/omc_communication_idl.py
+IDLPYTHONTARGET = $(builddir_share)/omc/scripts/PythonInterface/stubs/omc_communication_idl.py
 CFLAGS	+= -I$(RMLINCLUDE) -I../../ -I$(top_builddir) -I$(top_builddir)/SimulationRuntime/c -I$(top_builddir)/SimulationRuntime/c/simulation/results -I$(top_builddir)/SimulationRuntime/c/util -I$(top_builddir)/SimulationRuntime/c/meta -I$(top_builddir)/SimulationRuntime/c/meta/gc -I../ $(CORBAINCL)
 CXXFLAGS = $(CFLAGS)
 

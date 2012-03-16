@@ -77,7 +77,7 @@ $(PROGP): omc_profiler
 
 install_scripts:
 	cd scripts; cp -puf $(SCRIPT_FILES) ../$(builddir_scripts)
-	cd scripts; cp -rp ompython/* ../$(builddir_scripts)/ompython
+	cd scripts; cp -rp PythonInterface/* ../$(builddir_scripts)/PythonInterface
 
 install: install_scripts # install_doc
 	cp OpenModelicaBootstrappingHeader.h $(top_builddir)/build/include/omc/
