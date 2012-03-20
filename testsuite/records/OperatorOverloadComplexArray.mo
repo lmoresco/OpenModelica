@@ -50,7 +50,7 @@ operator record Complex "Complex number with overloaded operators"
   
   operator '*'  " Multiplication"
   
-    function multiply "Multiply two complex numbers"
+    encapsulated function multiply "Multiply two complex numbers"
       import Complex;
       input Complex c1 "Complex number 1";
       input Complex c2 "Complex number 2";
