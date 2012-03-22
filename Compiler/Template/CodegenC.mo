@@ -42642,16 +42642,16 @@ end literalExpConstArrayVal;
 protected function lm_920
   input Tpl.Text in_txt;
   input list<SimCode.SimVar> in_items;
-  input Integer in_a_index;
+  input Integer in_a_eqIndex;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_items, in_a_index)
+  matchcontinue(in_txt, in_items, in_a_eqIndex)
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
-      Integer a_index;
+      Integer a_eqIndex;
       Integer x_i0;
       SimCode.SimVar i_var;
       DAE.ComponentRef ret_0;
@@ -42663,26 +42663,26 @@ algorithm
 
     case ( txt,
            i_var :: rest,
-           a_index )
+           a_eqIndex )
       equation
         x_i0 = Tpl.getIteri_i0(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("linearSystem"));
-        txt = Tpl.writeStr(txt, intString(a_index));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_crefs["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("equationInfo_crefs"));
+        txt = Tpl.writeStr(txt, intString(a_eqIndex));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.writeStr(txt, intString(x_i0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = &"));
         ret_0 = SimCode.varName(i_var);
         txt = cref(txt, ret_0);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("__varInfo;"));
         txt = Tpl.nextIter(txt);
-        txt = lm_920(txt, rest, a_index);
+        txt = lm_920(txt, rest, a_eqIndex);
       then txt;
 
     case ( txt,
            _ :: rest,
-           a_index )
+           a_eqIndex )
       equation
-        txt = lm_920(txt, rest, a_index);
+        txt = lm_920(txt, rest, a_eqIndex);
       then txt;
   end matchcontinue;
 end lm_920;
@@ -42690,16 +42690,16 @@ end lm_920;
 protected function lm_921
   input Tpl.Text in_txt;
   input list<DAE.ComponentRef> in_items;
-  input Integer in_a_index;
+  input Integer in_a_eqIndex;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_items, in_a_index)
+  matchcontinue(in_txt, in_items, in_a_eqIndex)
     local
       Tpl.Text txt;
       list<DAE.ComponentRef> rest;
-      Integer a_index;
+      Integer a_eqIndex;
       Integer x_i0;
       DAE.ComponentRef i_cr;
 
@@ -42710,25 +42710,25 @@ algorithm
 
     case ( txt,
            i_cr :: rest,
-           a_index )
+           a_eqIndex )
       equation
         x_i0 = Tpl.getIteri_i0(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("residualFunc"));
-        txt = Tpl.writeStr(txt, intString(a_index));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_crefs["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("equationInfo_crefs"));
+        txt = Tpl.writeStr(txt, intString(a_eqIndex));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.writeStr(txt, intString(x_i0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = &"));
         txt = cref(txt, i_cr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("__varInfo;"));
         txt = Tpl.nextIter(txt);
-        txt = lm_921(txt, rest, a_index);
+        txt = lm_921(txt, rest, a_eqIndex);
       then txt;
 
     case ( txt,
            _ :: rest,
-           a_index )
+           a_eqIndex )
       equation
-        txt = lm_921(txt, rest, a_index);
+        txt = lm_921(txt, rest, a_eqIndex);
       then txt;
   end matchcontinue;
 end lm_921;
@@ -42737,20 +42737,20 @@ protected function fun_922
   input Tpl.Text in_txt;
   input SimCode.SimEqSystem in_a_eq;
   input Tpl.Text in_a_preBuf;
-  input Integer in_a_i0;
+  input Integer in_a_eqIndex;
 
   output Tpl.Text out_txt;
   output Tpl.Text out_a_preBuf;
 algorithm
   (out_txt, out_a_preBuf) :=
-  matchcontinue(in_txt, in_a_eq, in_a_preBuf, in_a_i0)
+  matchcontinue(in_txt, in_a_eq, in_a_preBuf, in_a_eqIndex)
     local
       Tpl.Text txt;
       Tpl.Text a_preBuf;
-      Integer a_i0;
+      Integer a_eqIndex;
       list<DAE.ComponentRef> i_crefs;
-      list<SimCode.SimVar> i_vars;
       Integer i_index;
+      list<SimCode.SimVar> i_vars;
       DAE.ComponentRef i_cref;
       Integer ret_6;
       Integer ret_5;
@@ -42763,80 +42763,80 @@ algorithm
     case ( txt,
            SimCode.SES_RESIDUAL(exp = _),
            a_preBuf,
-           a_i0 )
+           a_eqIndex )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\"SES_RESIDUAL "));
-        txt = Tpl.writeStr(txt, intString(a_i0));
+        txt = Tpl.writeStr(txt, intString(a_eqIndex));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\",0,NULL"));
       then (txt, a_preBuf);
 
     case ( txt,
            SimCode.SES_SIMPLE_ASSIGN(cref = i_cref),
            a_preBuf,
-           a_i0 )
+           a_eqIndex )
       equation
         l_var = cref(Tpl.emptyTxt, i_cref);
         l_var = Tpl.writeTok(l_var, Tpl.ST_STRING("__varInfo"));
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING("const VAR_INFO** equationInfo_cref"));
-        a_preBuf = Tpl.writeStr(a_preBuf, intString(a_i0));
+        a_preBuf = Tpl.writeStr(a_preBuf, intString(a_eqIndex));
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING(" = (const VAR_INFO**)calloc(1,sizeof(VAR_INFO*));"));
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_NEW_LINE());
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING("equationInfo_cref"));
-        a_preBuf = Tpl.writeStr(a_preBuf, intString(a_i0));
+        a_preBuf = Tpl.writeStr(a_preBuf, intString(a_eqIndex));
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING("[0] = &"));
         a_preBuf = Tpl.writeText(a_preBuf, l_var);
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING(";"));
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_NEW_LINE());
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\"SES_SIMPLE_ASSIGN "));
-        txt = Tpl.writeStr(txt, intString(a_i0));
+        txt = Tpl.writeStr(txt, intString(a_eqIndex));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\",1,equationInfo_cref"));
-        txt = Tpl.writeStr(txt, intString(a_i0));
+        txt = Tpl.writeStr(txt, intString(a_eqIndex));
       then (txt, a_preBuf);
 
     case ( txt,
            SimCode.SES_ARRAY_CALL_ASSIGN(componentRef = _),
            a_preBuf,
-           a_i0 )
+           a_eqIndex )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\"SES_ARRAY_CALL_ASSIGN "));
-        txt = Tpl.writeStr(txt, intString(a_i0));
+        txt = Tpl.writeStr(txt, intString(a_eqIndex));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\",0,NULL"));
       then (txt, a_preBuf);
 
     case ( txt,
            SimCode.SES_ALGORITHM(statements = _),
            a_preBuf,
-           a_i0 )
+           a_eqIndex )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\"SES_ALGORITHM "));
-        txt = Tpl.writeStr(txt, intString(a_i0));
+        txt = Tpl.writeStr(txt, intString(a_eqIndex));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\", 0, NULL"));
       then (txt, a_preBuf);
 
     case ( txt,
            SimCode.SES_WHEN(left = _),
            a_preBuf,
-           a_i0 )
+           a_eqIndex )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\"SES_WHEN "));
-        txt = Tpl.writeStr(txt, intString(a_i0));
+        txt = Tpl.writeStr(txt, intString(a_eqIndex));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\", 0, NULL"));
       then (txt, a_preBuf);
 
     case ( txt,
-           SimCode.SES_LINEAR(index = i_index, vars = i_vars),
+           SimCode.SES_LINEAR(vars = i_vars, index = i_index),
            a_preBuf,
-           _ )
+           a_eqIndex )
       equation
-        a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING("const VAR_INFO** linearSystem"));
-        a_preBuf = Tpl.writeStr(a_preBuf, intString(i_index));
-        a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING("_crefs = (const VAR_INFO**)malloc("));
+        a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING("const VAR_INFO** equationInfo_crefs"));
+        a_preBuf = Tpl.writeStr(a_preBuf, intString(a_eqIndex));
+        a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING(" = (const VAR_INFO**)malloc("));
         ret_1 = listLength(i_vars);
         a_preBuf = Tpl.writeStr(a_preBuf, intString(ret_1));
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING("*sizeof(VAR_INFO*));"));
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_NEW_LINE());
         a_preBuf = Tpl.pushIter(a_preBuf, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        a_preBuf = lm_920(a_preBuf, i_vars, i_index);
+        a_preBuf = lm_920(a_preBuf, i_vars, a_eqIndex);
         a_preBuf = Tpl.popIter(a_preBuf);
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING(";"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\"linear system "));
@@ -42847,25 +42847,24 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(")\", "));
         ret_3 = listLength(i_vars);
         txt = Tpl.writeStr(txt, intString(ret_3));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", linearSystem"));
-        txt = Tpl.writeStr(txt, intString(i_index));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_crefs"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", equationInfo_crefs"));
+        txt = Tpl.writeStr(txt, intString(a_eqIndex));
       then (txt, a_preBuf);
 
     case ( txt,
-           SimCode.SES_NONLINEAR(index = i_index, crefs = i_crefs),
+           SimCode.SES_NONLINEAR(crefs = i_crefs, index = i_index),
            a_preBuf,
-           _ )
+           a_eqIndex )
       equation
-        a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING("const VAR_INFO** residualFunc"));
-        a_preBuf = Tpl.writeStr(a_preBuf, intString(i_index));
-        a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING("_crefs = (const VAR_INFO**)malloc("));
+        a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING("const VAR_INFO** equationInfo_crefs"));
+        a_preBuf = Tpl.writeStr(a_preBuf, intString(a_eqIndex));
+        a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING(" = (const VAR_INFO**)malloc("));
         ret_4 = listLength(i_crefs);
         a_preBuf = Tpl.writeStr(a_preBuf, intString(ret_4));
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING("*sizeof(VAR_INFO*));"));
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_NEW_LINE());
         a_preBuf = Tpl.pushIter(a_preBuf, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        a_preBuf = lm_921(a_preBuf, i_crefs, i_index);
+        a_preBuf = lm_921(a_preBuf, i_crefs, a_eqIndex);
         a_preBuf = Tpl.popIter(a_preBuf);
         a_preBuf = Tpl.writeTok(a_preBuf, Tpl.ST_STRING(";"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\"residualFunc"));
@@ -42876,9 +42875,8 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(")\", "));
         ret_6 = listLength(i_crefs);
         txt = Tpl.writeStr(txt, intString(ret_6));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", residualFunc"));
-        txt = Tpl.writeStr(txt, intString(i_index));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_crefs"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", equationInfo_crefs"));
+        txt = Tpl.writeStr(txt, intString(a_eqIndex));
       then (txt, a_preBuf);
 
     case ( txt,
@@ -42894,10 +42892,10 @@ algorithm
     case ( txt,
            _,
            a_preBuf,
-           a_i0 )
+           a_eqIndex )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\"unknown equation "));
-        txt = Tpl.writeStr(txt, intString(a_i0));
+        txt = Tpl.writeStr(txt, intString(a_eqIndex));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\",0,NULL"));
       then (txt, a_preBuf);
   end matchcontinue;
@@ -42917,7 +42915,7 @@ algorithm
       Tpl.Text txt;
       list<SimCode.SimEqSystem> rest;
       Tpl.Text a_preBuf;
-      Integer x_i0;
+      Integer x_eqIndex;
       SimCode.SimEqSystem i_eq;
       Integer ret_0;
 
@@ -42930,12 +42928,12 @@ algorithm
            i_eq :: rest,
            a_preBuf )
       equation
-        x_i0 = Tpl.getIteri_i0(txt);
+        x_eqIndex = Tpl.getIteri_i0(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("{"));
         ret_0 = System.tmpTick();
         txt = Tpl.writeStr(txt, intString(ret_0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
-        (txt, a_preBuf) = fun_922(txt, i_eq, a_preBuf, x_i0);
+        (txt, a_preBuf) = fun_922(txt, i_eq, a_preBuf, x_eqIndex);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("}"));
         txt = Tpl.nextIter(txt);
         (txt, a_preBuf) = lm_923(txt, rest, a_preBuf);
