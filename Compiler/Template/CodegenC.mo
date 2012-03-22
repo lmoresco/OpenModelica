@@ -32438,7 +32438,12 @@ algorithm
       Tpl.Text a_funName;
 
     case ( txt,
-           SimCode.SIMULATION(genDiscrete = _),
+           SimCode.FUNCTION_CONTEXT(),
+           _ )
+      then txt;
+
+    case ( txt,
+           _,
            a_funName )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
@@ -32452,11 +32457,6 @@ algorithm
                                     "#endif"
                                 }, false));
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-      then txt;
-
-    case ( txt,
-           _,
-           _ )
       then txt;
   end matchcontinue;
 end fun_730;
@@ -32531,7 +32531,12 @@ algorithm
       Tpl.Text a_funName;
 
     case ( txt,
-           SimCode.SIMULATION(genDiscrete = _),
+           SimCode.FUNCTION_CONTEXT(),
+           _ )
+      then txt;
+
+    case ( txt,
+           _,
            a_funName )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
@@ -32545,11 +32550,6 @@ algorithm
                                     "#endif"
                                 }, false));
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-      then txt;
-
-    case ( txt,
-           _,
-           _ )
       then txt;
   end matchcontinue;
 end fun_733;
