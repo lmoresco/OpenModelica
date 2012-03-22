@@ -370,6 +370,7 @@ InheritanceProtected.mo \
 InheritancePublic.mo \
 InheritanceSeveral.mo \
 InheritanceSimple.mo \
+InitialConnection.mo \
 InnerOuter1.mo \
 InnerOuter2.mo \
 InnerOuterSystem.mo \
