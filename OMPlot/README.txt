@@ -5,10 +5,6 @@
 Windows
 ------------------------------
 
-  Prerequisites
-  ------------------------------
-  - Compile OMPlot.
-
   Qt 4.8.0
   ------------------------------
   - Download the Qt SDK for windows from http://qt.nokia.com/downloads.
@@ -18,10 +14,9 @@ Windows
 
   Build & Run
   ------------------------------
-  - Load the file OMEditGUI.pro in Qt Creator IDE. Qt Creator is included in Qt SDK.
+  - Load the file OMPlotGUI.pro/OMPlotLib.pro in Qt Creator IDE. Qt Creator is included in Qt SDK.
   - Build and run the project.
-  - Copy omniORB414_rt.dll, omniORB414_rtd.dll, omnithread34_rt.dll and omnithread34_rtd.dll from c:/OMDev/omniORB-4.1.4-mingw/bin/x86_win32 to /location-where-OMEdit.exe-is-created.
-  - Copy qwt5.dll and qwtd5.dll from c:/OMDev/qwt-5.2.1-mingw/lib to /location-where-OMEdit.exe-is-created.
+  - Copy qwt5.dll and qwtd5.dll from c:/OMDev/qwt-5.2.1-mingw/lib to /location-where-OMPlot.exe-is-created.
 
 Linux
 ------------------------------
@@ -33,7 +28,7 @@ Linux
   - cd trunk
   - autoconf
   - ./configure '--disable-rml-trace' 'CC=gcc-4.4' 'CXX=g++-4.4' 'CFLAGS=-O2' '--with-omniORB'
-  - make -j2 omedit
+  - make -j2 omplot
 
 ------------------------------
 Adeel.
