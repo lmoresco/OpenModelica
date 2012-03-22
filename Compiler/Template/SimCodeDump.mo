@@ -422,18 +422,56 @@ algorithm
   end matchcontinue;
 end lm_37;
 
-protected function fun_38
+protected function lm_38
   input Tpl.Text in_txt;
-  input SimCode.SimEqSystem in_a_eq;
+  input list<tuple<DAE.Exp, Integer>> in_items;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_eq)
+  matchcontinue(in_txt, in_items)
     local
       Tpl.Text txt;
+      list<tuple<DAE.Exp, Integer>> rest;
+      DAE.Exp i_cond;
+      String ret_0;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           (i_cond, _) :: rest )
+      equation
+        ret_0 = ExpressionDump.printExpStr(i_cond);
+        txt = Tpl.writeStr(txt, ret_0);
+        txt = Tpl.nextIter(txt);
+        txt = lm_38(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_38(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_38;
+
+protected function fun_39
+  input Tpl.Text in_txt;
+  input SimCode.SimEqSystem in_a_eq;
+  input Integer in_a_i0;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_eq, in_a_i0)
+    local
+      Tpl.Text txt;
+      Integer a_i0;
       DAE.Exp i_e_right;
       DAE.ComponentRef i_e_left;
+      list<tuple<DAE.Exp, Integer>> i_conditions;
       list<SimCode.SimEqSystem> i_e_discEqs;
       list<SimCode.SimVar> i_e_discVars;
       SimCode.SimEqSystem i_e_cont;
@@ -452,7 +490,8 @@ algorithm
       String ret_0;
 
     case ( txt,
-           SimCode.SES_RESIDUAL(exp = i_e_exp, source = i_e_source) )
+           SimCode.SES_RESIDUAL(exp = i_e_exp, source = i_e_source),
+           _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("residual: "));
         ret_0 = ExpressionDump.printExpStr(i_e_exp);
@@ -465,7 +504,8 @@ algorithm
       then txt;
 
     case ( txt,
-           SimCode.SES_SIMPLE_ASSIGN(cref = i_e_cref, exp = i_e_exp, source = i_e_source) )
+           SimCode.SES_SIMPLE_ASSIGN(cref = i_e_cref, exp = i_e_exp, source = i_e_source),
+           _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("eq: "));
         txt = CodegenC.crefStr(txt, i_e_cref);
@@ -480,26 +520,30 @@ algorithm
       then txt;
 
     case ( txt,
-           SimCode.SES_ARRAY_CALL_ASSIGN(componentRef = _) )
+           SimCode.SES_ARRAY_CALL_ASSIGN(componentRef = _),
+           _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("SES_ARRAY_CALL_ASSIGN"));
       then txt;
 
     case ( txt,
-           SimCode.SES_ALGORITHM(statements = {}) )
+           SimCode.SES_ALGORITHM(statements = {}),
+           _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("empty algorithm"));
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
       then txt;
 
     case ( txt,
-           SimCode.SES_ALGORITHM(statements = i_e_statements) )
+           SimCode.SES_ALGORITHM(statements = i_e_statements),
+           _ )
       equation
         txt = lm_32(txt, i_e_statements);
       then txt;
 
     case ( txt,
-           SimCode.SES_LINEAR(vars = i_e_vars, beqs = i_beqs, simJac = i_simJac) )
+           SimCode.SES_LINEAR(vars = i_e_vars, beqs = i_beqs, simJac = i_simJac),
+           _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("linear: "));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
@@ -519,7 +563,8 @@ algorithm
       then txt;
 
     case ( txt,
-           SimCode.SES_NONLINEAR(crefs = i_e_crefs, eqs = i_e_eqs) )
+           SimCode.SES_NONLINEAR(crefs = i_e_crefs, eqs = i_e_eqs),
+           _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("nonlinear: "));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
@@ -533,7 +578,8 @@ algorithm
       then txt;
 
     case ( txt,
-           SimCode.SES_MIXED(cont = i_e_cont, discVars = i_e_discVars, discEqs = i_e_discEqs) )
+           SimCode.SES_MIXED(cont = i_e_cont, discVars = i_e_discVars, discEqs = i_e_discEqs),
+           _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "mixed system:\n",
@@ -559,9 +605,16 @@ algorithm
       then txt;
 
     case ( txt,
-           SimCode.SES_WHEN(left = i_e_left, right = i_e_right, source = i_e_source) )
+           SimCode.SES_WHEN(conditions = i_conditions, left = i_e_left, right = i_e_right, source = i_e_source),
+           a_i0 )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("when: conditions\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("when (#"));
+        txt = Tpl.writeStr(txt, intString(a_i0));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("): "));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_38(txt, i_conditions);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = CodegenC.crefStr(txt, i_e_left);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
@@ -574,14 +627,15 @@ algorithm
       then txt;
 
     case ( txt,
+           _,
            _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("UNKNOWN"));
       then txt;
   end matchcontinue;
-end fun_38;
+end fun_39;
 
-protected function lm_39
+protected function lm_40
   input Tpl.Text in_txt;
   input list<SimCode.SimEqSystem> in_items;
 
@@ -592,6 +646,7 @@ algorithm
     local
       Tpl.Text txt;
       list<SimCode.SimEqSystem> rest;
+      Integer x_i0;
       SimCode.SimEqSystem i_eq;
 
     case ( txt,
@@ -601,17 +656,19 @@ algorithm
     case ( txt,
            i_eq :: rest )
       equation
-        txt = fun_38(txt, i_eq);
-        txt = lm_39(txt, rest);
+        x_i0 = Tpl.getIteri_i0(txt);
+        txt = fun_39(txt, i_eq, x_i0);
+        txt = Tpl.nextIter(txt);
+        txt = lm_40(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_39(txt, rest);
+        txt = lm_40(txt, rest);
       then txt;
   end matchcontinue;
-end lm_39;
+end lm_40;
 
 public function dumpEqs
   input Tpl.Text txt;
@@ -619,7 +676,9 @@ public function dumpEqs
 
   output Tpl.Text out_txt;
 algorithm
-  out_txt := lm_39(txt, a_eqs);
+  out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), NONE(), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+  out_txt := lm_40(out_txt, a_eqs);
+  out_txt := Tpl.popIter(out_txt);
 end dumpEqs;
 
 public function dumpWithin
@@ -654,7 +713,7 @@ algorithm
   end matchcontinue;
 end dumpWithin;
 
-protected function lm_42
+protected function lm_43
   input Tpl.Text in_txt;
   input list<Absyn.Within> in_items;
 
@@ -675,18 +734,18 @@ algorithm
            i_w :: rest )
       equation
         txt = dumpWithin(txt, i_w);
-        txt = lm_42(txt, rest);
+        txt = lm_43(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_42(txt, rest);
+        txt = lm_43(txt, rest);
       then txt;
   end matchcontinue;
-end lm_42;
+end lm_43;
 
-protected function lm_43
+protected function lm_44
   input Tpl.Text in_txt;
   input list<Option<DAE.ComponentRef>> in_items;
 
@@ -707,18 +766,18 @@ algorithm
            SOME(i_cr) :: rest )
       equation
         txt = CodegenC.crefStr(txt, i_cr);
-        txt = lm_43(txt, rest);
+        txt = lm_44(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_43(txt, rest);
+        txt = lm_44(txt, rest);
       then txt;
   end matchcontinue;
-end lm_43;
+end lm_44;
 
-protected function lm_44
+protected function lm_45
   input Tpl.Text in_txt;
   input list<Option<tuple<DAE.ComponentRef, DAE.ComponentRef>>> in_items;
 
@@ -738,18 +797,18 @@ algorithm
            _ :: rest )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("w"));
-        txt = lm_44(txt, rest);
+        txt = lm_45(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_44(txt, rest);
+        txt = lm_45(txt, rest);
       then txt;
   end matchcontinue;
-end lm_44;
+end lm_45;
 
-protected function lm_45
+protected function lm_46
   input Tpl.Text in_txt;
   input list<Absyn.Path> in_items;
 
@@ -771,18 +830,18 @@ algorithm
       equation
         txt = CodegenC.dotPath(txt, i_p);
         txt = Tpl.nextIter(txt);
-        txt = lm_45(txt, rest);
+        txt = lm_46(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_45(txt, rest);
+        txt = lm_46(txt, rest);
       then txt;
   end matchcontinue;
-end lm_45;
+end lm_46;
 
-protected function lm_46
+protected function lm_47
   input Tpl.Text in_txt;
   input list<DAE.SymbolicOperation> in_items;
   input Absyn.Info in_a_s_info;
@@ -807,17 +866,17 @@ algorithm
            a_s_info )
       equation
         txt = dumpOperation(txt, i_op, a_s_info);
-        txt = lm_46(txt, rest, a_s_info);
+        txt = lm_47(txt, rest, a_s_info);
       then txt;
 
     case ( txt,
            _ :: rest,
            a_s_info )
       equation
-        txt = lm_46(txt, rest, a_s_info);
+        txt = lm_47(txt, rest, a_s_info);
       then txt;
   end matchcontinue;
-end lm_46;
+end lm_47;
 
 public function dumpElementSource
   input Tpl.Text in_txt;
@@ -845,24 +904,24 @@ algorithm
         txt = Tpl.writeStr(txt, ret_0);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("partOfLst: "));
-        txt = lm_42(txt, i_s_partOfLst);
+        txt = lm_43(txt, i_s_partOfLst);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("instanceOptLst: "));
-        txt = lm_43(txt, i_s_instanceOptLst);
+        txt = lm_44(txt, i_s_instanceOptLst);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("connectEquationOptLst: "));
-        txt = lm_44(txt, i_s_connectEquationOptLst);
+        txt = lm_45(txt, i_s_connectEquationOptLst);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("typeLst: "));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_45(txt, i_s_typeLst);
+        txt = lm_46(txt, i_s_typeLst);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("operations ("));
         ret_1 = listLength(i_s_operations);
         txt = Tpl.writeStr(txt, intString(ret_1));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("): "));
-        txt = lm_46(txt, i_s_operations, i_s_info);
+        txt = lm_47(txt, i_s_operations, i_s_info);
       then txt;
 
     case ( txt,
@@ -871,7 +930,7 @@ algorithm
   end matchcontinue;
 end dumpElementSource;
 
-protected function lm_48
+protected function lm_49
   input Tpl.Text in_txt;
   input list<DAE.Exp> in_items;
 
@@ -896,18 +955,18 @@ algorithm
         ret_0 = ExpressionDump.printExpStr(i_target);
         txt = Tpl.writeStr(txt, ret_0);
         txt = Tpl.nextIter(txt);
-        txt = lm_48(txt, rest);
+        txt = lm_49(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_48(txt, rest);
+        txt = lm_49(txt, rest);
       then txt;
   end matchcontinue;
-end lm_48;
+end lm_49;
 
-protected function lm_49
+protected function lm_50
   input Tpl.Text in_txt;
   input list<DAE.ComponentRef> in_items;
 
@@ -928,39 +987,6 @@ algorithm
            i_v :: rest )
       equation
         txt = CodegenC.crefStr(txt, i_v);
-        txt = Tpl.nextIter(txt);
-        txt = lm_49(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_49(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_49;
-
-protected function lm_50
-  input Tpl.Text in_txt;
-  input list<Real> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<Real> rest;
-      Real i_r;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_r :: rest )
-      equation
-        txt = Tpl.writeStr(txt, realString(i_r));
         txt = Tpl.nextIter(txt);
         txt = lm_50(txt, rest);
       then txt;
@@ -1008,6 +1034,39 @@ end lm_51;
 
 protected function lm_52
   input Tpl.Text in_txt;
+  input list<Real> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<Real> rest;
+      Real i_r;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_r :: rest )
+      equation
+        txt = Tpl.writeStr(txt, realString(i_r));
+        txt = Tpl.nextIter(txt);
+        txt = lm_52(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_52(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_52;
+
+protected function lm_53
+  input Tpl.Text in_txt;
   input list<list<Real>> in_items;
 
   output Tpl.Text out_txt;
@@ -1027,21 +1086,21 @@ algorithm
            i_row :: rest )
       equation
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_51(txt, i_row);
+        txt = lm_52(txt, i_row);
         txt = Tpl.popIter(txt);
         txt = Tpl.nextIter(txt);
-        txt = lm_52(txt, rest);
+        txt = lm_53(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_52(txt, rest);
+        txt = lm_53(txt, rest);
       then txt;
   end matchcontinue;
-end lm_52;
+end lm_53;
 
-protected function lm_53
+protected function lm_54
   input Tpl.Text in_txt;
   input list<Real> in_items;
 
@@ -1063,18 +1122,18 @@ algorithm
       equation
         txt = Tpl.writeStr(txt, realString(i_r));
         txt = Tpl.nextIter(txt);
-        txt = lm_53(txt, rest);
+        txt = lm_54(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_53(txt, rest);
+        txt = lm_54(txt, rest);
       then txt;
   end matchcontinue;
-end lm_53;
+end lm_54;
 
-protected function lm_54
+protected function lm_55
   input Tpl.Text in_txt;
   input list<DAE.Exp> in_items;
 
@@ -1098,18 +1157,18 @@ algorithm
         ret_0 = ExpressionDump.printExpStr(i_cond);
         txt = Tpl.writeStr(txt, ret_0);
         txt = Tpl.nextIter(txt);
-        txt = lm_54(txt, rest);
+        txt = lm_55(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_54(txt, rest);
+        txt = lm_55(txt, rest);
       then txt;
   end matchcontinue;
-end lm_54;
+end lm_55;
 
-protected function lm_55
+protected function lm_56
   input Tpl.Text in_txt;
   input list<DAE.ComponentRef> in_items;
 
@@ -1131,16 +1190,16 @@ algorithm
       equation
         txt = CodegenC.crefStr(txt, i_cr);
         txt = Tpl.nextIter(txt);
-        txt = lm_55(txt, rest);
+        txt = lm_56(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_55(txt, rest);
+        txt = lm_56(txt, rest);
       then txt;
   end matchcontinue;
-end lm_55;
+end lm_56;
 
 public function dumpOperation
   input Tpl.Text in_txt;
@@ -1223,7 +1282,7 @@ algorithm
         txt = Tpl.softNewLine(txt);
         ret_3 = listReverse(i_substitutions);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_48(txt, ret_3);
+        txt = lm_49(txt, ret_3);
         txt = Tpl.popIter(txt);
         txt = Tpl.popBlock(txt);
       then txt;
@@ -1269,11 +1328,11 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ; ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_49(txt, i_vars);
+        txt = lm_50(txt, i_vars);
         txt = Tpl.popIter(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = ["));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ; ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_50(txt, i_result);
+        txt = lm_51(txt, i_result);
         txt = Tpl.popIter(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "]\n",
@@ -1281,7 +1340,7 @@ algorithm
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_52(txt, i_jac);
+        txt = lm_53(txt, i_jac);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.popBlock(txt);
@@ -1295,7 +1354,7 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ; ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_53(txt, i_rhs);
+        txt = lm_54(txt, i_rhs);
         txt = Tpl.popIter(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
         txt = Tpl.popBlock(txt);
@@ -1326,7 +1385,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("  added assertions:\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_54(txt, i_op_assertConds);
+        txt = lm_55(txt, i_op_assertConds);
         txt = Tpl.popIter(txt);
         txt = Tpl.popBlock(txt);
       then txt;
@@ -1385,7 +1444,7 @@ algorithm
         txt = CodegenC.crefStr(txt, i_op_chosen);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" from candidates: "));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_55(txt, i_op_candidates);
+        txt = lm_56(txt, i_op_candidates);
         txt = Tpl.popIter(txt);
       then txt;
 
