@@ -76,7 +76,6 @@ omcd: interactive docs omdev_extra_dlls breakprocess fmi
 omc_profiler: interactive docs omdev_extra_dlls breakprocess fmi
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw profiler)
 
-
 # Empty; only Unix version uses QT makefiles, etc...
 qtclean:
 
