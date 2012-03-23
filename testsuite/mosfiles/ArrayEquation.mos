@@ -42,15 +42,15 @@ val(y,1.0);
 // true
 // record SimulationResult
 //     resultFile = "ArrayEqn_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'ArrayEqn', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'ArrayEqn', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 2.0
-// 0.898671261867564
-// 0.403803492405317
-// 0.181452068318719
-// 0.0815294953387643
-// 0.0366331922171307
+// 0.8986712618675635
+// 0.40380349240531727
+// 0.18145206831871888
+// 0.08152949533876433
+// 0.03663319221713073
 // 4.0
 // 4.0
 // 4.0
@@ -64,9 +64,9 @@ val(y,1.0);
 // 2.0
 // 2.0
 // 1.0
-// 0.449335630933782
-// 0.201901746202659
-// 0.0907260341593594
-// 0.0407647476693822
-// 0.0183165961085654
+// 0.44933563093378176
+// 0.20190174620265863
+// 0.09072603415935944
+// 0.040764747669382165
+// 0.018316596108565366
 // endResult

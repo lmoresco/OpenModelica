@@ -21,9 +21,9 @@ val(firstOrder1.y,0.6),val(firstOrder1.y,0.8),val(firstOrder1.y,1.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.DCmotor_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.DCmotor', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.DCmotor', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,0.00127195781377091,0.0096151484299373,0.030667188283709,0.0685958742257746,0.126196450019034}
-// {0.0,0.180065321518872,0.320981980141432,0.42475860251199,0.494375787427451,0.533511864757683}
+// {0.0,0.0012719765150242743,0.009615217889362853,0.030667332914287602,0.06859611130091951,0.12619679035941817}
+// {0.000001,0.18006612279905657,0.3209825897493716,0.42475903318112657,0.4943760560251803,0.5335119909547761}
 // endResult

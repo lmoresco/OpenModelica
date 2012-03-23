@@ -1,5 +1,5 @@
 # BuiltinReal.mos fails when using Cevalfunc.mo! the values are OK, the display is different! 
-TEST = ../rtest
+TEST = ../rtest -v
 
 TESTFILES = twotankmodel.mos \
 bouncingball.mos \

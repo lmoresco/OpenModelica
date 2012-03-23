@@ -68,7 +68,7 @@ val(SlidingMass1.a,1.0);
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Mechanics.Translational.Examples.Accelerate_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.0001, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.Accelerate', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.0001, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.Accelerate', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "Accelerate1.v:"
@@ -79,34 +79,34 @@ val(SlidingMass1.a,1.0);
 // 1.0
 // "Accelerate1.s:"
 // 0.0
-// 0.0312500000783146
-// 0.12500000008594
+// 0.03125000007831456
+// 0.12500000008593995
 // 0.281250000090922
-// 0.500000000094082
+// 0.5000000000940815
 // "Accelerate1.flange_b.s:"
 // 0.0
-// 0.0312500000783146
-// 0.12500000008594
+// 0.03125000007831456
+// 0.12500000008593995
 // 0.281250000090922
-// 0.500000000094082
+// 0.5000000000940815
 // "SlidingMass1.s:"
 // 0.5
-// 0.531250000078315
-// 0.62500000008594
-// 0.781250000090922
-// 1.00000000009408
+// 0.5312500000783146
+// 0.6250000000859399
+// 0.7812500000909219
+// 1.0000000000940816
 // "SlidingMass1.flange_a.s:"
 // 0.0
-// 0.0312500000783146
-// 0.12500000008594
+// 0.03125000007831456
+// 0.12500000008593995
 // 0.281250000090922
-// 0.500000000094082
+// 0.5000000000940815
 // "SlidingMass1.flange_b.s:"
 // 1.0
-// 1.03125000007831
+// 1.0312500000783147
 // 1.12500000008594
-// 1.28125000009092
-// 1.50000000009408
+// 1.281250000090922
+// 1.5000000000940816
 // "SlidingMass1.v:"
 // 0.0
 // 0.25

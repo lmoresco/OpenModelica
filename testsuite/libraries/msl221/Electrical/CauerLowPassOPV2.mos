@@ -84,7 +84,7 @@ val(C5.i,60.0);
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassOPV_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 60.0, numberOfIntervals = 600, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CauerLowPassOPV', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 60.0, numberOfIntervals = 600, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CauerLowPassOPV', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "R1.v:"
@@ -97,50 +97,50 @@ val(C5.i,60.0);
 // -1.0
 // "R2.v:"
 // -0.0
-// 0.000253064028312283
-// 0.499379807116989
+// 0.000253740463104651
+// 0.4993665996068095
 // "R2.i:"
 // -0.0
-// 0.000253064028312283
-// 0.499379807116989
+// 0.000253740463104651
+// 0.4993665996068095
 // "R3.v:"
 // 0.0
-// -0.00736415994381339
-// -0.499726552451837
+// -0.007364533110260891
+// -0.4997078631745824
 // "R3.i:"
 // 0.0
-// -0.00736415994381339
-// -0.499726552451837
+// -0.007364533110260891
+// -0.4997078631745824
 // "R11.v:"
 // -0.0
-// -0.000431329400737668
-// -0.499726355116745
+// -0.000431059959934276
+// -0.4997076551165078
 // "R11.i:"
 // -0.0
-// -0.000431329400737668
-// -0.499726355116745
+// -0.000431059959934276
+// -0.4997076551165078
 // "Op1.out.v:"
 // -0.0
-// 0.00736415994381339
-// 0.499726552451837
+// 0.007364533110260891
+// 0.4997078631745824
 // "Op1.out.i:"
 // 0.0
-// -1.21549037258392
-// -0.000968388389460874
+// -1.2154892001212039
+// -0.0010057230779008108
 // "Op5.out.v:"
 // 0.0
-// 0.000431329400737668
-// 0.499726355116745
+// 0.000431059959934276
+// 0.4997076551165078
 // "Op5.out.v:"
 // 0.0
-// 0.000431329400737668
-// 0.499726355116745
+// 0.000431059959934276
+// 0.4997076551165078
 // "C5.v:"
 // -0.0
-// 0.00736415994381339
-// 0.499726552451837
+// 0.007364533110260891
+// 0.4997078631745824
 // "C5.i:"
 // -0.0
-// 0.200454993859119
-// 0.000159703682596803
+// 0.20045480050011616
+// 0.00016586080642992846
 // endResult

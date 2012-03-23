@@ -41,7 +41,7 @@ val(R2.v,1.0);
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Analog.Examples.ShowVariableResistor_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.ShowVariableResistor', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.ShowVariableResistor', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "Ramp1.y:"
@@ -52,20 +52,20 @@ val(R2.v,1.0);
 // 4.5
 // "VariableResistor.v:"
 // 0.0
-// -0.567567567567567
-// 1.10328413072125e-15
-// 0.659574468085106
-// -2.29000452851841e-15
+// -0.5675675675675675
+// 0.000000000000000004050421400564812
+// 0.6595744680851063
+// 0.0000000000000001695664798819412
 // "VariableResistor.i:"
-// -0.0
-// -0.216216216216216
-// 3.39138439553466e-16
-// 0.170212765957447
-// -5.08889895226312e-16
+// 0.0
+// -0.2162162162162162
+// 0.0000000000000000006324634533004132
+// 0.1702127659574468
+// 0.000000000000000037681439973764714
 // "R2.v:"
 // 0.0
-// -0.333333333333333
-// 5.94142790522056e-16
-// 0.333333333333333
-// -1.10259477299034e-15
+// -0.3333333333333333
+// 0.0000000000000000017717827690553115
+// 0.3333333333333333
+// 0.00000000000000008164311994315688
 // endResult

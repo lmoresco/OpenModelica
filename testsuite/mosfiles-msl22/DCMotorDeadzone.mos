@@ -21,9 +21,9 @@ val(integrator2.y,0.6),val(integrator2.y,0.8),val(integrator2.y,1.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.DCmotorDeadzone_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.DCmotorDeadzone', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.DCmotorDeadzone', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,0.0811232683887906,0.226357784462359,0.337086614806156,0.415563892223796,0.464799340751473}
-// {0.0,0.000132797977591761,0.00356198401222938,0.0159314248778433,0.0416731732929248,0.0839416541394626}
+// {0.0,0.08112408716970335,0.2263584258185469,0.33708708778763147,0.41556421020863166,0.4647995203695998}
+// {0.0,0.00013280205443269482,0.0035620194302242456,0.015931517398937674,0.04167334199061688,0.08394191173850497}
 // endResult

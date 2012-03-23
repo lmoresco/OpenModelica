@@ -10,9 +10,9 @@ val('高さ',{0,0.5,1,1.5});
 // true
 // record SimulationResult
 //     resultFile = "JapaneseBouncingBall_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 2.5, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'JapaneseBouncingBall', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 2.5, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'JapaneseBouncingBall', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""
-// {1.0,0.138798088752039,0.224982495780891,0.0532021436986685}
+// {1.0,0.13879329174369193,0.22499374666556687,0.0532755723299072}
 // endResult

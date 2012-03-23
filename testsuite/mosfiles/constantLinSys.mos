@@ -14,9 +14,9 @@ val(b,0.0);
 // true
 // record SimulationResult
 //     resultFile = "constLinSys_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'constLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'constLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
-// -4.07635782747604
-// -3.25878594249201
+// -4.076357827476038
+// -3.2587859424920125
 // endResult

@@ -26,19 +26,19 @@ val(velocity,1.0);
 // true
 // record SimulationResult
 //     resultFile = "BouncingBall2_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 5, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'BouncingBall2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 5, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'BouncingBall2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 0.803799999889164
-// 0.215199999878646
-// 0.607152275461709
-// 0.81242427477469
-// 0.62529627411658
+// 0.8037999998891636
+// 0.21519999987864638
+// 0.6071522754617091
+// 0.8124242747746899
+// 0.6252962741165795
 // 0.0
-// -1.962
-// -3.924
-// 2.0073599968873
-// 0.0453599968872976
-// -1.9166400031127
+// -1.9620000000000006
+// -3.9240000000000017
+// 2.0073599968872986
+// 0.04535999688729764
+// -1.9166400031127009
 // endResult

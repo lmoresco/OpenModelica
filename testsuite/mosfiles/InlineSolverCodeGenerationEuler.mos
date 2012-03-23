@@ -24,7 +24,7 @@ val(z,0.0);val(z,1.0);val(z,2.0);
 // true
 // record SimulationResult
 //     resultFile = "DerivativeCodeGeneration_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 4.0, numberOfIntervals = 1000, tolerance = 1e-006, method = 'inline-euler', fileNamePrefix = 'DerivativeCodeGeneration', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 4.0, numberOfIntervals = 1000, tolerance = 0.000001, method = 'inline-euler', fileNamePrefix = 'DerivativeCodeGeneration', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -38,14 +38,14 @@ val(z,0.0);val(z,1.0);val(z,2.0);
 // 4.0
 // "mixed.v1"
 // 0.0
-// -0.441132771602123
-// -0.749031256662324
+// -0.44099782257443465
+// -0.7487867783249799
 // "y"
 // 2.0
-// 3.0
-// 4.0
+// 3.0000000000000004
+// 4.000000000000001
 // "z"
 // 15.0
 // 15.502
-// 17.004
+// 17.003999999999998
 // endResult

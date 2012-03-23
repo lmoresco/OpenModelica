@@ -14,11 +14,11 @@ val(X[2,2],0.0);
 // true
 // record SimulationResult
 //     resultFile = "Riccati_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'Riccati', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'Riccati', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 0.582531754730548
-// -0.71650635094611
+// 0.5825317547305483
+// -0.7165063509461097
 // 0.649519052838329
-// 0.21650635094611
+// 0.21650635094610968
 // endResult

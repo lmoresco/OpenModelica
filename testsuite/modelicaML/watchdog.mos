@@ -25,7 +25,7 @@ val(dm.watch_dog.battery_level,150);
 // true
 // record SimulationResult
 //     resultFile = "WatchDogSystem.SystemSimulations.WatchDogSystemSimulation_1_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 150.0, numberOfIntervals = 500, tolerance = 1e-006, method = 'dassl2', fileNamePrefix = 'WatchDogSystem.SystemSimulations.WatchDogSystemSimulation_1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 150.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl2', fileNamePrefix = 'WatchDogSystem.SystemSimulations.WatchDogSystemSimulation_1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 0.0
@@ -35,7 +35,7 @@ val(dm.watch_dog.battery_level,150);
 // 1.0
 // 0.0
 // 100.0
-// 69.9999999994412
-// 69.9999999994412
-// 0.999999999441894
+// 69.99999999944123
+// 69.99999999944123
+// 0.9999999994418938
 // endResult

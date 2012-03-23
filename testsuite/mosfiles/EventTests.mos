@@ -15,7 +15,7 @@ res := OpenModelica.Scripting.compareSimulationResults("testEvents_res.mat",
 // true
 // record SimulationResult
 //     resultFile = "testEvents_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 100, tolerance = 1e-006, method = 'dassl', fileNamePrefix = 'testEvents', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 100, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'testEvents', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "Files Equal!"

@@ -21,9 +21,9 @@ val(inertia1.phi,0.6),val(inertia1.phi,0.8),val(inertia1.phi,1.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SpringInertia.StepTorque_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SpringInertia.StepTorque', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SpringInertia.StepTorque', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,0.967004679883771,1.74383103932287,2.1776452712598,2.18312929255409,1.75917933833167}
-// {0.0,0.0983352100249618,0.374033821428956,0.772854399030817,1.21634891870433,1.61728391436406}
+// {0.0,0.9670046798837711,1.7438310393228729,2.177645271259804,2.183129292554086,1.7591793383316707}
+// {0.0,0.09833521002496182,0.374033821428956,0.7728543990308165,1.2163489187043284,1.6172839143640574}
 // endResult

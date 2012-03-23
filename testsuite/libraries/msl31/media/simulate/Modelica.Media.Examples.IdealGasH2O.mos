@@ -17,7 +17,7 @@ simulate(Modelica.Media.Examples.IdealGasH2O);
 // Evaluating: simulate(Modelica.Media.Examples.IdealGasH2O)
 // record SimulationResult
 //     resultFile = "Modelica.Media.Examples.IdealGasH2O_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.IdealGasH2O', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Modelica.Media.Examples.IdealGasH2O', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = " DASSL--  NEQ (=I1) .LE. 0
 //       In above message,  I1 =         0
 // warning | DDASRT: The code has encountered trouble from which it cannot recover.

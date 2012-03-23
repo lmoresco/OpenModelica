@@ -36,16 +36,16 @@ readFile("plt-files.txt");
 // true
 // ""
 // {StopTime=2}
-// {0.0, 2.0, 500, 0.000001, "dassl", "Modelica.Blocks.Examples.BusUsage", false, false, "", "mat", ".*", false, ""} /* startTime, stopTime, numberOfIntervals, tolerance, method, fileNamePrefix, storeInTemp, noClean, options, outputFormat */
+// {0.0, 2.0, 500, 0.000001, "dassl", "Modelica.Blocks.Examples.BusUsage", false, false, "", "mat", ".*", false, "", ""} /* startTime, stopTime, numberOfIntervals, tolerance, method, fileNamePrefix, storeInTemp, noClean, options, outputFormat */
 // record SimulationResult
 //     resultFile = "Modelica.Blocks.Examples.BusUsage_res.empty",
-//     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.BusUsage', storeInTemp = false, noClean = false, options = '', outputFormat = 'empty', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.BusUsage', storeInTemp = false, noClean = false, options = '', outputFormat = 'empty', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""
 // record SimulationResult
 //     resultFile = "Modelica.Blocks.Examples.BusUsage_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.BusUsage', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.BusUsage', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -55,7 +55,7 @@ readFile("plt-files.txt");
 // "
 // record SimulationResult
 //     resultFile = "Modelica.Blocks.Examples.BusUsage_res.csv",
-//     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.BusUsage', storeInTemp = false, noClean = false, options = '', outputFormat = 'csv', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.BusUsage', storeInTemp = false, noClean = false, options = '', outputFormat = 'csv', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -573,7 +573,7 @@ readFile("plt-files.txt");
 // "
 // record SimulationResult
 //     resultFile = "Modelica.Blocks.Examples.BusUsage_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.BusUsage', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.BusUsage', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""

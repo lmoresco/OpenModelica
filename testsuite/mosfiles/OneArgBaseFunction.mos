@@ -20,13 +20,13 @@ val(t1,1.0);
 // true
 // record SimulationResult
 //     resultFile = "myTanCall_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'myTanCall', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'myTanCall', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 1.5574077246549
-// 1.5574077246549
-// 1.5574077246549
-// 11.5574077246549
-// 11.5574077246549
-// 11.5574077246549
+// 1.557407724654902
+// 1.557407724654902
+// 1.557407724654902
+// 11.557407724654903
+// 11.557407724654903
+// 11.557407724654903
 // endResult

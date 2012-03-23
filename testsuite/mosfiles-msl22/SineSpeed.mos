@@ -21,9 +21,9 @@ val(inertia1.phi,0.6),val(inertia1.phi,0.8),val(inertia1.phi,1.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SpringInertia.SineSpeed_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SpringInertia.SineSpeed', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SpringInertia.SineSpeed', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,0.0439794277980902,0.167311295391549,0.345695946409462,0.544054221849494,0.72332705946605}
-// {0.0,0.00298158425453847,0.022946679874744,0.0735985603678965,0.162565063242381,0.289940565284482}
+// {0.0,0.04397942779809022,0.16731129539154935,0.34569594640946233,0.5440542218494938,0.7233270594660498}
+// {0.0,0.0029815842545384626,0.022946679874744014,0.07359856036789651,0.16256506324238093,0.28994056528448187}
 // endResult

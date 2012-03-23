@@ -33,23 +33,23 @@ val(G.i,1.0);
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Analog.Examples.ChuaCircuit_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 50000.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.ChuaCircuit', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 50000.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.ChuaCircuit', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "Nr.v:"
 // 4.0
-// 4.0025233613575
-// 4.00504672271536
+// 4.002523367142203
+// 4.005046734284406
 // "Nr.i:"
-// -1.984849
-// -1.9858812844211
-// -1.98691356884235
+// -1.9848489999999999
+// -1.9858812867875706
+// -1.9869135735751418
 // "G.v:"
 // -4.0
-// -3.99939710673116
-// -3.99879421346286
+// -3.9993971257647405
+// -3.998794251529481
 // "G.i:"
 // -2.26
-// -2.25965936530311
-// -2.25931873060652
+// -2.2596593760570785
+// -2.2593187521141562
 // endResult

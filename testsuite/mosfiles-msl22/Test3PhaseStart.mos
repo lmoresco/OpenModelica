@@ -58,7 +58,7 @@ val(power,10);
 // true
 // record SimulationResult
 //     resultFile = "Test3Phase.Test3PhaseStart_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseStart', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseStart', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "i_abc[:] at 0.0"
@@ -70,30 +70,30 @@ val(power,10);
 // 0.0
 // 0.0
 // "i_abc[:] at 10.0"
-// 0.296902617231909
-// -0.222242906021467
-// -0.0746597112100026
+// 0.2969026172426635
+// -0.2222429060276189
+// -0.07465971121515207
 // "i_dq0[:] at 10.0:"
-// -0.104357077840349
-// 0.363629957757345
-// 2.53670827712099e-013
+// -0.10435707784107189
+// 0.3636299577707356
+// -0.00000000000006204759601397633
 // "u_abc[:] at 0.0"
 // 0.0
-// 0.866025403784436
-// -0.866025403784438
+// 0.8660254037844387
+// -0.8660254037844384
 // "u_dq0[:] at 0.0"
-// 1.22474487139158
-// -1.27675647831893e-015
-// -9.61481343191782e-016
+// 1.224744871391589
+// 0.0000000000000003885780586188048
+// 0.00000000000000019229626863835643
 // "u_abc[:] at 10.0"
-// 3.30779240803603e-014
-// 0.86602540378442
-// -0.866025403784456
+// -0.0000000000000024492935982947065
+// 0.8660254037844412
+// -0.8660254037844349
 // "u_dq0[:] at 10.0:"
-// 1.22474487139159
-// -2.80147629538441e-015
-// -1.92684366576364e-015
+// 1.2247448713915876
+// 0.0000000000000029406526108861512
+// 0.0000000000000021754300296161106
 // "power :"
 // 0.0
-// -0.127810795878381
+// -0.1278107958792644
 // endResult

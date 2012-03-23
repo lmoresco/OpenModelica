@@ -22,12 +22,12 @@ val(inertia2.w,0.5);
 // ""
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.Gears.IdealGearBrake_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.IdealGearBrake', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.IdealGearBrake', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""
-// 0.0116320042825301
-// 0.112693679725098
-// 0.024355089547462
-// 0.224507576807363
+// 0.011632401291300356
+// 0.11269317318580616
+// 0.024354556879289065
+// 0.22450522033759163
 // endResult

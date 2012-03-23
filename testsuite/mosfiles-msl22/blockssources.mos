@@ -49,38 +49,38 @@ system("rm -rf *PulseTest.* output.log");
 // true
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SourceTests.ConstantTest_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SourceTests.ConstantTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SourceTests.ConstantTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // {1.0,1.0}
-// {100000.0,0.0}
+// {99999.99999999999,0.0}
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SourceTests.ExpSineTest_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 200, tolerance = 1e-007, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SourceTests.ExpSineTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 200, tolerance = 0.0000001, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SourceTests.ExpSineTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,0.481237862257547,-0.637512247785461,0.521950882725829,-0.264108938535959,2.43373764515887e-015}
-// {0.0,0.117861622821092,0.036857976067327,0.0301772068800489,0.0646836025199253,-2.07998633416494e-007}
+// {0.0,0.481237862257548,-0.637512247785462,0.521950882725828,-0.26410893853595657,-0.00000000000000018020895204108955}
+// {0.0,0.11786162282109335,0.036857976067327734,0.030177206880049028,0.06468360251992573,-0.00000020799863312940623}
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SourceTests.ExponentialsTest_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 400, tolerance = 1e-008, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SourceTests.ExponentialsTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 400, tolerance = 0.00000001, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SourceTests.ExponentialsTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,0.864664716763387,0.981684361111266,0.365400688994776,0.0494516057399615,0.00669254706932298}
-// {0.0,1.50372630080507,0.203507227751799,-4.05950275093672,-0.549462360855605,-0.074361837988689}
+// {0.0,0.8646647167633872,0.9816843611112658,0.3654006889947761,0.049451605739961456,0.006692547069322982}
+// {0.0,1.5037263008050654,0.20350722775179855,-4.0595027509367165,-0.5494623608556045,-0.07436183798861222}
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SourceTests.SineTest_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SourceTests.SineTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SourceTests.SineTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,0.198669330795061,0.38941834230865,0.564642473395035,0.717356090899522,0.841470984807896}
-// {0.0,0.0186566371591994,0.0693349274802162,0.144058271491187,0.234991742484544,0.334528874157526}
+// {0.0,0.19866933079506122,0.3894183423086505,0.5646424733950354,0.7173560908995228,0.8414709848078965}
+// {0.0,0.018656637159199418,0.06933492748021625,0.14405827149118675,0.23499174248454477,0.33452887415752625}
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SourceTests.PulseTest_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SourceTests.PulseTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SourceTests.PulseTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // {1.0,0.0,1.0,0.0,1.0}

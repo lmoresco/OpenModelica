@@ -23,16 +23,16 @@ val(T[30],1.0);
 // true
 // record SimulationResult
 //     resultFile = "ArraySlice_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'ArraySlice', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'ArraySlice', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 200.0
 // 250.0
 // 300.0
 // 200.0
-// 329.747885242071
-// 543.664291199501
+// 329.74788524207145
+// 543.6642911995007
 // 200.0
-// 329.747885242071
-// 543.664291199501
+// 329.74788524207145
+// 543.6642911995007
 // endResult

@@ -23,10 +23,10 @@ val(inertia3.w,120.0),val(inertia3.w,180.0),val(inertia3.w,200.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.Professional.WeakAxis_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 200.0, numberOfIntervals = 500, tolerance = 1e-010, method = 'dassl', fileNamePrefix = 'TestModels.Professional.WeakAxis', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 200.0, numberOfIntervals = 500, tolerance = 0.0000000001, method = 'dassl', fileNamePrefix = 'TestModels.Professional.WeakAxis', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,1.55351018781529,0.963994926730334,1.49560051617596,0.17906291127645,-0.217278281901111}
-// {0.0,0.795686917668456,0.787859621845458,0.813525710498371,0.59600029248212,0.533701703546224}
-// {0.0,-0.349197105480996,0.248145451426975,-0.309126226671576,1.22493679624418,1.68357657835763}
+// {0.0,1.5535101878152937,0.9639949267303337,1.4956005161759627,0.17906291127645008,-0.21727828190111148}
+// {0.0,0.7956869176684559,0.7878596218454584,0.8135257104983713,0.59600029248212,0.5337017035462241}
+// {0.0,-0.34919710548099553,0.24814545142697522,-0.30912622667157635,1.2249367962441762,1.68357657835763}
 // endResult

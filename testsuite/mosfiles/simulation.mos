@@ -20,16 +20,16 @@ val(z,1.0);
 // true
 // record SimulationResult
 //     resultFile = "LinSys_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-007, method = 'dassl', fileNamePrefix = 'LinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 0.0000001, method = 'dassl', fileNamePrefix = 'LinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 2.40070548643234
-// 3.41881893790031
+// 2.4007054864323436
+// 3.418818937900309
 // 2.0
 // 2.0
 // 2.0
 // 3.0
-// 2.09929451356766
-// 1.58118106209969
+// 2.0992945135676573
+// 1.581181062099692
 // endResult

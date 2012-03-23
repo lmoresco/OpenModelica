@@ -20,16 +20,16 @@ val(z,1.0);
 // true
 // record SimulationResult
 //     resultFile = "TimeVaryingLinSys_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'TimeVaryingLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'TimeVaryingLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 0.0
-// 0.740917955837613
-// 2.0002306303271
+// 0.7409179558376132
+// 2.0002306303270996
 // 0.0
-// 0.707265635329153
-// 0.999815495734688
+// 0.7072656353291534
+// 0.9998154957346882
 // 0.0
-// 0.10363281766554
-// -9.22521280096239e-005
+// 0.10363281766553957
+// -0.00009225212800962395
 // endResult
