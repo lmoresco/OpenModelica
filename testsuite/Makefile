@@ -246,6 +246,6 @@ clean_g_4:
 	$(MAKE) -C libraries/multibody -f Makefile clean
 	$(MAKE) -C libraries/msl31 -f Makefile clean
 	$(MAKE) -C libraries/msl32 -f Makefile clean
-	$(MAKE) -C siemens -f Makefile clean
+	$(MAKE) -C 3rdParty/siemens -f Makefile clean
 	$(MAKE) -C fmi -f Makefile clean
 	$(MAKE) -C 3rdParty/PlanarMechanics -f Makefile clean
