@@ -16,8 +16,7 @@ ArrayAddSub1.mos ArrayDivError.mos \
 ArrayExponentiation.mos \
 ArrayEquation.mos ArrayMult.mos \
 ArrayFromRange.mos \
-
-# ArrayReduce.mos \
+ArrayReduce.mos \
 ArrayParameterSize.mos \
 ArraySlice.mos \
 AsubCrefExpType.mos \
