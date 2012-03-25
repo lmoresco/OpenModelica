@@ -1,13 +1,30 @@
 TEST = ../../rtest -v
 
 TESTFILES = \
-instantiatePlanarMechanicsV4.mos \
-checkPlanarMechanicsV4.mos 
-# put simulatePlanarMechanicsV4.mos in here when we have results from other tools.
+instantiatePlanarMechanicsForTesting.mos \
+checkPlanarMechanicsForTesting.mos \
+PlanarMechanicsForTesting.Examples.FreeBody.mos \
+PlanarMechanicsForTesting.Examples.Pendulum.mos \
+PlanarMechanicsForTesting.Examples.DoublePendulum.mos \
+PlanarMechanicsForTesting.Examples.CounterSpin.mos \
+PlanarMechanicsForTesting.Examples.CraneCrab.mos \
+PlanarMechanicsForTesting.Examples.ControlledCraneCrab.mos \
+PlanarMechanicsForTesting.Examples.InvertedCraneCrab.mos \
+PlanarMechanicsForTesting.Examples.WheelBasedCranCrab.mos \
+PlanarMechanicsForTesting.Examples.PistonEngine.mos \
+PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.mos \
+PlanarMechanicsForTesting.Examples.TestDryFrictionWheel.mos \
+PlanarMechanicsForTesting.Examples.TestSlipBasedWheel.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
+PlanarMechanicsForTesting.Examples.KinematicLoop.mos \
+PlanarMechanicsForTesting.Examples.KinematicLoop_DynamicStateSelection.mos \
+PlanarMechanicsForTesting.Examples.TestIdealWheel.mos \
+PlanarMechanicsForTesting.Examples.SingleTrackWithEngine.mos \
+PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear.mos \
+
 
 # Dependency files that are not .mo .mos or Makefile
 # Add them here or they will be cleaned.

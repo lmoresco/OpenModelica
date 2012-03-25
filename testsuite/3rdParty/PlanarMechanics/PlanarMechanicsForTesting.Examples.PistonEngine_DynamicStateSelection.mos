@@ -1,0 +1,32 @@
+// name:     PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.mos [simulation checking]
+// keywords: simulation PlanarMechanicsForTesting.Examples
+// status: correct
+// teardown_command: rm -rf _PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.* PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection_* PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.exe PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.cpp PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.makefile PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.libs PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.log PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.c PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.o output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+loadFile("PlanarMechanicsForTesting.mo"); getErrorString();
+
+// adrpo: stopTime=3 is got from the experiment annotation in the model
+simulate(PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection); getErrorString();
+
+res := OpenModelica.Scripting.compareSimulationResults("PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection_res.mat",
+  "simulation/PistonEngine.mat","PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection_diff.csv",0.01,0.001,
+  {"prismatic.s", "prismatic.v", "revoluteDrive.w"});
+
+// Result:
+// true
+// ""
+// true
+// ""
+// record SimulationResult
+//     resultFile = "PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = ""
+// end SimulationResult;
+// ""
+// "Files Equal!"
+// endResult
