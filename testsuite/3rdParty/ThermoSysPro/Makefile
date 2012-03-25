@@ -69,6 +69,7 @@ ThermoSysPro.Examples.SimpleExamples.TestThreeWayValve.mos \
 ThermoSysPro.Examples.SimpleExamples.TestWaterHammer.mos \
 ThermoSysPro.Examples.SimpleExamples.TestVolumes.mos \
 ThermoSysPro.Examples.SimpleExamples.TestVolumes1.mos \
+ThermoSysPro.Examples.SimpleExamples.TestVolumes2.mos \
 
 
 # Dependency files that are not .mo .mos or Makefile
