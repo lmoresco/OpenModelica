@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Author: Per Östlund
+# Author: Per ֖stlund
 #
 # This script runs a testcase, usually given to it by the runtests.pl script.
 
@@ -100,6 +100,9 @@ sub make_test_specific_links {
     when ("./libraries/msl31/simulate") {
       (my $test_name) = $test =~ /(.*)\.mos$/;
       make_link("$test_name.mat");
+    }
+    when ("./3rdParty/PlanarMechanics") {
+      make_link("simulation");
     }
   }
 }

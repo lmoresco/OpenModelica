@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Author: Per Östlund
+# Author: Per ֖stlund
 #
 # This script parses the makefiles in the testsuite and extracts (almost) all
 # testcases. It then runs each test with the runtest.pl script, which creates a
