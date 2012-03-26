@@ -132,7 +132,7 @@ Model restrictions
 <p>
 Three correlations for <b>mass flow</b> vs <b>pressure loss</b> are availabe:
 <ul>
-<li> steam or gas valve: For ideal gas or steam taking choked flow into account (ref: <a href=\"http://de.wikipedia.org/w/index.php?title=D%C3%BCsenstr%C3%B6mung&oldid=59686117\">Strömungsdüse</a>)
+<li> steam or gas valve: For ideal gas or steam taking choked flow into account (ref: <a href=\"http://de.wikipedia.org/w/index.php?title=D%C3%BCsenstr%C3%B6mung&oldid=59686117\">StrÃ¶mungsdÃ¼se</a>)
 <li> water valve: according to Dynaplant model
 <li> linear valve: with simple linear behavior m=Y*K*delta_p
 </ul>

@@ -3709,7 +3709,7 @@ still kept in Modelica.SIunits.</p>
               extent={{-33,-7},{-92,-67}},
               lineColor={0,0,0},
               lineThickness=1,
-              textString="°C"),
+              textString="Â°C"),
             Text(
               extent={{82,-7},{22,-67}},
               lineColor={0,0,0},
@@ -3938,7 +3938,7 @@ that are directly usable (= number of public, non-partial classes).
 
 <p>
 <b>Licensed by the Modelica Association under the Modelica License 2</b><br>
-Copyright &copy; 1998-2009, ABB, arsenal research, T.&nbsp;Bödrich, DLR, Dynasim, Fraunhofer, Modelon,
+Copyright &copy; 1998-2009, ABB, arsenal research, T.&nbsp;BÃ¶drich, DLR, Dynasim, Fraunhofer, Modelon,
 TU Hamburg-Harburg, Politecnico di Milano.
 </p>
 
@@ -6075,7 +6075,7 @@ The Real output y is a constant signal:
                 lineColor={0,0,0},
                 fillColor={255,255,255},
                 fillPattern=FillPattern.Solid,
-                textString="%k °C")}),
+                textString="%k Â°C")}),
               Diagram(coordinateSystem(
               preserveAspectRatio=true,
               extent={{-100,-100},{100,100}},
@@ -7909,7 +7909,7 @@ This is discussed in the description of package
         parameter Real ro(final unit="kg/m3")=1060; //liquid density
 
        //TorsoArtyGradient  =  TorsoCM * Gravity_Gz * ArtyFractGz;  //Hydrostatic pressure: P=ro.g.h
-         //cm *  .01 m/cm * 9.81 m/s² * 1060 kg/m3 * 1/133.322 mmHg/Pa
+         //cm *  .01 m/cm * 9.81 m/sÂ² * 1060 kg/m3 * 1/133.322 mmHg/Pa
          //= height[cm] * .77996129671022036873134216408395 [mmHg]
          //Blood density = 1060 kg/m3: Cutnell, John & Johnson, Kenneth. Physics, Fourth Edition. Wiley, 1998: 308.
 
@@ -7988,7 +7988,7 @@ This is discussed in the description of package
         parameter Real ro(final unit="kg/m3")=1060; //liquid density
 
        //TorsoArtyGradient  =  TorsoCM * Gravity_Gz * ArtyFractGz;  //Hydrostatic pressure: P=ro.g.h
-         //cm *  .01 m/cm * 9.81 m/s² * 1060 kg/m3 * 1/133.322 mmHg/Pa
+         //cm *  .01 m/cm * 9.81 m/sÂ² * 1060 kg/m3 * 1/133.322 mmHg/Pa
          //= height[cm] * .77996129671022036873134216408395 [mmHg]
          //Blood density = 1060 kg/m3: Cutnell, John & Johnson, Kenneth. Physics, Fourth Edition. Wiley, 1998: 308.
 
@@ -10388,7 +10388,7 @@ Connector with one flow signal of type Real.
         if not found then
            Streams.error("Parameter \"" + name + "\" not found in file \"" + fileName + "\"");
         end if;
-			*/
+      */
         result := 1.0;
 
         annotation (Documentation(info="<html>
@@ -17135,7 +17135,7 @@ Blood resistance in peripheral organs except hepatic artery, gastro interstition
          VeinFractGz = veinFractGz[Status_Posture]; //in legs veins are valves
 
          TorsoArtyGradient  =  TorsoCM * Gravity_Gz * ArtyFractGz;  //Hydrostatic pressure: P=ro.g.h
-         //cm *  .01 m/cm * 9.81 m/s² * 1060 kg/m3 * 1/133.322 mmHg/Pa
+         //cm *  .01 m/cm * 9.81 m/sÂ² * 1060 kg/m3 * 1/133.322 mmHg/Pa
          //= height[cm] * .77996129671022036873134216408395 [mmHg]
          //Blood density = 1060 kg/m3: Cutnell, John & Johnson, Kenneth. Physics, Fourth Edition. Wiley, 1998: 308.
 
