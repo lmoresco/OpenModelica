@@ -1092,7 +1092,7 @@ and the accompanying <b>disclaimer</b>
 </html>"), Diagram(coordinateSystem(extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{169,86},{349,236}}, fillColor={235,235,235}, fillPattern=FillPattern.Solid),Polygon(points={{169,236},{189,256},{369,256},{349,236},{169,236}}, fillColor={235,235,235}, fillPattern=FillPattern.Solid),Polygon(points={{369,256},{369,106},{349,86},{349,236},{369,256}}, fillColor={235,235,235}, fillPattern=FillPattern.Solid),Text(extent={{179,226},{339,196}}, textString="Library", fillColor={160,160,160}),Text(extent={{206,173},{314,119}}, textString="[kg.m2]", fillColor={0,0,0}),Text(extent={{163,320},{406,264}}, textString="Modelica.SIunits", fillColor={255,0,0})}));
     package Conversions "Conversion functions to/from non SI units and type definitions of non SI units"
       extends Modelica.Icons.Library2;
-      annotation(preferedView="info", Icon(coordinateSystem(extent={{-100,-100},{100,100}}), graphics={Text(extent={{-33,-7},{-92,-67}}, textString="°C", fillColor={0,0,0}, lineThickness=1.0),Text(extent={{82,-7},{22,-67}}, textString="K", fillColor={0,0,0}),Line(points={{-26,-36},{6,-36}}, color={0,0,0}),Polygon(points={{6,-28},{6,-45},{26,-37},{6,-28}}, fillPattern=FillPattern.Solid, pattern=LinePattern.None, fillColor={0,0,0})}), Documentation(info="<HTML>
+      annotation(preferedView="info", Icon(coordinateSystem(extent={{-100,-100},{100,100}}), graphics={Text(extent={{-33,-7},{-92,-67}}, textString="Â°C", fillColor={0,0,0}, lineThickness=1.0),Text(extent={{82,-7},{22,-67}}, textString="K", fillColor={0,0,0}),Line(points={{-26,-36},{6,-36}}, color={0,0,0}),Polygon(points={{6,-28},{6,-45},{26,-37},{6,-28}}, fillPattern=FillPattern.Solid, pattern=LinePattern.None, fillColor={0,0,0})}), Documentation(info="<HTML>
 <p>This package provides conversion functions from the non SI Units
 defined in package Modelica.SIunits.Conversions.NonSIunits to the
 corresponding SI Units defined in package Modelica.SIunits and vice
@@ -1679,7 +1679,7 @@ The magnetic network of that solenoid was derived with the assistance of magneto
       Modelica.Electrical.Analog.Basic.Resistor R_coil(R=R_coil_20) annotation(extent=[-90,20;-70,40], rotation=270);
       Modelica.Electrical.Analog.Interfaces.PositivePin pin_p annotation(extent=[-110,50;-90,70]);
       Modelica.Electrical.Analog.Interfaces.NegativePin pin_n annotation(extent=[-110,-70;-90,-50]);
-      parameter SI.Resistance R_coil_20=12.5 "Winding resistance at 20 °C";
+      parameter SI.Resistance R_coil_20=12.5 "Winding resistance at 20 Â°C";
       parameter Real n_turns=1146 "Number of winding turns";
       Magnetic.Reluctance.Air.CircularHalfAnnulus R_mStray(d=l_yoke/3, t=l_yoke/3, r=(d_yoke - d_arm)/2) "Coil stray reluctance" annotation(extent=[-22,-10;-2,10], rotation=270);
       Magnetic.Reluctance.NonlinearReluctance R_mFeArm(A=A_arm, l=l_yoke/3, redeclare function my_r_Material= Magnetic.Material.Softmagnetic.Steel_9SMn28K ) "Armature reluctance" annotation(extent=[-38,10;-18,30]);
