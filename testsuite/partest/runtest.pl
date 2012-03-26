@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Author: Per ֖stlund
+# Author: Per Östlund
 #
 # This script runs a testcase, usually given to it by the runtests.pl script.
 
