@@ -312,7 +312,7 @@ Vol. 88, pp. 9107-9111, October 1991
 Cell Biology.)
 
 <h2>Abstract</h2>
-A minimal model for the mitotic oscillator is presented. The model, built on recent experimental advances, is based on the cascade of post-translational modification that modulates the activity of cdc2 kinase during the cell cycle. The model pertains to the situation encountered in early amphibian embryos, where the accumulation of cyclin suffices to trigger the onset of mitosis. In the first cycle of the bicyclic cascade model, cyclin promotes the activation of cdc2 kinase through reversible dephosphorylation, and in the second cycle, cdc2 kinase activates a cyclin protease by reversible phosphorylation. That cyclin activates cdc2 kinase while the kinase triggers the degradation of cyclin has suggested that oscillations may originate from such a negative feedback loop [Félix, M. A., Labbé, J. C., Dorée, M., Hunt, T. & Karsenti, E. (1990) Nature (London) 346, 379-382]. This conjecture is corroborated by the model, which indicates that sustained oscillations of the limit cycle type can arise in the cascade, provided that a threshold exists in the activation of cdc2 kinase by cyclin and in the activation of cyclin proteolysis by cdc2 kinase. The analysis shows how miototic oscillations may readily arise from time lags associated with these thresholds and from the delayed negative feedback provided by cdc2-induced cyclin degradation. A mechanism for the origin of the thresholds is proposed in terms of the phenomenon of zero-order ultrasensitivity previously described for biochemical systems regulated by covalent modification. 
+A minimal model for the mitotic oscillator is presented. The model, built on recent experimental advances, is based on the cascade of post-translational modification that modulates the activity of cdc2 kinase during the cell cycle. The model pertains to the situation encountered in early amphibian embryos, where the accumulation of cyclin suffices to trigger the onset of mitosis. In the first cycle of the bicyclic cascade model, cyclin promotes the activation of cdc2 kinase through reversible dephosphorylation, and in the second cycle, cdc2 kinase activates a cyclin protease by reversible phosphorylation. That cyclin activates cdc2 kinase while the kinase triggers the degradation of cyclin has suggested that oscillations may originate from such a negative feedback loop [FÃ©lix, M. A., LabbÃ©, J. C., DorÃ©e, M., Hunt, T. & Karsenti, E. (1990) Nature (London) 346, 379-382]. This conjecture is corroborated by the model, which indicates that sustained oscillations of the limit cycle type can arise in the cascade, provided that a threshold exists in the activation of cdc2 kinase by cyclin and in the activation of cyclin proteolysis by cdc2 kinase. The analysis shows how miototic oscillations may readily arise from time lags associated with these thresholds and from the delayed negative feedback provided by cdc2-induced cyclin degradation. A mechanism for the origin of the thresholds is proposed in terms of the phenomenon of zero-order ultrasensitivity previously described for biochemical systems regulated by covalent modification. 
 
 <h2>Simulations</h2>
 The simulation results are shown in the 
@@ -879,7 +879,7 @@ GPh, glycogen phosphorylase (EC 2.4.1.1); Lac, lactate; LDH, lactate dehydrogena
 <p>The model simulates the experimental data as an example in <a href=\"#fig2\">Figure 2</a> shows. The switch from rest to maximal intensity exercise in the model simulation induced by the change of only one parameter, increase of ATPase activity; stimulation of all the metabolic fluxes is a result of activation by the products of ATP hydrolysis.</p>
 <p>
 The simulation have shown that after short periods of training the glycolytic flux at rest was three times higher than it had been before training, whereas during exercise the flux and energy consumption remained the same as before training. Long periods of training had less effect on the glycolytic flux at rest, but increased it in response to exercise, increasing the contribution of oxidative phosphorylation.
-This model and data analysis are described in (Selivanov VA, de Atauri P, Centelles JJ, Cadefau J, Parra J, Cussó R, Carreras J, Cascante M. (2008) The changes in the energy metabolism of human muscle induced by training.  J Theor Biol. 252, 402-410)
+This model and data analysis are described in (Selivanov VA, de Atauri P, Centelles JJ, Cadefau J, Parra J, CussÃ³ R, Carreras J, Cascante M. (2008) The changes in the energy metabolism of human muscle induced by training.  J Theor Biol. 252, 402-410)
 </p>
 <a name=\"tab3\"></a>
 <p><em><strong>Table 3</strong></em></p>
@@ -2349,7 +2349,7 @@ See
 <h1>A Whole Body Model of the Glucose Insulin System</h1>
 
 This model is presented in <i>Hierarchical modeling of diabetes</i> by
-Elin Nyman, ISRN:LiU-IKE-EX-09/14. Linköping University 2009.<br><br>
+Elin Nyman, ISRN:LiU-IKE-EX-09/14. LinkÃ¶ping University 2009.<br><br>
 
 
 See
@@ -2362,7 +2362,7 @@ See
 <h1>A Whole Body Model of the Glucose Insulin System</h1>
 
 This model is presented in <i>Hierarchical modeling of diabetes</i> by
-Elin Nyman, ISRN:LiU-IKE-EX-09/14. Linköping University 2009.<br><br>
+Elin Nyman, ISRN:LiU-IKE-EX-09/14. LinkÃ¶ping University 2009.<br><br>
 
 This whole-body model of the glucose insulin system shows the flows and concentrations of insulin and glucose during and after a meal. Mechanistic details on a cellular level are included in the module describing the fat tissue. The model can be used to study diabetes and other related diseases.
 <h2>The Fat Tissue Module</h2>

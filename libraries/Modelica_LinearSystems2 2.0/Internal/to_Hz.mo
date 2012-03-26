@@ -9,7 +9,7 @@ function to_Hz "Convert from rad/s to Hz"
           textString="K"), Text(
           extent={{100,-20},{20,-100}},
           lineColor={0,0,0},
-          textString="°C")}));
+          textString="Â°C")}));
 algorithm
   f := w/(2*Modelica.Constants.pi);
 end to_Hz;

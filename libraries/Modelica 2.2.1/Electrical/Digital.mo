@@ -2091,7 +2091,7 @@ The values val... are given by parameters.</P>
       parameter Real value_W=0.5 "value for digital W (Weak    Unknown)";
       parameter Real value_L=0 "value for digital L (Weak    0)";
       parameter Real value_H=1 "value for digital H (Weak    1)";
-      parameter Real value_m=0.5 "value for digital m (Don´t care)";
+      parameter Real value_m=0.5 "value for digital m (DonÂ´t care)";
     algorithm 
       for i in 1:n loop
         y[i]:=if x[i] == L.'U' then value_U else if x[i] == L.'X' then value_X else if x[i] == L.'0' then value_0 else if x[i] == L.'1' then value_1 else if x[i] == L.'Z' then value_Z else if x[i] == L.'W' then value_W else if x[i] == L.'L' then value_L else if x[i] == L.'H' then value_H else value_m;

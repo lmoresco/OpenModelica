@@ -1491,7 +1491,7 @@ In particular, the following people have directly contributed
   </tr>
 
   <tr><td><b>Christoph C. Richter</b> </td
-      <td> Institut für Thermodynamik, <br>
+      <td> Institut fÃ¼r Thermodynamik, <br>
            Technische Universit&auml;t Braunschweig, <br>
            Germany</td>
       <td> Modelica.Media</td>

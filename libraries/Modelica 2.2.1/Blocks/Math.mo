@@ -41,44 +41,44 @@ blocks that extend from Modelica.Blocks.Interfaces.PartialConversionBlock.</p>
 </html>"), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
     end ConvertAllUnits;
 
-    block To_degC "Convert from Kelvin to 캜elsius"
+    block To_degC "Convert from Kelvin to 째Celsius"
       extends Modelica.Blocks.Interfaces.PartialConversionBlock(u(unit="K"), y(unit="degC"));
-      annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, extent={{-100,20},{-20,100}}, textString="K", fontName="Arial"),Text(visible=true, extent={{20,-100},{100,-20}}, textString="캜", fontName="Arial")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
+      annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, extent={{-100,20},{-20,100}}, textString="K", fontName="Arial"),Text(visible=true, extent={{20,-100},{100,-20}}, textString="째C", fontName="Arial")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
     equation 
       y=SI.Conversions.to_degC(u);
     end To_degC;
 
-    block From_degC "Convert from 캜elsius to Kelvin"
+    block From_degC "Convert from 째Celsius to Kelvin"
       extends Modelica.Blocks.Interfaces.PartialConversionBlock(u(unit="degC"), y(unit="K"));
-      annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, extent={{-100,20},{-20,100}}, textString="캜", fontName="Arial"),Text(visible=true, extent={{20,-100},{100,-20}}, textString="K", fontName="Arial")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
+      annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, extent={{-100,20},{-20,100}}, textString="째C", fontName="Arial"),Text(visible=true, extent={{20,-100},{100,-20}}, textString="K", fontName="Arial")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
     equation 
       y=SI.Conversions.from_degC(u);
     end From_degC;
 
-    block To_degF "Convert from Kelvin to 캟ahrenheit"
+    block To_degF "Convert from Kelvin to 째Fahrenheit"
       extends Modelica.Blocks.Interfaces.PartialConversionBlock(u(unit="K"), y(unit="degF"));
-      annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, extent={{-100,20},{-20,100}}, textString="K", fontName="Arial"),Text(visible=true, extent={{20,-100},{100,-20}}, textString="캟", fontName="Arial")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
+      annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, extent={{-100,20},{-20,100}}, textString="K", fontName="Arial"),Text(visible=true, extent={{20,-100},{100,-20}}, textString="째F", fontName="Arial")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
     equation 
       y=SI.Conversions.to_degF(u);
     end To_degF;
 
-    block From_degF "Convert from 캟ahrenheit to Kelvin"
+    block From_degF "Convert from 째Fahrenheit to Kelvin"
       extends Modelica.Blocks.Interfaces.PartialConversionBlock(u(unit="degF"), y(unit="K"));
-      annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, extent={{-100,20},{-20,100}}, textString="캟", fontName="Arial"),Text(visible=true, extent={{20,-100},{100,-20}}, textString="K", fontName="Arial")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
+      annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, extent={{-100,20},{-20,100}}, textString="째F", fontName="Arial"),Text(visible=true, extent={{20,-100},{100,-20}}, textString="K", fontName="Arial")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
     equation 
       y=SI.Conversions.from_degF(u);
     end From_degF;
 
-    block To_degRk "Convert from Kelvin to 캲ankine"
+    block To_degRk "Convert from Kelvin to 째Rankine"
       extends Modelica.Blocks.Interfaces.PartialConversionBlock(u(unit="K"), y(unit="degRk"));
-      annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, extent={{-100,20},{-20,100}}, textString="K", fontName="Arial"),Text(visible=true, extent={{20,-100},{100,-20}}, textString="캲k", fontName="Arial")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
+      annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, extent={{-100,20},{-20,100}}, textString="K", fontName="Arial"),Text(visible=true, extent={{20,-100},{100,-20}}, textString="째Rk", fontName="Arial")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
     equation 
       y=SI.Conversions.to_degRk(u);
     end To_degRk;
 
-    block From_degRk "Convert from 캲ankine to Kelvin"
+    block From_degRk "Convert from 째Rankine to Kelvin"
       extends Modelica.Blocks.Interfaces.PartialConversionBlock(u(unit="degRk"), y(unit="K"));
-      annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, extent={{-100,20},{-20,100}}, textString="캲k", fontName="Arial"),Text(visible=true, extent={{20,-100},{100,-20}}, textString="K", fontName="Arial")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
+      annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, extent={{-100,20},{-20,100}}, textString="째Rk", fontName="Arial"),Text(visible=true, extent={{20,-100},{100,-20}}, textString="K", fontName="Arial")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
     equation 
       y=SI.Conversions.from_degRk(u);
     end From_degRk;

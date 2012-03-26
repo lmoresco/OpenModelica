@@ -36,7 +36,7 @@ Users Guide discusses some aspects of the <em>BioChem</em> Library, including a 
 <p>
 <b>BioChem - A Biological and Chemical Library for Modelica (Conference paper)</b><br>
 Emma Larsdotter Nilsson, Peter Fritzson. 
-Proceedings of the 3rd International Modelica Conference (November 3-4, Linköping, Sweden) 2003, pp. 215-220
+Proceedings of the 3rd International Modelica Conference (November 3-4, LinkÃ¶ping, Sweden) 2003, pp. 215-220
 <br>
 <br>
 <b>A minimal cascade model for the mitotic oscillator involving cyclin
@@ -49,7 +49,7 @@ Cell Biology
 <br>
 
 <b>Hierarchical modeling of diabetes</b><br>
-Elin Nyman. ISRN:LiU-IKE-EX-09/14. Linköping University 2009.
+Elin Nyman. ISRN:LiU-IKE-EX-09/14. LinkÃ¶ping University 2009.
 
 <br>
 <br>
@@ -92,15 +92,15 @@ Becker-Weimann S, Wolf J, Herzel H, Kramer A. Biophysical Journal Volume 87 Nove
  ", revisions="
  <html>
  <h1>Version history</h1>
- <p>The first version of the library was created by Emma Larsdotter Nilsson at Linköping University.
+ <p>The first version of the library was created by Emma Larsdotter Nilsson at LinkÃ¶ping University.
 The current version of the library has been further developed by Erik Ulfhielm at
-Linköping University, and by MathCore Engineering AB.
+LinkÃ¶ping University, and by MathCore Engineering AB.
 </p>
  <ul>
  Main Author 2007-2009: MathCore Engineering AB <br>
  Main Author 2006: Erik Ulfhielm <br>
  Main Author 2004-2005: Emma Larsdotter Nilsson <br> <br>
- Copyright (c) 2005-2008 MathCore Engineering AB, Linköpings universitet and Modelica Association <br> <br>
+ Copyright (c) 2005-2008 MathCore Engineering AB, LinkÃ¶pings universitet and Modelica Association <br> <br>
  The BioChem package is free software and can be redistributed <br>
  and/or modified under the terms of the Modelica License with <br>
  the additional provision that changed parts of BioChem also <br>
