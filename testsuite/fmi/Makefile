@@ -1,13 +1,13 @@
 TEST = ../rtest -v
 
 TESTFILES = \
+BouncingBall.mos \
+HelloFMIWorld.mos \
 
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES= \
-BouncingBall.mos \
-HelloFMIWorld.mos \
 ExternalFMUs.mos \
 
 # Dependency files that are not .mo .mos or Makefile
