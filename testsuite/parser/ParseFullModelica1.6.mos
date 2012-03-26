@@ -14648,9 +14648,9 @@ list();
 //       end HeatFlowSensor;
 //       package Celsius \"Components with Celsius input and/or output\"
 //         extends Modelica.Icons.Library;
-//         model ToKelvin \"Conversion block from 캜elsius to Kelvin\"
+//         model ToKelvin \"Conversion block from 째Celsius to Kelvin\"
 //           parameter Integer n = 1 \"Number of inputs (= number of outputs)\";
-//           annotation(Diagram(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-40,-50;-99,-99], string = \"캜\", style(color = 0, thickness = 4)), Text(extent = [100,-47;44,-100], string = \"K\", style(color = 0)), Line(points = [-100,0;-40,0]), Line(points = [41,0;100,0])), Icon(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [112,-40;32,-120], string = \"K\", style(color = 0)), Text(extent = [-31,-39;-111,-119], string = \"캜\", style(color = 0, thickness = 4)), Line(points = [-41,0;-100,0]), Line(points = [100,0;40,0]), Text(extent = [-137,99;132,49], string = \"%name\")), Documentation(info = \"<HTML>
+//           annotation(Diagram(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-40,-50;-99,-99], string = \"째C\", style(color = 0, thickness = 4)), Text(extent = [100,-47;44,-100], string = \"K\", style(color = 0)), Line(points = [-100,0;-40,0]), Line(points = [41,0;100,0])), Icon(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [112,-40;32,-120], string = \"K\", style(color = 0)), Text(extent = [-31,-39;-111,-119], string = \"째C\", style(color = 0, thickness = 4)), Line(points = [-41,0;-100,0]), Line(points = [100,0;40,0]), Text(extent = [-137,99;132,49], string = \"%name\")), Documentation(info = \"<HTML>
 // <p>
 // This component converts all input signals from Celsius to Kelvin
 // and provides them as output signals.
@@ -14662,9 +14662,9 @@ list();
 //         equation
 //           Kelvin.signal = from_degC(Celsius.signal);
 //         end ToKelvin;
-//         model FromKelvin \"Conversion from Kelvin to 캜elsius\"
+//         model FromKelvin \"Conversion from Kelvin to 째Celsius\"
 //           parameter Integer n = 1 \"Number of inputs (= number of outputs)\";
-//           annotation(Icon(Text(extent = [-137,99;132,49], string = \"%name\"), Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-34,-42;-114,-122], string = \"K\", style(color = 0, thickness = 4)), Text(extent = [110,-39;30,-119], string = \"캜\", style(color = 0)), Line(points = [-40,0;-100,0]), Line(points = [40,0;100,0])), Diagram(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-42,-41;-101,-98], string = \"K\", style(color = 0, thickness = 4)), Text(extent = [100,-40;30,-100], string = \"캜\", style(color = 0)), Line(points = [-100,0;-40,0]), Line(points = [40,0;100,0])), Documentation(info = \"<HTML>
+//           annotation(Icon(Text(extent = [-137,99;132,49], string = \"%name\"), Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-34,-42;-114,-122], string = \"K\", style(color = 0, thickness = 4)), Text(extent = [110,-39;30,-119], string = \"째C\", style(color = 0)), Line(points = [-40,0;-100,0]), Line(points = [40,0;100,0])), Diagram(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-42,-41;-101,-98], string = \"K\", style(color = 0, thickness = 4)), Text(extent = [100,-40;30,-100], string = \"째C\", style(color = 0)), Line(points = [-100,0;-40,0]), Line(points = [40,0;100,0])), Documentation(info = \"<HTML>
 // <p>
 // This component converts all input signals from Kelvin to Celsius
 // and provides them as output signals.
@@ -14678,19 +14678,19 @@ list();
 //         end FromKelvin;
 //         model FixedTemperature \"Fixed temperature boundary condition in degree Celsius\"
 //           parameter NonSI.Temperature_degC T \"Fixed Temperature at the port\";
-//           annotation(Icon(Text(extent = [-118,165;122,105], string = \"%name\"), Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Text(extent = [0,0;-100,-100], string = \"캜\", style(color = 0)), Line(points = [-91,0;66,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1)), Text(extent = [-145,-102;135,-151], string = \"T=%T\", style(color = 0))), Documentation(info = \"<HTML>
+//           annotation(Icon(Text(extent = [-118,165;122,105], string = \"%name\"), Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Text(extent = [0,0;-100,-100], string = \"째C\", style(color = 0)), Line(points = [-91,0;66,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1)), Text(extent = [-145,-102;135,-151], string = \"T=%T\", style(color = 0))), Documentation(info = \"<HTML>
 // <p>
 // This model defines a fixed temperature T at its port in [degC],
 // i.e., it defines a fixed temperature as a boundary condition.
 // </p>
 // </HTML>
-// \"), Diagram(Rectangle(extent = [-100,100;101,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-42,0;66,0], style(color = 42, thickness = 2)), Text(extent = [0,0;-100,-100], string = \"캜\", style(color = 0)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))));
+// \"), Diagram(Rectangle(extent = [-100,100;101,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-42,0;66,0], style(color = 42, thickness = 2)), Text(extent = [0,0;-100,-100], string = \"째C\", style(color = 0)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))));
 //           Interfaces.HeatPort_b port annotation(extent = [100,-10;120,10]);
 //         equation
 //           port.T = from_degC(T);
 //         end FixedTemperature;
-//         model PrescribedTemperature \"Variable temperature boundary condition in 캜elsius\"
-//           annotation(Icon(Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;92,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1)), Text(extent = [0,0;-100,-100], string = \"캜\", style(color = 0)), Text(extent = [-122,163;118,103], string = \"%name\"), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))), Documentation(info = \"<HTML>
+//         model PrescribedTemperature \"Variable temperature boundary condition in 째Celsius\"
+//           annotation(Icon(Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;92,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1)), Text(extent = [0,0;-100,-100], string = \"째C\", style(color = 0)), Text(extent = [-122,163;118,103], string = \"%name\"), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))), Documentation(info = \"<HTML>
 // <p>
 // This model represents a variable temperature boundary condition
 // The temperature value in [degC] is given by the input signal
@@ -14699,7 +14699,7 @@ list();
 // as required to keep the temperature at the specified value.
 // </p>
 // </HTML>
-// \"), Diagram(Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Text(extent = [0,0;-100,-100], string = \"캜\", style(color = 0)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))));
+// \"), Diagram(Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Text(extent = [0,0;-100,-100], string = \"째C\", style(color = 0)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))));
 //           Interfaces.HeatPort_b port annotation(extent = [100,-10;120,10]);
 //           Modelica.Blocks.Interfaces.InPort T(final n = 1) annotation(extent = [-140,-20;-100,20]);
 //         equation
@@ -14727,8 +14727,8 @@ list();
 // 
 // </HTML>
 // \"));
-//         model TemperatureSensor \"Absolute temperature sensor in 캜elsius\"
-//           annotation(Diagram(Ellipse(extent = [-20,-98;20,-60], style(color = 0, thickness = 2, fillColor = 42)), Rectangle(extent = [-12,40;12,-68], style(color = 42, fillColor = 42)), Line(points = [12,0;90,0]), Line(points = [-94,0;-12,0], style(color = 42)), Polygon(points = [-12,40;-12,80;-10,86;-6,88;0,90;6,88;10,86;12,80;12,40;-12,40], style(color = 0, thickness = 2)), Line(points = [-12,40;-12,-64], style(color = 0, thickness = 2)), Line(points = [12,40;12,-64], style(color = 0, thickness = 2)), Line(points = [-40,-20;-12,-20], style(color = 0)), Line(points = [-40,20;-12,20], style(color = 0)), Line(points = [-40,60;-12,60], style(color = 0)), Text(extent = [102,-22;60,-74], string = \"캜\", style(color = 0))), Icon(Ellipse(extent = [-20,-98;20,-60], style(color = 0, thickness = 2, fillColor = 42)), Rectangle(extent = [-12,40;12,-68], style(color = 42, fillColor = 42)), Line(points = [12,0;90,0]), Line(points = [-90,0;-12,0], style(color = 42)), Polygon(points = [-12,40;-12,80;-10,86;-6,88;0,90;6,88;10,86;12,80;12,40;-12,40], style(color = 0, thickness = 2)), Line(points = [-12,40;-12,-64], style(color = 0, thickness = 2)), Line(points = [12,40;12,-64], style(color = 0, thickness = 2)), Line(points = [-40,-20;-12,-20], style(color = 0)), Line(points = [-40,20;-12,20], style(color = 0)), Line(points = [-40,60;-12,60], style(color = 0)), Text(extent = [126,-20;26,-120], string = \"캜\", style(color = 0)), Text(extent = [-132,144;108,84], string = \"%name\")), Documentation(info = \"<HTML>
+//         model TemperatureSensor \"Absolute temperature sensor in 째Celsius\"
+//           annotation(Diagram(Ellipse(extent = [-20,-98;20,-60], style(color = 0, thickness = 2, fillColor = 42)), Rectangle(extent = [-12,40;12,-68], style(color = 42, fillColor = 42)), Line(points = [12,0;90,0]), Line(points = [-94,0;-12,0], style(color = 42)), Polygon(points = [-12,40;-12,80;-10,86;-6,88;0,90;6,88;10,86;12,80;12,40;-12,40], style(color = 0, thickness = 2)), Line(points = [-12,40;-12,-64], style(color = 0, thickness = 2)), Line(points = [12,40;12,-64], style(color = 0, thickness = 2)), Line(points = [-40,-20;-12,-20], style(color = 0)), Line(points = [-40,20;-12,20], style(color = 0)), Line(points = [-40,60;-12,60], style(color = 0)), Text(extent = [102,-22;60,-74], string = \"째C\", style(color = 0))), Icon(Ellipse(extent = [-20,-98;20,-60], style(color = 0, thickness = 2, fillColor = 42)), Rectangle(extent = [-12,40;12,-68], style(color = 42, fillColor = 42)), Line(points = [12,0;90,0]), Line(points = [-90,0;-12,0], style(color = 42)), Polygon(points = [-12,40;-12,80;-10,86;-6,88;0,90;6,88;10,86;12,80;12,40;-12,40], style(color = 0, thickness = 2)), Line(points = [-12,40;-12,-64], style(color = 0, thickness = 2)), Line(points = [12,40;12,-64], style(color = 0, thickness = 2)), Line(points = [-40,-20;-12,-20], style(color = 0)), Line(points = [-40,20;-12,20], style(color = 0)), Line(points = [-40,60;-12,60], style(color = 0)), Text(extent = [126,-20;26,-120], string = \"째C\", style(color = 0)), Text(extent = [-132,144;108,84], string = \"%name\")), Documentation(info = \"<HTML>
 // 
 // <p>
 // This is an ideal absolute temperature sensor which returns
@@ -14749,9 +14749,9 @@ list();
 //       end Celsius;
 //       package Fahrenheit \"Components with Fahrenheit input and/or output\"
 //         extends Modelica.Icons.Library;
-//         model ToKelvin \"Conversion block from 캟ahrenheit to Kelvin\"
+//         model ToKelvin \"Conversion block from 째Fahrenheit to Kelvin\"
 //           parameter Integer n = 1 \"Number of inputs (= number of outputs)\";
-//           annotation(Diagram(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-40,-50;-99,-99], string = \"캟\", style(color = 0, thickness = 4)), Text(extent = [100,-47;44,-100], string = \"K\", style(color = 0)), Line(points = [-100,0;-40,0]), Line(points = [41,0;100,0])), Icon(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [112,-40;32,-120], string = \"K\", style(color = 0)), Text(extent = [-31,-39;-111,-119], string = \"캟\", style(color = 0, thickness = 4)), Line(points = [-41,0;-100,0]), Line(points = [100,0;40,0]), Text(extent = [-137,99;132,49], string = \"%name\")), Documentation(info = \"<HTML>
+//           annotation(Diagram(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-40,-50;-99,-99], string = \"째F\", style(color = 0, thickness = 4)), Text(extent = [100,-47;44,-100], string = \"K\", style(color = 0)), Line(points = [-100,0;-40,0]), Line(points = [41,0;100,0])), Icon(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [112,-40;32,-120], string = \"K\", style(color = 0)), Text(extent = [-31,-39;-111,-119], string = \"째F\", style(color = 0, thickness = 4)), Line(points = [-41,0;-100,0]), Line(points = [100,0;40,0]), Text(extent = [-137,99;132,49], string = \"%name\")), Documentation(info = \"<HTML>
 // <p>
 // This component converts all input signals from degree Fahrenheit to Kelvin
 // and provides them as output signals.
@@ -14763,9 +14763,9 @@ list();
 //         equation
 //           Kelvin.signal = from_degF(Fahrenheit.signal);
 //         end ToKelvin;
-//         model FromKelvin \"Conversion from Kelvin to 캟ahrenheit\"
+//         model FromKelvin \"Conversion from Kelvin to 째Fahrenheit\"
 //           parameter Integer n = 1 \"Number of inputs (= number of outputs)\";
-//           annotation(Icon(Text(extent = [-137,99;132,49], string = \"%name\"), Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-34,-42;-114,-122], string = \"K\", style(color = 0, thickness = 4)), Text(extent = [110,-39;30,-119], string = \"캟\", style(color = 0)), Line(points = [-40,0;-100,0]), Line(points = [40,0;100,0])), Diagram(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-42,-41;-101,-98], string = \"K\", style(color = 0, thickness = 4)), Text(extent = [100,-40;30,-100], string = \"캟\", style(color = 0)), Line(points = [-100,0;-40,0]), Line(points = [40,0;100,0])), Documentation(info = \"<HTML>
+//           annotation(Icon(Text(extent = [-137,99;132,49], string = \"%name\"), Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-34,-42;-114,-122], string = \"K\", style(color = 0, thickness = 4)), Text(extent = [110,-39;30,-119], string = \"째F\", style(color = 0)), Line(points = [-40,0;-100,0]), Line(points = [40,0;100,0])), Diagram(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-42,-41;-101,-98], string = \"K\", style(color = 0, thickness = 4)), Text(extent = [100,-40;30,-100], string = \"째F\", style(color = 0)), Line(points = [-100,0;-40,0]), Line(points = [40,0;100,0])), Documentation(info = \"<HTML>
 // <p>
 // This component converts all input signals from Kelvin to Fahrenheit
 // and provides them as output signals.
@@ -14777,21 +14777,21 @@ list();
 //         equation
 //           Fahrenheit.signal = to_degF(Kelvin.signal);
 //         end FromKelvin;
-//         model FixedTemperature \"Fixed temperature boundary condition in 캟ahrenheit\"
+//         model FixedTemperature \"Fixed temperature boundary condition in 째Fahrenheit\"
 //           parameter NonSI.Temperature_degF T \"Fixed Temperature at the port\";
-//           annotation(Icon(Text(extent = [-118,165;122,105], string = \"%name\"), Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Text(extent = [0,0;-100,-100], string = \"캟\", style(color = 0)), Line(points = [-91,0;66,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1)), Text(extent = [-145,-102;135,-151], string = \"T=%T\", style(color = 0))), Documentation(info = \"<HTML>
+//           annotation(Icon(Text(extent = [-118,165;122,105], string = \"%name\"), Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Text(extent = [0,0;-100,-100], string = \"째F\", style(color = 0)), Line(points = [-91,0;66,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1)), Text(extent = [-145,-102;135,-151], string = \"T=%T\", style(color = 0))), Documentation(info = \"<HTML>
 // <p>
 // This model defines a fixed temperature T at its port in [degF],
 // i.e., it defines a fixed temperature as a boundary condition.
 // </p>
 // </HTML>
-// \"), Diagram(Rectangle(extent = [-100,100;101,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-42,0;66,0], style(color = 42, thickness = 2)), Text(extent = [0,0;-100,-100], string = \"캟\", style(color = 0)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))));
+// \"), Diagram(Rectangle(extent = [-100,100;101,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-42,0;66,0], style(color = 42, thickness = 2)), Text(extent = [0,0;-100,-100], string = \"째F\", style(color = 0)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))));
 //           Interfaces.HeatPort_b port annotation(extent = [100,-10;120,10]);
 //         equation
 //           port.T = from_degF(T);
 //         end FixedTemperature;
-//         model PrescribedTemperature \"Variable temperature boundary condition in 캟ahrenheit\"
-//           annotation(Icon(Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;92,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1)), Text(extent = [0,0;-100,-100], string = \"캟\", style(color = 0)), Text(extent = [-122,163;118,103], string = \"%name\"), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))), Documentation(info = \"<HTML>
+//         model PrescribedTemperature \"Variable temperature boundary condition in 째Fahrenheit\"
+//           annotation(Icon(Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;92,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1)), Text(extent = [0,0;-100,-100], string = \"째F\", style(color = 0)), Text(extent = [-122,163;118,103], string = \"%name\"), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))), Documentation(info = \"<HTML>
 // <p>
 // This model represents a variable temperature boundary condition
 // The temperature value in [degF] is given by the input signal
@@ -14800,7 +14800,7 @@ list();
 // as required to keep the temperature at the specified value.
 // </p>
 // </HTML>
-// \"), Diagram(Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Text(extent = [0,0;-100,-100], string = \"캟\", style(color = 0)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))));
+// \"), Diagram(Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Text(extent = [0,0;-100,-100], string = \"째F\", style(color = 0)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))));
 //           Interfaces.HeatPort_b port annotation(extent = [100,-10;120,10]);
 //           Modelica.Blocks.Interfaces.InPort T(final n = 1) annotation(extent = [-140,-20;-100,20]);
 //         equation
@@ -14828,8 +14828,8 @@ list();
 // 
 // </HTML>
 // \"));
-//         model TemperatureSensor \"Absolute temperature sensor in 캟ahrenheit\"
-//           annotation(Diagram(Ellipse(extent = [-20,-98;20,-60], style(color = 0, thickness = 2, fillColor = 42)), Rectangle(extent = [-12,40;12,-68], style(color = 42, fillColor = 42)), Line(points = [12,0;90,0]), Line(points = [-94,0;-12,0], style(color = 42)), Polygon(points = [-12,40;-12,80;-10,86;-6,88;0,90;6,88;10,86;12,80;12,40;-12,40], style(color = 0, thickness = 2)), Line(points = [-12,40;-12,-64], style(color = 0, thickness = 2)), Line(points = [12,40;12,-64], style(color = 0, thickness = 2)), Line(points = [-40,-20;-12,-20], style(color = 0)), Line(points = [-40,20;-12,20], style(color = 0)), Line(points = [-40,60;-12,60], style(color = 0)), Text(extent = [102,-22;60,-74], string = \"캟\", style(color = 0))), Icon(Ellipse(extent = [-20,-98;20,-60], style(color = 0, thickness = 2, fillColor = 42)), Rectangle(extent = [-12,40;12,-68], style(color = 42, fillColor = 42)), Line(points = [12,0;90,0]), Line(points = [-90,0;-12,0], style(color = 42)), Polygon(points = [-12,40;-12,80;-10,86;-6,88;0,90;6,88;10,86;12,80;12,40;-12,40], style(color = 0, thickness = 2)), Line(points = [-12,40;-12,-64], style(color = 0, thickness = 2)), Line(points = [12,40;12,-64], style(color = 0, thickness = 2)), Line(points = [-40,-20;-12,-20], style(color = 0)), Line(points = [-40,20;-12,20], style(color = 0)), Line(points = [-40,60;-12,60], style(color = 0)), Text(extent = [126,-20;26,-120], string = \"캟\", style(color = 0)), Text(extent = [-132,144;108,84], string = \"%name\")), Documentation(info = \"<HTML>
+//         model TemperatureSensor \"Absolute temperature sensor in 째Fahrenheit\"
+//           annotation(Diagram(Ellipse(extent = [-20,-98;20,-60], style(color = 0, thickness = 2, fillColor = 42)), Rectangle(extent = [-12,40;12,-68], style(color = 42, fillColor = 42)), Line(points = [12,0;90,0]), Line(points = [-94,0;-12,0], style(color = 42)), Polygon(points = [-12,40;-12,80;-10,86;-6,88;0,90;6,88;10,86;12,80;12,40;-12,40], style(color = 0, thickness = 2)), Line(points = [-12,40;-12,-64], style(color = 0, thickness = 2)), Line(points = [12,40;12,-64], style(color = 0, thickness = 2)), Line(points = [-40,-20;-12,-20], style(color = 0)), Line(points = [-40,20;-12,20], style(color = 0)), Line(points = [-40,60;-12,60], style(color = 0)), Text(extent = [102,-22;60,-74], string = \"째F\", style(color = 0))), Icon(Ellipse(extent = [-20,-98;20,-60], style(color = 0, thickness = 2, fillColor = 42)), Rectangle(extent = [-12,40;12,-68], style(color = 42, fillColor = 42)), Line(points = [12,0;90,0]), Line(points = [-90,0;-12,0], style(color = 42)), Polygon(points = [-12,40;-12,80;-10,86;-6,88;0,90;6,88;10,86;12,80;12,40;-12,40], style(color = 0, thickness = 2)), Line(points = [-12,40;-12,-64], style(color = 0, thickness = 2)), Line(points = [12,40;12,-64], style(color = 0, thickness = 2)), Line(points = [-40,-20;-12,-20], style(color = 0)), Line(points = [-40,20;-12,20], style(color = 0)), Line(points = [-40,60;-12,60], style(color = 0)), Text(extent = [126,-20;26,-120], string = \"째F\", style(color = 0)), Text(extent = [-132,144;108,84], string = \"%name\")), Documentation(info = \"<HTML>
 // 
 // <p>
 // This is an ideal absolute temperature sensor which returns
@@ -14850,9 +14850,9 @@ list();
 //       end Fahrenheit;
 //       package Rankine \"Components with Rankine input and/or output\"
 //         extends Modelica.Icons.Library;
-//         model ToKelvin \"Conversion block from 캲ankine to Kelvin\"
+//         model ToKelvin \"Conversion block from 째Rankine to Kelvin\"
 //           parameter Integer n = 1 \"Number of inputs (= number of outputs)\";
-//           annotation(Diagram(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-40,-50;-99,-99], string = \"캲k\", style(color = 0, thickness = 4)), Text(extent = [100,-47;44,-100], string = \"K\", style(color = 0)), Line(points = [-100,0;-40,0]), Line(points = [41,0;100,0])), Icon(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [112,-40;32,-120], string = \"K\", style(color = 0)), Text(extent = [-31,-39;-111,-119], string = \"캲k\", style(color = 0, thickness = 4)), Line(points = [-41,0;-100,0]), Line(points = [100,0;40,0]), Text(extent = [-137,99;132,49], string = \"%name\")), Documentation(info = \"<HTML>
+//           annotation(Diagram(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-40,-50;-99,-99], string = \"째Rk\", style(color = 0, thickness = 4)), Text(extent = [100,-47;44,-100], string = \"K\", style(color = 0)), Line(points = [-100,0;-40,0]), Line(points = [41,0;100,0])), Icon(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [112,-40;32,-120], string = \"K\", style(color = 0)), Text(extent = [-31,-39;-111,-119], string = \"째Rk\", style(color = 0, thickness = 4)), Line(points = [-41,0;-100,0]), Line(points = [100,0;40,0]), Text(extent = [-137,99;132,49], string = \"%name\")), Documentation(info = \"<HTML>
 // <p>
 // This component converts all input signals from degree Rankine to Kelvin
 // and provides them as output signals.
@@ -14864,9 +14864,9 @@ list();
 //         equation
 //           Kelvin.signal = from_degRk(Rankine.signal);
 //         end ToKelvin;
-//         model FromKelvin \"Conversion from Kelvin to 캲ankine\"
+//         model FromKelvin \"Conversion from Kelvin to 째Rankine\"
 //           parameter Integer n = 1 \"Number of inputs (= number of outputs)\";
-//           annotation(Icon(Text(extent = [-137,99;132,49], string = \"%name\"), Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-34,-42;-114,-122], string = \"K\", style(color = 0, thickness = 4)), Text(extent = [110,-39;30,-119], string = \"캲k\", style(color = 0)), Line(points = [-40,0;-100,0]), Line(points = [40,0;100,0])), Diagram(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-42,-41;-101,-98], string = \"K\", style(color = 0, thickness = 4)), Text(extent = [100,-40;30,-100], string = \"캲k\", style(color = 0)), Line(points = [-100,0;-40,0]), Line(points = [40,0;100,0])), Documentation(info = \"<HTML>
+//           annotation(Icon(Text(extent = [-137,99;132,49], string = \"%name\"), Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-34,-42;-114,-122], string = \"K\", style(color = 0, thickness = 4)), Text(extent = [110,-39;30,-119], string = \"째Rk\", style(color = 0)), Line(points = [-40,0;-100,0]), Line(points = [40,0;100,0])), Diagram(Ellipse(extent = [-40,40;40,-40], style(color = 0, thickness = 2, fillColor = 7)), Text(extent = [-42,-41;-101,-98], string = \"K\", style(color = 0, thickness = 4)), Text(extent = [100,-40;30,-100], string = \"째Rk\", style(color = 0)), Line(points = [-100,0;-40,0]), Line(points = [40,0;100,0])), Documentation(info = \"<HTML>
 // <p>
 // This component converts all input signals from Kelvin to Rankine
 // and provides them as output signals.
@@ -14878,21 +14878,21 @@ list();
 //         equation
 //           Rankine.signal = to_degRk(Kelvin.signal);
 //         end FromKelvin;
-//         model FixedTemperature \"Fixed temperature boundary condition in 캲ankine\"
+//         model FixedTemperature \"Fixed temperature boundary condition in 째Rankine\"
 //           parameter NonSI.Temperature_degRk T \"Fixed Temperature at the port\";
-//           annotation(Icon(Text(extent = [-118,165;122,105], string = \"%name\"), Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Text(extent = [0,0;-100,-100], string = \"캲k\", style(color = 0)), Line(points = [-91,0;66,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1)), Text(extent = [-145,-102;135,-151], string = \"T=%T\", style(color = 0))), Documentation(info = \"<HTML>
+//           annotation(Icon(Text(extent = [-118,165;122,105], string = \"%name\"), Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Text(extent = [0,0;-100,-100], string = \"째Rk\", style(color = 0)), Line(points = [-91,0;66,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1)), Text(extent = [-145,-102;135,-151], string = \"T=%T\", style(color = 0))), Documentation(info = \"<HTML>
 // <p>
 // This model defines a fixed temperature T at its port in degree Rankine,
 // [degRk], i.e., it defines a fixed temperature as a boundary condition.
 // </p>
 // </HTML>
-// \"), Diagram(Rectangle(extent = [-100,100;101,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-42,0;66,0], style(color = 42, thickness = 2)), Text(extent = [0,0;-100,-100], string = \"캲k\", style(color = 0)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))));
+// \"), Diagram(Rectangle(extent = [-100,100;101,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-42,0;66,0], style(color = 42, thickness = 2)), Text(extent = [0,0;-100,-100], string = \"째Rk\", style(color = 0)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))));
 //           Interfaces.HeatPort_b port annotation(extent = [100,-10;120,10]);
 //         equation
 //           port.T = from_degRk(T);
 //         end FixedTemperature;
-//         model PrescribedTemperature \"Variable temperature boundary condition in 캲ankine\"
-//           annotation(Icon(Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;92,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1)), Text(extent = [0,0;-100,-100], string = \"캲k\", style(color = 0)), Text(extent = [-122,163;118,103], string = \"%name\"), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))), Documentation(info = \"<HTML>
+//         model PrescribedTemperature \"Variable temperature boundary condition in 째Rankine\"
+//           annotation(Icon(Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;92,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1)), Text(extent = [0,0;-100,-100], string = \"째Rk\", style(color = 0)), Text(extent = [-122,163;118,103], string = \"%name\"), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))), Documentation(info = \"<HTML>
 // <p>
 // This model represents a variable temperature boundary condition
 // The temperature value in degree Rankine, [degRk] is given by the input signal
@@ -14901,7 +14901,7 @@ list();
 // as required to keep the temperature at the specified value.
 // </p>
 // </HTML>
-// \"), Diagram(Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Text(extent = [0,0;-100,-100], string = \"캲k\", style(color = 0)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))));
+// \"), Diagram(Rectangle(extent = [-100,100;100,-100], style(color = 0, pattern = 0, fillColor = 76, fillPattern = 8)), Line(points = [-102,0;64,0], style(color = 42, thickness = 2)), Text(extent = [0,0;-100,-100], string = \"째Rk\", style(color = 0)), Polygon(points = [62,-20;62,20;100,0;62,-20], style(color = 42, fillColor = 42, fillPattern = 1))));
 //           Interfaces.HeatPort_b port annotation(extent = [100,-10;120,10]);
 //           Modelica.Blocks.Interfaces.InPort T(final n = 1) annotation(extent = [-140,-20;-100,20]);
 //         equation
@@ -14929,8 +14929,8 @@ list();
 // 
 // </HTML>
 // \"));
-//         model TemperatureSensor \"Absolute temperature sensor in 캲ankine\"
-//           annotation(Diagram(Ellipse(extent = [-20,-98;20,-60], style(color = 0, thickness = 2, fillColor = 42)), Rectangle(extent = [-12,40;12,-68], style(color = 42, fillColor = 42)), Line(points = [12,0;90,0]), Line(points = [-94,0;-12,0], style(color = 42)), Polygon(points = [-12,40;-12,80;-10,86;-6,88;0,90;6,88;10,86;12,80;12,40;-12,40], style(color = 0, thickness = 2)), Line(points = [-12,40;-12,-64], style(color = 0, thickness = 2)), Line(points = [12,40;12,-64], style(color = 0, thickness = 2)), Line(points = [-40,-20;-12,-20], style(color = 0)), Line(points = [-40,20;-12,20], style(color = 0)), Line(points = [-40,60;-12,60], style(color = 0)), Text(extent = [102,-22;60,-74], string = \"캲k\", style(color = 0))), Icon(Ellipse(extent = [-20,-98;20,-60], style(color = 0, thickness = 2, fillColor = 42)), Rectangle(extent = [-12,40;12,-68], style(color = 42, fillColor = 42)), Line(points = [12,0;90,0]), Line(points = [-90,0;-12,0], style(color = 42)), Polygon(points = [-12,40;-12,80;-10,86;-6,88;0,90;6,88;10,86;12,80;12,40;-12,40], style(color = 0, thickness = 2)), Line(points = [-12,40;-12,-64], style(color = 0, thickness = 2)), Line(points = [12,40;12,-64], style(color = 0, thickness = 2)), Line(points = [-40,-20;-12,-20], style(color = 0)), Line(points = [-40,20;-12,20], style(color = 0)), Line(points = [-40,60;-12,60], style(color = 0)), Text(extent = [126,-20;26,-120], string = \"캲k\", style(color = 0)), Text(extent = [-132,144;108,84], string = \"%name\")), Documentation(info = \"<HTML>
+//         model TemperatureSensor \"Absolute temperature sensor in 째Rankine\"
+//           annotation(Diagram(Ellipse(extent = [-20,-98;20,-60], style(color = 0, thickness = 2, fillColor = 42)), Rectangle(extent = [-12,40;12,-68], style(color = 42, fillColor = 42)), Line(points = [12,0;90,0]), Line(points = [-94,0;-12,0], style(color = 42)), Polygon(points = [-12,40;-12,80;-10,86;-6,88;0,90;6,88;10,86;12,80;12,40;-12,40], style(color = 0, thickness = 2)), Line(points = [-12,40;-12,-64], style(color = 0, thickness = 2)), Line(points = [12,40;12,-64], style(color = 0, thickness = 2)), Line(points = [-40,-20;-12,-20], style(color = 0)), Line(points = [-40,20;-12,20], style(color = 0)), Line(points = [-40,60;-12,60], style(color = 0)), Text(extent = [102,-22;60,-74], string = \"째Rk\", style(color = 0))), Icon(Ellipse(extent = [-20,-98;20,-60], style(color = 0, thickness = 2, fillColor = 42)), Rectangle(extent = [-12,40;12,-68], style(color = 42, fillColor = 42)), Line(points = [12,0;90,0]), Line(points = [-90,0;-12,0], style(color = 42)), Polygon(points = [-12,40;-12,80;-10,86;-6,88;0,90;6,88;10,86;12,80;12,40;-12,40], style(color = 0, thickness = 2)), Line(points = [-12,40;-12,-64], style(color = 0, thickness = 2)), Line(points = [12,40;12,-64], style(color = 0, thickness = 2)), Line(points = [-40,-20;-12,-20], style(color = 0)), Line(points = [-40,20;-12,20], style(color = 0)), Line(points = [-40,60;-12,60], style(color = 0)), Text(extent = [126,-20;26,-120], string = \"째Rk\", style(color = 0)), Text(extent = [-132,144;108,84], string = \"%name\")), Documentation(info = \"<HTML>
 // 
 // <p>
 // This is an ideal absolute temperature sensor which returns
@@ -15188,51 +15188,51 @@ list();
 // </HTML>
 // \"), Icon(Text(extent = [-66,-13;52,-67], string = \"[rev/min]\", style(color = 0))));
 //       end NonSIunits;
-//       function to_degC \"Convert from Kelvin to 캜elsius\"
+//       function to_degC \"Convert from Kelvin to 째Celsius\"
 //         extends ConversionIcon;
 //         input Temperature Kelvin \"Kelvin value\";
 //         output NonSIunits.Temperature_degC Celsius \"Celsius value\";
-//         annotation(Icon(Text(extent = [-20,100;-100,20], style(color = 0), string = \"K\"), Text(extent = [100,-20;20,-100], style(color = 0), string = \"캜\")));
+//         annotation(Icon(Text(extent = [-20,100;-100,20], style(color = 0), string = \"K\"), Text(extent = [100,-20;20,-100], style(color = 0), string = \"째C\")));
 //       algorithm
 //         Celsius:=Kelvin + Modelica.Constants.T_zero;
 //       end to_degC;
-//       function from_degC \"Convert from 캜elsius to Kelvin\"
+//       function from_degC \"Convert from 째Celsius to Kelvin\"
 //         extends ConversionIcon;
 //         input NonSIunits.Temperature_degC Celsius \"Celsius value\";
 //         output Temperature Kelvin \"Kelvin value\";
-//         annotation(Icon(Text(extent = [-20,100;-100,20], style(color = 0), string = \"캜\"), Text(extent = [100,-20;20,-100], style(color = 0), string = \"K\")));
+//         annotation(Icon(Text(extent = [-20,100;-100,20], style(color = 0), string = \"째C\"), Text(extent = [100,-20;20,-100], style(color = 0), string = \"K\")));
 //       algorithm
 //         Kelvin:=Celsius - Modelica.Constants.T_zero;
 //       end from_degC;
-//       function to_degF \"Convert from Kelvin to 캟ahrenheit\"
+//       function to_degF \"Convert from Kelvin to 째Fahrenheit\"
 //         extends ConversionIcon;
 //         input Temperature Kelvin \"Kelvin value\";
 //         output NonSIunits.Temperature_degF Fahrenheit \"Fahrenheit value\";
-//         annotation(Icon(Text(extent = [-20,100;-100,20], style(color = 0), string = \"K\"), Text(extent = [100,-20;20,-100], style(color = 0), string = \"캟\")));
+//         annotation(Icon(Text(extent = [-20,100;-100,20], style(color = 0), string = \"K\"), Text(extent = [100,-20;20,-100], style(color = 0), string = \"째F\")));
 //       algorithm
 //         Fahrenheit:=(Kelvin + Modelica.Constants.T_zero) * 9 / 5 + 32;
 //       end to_degF;
-//       function from_degF \"Convert from 캟ahrenheit to Kelvin\"
+//       function from_degF \"Convert from 째Fahrenheit to Kelvin\"
 //         extends ConversionIcon;
 //         input NonSIunits.Temperature_degF Fahrenheit \"Fahrenheit value\";
 //         output Temperature Kelvin \"Kelvin value\";
-//         annotation(Icon(Text(extent = [-20,100;-100,20], style(color = 0), string = \"캟\"), Text(extent = [100,-20;20,-100], style(color = 0), string = \"K\")));
+//         annotation(Icon(Text(extent = [-20,100;-100,20], style(color = 0), string = \"째F\"), Text(extent = [100,-20;20,-100], style(color = 0), string = \"K\")));
 //       algorithm
 //         Kelvin:=(Fahrenheit - 32) * 5 / 9 - Modelica.Constants.T_zero;
 //       end from_degF;
-//       function to_degRk \"Convert from Kelvin to 캲ankine\"
+//       function to_degRk \"Convert from Kelvin to 째Rankine\"
 //         extends ConversionIcon;
 //         input Temperature Kelvin \"Kelvin value\";
 //         output NonSIunits.Temperature_degRk Rankine \"Rankine value\";
-//         annotation(Icon(Text(extent = [-20,100;-100,20], style(color = 0), string = \"K\"), Text(extent = [100,-20;20,-100], style(color = 0), string = \"캲k\")));
+//         annotation(Icon(Text(extent = [-20,100;-100,20], style(color = 0), string = \"K\"), Text(extent = [100,-20;20,-100], style(color = 0), string = \"째Rk\")));
 //       algorithm
 //         Rankine:=9 / 5 * Kelvin;
 //       end to_degRk;
-//       function from_degRk \"Convert from 캲ankine to Kelvin\"
+//       function from_degRk \"Convert from 째Rankine to Kelvin\"
 //         extends ConversionIcon;
 //         input NonSIunits.Temperature_degRk Rankine \"Rankine value\";
 //         output Temperature Kelvin \"Kelvin value\";
-//         annotation(Icon(Text(extent = [-20,100;-100,20], style(color = 0), string = \"캲k\"), Text(extent = [100,-20;20,-100], style(color = 0), string = \"K\")));
+//         annotation(Icon(Text(extent = [-20,100;-100,20], style(color = 0), string = \"째Rk\"), Text(extent = [100,-20;20,-100], style(color = 0), string = \"K\")));
 //       algorithm
 //         Kelvin:=5 / 9 * Rankine;
 //       end from_degRk;
@@ -15399,7 +15399,7 @@ list();
 //       partial function ConversionIcon \"Base icon for conversion functions\"
 //         annotation(Icon(Rectangle(extent = [-100,100;100,-100], style(color = 42, fillColor = 7)), Line(points = [-90,0;30,0], style(color = 42)), Polygon(points = [90,0;30,20;30,-20;90,0], style(color = 42, fillColor = 42)), Text(extent = [-115,155;115,105], string = \"%name\")));
 //       end ConversionIcon;
-//       annotation(Icon(Text(extent = [-33,-7;-92,-67], string = \"캜\", style(color = 0, thickness = 4)), Text(extent = [82,-7;22,-67], string = \"K\", style(color = 0)), Line(points = [-26,-36;6,-36], style(color = 0)), Polygon(points = [6,-28;6,-45;26,-37;6,-28], style(pattern = 0, fillColor = 0))), Documentation(info = \"<HTML>
+//       annotation(Icon(Text(extent = [-33,-7;-92,-67], string = \"째C\", style(color = 0, thickness = 4)), Text(extent = [82,-7;22,-67], string = \"K\", style(color = 0)), Line(points = [-26,-36;6,-36], style(color = 0)), Polygon(points = [6,-28;6,-45;26,-37;6,-28], style(pattern = 0, fillColor = 0))), Documentation(info = \"<HTML>
 // <p>This package provides conversion functions from the non SI Units
 // defined in package Modelica.SIunits.Conversions.NonSIunits to the
 // corresponding SI Units defined in package Modelica.SIunits and vice

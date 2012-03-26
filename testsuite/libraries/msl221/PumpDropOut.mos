@@ -17,7 +17,7 @@ getErrorString();
 //   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
-// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+// function Modelica.SIunits.Conversions.from_degC \"Convert from Â°Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm

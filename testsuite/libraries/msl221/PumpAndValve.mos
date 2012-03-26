@@ -24,7 +24,7 @@ getErrorString();
 //   external \"C\" y = log(u);
 // end Modelica.Math.log;
 // 
-// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+// function Modelica.SIunits.Conversions.from_degC \"Convert from Â°Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
@@ -81,7 +81,7 @@ getErrorString();
 //   input Real Speed1.w_ref(quantity = \"AngularVelocity\", unit = \"rad/s\", displayUnit = \"rev/min\") \"Reference angular velocity of flange_b as input signal\";
 //   Real Speed1.bearing.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real Speed1.bearing.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
-//   protected parameter Real Speed1.w_crit = 6.28318530717959 * Speed1.f_crit \"critical frequency in [1/s]\";
+//   protected parameter Real Speed1.w_crit = 6.283185307179586 * Speed1.f_crit \"critical frequency in [1/s]\";
 //   Real Convection1.Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate from solid -> fluid\";
 //   Real Convection1.dT(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"= solid.T - fluid.T\";
 //   Real Convection1.solid.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
@@ -171,7 +171,7 @@ getErrorString();
 //   parameter Real Valve1.frictionLoss(min = 0.0, max = 1.0) = 0.0 \"part of friction losses fed to medium\";
 //   input Real Valve1.y;
 //   protected constant Real Valve1.small = 1e-60;
-//   protected constant Real Valve1.eps = 1e-15;
+//   protected constant Real Valve1.eps = 0.000000000000001;
 //   protected Real Valve1.yLim = max(min(Valve1.y,Valve1.y1),0.0) \"limited valve opening\";
 //   protected Real Valve1.Kv(quantity = \"VolumeFlowRate\", unit = \"m3/s\") \"standard flow rate\";
 //   parameter Real Valve1.flowPort_a.medium.rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = Valve1.medium.rho \"density\";

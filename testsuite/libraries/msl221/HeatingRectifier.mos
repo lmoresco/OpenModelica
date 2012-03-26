@@ -40,7 +40,7 @@ getErrorString();
 //   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
-// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+// function Modelica.SIunits.Conversions.from_degC \"Convert from Â°Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
@@ -66,7 +66,7 @@ getErrorString();
 //   Real HeatingDiode1.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real HeatingDiode1.n.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real HeatingDiode1.n.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
-//   parameter Real HeatingDiode1.Ids(quantity = \"ElectricCurrent\", unit = \"A\") = 1e-06 \"Saturation current\";
+//   parameter Real HeatingDiode1.Ids(quantity = \"ElectricCurrent\", unit = \"A\") = 0.000001 \"Saturation current\";
 //   parameter Real HeatingDiode1.Maxexp(min = 1e-60) = 15.0 \"Max. exponent for linear continuation\";
 //   parameter Real HeatingDiode1.R(quantity = \"Resistance\", unit = \"Ohm\") = 100000000.0 \"Parallel ohmic resistance\";
 //   parameter Real HeatingDiode1.EG = 1.11 \"activation energy\";
@@ -77,8 +77,8 @@ getErrorString();
 //   Real HeatingDiode1.id(quantity = \"ElectricCurrent\", unit = \"A\") \"diode current\";
 //   Real HeatingDiode1.heatPort.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0, start = 300.15) \"Port temperature\";
 //   Real HeatingDiode1.heatPort.Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
-//   protected Real HeatingDiode1.k = 1.380662e-23 \"Boltzmann's constant, J/K\";
-//   protected Real HeatingDiode1.q = 1.6021892e-19 \"Electron charge, As\";
+//   protected Real HeatingDiode1.k = 0.00000000000000000000001380662 \"Boltzmann's constant, J/K\";
+//   protected Real HeatingDiode1.q = 0.00000000000000000016021892 \"Electron charge, As\";
 //   protected Real HeatingDiode1.htemp(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"auxiliary temperature\";
 //   protected Real HeatingDiode1.aux;
 //   protected Real HeatingDiode1.auxp;
@@ -116,7 +116,7 @@ getErrorString();
 //   parameter Real SineVoltage1.signalSource.phase(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") = SineVoltage1.phase \"Phase of sine wave\";
 //   parameter Real SineVoltage1.signalSource.offset = SineVoltage1.offset \"Offset of output signal\";
 //   parameter Real SineVoltage1.signalSource.startTime(quantity = \"Time\", unit = \"s\") = SineVoltage1.startTime \"Output = offset for time < startTime\";
-//   protected constant Real SineVoltage1.signalSource.pi = 3.14159265358979;
+//   protected constant Real SineVoltage1.signalSource.pi = 3.141592653589793;
 // equation
 //   HeatCapacitor1.T = HeatCapacitor1.port.T;
 //   HeatCapacitor1.C * der(HeatCapacitor1.T) = HeatCapacitor1.port.Q_flow;
@@ -144,7 +144,7 @@ getErrorString();
 //   R.v = R.p.v - R.n.v;
 //   0.0 = R.p.i + R.n.i;
 //   R.i = R.p.i;
-//   SineVoltage1.signalSource.y = SineVoltage1.signalSource.offset + (if time < SineVoltage1.signalSource.startTime then 0.0 else SineVoltage1.signalSource.amplitude * sin(6.28318530717959 * (SineVoltage1.signalSource.freqHz * (time - SineVoltage1.signalSource.startTime)) + SineVoltage1.signalSource.phase));
+//   SineVoltage1.signalSource.y = SineVoltage1.signalSource.offset + (if time < SineVoltage1.signalSource.startTime then 0.0 else SineVoltage1.signalSource.amplitude * sin(6.283185307179586 * (SineVoltage1.signalSource.freqHz * (time - SineVoltage1.signalSource.startTime)) + SineVoltage1.signalSource.phase));
 //   SineVoltage1.v = SineVoltage1.signalSource.y;
 //   SineVoltage1.v = SineVoltage1.p.v - SineVoltage1.n.v;
 //   0.0 = SineVoltage1.p.i + SineVoltage1.n.i;

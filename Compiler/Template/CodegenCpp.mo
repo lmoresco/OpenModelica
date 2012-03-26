@@ -9804,7 +9804,7 @@ algorithm
                                     "Functions _functions;\n",
                                     "HistoryImplType* _historyImpl;\n",
                                     "boost::shared_ptr<IAlgLoopSolverFactory>\n",
-                                    "   _algLoopSolverFactory;\t///< Factory that provides an appropriate solver\n"
+                                    "   _algLoopSolverFactory;    ///< Factory that provides an appropriate solver\n"
                                 }, true));
         txt = generateAlgloopsolverVariables(txt, i_odeEquations, i_algebraicEquations, i_whenClauses, i_parameterEquations, i_simCode);
         txt = Tpl.softNewLine(txt);
@@ -9887,7 +9887,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "private:\n",
                                     "  Functions _functions;\n",
-                                    "  double \t\t*_residuals;\t\t///< Auxillary variables\n",
+                                    "  double         *_residuals;        ///< Auxillary variables\n",
                                     "  //states\n",
                                     "  double* _z;\n",
                                     "  //state derivatives\n",
@@ -9956,7 +9956,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "private:\n",
                                     "  Functions _functions;\n",
-                                    "  double \t\t*_residuals;\t\t///< Auxillary variables\n",
+                                    "  double         *_residuals;        ///< Auxillary variables\n",
                                     "  //states\n",
                                     "  double* _z;\n",
                                     "  //state derivatives\n",
@@ -10928,23 +10928,23 @@ algorithm
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "    /// Provide number (dimension) of variables according to data type\n",
-                                    "    virtual int getDimVars(const IAlgLoop::DATATYPE type = IAlgLoop::ALL) const\t;\n",
+                                    "    virtual int getDimVars(const IAlgLoop::DATATYPE type = IAlgLoop::ALL) const    ;\n",
                                     "    /// Provide number (dimension) of residuals according to data type\n",
-                                    "    virtual int getDimRHS(const IAlgLoop::DATATYPE type = IAlgLoop::ALL) const\t;\n",
+                                    "    virtual int getDimRHS(const IAlgLoop::DATATYPE type = IAlgLoop::ALL) const    ;\n",
                                     "    /// Provide number (dimension) of inputs according to data type\n",
-                                    "    virtual int getDimInputs(const IAlgLoop::DATATYPE type = IAlgLoop::ALL) \t;\n",
+                                    "    virtual int getDimInputs(const IAlgLoop::DATATYPE type = IAlgLoop::ALL)     ;\n",
                                     "    /// Provide number (dimension) of outputs according to data type\n",
-                                    "    virtual int getDimOutputs(const IAlgLoop::DATATYPE type = IAlgLoop::ALL)\t;\n",
+                                    "    virtual int getDimOutputs(const IAlgLoop::DATATYPE type = IAlgLoop::ALL)    ;\n",
                                     "    /// Add contraint value to algebraic loop\n",
                                     "    virtual void addInputs(const double* doubleInputs, const int* intInputs, const bool* boolInputs);\n",
                                     "    /// Add outputs of algebraic loop\n",
-                                    "    virtual void addOutputs(double* doubleOutputs, int* intOutputs, bool* boolOutputs)\t;\n",
+                                    "    virtual void addOutputs(double* doubleOutputs, int* intOutputs, bool* boolOutputs)    ;\n",
                                     "    /// (Re-) initialize the system of equations\n",
                                     "    virtual void init();\n",
                                     "    /// Provide variables with given index to the system\n",
-                                    "    virtual void giveVars(double* doubleUnknowns, int* intUnknowns, bool* boolUnknowns)\t;\n",
+                                    "    virtual void giveVars(double* doubleUnknowns, int* intUnknowns, bool* boolUnknowns)    ;\n",
                                     "    /// Set variables with given index to the system\n",
-                                    "    virtual void setVars(const double* doubleUnknowns, const int* intUnknowns, const bool* boolUnknowns)\t;\n",
+                                    "    virtual void setVars(const double* doubleUnknowns, const int* intUnknowns, const bool* boolUnknowns)    ;\n",
                                     "    /// Update transfer behavior of the system of equations according to command given by solver\n",
                                     "    virtual void update(const  IContinous::UPDATE command =IContinous::UNDEF_UPDATE);\n",
                                     "    /// Provide the right hand side (according to the index)\n",
@@ -10959,7 +10959,7 @@ algorithm
                                     "virtual void giveAMatrix(double* A_matrix);\n",
                                     "virtual bool isLinear();\n",
                                     "/// Set stream for output\n",
-                                    "virtual void setOutput(ostream* outputStream) \t;\n",
+                                    "virtual void setOutput(ostream* outputStream)     ;\n",
                                     "\n"
                                 }, true));
         txt = Tpl.popBlock(txt);
@@ -21912,7 +21912,7 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_algLoopSolver"));
         txt = Tpl.writeText(txt, a_num);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";\t\t///< Solver for algebraic loop */"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";        ///< Solver for algebraic loop */"));
         txt = Tpl.popBlock(txt);
       then txt;
 
@@ -21957,7 +21957,7 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_algLoopSolver"));
         txt = Tpl.writeText(txt, a_num);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";\t\t///< Solver for algebraic loop */"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";        ///< Solver for algebraic loop */"));
         txt = Tpl.popBlock(txt);
       then txt;
 

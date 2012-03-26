@@ -1234,7 +1234,7 @@ protected
                   -(mue/(r*r))*(r/Modelica.Math.Vectors.length(
                                                 r)) else
                     zeros(3);
-    annotation(Inline=true);					
+    annotation(Inline=true);          
   end gravityAccelerationTypes;
 equation
   Connections.root(frame_b.R);

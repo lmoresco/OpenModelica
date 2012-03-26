@@ -195,7 +195,7 @@ package Examples
     connect(valveLinear.outlet, pressDropLinear_dl.inlet);
     connect(pressDropLinear_dl.outlet, volume_d.inlet);    
     connect(volume_d.outlet, pressDropLinear_dr.inlet);
-		connect(pressDropLinear_dr.outlet, sinkP.flange);    
+    connect(pressDropLinear_dr.outlet, sinkP.flange);    
     connect(pump.q, pump_ramp.y);
     connect(valveLinear.u, valve_ramp.y);
   end Test_pu_ms_pd_vo_pd_vl_pd_vo_pd;
@@ -221,7 +221,7 @@ package Examples
     connect(valveLinear.outlet, pressDropLinear_dl.inlet);
     connect(pressDropLinear_dl.outlet, volume_d.inlet);    
     connect(volume_d.outlet, pressDropLinear_dr.inlet);
-		connect(pressDropLinear_dr.outlet, pump.inlet);    
+    connect(pressDropLinear_dr.outlet, pump.inlet);    
     connect(pump.q, pump_ramp.y);
     connect(valveLinear.u, valve_ramp.y);
   end Test_Closed;
@@ -247,26 +247,26 @@ package Examples
     connect(valveLinear.outlet, pressDropLinear_dl.inlet);
     connect(pressDropLinear_dl.outlet, volume_d.inlet);    
     connect(volume_d.outlet, pressDropLinear_dr.inlet);
-		connect(pressDropLinear_dr.outlet, pump.inlet);    
+    connect(pressDropLinear_dr.outlet, pump.inlet);    
     connect(pump.q, pump_ramp.y);
     connect(valveLinear.u, valve_ramp.y);
   end Test_Closed_SS;
 
-	model Test_Closed_SS_Extra "Closed loop circuit, steady-state plus additional equation, exact start values"
-	  extends Test_Closed_SS;
-		Real check = pressDropLinear_ul.in_p_start;
-	initial equation
-	  pump.inlet.p = 4e5;
-	end Test_Closed_SS_Extra;
-	
-	model Test_Closed_SS_Extra_Exact "Closed loop circuit, steady-state plus additional equation, approx start values"
-	  extends Test_Closed_SS_Extra(volume_d(p_start = 4.5e5));
-	end Test_Closed_SS_Extra_Exact;
-	
-	model Test_Closed_SS_Extra_NonExact "Closed loop circuit, steady-state plus additional equation, approx start values"
-	  extends Test_Closed_SS_Extra(volume_d(p_start = 4.0e5));
-	end Test_Closed_SS_Extra_NonExact;
-	
+  model Test_Closed_SS_Extra "Closed loop circuit, steady-state plus additional equation, exact start values"
+    extends Test_Closed_SS;
+    Real check = pressDropLinear_ul.in_p_start;
+  initial equation
+    pump.inlet.p = 4e5;
+  end Test_Closed_SS_Extra;
+  
+  model Test_Closed_SS_Extra_Exact "Closed loop circuit, steady-state plus additional equation, approx start values"
+    extends Test_Closed_SS_Extra(volume_d(p_start = 4.5e5));
+  end Test_Closed_SS_Extra_Exact;
+  
+  model Test_Closed_SS_Extra_NonExact "Closed loop circuit, steady-state plus additional equation, approx start values"
+    extends Test_Closed_SS_Extra(volume_d(p_start = 4.0e5));
+  end Test_Closed_SS_Extra_NonExact;
+  
 
 
   model Test_pipe
