@@ -2244,7 +2244,7 @@ and the accompanying <b>disclaimer</b>
 </html>"), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Rectangle(visible=true, fillColor={235,235,235}, fillPattern=FillPattern.Solid, extent={{169,86},{349,236}}),Polygon(visible=true, fillColor={235,235,235}, fillPattern=FillPattern.Solid, points={{169,236},{189,256},{369,256},{349,236},{169,236}}),Polygon(visible=true, fillColor={235,235,235}, fillPattern=FillPattern.Solid, points={{369,256},{369,106},{349,86},{349,236},{369,256}}),Text(visible=true, fillColor={160,160,160}, extent={{179,196},{339,226}}, textString="Library", fontName="Arial"),Text(visible=true, extent={{206,119},{314,173}}, textString="[kg.m2]", fontName="Arial"),Text(visible=true, fillColor={255,0,0}, extent={{163,264},{406,320}}, textString="Modelica.SIunits", fontName="Arial")}));
     package Conversions "Conversion functions to/from non SI units and type definitions of non SI units"
       extends Modelica.Icons.Library2;
-      annotation(preferedView="info", Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, lineThickness=1, extent={{-92,-67},{-33,-7}}, textString="°C", fontName="Arial"),Text(visible=true, extent={{22,-67},{82,-7}}, textString="K", fontName="Arial"),Line(visible=true, points={{-26,-36},{6,-36}}),Polygon(visible=true, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{6,-28},{6,-45},{26,-37},{6,-28}})}), Documentation(info="<HTML>
+      annotation(preferedView="info", Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, lineThickness=1, extent={{-92,-67},{-33,-7}}, textString="Â°C", fontName="Arial"),Text(visible=true, extent={{22,-67},{82,-7}}, textString="K", fontName="Arial"),Line(visible=true, points={{-26,-36},{6,-36}}),Polygon(visible=true, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{6,-28},{6,-45},{26,-37},{6,-28}})}), Documentation(info="<HTML>
 <p>This package provides conversion functions from the non SI Units
 defined in package Modelica.SIunits.Conversions.NonSIunits to the
 corresponding SI Units defined in package Modelica.SIunits and vice
@@ -3735,9 +3735,9 @@ package IntroductoryExamples "This package contains small examples to help you g
 
 <body lang=EN link=blue vlink=purple>
 
-<h1>MathModelica® System Designer</h1>
+<h1>MathModelicaÂ® System Designer</h1>
 <em><h2>Introductory Examples</h2></em>
-<h4>© 2006 MathCore Engineering AB</h4>
+<h4>Â© 2006 MathCore Engineering AB</h4>
 
 <hr>
 <p>
@@ -3787,9 +3787,9 @@ package IntroductoryExamples "This package contains small examples to help you g
 
 <body lang=EN link=blue vlink=purple>
 
-<h1>MathModelica® System Designer</h1>
+<h1>MathModelicaÂ® System Designer</h1>
 <em><h2>Hierarchical modeling - Library Icon</h2></em>
-<h4>© 2006 MathCore Engineering AB</h4>
+<h4>Â© 2006 MathCore Engineering AB</h4>
 
 <p>
 <hr>
@@ -3821,9 +3821,9 @@ descriptions of how to build and simulate respective model, as well as some exer
 
 <body lang=EN link=blue vlink=purple>
 
-<h1>MathModelica® System Designer</h1>
+<h1>MathModelicaÂ® System Designer</h1>
 <em><h2>Hierarchical modeling - Icons</h2></em>
-<h4>© 2006 MathCore Engineering AB</h4>
+<h4>Â© 2006 MathCore Engineering AB</h4>
 
 <p>
 <hr>
@@ -3997,9 +3997,9 @@ descriptions of how to build and simulate respective model, as well as some exer
 
 <body lang=EN link=blue vlink=purple>
 
-<h1>MathModelica® System Designer</h1>
+<h1>MathModelicaÂ® System Designer</h1>
 <em><h2>Systems - Examples of System Models</h2></em>
-<h4>© 2009 MathCore Engineering AB</h4>
+<h4>Â© 2009 MathCore Engineering AB</h4>
 
 <p>
 <hr>
@@ -4038,9 +4038,9 @@ descriptions of how to build and simulate respective model, as well as some exer
 
 <body lang=EN link=blue vlink=purple>
 
-<h1>MathModelica® System Designer</h1>
+<h1>MathModelicaÂ® System Designer</h1>
 <em><h2>Inverted Pendulum - A Classical Control Engineering Problem</h2></em>
-<h4>© 2009 MathCore Engineering AB</h4>
+<h4>Â© 2009 MathCore Engineering AB</h4>
 
 <p>
 <hr>

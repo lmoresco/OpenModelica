@@ -3303,7 +3303,7 @@ still kept in Modelica.SIunits.</p>
       annotation(preferedView="info", Icon(
           Text(
             extent=[-33, -7; -92, -67],
-            string="°C",
+            string="Â°C",
             style(color=0, thickness=4)),
           Text(
             extent=[82, -7; 22, -67],

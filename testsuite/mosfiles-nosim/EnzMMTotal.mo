@@ -130,7 +130,7 @@ and the accompanying <b>disclaimer</b>
 </html>"), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Rectangle(visible=true, fillColor={235,235,235}, fillPattern=FillPattern.Solid, extent={{169,86},{349,236}}),Polygon(visible=true, fillColor={235,235,235}, fillPattern=FillPattern.Solid, points={{169,236},{189,256},{369,256},{349,236},{169,236}}),Polygon(visible=true, fillColor={235,235,235}, fillPattern=FillPattern.Solid, points={{369,256},{369,106},{349,86},{349,236},{369,256}}),Text(visible=true, fillColor={160,160,160}, extent={{179,196},{339,226}}, textString="Library", fontName="Arial"),Text(visible=true, extent={{206,119},{314,173}}, textString="[kg.m2]", fontName="Arial"),Text(visible=true, fillColor={255,0,0}, extent={{163,264},{406,320}}, textString="Modelica.SIunits", fontName="Arial")}));
     package Conversions "Conversion functions to/from non SI units and type definitions of non SI units"
       extends Modelica.Icons.Library2;
-      annotation(preferedView="info", Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, lineThickness=1, extent={{-92,-67},{-33,-7}}, textString="°C", fontName="Arial"),Text(visible=true, extent={{22,-67},{82,-7}}, textString="K", fontName="Arial"),Line(visible=true, points={{-26,-36},{6,-36}}),Polygon(visible=true, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{6,-28},{6,-45},{26,-37},{6,-28}})}), Documentation(info="<HTML>
+      annotation(preferedView="info", Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Text(visible=true, lineThickness=1, extent={{-92,-67},{-33,-7}}, textString="Â°C", fontName="Arial"),Text(visible=true, extent={{22,-67},{82,-7}}, textString="K", fontName="Arial"),Line(visible=true, points={{-26,-36},{6,-36}}),Polygon(visible=true, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{6,-28},{6,-45},{26,-37},{6,-28}})}), Documentation(info="<HTML>
 <p>This package provides conversion functions from the non SI Units
 defined in package Modelica.SIunits.Conversions.NonSIunits to the
 corresponding SI Units defined in package Modelica.SIunits and vice
@@ -313,7 +313,7 @@ Users Guide discusses some aspects of the <em>BioChem</em> Library, including a 
 <p>
 <b>BioChem - A Biological and Chemical Library for Modelica (Conference paper)</b><br>
 Emma Larsdotter Nilsson, Peter Fritzson. 
-Proceedings of the 3rd International Modelica Conference (November 3-4, Linköping, Sweden) 2003, pp. 215-220
+Proceedings of the 3rd International Modelica Conference (November 3-4, LinkÃ¶ping, Sweden) 2003, pp. 215-220
 <br>
 <br>
 <b>A minimal cascade model for the mitotic oscillator involving cyclin
@@ -326,7 +326,7 @@ Cell Biology
 <br>
 
 <b>Hierarchical modeling of diabetes</b><br>
-Elin Nyman. ISRN:LiU-IKE-EX-09/14. Linköping University 2009.
+Elin Nyman. ISRN:LiU-IKE-EX-09/14. LinkÃ¶ping University 2009.
 
 <br>
 <br>
@@ -369,15 +369,15 @@ Becker-Weimann S, Wolf J, Herzel H, Kramer A. Biophysical Journal Volume 87 Nove
  ", revisions="
  <html>
  <h1>Version history</h1>
- <p>The first version of the library was created by Emma Larsdotter Nilsson at Linköping University.
+ <p>The first version of the library was created by Emma Larsdotter Nilsson at LinkÃ¶ping University.
 The current version of the library has been further developed by Erik Ulfhielm at
-Linköping University, and by MathCore Engineering AB.
+LinkÃ¶ping University, and by MathCore Engineering AB.
 </p>
  <ul>
  Main Author 2007-2009: MathCore Engineering AB <br>
  Main Author 2006: Erik Ulfhielm <br>
  Main Author 2004-2005: Emma Larsdotter Nilsson <br> <br>
- Copyright (c) 2005-2008 MathCore Engineering AB, Linköpings universitet and Modelica Association <br> <br>
+ Copyright (c) 2005-2008 MathCore Engineering AB, LinkÃ¶pings universitet and Modelica Association <br> <br>
  The BioChem package is free software and can be redistributed <br>
  and/or modified under the terms of the Modelica License with <br>
  the additional provision that changed parts of BioChem also <br>

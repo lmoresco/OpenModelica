@@ -1225,7 +1225,7 @@ still kept in Modelica.SIunits.</p>
               extent={{-33,-7},{-92,-67}},
               lineColor={0,0,0},
               lineThickness=1,
-              textString="°C"),
+              textString="Â°C"),
             Text(
               extent={{82,-7},{22,-67}},
               lineColor={0,0,0},
@@ -1473,7 +1473,7 @@ that are directly usable (= number of public, non-partial classes).
 
 <p>
 <b>Licensed by the Modelica Association under the Modelica License 2</b><br>
-Copyright &copy; 1998-2009, ABB, arsenal research, T.&nbsp;Bödrich, DLR, Dynasim, Fraunhofer, Modelon,
+Copyright &copy; 1998-2009, ABB, arsenal research, T.&nbsp;BÃ¶drich, DLR, Dynasim, Fraunhofer, Modelon,
 TU Hamburg-Harburg, Politecnico di Milano.
 </p>
 

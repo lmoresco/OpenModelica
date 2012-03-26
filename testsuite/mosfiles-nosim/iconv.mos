@@ -1,5 +1,6 @@
 // name: iconv
-// status: correct
+// status: erroneous
+// TODO: iconv API call is useless, as we enforce UTF-8
 
 a:=iconv("jag kan skriva едц",from="ISO-8859-1");getErrorString();
 b:=iconv("jag kan skriva ГҐГ¤Г¶",from="UTF-8",to="UTF-16");getErrorString();
