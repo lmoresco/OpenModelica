@@ -23,7 +23,7 @@ all: fmuModelica.h all-before $(BIN) all-after $(LIB)
 $(LIB): fmuWrapper.o
 	$(AR) $@ $<
 
-fmuModelica.h: fmuModelica.tmp
+fmuModelica.h: fmuModelica.in
 	sed 's/"/\\"/g' $< | sed 's/^/"/' | sed 's/$$/\\n"/' > $@.tmp
 	mv $@.tmp $@
 
