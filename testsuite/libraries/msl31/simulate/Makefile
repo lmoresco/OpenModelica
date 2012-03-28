@@ -80,6 +80,7 @@ Modelica.Electrical.Machines.Examples.AIMS_Start.mos \
 Modelica.Electrical.Machines.Examples.AIMC_YD.mos \
 Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.mos \
 Modelica.Electrical.Machines.Examples.AIMC_Inverter.mos \
+RectifierOM.mos \
 
 
 WRONGRESULTTEST = \
@@ -148,7 +149,8 @@ Modelica.StateGraph.Examples.ShowCompositeStep.mos \
 Modelica.StateGraph.Examples.ShowExceptions.mos \
 Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.mos \
 Modelica.Thermal.HeatTransfer.Examples.TwoMasses.mos \
-Modelica.Utilities.Examples.readRealParameterModel.mos 
+Modelica.Utilities.Examples.readRealParameterModel.mos \
+ThyrGTO.mos \
 
 
 
