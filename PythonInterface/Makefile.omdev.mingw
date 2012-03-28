@@ -1,14 +1,15 @@
-IDLPYTHON = $(OMDEV)/lib/omniORB-4.1.6-msvc-10/bin/x86_win32/omniidl -bpython
-IDLPYTHONTARGET = $(builddir_share)/omc/scripts/PythonInterface/stubs/omc_communication_idl.py
+IDLPYTHON = $(OMDEV)/lib/omniORB-4.1.6-msvc-10/bin/x86_win32/omniidl -bpython -Wbglobal=_OMCIDL -Wbpackage=OMPythonIDL
+IDLPYTHONTARGET = $(builddir_share)/omc/scripts/PythonInterface/OMPython/omc_communication_idl.py
 
 install: $(IDLPYTHONTARGET)
 
 .PHONY: script-files
 
 script-files:
-	cp -rfp * $(builddir_share)/omc/scripts/PythonInterface
+	cp -rfp setup.py $(builddir_share)/omc/scripts/PythonInterface
+	cp -rfp OMPython/* $(builddir_share)/omc/scripts/PythonInterface/OMPython
 
 $(IDLPYTHONTARGET) : $(IDLFILE) script-files
-	$(IDLPYTHON) -C$(builddir_share)/omc/scripts/PythonInterface/stubs $(IDLFILE)
+	$(IDLPYTHON) -C$(builddir_share)/omc/scripts/PythonInterface $(IDLFILE)
 
 include Makefile.common
