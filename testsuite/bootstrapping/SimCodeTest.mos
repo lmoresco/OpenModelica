@@ -47,44 +47,36 @@ readFileShowLineNumbers("SimCodeC_abc.c");
 // 2: #include \"modelica.h\"
 // 3: #define MODELICA_ASSERT(info,msg) { printInfo(stderr,info); fprintf(stderr,\"Modelica Assert: %s!\\n\", msg); }
 // 4: #define MODELICA_TERMINATE(msg) { fprintf(stderr,\"Modelica Terminate: %s!\\n\", msg); fflush(stderr); }
-// 5: void _SimCodeC_abc()
-// 6: {
-// 7:   /* functionBodyRegularFunction: GC: save roots mark when you enter the function */
-// 8:   /* functionBodyRegularFunction: GC: adding inputs as roots! */
-// 9:   
-// 10:   /* functionBodyRegularFunction: arguments */
-// 11:   /* functionBodyRegularFunction: locals */
-// 12:   state tmp1;
-// 13:   _tailrecursive:
-// 14:   /* functionBodyRegularFunction: out inits */
-// 15:   
-// 16:   /* functionBodyRegularFunction: state in */
-// 17:   tmp1 = get_memory_state();
-// 18:   
-// 19:   /* functionBodyRegularFunction: var inits */
-// 20:   /* functionBodyRegularFunction: body */
-// 21:   
-// 22:   _return:
-// 23:   /* functionBodyRegularFunction: out var copy */
-// 24:   /* functionBodyRegularFunction: state out */
-// 25:   restore_memory_state(tmp1);
-// 26:   /* functionBodyRegularFunction: out var assign */
-// 27:   
-// 28:   /* GC: pop the mark! */
-// 29:   
-// 30:   /* functionBodyRegularFunction: return the outs */
-// 31:   return ;
-// 32: }
-// 33: int in_SimCodeC_abc(type_description * inArgs, type_description * outVar)
-// 34: {
-// 35:   void* states = push_memory_states(1);
-// 36:   MMC_TRY_TOP()
-// 37:   _SimCodeC_abc();
-// 38:   MMC_CATCH_TOP(return 1)
-// 39:   write_noretcall(outVar);
-// 40:   fflush(NULL);
-// 41:   pop_memory_states(states);
-// 42:   return 0;
-// 43: }
+// 5: void _SimCodeC_abc() {
+// 6:   /* functionBodyRegularFunction: GC: save roots mark when you enter the function */
+// 7:   /* functionBodyRegularFunction: GC: adding inputs as roots! */
+// 8:   /* functionBodyRegularFunction: arguments */
+// 9:   /* functionBodyRegularFunction: locals */
+// 10:   state tmp1;
+// 11:   _tailrecursive:
+// 12:   /* functionBodyRegularFunction: out inits */
+// 13:   /* functionBodyRegularFunction: state in */
+// 14:   tmp1 = get_memory_state();
+// 15:   /* functionBodyRegularFunction: var inits */
+// 16:   /* functionBodyRegularFunction: body */
+// 17:   _return:
+// 18:   /* functionBodyRegularFunction: out var copy */
+// 19:   /* functionBodyRegularFunction: state out */
+// 20:   restore_memory_state(tmp1);
+// 21:   /* functionBodyRegularFunction: out var assign */
+// 22:   /* GC: pop the mark! */
+// 23:   /* functionBodyRegularFunction: return the outs */
+// 24:   return ;
+// 25: }
+// 26: int in_SimCodeC_abc(type_description * inArgs, type_description * outVar) {
+// 27:   void* states = push_memory_states(1);
+// 28:   MMC_TRY_TOP()
+// 29:   _SimCodeC_abc();
+// 30:   MMC_CATCH_TOP(return 1)
+// 31:   write_noretcall(outVar);
+// 32:   fflush(NULL);
+// 33:   pop_memory_states(states);
+// 34:   return 0;
+// 35: }
 // "
 // endResult
