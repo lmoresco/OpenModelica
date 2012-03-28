@@ -4955,7 +4955,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_libsPos1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, a_libsPos2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) $(SENDDATALIBS) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) "));
         ret_0 = System.os();
         txt = fun_148(txt, ret_0);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
@@ -5013,7 +5013,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_libsPos1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, a_libsPos2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) $(SENDDATALIBS) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) "));
         ret_1 = System.os();
         txt = fun_149(txt, ret_1);
         txt = Tpl.softNewLine(txt);
