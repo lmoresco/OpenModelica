@@ -2,7 +2,9 @@ TEST = ../rtest -v
 
 TESTFILES = \
 BouncingBall.mos \
+EnumerationTest.mos \
 HelloFMIWorld.mos \
+TanksConnectedPI.mos \
 
 
 # test that currently fail. Move up when fixed. 

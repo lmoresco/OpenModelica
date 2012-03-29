@@ -1,0 +1,40 @@
+// name:     EnumerationTest
+// keywords: Enumeration FMI-Export FMI-Import
+// status:   correct
+// teardown_command: rm -rf EnumerationTest_*  EnumerationTest EnumerationTest.exe EnumerationTest.cpp EnumerationTest.makefile EnumerationTest.libs EnumerationTest.log output.log
+//
+// String(Enum.e1)
+//
+// 
+
+loadFile("EnumerationTest.mo");
+//instantiateModel(EnumerationTest);
+translateModelFMU(EnumerationTest);
+getErrorString();
+
+importFMU("EnumerationTest.fmu"); getErrorString();
+loadFile("EnumerationTestFMUImport.mo");
+simulate(FMUImport_EnumerationTest.FMUBlock,startTime=0.0, stopTime=1.0, numberOfIntervals=500, tolerance=1e-5); 
+
+val(y,0.2);
+val(y,0.4);
+val(y,0.6);
+
+// Result:
+// true
+// "SimCode: The model EnumerationTest has been translated to FMU"
+// ""
+// 
+// 
+// true
+// ""
+// true
+// record SimulationResult
+//   resultFile = "FMUImport_EnumerationTest.FMUBlock_res.mat",
+//   simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-005, method = 'dassl', fileNamePrefix = 'FMUImport_EnumerationTest.FMUBlock', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//   messages = ""
+// end SimulationResult;
+// 0.2
+// -0.4
+// 0.6
+// endResult

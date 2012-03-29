@@ -1,0 +1,73 @@
+// name:     TanksConnectedPI
+// keywords: <insert keywords here>
+// cflags: +std=2.x
+// status: correct
+// teardown_command: rm -rf TanksConnectedPI_* TanksConnectedPI TanksConnectedPI.exe TanksConnectedPI.cpp TanksConnectedPI.makefile TanksConnectedPI.libs TanksConnectedPI.log output.log
+// 
+//  <insert description here>
+//
+// Drmodelica: 12.1 Object Oriented Component-based (p. 386)
+// 
+loadFile("TanksConnectedPI.mo");
+translateModelFMU(TanksConnectedPI);
+importFMU("TanksConnectedPI.fmu");
+loadFile("TanksConnectedPIFMUImport.mo");
+simulate(FMUImport_TanksConnectedPI.FMUBlock,stopTime=210,numberOfIntervals=250, tolerance=1e-5);
+echo(false); // turns of output 
+
+x:=val(tank1_h,25.0);
+y:=val(tank1_h,100.0);
+z:=val(tank1_h,150.0);
+w:=val(tank1_h,200.0);
+x:=1000*x;
+y:=1000*y;
+z:=1000*z;
+w:=1000*w;
+x:=floor(x);
+y:=floor(y);
+z:=floor(z);
+w:=floor(w);
+x2:=val(tank2_h,28.0);
+y2:=val(tank2_h,100.0);
+z2:=val(tank2_h,149.0);
+w2:=val(tank2_h,199.9);
+x2:=1000*x2;
+y2:=1000*y2;
+z2:=1000*z2;
+w2:=1000*w2;
+x2:=floor(x2);
+y2:=floor(y2);
+z2:=floor(z2);
+w2:=floor(w2);
+echo(true); // turns on output
+x/1000.0; // rounded value to 3 digits
+y/1000.0;
+z/1000.0;
+w/1000.0;
+x2/1000.0; // rounded value to 3 digits
+y2/1000.0;
+z2/1000.0;
+w2/1000.0;
+
+// Result:
+// true
+// "SimCode: The model TanksConnectedPI has been translated to FMU"
+// 
+// 
+// true
+// true
+// record SimulationResult
+//     resultFile = "FMUImport_TanksConnectedPI.FMUBlock_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 210.0, numberOfIntervals = 250, tolerance = 0.00001, method = 'dassl', fileNamePrefix = 'FMUImport_TanksConnectedPI.FMUBlock', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = ""
+// end SimulationResult;
+// true
+// 0.439
+// 0.255
+// 0.249
+// 0.214
+// 0.094
+// 0.395
+// 0.42
+// 0.336
+// endResult
