@@ -18,6 +18,12 @@ Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses.mos \
 Modelica.Mechanics.MultiBody.Frames.mos \
+Modelica.Mechanics.Rotational.Examples.First.mos \
+Modelica.Mechanics.Rotational.Examples.FirstGrounded.mos \
+Modelica.Mechanics.Rotational.Examples.Friction.mos \
+Modelica.Mechanics.Rotational.Examples.Backlash.mos \
+Modelica.Mechanics.Rotational.Examples.LossyGearDemo1.mos \
+Modelica.Mechanics.Rotational.Examples.ElasticBearing.mos \
 Modelica.Mechanics.Rotational.Examples.RollingWheel.mos \
 Modelica.Mechanics.Translational.Examples.Accelerate.mos \
 Modelica.Mechanics.Translational.Examples.Brake.mos \
@@ -133,12 +139,6 @@ Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GyroscopicEffects.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.mos \
 Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.mos \
-Modelica.Mechanics.Rotational.Examples.Backlash.mos \
-Modelica.Mechanics.Rotational.Examples.ElasticBearing.mos \
-Modelica.Mechanics.Rotational.Examples.First.mos \
-Modelica.Mechanics.Rotational.Examples.FirstGrounded.mos \
-Modelica.Mechanics.Rotational.Examples.Friction.mos \
-Modelica.Mechanics.Rotational.Examples.LossyGearDemo1.mos \
 Modelica.Mechanics.Rotational.Examples.LossyGearDemo2.mos \
 Modelica.Mechanics.Translational.Examples.PreLoad.mos \
 Modelica.StateGraph.Examples.ExecutionPaths.mos \

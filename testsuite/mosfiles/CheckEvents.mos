@@ -21,7 +21,14 @@ val(y,1);
 //     messages = "[:0:0-0:0:writable] warning | Simulation call assert() at time 1.000000
 // Level : error
 // Message : Model error: Argument of sqrt should be >= 0
-// info    | model terminate | Simulation terminated at time 1
+//  DASSL--  AT T (=R1) SOME ELEMENT OF WT
+//       In above message,  R1 =   .1000000000000E+01
+//  DASSL--  HAS BECOME .LE. 0.0
+// info    | DASRT can't continue. time = 1.004000
+// [:0:0-0:0:writable] warning | Simulation call assert() at time 1.004000
+// Level : error
+// Message : Model error: Argument of sqrt should be >= 0
+// info    | model terminate | Simulation terminated at time 1.004
 // "
 // end SimulationResult;
 // 1.0

@@ -3,6 +3,10 @@ A full copy of Modelica Standard Library 3.1 from:
 
 Revision 4084
 
+Added by Frenkel TUD, 2012-03-29
+- add experiment(StopTime=10, Interval=0.01) annotation to Examples.ElasticBearing
+Modified: /trunk/libraries/Modelica 3.1/Mechanics/Rotational.mo
+
 OpenModelica r11366
 Author: Frenkel TUD
 Date: den 11 mars 2012 13:58:36
