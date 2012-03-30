@@ -4467,7 +4467,6 @@ algorithm
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
-      Integer x_i0;
       SimCode.SimVar i_var;
 
     case ( txt,
@@ -4477,8 +4476,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        x_i0 = Tpl.getIteri_i0(txt);
-        txt = SwitchAliasVars(txt, i_var, "realAlias", "realVars", "realParameter", "-", x_i0);
+        txt = SwitchAliasVars(txt, i_var, "Real", "-");
         txt = Tpl.nextIter(txt);
         txt = lm_141(txt, rest);
       then txt;
@@ -4709,7 +4707,6 @@ algorithm
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
-      Integer x_i0;
       SimCode.SimVar i_var;
 
     case ( txt,
@@ -4719,8 +4716,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        x_i0 = Tpl.getIteri_i0(txt);
-        txt = SwitchAliasVarsSet(txt, i_var, "realAlias", "realVars", "realParameter", "-", x_i0);
+        txt = SwitchAliasVarsSet(txt, i_var, "Real", "-");
         txt = Tpl.nextIter(txt);
         txt = lm_147(txt, rest);
       then txt;
@@ -4874,7 +4870,6 @@ algorithm
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
-      Integer x_i0;
       SimCode.SimVar i_var;
 
     case ( txt,
@@ -4884,8 +4879,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        x_i0 = Tpl.getIteri_i0(txt);
-        txt = SwitchAliasVars(txt, i_var, "integerAlias", "integerVars", "integerParameter", "-", x_i0);
+        txt = SwitchAliasVars(txt, i_var, "Integer", "-");
         txt = Tpl.nextIter(txt);
         txt = lm_151(txt, rest);
       then txt;
@@ -5026,7 +5020,6 @@ algorithm
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
-      Integer x_i0;
       SimCode.SimVar i_var;
 
     case ( txt,
@@ -5036,8 +5029,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        x_i0 = Tpl.getIteri_i0(txt);
-        txt = SwitchAliasVarsSet(txt, i_var, "integerAlias", "integerVars", "integerParameter", "-", x_i0);
+        txt = SwitchAliasVarsSet(txt, i_var, "Integer", "-");
         txt = Tpl.nextIter(txt);
         txt = lm_155(txt, rest);
       then txt;
@@ -5179,7 +5171,6 @@ algorithm
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
-      Integer x_i0;
       SimCode.SimVar i_var;
 
     case ( txt,
@@ -5189,8 +5180,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        x_i0 = Tpl.getIteri_i0(txt);
-        txt = SwitchAliasVars(txt, i_var, "booleanAlias", "booleanVars", "booleanParameter", "!", x_i0);
+        txt = SwitchAliasVars(txt, i_var, "Boolean", "!");
         txt = Tpl.nextIter(txt);
         txt = lm_159(txt, rest);
       then txt;
@@ -5332,7 +5322,6 @@ algorithm
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
-      Integer x_i0;
       SimCode.SimVar i_var;
 
     case ( txt,
@@ -5342,8 +5331,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        x_i0 = Tpl.getIteri_i0(txt);
-        txt = SwitchAliasVarsSet(txt, i_var, "booleanAlias", "booleanVars", "booleanParameter", "!", x_i0);
+        txt = SwitchAliasVarsSet(txt, i_var, "Boolean", "!");
         txt = Tpl.nextIter(txt);
         txt = lm_163(txt, rest);
       then txt;
@@ -5486,7 +5474,6 @@ algorithm
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
-      Integer x_i0;
       SimCode.SimVar i_var;
 
     case ( txt,
@@ -5496,8 +5483,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        x_i0 = Tpl.getIteri_i0(txt);
-        txt = SwitchAliasVars(txt, i_var, "stringAlias", "stringVars", "stringParameter", "", x_i0);
+        txt = SwitchAliasVars(txt, i_var, "string", "");
         txt = Tpl.nextIter(txt);
         txt = lm_167(txt, rest);
       then txt;
@@ -5639,7 +5625,6 @@ algorithm
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
-      Integer x_i0;
       SimCode.SimVar i_var;
 
     case ( txt,
@@ -5649,8 +5634,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        x_i0 = Tpl.getIteri_i0(txt);
-        txt = SwitchAliasVarsSet(txt, i_var, "stringAlias", "stringVars", "stringParameter", "", x_i0);
+        txt = SwitchAliasVarsSet(txt, i_var, "String", "");
         txt = Tpl.nextIter(txt);
         txt = lm_171(txt, rest);
       then txt;
@@ -6085,152 +6069,53 @@ protected function fun_184
   input Tpl.Text in_txt;
   input SimCode.AliasVariable in_a_aliasvar;
   input String in_a_negate;
-  input String in_a_arrayName2;
   input String in_a_arrayName;
-  input Integer in_a_varIndex;
-  input String in_a_aliasArrayName;
   input Tpl.Text in_a_crefName;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_aliasvar, in_a_negate, in_a_arrayName2, in_a_arrayName, in_a_varIndex, in_a_aliasArrayName, in_a_crefName)
+  matchcontinue(in_txt, in_a_aliasvar, in_a_negate, in_a_arrayName, in_a_crefName)
     local
       Tpl.Text txt;
       String a_negate;
-      String a_arrayName2;
       String a_arrayName;
-      Integer a_varIndex;
-      String a_aliasArrayName;
       Tpl.Text a_crefName;
       DAE.ComponentRef i_varName;
 
     case ( txt,
            SimCode.ALIAS(varName = i_varName),
            _,
-           a_arrayName2,
            a_arrayName,
-           a_varIndex,
-           a_aliasArrayName,
            a_crefName )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
         txt = Tpl.writeText(txt, a_crefName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " :\n",
-                                    "{\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if (comp->fmuData->modelData."));
-        txt = Tpl.writeStr(txt, a_aliasArrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = Tpl.writeStr(txt, intString(a_varIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("].aliasType == 0){\n"));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("return comp->fmuData->localData[0]->"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" : return get"));
         txt = Tpl.writeStr(txt, a_arrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(comp, "));
         txt = CodegenC.cref(txt, i_varName);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_];\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("} else if (comp->fmuData->modelData."));
-        txt = Tpl.writeStr(txt, a_aliasArrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = Tpl.writeStr(txt, intString(a_varIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("].aliasType == 1){\n"));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("return comp->fmuData->simulationInfo."));
-        txt = Tpl.writeStr(txt, a_arrayName2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = CodegenC.cref(txt, i_varName);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_];\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("} else if (comp->fmuData->modelData."));
-        txt = Tpl.writeStr(txt, a_aliasArrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = Tpl.writeStr(txt, intString(a_varIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "].aliasType == 2){\n",
-                                    "  return comp->fmuData->localData[0]->timeValue;\n",
-                                    "} else {\n",
-                                    "  return fmiError;\n",
-                                    "}\n",
-                                    "break;\n"
-                                }, true));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("}"));
-        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_); break;"));
       then txt;
 
     case ( txt,
            SimCode.NEGATEDALIAS(varName = i_varName),
            a_negate,
-           a_arrayName2,
            a_arrayName,
-           a_varIndex,
-           a_aliasArrayName,
            a_crefName )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
         txt = Tpl.writeText(txt, a_crefName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " :\n",
-                                    "{\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if (comp->fmuData->modelData."));
-        txt = Tpl.writeStr(txt, a_aliasArrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = Tpl.writeStr(txt, intString(a_varIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("].aliasType == 0){\n"));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("return ("));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" : return ("));
         txt = Tpl.writeStr(txt, a_negate);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" comp->fmuData->localData[0]->"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" get"));
         txt = Tpl.writeStr(txt, a_arrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(comp, "));
         txt = CodegenC.cref(txt, i_varName);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_]);\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("} else if (comp->fmuData->modelData."));
-        txt = Tpl.writeStr(txt, a_aliasArrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = Tpl.writeStr(txt, intString(a_varIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("].aliasType == 1){\n"));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("return ("));
-        txt = Tpl.writeStr(txt, a_negate);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" comp->fmuData->simulationInfo."));
-        txt = Tpl.writeStr(txt, a_arrayName2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = CodegenC.cref(txt, i_varName);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_]);\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("} else if (comp->fmuData->modelData."));
-        txt = Tpl.writeStr(txt, a_aliasArrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = Tpl.writeStr(txt, intString(a_varIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("].aliasType == 2){\n"));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("return ("));
-        txt = Tpl.writeStr(txt, a_negate);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(" comp->fmuData->localData[0]->timeValue);\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "} else {\n",
-                                    "  return fmiError;\n",
-                                    "}\n",
-                                    "break;\n"
-                                }, true));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("}"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_)); break;"));
       then txt;
 
     case ( txt,
-           _,
-           _,
-           _,
            _,
            _,
            _,
@@ -6242,23 +6127,17 @@ end fun_184;
 public function SwitchAliasVars
   input Tpl.Text in_txt;
   input SimCode.SimVar in_a_simVar;
-  input String in_a_aliasArrayName;
   input String in_a_arrayName;
-  input String in_a_arrayName2;
   input String in_a_negate;
-  input Integer in_a_varIndex;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_simVar, in_a_aliasArrayName, in_a_arrayName, in_a_arrayName2, in_a_negate, in_a_varIndex)
+  matchcontinue(in_txt, in_a_simVar, in_a_arrayName, in_a_negate)
     local
       Tpl.Text txt;
-      String a_aliasArrayName;
       String a_arrayName;
-      String a_arrayName2;
       String a_negate;
-      Integer a_varIndex;
       SimCode.AliasVariable i_aliasvar;
       DAE.ComponentRef i_name;
       String i_comment;
@@ -6267,22 +6146,16 @@ algorithm
 
     case ( txt,
            SimCode.SIMVAR(comment = i_comment, name = i_name, aliasvar = i_aliasvar),
-           a_aliasArrayName,
            a_arrayName,
-           a_arrayName2,
-           a_negate,
-           a_varIndex )
+           a_negate )
       equation
         l_description = fun_183(Tpl.emptyTxt, i_comment);
         l_crefName = CodegenC.cref(Tpl.emptyTxt, i_name);
         l_crefName = Tpl.writeTok(l_crefName, Tpl.ST_STRING("_"));
-        txt = fun_184(txt, i_aliasvar, a_negate, a_arrayName2, a_arrayName, a_varIndex, a_aliasArrayName, l_crefName);
+        txt = fun_184(txt, i_aliasvar, a_negate, a_arrayName, l_crefName);
       then txt;
 
     case ( txt,
-           _,
-           _,
-           _,
            _,
            _,
            _ )
@@ -6538,234 +6411,126 @@ end fun_192;
 
 protected function fun_193
   input Tpl.Text in_txt;
-  input String in_a_comment;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_comment)
-    local
-      Tpl.Text txt;
-      String i_comment;
-
-    case ( txt,
-           "" )
-      then txt;
-
-    case ( txt,
-           i_comment )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("// \""));
-        txt = Tpl.writeStr(txt, i_comment);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
-      then txt;
-  end matchcontinue;
-end fun_193;
-
-protected function fun_194
-  input Tpl.Text in_txt;
   input SimCode.AliasVariable in_a_aliasvar;
   input String in_a_negate;
-  input String in_a_arrayName2;
   input String in_a_arrayName;
-  input Integer in_a_varIndex;
-  input String in_a_aliasArrayName;
   input Tpl.Text in_a_crefName;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_aliasvar, in_a_negate, in_a_arrayName2, in_a_arrayName, in_a_varIndex, in_a_aliasArrayName, in_a_crefName)
+  matchcontinue(in_txt, in_a_aliasvar, in_a_negate, in_a_arrayName, in_a_crefName)
     local
       Tpl.Text txt;
       String a_negate;
-      String a_arrayName2;
       String a_arrayName;
-      Integer a_varIndex;
-      String a_aliasArrayName;
       Tpl.Text a_crefName;
       DAE.ComponentRef i_varName;
 
     case ( txt,
            SimCode.ALIAS(varName = i_varName),
            _,
-           a_arrayName2,
            a_arrayName,
-           a_varIndex,
-           a_aliasArrayName,
            a_crefName )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
         txt = Tpl.writeText(txt, a_crefName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " :\n",
-                                    "{\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if (comp->fmuData->modelData."));
-        txt = Tpl.writeStr(txt, a_aliasArrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = Tpl.writeStr(txt, intString(a_varIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("].aliasType == 0){\n"));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("return comp->fmuData->localData[0]->"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" : return set"));
         txt = Tpl.writeStr(txt, a_arrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(comp, "));
         txt = CodegenC.cref(txt, i_varName);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_] = value;\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("} else if (comp->fmuData->modelData."));
-        txt = Tpl.writeStr(txt, a_aliasArrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = Tpl.writeStr(txt, intString(a_varIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("].aliasType == 1){\n"));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("return comp->fmuData->simulationInfo."));
-        txt = Tpl.writeStr(txt, a_arrayName2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = CodegenC.cref(txt, i_varName);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_] = value;\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("} else if (comp->fmuData->modelData."));
-        txt = Tpl.writeStr(txt, a_aliasArrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = Tpl.writeStr(txt, intString(a_varIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "].aliasType == 2){\n",
-                                    "  return fmiOK;\n",
-                                    "} else {\n",
-                                    "  return fmiError;\n",
-                                    "}\n",
-                                    "break;\n"
-                                }, true));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("}"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_, value); break;"));
       then txt;
 
     case ( txt,
            SimCode.NEGATEDALIAS(varName = i_varName),
            a_negate,
-           a_arrayName2,
            a_arrayName,
-           a_varIndex,
-           a_aliasArrayName,
            a_crefName )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
         txt = Tpl.writeText(txt, a_crefName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " :\n",
-                                    "{\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if (comp->fmuData->modelData."));
-        txt = Tpl.writeStr(txt, a_aliasArrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = Tpl.writeStr(txt, intString(a_varIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("].aliasType == 0){\n"));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("return comp->fmuData->localData[0]->"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" : return set"));
         txt = Tpl.writeStr(txt, a_arrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(comp, "));
         txt = CodegenC.cref(txt, i_varName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_] = ("));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_, ("));
         txt = Tpl.writeStr(txt, a_negate);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(" value);\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("} else if (comp->fmuData->modelData."));
-        txt = Tpl.writeStr(txt, a_aliasArrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = Tpl.writeStr(txt, intString(a_varIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("].aliasType == 1){\n"));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("return comp->fmuData->simulationInfo."));
-        txt = Tpl.writeStr(txt, a_arrayName2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = CodegenC.cref(txt, i_varName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_] = ("));
-        txt = Tpl.writeStr(txt, a_negate);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(" value);\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("} else if (comp->fmuData->modelData."));
-        txt = Tpl.writeStr(txt, a_aliasArrayName);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        txt = Tpl.writeStr(txt, intString(a_varIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "].aliasType == 2){\n",
-                                    "  return fmiOK;\n",
-                                    "} else {\n",
-                                    "  return fmiError;\n",
-                                    "}\n",
-                                    "break;\n"
-                                }, true));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("}"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" value)); break;"));
       then txt;
 
     case ( txt,
-           _,
-           _,
-           _,
            _,
            _,
            _,
            _ )
       then txt;
   end matchcontinue;
-end fun_194;
+end fun_193;
 
 public function SwitchAliasVarsSet
   input Tpl.Text in_txt;
   input SimCode.SimVar in_a_simVar;
-  input String in_a_aliasArrayName;
   input String in_a_arrayName;
-  input String in_a_arrayName2;
   input String in_a_negate;
-  input Integer in_a_varIndex;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_simVar, in_a_aliasArrayName, in_a_arrayName, in_a_arrayName2, in_a_negate, in_a_varIndex)
+  matchcontinue(in_txt, in_a_simVar, in_a_arrayName, in_a_negate)
     local
       Tpl.Text txt;
-      String a_aliasArrayName;
       String a_arrayName;
-      String a_arrayName2;
       String a_negate;
-      Integer a_varIndex;
       SimCode.AliasVariable i_aliasvar;
       DAE.ComponentRef i_name;
       String i_comment;
       Tpl.Text l_crefName;
-      Tpl.Text l_description_1;
       Tpl.Text l_description;
 
     case ( txt,
            SimCode.SIMVAR(comment = i_comment, name = i_name, aliasvar = i_aliasvar),
-           a_aliasArrayName,
            a_arrayName,
-           a_arrayName2,
-           a_negate,
-           a_varIndex )
+           a_negate )
       equation
         l_description = fun_192(Tpl.emptyTxt, i_comment);
-        l_description_1 = fun_193(Tpl.emptyTxt, i_comment);
         l_crefName = CodegenC.cref(Tpl.emptyTxt, i_name);
         l_crefName = Tpl.writeTok(l_crefName, Tpl.ST_STRING("_"));
-        txt = fun_194(txt, i_aliasvar, a_negate, a_arrayName2, a_arrayName, a_varIndex, a_aliasArrayName, l_crefName);
+        txt = fun_193(txt, i_aliasvar, a_negate, a_arrayName, l_crefName);
       then txt;
 
     case ( txt,
-           _,
-           _,
-           _,
            _,
            _,
            _ )
       then txt;
   end matchcontinue;
 end SwitchAliasVarsSet;
+
+protected function fun_195
+  input Tpl.Text in_txt;
+  input String in_mArg;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_mArg)
+    local
+      Tpl.Text txt;
+
+    case ( txt,
+           "OSX" )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-lf2c"));
+      then txt;
+
+    case ( txt,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-Wl,-Bstatic -lf2c -Wl,-Bdynamic"));
+      then txt;
+  end matchcontinue;
+end fun_195;
 
 protected function fun_196
   input Tpl.Text in_txt;
@@ -6791,31 +6556,6 @@ algorithm
       then txt;
   end matchcontinue;
 end fun_196;
-
-protected function fun_197
-  input Tpl.Text in_txt;
-  input String in_mArg;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_mArg)
-    local
-      Tpl.Text txt;
-
-    case ( txt,
-           "OSX" )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-lf2c"));
-      then txt;
-
-    case ( txt,
-           _ )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-Wl,-Bstatic -lf2c -Wl,-Bdynamic"));
-      then txt;
-  end matchcontinue;
-end fun_197;
 
 public function getPlatformString2
   input Tpl.Text in_txt;
@@ -6996,7 +6736,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_libsPos2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) "));
         ret_0 = System.os();
-        txt = fun_196(txt, ret_0);
+        txt = fun_195(txt, ret_0);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     " -Wl,--kill-at\n",
                                     "\n"
@@ -7054,7 +6794,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_libsPos2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) "));
         ret_1 = System.os();
-        txt = fun_197(txt, ret_1);
+        txt = fun_196(txt, ret_1);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
@@ -7182,7 +6922,7 @@ algorithm
   end matchcontinue;
 end getPlatformString2;
 
-protected function fun_199
+protected function fun_198
   input Tpl.Text in_txt;
   input String in_a_modelInfo_directory;
 
@@ -7206,9 +6946,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_199;
+end fun_198;
 
-protected function lm_200
+protected function lm_199
   input Tpl.Text in_txt;
   input list<String> in_items;
 
@@ -7230,16 +6970,43 @@ algorithm
       equation
         txt = Tpl.writeStr(txt, i_lib);
         txt = Tpl.nextIter(txt);
-        txt = lm_200(txt, rest);
+        txt = lm_199(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_200(txt, rest);
+        txt = lm_199(txt, rest);
       then txt;
   end matchcontinue;
-end lm_200;
+end lm_199;
+
+protected function fun_200
+  input Tpl.Text in_txt;
+  input Tpl.Text in_a_dirExtra;
+  input Tpl.Text in_a_libsStr;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_dirExtra, in_a_libsStr)
+    local
+      Tpl.Text txt;
+      Tpl.Text a_libsStr;
+
+    case ( txt,
+           Tpl.MEM_TEXT(tokens = {}),
+           a_libsStr )
+      equation
+        txt = Tpl.writeText(txt, a_libsStr);
+      then txt;
+
+    case ( txt,
+           _,
+           _ )
+      then txt;
+  end matchcontinue;
+end fun_200;
 
 protected function fun_201
   input Tpl.Text in_txt;
@@ -7256,46 +7023,19 @@ algorithm
 
     case ( txt,
            Tpl.MEM_TEXT(tokens = {}),
-           a_libsStr )
-      equation
-        txt = Tpl.writeText(txt, a_libsStr);
+           _ )
       then txt;
 
     case ( txt,
            _,
-           _ )
+           a_libsStr )
+      equation
+        txt = Tpl.writeText(txt, a_libsStr);
       then txt;
   end matchcontinue;
 end fun_201;
 
 protected function fun_202
-  input Tpl.Text in_txt;
-  input Tpl.Text in_a_dirExtra;
-  input Tpl.Text in_a_libsStr;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_dirExtra, in_a_libsStr)
-    local
-      Tpl.Text txt;
-      Tpl.Text a_libsStr;
-
-    case ( txt,
-           Tpl.MEM_TEXT(tokens = {}),
-           _ )
-      then txt;
-
-    case ( txt,
-           _,
-           a_libsStr )
-      equation
-        txt = Tpl.writeText(txt, a_libsStr);
-      then txt;
-  end matchcontinue;
-end fun_202;
-
-protected function fun_203
   input Tpl.Text in_txt;
   input Boolean in_a_s_measureTime;
 
@@ -7316,9 +7056,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("-D_OMC_MEASURE_TIME "));
       then txt;
   end matchcontinue;
-end fun_203;
+end fun_202;
 
-protected function fun_204
+protected function fun_203
   input Tpl.Text in_txt;
   input String in_a_s_method;
 
@@ -7345,9 +7085,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_204;
+end fun_203;
 
-protected function fun_205
+protected function fun_204
   input Tpl.Text in_txt;
   input Option<SimCode.SimulationSettings> in_a_sopt;
 
@@ -7363,18 +7103,18 @@ algorithm
     case ( txt,
            SOME(SimCode.SIMULATION_SETTINGS(measureTime = i_s_measureTime, method = i_s_method)) )
       equation
-        txt = fun_203(txt, i_s_measureTime);
+        txt = fun_202(txt, i_s_measureTime);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = fun_204(txt, i_s_method);
+        txt = fun_203(txt, i_s_method);
       then txt;
 
     case ( txt,
            _ )
       then txt;
   end matchcontinue;
-end fun_205;
+end fun_204;
 
-protected function fun_206
+protected function fun_205
   input Tpl.Text in_txt;
   input Option<SimCode.SimulationSettings> in_a_sopt;
 
@@ -7396,9 +7136,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_206;
+end fun_205;
 
-protected function lm_207
+protected function lm_206
   input Tpl.Text in_txt;
   input list<String> in_items;
 
@@ -7420,16 +7160,39 @@ algorithm
       equation
         txt = Tpl.writeStr(txt, i_it);
         txt = Tpl.nextIter(txt);
-        txt = lm_207(txt, rest);
+        txt = lm_206(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_207(txt, rest);
+        txt = lm_206(txt, rest);
       then txt;
   end matchcontinue;
-end lm_207;
+end lm_206;
+
+protected function fun_207
+  input Tpl.Text in_txt;
+  input Boolean in_mArg;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_mArg)
+    local
+      Tpl.Text txt;
+
+    case ( txt,
+           false )
+      then txt;
+
+    case ( txt,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv"));
+      then txt;
+  end matchcontinue;
+end fun_207;
 
 protected function fun_208
   input Tpl.Text in_txt;
@@ -7453,29 +7216,6 @@ algorithm
       then txt;
   end matchcontinue;
 end fun_208;
-
-protected function fun_209
-  input Tpl.Text in_txt;
-  input Boolean in_mArg;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_mArg)
-    local
-      Tpl.Text txt;
-
-    case ( txt,
-           false )
-      then txt;
-
-    case ( txt,
-           _ )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv"));
-      then txt;
-  end matchcontinue;
-end fun_209;
 
 public function fmuMakefile
   input Tpl.Text in_txt;
@@ -7514,13 +7254,13 @@ algorithm
     case ( txt,
            SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, platform = i_makefileParams_platform, omhome = i_makefileParams_omhome, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, cflags = i_makefileParams_cflags, includes = i_makefileParams_includes, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), simulationSettingsOpt = i_sopt, fileNamePrefix = i_fileNamePrefix) )
       equation
-        l_dirExtra = fun_199(Tpl.emptyTxt, i_modelInfo_directory);
+        l_dirExtra = fun_198(Tpl.emptyTxt, i_modelInfo_directory);
         l_libsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_libsStr = lm_200(l_libsStr, i_makefileParams_libs);
+        l_libsStr = lm_199(l_libsStr, i_makefileParams_libs);
         l_libsStr = Tpl.popIter(l_libsStr);
-        l_libsPos1 = fun_201(Tpl.emptyTxt, l_dirExtra, l_libsStr);
-        l_libsPos2 = fun_202(Tpl.emptyTxt, l_dirExtra, l_libsStr);
-        l_extraCflags = fun_205(Tpl.emptyTxt, i_sopt);
+        l_libsPos1 = fun_200(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_libsPos2 = fun_201(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_extraCflags = fun_204(Tpl.emptyTxt, i_sopt);
         l_compilecmds = getPlatformString2(Tpl.emptyTxt, i_makefileParams_platform, i_fileNamePrefix, Tpl.textString(l_dirExtra), Tpl.textString(l_libsPos1), Tpl.textString(l_libsPos2), i_makefileParams_omhome);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "# Makefile generated by OpenModelica\n",
@@ -7557,7 +7297,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/include/omc\" "));
         txt = Tpl.writeStr(txt, i_makefileParams_cflags);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = fun_206(txt, i_sopt);
+        txt = fun_205(txt, i_sopt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("CPPFLAGS=-I\""));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
@@ -7565,7 +7305,7 @@ algorithm
         txt = Tpl.writeText(txt, l_dirExtra);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_207(txt, i_makefileParams_includes);
+        txt = lm_206(txt, i_makefileParams_includes);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("LDFLAGS=-L\""));
@@ -7582,7 +7322,7 @@ algorithm
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU"));
         ret_6 = Config.acceptMetaModelicaGrammar();
-        txt = fun_208(txt, ret_6);
+        txt = fun_207(txt, ret_6);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".c\n",
                                     "MAINOBJ="
@@ -7590,7 +7330,7 @@ algorithm
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU"));
         ret_7 = Config.acceptMetaModelicaGrammar();
-        txt = fun_209(txt, ret_7);
+        txt = fun_208(txt, ret_7);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".o\n",
                                     "\n",

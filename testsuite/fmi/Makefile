@@ -4,6 +4,7 @@ TESTFILES = \
 BouncingBall.mos \
 EnumerationTest.mos \
 HelloFMIWorld.mos \
+Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
 TanksConnectedPI.mos \
 
 
