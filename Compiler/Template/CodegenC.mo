@@ -10210,21 +10210,25 @@ end fun_256;
 protected function fun_257
   input Tpl.Text in_txt;
   input Boolean in_mArg;
+  input String in_a_makefileParams_ccompiler;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_mArg)
+  matchcontinue(in_txt, in_mArg, in_a_makefileParams_ccompiler)
     local
       Tpl.Text txt;
+      String a_makefileParams_ccompiler;
 
     case ( txt,
-           false )
+           false,
+           a_makefileParams_ccompiler )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("makefileParams.ccompiler"));
+        txt = Tpl.writeStr(txt, a_makefileParams_ccompiler);
       then txt;
 
     case ( txt,
+           _,
            _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("g++"));
@@ -10380,6 +10384,7 @@ algorithm
       String i_makefileParams_exeext;
       String i_makefileParams_linker;
       String i_makefileParams_cxxcompiler;
+      String i_makefileParams_ccompiler;
       Option<SimCode.SimulationSettings> i_sopt;
       list<String> i_makefileParams_libs;
       String i_modelInfo_directory;
@@ -10400,7 +10405,7 @@ algorithm
       Tpl.Text l_dirExtra;
 
     case ( txt,
-           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, cflags = i_makefileParams_cflags, omhome = i_makefileParams_omhome, includes = i_makefileParams_includes, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), simulationSettingsOpt = i_sopt, fileNamePrefix = i_fileNamePrefix) )
+           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, cflags = i_makefileParams_cflags, omhome = i_makefileParams_omhome, includes = i_makefileParams_includes, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), simulationSettingsOpt = i_sopt, fileNamePrefix = i_fileNamePrefix) )
       equation
         l_dirExtra = fun_249(Tpl.emptyTxt, i_modelInfo_directory);
         l_libsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
@@ -10419,7 +10424,7 @@ algorithm
                                     "CC="
                                 }, false));
         ret_7 = Config.acceptParModelicaGrammar();
-        txt = fun_257(txt, ret_7);
+        txt = fun_257(txt, ret_7, i_makefileParams_ccompiler);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("CXX="));
         txt = Tpl.writeStr(txt, i_makefileParams_cxxcompiler);
