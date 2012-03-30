@@ -27,6 +27,9 @@ val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
 //     messages = ""
 // end SimulationResult;
 // ""
+// "Warning: Alias variables inertia1.w = -springDamper1.w_rel have start values inertia1.w_start != springDamper1.w_rel_start. Use value from inertia1.w.
+// 
+// "
 // {0.0,0.04279688096840497,0.10745960143729383,0.09138893629568658,-0.0007455632292342974,-0.062347336630866584}
 // {0.0,0.08634577815525403,0.21443464221349354,0.18192981959614107,-0.0013657208140412831,-0.12372602368830105}
 // endResult
