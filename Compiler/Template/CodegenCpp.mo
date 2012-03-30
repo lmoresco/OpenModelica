@@ -23863,7 +23863,6 @@ algorithm
       Tpl.Text a_preExp;
       Tpl.Text a_varDecls;
       SimCode.SimCode a_simCode;
-      Integer i_index;
       DAE.Exp i_expElse;
       DAE.Exp i_expThen;
       DAE.Exp i_expCond;
@@ -23872,6 +23871,7 @@ algorithm
       DAE.Operator i_operator;
       String i_string;
       DAE.Exp i_e;
+      Integer i_index;
       Boolean i_bool;
       Real i_real;
       Integer i_integer;
@@ -23907,6 +23907,16 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
+           DAE.ENUM_LITERAL(index = i_index),
+           _,
+           a_preExp,
+           a_varDecls,
+           _ )
+      equation
+        txt = Tpl.writeStr(txt, intString(i_index));
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
            (i_e as DAE.CREF(componentRef = _)),
            a_context,
            a_preExp,
@@ -23924,6 +23934,16 @@ algorithm
            a_simCode )
       equation
         (txt, a_preExp, a_varDecls) = daeExpCast(txt, i_e, a_context, a_preExp, a_varDecls, a_simCode);
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
+           DAE.CONS(car = _),
+           _,
+           a_preExp,
+           a_varDecls,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("Cons not supported yet"));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -24027,6 +24047,46 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
+           DAE.RANGE(ty = _),
+           _,
+           a_preExp,
+           a_varDecls,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("Range not supported yet"));
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
+           DAE.ASUB(exp = _),
+           _,
+           a_preExp,
+           a_varDecls,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("Asub not supported yet"));
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
+           DAE.TSUB(exp = _),
+           _,
+           a_preExp,
+           a_varDecls,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("Tsub not supported yet"));
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
+           DAE.REDUCTION(reductionInfo = _),
+           _,
+           a_preExp,
+           a_varDecls,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("Reduction not supported yet"));
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
            (i_e as DAE.ARRAY(ty = _)),
            a_context,
            a_preExp,
@@ -24060,6 +24120,8 @@ algorithm
            a_preExp,
            a_varDecls,
            _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("ErrorExp"));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExp;
@@ -24851,7 +24913,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Nested array subscripting *should* have been handled by the routine creating the asub, but for some reason it was not: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4132, 11), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4138, 11), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -24890,7 +24952,7 @@ algorithm
         txt_6 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("ASUB_EASY_CASE "));
         ret_6 = ExpressionDump.printExpStr(i_exp);
         txt_6 = Tpl.writeStr(txt_6, ret_6);
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4161, 11), Tpl.textString(txt_6));
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4167, 11), Tpl.textString(txt_6));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -24933,7 +24995,7 @@ algorithm
         txt_12 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("OTHER_ASUB "));
         ret_12 = ExpressionDump.printExpStr(i_exp);
         txt_12 = Tpl.writeStr(txt_12, ret_12);
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4179, 11), Tpl.textString(txt_12));
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4185, 11), Tpl.textString(txt_12));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_634;
@@ -26670,10 +26732,9 @@ algorithm
            _,
            a_preExp,
            a_varDecls,
-           _ )
+           a_simCode )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$P$DER"));
-        txt = cref(txt, i_arg_componentRef);
+        txt = representationCref2(txt, i_arg_componentRef, a_simCode);
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -29884,6 +29945,18 @@ algorithm
       then txt;
 
     case ( txt,
+           DAE.LESS(ty = DAE.T_ENUMERATION(index = _)),
+           a_e2,
+           a_e1 )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
+        txt = Tpl.writeText(txt, a_e1);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" < "));
+        txt = Tpl.writeText(txt, a_e2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then txt;
+
+    case ( txt,
            DAE.GREATER(ty = DAE.T_BOOL(varLst = _)),
            a_e2,
            a_e1 )
@@ -29917,6 +29990,18 @@ algorithm
 
     case ( txt,
            DAE.GREATER(ty = DAE.T_REAL(varLst = _)),
+           a_e2,
+           a_e1 )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
+        txt = Tpl.writeText(txt, a_e1);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" > "));
+        txt = Tpl.writeText(txt, a_e2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then txt;
+
+    case ( txt,
+           DAE.GREATER(ty = DAE.T_ENUMERATION(index = _)),
            a_e2,
            a_e1 )
       equation
@@ -29972,6 +30057,18 @@ algorithm
       then txt;
 
     case ( txt,
+           DAE.LESSEQ(ty = DAE.T_ENUMERATION(index = _)),
+           a_e2,
+           a_e1 )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
+        txt = Tpl.writeText(txt, a_e1);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" <= "));
+        txt = Tpl.writeText(txt, a_e2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then txt;
+
+    case ( txt,
            DAE.GREATEREQ(ty = DAE.T_BOOL(varLst = _)),
            a_e2,
            a_e1 )
@@ -30005,6 +30102,18 @@ algorithm
 
     case ( txt,
            DAE.GREATEREQ(ty = DAE.T_REAL(varLst = _)),
+           a_e2,
+           a_e1 )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
+        txt = Tpl.writeText(txt, a_e1);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" >= "));
+        txt = Tpl.writeText(txt, a_e2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then txt;
+
+    case ( txt,
+           DAE.GREATEREQ(ty = DAE.T_ENUMERATION(index = _)),
            a_e2,
            a_e1 )
       equation
@@ -30068,6 +30177,18 @@ algorithm
       then txt;
 
     case ( txt,
+           DAE.EQUAL(ty = DAE.T_ENUMERATION(index = _)),
+           a_e2,
+           a_e1 )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
+        txt = Tpl.writeText(txt, a_e1);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" == "));
+        txt = Tpl.writeText(txt, a_e2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then txt;
+
+    case ( txt,
            DAE.NEQUAL(ty = DAE.T_BOOL(varLst = _)),
            a_e2,
            a_e1 )
@@ -30109,6 +30230,18 @@ algorithm
 
     case ( txt,
            DAE.NEQUAL(ty = DAE.T_REAL(varLst = _)),
+           a_e2,
+           a_e1 )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
+        txt = Tpl.writeText(txt, a_e1);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" != "));
+        txt = Tpl.writeText(txt, a_e2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then txt;
+
+    case ( txt,
+           DAE.NEQUAL(ty = DAE.T_ENUMERATION(index = _)),
            a_e2,
            a_e1 )
       equation
@@ -30354,7 +30487,7 @@ algorithm
            _,
            _ )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("daeExpRelation:ERR"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("daeExpRelationCondition:ERR"));
       then txt;
   end matchcontinue;
 end fun_729;
@@ -31573,7 +31706,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 5287, 12), "algStmtTupleAssign failed");
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 5310, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
