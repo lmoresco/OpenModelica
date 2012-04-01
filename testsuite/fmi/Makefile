@@ -5,6 +5,7 @@ BouncingBall.mos \
 EnumerationTest.mos \
 HelloFMIWorld.mos \
 Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
+Modelica_Mechanics_MultiBody_Examples_Elementary_DoublePendulum.mos \
 TanksConnectedPI.mos \
 
 

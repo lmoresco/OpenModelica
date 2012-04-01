@@ -8,8 +8,10 @@ model EnumerationTest
   Real x;
   Enum ss;
   Real y;
+  String st;
 equation
   der(x) = 1;
   ss = if x > 0.5 then s else if x<0.3 then Enum.test3 else Enum.test1;
   y = if ss == Enum.test1 then -x else x;
+  st = if y > 0 then String(s) else String(ss);
 end EnumerationTest;

@@ -1,4 +1,4 @@
-// name:     Modelica.Mechanics.MultiBody.Examples.Elementary.ChuaCircuit
+// name:     Modelica_Electrical_Analog_Examples_ChuaCircuit
 // keywords: simulation MSL Examples
 // status: correct
 // teardown_command: rm -rf Modelica_Electrical_Analog_Examples_ChuaCircuitFMUImport.mo
@@ -11,6 +11,7 @@ translateModelFMU(Modelica.Electrical.Analog.Examples.ChuaCircuit);
 getErrorString();
 
 importFMU("Modelica_Electrical_Analog_Examples_ChuaCircuit.fmu"); getErrorString();
+
 loadFile("Modelica_Electrical_Analog_Examples_ChuaCircuitFMUImport.mo"); getErrorString();
 simulate(FMUImport_Modelica_Electrical_Analog_Examples_ChuaCircuit.FMUBlock,stopTime=3.0);
 
@@ -28,24 +29,7 @@ val(C2_v, 0);
 val(C2_v, 1);
 val(C2_v, 2);
 val(C2_v, 3);
-/*
-simulate(Modelica.Electrical.Analog.Examples.ChuaCircuit,stopTime=3.0);
 
-val(L.i, 0);
-val(L.i, 1);
-val(L.i, 2);
-val(L.i, 3);
-
-val(C1.v, 0);
-val(C1.v, 1);
-val(C1.v, 2);
-val(C1.v, 3);
-
-val(C2.v, 0);
-val(C2.v, 1);
-val(C2.v, 2);
-val(C2.v, 3);
-*/
 // Result:
 // true
 // "SimCode: The model Modelica.Electrical.Analog.Examples.ChuaCircuit has been translated to FMU"
