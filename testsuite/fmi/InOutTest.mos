@@ -5,28 +5,16 @@
 // Simulation Results 
 //
 
-loadModel(Modelica,{"3.2"});
+loadModel(Modelica,{"3.1"});
 loadFile("InOutTest.mo");
 translateModelFMU(InOutTest);
 importFMU("InOutTest.fmu");
 loadFile("InOutTestFMUImport.mo");
 loadFile("testInOut.mo");
-simulate(testInOut,stopTime=3.0);
+simulate(testInOut);
 
 val(add.y,0);
 val(add.y,1);
-val(add.y,2);
-val(add.y,3);
-
-val(and1.y,0);
-val(and1.y,1);
-val(and1.y,2);
-val(and1.y,3);
-
-val(sum.y,0);
-val(sum.y,1);
-val(sum.y,2);
-val(sum.y,3);
 
 // Result:
 // true
@@ -39,19 +27,10 @@ val(sum.y,3);
 // true
 // record SimulationResult
 //     resultFile = "testInOut_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'testInOut', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'testInOut', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 0.0
 // 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 1.0
-// 1.0
-// 1.0
+
 // endResult
