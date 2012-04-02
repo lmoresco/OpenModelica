@@ -33,13 +33,13 @@ end lastrange;
 end ASubIfExp;
 ");
 
-simulate(ASubIfExp);
+simulate(ASubIfExp.lastrange);
 
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ASubIfExp_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'ASubIfExp', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     resultFile = "ASubIfExp.lastrange_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'ASubIfExp.lastrange', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // endResult
