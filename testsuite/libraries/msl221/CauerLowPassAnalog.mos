@@ -163,5 +163,6 @@ getErrorString();
 // end Modelica.Electrical.Analog.Examples.CauerLowPassAnalog;
 // "
 // "Notification: Modelica language version set to 2.x due to loading of MSL 2.2.1.
+// Warning: Requested package Modelica of version 2.2, but this package was already loaded with version 2.2.1. You might experience problems if these versions are incompatible.
 // "
 // endResult
