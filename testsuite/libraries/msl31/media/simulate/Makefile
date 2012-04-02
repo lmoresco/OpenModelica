@@ -1,11 +1,6 @@
 TEST = ../../../../rtest -v
 
 TESTFILES = \
-Modelica.Media.Air.SimpleAir.mos \
-Modelica.Media.Examples.TestOnly.N2AsMix.mos \
-Modelica.Media.Examples.TwoPhaseWater.mos \
-Modelica.Media.Incompressible.Examples.Glycol47.mos \
-Modelica.Media.Water.StandardWater.mos \
 Modelica.Media.Examples.MoistAir.mos \
 Modelica.Media.Examples.SimpleLiquidWater.mos \
 Modelica.Media.Examples.IdealGasH2O.mos \

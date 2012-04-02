@@ -1,0 +1,12 @@
+// name: ErrorSimPackage
+// status: correct
+
+loadString("package P end P;");
+translateModel(P);getErrorString();
+
+// Result:
+// true
+// "There were errors during translation. Use getErrorString() to see them."
+// "Error: Cannot instantiate P due to restriction PACKAGE.
+// "
+// endResult

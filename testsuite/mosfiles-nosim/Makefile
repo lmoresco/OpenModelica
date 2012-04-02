@@ -7,6 +7,7 @@ cat.mos \
 ComplexConnect.mos \
 EnzMM.mos \
 ErrorFunctionCallNumArgs.mos \
+ErrorSimPackage.mos \
 ExtendsOrder.mos \
 ExternalFunctionResultOrder.mos\
 ExternalLibraryFunction.mos\
