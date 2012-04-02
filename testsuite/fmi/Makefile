@@ -4,6 +4,7 @@ TESTFILES = \
 BouncingBall.mos \
 EnumerationTest.mos \
 HelloFMIWorld.mos \
+InOutTest.mos \
 Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
 Modelica_Mechanics_MultiBody_Examples_Elementary_DoublePendulum.mos \
 TanksConnectedPI.mos \
@@ -12,7 +13,7 @@ TanksConnectedPI.mos \
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES= \
-ExternalFMUs.mos \
+ExternalFMUs.mos  \
 
 # Dependency files that are not .mo .mos or Makefile
 # Add them here or they will be cleaned.
