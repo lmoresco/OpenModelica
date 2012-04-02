@@ -10136,7 +10136,7 @@ algorithm
     case ( txt,
            _ )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-locl_runtime -lOpenCL"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-lOMOCLRuntime -lOpenCL"));
       then txt;
   end matchcontinue;
 end fun_253;
