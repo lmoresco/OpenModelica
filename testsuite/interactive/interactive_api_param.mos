@@ -6,6 +6,16 @@
 //
 
 loadFile("interactive_api_param.mo");
+
+getParameterValue(A,p1);
+setParameterValue(A,p1,111);
+getParameterValue(A,p1);
+setParameterValue(A,p1,35);
+getParameterValue(A,p1);
+getParameterValue(A,NOT_EXISTENT);
+setParameterValue(A,NOT_EXISTENT,35);
+setParameterValue(NOT_EXISTENT,NOT_EXISTENT,35);
+
 getComponentModifierNames(C,b1);
 getComponentModifierValue(C,b1.a1);
 setComponentModifierValue(C,b1.a1,$Code((p1=45)));
@@ -68,6 +78,14 @@ getExtendsModifierValue(K5,Resistor,x.start);
 
 // Result:
 // true
+// 35
+// Ok
+// 111
+// Ok
+// 35
+// Error
+// Error: component with name: NOT_EXISTENT in class: A not found.
+// Error: class: NOT_EXISTENT not found.
 // {a1.p1, a1.p2, a2.p2}
 // (p1 = 0, p2 = 0)
 // Ok
