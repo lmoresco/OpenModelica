@@ -42,7 +42,7 @@ CORBALIBS=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313
 #endif
 
 
-LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml_p $(CORBALIBS) $(LIBSOCKET) -lsqlite3 -llpsolve55 -lregex -llapack-mingw -ltmglib-mingw -lblas-mingw -lf2c
+LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml_p -lModelicaExternalC $(CORBALIBS) $(LIBSOCKET) -lsqlite3 -llpsolve55 -lregex -llapack-mingw -ltmglib-mingw -lblas-mingw -lf2c
 PLTPKGFLAGS = -L../../build/lib/omc -luuid -lole32 -lws2_32 -lRpcrt4
 
 PROG = omcp.exe
