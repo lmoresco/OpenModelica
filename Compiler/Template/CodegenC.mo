@@ -23765,7 +23765,7 @@ end algStmtAssignArr;
 
 protected function fun_578
   input Tpl.Text in_txt;
-  input Option<DAE.Exp> in_a_expOption;
+  input Option<DAE.Exp> in_a_step;
   input Tpl.Text in_a_varDecls;
   input Tpl.Text in_a_preExp;
   input SimCode.Context in_a_context;
@@ -23775,7 +23775,7 @@ protected function fun_578
   output Tpl.Text out_a_preExp;
 algorithm
   (out_txt, out_a_varDecls, out_a_preExp) :=
-  matchcontinue(in_txt, in_a_expOption, in_a_varDecls, in_a_preExp, in_a_context)
+  matchcontinue(in_txt, in_a_step, in_a_varDecls, in_a_preExp, in_a_context)
     local
       Tpl.Text txt;
       Tpl.Text a_varDecls;
@@ -23820,11 +23820,11 @@ algorithm
       DAE.ComponentRef a_cr;
       SimCode.Context a_context;
       Tpl.Text a_varDecls;
-      Option<DAE.Exp> i_expOption;
-      DAE.Exp i_range;
-      DAE.Exp i_exp;
+      Option<DAE.Exp> i_step;
+      DAE.Exp i_stop;
+      DAE.Exp i_start;
       DAE.Type i_ty;
-      Tpl.Text l_step;
+      Tpl.Text l_step__exp;
       Tpl.Text l_stop__exp;
       Tpl.Text l_start__exp;
       Tpl.Text l_ty__str;
@@ -23832,7 +23832,7 @@ algorithm
       Tpl.Text l_preExp;
 
     case ( txt,
-           DAE.RANGE(ty = i_ty, exp = i_exp, range = i_range, expOption = i_expOption),
+           DAE.RANGE(ty = i_ty, start = i_start, stop = i_stop, step = i_step),
            a_cr,
            a_context,
            a_varDecls )
@@ -23840,9 +23840,9 @@ algorithm
         l_preExp = Tpl.emptyTxt;
         l_cref = contextArrayCref(Tpl.emptyTxt, a_cr, a_context);
         l_ty__str = expTypeArray(Tpl.emptyTxt, i_ty);
-        (l_start__exp, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_exp, a_context, l_preExp, a_varDecls);
-        (l_stop__exp, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_range, a_context, l_preExp, a_varDecls);
-        (l_step, a_varDecls, l_preExp) = fun_578(Tpl.emptyTxt, i_expOption, a_varDecls, l_preExp, a_context);
+        (l_start__exp, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_start, a_context, l_preExp, a_varDecls);
+        (l_stop__exp, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_stop, a_context, l_preExp, a_varDecls);
+        (l_step__exp, a_varDecls, l_preExp) = fun_578(Tpl.emptyTxt, i_step, a_varDecls, l_preExp, a_context);
         txt = Tpl.writeText(txt, l_preExp);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("fill_"));
@@ -23852,7 +23852,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
         txt = Tpl.writeText(txt, l_start__exp);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
-        txt = Tpl.writeText(txt, l_step);
+        txt = Tpl.writeText(txt, l_step__exp);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
         txt = Tpl.writeText(txt, l_stop__exp);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(");"));
@@ -24824,7 +24824,7 @@ end fun_598;
 
 protected function fun_599
   input Tpl.Text in_txt;
-  input Option<DAE.Exp> in_a_expOption;
+  input Option<DAE.Exp> in_a_step;
   input Tpl.Text in_a_varDecls;
   input Tpl.Text in_a_preExp;
   input SimCode.Context in_a_context;
@@ -24834,7 +24834,7 @@ protected function fun_599
   output Tpl.Text out_a_preExp;
 algorithm
   (out_txt, out_a_varDecls, out_a_preExp) :=
-  matchcontinue(in_txt, in_a_expOption, in_a_varDecls, in_a_preExp, in_a_context)
+  matchcontinue(in_txt, in_a_step, in_a_varDecls, in_a_preExp, in_a_context)
     local
       Tpl.Text txt;
       Tpl.Text a_varDecls;
@@ -24942,9 +24942,9 @@ algorithm
       Tpl.Text a_body;
       SimCode.Context a_context;
       Tpl.Text a_varDecls;
-      DAE.Exp i_range;
-      Option<DAE.Exp> i_expOption;
-      DAE.Exp i_exp;
+      DAE.Exp i_stop;
+      Option<DAE.Exp> i_step;
+      DAE.Exp i_start;
       Boolean ret_11;
       Boolean ret_10;
       Tpl.Text l_stopValue;
@@ -24959,7 +24959,7 @@ algorithm
       Tpl.Text l_iterName;
 
     case ( txt,
-           DAE.RANGE(exp = i_exp, expOption = i_expOption, range = i_range),
+           DAE.RANGE(start = i_start, step = i_step, stop = i_stop),
            a_iterator,
            a_type,
            a_shortType,
@@ -24974,9 +24974,9 @@ algorithm
         (l_stepVar, a_varDecls) = tempDecl(Tpl.emptyTxt, a_type, a_varDecls);
         (l_stopVar, a_varDecls) = tempDecl(Tpl.emptyTxt, a_type, a_varDecls);
         l_preExp = Tpl.emptyTxt;
-        (l_startValue, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_exp, a_context, l_preExp, a_varDecls);
-        (l_stepValue, a_varDecls, l_preExp) = fun_599(Tpl.emptyTxt, i_expOption, a_varDecls, l_preExp, a_context);
-        (l_stopValue, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_range, a_context, l_preExp, a_varDecls);
+        (l_startValue, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_start, a_context, l_preExp, a_varDecls);
+        (l_stepValue, a_varDecls, l_preExp) = fun_599(Tpl.emptyTxt, i_step, a_varDecls, l_preExp, a_context);
+        (l_stopValue, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_stop, a_context, l_preExp, a_varDecls);
         txt = Tpl.writeText(txt, l_preExp);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeText(txt, l_startVar);
@@ -34613,7 +34613,7 @@ end daeExpMatrixRow;
 
 protected function fun_761
   input Tpl.Text in_txt;
-  input Option<DAE.Exp> in_a_expOption;
+  input Option<DAE.Exp> in_a_step;
   input Tpl.Text in_a_varDecls;
   input Tpl.Text in_a_preExp;
   input SimCode.Context in_a_context;
@@ -34623,7 +34623,7 @@ protected function fun_761
   output Tpl.Text out_a_preExp;
 algorithm
   (out_txt, out_a_varDecls, out_a_preExp) :=
-  matchcontinue(in_txt, in_a_expOption, in_a_varDecls, in_a_preExp, in_a_context)
+  matchcontinue(in_txt, in_a_step, in_a_varDecls, in_a_preExp, in_a_context)
     local
       Tpl.Text txt;
       Tpl.Text a_varDecls;
@@ -34669,27 +34669,27 @@ algorithm
       SimCode.Context a_context;
       Tpl.Text a_preExp;
       Tpl.Text a_varDecls;
-      Option<DAE.Exp> i_expOption;
-      DAE.Exp i_range;
-      DAE.Exp i_exp;
+      Option<DAE.Exp> i_step;
+      DAE.Exp i_stop;
+      DAE.Exp i_start;
       DAE.Type i_ty;
-      Tpl.Text l_step;
+      Tpl.Text l_step__exp;
       Tpl.Text l_tmp;
       Tpl.Text l_stop__exp;
       Tpl.Text l_start__exp;
       Tpl.Text l_ty__str;
 
     case ( txt,
-           DAE.RANGE(ty = i_ty, exp = i_exp, range = i_range, expOption = i_expOption),
+           DAE.RANGE(ty = i_ty, start = i_start, stop = i_stop, step = i_step),
            a_context,
            a_preExp,
            a_varDecls )
       equation
         l_ty__str = expTypeArray(Tpl.emptyTxt, i_ty);
-        (l_start__exp, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_exp, a_context, a_preExp, a_varDecls);
-        (l_stop__exp, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_range, a_context, a_preExp, a_varDecls);
+        (l_start__exp, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_start, a_context, a_preExp, a_varDecls);
+        (l_stop__exp, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_stop, a_context, a_preExp, a_varDecls);
         (l_tmp, a_varDecls) = tempDecl(Tpl.emptyTxt, Tpl.textString(l_ty__str), a_varDecls);
-        (l_step, a_varDecls, a_preExp) = fun_761(Tpl.emptyTxt, i_expOption, a_varDecls, a_preExp, a_context);
+        (l_step__exp, a_varDecls, a_preExp) = fun_761(Tpl.emptyTxt, i_step, a_varDecls, a_preExp, a_context);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("create_"));
         a_preExp = Tpl.writeText(a_preExp, l_ty__str);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("_from_range(&"));
@@ -34697,7 +34697,7 @@ algorithm
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(", "));
         a_preExp = Tpl.writeText(a_preExp, l_start__exp);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(", "));
-        a_preExp = Tpl.writeText(a_preExp, l_step);
+        a_preExp = Tpl.writeText(a_preExp, l_step__exp);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(", "));
         a_preExp = Tpl.writeText(a_preExp, l_stop__exp);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(");"));

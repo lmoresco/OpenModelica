@@ -7502,7 +7502,7 @@ end algStatement;
 
 protected function fun_206
   input Tpl.Text in_txt;
-  input Option<DAE.Exp> in_a_expOption;
+  input Option<DAE.Exp> in_a_step;
   input Tpl.Text in_a_body;
   input Tpl.Text in_a_startValue;
   input Tpl.Text in_a_iterName;
@@ -7518,7 +7518,7 @@ protected function fun_206
   output Tpl.Text out_a_preExp;
 algorithm
   (out_txt, out_a_stopVar, out_a_preExp) :=
-  matchcontinue(in_txt, in_a_expOption, in_a_body, in_a_startValue, in_a_iterName, in_a_stopValue, in_a_stopVar, in_a_type, in_a_simCode, in_a_preExp, in_a_context)
+  matchcontinue(in_txt, in_a_step, in_a_body, in_a_startValue, in_a_iterName, in_a_stopValue, in_a_stopVar, in_a_type, in_a_simCode, in_a_preExp, in_a_context)
     local
       Tpl.Text txt;
       Tpl.Text a_body;
@@ -7646,9 +7646,9 @@ algorithm
       Tpl.Text a_body;
       SimCode.Context a_context;
       SimCode.SimCode a_simCode;
-      Option<DAE.Exp> i_expOption;
-      DAE.Exp i_range;
-      DAE.Exp i_exp;
+      Option<DAE.Exp> i_step;
+      DAE.Exp i_stop;
+      DAE.Exp i_start;
       Tpl.Text l_stopValue;
       Tpl.Text l_startValue;
       Tpl.Text l_preExp;
@@ -7656,7 +7656,7 @@ algorithm
       Tpl.Text l_iterName;
 
     case ( txt,
-           DAE.RANGE(exp = i_exp, range = i_range, expOption = i_expOption),
+           DAE.RANGE(start = i_start, stop = i_stop, step = i_step),
            a_iterator,
            a_type,
            a_body,
@@ -7666,9 +7666,9 @@ algorithm
         l_iterName = Tpl.writeStr(Tpl.emptyTxt, a_iterator);
         l_stopVar = Tpl.emptyTxt;
         l_preExp = Tpl.emptyTxt;
-        (l_startValue, l_preExp) = daeExp(Tpl.emptyTxt, i_exp, a_context, l_preExp, a_simCode);
-        (l_stopValue, l_preExp) = daeExp(Tpl.emptyTxt, i_range, a_context, l_preExp, a_simCode);
-        (txt, l_stopVar, l_preExp) = fun_206(txt, i_expOption, a_body, l_startValue, l_iterName, l_stopValue, l_stopVar, a_type, a_simCode, l_preExp, a_context);
+        (l_startValue, l_preExp) = daeExp(Tpl.emptyTxt, i_start, a_context, l_preExp, a_simCode);
+        (l_stopValue, l_preExp) = daeExp(Tpl.emptyTxt, i_stop, a_context, l_preExp, a_simCode);
+        (txt, l_stopVar, l_preExp) = fun_206(txt, i_step, a_body, l_startValue, l_iterName, l_stopValue, l_stopVar, a_type, a_simCode, l_preExp, a_context);
       then txt;
 
     case ( txt,
