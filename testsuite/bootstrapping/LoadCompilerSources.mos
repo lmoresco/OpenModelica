@@ -146,6 +146,7 @@ loadFile("../../Compiler/Util/IOStreamExt.mo");
 loadFile("../../Compiler/Util/IOStream.mo");
 loadFile("../../Compiler/Util/Lapack.mo");
 loadFile("../../Compiler/Util/List.mo");
+loadFile("../../Compiler/Util/ModelicaExternalC.mo");
 loadFile("../../Compiler/Util/Print.mo");
 loadFile("../../Compiler/Util/PriorityQueue.mo");
 loadFile("../../Compiler/Util/Settings.mo");
