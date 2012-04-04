@@ -16,6 +16,7 @@ end InStreamInvalidArgument;
 // Result:
 // Error processing file: InStreamInvalidArgument.mo
 // [InStreamInvalidArgument.mo:13:3-13:25:writable] Error: Operand r to operator inStream is not a stream variable.
+// Error: Error occurred while flattening model InStreamInvalidArgument
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

@@ -88,6 +88,7 @@ class InductorMicroCircuit =
 // Result:
 // Error processing file: MicroCircuitInvalid.mo
 // [MicroCircuitInvalid.mo:84:29-84:53:writable] Error: Restriction violation: Inductor is a model, not a TYPE
+// Error: Error occurred while flattening model InductorMicroCircuit
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

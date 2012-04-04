@@ -18,6 +18,7 @@ end DuplicateRedeclares1;
 // Result:
 // Error processing file: DuplicateRedeclares1.mo
 // [DuplicateRedeclares1.mo:13:3-13:48:writable] Error: Base class N not found in scope DuplicateRedeclares1
+// Error: Error occurred while flattening model DuplicateRedeclares1
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

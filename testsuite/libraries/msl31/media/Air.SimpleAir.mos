@@ -48,9 +48,9 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   constant Real p_default(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 101325.0 \"Default value for pressure of medium (for initialization)\";
 //   constant Real T_default(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Default value for temperature of medium (for initialization)\";
 //   constant Real cp_const(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = 1005.45 \"Constant specific heat capacity at constant pressure\";
-//   constant Real R_gas(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = 287.051224952979 \"medium specific gas constant\";
+//   constant Real R_gas(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = 287.0512249529787 \"medium specific gas constant\";
 //   constant Real MM_const(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) = 0.0289651159 \"Molar mass\";
-//   constant Real eta_const(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = 1.82e-05 \"Constant dynamic viscosity\";
+//   constant Real eta_const(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = 0.0000182 \"Constant dynamic viscosity\";
 //   constant Real lambda_const(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) = 0.026 \"Constant thermal conductivity\";
 //   constant Real T_min(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.SIunits.Conversions.from_degC(0.0) \"Minimum temperature valid for medium model\";
 //   constant Real T_max(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.SIunits.Conversions.from_degC(100.0) \"Maximum temperature valid for medium model\";
@@ -71,8 +71,6 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // "Check of Modelica.Media.Air.SimpleAir completed successfully.
 // 
 // 
-// Class Modelica.Media.Air.SimpleAir has 0 equation(s) and 0 variable(s).
-// 0 of these are trivial equation(s).
 // "
 // ""
 // endResult

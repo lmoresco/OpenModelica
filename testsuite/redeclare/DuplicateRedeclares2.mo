@@ -18,6 +18,7 @@ end DuplicateRedeclares2;
 // Error processing file: DuplicateRedeclares2.mo
 // [DuplicateRedeclares2.mo:13:23-13:47:writable] Notification: From here:
 // [DuplicateRedeclares2.mo:14:23-14:47:writable] Error: r is already redeclared in this scope.
+// Error: Error occurred while flattening model DuplicateRedeclares2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

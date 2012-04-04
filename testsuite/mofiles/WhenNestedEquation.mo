@@ -19,6 +19,7 @@ end ErrorNestedWhen;
 // Result:
 // Error processing file: WhenNestedEquation.mo
 // [WhenNestedEquation.mo:12:3-16:11:writable] Error: Nested when statements are not allowed.
+// Error: Error occurred while flattening model ErrorNestedWhen
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

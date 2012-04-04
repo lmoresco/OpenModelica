@@ -17,6 +17,7 @@ end EnumInvalidLiteral;
 // Error processing file: EnumInvalidLiteral.mo
 // [EnumInvalidLiteral.mo:9:3-9:38:writable] Error: Invalid use of reserved attribute name start as enumeration literal.
 // [EnumInvalidLiteral.mo:10:3-10:42:writable] Error: Invalid use of reserved attribute name quantity as enumeration literal.
+// Error: Error occurred while flattening model EnumInvalidLiteral
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

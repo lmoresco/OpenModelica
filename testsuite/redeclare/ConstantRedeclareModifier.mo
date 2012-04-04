@@ -17,6 +17,7 @@ end ConstantRedeclareModifier;
 // Error processing file: ConstantRedeclareModifier.mo
 // [ConstantRedeclareModifier.mo:13:3-13:38:writable] Notification: From here:
 // [ConstantRedeclareModifier.mo:9:3-9:30:writable] Error: Redeclaration of constant component x is not allowed.
+// Error: Error occurred while flattening model ConstantRedeclareModifier
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

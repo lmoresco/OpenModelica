@@ -11,6 +11,6 @@ end RealSub;
 
 // Result:
 // class RealSub
-//   constant Real r = 3572.9;
+//   constant Real r = 3572.8999999999996;
 // end RealSub;
 // endResult

@@ -19,6 +19,7 @@ end ReplaceableBaseClass;
 // Error processing file: ReplaceableBaseClass.mo
 // [ReplaceableBaseClass.mo:11:3-11:12:writable] Notification: From here:
 // [ReplaceableBaseClass.mo:10:15-10:28:writable] Error: Base class T is replaceable.
+// Error: Error occurred while flattening model ReplaceableBaseClass
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

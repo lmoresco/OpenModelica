@@ -18,6 +18,7 @@ end ConnectorIllegal;
 // Result:
 // Error processing file: ConnectorIllegal.mo
 // [ConnectorIllegal.mo:12:3-12:8:writable] Error: Equations are not allowed in connector.
+// Error: Error occurred while flattening model ConnectorIllegal
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

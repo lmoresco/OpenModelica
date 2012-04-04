@@ -41,7 +41,7 @@ checkModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 //   protected Integer rank;
 //   protected Real[max(size(A,1),size(A,2))] xx;
 // algorithm
-//   (xx, info, rank) := Modelica.Math.Matrices.LAPACK.dgelsx_vec(A,b,1e-13);
+//   (xx, info, rank) := Modelica.Math.Matrices.LAPACK.dgelsx_vec(A,b,0.0000000000001);
 //   x := xx[1:size(A,2)];
 //   assert( info == 0, \"Solving an overdetermined or underdetermined linear system of
 // equations with function \\\"Matrices.leastSquares\\\" failed.\");
@@ -216,8 +216,6 @@ checkModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 // [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},{1066.0,1062.0,1058.0,1054.0,1044.0,1030.0,1015.0,999.0,984.0},2).
 // [Incompressible.mo:80:5-82:98:writable] Warning: Failed to deduce dimensions of poly_Cp due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting({-30.0,-20.0,-10.0,0.0,20.0,40.0,60.0,80.0,100.0},{3450.0,3490.0,3520.0,3560.0,3620.0,3690.0,3760.0,3820.0,3890.0},2).
 // 
-// Class Modelica.Media.Incompressible.Examples.Glycol47 has 0 equation(s) and 0 variable(s).
-// 0 of these are trivial equation(s).
 // "
 // ""
 // endResult

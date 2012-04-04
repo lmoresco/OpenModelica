@@ -30,6 +30,7 @@ end A;
 // Result:
 // Error processing file: AccessDemoIllegalMod.mo
 // Error: Attempt to modify protected element ad.w
+// Error: Error occurred while flattening model A
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

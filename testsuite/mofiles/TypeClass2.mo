@@ -19,6 +19,7 @@ end TypeClass2;
 // Result:
 // Error processing file: TypeClass2.mo
 // [TypeClass2.mo:12:1-12:32:writable] Error: Restriction violation: IllegalClass is a new def, not a TYPE
+// Error: Error occurred while flattening model TypeClass2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

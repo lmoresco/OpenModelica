@@ -12,7 +12,7 @@ equation
 end Delay8;
 
 // Result:
-// class Delay8 "Delay block with variable DelayTime"
+// class Delay8
 //   parameter Integer n = 3;
 //   parameter Real delayMax(min = 0.0, start = 1.0) "maximum delay time";
 //   input Real delayTime;

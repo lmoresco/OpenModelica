@@ -15,6 +15,7 @@ end ClassExtendsInvalid2;
 // Result:
 // Error processing file: ClassExtendsInvalid2.mo
 // [ClassExtendsInvalid2.mo:12:12-12:33:writable] Error: Invalid redeclaration of class X, class extends only allowed on inherited classes.
+// Error: Error occurred while flattening model ClassExtendsInvalid2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

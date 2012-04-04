@@ -22,6 +22,7 @@ end Modification8;
 // Result:
 // Error processing file: Modification8.mo
 // [Modification8.mo:17:5-17:8:writable] Error: Multiple modifiers in same scope for element b.a.x: x = 1.0, from calling scope: b, duplicates are: b.a.x: x = 2.0
+// Error: Error occurred while flattening model Modification8
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

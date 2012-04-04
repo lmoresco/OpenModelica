@@ -15,6 +15,6 @@ end Sin;
 // class Sin
 //   Real r;
 // equation
-//   r = 0.850903524534118;
+//   r = 0.8509035245341184;
 // end Sin;
 // endResult

@@ -22,6 +22,7 @@ end RecursiveShort;
 // Result:
 // Error processing file: RecursiveShort.mo
 // [RecursiveShort.mo:15:5-15:23:writable] Error: Recursive short class definition of Env in terms of Env.Env
+// Error: Error occurred while flattening model RecursiveShort
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

@@ -17,6 +17,7 @@ end Lookup3;
 // Error processing file: Lookup3.mo
 // [Lookup3.mo:13:3-13:6:writable] Error: Variable b: Variable a in package Lookup3 is not constant
 // [Lookup3.mo:11:5-11:15:writable] Error: Variable a not found in scope Lookup3.B
+// Error: Error occurred while flattening model Lookup3
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

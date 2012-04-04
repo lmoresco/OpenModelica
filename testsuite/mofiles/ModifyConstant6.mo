@@ -27,6 +27,7 @@ end ModifyConstant6;
 // Error processing file: ModifyConstant6.mo
 // [ModifyConstant6.mo:13:3-13:15:writable] Error: Variable b.a: trying to override final variable in class: A
 // 	by using modifiers: b.a( = 2.0,  = final 1.0) that do not agree.
+// Error: Error occurred while flattening model ModifyConstant6
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

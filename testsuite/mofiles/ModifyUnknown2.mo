@@ -13,6 +13,7 @@ class ModifyUnknown2 = A(redeclare Real b = 5);
 // Result:
 // Error processing file: ModifyUnknown2.mo
 // Error: In modifier  redeclare(b), class or component b not found in <ModifyUnknown2>
+// Error: Error occurred while flattening model ModifyUnknown2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

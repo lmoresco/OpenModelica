@@ -117,7 +117,7 @@ end Circuit1;
 //   Real AC.i(unit = "A");
 //   parameter Real AC.VA(unit = "V") = 220.0 "Amplitude";
 //   parameter Real AC.f(unit = "Hz") = 50.0 "Frequency";
-//   constant Real AC.PI = 3.14159265358979;
+//   constant Real AC.PI = 3.141592653589793;
 //   Real G.p.v(unit = "V");
 //   Real G.p.i(unit = "A");
 // equation
@@ -137,7 +137,7 @@ end Circuit1;
 //   L.v = L.p.v - L.n.v;
 //   0.0 = L.p.i + L.n.i;
 //   L.i = L.p.i;
-//   AC.v = AC.VA * sin(6.28318530717959 * (AC.f * time));
+//   AC.v = AC.VA * sin(6.283185307179586 * (AC.f * time));
 //   AC.v = AC.p.v - AC.n.v;
 //   0.0 = AC.p.i + AC.n.i;
 //   AC.i = AC.p.i;

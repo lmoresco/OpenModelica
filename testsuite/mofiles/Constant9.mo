@@ -17,6 +17,7 @@ end test;
 // Error processing file: Constant9.mo
 // Error: Variable A.x in package A is not constant
 // [Constant9.mo:14:3-14:13:writable] Error: Variable A.x not found in scope test
+// Error: Error occurred while flattening model test
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

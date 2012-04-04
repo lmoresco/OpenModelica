@@ -24,6 +24,7 @@ end FlowInvalid1;
 // Result:
 // Error processing file: FlowInvalid1.mo
 // [FlowInvalid1.mo:15:3-15:11:writable] Error: Invalid type prefix 'flow' on variable c1.r.y, due to existing type prefix 'flow'.
+// Error: Error occurred while flattening model FlowInvalid1
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

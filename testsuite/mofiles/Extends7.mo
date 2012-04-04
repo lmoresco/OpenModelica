@@ -37,7 +37,7 @@ end Utilities;
 //   external "C" fullName = fullPathName(name);
 // end Modelica.Utilities.Files.fullPathName;
 // 
-// class Utilities "Utility classes usually not directly utilized by the user"
+// class Utilities
 //   constant String RootDir = Modelica.Utilities.Files.fullPathName(classDirectory() + "..");
 // end Utilities;
 // endResult

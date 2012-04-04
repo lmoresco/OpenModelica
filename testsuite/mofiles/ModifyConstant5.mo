@@ -30,6 +30,7 @@ end ModifyConstant5;
 // [ModifyConstant5.mo:9:3-9:30:writable] Error: Redeclaration of final component c is not allowed.
 // [ModifyConstant5.mo:13:3-13:39:writable] Notification: From here:
 // [ModifyConstant5.mo:9:3-9:30:writable] Error: Redeclaration of constant component c is not allowed.
+// Error: Error occurred while flattening model ModifyConstant5
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

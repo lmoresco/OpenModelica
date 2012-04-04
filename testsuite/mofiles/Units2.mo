@@ -27,6 +27,7 @@ end Units2;
 // Error processing file: Units2.mo
 // [Units2.mo:24:3-24:16:writable] Error: Cannot connect flow component i.x to non-flow component v.x
 // [Units2.mo:24:3-24:16:writable] Error: The type of variables v and i (Pin1 connector and Pin2 connector) are inconsistent in connect equations
+// Error: Error occurred while flattening model Units2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

@@ -15,6 +15,6 @@ end Cosh;
 // class Cosh
 //   Real r;
 // equation
-//   r = 1.74671355287425e+19;
+//   r = 1.7467135528742547e+19;
 // end Cosh;
 // endResult

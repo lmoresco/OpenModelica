@@ -18,6 +18,7 @@ end RedeclareModifierInvalid2;
 // Error processing file: RedeclareModifierInvalid2.mo
 // [RedeclareModifierInvalid2.mo:14:3-14:37:writable] Notification: From here:
 // [RedeclareModifierInvalid2.mo:9:3-9:18:writable] Error: Trying to redeclare model m2 but model not declared as replaceable
+// Error: Error occurred while flattening model RedeclareModifierInvalid2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

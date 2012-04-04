@@ -16,6 +16,7 @@ end ScopeModification2;
 // Result:
 // Error processing file: ScopeModification2.mo
 // [ScopeModification2.mo:14:3-14:17:writable] Error: Variable a not found in scope ScopeModification2
+// Error: Error occurred while flattening model ScopeModification2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

@@ -16,6 +16,7 @@ end SeveralArguments;
 // Result:
 // Error processing file: VectorizeSeveralArguments.mo
 // [VectorizeSeveralArguments.mo:12:2-12:45:writable] Error: Class atan2Add not found in scope SeveralArguments (looking for a function or record).
+// Error: Error occurred while flattening model SeveralArguments
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

@@ -11,7 +11,7 @@ end SimplifyRangeInClass;
 
 // Result:
 // class SimplifyRangeInClass
-//   Real r[1] = 0.841470984807897;
-//   Real r[2] = 0.909297426825682;
+//   Real r[1] = 0.8414709848078965;
+//   Real r[2] = 0.9092974268256817;
 // end SimplifyRangeInClass;
 // endResult

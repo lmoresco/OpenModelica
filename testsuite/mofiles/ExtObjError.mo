@@ -29,6 +29,7 @@ end ExtObjError;
 //   .ExtObjError.f<function>(a:ExtObjError.B ExternalObject) => Real in component <NO COMPONENT>
 // candidates are 
 //   .ExtObjError.f<function>(a:ExtObjError.A ExternalObject) => Real
+// Error: Error occurred while flattening model ExtObjError
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

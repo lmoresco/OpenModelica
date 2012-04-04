@@ -15,6 +15,7 @@ end DuplicateElementsNonEquivalent;
 // Result:
 // Error processing file: DuplicateElementsNonEquivalent.mo
 // [DuplicateElementsNonEquivalent.mo:12:2-12:10:writable] Error: An element with name x is already declared in this scope.
+// Error: Error occurred while flattening model DuplicateElementsNonEquivalent
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

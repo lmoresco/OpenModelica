@@ -42,20 +42,20 @@ end FunctionEvalBuiltin;
 
 // Result:
 // class FunctionEvalBuiltin
-//   constant Real pi1 = 1.5707963267949;
-//   constant Real pi2 = 0.841470984807897;
-//   constant Real pi = 3.14159265358979;
+//   constant Real pi1 = 1.5707963267948966;
+//   constant Real pi2 = 0.8414709848078965;
+//   constant Real pi = 3.141592653589793;
 //   constant Integer i[1] = 2;
 //   constant Integer i[2] = 1;
 //   constant Integer i[3] = 2;
 //   constant Integer i[4] = 2;
 //   constant Integer i[5] = 3;
-//   constant Real r[1] = 0.866025403784439;
-//   constant Real r[2] = 0.5;
-//   constant Real r[3] = 1.73205080756888;
+//   constant Real r[1] = 0.8660254037844386;
+//   constant Real r[2] = 0.5000000000000001;
+//   constant Real r[3] = 1.7320508075688767;
 //   constant Real r[4] = 0.0;
-//   constant Real r[5] = 0.785398163397448;
-//   constant Real r[6] = 2.71828182845905;
+//   constant Real r[5] = 0.7853981633974483;
+//   constant Real r[6] = 2.718281828459045;
 //   constant Real r[7] = 2.0;
 //   constant Real r[8] = 1.0;
 //   constant Real r[9] = 3.0;

@@ -13,6 +13,7 @@ end CyclicBindingConst;
 // Result:
 // Error processing file: CyclicBindingConst.mo
 // Error: Cyclically dependent constants or parameters found in scope CyclicBindingConst: {q,p}
+// Error: Error occurred while flattening model CyclicBindingConst
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

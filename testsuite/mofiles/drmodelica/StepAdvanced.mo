@@ -55,7 +55,7 @@ end Step;                        // From Modelica.Blocks.Sources
 
 
 // Result:
-// class Step "Generate step signals of type Real"
+// class Step
 //   parameter Real height[1] = 1.0 "Heights of steps";
 //   parameter Real offset[1] = 0.0 "Offset of output signals";
 //   parameter Real startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";

@@ -21,6 +21,7 @@ end ErrorLocalElement3;
 // Error processing file: ErrorLocalElement3.mo
 // [ErrorLocalElement3.mo:12:9-12:20:writable] Error: Variable t: Class int not found in scope ErrorLocalElement3.fn.$match scope$.list.
 // [ErrorLocalElement3.mo:10:5-14:14:writable] Error: Internal error Patternm.addLocalDecls failed
+// Error: Error occurred while flattening model ErrorLocalElement3
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

@@ -29,6 +29,7 @@ end Encapsulated3;
 // Result:
 // Error processing file: Encapsulated3.mo
 // [Encapsulated3.mo:17:7-17:23:writable] Error: Base class B.C not found in scope A.B1.C2
+// Error: Error occurred while flattening model Encapsulated3
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

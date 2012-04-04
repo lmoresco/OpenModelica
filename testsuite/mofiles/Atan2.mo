@@ -15,6 +15,6 @@ end Atan2;
 // class Atan2
 //   Real r;
 // equation
-//   r = 0.785398163397448;
+//   r = 0.7853981633974483;
 // end Atan2;
 // endResult

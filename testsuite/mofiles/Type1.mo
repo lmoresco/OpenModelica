@@ -11,6 +11,7 @@ end Type1;
 // Result:
 // Error processing file: Type1.mo
 // Error: In class Type1, class restriction 'type' can only be derived from predefined types.
+// Error: Error occurred while flattening model Type1
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

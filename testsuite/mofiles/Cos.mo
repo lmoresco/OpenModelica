@@ -15,6 +15,6 @@ end Cos;
 // class Cos
 //   Real r;
 // equation
-//   r = 0.52532198881773;
+//   r = 0.5253219888177297;
 // end Cos;
 // endResult

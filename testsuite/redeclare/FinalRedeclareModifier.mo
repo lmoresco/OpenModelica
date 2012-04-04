@@ -17,6 +17,7 @@ end FinalRedeclareModifier;
 // Error processing file: FinalRedeclareModifier.mo
 // [FinalRedeclareModifier.mo:13:3-13:38:writable] Notification: From here:
 // [FinalRedeclareModifier.mo:9:3-9:27:writable] Error: Redeclaration of final component x is not allowed.
+// Error: Error occurred while flattening model FinalRedeclareModifier
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

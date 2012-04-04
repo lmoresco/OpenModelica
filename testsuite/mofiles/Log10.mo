@@ -15,6 +15,6 @@ end Log10;
 // class Log10
 //   Real r;
 // equation
-//   r = 1.65321251377534;
+//   r = 1.6532125137753437;
 // end Log10;
 // endResult

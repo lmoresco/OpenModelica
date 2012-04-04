@@ -26,6 +26,7 @@ end Encapsulated2;
 // Result:
 // Error processing file: Encapsulated2.mo
 // [Encapsulated2.mo:23:3-23:15:writable] Error: Class A.B.C not found in scope Encapsulated2.
+// Error: Error occurred while flattening model Encapsulated2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

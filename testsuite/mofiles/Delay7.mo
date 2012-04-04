@@ -17,6 +17,7 @@ end Delay;
 // Result:
 // Error processing file: Delay7.mo
 // [Delay7.mo:15:3-15:21:writable] Error: Function argument delayMax=b is not a parameter expression
+// Error: Error occurred while flattening model Delay
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

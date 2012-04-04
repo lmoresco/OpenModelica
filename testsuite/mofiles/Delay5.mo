@@ -18,6 +18,7 @@ end Delay;
 // Result:
 // Error processing file: Delay5.mo
 // [Delay5.mo:14:3-14:18:writable] Error: Function argument delayTime=a is not a parameter expression
+// Error: Error occurred while flattening model Delay
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

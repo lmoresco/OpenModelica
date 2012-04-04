@@ -17,6 +17,7 @@ end Abs;
 // [Abs2.mo:12:3-12:11:writable] Error: No matching function found for abs in component <NO COMPONENT>
 // candidates are .OpenModelica.Internal.intAbs<function>(v:Integer) => Integer
 //  -.OpenModelica.Internal.realAbs<function>(v:Real) => Real
+// Error: Error occurred while flattening model Abs
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

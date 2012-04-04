@@ -27,6 +27,7 @@ end Enumeration5;
 // Error processing file: Enum5.mo
 // [Enum5.mo:14:3-14:16:writable] Error: Illegal subscript [E.j] for dimensions P.h.E in component <NO COMPONENT>
 // [Enum5.mo:14:3-14:16:writable] Error: Variable hh[E.j] not found in scope P.h
+// Error: Error occurred while flattening model Enumeration5
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

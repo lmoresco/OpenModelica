@@ -29,6 +29,7 @@ end WhenNotValid;
 // Result:
 // Error processing file: WhenNotValid.mo
 // [WhenNotValid.mo:16:5-16:16:writable] Error: Invalid left-hand side of when-equation: 2.0 * x + y.
+// Error: Error occurred while flattening model WhenNotValid
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

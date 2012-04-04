@@ -15,6 +15,6 @@ end Asin;
 // class Asin
 //   Real r;
 // equation
-//   r = 0.523598775598299;
+//   r = 0.5235987755982989;
 // end Asin;
 // endResult

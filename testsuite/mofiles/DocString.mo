@@ -20,17 +20,6 @@ algorithm
 end f;
 
 // Result:
-// function f "Function f"
-//   input Real x "input Real named x";
-//   output Real y "output Real named y";
-// algorithm
-//   y := 2.0 + x;
+// class f
 // end f;
-// 
-// class DocString "DocString"
-//   Real x = 2.0 "Real named x";
-//   Real y "Real named y";
-// equation
-//   y = f(x);
-// end DocString;
 // endResult

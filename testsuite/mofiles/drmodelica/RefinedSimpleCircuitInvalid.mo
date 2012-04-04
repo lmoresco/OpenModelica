@@ -93,6 +93,7 @@
 // Result:
 // Error processing file: RefinedSimpleCircuitInvalid.mo
 // [RefinedSimpleCircuitInvalid.mo:63:5-63:17:writable] Error: Variable i not found in scope Capacitor
+// Error: Error occurred while flattening model RefinedSimpleCircuit
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

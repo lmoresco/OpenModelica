@@ -15,6 +15,6 @@ end Exp;
 // class Exp
 //   Real r;
 // equation
-//   r = 3.49342710574851e+19;
+//   r = 3.4934271057485095e+19;
 // end Exp;
 // endResult

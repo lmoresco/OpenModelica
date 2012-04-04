@@ -24,6 +24,7 @@ end FunctionInvalidVar2;
 // Error processing file: FunctionInvalidVar2.mo
 // [FunctionInvalidVar2.mo:14:3-14:12:writable] Error: Invalid type C for function component c.
 // [FunctionInvalidVar2.mo:20:3-20:7:writable] Error: Class F not found in scope FunctionInvalidVar2 (looking for a function or record).
+// Error: Error occurred while flattening model FunctionInvalidVar2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

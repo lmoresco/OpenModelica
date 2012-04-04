@@ -20,6 +20,7 @@ end ClassExtendsInvalid1;
 // Error processing file: ClassExtendsInvalid1.mo
 // Notification: From here:
 // [ClassExtendsInvalid1.mo:10:3-10:16:writable] Error: Non-replaceable base class X in class extends.
+// Error: Error occurred while flattening model ClassExtendsInvalid1
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

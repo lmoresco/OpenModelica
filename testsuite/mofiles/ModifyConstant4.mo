@@ -24,6 +24,7 @@ end ModifyConstant4;
 // Result:
 // Error processing file: ModifyConstant4.mo
 // [ModifyConstant4.mo:13:3-13:17:writable] Error: Variable b.a: In modifier (A = (c = 2.0), class or component c), class or component A not found in <A>
+// Error: Error occurred while flattening model ModifyConstant4
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

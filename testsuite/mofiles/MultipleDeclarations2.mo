@@ -14,6 +14,7 @@ end MultipleDeclarations2;
 // Result:
 // Error processing file: MultipleDeclarations2.mo
 // [MultipleDeclarations2.mo:11:3-11:9:writable] Error: An element with name x is already declared in this scope.
+// Error: Error occurred while flattening model MultipleDeclarations2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

@@ -2022,8 +2022,6 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // "Check of BioChem.Examples.centralMetabolism completed successfully.
 // 
 // 
-// Class BioChem.Examples.centralMetabolism has 0 equation(s) and 0 variable(s).
-// 0 of these are trivial equation(s).
 // "
 // "Check of BioChem.Examples.centralMetabolism.cytosol completed successfully.
 // 

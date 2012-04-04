@@ -13,6 +13,7 @@ end ErrorInvalidMetarecord;
 // Result:
 // Error processing file: ErrorInvalidMetarecord.mo
 // [ErrorInvalidMetarecord.mo:10:3-10:30:writable] Error: The called uniontype record (ErrorInvalidMetarecord.Ut.DEF) contains a member (abc) that has a uniontype record as its type instead of a uniontype.
+// Error: Error occurred while flattening model ErrorInvalidMetarecord
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

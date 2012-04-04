@@ -20,6 +20,7 @@ end ArrayDivError;
 // Result:
 // Error processing file: ArrayDivError.mo
 // [ArrayDivError.mo:11:2-11:22:writable] Error: Type mismatch in equation {{Div1[1,1],Div1[1,2],Div1[1,3]}}={1.0,2.0,3.0} of type Real[1, 3]=Real[3]
+// Error: Error occurred while flattening model ArrayDivError
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

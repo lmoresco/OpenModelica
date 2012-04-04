@@ -26,6 +26,7 @@ end ErrorInvalidPattern4;
 // Result:
 // Error processing file: ErrorInvalidPattern4.mo
 // [ErrorInvalidPattern4.mo:17:10-17:15:writable] Error: Invalid pattern: ErrorInvalidPattern4.Ut.UT missing pattern for fields: exp
+// Error: Error occurred while flattening model ErrorInvalidPattern4
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

@@ -18,6 +18,7 @@ end FunctionWithEquation;
 // Result:
 // Error processing file: FunctionWithEquation.mo
 // [FunctionWithEquation.mo:10:3-10:48:writable] Error: Equations are not allowed in function.
+// Error: Error occurred while flattening model FunctionWithEquation
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

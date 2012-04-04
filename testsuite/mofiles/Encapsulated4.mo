@@ -21,6 +21,7 @@ end Encapsulated4;
 // Result:
 // Error processing file: Encapsulated4.mo
 // [Encapsulated4.mo:18:3-18:21:writable] Error: Class fn not found in scope Encapsulated4 (looking for a function or record).
+// Error: Error occurred while flattening model Encapsulated4
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

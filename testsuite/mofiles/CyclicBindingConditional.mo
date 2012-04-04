@@ -15,6 +15,7 @@ end CyclicBindingConditional;
 // Result:
 // Error processing file: CyclicBindingConditional.mo
 // Error: Cyclically dependent constants or parameters found in scope CyclicBindingConditional: {b,a}
+// Error: Error occurred while flattening model CyclicBindingConditional
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

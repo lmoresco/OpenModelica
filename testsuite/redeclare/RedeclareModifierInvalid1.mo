@@ -17,6 +17,7 @@ end RedeclareModifierInvalid1;
 // Error processing file: RedeclareModifierInvalid1.mo
 // [RedeclareModifierInvalid1.mo:13:3-13:38:writable] Notification: From here:
 // [RedeclareModifierInvalid1.mo:9:3-9:9:writable] Error: Trying to redeclare component x but component not declared as replaceable
+// Error: Error occurred while flattening model RedeclareModifierInvalid1
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

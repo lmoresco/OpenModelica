@@ -117,7 +117,7 @@ end TestGravityAcceleration;
 // 
 // function Math.normalize "Return normalized vector such that length = 1Return normalized vector such that length = 1 and prevent zero-division for zero vector"
 //   input Real[:] v "Vector";
-//   input Real eps = 1e-13 "if |v| < eps then result = v/eps";
+//   input Real eps = 0.0000000000001 "if |v| < eps then result = v/eps";
 //   output Real[size(v,1)] result "Input vector v normalized to length=1";
 // algorithm
 //   result := if Math.length(v) >= eps then v / Math.length(v) else v / eps;
@@ -144,6 +144,6 @@ end TestGravityAcceleration;
 //   Real gravity[2];
 //   Real gravity[3];
 // equation
-//   gravity = TestGravityAcceleration.w__gravityAcceleration({1.0,5.0,6.0},w.gravityType,Math.normalize({w.n[1],w.n[2],w.n[3]},1e-13) * w.g,w.mue);
+//   gravity = TestGravityAcceleration.w__gravityAcceleration({1.0,5.0,6.0},w.gravityType,Math.normalize({w.n[1],w.n[2],w.n[3]},0.0000000000001) * w.g,w.mue);
 // end TestGravityAcceleration;
 // endResult

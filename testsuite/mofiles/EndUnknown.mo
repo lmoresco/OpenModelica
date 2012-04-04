@@ -41,7 +41,7 @@ end EndUnknown;
 // end EndUnknown.simpson;
 // 
 // class EndUnknown
-//   parameter Real a = 0.241666666666667;
+//   parameter Real a = 0.24166666666666667;
 //   Real x(start = 1.0);
 // equation
 //   der(x) = (-a) * x;

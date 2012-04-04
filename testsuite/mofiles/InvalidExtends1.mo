@@ -24,6 +24,7 @@ end A;
 // Result:
 // Error processing file: InvalidExtends1.mo
 // [InvalidExtends1.mo:21:2-21:11:writable] Error: Extends .B depends on inherited element C.
+// Error: Error occurred while flattening model A
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

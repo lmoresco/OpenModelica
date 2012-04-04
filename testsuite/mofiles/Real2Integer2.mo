@@ -15,6 +15,7 @@ end Real2Integer2;
 // Result:
 // Error processing file: Real2Integer2.mo
 // [Real2Integer2.mo:13:3-13:15:writable] Error: Type mismatch in assignment in n2 := Real(n1) / 2.0 of Integer := Real
+// Error: Error occurred while flattening model Real2Integer2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

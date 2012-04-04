@@ -20,6 +20,7 @@ end ErrorInvalidPattern1;
 // Result:
 // Error processing file: ErrorInvalidPattern1.mo
 // [ErrorInvalidPattern1.mo:12:10-12:19:writable] Error: Invalid pattern: str + "" of type String
+// Error: Error occurred while flattening model ErrorInvalidPattern1
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

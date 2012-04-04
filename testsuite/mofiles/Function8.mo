@@ -25,6 +25,7 @@ end Function8;
 //   .f<function>(x:String) => Real in component <NO COMPONENT>
 // candidates are 
 //   .f<function>(x:Real) => Real
+// Error: Error occurred while flattening model Function8
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

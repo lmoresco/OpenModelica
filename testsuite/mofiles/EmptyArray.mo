@@ -13,6 +13,7 @@ end EmptyArray;
 // Result:
 // Error processing file: EmptyArray.mo
 // [EmptyArray.mo:10:3-10:17:writable] Error: Array constructor may not be empty.
+// Error: Error occurred while flattening model EmptyArray
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

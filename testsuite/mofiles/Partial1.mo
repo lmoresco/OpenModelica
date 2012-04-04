@@ -16,6 +16,7 @@ end Partial1;
 // Result:
 // Error processing file: Partial1.mo
 // [Partial1.mo:9:1-11:6:writable] Error: Illegal to instantiate partial class A
+// Error: Error occurred while flattening model Partial1
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

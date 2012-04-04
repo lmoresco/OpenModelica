@@ -17,14 +17,15 @@ class AddSub
 end AddSub;
 
 
+
+
 // Result:
 // Error processing file: ArrayAddSub.mo
 // [ArrayAddSub.mo:9:2-9:27:writable] Error: Failed to elaborate expression: {1,2,3} + 1
+// Error: Error occurred while flattening model AddSub
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
 // 
 // Execution failed!
 // endResult
-
-

@@ -13,6 +13,7 @@ end ArrayInvalidDims;
 // Result:
 // Error processing file: ArrayInvalidDims.mo
 // [ArrayInvalidDims.mo:10:2-10:36:writable] Error: Different dimension sizes in arguments to array in component <NO COMPONENT>
+// Error: Error occurred while flattening model ArrayInvalidDims
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

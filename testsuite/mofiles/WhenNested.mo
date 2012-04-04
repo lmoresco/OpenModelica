@@ -22,6 +22,7 @@ end WhenNested;
 // Result:
 // Error processing file: WhenNested.mo
 // [WhenNested.mo:13:3-19:11:writable] Error: Nested when statements are not allowed.
+// Error: Error occurred while flattening model WhenNested
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

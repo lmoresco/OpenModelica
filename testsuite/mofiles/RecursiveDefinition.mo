@@ -17,6 +17,7 @@ end A;
 // Result:
 // Error processing file: RecursiveDefinition.mo
 // [RecursiveDefinition.mo:11:5-11:8:writable] Error: Declaration of element x causes recursive definition of class A.
+// Error: Error occurred while flattening model A
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

@@ -26,6 +26,7 @@ end Protected1;
 // Result:
 // Error processing file: Protected1.mo
 // Error: Attempt to modify protected element a.y
+// Error: Error occurred while flattening model Protected1
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

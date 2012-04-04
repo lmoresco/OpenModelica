@@ -15,6 +15,7 @@ end Type3;
 // Error processing file: Type3.mo
 // [Type3.mo:12:3-12:15:writable] Error: Illegal subscript [i / 4] for dimensions 100 in component <NO COMPONENT>
 // [Type3.mo:12:3-12:15:writable] Error: Variable x[i / 4] not found in scope Type3
+// Error: Error occurred while flattening model Type3
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
