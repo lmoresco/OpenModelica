@@ -262,7 +262,7 @@ if($withxml) {
 
 unlink("Compiler");
 # Clean up the temporary rtest directory, so it doesn't get overrun.
-rmtree("/tmp/omc-rtest");
+rmtree(glob "/tmp/omc-rtest*");
 
 if(@failed_tests && !$withxml) {
   exit 7;
