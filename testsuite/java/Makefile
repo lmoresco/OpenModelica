@@ -1,10 +1,11 @@
 TEST=../rtest -v
 
+OPENMODELICAHOME := $(shell pwd)/../../build
 TESTFILES=JavaExt.mos JavaExtArrays.mos JavaExtInteractive.mos JavaExtRecord.mos JavaExtUniontype.mos JavaExtParseProgram.mos
 SEP=$(shell test -e "`which mingw32-gcc.exe`" && echo ";" || echo ":")
 LDL=$(shell test -e "`which mingw32-gcc.exe`" && echo "" || echo "-ldl")
-RUNTIME=$(OPENMODELICAHOME)/share/java/modelica_java.jar
-ANTLR=$(OPENMODELICAHOME)/share/java/antlr-3.1.3.jar
+RUNTIME=$(OPENMODELICAHOME)/share/omc/java/modelica_java.jar
+ANTLR=$(OPENMODELICAHOME)/share/omc/java/antlr-3.1.3.jar
 OMC=$(OPENMODELICAHOME)/bin/omc
 CLASSPATH=JavaExtDefs.jar$(SEP)AbsynTest.jar$(SEP).$(SEP)$(RUNTIME)
 CLEAN=JavaTest_*
@@ -38,8 +39,8 @@ check_javac:
 	@"$(JAVAC)" -version 2>version.txt || (echo "No Java Compiler found." && echo "Install a Java Development Kit (JDK) and set JAVA_HOME to that location." && echo "Sun Java installs both JRE and JDK in Windows, but we MUST load the JDK so we can access javac." && false)
 JavaExtDefs.jar: JavaExt.mo $(OMC) $(RUNTIME)
 	"$(JAVA)" -classpath "$(RUNTIME)$(SEP)$(ANTLR)" org.openmodelica.corba.parser.DefinitionsCreator $@ org.openmodelica.JavaExtTest "." $<
-AbsynTest.jar: ../../Compiler/Absyn.mo $(OMC) $(RUNTIME)
-	"$(JAVA)" -classpath "$(RUNTIME)$(SEP)$(ANTLR)" org.openmodelica.corba.parser.DefinitionsCreator $@ org.openmodelica.AbsynTest "." $<
+AbsynTest.jar: ../../Compiler/FrontEnd/Absyn.mo $(OMC) $(RUNTIME)
+	OPENMODELICAHOME=$(OPENMODELICAHOME) "$(JAVA)" -classpath "$(RUNTIME)$(SEP)$(ANTLR)" org.openmodelica.corba.parser.DefinitionsCreator $@ org.openmodelica.AbsynTest "." $<
 JavaExt.class: JavaExt.java JavaExtDefs.jar AbsynTest.jar $(OMC) $(RUNTIME)
 	"$(JAVAC)" -classpath "$(CLASSPATH)" $<
     
