@@ -5,30 +5,105 @@
 //  Subset of the Graphical API for setting component attributes
 //
 
-createModel(A);                                                                           getErrorString();
-addComponent(x,Real,A);                                                                   getErrorString();
-isModel(A);
-isRecord(A);
-isBlock(A);
-isType(A);
-isFunction(A);
-isPackage(A);
-isClass(A);
-getErrorString();
-loadFile("interactive_api_param.mo");
+setCommandLineOptions({"+d=showStatement"});
+
+createModel(A);              getErrorString();
+addComponent(x,Real,A);      getErrorString();
+isModel(A);                  getErrorString();
+isRecord(A);                 getErrorString();
+isBlock(A);                  getErrorString();
+isType(A);                   getErrorString();
+isFunction(A);               getErrorString();
+isPackage(A);                getErrorString();
+isClass(A);                  getErrorString();
+
+loadFile("interactive_api_calls.mo"); getErrorString();
+isType(vector3D);            getErrorString();
+isShortDefinition(vector3D); getErrorString();
+isShortDefinition(C); getErrorString();
+getClassInformation(vector3D); getErrorString();
+getInheritanceCount(vector3D); getErrorString();
+getNthInheritedClass(vector3D, 1); getErrorString();
+getExtendsModifierNames(vector3D, Real); getErrorString();
+getExtendsModifierValue(vector3D, Real, start); getErrorString();
+getExtendsModifierValue(vector3D, Real, nominal); getErrorString();
 
 // Result:
+// {true}
+// Evaluating: createModel(A)
 // true
+// Evaluating: getErrorString()
 // ""
+// Evaluating: addComponent(x, Real, A)
 // true
+// Evaluating: getErrorString()
 // ""
+// Evaluating: isModel(A)
 // true
-// false
-// false
-// false
-// false
-// false
-// false
+// Evaluating: getErrorString()
 // ""
+// Evaluating: isRecord(A)
+// false
+// Evaluating: getErrorString()
+// ""
+// Evaluating: isBlock(A)
+// false
+// Evaluating: getErrorString()
+// ""
+// Evaluating: isType(A)
+// false
+// Evaluating: getErrorString()
+// ""
+// Evaluating: isFunction(A)
+// false
+// Evaluating: getErrorString()
+// ""
+// Evaluating: isPackage(A)
+// false
+// Evaluating: getErrorString()
+// ""
+// Evaluating: isClass(A)
+// false
+// Evaluating: getErrorString()
+// ""
+// Evaluating: loadFile("interactive_api_calls.mo")
 // true
+// Evaluating: getErrorString()
+// ""
+// Evaluating: isType(vector3D)
+// true
+// Evaluating: getErrorString()
+// ""
+// Evaluating: isShortDefinition(vector3D)
+// true
+// Evaluating: getErrorString()
+// ""
+// Evaluating: isShortDefinition(C)
+// false
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getClassInformation(vector3D)
+// {"type","","interactive_api_calls.mo",{false,false,false},{"writable",4,1,4,67},{3}}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getInheritanceCount(vector3D)
+// 1
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getNthInheritedClass(vector3D, 1)
+// Real
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getExtendsModifierNames(vector3D, Real)
+// {start, nominal}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getExtendsModifierValue(vector3D, Real, start)
+//  = 5
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getExtendsModifierValue(vector3D, Real, nominal)
+//  = {1,2,3,4,5}
+// Evaluating: getErrorString()
+// ""
 // endResult
