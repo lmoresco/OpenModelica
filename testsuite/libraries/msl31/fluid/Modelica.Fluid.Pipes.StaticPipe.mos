@@ -85,13 +85,13 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //   if Re > Re1 then
 //     Re := -2.0 * sqrt(lambda2) * log10(2.51 / sqrt(lambda2) + 0.27 * Delta);
 //     aux2 := sqrt(aux1 * abs(dp_fric));
-//     dRe_ddp := 0.434294481903252 * ((-2.0 * log(2.51 / aux2 + 0.27 * Delta) * aux1) / (aux2 * 2.0) + 5.02 / ((2.51 / aux2 + 0.27 * Delta) * abs(dp_fric) * 2.0));
+//     dRe_ddp := 0.43429448190325176 * ((-2.0 * log(2.51 / aux2 + 0.27 * Delta) * aux1) / (aux2 * 2.0) + 5.02 / ((2.51 / aux2 + 0.27 * Delta) * abs(dp_fric) * 2.0));
 //     if Re < Re2 then
 //       (Re, dRe_ddp) := Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.Internal.m_flow_of_dp_fric.interpolateInRegion2_withDerivative(lambda2,Re1,Re2,Delta,dp_fric);
 //     end if;
 //   end if;
-//   m_flow := 0.785398163397448 * diameter * mu * if dp_fric >= 0.0 then Re else -Re;
-//   dm_flow_ddp_fric := 0.785398163397448 * diameter * mu * dRe_ddp;
+//   m_flow := 0.7853981633974483 * diameter * mu * if dp_fric >= 0.0 then Re else -Re;
+//   dm_flow_ddp_fric := 0.7853981633974483 * diameter * mu * dRe_ddp;
 // end Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.Internal.m_flow_of_dp_fric;
 // 
 // function Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.Internal.m_flow_of_dp_fric.interpolateInRegion2_withDerivative \"Interpolation in log-log space using a cubic Hermite polynomial, where x=log10(lambda2), y=log10(Re)\"
@@ -112,7 +112,7 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //   protected Real aux5 = -2.0 * (sqrt(L2) * log10(aux4));
 //   protected Real x2 = log10(L2);
 //   protected Real y2 = log10(aux5);
-//   protected Real y2d = 0.5 + 1.09007914957716 / (aux5 * aux4);
+//   protected Real y2d = 0.5 + 1.0900791495771618 / (aux5 * aux4);
 //   protected Real x = log10(lambda2);
 //   protected Real y;
 //   protected Real dy_dx \"Derivative in transformed space\";
@@ -131,7 +131,7 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //   input Real length(quantity = \"Length\", unit = \"m\") \"Length of pipe\";
 //   input Real diameter(quantity = \"Length\", unit = \"m\", min = 0.0) \"Inner (hydraulic) diameter of pipe\";
 //   input Real g_times_height_ab \"Gravity times (Height(port_b) - Height(port_a))\";
-//   input Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 2.5e-05 \"Absolute roughness of pipe, with a default for a smooth steel pipe (dummy if use_roughness = false)\";
+//   input Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.000025 \"Absolute roughness of pipe, with a default for a smooth steel pipe (dummy if use_roughness = false)\";
 //   input Real dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Turbulent flow if |dp| >= dp_small (dummy if use_dp_small = false)\";
 //   output Real m_flow(quantity = \"MassFlowRate\", unit = \"kg/s\") \"Mass flow rate from port_a to port_b\";
 //   protected Real Delta = roughness / diameter \"Relative roughness\";
@@ -264,21 +264,21 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //   if abs(Delta0) <= 0.0 then
 //     y := y0;
 //   else
-//     if abs(y1d + y0d + -2.0 * Delta0) < 1e-13 then
+//     if abs(y1d + y0d + -2.0 * Delta0) < 0.0000000000001 then
 //       xstar := 1e+60 * (x1 - x0) * (2.0 * y0d + y1d + -3.0 * Delta0) * if y0d + y1d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
 //     else
-//       xstar := (0.333333333333333 * (-3.0 * x0 * (y0d + y1d) + 6.0 * x0 * Delta0 + -2.0 * h0 * y0d + 3.0 * h0 * Delta0 - h0 * y1d)) / (2.0 * Delta0 + -y1d - y0d);
+//       xstar := (0.3333333333333333 * (-3.0 * x0 * (y0d + y1d) + 6.0 * x0 * Delta0 + -2.0 * h0 * y0d + 3.0 * h0 * Delta0 - h0 * y1d)) / (2.0 * Delta0 + -y1d - y0d);
 //     end if;
 //     mu := xstar - x0;
 //     eta := x1 - xstar;
 //     omega := (3.0 * (y0d + y1d + -2.0 * Delta0) * (xstar - x0) ^ 2.0) / h0 ^ 2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (xstar - x0)) / h0 + y0d;
 //     aux01 := 0.25 * /*T_REAL*/(sign(Delta0)) * min(abs(omega),abs(Delta0));
-//     if abs(y0d - y1d) <= 1e-13 then
+//     if abs(y0d - y1d) <= 0.0000000000001 then
 //       aux02 := y0d;
 //       if y1 > y0 + y0d * (x1 - x0) then
 //         useSingleCubicPolynomial := true;
 //       end if;
-//     elseif abs(y1d + y0d + -2.0 * Delta0) < 1e-13 then
+//     elseif abs(y1d + y0d + -2.0 * Delta0) < 0.0000000000001 then
 //       aux02 := 1e+60 * (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + -y1d * y0d + -y1d ^ 2.0 - y0d ^ 2.0) * if y1d + y0d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
 //     else
 //       aux02 := (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + -y1d * y0d + -y1d ^ 2.0 - y0d ^ 2.0) / (y1d + y0d + -2.0 * Delta0 * 3.0);
@@ -292,7 +292,7 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //         c := 0.1 * Delta0;
 //       end if;
 //       theta0 := (y0d * mu + y1d * eta) / h0;
-//       if abs(theta0 - c) < 1e-06 then
+//       if abs(theta0 - c) < 0.000001 then
 //         c := 0.999999 * theta0;
 //       end if;
 //       rho := (3.0 * (Delta0 - c)) / (theta0 - c);
@@ -300,8 +300,8 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //       eta_tilde := rho * eta;
 //       xi1 := x0 + mu_tilde;
 //       xi2 := x1 - eta_tilde;
-//       a1 := (y0d - c) / max(mu_tilde ^ 2.0,1e-13);
-//       a2 := (y1d - c) / max(eta_tilde ^ 2.0,1e-13);
+//       a1 := (y0d - c) / max(mu_tilde ^ 2.0,0.0000000000001);
+//       a2 := (y1d - c) / max(eta_tilde ^ 2.0,0.0000000000001);
 //       const12 := y0 + (-(x0 - xi1) ^ 3.0 * a1) / 3.0 - c * x0;
 //       const3 := y1 + (-(x1 - xi2) ^ 3.0 * a2) / 3.0 - c * x1;
 //       if x < xi1 then
@@ -383,12 +383,12 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //   parameter Real length(quantity = \"Length\", unit = \"m\") \"Length\";
 //   parameter Boolean isCircular = true \"= true if cross sectional area is circular\";
 //   parameter Real diameter(quantity = \"Length\", unit = \"m\", min = 0.0) \"Diameter of circular pipe\";
-//   parameter Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 2.5e-05 \"Average height of surface asperities (default: smooth steel pipe)\";
+//   parameter Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.000025 \"Average height of surface asperities (default: smooth steel pipe)\";
 //   parameter Real height_ab(quantity = \"Length\", unit = \"m\") = 0.0 \"Height(port_b) - Height(port_a)\";
 //   parameter Real p_a_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = system.p_start \"Start value of pressure at port a\";
 //   parameter Real m_flow_start(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_start \"Start value for mass flow rate\";
-//   parameter Real crossArea(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * diameter ^ 2.0 \"Inner cross section area\";
-//   parameter Real perimeter(quantity = \"Length\", unit = \"m\") = 3.14159265358979 * diameter \"Inner perimeter\";
+//   parameter Real crossArea(quantity = \"Area\", unit = \"m2\") = 0.7853981633974483 * diameter ^ 2.0 \"Inner cross section area\";
+//   parameter Real perimeter(quantity = \"Length\", unit = \"m\") = 3.141592653589793 * diameter \"Inner perimeter\";
 //   parameter Real p_b_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = p_a_start \"Start value of pressure at port b\";
 //   final parameter Real V(quantity = \"Volume\", unit = \"m3\") = crossArea * (length * nParallel) \"volume size\";
 //   parameter Integer flowModel.n = 2 \"Number of discrete flow volumes\";
@@ -439,7 +439,7 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //   Real flowModel.mus[2](quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) = if flowModel.use_mu_nominal then flowModel.mu_nominal else Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.dynamicViscosity(flowModel.states[2]);
 //   Real flowModel.mus_act[1](quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) \"Actual viscosity per segment\";
 //   input Real flowModel.pathLengths_internal[1](quantity = \"Length\", unit = \"m\") = flowModel.pathLengths[1] \"pathLengths used internally; to be defined by extending class\";
-//   Real flowModel.diameters[1](quantity = \"Length\", unit = \"m\") = 0.5 * (flowModel.dimensions[1] + flowModel.dimensions[2]) \"mean diameters between segments\";
+//   Real flowModel.diameters[1](quantity = \"Length\", unit = \"m\") = (flowModel.dimensions[1] + flowModel.dimensions[2]) * 0.5 \"mean diameters between segments\";
 //   parameter Boolean flowModel.use_Ib_flows = flowModel.momentumDynamics <> Modelica.Fluid.Types.Dynamics.SteadyState \"= true to consider differences in flow of momentum through boundaries\";
 //   parameter Boolean flowModel.from_dp = flowModel.momentumDynamics >= Modelica.Fluid.Types.Dynamics.SteadyStateInitial \" = true, use m_flow = f(dp), otherwise dp = f(m_flow)\";
 //   final parameter Boolean flowModel.constantPressureLossCoefficient = flowModel.use_rho_nominal and flowModel.use_mu_nominal \"= true if the pressure loss does not depend on fluid states\";
@@ -455,11 +455,11 @@ checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
 //   Real flowModel.dps_fg[1](quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = (flowModel.p_a_start - flowModel.p_b_start) / Real(flowModel.n + -1)) \"pressure drop between states\";
 // equation
 //   assert(flowModel.m_flows[1] > -flowModel.m_flow_small or flowModel.allowFlowReversal,\"Reverting flow occurs even though allowFlowReversal is false\");
-//   flowModel.m_flows[1] = flowModel.nParallel * Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.massFlowRate_dp_staticHead(flowModel.dps_fg[1],flowModel.rhos[1],flowModel.rhos[2],flowModel.mus[1],flowModel.mus[2],flowModel.pathLengths_internal[1],flowModel.diameters[1],flowModel.g * flowModel.dheights[1],flowModel.roughnesses[1] / 2.0 + flowModel.roughnesses[2] / 2.0,flowModel.dp_small / Real(flowModel.n));
+//   flowModel.m_flows[1] = Modelica.Fluid.Pipes.StaticPipe.FlowModel.WallFriction.massFlowRate_dp_staticHead(flowModel.dps_fg[1],flowModel.rhos[1],flowModel.rhos[2],flowModel.mus[1],flowModel.mus[2],flowModel.pathLengths_internal[1],flowModel.diameters[1],flowModel.dheights[1] * flowModel.g,flowModel.roughnesses[1] / 2.0 + flowModel.roughnesses[2] / 2.0,flowModel.dp_small / Real(flowModel.n)) * flowModel.nParallel;
 //   flowModel.rhos_act[1] = if noEvent(flowModel.m_flows[1] > 0.0) then flowModel.rhos[1] else flowModel.rhos[2];
 //   flowModel.mus_act[1] = if noEvent(flowModel.m_flows[1] > 0.0) then flowModel.mus[1] else flowModel.mus[2];
 //   flowModel.Ib_flows[1] = 0.0;
-//   flowModel.Fs_p[1] = flowModel.nParallel * (0.5 * ((flowModel.crossAreas[1] + flowModel.crossAreas[2]) * (Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.pressure(flowModel.states[2]) - Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.pressure(flowModel.states[1]))));
+//   flowModel.Fs_p[1] = 0.5 * ((flowModel.crossAreas[1] + flowModel.crossAreas[2]) * (Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.pressure(flowModel.states[2]) - Modelica.Fluid.Pipes.StaticPipe.FlowModel.Medium.pressure(flowModel.states[1]))) * flowModel.nParallel;
 //   flowModel.dps_fg[1] = (2.0 * flowModel.Fs_fg[1]) / ((flowModel.crossAreas[1] + flowModel.crossAreas[2]) * flowModel.nParallel);
 //   flowModel.Is[1] = flowModel.m_flows[1] * flowModel.pathLengths[1];
 //   0.0 = flowModel.Ib_flows[1] - flowModel.Fs_p[1] - flowModel.Fs_fg[1];

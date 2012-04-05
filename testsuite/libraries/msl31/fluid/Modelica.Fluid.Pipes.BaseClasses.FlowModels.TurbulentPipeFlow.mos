@@ -59,12 +59,12 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow); getEr
 //   input Real length(quantity = \"Length\", unit = \"m\") \"Length of pipe\";
 //   input Real diameter(quantity = \"Length\", unit = \"m\", min = 0.0) \"Inner (hydraulic) diameter of pipe\";
 //   input Real g_times_height_ab \"Gravity times (Height(port_b) - Height(port_a))\";
-//   input Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 2.5e-05 \"Absolute roughness of pipe, with a default for a smooth steel pipe (dummy if use_roughness = false)\";
+//   input Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.000025 \"Absolute roughness of pipe, with a default for a smooth steel pipe (dummy if use_roughness = false)\";
 //   input Real dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Turbulent flow if |dp| >= dp_small (dummy if use_dp_small = false)\";
 //   output Real m_flow(quantity = \"MassFlowRate\", unit = \"kg/s\") \"Mass flow rate from port_a to port_b\";
-//   protected constant Real pi = 3.14159265358979;
+//   protected constant Real pi = 3.141592653589793;
 //   protected Real zeta = length / ((2.0 * log10((3.7 * diameter) / roughness)) ^ 2.0 * diameter);
-//   protected Real k_inv = (3.14159265358979 * diameter ^ 2.0) ^ 2.0 / (zeta * 8.0);
+//   protected Real k_inv = (3.141592653589793 * diameter ^ 2.0) ^ 2.0 / (zeta * 8.0);
 //   protected Real dp_grav_a(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = g_times_height_ab * rho_a \"Static head if mass flows in design direction (a to b)\";
 //   protected Real dp_grav_b(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = g_times_height_ab * rho_b \"Static head if mass flows against design direction (b to a)\";
 //   protected Real k1 = rho_a * k_inv \"Factor in m_flow =  sqrt(k1*(dp-dp_grav_a))\";
@@ -79,7 +79,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow); getEr
 //   protected Real dp_zero(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = dp_grav_a / 2.0 + dp_grav_b / 2.0;
 //   protected Real dm_flow_ddp_fric_zero;
 // algorithm
-//   assert( roughness > 1e-10, \"roughness > 0 required for quadratic turbulent wall friction characteristic\");
+//   assert( roughness > 0.0000000001, \"roughness > 0 required for quadratic turbulent wall friction characteristic\");
 //   if dp >= dp_a then
 //     m_flow := sqrt(k1 * (dp - dp_grav_a));
 //   elseif dp <= dp_b then
@@ -134,21 +134,21 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow); getEr
 //   if abs(Delta0) <= 0.0 then
 //     y := y0;
 //   else
-//     if abs(y1d + y0d + -2.0 * Delta0) < 1e-13 then
+//     if abs(y1d + y0d + -2.0 * Delta0) < 0.0000000000001 then
 //       xstar := 1e+60 * (x1 - x0) * (2.0 * y0d + y1d + -3.0 * Delta0) * if y0d + y1d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
 //     else
-//       xstar := (0.333333333333333 * (-3.0 * x0 * (y0d + y1d) + 6.0 * x0 * Delta0 + -2.0 * h0 * y0d + 3.0 * h0 * Delta0 - h0 * y1d)) / (2.0 * Delta0 + -y1d - y0d);
+//       xstar := (0.3333333333333333 * (-3.0 * x0 * (y0d + y1d) + 6.0 * x0 * Delta0 + -2.0 * h0 * y0d + 3.0 * h0 * Delta0 - h0 * y1d)) / (2.0 * Delta0 + -y1d - y0d);
 //     end if;
 //     mu := xstar - x0;
 //     eta := x1 - xstar;
 //     omega := (3.0 * (y0d + y1d + -2.0 * Delta0) * (xstar - x0) ^ 2.0) / h0 ^ 2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (xstar - x0)) / h0 + y0d;
 //     aux01 := 0.25 * /*T_REAL*/(sign(Delta0)) * min(abs(omega),abs(Delta0));
-//     if abs(y0d - y1d) <= 1e-13 then
+//     if abs(y0d - y1d) <= 0.0000000000001 then
 //       aux02 := y0d;
 //       if y1 > y0 + y0d * (x1 - x0) then
 //         useSingleCubicPolynomial := true;
 //       end if;
-//     elseif abs(y1d + y0d + -2.0 * Delta0) < 1e-13 then
+//     elseif abs(y1d + y0d + -2.0 * Delta0) < 0.0000000000001 then
 //       aux02 := 1e+60 * (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + -y1d * y0d + -y1d ^ 2.0 - y0d ^ 2.0) * if y1d + y0d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
 //     else
 //       aux02 := (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + -y1d * y0d + -y1d ^ 2.0 - y0d ^ 2.0) / (y1d + y0d + -2.0 * Delta0 * 3.0);
@@ -162,7 +162,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow); getEr
 //         c := 0.1 * Delta0;
 //       end if;
 //       theta0 := (y0d * mu + y1d * eta) / h0;
-//       if abs(theta0 - c) < 1e-06 then
+//       if abs(theta0 - c) < 0.000001 then
 //         c := 0.999999 * theta0;
 //       end if;
 //       rho := (3.0 * (Delta0 - c)) / (theta0 - c);
@@ -170,8 +170,8 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow); getEr
 //       eta_tilde := rho * eta;
 //       xi1 := x0 + mu_tilde;
 //       xi2 := x1 - eta_tilde;
-//       a1 := (y0d - c) / max(mu_tilde ^ 2.0,1e-13);
-//       a2 := (y1d - c) / max(eta_tilde ^ 2.0,1e-13);
+//       a1 := (y0d - c) / max(mu_tilde ^ 2.0,0.0000000000001);
+//       a2 := (y1d - c) / max(eta_tilde ^ 2.0,0.0000000000001);
 //       const12 := y0 + (-(x0 - xi1) ^ 3.0 * a1) / 3.0 - c * x0;
 //       const3 := y1 + (-(x1 - xi2) ^ 3.0 * a2) / 3.0 - c * x1;
 //       if x < xi1 then
@@ -258,7 +258,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow); getEr
 //   Real mus[2](quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) = if use_mu_nominal then mu_nominal else Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow.Medium.dynamicViscosity(states[2]);
 //   Real mus_act[1](quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) \"Actual viscosity per segment\";
 //   input Real pathLengths_internal[1](quantity = \"Length\", unit = \"m\") = pathLengths[1] \"pathLengths used internally; to be defined by extending class\";
-//   Real diameters[1](quantity = \"Length\", unit = \"m\") = 0.5 * (dimensions[1] + dimensions[2]) \"mean diameters between segments\";
+//   Real diameters[1](quantity = \"Length\", unit = \"m\") = (dimensions[1] + dimensions[2]) * 0.5 \"mean diameters between segments\";
 //   parameter Boolean use_Ib_flows = momentumDynamics <> Modelica.Fluid.Types.Dynamics.SteadyState \"= true to consider differences in flow of momentum through boundaries\";
 //   parameter Boolean from_dp = momentumDynamics >= Modelica.Fluid.Types.Dynamics.SteadyStateInitial \" = true, use m_flow = f(dp), otherwise dp = f(m_flow)\";
 //   protected parameter Boolean use_mu_nominal = not show_Res \"= true, if mu_nominal is used, otherwise computed from medium\";
@@ -275,11 +275,11 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow); getEr
 //   Real dps_fg[1](quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = (p_a_start - p_b_start) / Real(n + -1)) \"pressure drop between states\";
 // equation
 //   assert(m_flows[1] > -m_flow_small or allowFlowReversal,\"Reverting flow occurs even though allowFlowReversal is false\");
-//   m_flows[1] = nParallel * Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow.WallFriction.massFlowRate_dp_staticHead(dps_fg[1],rhos[1],rhos[2],mus[1],mus[2],pathLengths_internal[1],diameters[1],g * dheights[1],roughnesses[1] / 2.0 + roughnesses[2] / 2.0,dp_small / Real(n));
+//   m_flows[1] = Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow.WallFriction.massFlowRate_dp_staticHead(dps_fg[1],rhos[1],rhos[2],mus[1],mus[2],pathLengths_internal[1],diameters[1],dheights[1] * g,roughnesses[1] / 2.0 + roughnesses[2] / 2.0,dp_small / Real(n)) * nParallel;
 //   rhos_act[1] = if noEvent(m_flows[1] > 0.0) then rhos[1] else rhos[2];
 //   mus_act[1] = if noEvent(m_flows[1] > 0.0) then mus[1] else mus[2];
 //   Ib_flows[1] = 0.0;
-//   Fs_p[1] = nParallel * (0.5 * ((crossAreas[1] + crossAreas[2]) * (Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow.Medium.pressure(states[2]) - Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow.Medium.pressure(states[1]))));
+//   Fs_p[1] = 0.5 * ((crossAreas[1] + crossAreas[2]) * (Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow.Medium.pressure(states[2]) - Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow.Medium.pressure(states[1]))) * nParallel;
 //   dps_fg[1] = (2.0 * Fs_fg[1]) / ((crossAreas[1] + crossAreas[2]) * nParallel);
 //   Is[1] = m_flows[1] * pathLengths[1];
 //   0.0 = Ib_flows[1] - Fs_p[1] - Fs_fg[1];

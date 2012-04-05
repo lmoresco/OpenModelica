@@ -125,7 +125,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow); getE
 //   rhos_act[1] = if noEvent(m_flows[1] > 0.0) then rhos[1] else rhos[2];
 //   mus_act[1] = if noEvent(m_flows[1] > 0.0) then mus[1] else mus[2];
 //   Ib_flows[1] = 0.0;
-//   Fs_p[1] = nParallel * (0.5 * ((crossAreas[1] + crossAreas[2]) * (Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.pressure(states[2]) - Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.pressure(states[1]))));
+//   Fs_p[1] = 0.5 * ((crossAreas[1] + crossAreas[2]) * (Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.pressure(states[2]) - Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.pressure(states[1]))) * nParallel;
 //   dps_fg[1] = (2.0 * Fs_fg[1]) / ((crossAreas[1] + crossAreas[2]) * nParallel);
 //   Is[1] = m_flows[1] * pathLengths[1];
 //   0.0 = Ib_flows[1] - Fs_p[1] - Fs_fg[1];

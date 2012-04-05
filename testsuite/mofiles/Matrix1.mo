@@ -22,6 +22,6 @@ end test;
 //   parameter Real K[2,1] = -Em;
 //   parameter Real K[2,2] = Em;
 //   parameter Real X[1] = Em;
-//   parameter Real X[2] = Em * 2.0;
+//   parameter Real X[2] = 2.0 * Em;
 // end test;
 // endResult

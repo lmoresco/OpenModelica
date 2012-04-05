@@ -1311,8 +1311,8 @@ end BS5;
 //   output Real der1.outPort.signal[1] "Real output signals";
 //   output Real der1.y[1] "Output signals";
 //   parameter Real kinematicPTP1.deltaq[1] = 1.0 "Distance to move";
-//   parameter Real kinematicPTP1.qd_max[1](min = 1e-060) = 1.0 "Maximum velocities der(q)";
-//   parameter Real kinematicPTP1.qdd_max[1](min = 1e-060) = 1.0 "Maximum accelerations der(qd)";
+//   parameter Real kinematicPTP1.qd_max[1](min = 1e-60) = 1.0 "Maximum velocities der(q)";
+//   parameter Real kinematicPTP1.qdd_max[1](min = 1e-60) = 1.0 "Maximum accelerations der(qd)";
 //   parameter Real kinematicPTP1.startTime(quantity = "Time", unit = "s") = 0.0 "Time instant at which movement starts";
 //   protected Real kinematicPTP1.sd_max;
 //   protected Real kinematicPTP1.sdd_max;
@@ -1344,18 +1344,18 @@ end BS5;
 //   kinematicPTP1.Tv = if kinematicPTP1.noWphase then kinematicPTP1.Ta1 else 1.0 / kinematicPTP1.sd_max;
 //   kinematicPTP1.Te = if kinematicPTP1.noWphase then 2.0 * kinematicPTP1.Ta1 else kinematicPTP1.Tv + kinematicPTP1.Ta2;
 //   kinematicPTP1.sdd = if time < kinematicPTP1.startTime then 0.0 else if kinematicPTP1.noWphase then if time < kinematicPTP1.Ta1 + kinematicPTP1.startTime then kinematicPTP1.sdd_max else if time < kinematicPTP1.Te + kinematicPTP1.startTime then -kinematicPTP1.sdd_max else 0.0 else if time < kinematicPTP1.Ta2 + kinematicPTP1.startTime then kinematicPTP1.sdd_max else if time < kinematicPTP1.Tv + kinematicPTP1.startTime then 0.0 else if time < kinematicPTP1.Te + kinematicPTP1.startTime then -kinematicPTP1.sdd_max else 0.0;
-//   kinematicPTP1.outPort.signal[1] = kinematicPTP1.sdd * kinematicPTP1.p_deltaq[1];
+//   kinematicPTP1.outPort.signal[1] = kinematicPTP1.p_deltaq[1] * kinematicPTP1.sdd;
 //   kinematicPTP1.y[1] = kinematicPTP1.outPort.signal[1];
 //   assert(kinematicPTP1.outPort.n == der1.inPort.n,"automatically generated from connect");
 //   der1.inPort.signal[1] = kinematicPTP1.outPort.signal[1];
 // end BS5;
-// [BS5.mo:686:11-687:36:writable] Warning: Variable kinematicPTP1.qd_max: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [BS5.mo:686:11-687:36:writable] Warning: Variable kinematicPTP1.qd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS5.mo:688:11-689:40:writable] Warning: Variable kinematicPTP1.qdd_max: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [BS5.mo:688:11-689:40:writable] Warning: Variable kinematicPTP1.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS5.mo:686:11-687:36:writable] Warning: Variable kinematicPTP1.qd_max: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [BS5.mo:686:11-687:36:writable] Warning: Variable kinematicPTP1.qd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS5.mo:688:11-689:40:writable] Warning: Variable kinematicPTP1.qdd_max: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [BS5.mo:688:11-689:40:writable] Warning: Variable kinematicPTP1.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // 
 // endResult

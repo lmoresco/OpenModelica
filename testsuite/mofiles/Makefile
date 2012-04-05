@@ -52,6 +52,7 @@ ArrayEWOps2.mo \
 ArrayEWOps3.mo \
 ArrayEWOps4.mo \
 ArrayEWOps5.mo \
+ArrayEWOps6.mo \
 ArrayEWOpsCEval1.mo \
 ArrayEWOpsCEval2.mo \
 ArrayEWOpsCEval3.mo \

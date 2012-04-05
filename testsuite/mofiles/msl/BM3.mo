@@ -1054,7 +1054,7 @@ end BM3;
 //   output Real constant2.outPort.signal[1] "Real output signals";
 //   output Real constant2.y[1];
 // equation
-//   add1.y[1] = add1.k1 * add1.u1[1] + add1.k2 * add1.u2[1];
+//   add1.y[1] = add1.u1[1] * add1.k1 + add1.u2[1] * add1.k2;
 //   add1.y[1] = add1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
