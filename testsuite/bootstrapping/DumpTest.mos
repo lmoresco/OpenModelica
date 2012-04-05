@@ -71,7 +71,7 @@ getErrorString();
 // ""
 // "Dump.getAstAsCorbaString"
 // "record Absyn.PROGRAM
-// classes = {record Absyn.CLASS name = \"dummyClass\", partialPrefix = true, finalPrefix = true, encapsulatedPrefix = true, restriction = record Absyn.FR_NORMAL_FUNCTION end Absyn.FR_NORMAL_FUNCTION;, body = record Absyn.PARTS typeVars = {}, classParts = {}, comment = NONE() end Absyn.PARTS;, info = record Absyn.INFO fileName = \"\", isReadOnly = false, lineNumberStart = 0, columnNumberStart = 0, lineNumberEnd = 0, columnNumberEnd = 0, buildTimes = record Absyn.TIMESTAMP lastBuildTime = 0.0, lastEditTime = 0.0 end Absyn.TIMESTAMP; end Absyn.INFO; end Absyn.CLASS;},
+// classes = {record Absyn.CLASS name = \"dummyClass\", partialPrefix = true, finalPrefix = true, encapsulatedPrefix = true, restriction = record Absyn.R_FUNCTION functionRestriction = record Absyn.FR_NORMAL_FUNCTION end Absyn.FR_NORMAL_FUNCTION;end Absyn.R_FUNCTION;, body = record Absyn.PARTS typeVars = {}, classParts = {}, comment = NONE() end Absyn.PARTS;, info = record Absyn.INFO fileName = \"\", isReadOnly = false, lineNumberStart = 0, columnNumberStart = 0, lineNumberEnd = 0, columnNumberEnd = 0, buildTimes = record Absyn.TIMESTAMP lastBuildTime = 0.0, lastEditTime = 0.0 end Absyn.TIMESTAMP; end Absyn.INFO; end Absyn.CLASS;},
 // within_ = record Absyn.TOP end Absyn.TOP;,
 // globalBuildTimes = record Absyn.TIMESTAMP lastBuildTime = 0.0, lastEditTime = 0.0 end Absyn.TIMESTAMP;
 // end Absyn.PROGRAM;"
