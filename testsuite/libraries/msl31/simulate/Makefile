@@ -25,7 +25,6 @@ Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a.mos \
-Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.mos \
@@ -33,7 +32,6 @@ Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.mos \
-Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.mos \
 Modelica.Mechanics.MultiBody.Frames.mos \
 Modelica.Mechanics.Rotational.Examples.First.mos \
 Modelica.Mechanics.Rotational.Examples.FirstGrounded.mos \
@@ -139,6 +137,8 @@ Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GyroscopicEffects.mos \
+Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.mos \
+Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.mos \
 Modelica.Mechanics.Rotational.Examples.LossyGearDemo2.mos \
 Modelica.Mechanics.Translational.Examples.PreLoad.mos \
 Modelica.StateGraph.Examples.ExecutionPaths.mos \
