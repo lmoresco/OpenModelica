@@ -7,6 +7,8 @@ Modelica.Blocks.Examples.InverseModel.mos \
 Modelica.Blocks.Examples.LogicalNetwork1.mos \
 Modelica.Blocks.Examples.ShowLogicalSources.mos \
 Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.mos \
+Modelica.Electrical.Analog.Examples.CauerLowPassOPV.mos \
+Modelica.Electrical.Analog.Examples.CauerLowPassSC.mos \
 Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
 Modelica.Electrical.Analog.Examples.NandGate.mos \
 Modelica.Electrical.Machines.Examples.TransformerTestbench.mos \
@@ -111,8 +113,6 @@ RectifierOM.mos \
 
 WRONGRESULTTEST = \
 Modelica.Blocks.Examples.PID_Controller.mos \
-Modelica.Electrical.Analog.Examples.CauerLowPassOPV.mos \
-Modelica.Electrical.Analog.Examples.CauerLowPassSC.mos \
 Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes.mos \
 Modelica.Electrical.Analog.Examples.CharacteristicThyristors.mos \
 Modelica.Electrical.Analog.Examples.CompareTransformers.mos \

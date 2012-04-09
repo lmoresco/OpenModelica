@@ -27,7 +27,7 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Anal
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassOPV_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 60.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CauerLowPassOPV', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 60.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CauerLowPassOPV', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "Files Equal!"
