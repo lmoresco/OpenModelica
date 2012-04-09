@@ -27,6 +27,7 @@ Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic.mos \
+Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.mos \
@@ -135,7 +136,6 @@ Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke.mos \
 Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings.mos \
-Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GyroscopicEffects.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.mos \
 Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.mos \
