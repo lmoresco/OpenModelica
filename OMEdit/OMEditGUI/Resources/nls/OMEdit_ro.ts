@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ro_MD">
+<TS version="2.0" language="ro_RO">
 <context>
     <name>AddLibraryWidget</name>
     <message>
         <location filename="../../OptionsWidget.cpp" line="1338"/>
         <source>Add Library</source>
-        <translation type="unfinished"></translation>
+        <translation>Adaugare Bibliotecă</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="1346"/>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare:</translation>
     </message>
 </context>
 <context>
@@ -19,12 +19,12 @@
     <message>
         <location filename="../../BitmapAnnotation.cpp" line="276"/>
         <source>Open Bitmap</source>
-        <translation type="unfinished"></translation>
+        <translation>Deschide Bitmap</translation>
     </message>
     <message>
         <location filename="../../BitmapAnnotation.cpp" line="294"/>
         <source>Store picture in model</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvare imagine în model</translation>
     </message>
 </context>
 <context>
@@ -32,12 +32,12 @@
     <message>
         <location filename="../../Component.cpp" line="408"/>
         <source>Shows the item attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Vizualizare atribute obiect</translation>
     </message>
     <message>
         <location filename="../../Component.cpp" line="412"/>
         <source>Shows the item properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Vizualizare proprietăți obiect</translation>
     </message>
 </context>
 <context>
@@ -45,22 +45,22 @@
     <message>
         <location filename="../../ConnectorWidget.cpp" line="801"/>
         <source>Enter index in the array for Start Component:</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduceți indexul din vector pentru Componenta de Început:</translation>
     </message>
     <message>
         <location filename="../../ConnectorWidget.cpp" line="816"/>
         <source>Enter index in the array for End Component:</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduceți indexul din vector pentru Componenta de Sfârșit:</translation>
     </message>
     <message>
         <location filename="../../ConnectorWidget.cpp" line="827"/>
         <source>Connect </source>
-        <translation type="unfinished"></translation>
+        <translation>Conectează </translation>
     </message>
     <message>
         <location filename="../../ConnectorWidget.cpp" line="827"/>
         <source> with </source>
-        <translation type="unfinished"></translation>
+        <translation> cu </translation>
     </message>
 </context>
 <context>
@@ -68,7 +68,7 @@
     <message>
         <location filename="../../ConnectorWidget.cpp" line="671"/>
         <source>Delete Connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Șterge Conexiune</translation>
     </message>
 </context>
 <context>
@@ -76,12 +76,12 @@
     <message>
         <location filename="../../ModelWidget.cpp" line="296"/>
         <source>Instantiation of </source>
-        <translation type="unfinished"></translation>
+        <translation>Instanțiere </translation>
     </message>
     <message>
         <location filename="../../ModelWidget.cpp" line="296"/>
         <source> failed</source>
-        <translation type="unfinished"></translation>
+        <translation> nu a reușit</translation>
     </message>
 </context>
 <context>
@@ -89,255 +89,269 @@
     <message>
         <location filename="../../Helper.cpp" line="243"/>
         <source>Please check the Problems Tab below for more error specific details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Controlează Tabul Probleme de mai jos pentru detalii.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="245"/>
         <source>A Component with the same name already exists. Please choose another Name.</source>
-        <translation type="unfinished"></translation>
+        <translation>O componentă cu același nume deja există. Vă rugăm alegeți alt nume.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="247"/>
         <source>You cannot connect a port to itself.</source>
-        <translation type="unfinished"></translation>
+        <translation>Conexiunea la același conector nu e posibilă.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="249"/>
         <source>There is no open Model to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu există Model deschis pentru %1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="251"/>
         <source>Simulation Start Time is not defined. Default value (0.0) will be used.</source>
-        <translation type="unfinished"></translation>
+        <translation>Timpul de Start pentru simulare nu e definit. Se va folosi valoarea nominală (0,0).</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="253"/>
         <source>Simulation Stop Time is not defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Timpul de Stop pentru simulare nu e definit.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="255"/>
         <source>Simulation Start Time should be less than or equal to Stop Time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Timpul de Start pentru simulare trebuie să fie mai mare sau egal cu Timpul de Stop.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="257"/>
         <source>Please enter %1 Name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduceți %1 nume.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="259"/>
         <source>%1 %2 already exists %3.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 există deja %3.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="261"/>
         <source>An item with the same name already exists. Please try some other name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un obiect cu același nume exista deja. Introuceți un alt nume.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="263"/>
         <source>Could not find environment variable OPENMODELICAHOME. Please make sure OpenModelica is installed properly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Variabila de system OPENMODELICAHOME nu poate fi gasită. Verifică dacă programul OpenModelica este corect instalat.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="265"/>
         <source>Following Error has occurred. 
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare detectată.
+
+%1</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="267"/>
         <source>Problems are found in Modelica Text. 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Probleme găsite in textul Modelica.
+</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="269"/>
         <source>
 
 For normal users it is recommended to choose &apos;Undo changes&apos;. You can also choose &apos;Let me fix errors&apos; if you want to fix them by your own.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Utilizatorii neexperimentați selectați &apos;Anulează modificarile&apos;. Se poate selecta și &apos;Corectez eu erorile&apos; dacă utilizatorul dorește să corecteze erorile.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="271"/>
         <source>Please make sure you are not using any OpenModelica Keywords like (model, package, record, class etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vă rugam să nu folosiți cuvinte cheie in OpenMoldelica ca și (model, package, record, class etc.)</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="273"/>
         <source>Incompatible types for the connectors.</source>
-        <translation type="unfinished"></translation>
+        <translation>Incompatibilitate de tip pentru conectori.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="275"/>
         <source>Do you want to save your changes before closing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Doriți salvarea modificarilor înainte de închidere?</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="277"/>
         <source>Unable to delete. Server error has occurred while trying to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu se poate șterge. O eroare de server a apărut în timpul ștergerii.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="279"/>
         <source>This item is not a model.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elementul nu este un model.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="281"/>
         <source>Error has occurred while loading the file &apos;%1&apos;. Unable to load the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare în timpul încărcării fișierului &apos;%1&apos;. Fișierul nu poate fi încărcat.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="283"/>
         <source>Error has occurred while loading the model : 
 %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare apărută în timpul încărcarii modelului : 
+%1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="285"/>
         <source>Delete the existing models before loading the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Șterge modelele existente înaintea încărcarii fișierului.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="287"/>
         <source>Redefining models &apos;%1&apos; which already exists.</source>
-        <translation type="unfinished"></translation>
+        <oldsource>Redefing models &apos;%1&apos; which already exists.</oldsource>
+        <translation>Redefinierea modelelor &apos;%1&apos; care deja există.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="289"/>
         <source>The Annotations for the component %1 (%2) are not correct. Unable to add component.</source>
-        <translation type="unfinished"></translation>
+        <translation>Adnotările pentru componenta %1 (%2) nu e corectă. Componenta nu a putut fi adăugată.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="291"/>
         <source>The %1 &apos;%2&apos; is not saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 &apos;%2&apos; nu e salvat.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="293"/>
         <source>Following Error has occurred while saving component comment. 
 
  %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare aparută la salvarea comentariului componentei. 
+
+ %1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="295"/>
         <source>Following Error has occurred while saving component attributes. 
 
  %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare apărută la salvarea de atribute ale componentei. 
+
+ %1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="297"/>
         <source>The %1 &apos;%2&apos; is contained inside a package. It is automatically saved when you save the package.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 &apos;%2&apos; e parte a unui pachet. Se salvează automat odată cu pachetul.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="299"/>
         <source>The search string &apos;%1&apos; is not found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Textul căutat &apos;%1&apos; nu a fost găsit.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="301"/>
         <source>The file &apos;%1&apos; has been removed outside %2. Do you want to keep it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Fișierul &apos;%1&apos; a fost șters în afara %2. Vrei să în păstrezi?</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="303"/>
         <source>The file &apos;%1&apos; has been modified outside %2. Do you want to reload it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Fișierul &apos;%1&apos; a fost modificat in afara %2. Vrei să îl încarci?</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="305"/>
         <source>Are you sure you want to close &apos;%1&apos; interactive simulation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ești sigur că dorești închiderea simularii interactive &apos;%1&apos;?</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="307"/>
         <source>You cannot recover this window once its closed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fereastra aceasta nu poate fi recuperată dacă este închisă.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="309"/>
         <source>You already have one interactive simulation running. Only one interactive simulation session is allowed at a time. 
 
  Please shutdown the interactive simulation or close the interactive simulation tab before launching the new one.</source>
-        <translation type="unfinished"></translation>
+        <translation>O simulare interactivă e deja activa. Doar o sesiune de simulare interactivă este permisă. 
+
+ Închide simularea interactivă sau fila acesteia înainte de a rula o alta.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="311"/>
         <source>Please select a variable to plot before starting.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selectează o variabila pentru afișare înainte de a începe.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="313"/>
         <source>You cannot insert %1, it is a %2. Only model, class, connector, record or block are allowed on diagram layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu se poate insera %1, pentru că este %2. Numai model, class, connector, record sau block sînt permise în secțiunea diagramă.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="315"/>
         <source>You cannot insert %1, it is a %2. Only connector is allowed on the icon layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu se poate insera %1, pentru că este %2. Doar connector este permis în secțiunea icoană.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="317"/>
         <source>You cannot do a plot parametric between two different simulation result files. Make sure you select two variables from the same simulation result file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vizualizarea parametrică nu funcționează cu variabile din două fișiere resultat diferite. Selectează două variabile din același fișier rezultat.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="319"/>
         <source>The file &apos;%1&apos; is not a valid Modelica file. The file format is not supported. You can only open .mo files here.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fișierul  &apos;%1&apos; nu e un fișier Modelica corect. Formatul de fișier nu se poate încărca. Numai fișiere .mo pot fi deschise.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="321"/>
         <source>The html tags in the documentation are incorrect. Give correct starting and ending html tags and save it again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tagurile html din documentație nu sînt corecte. Verifică tagurile html de la început și sfîrșit și salvează din nou.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="323"/>
         <source>Enter a valid Positive Integer</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduceți un număr întreg pozitiv</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="325"/>
         <source>You cannot drop an item on itself.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu se poate elibera un element pe el însuși.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="327"/>
         <source>Are you sure you want to delete &apos;%1&apos;? Everything contained inside this Package will also be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sînteți siguri că doriți să ștergeți &apos;%1&apos;? Tot conținutul din acest pachet va fi de asemenea șters.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="329"/>
         <source>Are you sure you want to delete &apos;%1&apos;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sînteți siguri că doriți să ștergeți &apos;%1&apos;?</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="331"/>
         <source>A component with the name %1 already exists. The name is changed from %1 to %2.
 This is probably wrong because the component is declared as %3.</source>
-        <translation type="unfinished"></translation>
+        <translation>O componentă cu numele %1 deja există. Numele e schimbat din %1 în %2.
+Probabil este o greșala pentru că această componentă este declarată ca și %3.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="333"/>
         <source>The FMI is generated at %1/%2.fmu</source>
-        <translation type="unfinished"></translation>
+        <translation>Modulul FMI a fost generat în fișierul %1/%2.fmu</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="335"/>
         <source>The Modifier &apos;%1&apos; format is invalid. The correct format is &apos;phi(start=1)&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Modificarea &apos;%1&apos; nu e formatată corect. Formatarea corectă este &apos;phi(start=1)&apos;</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="337"/>
         <source>Unknown file format. The supported file formats are %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Format fișier necunoscut. Fișiere cu format cunoscut sînt %1.</translation>
     </message>
 </context>
 <context>
@@ -345,72 +359,72 @@ This is probably wrong because the component is declared as %3.</source>
     <message>
         <location filename="../../OptionsWidget.cpp" line="558"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Limba:</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="560"/>
         <source>Auto Detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Detectare Automată</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="563"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>Engleză</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="564"/>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>Franceză</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="565"/>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>Germană</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="566"/>
         <source>Japanese</source>
-        <translation type="unfinished"></translation>
+        <translation>Japoneză</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="567"/>
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>Română</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="568"/>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation>Rusește</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="569"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Suedeză</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="578"/>
         <source>Plotting View Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Modul de Vizualizare a Plotării:</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="579"/>
         <source>Tabbed View</source>
-        <translation type="unfinished"></translation>
+        <translation>Vizualizare File</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="581"/>
         <source>SubWindow View</source>
-        <translation type="unfinished"></translation>
+        <translation>Vizualizare SubFereastră</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="590"/>
         <source>Working Directory:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosar Lucru:</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="595"/>
         <source>Preserve User&apos;s GUI Customizations.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prezervare Customizări Interfață Utilizator.</translation>
     </message>
 </context>
 <context>
@@ -418,12 +432,12 @@ This is probably wrong because the component is declared as %3.</source>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="627"/>
         <source>Go to Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Afișează Linia</translation>
     </message>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="648"/>
         <source>Enter line number (1 to </source>
-        <translation type="unfinished"></translation>
+        <translation>Introduceți numărul liniei (de la 1 </translation>
     </message>
 </context>
 <context>
@@ -431,22 +445,22 @@ This is probably wrong because the component is declared as %3.</source>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="738"/>
         <source>Cancels the current connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Anulează conexiunea curentă</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="741"/>
         <source>Rotate Clockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotește în sensul acelor de ceasornic</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="742"/>
         <source>Rotate the item clockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotește elemenul în sensul acelor de ceasornic</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="745"/>
         <source>Horizontal Flip</source>
-        <translation type="unfinished"></translation>
+        <translation>Flip Orizontal</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="747"/>
@@ -878,7 +892,7 @@ This is probably wrong because the component is declared as %3.</source>
     <message>
         <location filename="../../IconProperties.cpp" line="285"/>
         <source>Component Attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribute Componentă</translation>
     </message>
 </context>
 <context>
@@ -886,22 +900,22 @@ This is probably wrong because the component is declared as %3.</source>
     <message>
         <location filename="../../IconProperties.cpp" line="47"/>
         <source>Component Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Proprietățile Componentei</translation>
     </message>
     <message>
         <location filename="../../IconProperties.cpp" line="104"/>
         <source>Modifiers</source>
-        <translation type="unfinished"></translation>
+        <translation>Modificatori</translation>
     </message>
     <message>
         <location filename="../../IconProperties.cpp" line="109"/>
         <source>Component</source>
-        <translation type="unfinished"></translation>
+        <translation>Componentă</translation>
     </message>
     <message>
         <location filename="../../IconProperties.cpp" line="158"/>
         <source>Add new modifiers, e.g phi(start=1),w(start=2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Adaugă noi modificatori, de exemplu: phi(start=1),w(start=2)</translation>
     </message>
 </context>
 <context>
@@ -1016,27 +1030,27 @@ This is probably wrong because the component is declared as %3.</source>
     <message>
         <location filename="../../OptionsWidget.cpp" line="1258"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nume</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="1258"/>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="1262"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Adaugă</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="1274"/>
         <source>* The libraries changes will take effect after restart.</source>
-        <translation type="unfinished"></translation>
+        <translation>* Modificările în opțiunile pentru biblioteci se aplică după repornirea programului.</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="1322"/>
         <source>Edit Library</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifică Bibliotecă</translation>
     </message>
 </context>
 <context>
@@ -1072,7 +1086,7 @@ This is probably wrong because the component is declared as %3.</source>
     <message>
         <location filename="../../LibraryWidget.cpp" line="1349"/>
         <source>Modelica Library</source>
-        <translation type="unfinished"></translation>
+        <translation>Biblioteca Modelica</translation>
     </message>
 </context>
 <context>
@@ -1636,7 +1650,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
     <message>
         <location filename="../../LibraryWidget.cpp" line="1614"/>
         <source>Outline</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuprins</translation>
     </message>
 </context>
 <context>
@@ -1644,27 +1658,27 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
     <message>
         <location filename="../../ModelWidget.cpp" line="53"/>
         <source>Insert in Package (optional):</source>
-        <translation type="unfinished"></translation>
+        <translation>Insearează în Pachet (opțional):</translation>
     </message>
     <message>
         <location filename="../../ModelWidget.cpp" line="63"/>
         <source>Save contents of package in one file</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvează conținutul pachetului într-un singur fișier</translation>
     </message>
     <message>
         <location filename="../../ModelWidget.cpp" line="82"/>
         <source>Create New </source>
-        <translation type="unfinished"></translation>
+        <translation>Creeaza Nou</translation>
     </message>
     <message>
         <location filename="../../ModelWidget.cpp" line="108"/>
         <source>in Global Scope</source>
-        <translation type="unfinished"></translation>
+        <translation>în Scopul Global</translation>
     </message>
     <message>
         <location filename="../../ModelWidget.cpp" line="113"/>
         <source>in Package &apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>în Pachetul &apos;</translation>
     </message>
 </context>
 <context>
@@ -1672,37 +1686,37 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="72"/>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Precedent</translation>
     </message>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="79"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Următor</translation>
     </message>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="84"/>
         <source>Match case</source>
-        <translation type="unfinished"></translation>
+        <translation>Distinge între caractere mici și mari</translation>
     </message>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="85"/>
         <source>Match whole word</source>
-        <translation type="unfinished"></translation>
+        <translation>Consideră doar cuvinte întregi</translation>
     </message>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="110"/>
         <source>Start and End modifiers are different</source>
-        <translation type="unfinished"></translation>
+        <translation>Modificatorii de Start și Sfîrșit sînt diferiți</translation>
     </message>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="208"/>
         <source>Undo changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Anulează modificarile</translation>
     </message>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="209"/>
         <source>Let me fix errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Lasă-mă să corectez erorile</translation>
     </message>
 </context>
 <context>
@@ -2447,12 +2461,12 @@ Please wait for a while.</source>
     <message>
         <location filename="../../StringHandler.cpp" line="615"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Descriere</translation>
     </message>
     <message>
         <location filename="../../StringHandler.cpp" line="620"/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Calea Dosar</translation>
     </message>
 </context>
 <context>
@@ -2460,7 +2474,7 @@ Please wait for a while.</source>
     <message>
         <location filename="../../TextAnnotation.cpp" line="71"/>
         <source>Text Here</source>
-        <translation type="unfinished"></translation>
+        <translation>Text Aici</translation>
     </message>
 </context>
 <context>
@@ -2468,42 +2482,42 @@ Please wait for a while.</source>
     <message>
         <location filename="../../TextAnnotation.cpp" line="769"/>
         <source>Text of Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Text Etichetă:</translation>
     </message>
     <message>
         <location filename="../../TextAnnotation.cpp" line="772"/>
         <source>Font Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nume Font:</translation>
     </message>
     <message>
         <location filename="../../TextAnnotation.cpp" line="778"/>
         <source>Font Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensiune Font:</translation>
     </message>
     <message>
         <location filename="../../TextAnnotation.cpp" line="787"/>
         <source>Italic</source>
-        <translation type="unfinished"></translation>
+        <translation>Italian</translation>
     </message>
     <message>
         <location filename="../../TextAnnotation.cpp" line="789"/>
         <source>Bold</source>
-        <translation type="unfinished"></translation>
+        <translation>Îngroșat</translation>
     </message>
     <message>
         <location filename="../../TextAnnotation.cpp" line="791"/>
         <source>Underline</source>
-        <translation type="unfinished"></translation>
+        <translation>Subliniat</translation>
     </message>
     <message>
         <location filename="../../TextAnnotation.cpp" line="793"/>
         <source>Styles</source>
-        <translation type="unfinished"></translation>
+        <translation>Stiluri</translation>
     </message>
     <message>
         <location filename="../../TextAnnotation.cpp" line="800"/>
         <source>Alignment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aliniament:</translation>
     </message>
 </context>
 <context>
@@ -2511,12 +2525,12 @@ Please wait for a while.</source>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="115"/>
         <source>Variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Variabile</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="117"/>
         <source>* Select the variable to plot it.</source>
-        <translation type="unfinished"></translation>
+        <translation>* Selectează variabila pentru plotare.</translation>
     </message>
 </context>
 <context>
@@ -2524,22 +2538,22 @@ Please wait for a while.</source>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="2645"/>
         <source>Recent Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Fișiere Recente</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="2647"/>
         <source>No recent files found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu există fișiere recente.</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="2670"/>
         <source>Create Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Creere Model</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="2673"/>
         <source>Open Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Deschide Model</translation>
     </message>
 </context>
 </TS>
