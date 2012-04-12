@@ -6,7 +6,7 @@
     <message>
         <location filename="../../OptionsWidget.cpp" line="1338"/>
         <source>Add Library</source>
-        <translation>Lägg Bibliotek</translation>
+        <translation>Lägg till Bibliotek</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="1346"/>
@@ -19,7 +19,7 @@
     <message>
         <location filename="../../BitmapAnnotation.cpp" line="276"/>
         <source>Open Bitmap</source>
-        <translation>Öppen Bitmapp</translation>
+        <translation>Öppna Bitmapp</translation>
     </message>
     <message>
         <location filename="../../BitmapAnnotation.cpp" line="294"/>
@@ -32,12 +32,12 @@
     <message>
         <location filename="../../Component.cpp" line="408"/>
         <source>Shows the item attributes</source>
-        <translation>Visar Objektattribut</translation>
+        <translation>Visar objektattribut</translation>
     </message>
     <message>
         <location filename="../../Component.cpp" line="412"/>
         <source>Shows the item properties</source>
-        <translation>Visar Objektegenskaper</translation>
+        <translation>Visar objektegenskaper</translation>
     </message>
 </context>
 <context>
@@ -45,17 +45,17 @@
     <message>
         <location filename="../../ConnectorWidget.cpp" line="801"/>
         <source>Enter index in the array for Start Component:</source>
-        <translation>Ange index i arrayen för Börja Komponent:</translation>
+        <translation>Ange index i arrayen för den första komponenten:</translation>
     </message>
     <message>
         <location filename="../../ConnectorWidget.cpp" line="816"/>
         <source>Enter index in the array for End Component:</source>
-        <translation>Ange index i arrayen för avslutar Komponent:</translation>
+        <translation>Ange index i arrayen för den sista komponenten:</translation>
     </message>
     <message>
         <location filename="../../ConnectorWidget.cpp" line="827"/>
         <source>Connect </source>
-        <translation>Ansluta </translation>
+        <translation>Anslut </translation>
     </message>
     <message>
         <location filename="../../ConnectorWidget.cpp" line="827"/>
@@ -68,7 +68,7 @@
     <message>
         <location filename="../../ConnectorWidget.cpp" line="671"/>
         <source>Delete Connection</source>
-        <translation>Bort Anslutning</translation>
+        <translation>Ta Bort Anslutning</translation>
     </message>
 </context>
 <context>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../../ModelWidget.cpp" line="296"/>
         <source>Instantiation of </source>
-        <translation>Exemplifiering av </translation>
+        <translation>Instantiering av </translation>
     </message>
     <message>
         <location filename="../../ModelWidget.cpp" line="296"/>
@@ -87,271 +87,275 @@
 <context>
     <name>GUIMessages</name>
     <message>
-        <location filename="../../Helper.cpp" line="243"/>
+        <location filename="../../Helper.cpp" line="245"/>
         <source>Please check the Problems Tab below for more error specific details.</source>
-        <translation>Kontrollera problem Tab nedan för mer fel specifika detaljer.</translation>
+        <translation>Kontrollera problem-tabben nedan för mer specifika detaljer.</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="245"/>
+        <location filename="../../Helper.cpp" line="247"/>
         <source>A Component with the same name already exists. Please choose another Name.</source>
         <translation>En komponent med samma namn finns redan. Välj ett annat namn.</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="247"/>
+        <location filename="../../Helper.cpp" line="249"/>
         <source>You cannot connect a port to itself.</source>
         <translation>Du kan inte ansluta en port till sig själv.</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="249"/>
-        <source>There is no open Model to %1.</source>
-        <translation>Det finns ingen öppen modell till %1.</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="251"/>
-        <source>Simulation Start Time is not defined. Default value (0.0) will be used.</source>
-        <translation>Simulering Starttid är inte definierad. Standardvärde (0,0) kommer att användas.</translation>
+        <source>There is no open Model to %1.</source>
+        <translation>Det finns ingen öppen modell att %1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="253"/>
-        <source>Simulation Stop Time is not defined.</source>
-        <translation>Simulering Stop Tiden är inte definierad.</translation>
+        <source>Simulation Start Time is not defined. Default value (0.0) will be used.</source>
+        <translation>Starttid för simulering är inte definierad. Standardvärde (0,0) kommer att användas.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="255"/>
-        <source>Simulation Start Time should be less than or equal to Stop Time.</source>
-        <translation>Simulering Starttid bör vara mindre än eller lika med stopptid.</translation>
+        <source>Simulation Stop Time is not defined.</source>
+        <translation>Sluttid för simulering är inte definierad.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="257"/>
+        <source>Simulation Start Time should be less than or equal to Stop Time.</source>
+        <translation>Starttid för simulering bör vara mindre än eller lika med stopptid.</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="259"/>
         <source>Please enter %1 Name.</source>
         <translation>Ange %1 namn.</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="259"/>
-        <source>%1 %2 already exists %3.</source>
-        <translation>%1 %2 redan finns %3.</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="261"/>
-        <source>An item with the same name already exists. Please try some other name.</source>
-        <translation>Ett objekt med samma namn finns redan. Försök något annat namn.</translation>
+        <source>%1 %2 already exists %3.</source>
+        <translation>%1 %2 finns redan %3.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="263"/>
-        <source>Could not find environment variable OPENMODELICAHOME. Please make sure OpenModelica is installed properly.</source>
-        <translation>Kunde inte hitta miljövariabeln OPENMODELICAHOME. Se till att OpenModelica är korrekt installerad.</translation>
+        <source>An item with the same name already exists. Please try some other name.</source>
+        <translation>Ett objekt med samma namn finns redan. Välj ett annat namn.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="265"/>
-        <source>Following Error has occurred. 
-
-%1</source>
-        <translation></translation>
+        <source>Could not find environment variable OPENMODELICAHOME. Please make sure OpenModelica is installed properly.</source>
+        <translation>Kunde inte hitta miljövariabeln OPENMODELICAHOME. Kontrollera att OpenModelica är korrekt installerad.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="267"/>
-        <source>Problems are found in Modelica Text. 
-</source>
-        <translation></translation>
+        <source>Following Error has occurred. 
+
+%1</source>
+        <translation>Följande fel har inträffat. 
+
+%1</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="269"/>
-        <source>
-
-For normal users it is recommended to choose &apos;Undo changes&apos;. You can also choose &apos;Let me fix errors&apos; if you want to fix them by your own.</source>
-        <translation></translation>
+        <source>Problems are found in Modelica Text. 
+</source>
+        <translation>Problems hittades i Modelica källkoden. </translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="271"/>
+        <source>
+
+For normal users it is recommended to choose &apos;Undo changes&apos;. You can also choose &apos;Let me fix errors&apos; if you want to fix them by your own.</source>
+        <translation>
+
+För vanliga användare rekommenderas att välja &apos;Ångra ändringar&apos;. Du kan också välja &apos;Låt mig åtgärda fel&apos; om du vill åtgärda felen själv.</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="273"/>
         <source>Please make sure you are not using any OpenModelica Keywords like (model, package, record, class etc.)</source>
         <translation>Se till att du inte använder några OpenModelica sökord som (model, package, record, class etc.)</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="273"/>
+        <location filename="../../Helper.cpp" line="275"/>
         <source>Incompatible types for the connectors.</source>
         <translation>Inkompatibla typer för connectors.</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="275"/>
+        <location filename="../../Helper.cpp" line="277"/>
         <source>Do you want to save your changes before closing?</source>
         <translation>Vill du spara dina ändringar innan du stänger?</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="277"/>
+        <location filename="../../Helper.cpp" line="279"/>
         <source>Unable to delete. Server error has occurred while trying to delete.</source>
         <translation>Det går inte att ta bort. Serverfel har inträffat vid försök att ta bort.</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="279"/>
+        <location filename="../../Helper.cpp" line="281"/>
         <source>This item is not a model.</source>
-        <translation>Denna punkt är inte en model.</translation>
+        <translation>Detta element är inte en model.</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="281"/>
+        <location filename="../../Helper.cpp" line="283"/>
         <source>Error has occurred while loading the file &apos;%1&apos;. Unable to load the file.</source>
         <translation>Fel har inträffat vid inläsning av filen &apos;%1&apos;. Det går inte att ladda filen.</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="283"/>
+        <location filename="../../Helper.cpp" line="285"/>
         <source>Error has occurred while loading the model : 
 %1.</source>
-        <translation>Fel har inträffat vid inläsning modellen: 
+        <translation>Fel har inträffat vid inläsning av modellen: 
 %1.</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="285"/>
-        <source>Delete the existing models before loading the file.</source>
-        <translation>Ta bort de befintliga models innan du laddar filen.</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="287"/>
-        <source>Redefining models &apos;%1&apos; which already exists.</source>
-        <oldsource>Redefing models &apos;%1&apos; which already exists.</oldsource>
-        <translation>Omdefiniering models &apos;%1&apos; som redan finns.</translation>
+        <source>Delete the existing models before loading the file.</source>
+        <translation>Ta bort de befintliga modellerna innan du laddar filen.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="289"/>
-        <source>The Annotations for the component %1 (%2) are not correct. Unable to add component.</source>
-        <translation>De anteckningar för komponenten %1 (%2) är inte korrekt. Det går inte att lägga komponent.</translation>
+        <source>Redefining models &apos;%1&apos; which already exists.</source>
+        <oldsource>Redefing models &apos;%1&apos; which already exists.</oldsource>
+        <translation>Omdefiniering av modeller &apos;%1&apos; som redan finns.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="291"/>
-        <source>The %1 &apos;%2&apos; is not saved.</source>
-        <translation>%1 &apos;%2&apos; sparas inte.</translation>
+        <source>The Annotations for the component %1 (%2) are not correct. Unable to add component.</source>
+        <translation>Annoteringarna för komponenten %1 (%2) är inte korrekta. Det går inte att lägga till komponenten.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="293"/>
-        <source>Following Error has occurred while saving component comment. 
-
- %1.</source>
-        <translation>Följande fel har inträffat samtidigt spara komponenten kommentar. 
-
- %1.</translation>
+        <source>The %1 &apos;%2&apos; is not saved.</source>
+        <translation>%1 &apos;%2&apos; är inte sparad.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="295"/>
-        <source>Following Error has occurred while saving component attributes. 
+        <source>Following Error has occurred while saving component comment. 
 
  %1.</source>
-        <translation>Följande fel har inträffat samtidigt spara komponent attribut. 
+        <translation>Följande fel har inträffat vid sparning av komponentkommentar. 
 
  %1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="297"/>
-        <source>The %1 &apos;%2&apos; is contained inside a package. It is automatically saved when you save the package.</source>
-        <translation>%1 &apos;%2&apos; finns i ett package. Det sparas automatiskt när du sparar package.</translation>
+        <source>Following Error has occurred while saving component attributes. 
+
+ %1.</source>
+        <translation>Följande fel har inträffat vid sparning av komponentattribut. 
+
+ %1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="299"/>
-        <source>The search string &apos;%1&apos; is not found.</source>
-        <translation>Söksträngen &apos;%1&apos; finns inte.</translation>
+        <source>The %1 &apos;%2&apos; is contained inside a package. It is automatically saved when you save the package.</source>
+        <translation>%1 &apos;%2&apos; är en del av ett paket. Det sparas automatiskt när du sparar paketet.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="301"/>
+        <source>The search string &apos;%1&apos; is not found.</source>
+        <translation>Söksträngen &apos;%1&apos; hittades inte.</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="303"/>
         <source>The file &apos;%1&apos; has been removed outside %2. Do you want to keep it?</source>
         <translation>Filen &apos;%1&apos; har tagits bort utanför%2. Vill du behålla den?</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="303"/>
+        <location filename="../../Helper.cpp" line="305"/>
         <source>The file &apos;%1&apos; has been modified outside %2. Do you want to reload it?</source>
-        <translation>Filen &apos;%1&apos; har ändrats utanför%2. Vill du ladda den?</translation>
+        <translation>Filen &apos;%1&apos; har ändrats utanför%2. Vill du ladda om den?</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="305"/>
+        <location filename="../../Helper.cpp" line="307"/>
         <source>Are you sure you want to close &apos;%1&apos; interactive simulation?</source>
         <translation>Är du säker på att du vill stänga &apos;%1&apos; interaktiv simulering?</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="307"/>
+        <location filename="../../Helper.cpp" line="309"/>
         <source>You cannot recover this window once its closed.</source>
-        <translation>Du kan inte återställa det här fönstret en gång stängt.</translation>
+        <translation>Du kan inte återställa det här fönstret när det stängts.</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="309"/>
+        <location filename="../../Helper.cpp" line="311"/>
         <source>You already have one interactive simulation running. Only one interactive simulation session is allowed at a time. 
 
  Please shutdown the interactive simulation or close the interactive simulation tab before launching the new one.</source>
         <oldsource>You already have one interactive simulation running. Only one interactive simulaiton session is allowed at a time. 
 
  Please shutdown the interactive simulation or close the interactive simulation tab before launching the new one.</oldsource>
-        <translation>Du har redan en interaktiv simulering gång. Endast en interaktiv simulering session tillåts åt gången. 
+        <translation>Du har redan en interaktiv simulering igång. Endast en interaktiv simuleringssession tillåts åt gången. 
 
- Vänligen avstängning den interaktiva simuleringen eller stänga den interaktiva simuleringen fliken innan du startar en ny.</translation>
-    </message>
-    <message>
-        <location filename="../../Helper.cpp" line="311"/>
-        <source>Please select a variable to plot before starting.</source>
-        <translation>Välj en variabel för att rita före start.</translation>
+ Vänligen stäng av den interaktiva simuleringen eller stäng den interaktiva simuleringen fliken innan du startar en ny.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="313"/>
-        <source>You cannot insert %1, it is a %2. Only model, class, connector, record or block are allowed on diagram layer.</source>
-        <translation>Du kan inte sätta%1, är det en%2. Enda model, class, connector, record eller block är tillåtna på diagram lager.</translation>
+        <source>Please select a variable to plot before starting.</source>
+        <translation>Välj en variabel att plotta före start.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="315"/>
-        <source>You cannot insert %1, it is a %2. Only connector is allowed on the icon layer.</source>
-        <translation>Du kan inte sätta%1, är det en %2. Endast connector är tillåten på ikonen lagret.</translation>
+        <source>You cannot insert %1, it is a %2. Only model, class, connector, record or block are allowed on diagram layer.</source>
+        <translation>Du kan inte lägga till %1, det är en %2. Endast model, class, connector, record eller block är tillåtna i diagram.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="317"/>
-        <source>You cannot do a plot parametric between two different simulation result files. Make sure you select two variables from the same simulation result file.</source>
-        <translation>Du kan inte göra en tomt parametrisk mellan två olika filer simuleringsresultat. Se till att du väljer två variabler från samma simulering resultat fil.</translation>
+        <source>You cannot insert %1, it is a %2. Only connector is allowed on the icon layer.</source>
+        <translation>Du kan inte lägga till %1, det är en %2. Endast connector är tillåten i ikoner.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="319"/>
-        <source>The file &apos;%1&apos; is not a valid Modelica file. The file format is not supported. You can only open .mo files here.</source>
-        <translation>Filen &apos;%1&apos; är inte en giltig Modelica-fil. Filformatet stöds inte. Du kan bara öppna .mo-filer här.</translation>
+        <source>You cannot do a plot parametric between two different simulation result files. Make sure you select two variables from the same simulation result file.</source>
+        <translation>Du kan inte plotta variabler från två olika simuleringsresultat. Välj två variabler från samma simuleringsresultat.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="321"/>
-        <source>The html tags in the documentation are incorrect. Give correct starting and ending html tags and save it again.</source>
-        <translation>HTML-taggar i dokumentationen är felaktiga. Ge korrekt start och slutar HTML-taggar och spara den igen.</translation>
+        <source>The file &apos;%1&apos; is not a valid Modelica file. The file format is not supported. You can only open .mo files here.</source>
+        <translation>Filen &apos;%1&apos; är inte en giltig Modelica-fil. Filformatet stöds inte. Du kan endast öppna .mo-filer här.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="323"/>
+        <source>The html tags in the documentation are incorrect. Give correct starting and ending html tags and save it again.</source>
+        <translation>HTML-taggar i dokumentationen är felaktiga. Ange korrekta start- och slut-taggar och spara den igen.</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="325"/>
         <source>Enter a valid Positive Integer</source>
         <translation>Ange ett giltigt positivt heltal</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="325"/>
-        <source>You cannot drop an item on itself.</source>
-        <translation>Du kan inte släppa en punkt på sig själv.</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="327"/>
-        <source>Are you sure you want to delete &apos;%1&apos;? Everything contained inside this Package will also be deleted.</source>
-        <translation>Är du säker på att du vill ta bort &apos;%1&apos;? Allt finns inuti detta package kommer också att tas bort.</translation>
+        <source>You cannot drop an item on itself.</source>
+        <translation>Du kan inte släppa ett element på sig självt.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="329"/>
+        <source>Are you sure you want to delete &apos;%1&apos;? Everything contained inside this Package will also be deleted.</source>
+        <translation>Är du säker på att du vill ta bort &apos;%1&apos;? Allt som finns inuti detta paket kommer också att tas bort.</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="331"/>
         <source>Are you sure you want to delete &apos;%1&apos;?</source>
         <translation>Är du säker på att du vill ta bort &apos;%1&apos;?</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="331"/>
+        <location filename="../../Helper.cpp" line="333"/>
         <source>A component with the name %1 already exists. The name is changed from %1 to %2.
 This is probably wrong because the component is declared as %3.</source>
         <oldsource>A component with the name %1 already exists. The name is changed from %1 to %2.
 This is probably wrong because the component is decalred as %3.</oldsource>
         <translation>En komponent med namnet%1 finns redan. Namnet ändras från%1 till%2.
-Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
-    </message>
-    <message>
-        <location filename="../../Helper.cpp" line="333"/>
-        <source>The FMI is generated at %1/%2.fmu</source>
-        <translation>FMI genereras vid%1/%2.fmu</translation>
+Detta är förmodligen fel eftersom komponenten deklarerades som %3.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="335"/>
-        <source>The Modifier &apos;%1&apos; format is invalid. The correct format is &apos;phi(start=1)&apos;</source>
-        <translation>Den Modifier &quot;%1&quot; format är ogiltigt. Rätt format är &apos;phi(start=1)&apos;</translation>
+        <source>The FMI is generated at %1/%2.fmu</source>
+        <translation>FMI genererades som %1/%2.fmu</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="337"/>
+        <source>The Modifier &apos;%1&apos; format is invalid. The correct format is &apos;phi(start=1)&apos;</source>
+        <translation>Formatet på modifieraren &quot;%1&quot; är ogiltigt. Rätt format är &apos;phi(start=1)&apos;</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="339"/>
         <source>Unknown file format. The supported file formats are %1.</source>
-        <translation>Okänt filformat. De filformat som stöds är%1.</translation>
+        <translation>Okänt filformat. De filformat som stöds är %1.</translation>
     </message>
 </context>
 <context>
@@ -364,7 +368,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../OptionsWidget.cpp" line="560"/>
         <source>Auto Detected</source>
-        <translation>Auto Upptäckt</translation>
+        <translation>Upptäck Automatiskt</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="563"/>
@@ -404,17 +408,17 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../OptionsWidget.cpp" line="578"/>
         <source>Plotting View Mode:</source>
-        <translation>Plottning Visningsläge:</translation>
+        <translation>Visningsläge Diagram:</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="579"/>
         <source>Tabbed View</source>
-        <translation>Flikar Visa</translation>
+        <translation>Visa i Flik</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="581"/>
         <source>SubWindow View</source>
-        <translation>Underfönster Visa</translation>
+        <translation>Visa i Nytt Fönster</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="590"/>
@@ -424,7 +428,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../OptionsWidget.cpp" line="595"/>
         <source>Preserve User&apos;s GUI Customizations.</source>
-        <translation>Bevara Användarens GUI Anpassningar.</translation>
+        <translation>Bevara Användarens Gränssnittsanpassningar.</translation>
     </message>
 </context>
 <context>
@@ -432,12 +436,12 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="627"/>
         <source>Go to Line</source>
-        <translation>Gå till linje</translation>
+        <translation>Gå till rad</translation>
     </message>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="648"/>
         <source>Enter line number (1 to </source>
-        <translation>Ange antal rader (1 till </translation>
+        <translation>Ange radnummer (1 till </translation>
     </message>
 </context>
 <context>
@@ -445,17 +449,17 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="933"/>
         <source>Cancel Connection</source>
-        <translation>Avbryta Anslutningen</translation>
+        <translation>Avbryt Sammankoppling</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="738"/>
         <source>Cancels the current connection</source>
-        <translation>Avbryter den aktuella anslutningen</translation>
+        <translation>Avbryter den aktuella sammankopplingen</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="741"/>
         <source>Rotate Clockwise</source>
-        <translation>Rotera Medsols</translation>
+        <translation>Rotera Medurs</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="742"/>
@@ -465,7 +469,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="745"/>
         <source>Horizontal Flip</source>
-        <translation>Horisontell Flip</translation>
+        <translation>Vänd vågrätt</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="747"/>
@@ -475,7 +479,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="749"/>
         <source>Vertical Flip</source>
-        <translation>Vertikal Flip</translation>
+        <translation>Vänd lodrätt</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="750"/>
@@ -495,395 +499,402 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="756"/>
         <source>Reset Rotation</source>
-        <translation>Återställa Rotation</translation>
+        <translation>Återställ Rotation</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="757"/>
         <source>Reset the item rotation</source>
-        <translation>Återställ posten rotationen</translation>
+        <translation>Återställer rotationen på element</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="901"/>
         <source>The class needs to be saved before you can insert a bitmap.</source>
-        <translation>Class måste sparas innan du kan infoga en bitmapp.</translation>
+        <translation>Klassen måste sparas innan du kan infoga en bitmapp.</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="1395"/>
         <source>Error in class annotation </source>
-        <translation>Fel i Class kommentaren</translation>
+        <translation>Fel i klasskommentaren </translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="760"/>
         <source>Delete the item</source>
-        <translation>Ta bort objektet</translation>
+        <translation>Ta bort elementet</translation>
     </message>
 </context>
 <context>
     <name>Helper</name>
     <message>
-        <location filename="../../Helper.cpp" line="226"/>
+        <location filename="../../Helper.cpp" line="228"/>
         <source>Read-Only</source>
         <translation>Skrivskyddad</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="227"/>
+        <location filename="../../Helper.cpp" line="229"/>
         <source>Writable</source>
         <oldsource>Writeable</oldsource>
         <translation>Skrivbar</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="228"/>
+        <location filename="../../Helper.cpp" line="230"/>
         <source>Icon View</source>
         <translation>Ikonvy</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="229"/>
+        <location filename="../../Helper.cpp" line="231"/>
         <source>Diagram View</source>
         <translation>Diagramvy</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="230"/>
+        <location filename="../../Helper.cpp" line="232"/>
         <source>Modelica Text View</source>
         <translation>Textuell Vy</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="231"/>
+        <location filename="../../Helper.cpp" line="233"/>
         <source>View Documentation</source>
         <translation>Visa Dokumentation</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="232"/>
+        <location filename="../../Helper.cpp" line="234"/>
         <source>Search Modelica Standard Library</source>
-        <translation>Sök Modelica standard-bibliotek</translation>
+        <translation>Sök i Modelica standard-bibliotek</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="207"/>
-        <location filename="../../Helper.cpp" line="213"/>
+        <location filename="../../Helper.cpp" line="208"/>
+        <location filename="../../Helper.cpp" line="214"/>
         <source>Solid</source>
-        <translation>Fastämne</translation>
+        <translation>Heldragen</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="165"/>
+        <location filename="../../Helper.cpp" line="166"/>
         <source>Error</source>
         <translation>Fel</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="166"/>
+        <location filename="../../Helper.cpp" line="167"/>
         <source>Choose File</source>
-        <translation>Välj Arkiv</translation>
+        <translation>Välj fil</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="167"/>
+        <location filename="../../Helper.cpp" line="168"/>
         <source>Attributes</source>
         <translation>Attribut</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="168"/>
+        <location filename="../../Helper.cpp" line="169"/>
         <source>Properties</source>
         <translation>Egenskaper</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="169"/>
+        <location filename="../../Helper.cpp" line="170"/>
         <source>Connection</source>
         <translation>Anslutning</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="170"/>
+        <location filename="../../Helper.cpp" line="171"/>
         <source>Edit</source>
         <translation>Redigera</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="171"/>
+        <location filename="../../Helper.cpp" line="172"/>
         <source>Save</source>
         <translation>Spara</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="173"/>
+        <location filename="../../Helper.cpp" line="174"/>
         <source>Choose Directory</source>
         <translation>Välj Katalog</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="174"/>
+        <location filename="../../Helper.cpp" line="175"/>
         <source>General</source>
         <translation>Allmänna</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="175"/>
+        <location filename="../../Helper.cpp" line="176"/>
         <source>Parameters</source>
         <translation>Parametrar</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="176"/>
+        <location filename="../../Helper.cpp" line="177"/>
         <source>Name:</source>
         <translation>Namn:</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="177"/>
+        <location filename="../../Helper.cpp" line="178"/>
         <source>Comment:</source>
         <translation>Kommentar:</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="178"/>
+        <location filename="../../Helper.cpp" line="179"/>
         <source>Type</source>
         <translation>Typ</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="179"/>
+        <location filename="../../Helper.cpp" line="180"/>
         <source>Information</source>
-        <translation>Uppgifter</translation>
+        <translation>Information</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="180"/>
+        <location filename="../../Helper.cpp" line="181"/>
         <source>Modelica Files</source>
         <translation>Modelica Filer</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="181"/>
+        <location filename="../../Helper.cpp" line="182"/>
         <source>rename</source>
-        <translation>NamnÄndra</translation>
+        <translation>Ändra namn</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="182"/>
+        <location filename="../../Helper.cpp" line="183"/>
         <source>Check Model</source>
         <translation>Kontrollera Modell</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="183"/>
-        <source>Check the Modelica model</source>
-        <translation>Kontrollera Modelica model</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="184"/>
-        <source>Instantiate Model</source>
-        <translation>Exemplifiera Model</translation>
+        <source>Check the Modelica model</source>
+        <translation>Kontrollerar Modelica modellen</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="185"/>
-        <source>Instantiates/Flatten the Modelica model</source>
-        <translation>Exemplifiera/Platta Modelica-model</translation>
+        <source>Instantiate Model</source>
+        <translation>Instantiera Modell</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="186"/>
-        <source>Delete</source>
-        <translation>Bort</translation>
+        <source>Instantiates/Flatten the Modelica model</source>
+        <translation>Instantierar den aktuella modellen</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="187"/>
+        <source>Delete</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="188"/>
         <source>Copy</source>
         <translation>K&amp;opiera</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="188"/>
+        <location filename="../../Helper.cpp" line="189"/>
         <source>Paste</source>
         <translation>K&amp;listra in</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="189"/>
+        <location filename="../../Helper.cpp" line="190"/>
         <source>Loading</source>
         <translation>Laddar</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="190"/>
+        <location filename="../../Helper.cpp" line="191"/>
         <source>Question</source>
         <translation>Fråga</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="191"/>
+        <location filename="../../Helper.cpp" line="192"/>
         <source>Search</source>
         <translation>Sök</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="192"/>
+        <location filename="../../Helper.cpp" line="193"/>
         <source>Simulate</source>
         <translation>Simulera</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="193"/>
+        <location filename="../../Helper.cpp" line="194"/>
         <source>Simulation</source>
         <translation>Simulering</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="194"/>
+        <location filename="../../Helper.cpp" line="195"/>
         <source>Interactive Simulation</source>
         <translation>Interaktiv Simulering</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="195"/>
+        <location filename="../../Helper.cpp" line="196"/>
         <source>Export to OMNotebook</source>
         <translation>Exportera till OMNotebook</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="196"/>
+        <location filename="../../Helper.cpp" line="197"/>
         <source>Options</source>
         <translation>Alternativ</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="197"/>
+        <location filename="../../Helper.cpp" line="198"/>
         <source>Libraries</source>
         <translation>Bibliotek</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="198"/>
+        <location filename="../../Helper.cpp" line="199"/>
         <source>Text</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="199"/>
-        <source>Pen Style</source>
-        <translation>Penna Stil</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="200"/>
-        <source>Brush Style</source>
-        <translation>Borsten Stil</translation>
+        <source>Pen Style</source>
+        <translation>Pennstil</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="201"/>
+        <source>Brush Style</source>
+        <translation>Borststil</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="202"/>
         <source>Color:</source>
         <translation>Färg:</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="202"/>
+        <location filename="../../Helper.cpp" line="203"/>
         <source>Pick Color</source>
         <translation>Välj Färg</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="203"/>
+        <location filename="../../Helper.cpp" line="204"/>
         <source>No Color</source>
         <translation>Ingen Färg</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="204"/>
+        <location filename="../../Helper.cpp" line="205"/>
         <source>Thickness:</source>
         <translation>Tjocklek:</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="205"/>
-        <source>Smooth:</source>
-        <translation>Släta:</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="206"/>
-        <source>Bezier Curve</source>
-        <translation>Bezier kurva</translation>
+        <source>Smooth:</source>
+        <translation>Utslätning:</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="208"/>
-        <source>Dash</source>
-        <translation></translation>
+        <location filename="../../Helper.cpp" line="207"/>
+        <source>Bezier Curve</source>
+        <translation>Bezierkurva</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="209"/>
-        <source>Dot</source>
-        <translation></translation>
+        <source>Dash</source>
+        <translation>Streck</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="210"/>
-        <source>Dash Dot</source>
-        <translation></translation>
+        <source>Dot</source>
+        <translation>Punkt</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="211"/>
-        <source>Dash Dot Dot</source>
-        <translation></translation>
+        <source>Dash Dot</source>
+        <translation>Streck Punkt</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="212"/>
-        <source>No Brush</source>
-        <translation>Inge Borsten</translation>
+        <source>Dash Dot Dot</source>
+        <translation>Streck Punkt Punkt</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="214"/>
-        <source>Horizontal</source>
-        <translation>Horisontell</translation>
+        <location filename="../../Helper.cpp" line="213"/>
+        <source>No Brush</source>
+        <translation>Ingen Borste</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="215"/>
-        <source>Vertical</source>
-        <translation>Vertikal</translation>
+        <source>Horizontal</source>
+        <translation>Vågrät</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="216"/>
-        <source>Cross</source>
-        <translation>Passera</translation>
+        <source>Vertical</source>
+        <translation>Lodrät</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="217"/>
+        <source>Cross</source>
+        <translation>Kors</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="218"/>
         <source>Forward</source>
         <translation>Framåt</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="218"/>
+        <location filename="../../Helper.cpp" line="219"/>
         <source>Backward</source>
         <translation>Bakåt</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="219"/>
-        <source>CrossDiag</source>
-        <translation>PasseraDiag</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="220"/>
-        <source>HorizontalCylinder</source>
-        <translation>HorisontellCylinder</translation>
+        <source>CrossDiag</source>
+        <translation>Diagonala Kors</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="221"/>
-        <source>VertitalCylinder</source>
-        <translation>VertikalCylinder</translation>
+        <source>HorizontalCylinder</source>
+        <translation>Vågrät Cylinder</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="222"/>
+        <source>VertitalCylinder</source>
+        <translation>Lodrät Cylinder</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="223"/>
         <source>Sphere</source>
         <translation>Sfär</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="223"/>
-        <source>Remove</source>
-        <translation>Avlägsna</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="224"/>
-        <source>Location</source>
-        <translation>Läge</translation>
+        <source>Remove</source>
+        <translation>Ta bort</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="225"/>
-        <source>Text Properties</source>
-        <translation>Text Egenskaper</translation>
+        <source>Location</source>
+        <comment>For files</comment>
+        <translation>Sökväg</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="233"/>
+        <location filename="../../Helper.cpp" line="226"/>
+        <source>Location</source>
+        <comment>For errors</comment>
+        <translation>Position</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="227"/>
+        <source>Text Properties</source>
+        <translation>Textegenskaper</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="235"/>
         <source>Left</source>
         <translation>Vänster</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="234"/>
+        <location filename="../../Helper.cpp" line="236"/>
         <source>Center</source>
-        <translation></translation>
+        <translation>Centrerad</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="235"/>
+        <location filename="../../Helper.cpp" line="237"/>
         <source>Right</source>
         <translation>Höger</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="172"/>
+        <location filename="../../Helper.cpp" line="173"/>
         <source>Import FMI</source>
         <translation>Importera FMI</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="163"/>
+        <location filename="../../Helper.cpp" line="164"/>
         <source>OK</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="164"/>
+        <location filename="../../Helper.cpp" line="165"/>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="162"/>
+        <location filename="../../Helper.cpp" line="163"/>
         <source>Browse...</source>
         <translation>Bläddra...</translation>
     </message>
@@ -893,7 +904,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../IconProperties.cpp" line="285"/>
         <source>Component Attributes</source>
-        <translation>Komponent Attribut</translation>
+        <translation>Komponentattribut</translation>
     </message>
 </context>
 <context>
@@ -901,12 +912,12 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../IconProperties.cpp" line="47"/>
         <source>Component Properties</source>
-        <translation>Komponent Egenskaper</translation>
+        <translation>Komponentegenskaper</translation>
     </message>
     <message>
         <location filename="../../IconProperties.cpp" line="104"/>
         <source>Modifiers</source>
-        <translation>Modifieringsmedel</translation>
+        <translation>Modifierare</translation>
     </message>
     <message>
         <location filename="../../IconProperties.cpp" line="109"/>
@@ -916,7 +927,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../IconProperties.cpp" line="158"/>
         <source>Add new modifiers, e.g phi(start=1),w(start=2)</source>
-        <translation>Lägg till nya modifierare, t ex phi(start=1),w(start=2)</translation>
+        <translation>Lägg till nya modifierare, t.ex. phi(start=1),w(start=2)</translation>
     </message>
 </context>
 <context>
@@ -924,27 +935,27 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../FMIWidget.cpp" line="76"/>
         <source>* This feature is experimental. Most models are not yet handled by it.</source>
-        <translation>* Denna funktion är experimentell. De flesta modeller har ännu inte hanteras av den.</translation>
+        <translation>* Denna funktion är experimentell. De flesta modeller hanteras ännu inte av den.</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="61"/>
         <source>FMU File:</source>
-        <translation>FMU Fil:</translation>
+        <translation>FMU-fil:</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="66"/>
         <source>Output Directory (Optional):</source>
-        <translation>Utsignal Katalog (Valfritt):</translation>
+        <translation>Utdatakatalog (Valfritt):</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="71"/>
         <source>* If no Output Directory specified then the FMU files are generated in the current working directory.</source>
-        <translation>* Om ingen utsignal katalog som anges sedan FMU filer skapas i den aktuella arbetskatalogen.</translation>
+        <translation>* Om ingen utdatakatalog anges skapas FMU-filer i den aktuella arbetskatalogen.</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="115"/>
         <source>FMU File</source>
-        <translation>FMU Fil</translation>
+        <translation>FMU-fil</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="127"/>
@@ -988,7 +999,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="541"/>
         <source>Pause</source>
-        <translation>Paus</translation>
+        <translation>Pausa</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="545"/>
@@ -1008,22 +1019,22 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="562"/>
         <source>Shut Down</source>
-        <translation>Stäng</translation>
+        <translation>Stäng av</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="566"/>
         <source>Shut down the running interactive simulation.</source>
-        <translation>Stäng den löpande interaktiva simuleringen.</translation>
+        <translation>Stänger av den löpande interaktiva simuleringen.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="572"/>
         <source>Show OMI Log</source>
-        <translation>Visar OMI Log</translation>
+        <translation>Visa OMI Logg</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="576"/>
         <source>Shows the OMI Log Message Window.</source>
-        <translation>Visar OMI fönstret Log meddelande.</translation>
+        <translation>Visar fönstret med loggmeddelanden för OMI.</translation>
     </message>
 </context>
 <context>
@@ -1041,12 +1052,12 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../OptionsWidget.cpp" line="1262"/>
         <source>Add</source>
-        <translation>Lägga</translation>
+        <translation>Lägg till</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="1274"/>
         <source>* The libraries changes will take effect after restart.</source>
-        <translation>* De bibliotek ändringarna träder i kraft efter omstart.</translation>
+        <translation>* Bibliotekändringarna kommer att träda i kraft efter omstart.</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="1322"/>
@@ -1059,7 +1070,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../LibraryWidget.cpp" line="586"/>
         <source>Modelica Standard Library</source>
-        <translation></translation>
+        <translation>Modelica Standardbibliotek</translation>
     </message>
     <message>
         <location filename="../../LibraryWidget.cpp" line="609"/>
@@ -1096,19 +1107,19 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
         <location filename="../../mainwindow.cpp" line="84"/>
         <source>Messages</source>
         <oldsource> Messages</oldsource>
-        <translation> Meddelanden</translation>
+        <translation>Meddelanden</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="103"/>
         <source>Search MSL</source>
         <oldsource> Search MSL</oldsource>
-        <translation> Sök MSL</translation>
+        <translation>Sök i MSL</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="112"/>
         <source>Components</source>
         <oldsource> Components</oldsource>
-        <translation> Komponenter</translation>
+        <translation>Komponenter</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="119"/>
@@ -1119,7 +1130,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
         <location filename="../../mainwindow.cpp" line="139"/>
         <source>Plot Variables</source>
         <oldsource> Plot Variables</oldsource>
-        <translation>Plot Variabler</translation>
+        <translation>Diagramvariabler</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="148"/>
@@ -1180,7 +1191,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="351"/>
         <source>Save As a File</source>
-        <translation>Spara Som en fil</translation>
+        <translation>Spara som en fil</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="353"/>
@@ -1190,17 +1201,17 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="354"/>
         <source>Save All Files</source>
-        <translation>Spara Alla filer</translation>
+        <translation>Spara alla filer</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="363"/>
         <source>Close</source>
-        <translation>Stänga</translation>
+        <translation>Stäng</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="364"/>
         <source>Exits the </source>
-        <translation>kommer ut från </translation>
+        <translation>Stänger </translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="369"/>
@@ -1215,12 +1226,12 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="373"/>
         <source>Redo</source>
-        <translation>Göra om</translation>
+        <translation>Gör om</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="375"/>
         <source>Redo last activity</source>
-        <translation>Göra om senaste aktivitet</translation>
+        <translation>Gör om senaste aktivitet</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="377"/>
@@ -1235,7 +1246,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="389"/>
         <source>Shows Welcome Page</source>
-        <translation>Visar Välkomstsidan</translation>
+        <translation>Visar välkomstsidan</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="397"/>
@@ -1245,7 +1256,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="398"/>
         <source>Shows Modeling View</source>
-        <translation>Visar Modellering Se</translation>
+        <translation>Visar modelleringsvy</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="403"/>
@@ -1255,7 +1266,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="404"/>
         <source>Shows Plotting View</source>
-        <translation>Visar Rita View</translation>
+        <translation>Visar diagramvy</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="410"/>
@@ -1265,7 +1276,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="411"/>
         <source>Shows Interactive Simulation View</source>
-        <translation>Visar Interaktiv Simulering Visa</translation>
+        <translation>Visar den interaktiva simuleringsvyn</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="417"/>
@@ -1300,37 +1311,37 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="433"/>
         <source>Simulate the Model</source>
-        <translation>Simulera modell</translation>
+        <translation>Simulera modellen</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="437"/>
         <source>Interactive Simulate the Model</source>
-        <translation>Interaktiv Simulera modell</translation>
+        <translation>Simulera modellen interaktivt</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="450"/>
         <source>Export FMI</source>
-        <translation></translation>
+        <translation>Exportera FMI</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="451"/>
         <source>Exports the model as Functional Mockup Interface (FMI)</source>
-        <translation>Exporten modellen som Functional Mockup Interface (FMI)</translation>
+        <translation>Exporterar modellen som Functional Mockup Interface (FMI)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="456"/>
         <source>Imports the model from Functional Mockup Interface (FMI)</source>
-        <translation>Import modellen från Funktionell Mockup gränssnitt (FMI)</translation>
+        <translation>Importerar modellen från Funktionell Mockup gränssnitt (FMI)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="460"/>
         <source>OMC Logger</source>
-        <translation>OMC Loggenheten</translation>
+        <translation>OMC Logg</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="461"/>
         <source>Shows OMC Logger Window</source>
-        <translation>Visar OMC Loggenheten Fönster</translation>
+        <translation>Visar OMC loggfönster</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="464"/>
@@ -1340,37 +1351,37 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="465"/>
         <source>Opens OpenModelica Shell (OMShell)</source>
-        <translation>Öppnas OpenModelica Shell (OMShell)</translation>
+        <translation>Öppnar OpenModelica Shell (OMShell)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="469"/>
         <source>Exports the current model to OMNotebook</source>
-        <translation>Exporterar den aktuella modellen OMNotebook</translation>
+        <translation>Exporterar den aktuella modellen till OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="473"/>
         <source>Import from OMNotebook</source>
-        <translation>Import från OMNotebook</translation>
+        <translation>Importera från OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="474"/>
         <source>Imports the models from OMNotebook</source>
-        <translation>Import av modeller från OMNotebook</translation>
+        <translation>Importerar modeller från OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="478"/>
         <source>Shows the options window</source>
-        <translation>Visar fönstret</translation>
+        <translation>Visar inställningar</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="482"/>
         <source>User Manual</source>
-        <translation>Bruksanvisning</translation>
+        <translation>Användarhandbok</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="483"/>
         <source>Opens the User Manual</source>
-        <translation>Öppnas Bruksanvisning</translation>
+        <translation>Öppnar användarhandboken</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="487"/>
@@ -1390,7 +1401,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="495"/>
         <source>Draws a line.</source>
-        <translation>Drar en linje.</translation>
+        <translation>Ritar en linje.</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="499"/>
@@ -1400,7 +1411,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="500"/>
         <source>Draws a polygon.</source>
-        <translation>Drar en polygon.</translation>
+        <translation>Ritar en polygon.</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="504"/>
@@ -1410,7 +1421,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="505"/>
         <source>Draws a rectangle.</source>
-        <translation>Drar en rektangel.</translation>
+        <translation>Ritar en rektangel.</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="509"/>
@@ -1420,7 +1431,7 @@ Detta är förmodligen fel eftersom komponenten deklarerade%3.</translation>
     <message>
         <location filename="../../mainwindow.cpp" line="510"/>
         <source>Draws an Ellipse.</source>
-        <translation>Drar en ellips.</translation>
+        <translation>Ritar en ellips.</translation>
     </message>
     <message utf8="true">
         <location filename="../../mainwindow.cpp" line="1187"/>
@@ -1440,22 +1451,22 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../mainwindow.cpp" line="58"/>
         <source>Connecting to OpenModelica Compiler</source>
-        <translation>Ansluter till OpenModelica Compiler</translation>
+        <translation>Ansluter till OpenModelica Kompilator</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="62"/>
         <source>Reading Settings</source>
-        <translation>Läser Inställningar</translation>
+        <translation>Läser In Inställningar</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="65"/>
         <source>Loading Widgets</source>
-        <translation>Laddar Widgets</translation>
+        <translation>Laddar Gränssnittskomponenter</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="100"/>
         <source>Loading Modelica Standard Library</source>
-        <translation>Laddar Modelica Standard Library</translation>
+        <translation>Laddar Modelica Standardbibliotek</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="157"/>
@@ -1465,12 +1476,12 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../mainwindow.cpp" line="343"/>
         <source>Opens Modelica file</source>
-        <translation>Öppnas Modelica fil</translation>
+        <translation>Öppnar Modelica fil</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="515"/>
         <source>Draws a Text.</source>
-        <translation>Ritar en text.</translation>
+        <translation>Ritar en textruta.</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="519"/>
@@ -1486,12 +1497,12 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
         <location filename="../../mainwindow.cpp" line="524"/>
         <source>Connect Mode</source>
         <oldsource>Connect/Unconnect Mode</oldsource>
-        <translation>Anslut Läge</translation>
+        <translation>Anslutningsläge</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="525"/>
         <source>Changes to/from connect mode</source>
-        <translation>Ändringar till/från anslut mode</translation>
+        <translation>Ändrar till/från anslutningsläge</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="530"/>
@@ -1521,7 +1532,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../mainwindow.cpp" line="539"/>
         <source>Exports the current model to Image</source>
-        <translation>Exporterar den nuvarande model till bild</translation>
+        <translation>Exporterar den aktuella modellen till bild</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="554"/>
@@ -1581,32 +1592,32 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../mainwindow.cpp" line="683"/>
         <source>File Toolbar</source>
-        <translation>Arkiv Verktygsfältet</translation>
+        <translation>Arkiv</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="713"/>
         <source>View Toolbar</source>
-        <translation>Visa Verktygsfält</translation>
+        <translation>Vyer</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="722"/>
         <source>Shapes Toolbar</source>
-        <translation>Former verktygsfält</translation>
+        <translation>Former</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="926"/>
         <source>Exporting model to OMNotebook</source>
-        <translation>Exporterande model för att OMNotebook</translation>
+        <translation>Exporterar model till OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1039"/>
         <source>Importing model from OMNotebook</source>
-        <translation>Importera model från OMNotebook</translation>
+        <translation>Importerar model från OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1094"/>
         <source>Exporting model as an Image</source>
-        <translation>Exportera model som en Bild</translation>
+        <translation>Exporterar model som en Bild</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1186"/>
@@ -1616,7 +1627,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../mainwindow.cpp" line="1295"/>
         <source>make FMU</source>
-        <translation>göra FMU</translation>
+        <translation>göra FMU av</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1300"/>
@@ -1631,17 +1642,17 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../mainwindow.cpp" line="749"/>
         <source>Plot Toolbar</source>
-        <translation>Tomt Verktygsfältet</translation>
+        <translation>Diagram</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="755"/>
         <source>Perspective Toolbar</source>
-        <translation>Perspektiv Verktygsfält</translation>
+        <translation>Perspektiv</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1058"/>
         <source>Error reading the xml file</source>
-        <translation>Fel vid läsning av xml filen</translation>
+        <translation>Fel vid inläsning av XML filen</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1087"/>
@@ -1651,12 +1662,12 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../mainwindow.cpp" line="1107"/>
         <source>Generated by OpenModelica Connection Editor Tool</source>
-        <translation>Skapad av OpenModelica Connection Editor Verktyget</translation>
+        <translation>Skapad av OpenModelica Connection Editor</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1132"/>
         <source>Error saving the image file</source>
-        <translation>Fel att spara bildfilen</translation>
+        <translation>Fel vid sparning av bildfilen</translation>
     </message>
 </context>
 <context>
@@ -1672,12 +1683,12 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../ModelWidget.cpp" line="53"/>
         <source>Insert in Package (optional):</source>
-        <translation>Infoga i package (valfritt):</translation>
+        <translation>Infoga i paket (valfritt):</translation>
     </message>
     <message>
         <location filename="../../ModelWidget.cpp" line="63"/>
         <source>Save contents of package in one file</source>
-        <translation>Spara innehållet i package i en fil</translation>
+        <translation>Spara innehållet i paketet i en fil</translation>
     </message>
     <message>
         <location filename="../../ModelWidget.cpp" line="82"/>
@@ -1687,12 +1698,12 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../ModelWidget.cpp" line="108"/>
         <source>in Global Scope</source>
-        <translation>i den Globala Omfattningen</translation>
+        <translation>i den globala omgivningen</translation>
     </message>
     <message>
         <location filename="../../ModelWidget.cpp" line="113"/>
         <source>in Package &apos;</source>
-        <translation>i Package.&apos;</translation>
+        <translation>i paketet.&apos;</translation>
     </message>
 </context>
 <context>
@@ -1700,7 +1711,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../ModelicaEditor.cpp" line="72"/>
         <source>Previous</source>
-        <translation>Förra</translation>
+        <translation>Föregående</translation>
     </message>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="79"/>
@@ -1710,7 +1721,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../ModelicaEditor.cpp" line="84"/>
         <source>Match case</source>
-        <translation>Matcha fallet</translation>
+        <translation>Skiftlägeskänslig</translation>
     </message>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="85"/>
@@ -1773,12 +1784,12 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../OptionsWidget.cpp" line="758"/>
         <source>Number</source>
-        <translation>Antal</translation>
+        <translation>Nummer</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="763"/>
         <source>Keyword</source>
-        <translation>Sökord</translation>
+        <translation>Nyckelord</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="773"/>
@@ -1788,7 +1799,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../OptionsWidget.cpp" line="778"/>
         <source>Quotes</source>
-        <translation>Citat</translation>
+        <translation>Sträng</translation>
     </message>
 </context>
 <context>
@@ -1796,7 +1807,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../LibraryWidget.cpp" line="118"/>
         <source>Rename the modelica model</source>
-        <translation>Kontrollera Modelica model</translation>
+        <translation>Byter namn på Modelica modellen</translation>
     </message>
     <message>
         <location filename="../../LibraryWidget.cpp" line="433"/>
@@ -1806,17 +1817,17 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../LibraryWidget.cpp" line="130"/>
         <source>Delete the modelica model</source>
-        <translation>Ta bort Modelica model</translation>
+        <translation>Tar bort Modelica modellen</translation>
     </message>
     <message>
         <location filename="../../LibraryWidget.cpp" line="134"/>
         <source>Copy the modelica model</source>
-        <translation>Kopiera Modelica model</translation>
+        <translation>Kopierar Modelica modellen</translation>
     </message>
     <message>
         <location filename="../../LibraryWidget.cpp" line="138"/>
         <source>Paste the modelica model</source>
-        <translation>Klistra in Modelica model</translation>
+        <translation>Klistrar in Modelica modellen</translation>
     </message>
 </context>
 <context>
@@ -1824,7 +1835,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../OMCProxy.cpp" line="71"/>
         <source>OMC Messages Log</source>
-        <translation>OMC Meddelanden Log</translation>
+        <translation>OMC Meddelandelogg</translation>
     </message>
     <message>
         <location filename="../../OMCProxy.cpp" line="82"/>
@@ -1839,27 +1850,27 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../OMCProxy.cpp" line="303"/>
         <source>Unable to communicate with OpenModelica Compiler.</source>
-        <translation>Det går inte att kommunicera med OpenModelica Compiler.</translation>
+        <translation>Det går inte att kommunicera med OpenModelica-kompilatorn.</translation>
     </message>
     <message>
         <location filename="../../OMCProxy.cpp" line="389"/>
         <source>Connection with the OpenModelica Compiler has been lost.</source>
-        <translation>Samband med OpenModelica Compiler har gått förlorad.</translation>
+        <translation>Anslutningen tll OpenModelica-kompilatorn har tappats.</translation>
     </message>
     <message>
         <location filename="../../OMCProxy.cpp" line="747"/>
         <source> requires Modelica 3 annotations</source>
-        <translation>behöver Modelica 3 annotations</translation>
+        <translation>kräver Modelica 3 annotationer</translation>
     </message>
     <message>
         <location filename="../../OMCProxy.cpp" line="748"/>
         <source>Modelica Standard Library version </source>
-        <translation></translation>
+        <translation>Modelica Standardbibliotek version </translation>
     </message>
     <message>
         <location filename="../../OMCProxy.cpp" line="748"/>
         <source> is unsupported.</source>
-        <translation>stöds inte.</translation>
+        <translation>stöds ej.</translation>
     </message>
 </context>
 <context>
@@ -1867,43 +1878,43 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="159"/>
         <source>OMI Messages Log</source>
-        <translation>OMI Meddelanden Log</translation>
+        <translation>OMI Meddelandelogg</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="161"/>
         <source>OMI Runtime Output</source>
-        <translation></translation>
+        <translation>OMI Körningsutdata</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="170"/>
         <source>OMI Control Server</source>
-        <translation></translation>
+        <translation>OMI Kontrollserver</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="179"/>
         <source>OMI Transfer Server</source>
-        <translation></translation>
+        <translation>OMI Överföringsserver</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="188"/>
         <source>OMI Control Client</source>
-        <translation></translation>
+        <translation>OMI Kontrollklient</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="443"/>
         <source>The OMI control server was not found.</source>
         <translatorcomment>OMI control server hittades inte.</translatorcomment>
-        <translation></translation>
+        <translation>Kontrollservern för OMI kunde inte hittas.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="448"/>
         <source>The OMI control server refuse the connection.</source>
-        <translation>OMI control serve vägra inkoppling.</translation>
+        <translation>Kontrollservern för OMI vägrade anslutning.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="454"/>
         <source>The following error occurred while communicating with OMI control server:</source>
-        <translation>Följande fel uppstod under kommunikation med OMI control server:</translation>
+        <translation>Följande fel uppstod under kommunikation med kontrollservern för OMI:</translation>
     </message>
 </context>
 <context>
@@ -1942,12 +1953,12 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotMainWindow.cpp" line="69"/>
         <source>Close</source>
-        <translation>Stänga</translation>
+        <translation>Stäng</translation>
     </message>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotMainWindow.cpp" line="73"/>
         <source>Tab View</source>
-        <translation>Fliken Visa</translation>
+        <translation>Flikvy</translation>
     </message>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotMainWindow.cpp" line="89"/>
@@ -1957,7 +1968,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotMainWindow.cpp" line="97"/>
         <source>&amp;Options</source>
-        <translation></translation>
+        <translation>&amp;Inställningar</translation>
     </message>
 </context>
 <context>
@@ -1965,7 +1976,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="70"/>
         <source>Plot by OpenModelica</source>
-        <translation>Plot av OpenModelica</translation>
+        <translation>Diagram av OpenModelica</translation>
     </message>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="75"/>
@@ -1975,17 +1986,17 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="169"/>
         <source>Zoom</source>
-        <translation>zoom</translation>
+        <translation>Zoom</translation>
     </message>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="176"/>
         <source>Pan</source>
-        <translation>Panna</translation>
+        <translation>Panorera</translation>
     </message>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="183"/>
         <source>Fit in View</source>
-        <translation>Passa i Visa</translation>
+        <translation>Anpassa till vy</translation>
     </message>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="194"/>
@@ -2015,7 +2026,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="740"/>
         <source>Save File As</source>
-        <translation>Spara filen som</translation>
+        <translation>Spara fil som</translation>
     </message>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="740"/>
@@ -2030,7 +2041,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="749"/>
         <source>Generated by OpenModelica Plot Tool</source>
-        <translation></translation>
+        <translation>Genererad av OpenModelica diagram verktyg</translation>
     </message>
 </context>
 <context>
@@ -2043,7 +2054,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../OptionsWidget.cpp" line="488"/>
         <source>Modelica Text Editor</source>
-        <translation>Modelica Textredigeraren</translation>
+        <translation>Modelica Textredigerare</translation>
     </message>
 </context>
 <context>
@@ -2051,7 +2062,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="83"/>
         <source>* The parameters default value is used if no value is specified.</source>
-        <translation>* Parametrarna Standardvärdet används om inget värde anges.</translation>
+        <translation>* Parametrarnas standardvärde används om inget värde anges.</translation>
     </message>
 </context>
 <context>
@@ -2059,23 +2070,23 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../PlotWidget.cpp" line="169"/>
         <source>Delete Result</source>
-        <translation>Bort Resultat</translation>
+        <translation>Ta Bort Resultat</translation>
     </message>
     <message>
         <location filename="../../PlotWidget.cpp" line="170"/>
         <source>Delete the result</source>
-        <translation>Bort Resultatet</translation>
+        <translation>Tar Bort Resultatet</translation>
     </message>
     <message>
         <location filename="../../PlotWidget.cpp" line="183"/>
         <location filename="../../PlotWidget.cpp" line="191"/>
         <source>Failed to read variables. Could not open file </source>
-        <translation>Misslyckades att läsa variabler. Kunde inte öppna filen </translation>
+        <translation>Misslyckades att läsa in variabler. Kunde inte öppna filen </translation>
     </message>
     <message>
         <location filename="../../PlotWidget.cpp" line="224"/>
         <source>Simulation Result File: </source>
-        <translation>Simulering Resultat Fil: </translation>
+        <translation>Resultatfil för simulering: </translation>
     </message>
     <message>
         <location filename="../../PlotWidget.cpp" line="314"/>
@@ -2085,12 +2096,12 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../PlotWidget.cpp" line="314"/>
         <source>Variable: </source>
-        <translation>variabel: </translation>
+        <translation>Variabel: </translation>
     </message>
     <message>
         <location filename="../../PlotWidget.cpp" line="342"/>
         <source>No plot window is active for plotting. Please select a plot window or open a new.</source>
-        <translation>Ingen tomt fönster är aktiv för plottning. Välj ett tomt fönster eller öppna en ny.</translation>
+        <translation>Inget diagramfönster är aktivt för plottning. Välj ett existerande diagramfönster eller öppna ett nytt.</translation>
     </message>
 </context>
 <context>
@@ -2098,7 +2109,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../ProblemsWidget.cpp" line="241"/>
         <source>Kind</source>
-        <translation>Slag</translation>
+        <translation>Sort</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="241"/>
@@ -2146,7 +2157,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../ProblemsWidget.cpp" line="65"/>
         <source>Only Show Warnings</source>
-        <translation>Visa endast Varningar</translation>
+        <translation>Visa endast varningar</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="74"/>
@@ -2156,7 +2167,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../ProblemsWidget.cpp" line="83"/>
         <source>Show All Problems</source>
-        <translation>Visa Alla problem</translation>
+        <translation>Visa alla problem</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="104"/>
@@ -2169,7 +2180,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../SimulationWidget.cpp" line="648"/>
         <source>Cancel Simulation</source>
-        <translation>Avbryta Simulering</translation>
+        <translation>Avbryt Simulering</translation>
     </message>
 </context>
 <context>
@@ -2187,7 +2198,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="3191"/>
         <source>There are unsaved models opened. Do you still want to quit?</source>
-        <translation>Det är inte sparats models öppnas. Vill du fortfarande sluta?</translation>
+        <translation>Det finns modeller som ännu inte sparats. Vill du fortfarande avsluta?</translation>
     </message>
 </context>
 <context>
@@ -2195,7 +2206,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../ModelWidget.cpp" line="192"/>
         <source>New Name:</source>
-        <translation>Ny Namn:</translation>
+        <translation>Nytt Namn:</translation>
     </message>
 </context>
 <context>
@@ -2208,7 +2219,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../LibraryWidget.cpp" line="1317"/>
         <source>Sorry, no items found</source>
-        <translation>Tyvärr, du har inga objekt</translation>
+        <translation>Tyvärr, inga objekt hittades</translation>
     </message>
 </context>
 <context>
@@ -2221,71 +2232,71 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="161"/>
         <source>Shows the shape text properties</source>
-        <translation>Visar form text egenskaper</translation>
+        <translation>Visar formegenskaper för text</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="164"/>
         <source>NoArrow(Start)</source>
-        <translation></translation>
+        <translation>Ingen Pil (Start)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="165"/>
         <location filename="../../ShapeAnnotation.cpp" line="177"/>
         <source>No Arrow on the line</source>
-        <translation></translation>
+        <translation>Ingen pil på linjen</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="167"/>
         <source>HalfArrow(Start)</source>
-        <translation></translation>
+        <translation>Half Pil (Start)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="168"/>
         <location filename="../../ShapeAnnotation.cpp" line="180"/>
         <source>Half Arrow for the line</source>
-        <translation></translation>
+        <translation>Half pil på linjen</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="170"/>
         <source>OpenArrow(Start)</source>
-        <translation></translation>
+        <translation>Öppen Pil (Start)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="171"/>
         <location filename="../../ShapeAnnotation.cpp" line="183"/>
         <source>Open Arrow on the line</source>
-        <translation></translation>
+        <translation>Öppen pil på linjen</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="173"/>
         <source>FilledArrow(Start)</source>
-        <translation></translation>
+        <translation>Fylld Pil (Start)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="174"/>
         <location filename="../../ShapeAnnotation.cpp" line="186"/>
         <source>Filled Arrow for the line</source>
-        <translation></translation>
+        <translation>Fylld pil på linjen</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="176"/>
         <source>NoArrow(End)</source>
-        <translation></translation>
+        <translation>Ingen Pil (Slut)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="179"/>
         <source>HalfArrow(End)</source>
-        <translation></translation>
+        <translation>Half Pil (Slut)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="182"/>
         <source>OpenArrow(End)</source>
-        <translation></translation>
+        <translation>Öppen Pil (Slut)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="185"/>
         <source>FilledArrow(End</source>
-        <translation></translation>
+        <translation>Fylld Pil (Slut)</translation>
     </message>
 </context>
 <context>
@@ -2299,7 +2310,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
         <location filename="../../ShapeAnnotation.cpp" line="768"/>
         <source>Corner Radius:</source>
         <oldsource>CornerRadius:</oldsource>
-        <translation>Corner Radie:</translation>
+        <translation>Hörnradie:</translation>
     </message>
 </context>
 <context>
@@ -2307,7 +2318,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../SimulationWidget.cpp" line="80"/>
         <source>Simulation Interval</source>
-        <translation>Simulering Intervall</translation>
+        <translation>Simuleringsintervall</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="81"/>
@@ -2337,12 +2348,12 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../SimulationWidget.cpp" line="106"/>
         <source>Compiler Flags (Optional):</source>
-        <translation>Kompilatorflaggorna (valfritt):</translation>
+        <translation>Kompilatorflaggor (valfritt):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="121"/>
         <source>Number of Intervals:</source>
-        <translation>Antalet intervall:</translation>
+        <translation>Antal intervall:</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="124"/>
@@ -2357,37 +2368,37 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../SimulationWidget.cpp" line="131"/>
         <source>Variable Filter (Optional):</source>
-        <translation>Variabla Filter (valfritt):</translation>
+        <translation>Variabelfilter (valfritt):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="146"/>
         <source>Output</source>
-        <translation>Utsignal</translation>
+        <translation>Utdata</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="150"/>
         <source>Model Setup File (Optional):</source>
-        <translation>Model Setup fil (valfritt):</translation>
+        <translation>Initialvärden för modell (valfritt):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="155"/>
         <source>Initialization Method (Optional):</source>
-        <translation>Initiering Metod (valfritt):</translation>
+        <translation>Initieringsmetod (valfritt):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="159"/>
         <source>Optimization Method (Optional):</source>
-        <translation>Optimering Metod (valfritt):</translation>
+        <translation>Optimeringsmetod (valfritt):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="163"/>
         <source>Equation System Initialization File (Optional):</source>
-        <translation>Ekvationssystemet initieringsfil (valfritt):</translation>
+        <translation>Initieringsvärden för ekvationssystemet (valfritt):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="168"/>
         <source>Equation System Initialization Time (Optional):</source>
-        <translation>Ekvationssystemet Initiering Tid (valfritt):</translation>
+        <translation>Initieringstid för ekvationssystemet (valfritt):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="171"/>
@@ -2402,12 +2413,12 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../SimulationWidget.cpp" line="173"/>
         <source>Result Initialization</source>
-        <translation>Resultat Initiering</translation>
+        <translation>Initieringsresultat</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="174"/>
         <source>Solver</source>
-        <translation></translation>
+        <translation>Lösare</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="175"/>
@@ -2437,41 +2448,41 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     <message>
         <location filename="../../SimulationWidget.cpp" line="209"/>
         <source>Simulation Flags</source>
-        <translation>Simulering Flaggor</translation>
+        <translation>Simuleringsflaggor</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="423"/>
         <source>Compiling Model.
 Please wait for a while.</source>
-        <translation>Kompilera Model.
-Vänta en stund.</translation>
+        <translation>Kompilerar Modell.
+Var god vänta.</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="428"/>
         <source>Compiling Model</source>
-        <translation>Kompilera Model</translation>
+        <translation>Kompilerar Model</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="509"/>
         <source>Running Simulation.
 Please wait for a while.</source>
-        <translation>Köra Simulering.
-Vänta en stund.</translation>
+        <translation>Kör Simulering.
+Var god vänta.</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="513"/>
         <source>Running Simulation</source>
-        <translation>Rinnande Simulering</translation>
+        <translation>Kör Simulering</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="588"/>
         <source>Starting Interactive Simulation Server</source>
-        <translation>Start interaktiva simulering server</translation>
+        <translation>Startar interaktiv simuleringsserver</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="227"/>
         <source>Save simulation settings inside model</source>
-        <translation>Spara simulering inställningar inuti model</translation>
+        <translation>Spara simuleringsinställningar i model</translation>
     </message>
 </context>
 <context>
@@ -2484,7 +2495,7 @@ Vänta en stund.</translation>
     <message>
         <location filename="../../StringHandler.cpp" line="620"/>
         <source>Path</source>
-        <translation>Gång</translation>
+        <translation>Sökväg</translation>
     </message>
 </context>
 <context>
@@ -2500,7 +2511,7 @@ Vänta en stund.</translation>
     <message>
         <location filename="../../TextAnnotation.cpp" line="769"/>
         <source>Text of Label:</source>
-        <translation>Text i Label:</translation>
+        <translation>Text i etikett:</translation>
     </message>
     <message>
         <location filename="../../TextAnnotation.cpp" line="772"/>
@@ -2535,7 +2546,7 @@ Vänta en stund.</translation>
     <message>
         <location filename="../../TextAnnotation.cpp" line="800"/>
         <source>Alignment:</source>
-        <translation>Uppriktning:</translation>
+        <translation>Placering:</translation>
     </message>
 </context>
 <context>
@@ -2548,7 +2559,7 @@ Vänta en stund.</translation>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="117"/>
         <source>* Select the variable to plot it.</source>
-        <translation>* Välj variabeln för att rita den.</translation>
+        <translation>* Välj en variabel för att plotta den.</translation>
     </message>
 </context>
 <context>
@@ -2566,12 +2577,12 @@ Vänta en stund.</translation>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="2670"/>
         <source>Create Model</source>
-        <translation>Skapa  Model</translation>
+        <translation>Skapa Model</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="2673"/>
         <source>Open Model</source>
-        <translation>Öppen Model</translation>
+        <translation>Öppna Model</translation>
     </message>
 </context>
 </TS>

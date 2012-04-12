@@ -87,183 +87,183 @@
 <context>
     <name>GUIMessages</name>
     <message>
-        <location filename="../../Helper.cpp" line="243"/>
+        <location filename="../../Helper.cpp" line="245"/>
         <source>Please check the Problems Tab below for more error specific details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="245"/>
+        <location filename="../../Helper.cpp" line="247"/>
         <source>A Component with the same name already exists. Please choose another Name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="247"/>
+        <location filename="../../Helper.cpp" line="249"/>
         <source>You cannot connect a port to itself.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="249"/>
+        <location filename="../../Helper.cpp" line="251"/>
         <source>There is no open Model to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="251"/>
+        <location filename="../../Helper.cpp" line="253"/>
         <source>Simulation Start Time is not defined. Default value (0.0) will be used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="253"/>
+        <location filename="../../Helper.cpp" line="255"/>
         <source>Simulation Stop Time is not defined.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="255"/>
+        <location filename="../../Helper.cpp" line="257"/>
         <source>Simulation Start Time should be less than or equal to Stop Time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="257"/>
+        <location filename="../../Helper.cpp" line="259"/>
         <source>Please enter %1 Name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="259"/>
+        <location filename="../../Helper.cpp" line="261"/>
         <source>%1 %2 already exists %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="261"/>
+        <location filename="../../Helper.cpp" line="263"/>
         <source>An item with the same name already exists. Please try some other name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="263"/>
+        <location filename="../../Helper.cpp" line="265"/>
         <source>Could not find environment variable OPENMODELICAHOME. Please make sure OpenModelica is installed properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="265"/>
+        <location filename="../../Helper.cpp" line="267"/>
         <source>Following Error has occurred. 
 
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="267"/>
+        <location filename="../../Helper.cpp" line="269"/>
         <source>Problems are found in Modelica Text. 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="269"/>
+        <location filename="../../Helper.cpp" line="271"/>
         <source>
 
 For normal users it is recommended to choose &apos;Undo changes&apos;. You can also choose &apos;Let me fix errors&apos; if you want to fix them by your own.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="271"/>
+        <location filename="../../Helper.cpp" line="273"/>
         <source>Please make sure you are not using any OpenModelica Keywords like (model, package, record, class etc.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="273"/>
+        <location filename="../../Helper.cpp" line="275"/>
         <source>Incompatible types for the connectors.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="275"/>
+        <location filename="../../Helper.cpp" line="277"/>
         <source>Do you want to save your changes before closing?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="277"/>
+        <location filename="../../Helper.cpp" line="279"/>
         <source>Unable to delete. Server error has occurred while trying to delete.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="279"/>
+        <location filename="../../Helper.cpp" line="281"/>
         <source>This item is not a model.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="281"/>
+        <location filename="../../Helper.cpp" line="283"/>
         <source>Error has occurred while loading the file &apos;%1&apos;. Unable to load the file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="283"/>
+        <location filename="../../Helper.cpp" line="285"/>
         <source>Error has occurred while loading the model : 
 %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="285"/>
+        <location filename="../../Helper.cpp" line="287"/>
         <source>Delete the existing models before loading the file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="287"/>
+        <location filename="../../Helper.cpp" line="289"/>
         <source>Redefining models &apos;%1&apos; which already exists.</source>
         <oldsource>Redefing models &apos;%1&apos; which already exists.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="289"/>
+        <location filename="../../Helper.cpp" line="291"/>
         <source>The Annotations for the component %1 (%2) are not correct. Unable to add component.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="291"/>
+        <location filename="../../Helper.cpp" line="293"/>
         <source>The %1 &apos;%2&apos; is not saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="293"/>
+        <location filename="../../Helper.cpp" line="295"/>
         <source>Following Error has occurred while saving component comment. 
 
  %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="295"/>
+        <location filename="../../Helper.cpp" line="297"/>
         <source>Following Error has occurred while saving component attributes. 
 
  %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="297"/>
+        <location filename="../../Helper.cpp" line="299"/>
         <source>The %1 &apos;%2&apos; is contained inside a package. It is automatically saved when you save the package.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="299"/>
+        <location filename="../../Helper.cpp" line="301"/>
         <source>The search string &apos;%1&apos; is not found.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="301"/>
+        <location filename="../../Helper.cpp" line="303"/>
         <source>The file &apos;%1&apos; has been removed outside %2. Do you want to keep it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="303"/>
+        <location filename="../../Helper.cpp" line="305"/>
         <source>The file &apos;%1&apos; has been modified outside %2. Do you want to reload it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="305"/>
+        <location filename="../../Helper.cpp" line="307"/>
         <source>Are you sure you want to close &apos;%1&apos; interactive simulation?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="307"/>
+        <location filename="../../Helper.cpp" line="309"/>
         <source>You cannot recover this window once its closed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="309"/>
+        <location filename="../../Helper.cpp" line="311"/>
         <source>You already have one interactive simulation running. Only one interactive simulation session is allowed at a time. 
 
  Please shutdown the interactive simulation or close the interactive simulation tab before launching the new one.</source>
@@ -273,57 +273,57 @@ For normal users it is recommended to choose &apos;Undo changes&apos;. You can a
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="311"/>
+        <location filename="../../Helper.cpp" line="313"/>
         <source>Please select a variable to plot before starting.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="313"/>
+        <location filename="../../Helper.cpp" line="315"/>
         <source>You cannot insert %1, it is a %2. Only model, class, connector, record or block are allowed on diagram layer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="315"/>
+        <location filename="../../Helper.cpp" line="317"/>
         <source>You cannot insert %1, it is a %2. Only connector is allowed on the icon layer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="317"/>
+        <location filename="../../Helper.cpp" line="319"/>
         <source>You cannot do a plot parametric between two different simulation result files. Make sure you select two variables from the same simulation result file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="319"/>
+        <location filename="../../Helper.cpp" line="321"/>
         <source>The file &apos;%1&apos; is not a valid Modelica file. The file format is not supported. You can only open .mo files here.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="321"/>
+        <location filename="../../Helper.cpp" line="323"/>
         <source>The html tags in the documentation are incorrect. Give correct starting and ending html tags and save it again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="323"/>
+        <location filename="../../Helper.cpp" line="325"/>
         <source>Enter a valid Positive Integer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="325"/>
+        <location filename="../../Helper.cpp" line="327"/>
         <source>You cannot drop an item on itself.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="327"/>
+        <location filename="../../Helper.cpp" line="329"/>
         <source>Are you sure you want to delete &apos;%1&apos;? Everything contained inside this Package will also be deleted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="329"/>
+        <location filename="../../Helper.cpp" line="331"/>
         <source>Are you sure you want to delete &apos;%1&apos;?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="331"/>
+        <location filename="../../Helper.cpp" line="333"/>
         <source>A component with the name %1 already exists. The name is changed from %1 to %2.
 This is probably wrong because the component is declared as %3.</source>
         <oldsource>A component with the name %1 already exists. The name is changed from %1 to %2.
@@ -331,17 +331,17 @@ This is probably wrong because the component is decalred as %3.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="333"/>
+        <location filename="../../Helper.cpp" line="335"/>
         <source>The FMI is generated at %1/%2.fmu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="335"/>
+        <location filename="../../Helper.cpp" line="337"/>
         <source>The Modifier &apos;%1&apos; format is invalid. The correct format is &apos;phi(start=1)&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="337"/>
+        <location filename="../../Helper.cpp" line="339"/>
         <source>Unknown file format. The supported file formats are %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -513,369 +513,376 @@ This is probably wrong because the component is decalred as %3.</oldsource>
 <context>
     <name>Helper</name>
     <message>
-        <location filename="../../Helper.cpp" line="226"/>
+        <location filename="../../Helper.cpp" line="228"/>
         <source>Read-Only</source>
         <translation>Nur-Lesen</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="227"/>
+        <location filename="../../Helper.cpp" line="229"/>
         <source>Writable</source>
         <oldsource>Writeable</oldsource>
         <translation>Beschreibbar</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="228"/>
+        <location filename="../../Helper.cpp" line="230"/>
         <source>Icon View</source>
         <translation>Ikon Ansicht</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="229"/>
+        <location filename="../../Helper.cpp" line="231"/>
         <source>Diagram View</source>
         <translation>Schema Ansicht</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="230"/>
+        <location filename="../../Helper.cpp" line="232"/>
         <source>Modelica Text View</source>
         <translation>Text Ansicht</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="231"/>
+        <location filename="../../Helper.cpp" line="233"/>
         <source>View Documentation</source>
         <translation>Dokumentation</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="232"/>
+        <location filename="../../Helper.cpp" line="234"/>
         <source>Search Modelica Standard Library</source>
         <translation>Suche Modelica Standardbibliothek</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="207"/>
-        <location filename="../../Helper.cpp" line="213"/>
+        <location filename="../../Helper.cpp" line="208"/>
+        <location filename="../../Helper.cpp" line="214"/>
         <source>Solid</source>
         <translation>durchgezogen</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="165"/>
+        <location filename="../../Helper.cpp" line="166"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="166"/>
+        <location filename="../../Helper.cpp" line="167"/>
         <source>Choose File</source>
         <translation>Wähle Datei</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="167"/>
+        <location filename="../../Helper.cpp" line="168"/>
         <source>Attributes</source>
         <translation>Attribute</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="168"/>
+        <location filename="../../Helper.cpp" line="169"/>
         <source>Properties</source>
         <translation>Eigenschaften</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="169"/>
+        <location filename="../../Helper.cpp" line="170"/>
         <source>Connection</source>
         <translation>Verbindung</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="170"/>
+        <location filename="../../Helper.cpp" line="171"/>
         <source>Edit</source>
         <translation>Bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="171"/>
+        <location filename="../../Helper.cpp" line="172"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="173"/>
+        <location filename="../../Helper.cpp" line="174"/>
         <source>Choose Directory</source>
         <translation>Wähle Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="174"/>
+        <location filename="../../Helper.cpp" line="175"/>
         <source>General</source>
         <translation>Allgemeine</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="175"/>
+        <location filename="../../Helper.cpp" line="176"/>
         <source>Parameters</source>
         <translation>Parameter</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="176"/>
+        <location filename="../../Helper.cpp" line="177"/>
         <source>Name:</source>
         <translation>Name:</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="177"/>
+        <location filename="../../Helper.cpp" line="178"/>
         <source>Comment:</source>
         <translation>Kommentar:</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="178"/>
+        <location filename="../../Helper.cpp" line="179"/>
         <source>Type</source>
         <translation>Typ</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="179"/>
+        <location filename="../../Helper.cpp" line="180"/>
         <source>Information</source>
         <translation>Information</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="180"/>
+        <location filename="../../Helper.cpp" line="181"/>
         <source>Modelica Files</source>
         <translation>Modelica Dateien</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="181"/>
+        <location filename="../../Helper.cpp" line="182"/>
         <source>rename</source>
         <translation>umbenennen</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="182"/>
+        <location filename="../../Helper.cpp" line="183"/>
         <source>Check Model</source>
         <translation>Modell prüfen</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="183"/>
+        <location filename="../../Helper.cpp" line="184"/>
         <source>Check the Modelica model</source>
         <translation>Prüft das Modelica Modell</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="184"/>
+        <location filename="../../Helper.cpp" line="185"/>
         <source>Instantiate Model</source>
         <translation>Instanziiere Modell</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="185"/>
+        <location filename="../../Helper.cpp" line="186"/>
         <source>Instantiates/Flatten the Modelica model</source>
         <translation>Instanziiert/reduziert das Modelica Modell</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="186"/>
+        <location filename="../../Helper.cpp" line="187"/>
         <source>Delete</source>
         <translation>löschen</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="187"/>
+        <location filename="../../Helper.cpp" line="188"/>
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="188"/>
+        <location filename="../../Helper.cpp" line="189"/>
         <source>Paste</source>
         <translation>Inhalte einfügen</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="189"/>
+        <location filename="../../Helper.cpp" line="190"/>
         <source>Loading</source>
         <translation>Lade</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="190"/>
+        <location filename="../../Helper.cpp" line="191"/>
         <source>Question</source>
         <translation>Frage</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="191"/>
+        <location filename="../../Helper.cpp" line="192"/>
         <source>Search</source>
         <translation>Suchen</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="192"/>
+        <location filename="../../Helper.cpp" line="193"/>
         <source>Simulate</source>
         <translation>Simulieren</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="193"/>
+        <location filename="../../Helper.cpp" line="194"/>
         <source>Simulation</source>
         <translation>Simulation</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="194"/>
+        <location filename="../../Helper.cpp" line="195"/>
         <source>Interactive Simulation</source>
         <translation>Interaktive Simulation</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="195"/>
+        <location filename="../../Helper.cpp" line="196"/>
         <source>Export to OMNotebook</source>
         <translation>Exportiere nach OMNotebook</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="196"/>
+        <location filename="../../Helper.cpp" line="197"/>
         <source>Options</source>
         <translation>Optionen</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="197"/>
+        <location filename="../../Helper.cpp" line="198"/>
         <source>Libraries</source>
         <translation>Bibliotheken</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="198"/>
+        <location filename="../../Helper.cpp" line="199"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="199"/>
+        <location filename="../../Helper.cpp" line="200"/>
         <source>Pen Style</source>
         <translation>Stiftstil</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="200"/>
+        <location filename="../../Helper.cpp" line="201"/>
         <source>Brush Style</source>
         <translation>Pinselstil</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="201"/>
+        <location filename="../../Helper.cpp" line="202"/>
         <source>Color:</source>
         <translation>Farbe:</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="202"/>
+        <location filename="../../Helper.cpp" line="203"/>
         <source>Pick Color</source>
         <translation>Wähle Farbe</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="203"/>
+        <location filename="../../Helper.cpp" line="204"/>
         <source>No Color</source>
         <translation>keine Farbe</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="204"/>
+        <location filename="../../Helper.cpp" line="205"/>
         <source>Thickness:</source>
         <translation>Stärke:</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="205"/>
+        <location filename="../../Helper.cpp" line="206"/>
         <source>Smooth:</source>
         <translation>Glätten:</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="206"/>
+        <location filename="../../Helper.cpp" line="207"/>
         <source>Bezier Curve</source>
         <translation>Bezier Kurve</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="208"/>
+        <location filename="../../Helper.cpp" line="209"/>
         <source>Dash</source>
         <translation>gestrichelt</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="209"/>
+        <location filename="../../Helper.cpp" line="210"/>
         <source>Dot</source>
         <translation>gepunktet</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="210"/>
+        <location filename="../../Helper.cpp" line="211"/>
         <source>Dash Dot</source>
         <translation>Strich-Punkt</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="211"/>
+        <location filename="../../Helper.cpp" line="212"/>
         <source>Dash Dot Dot</source>
         <translation>Strich-Punkt-Punkt</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="212"/>
+        <location filename="../../Helper.cpp" line="213"/>
         <source>No Brush</source>
         <translation>kein Pinsel</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="214"/>
+        <location filename="../../Helper.cpp" line="215"/>
         <source>Horizontal</source>
         <translation>Horizontal</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="215"/>
+        <location filename="../../Helper.cpp" line="216"/>
         <source>Vertical</source>
         <translation>Vertikal</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="216"/>
+        <location filename="../../Helper.cpp" line="217"/>
         <source>Cross</source>
         <translation>Kreuz</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="217"/>
+        <location filename="../../Helper.cpp" line="218"/>
         <source>Forward</source>
         <translation>Vorwärts</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="218"/>
+        <location filename="../../Helper.cpp" line="219"/>
         <source>Backward</source>
         <translation>Rückwärts</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="219"/>
+        <location filename="../../Helper.cpp" line="220"/>
         <source>CrossDiag</source>
         <translation>Diagonalkreuz</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="220"/>
+        <location filename="../../Helper.cpp" line="221"/>
         <source>HorizontalCylinder</source>
         <translation>Horinzontaler Zylinder</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="221"/>
+        <location filename="../../Helper.cpp" line="222"/>
         <source>VertitalCylinder</source>
         <translation>Vertikaler Zylinder</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="222"/>
+        <location filename="../../Helper.cpp" line="223"/>
         <source>Sphere</source>
         <translation>Kugel</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="223"/>
+        <location filename="../../Helper.cpp" line="224"/>
         <source>Remove</source>
         <translation>Entfernen</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="224"/>
+        <location filename="../../Helper.cpp" line="225"/>
         <source>Location</source>
-        <translation>Position</translation>
+        <comment>For files</comment>
+        <translation type="unfinished">Position</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="225"/>
+        <location filename="../../Helper.cpp" line="226"/>
+        <source>Location</source>
+        <comment>For errors</comment>
+        <translation type="unfinished">Position</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="227"/>
         <source>Text Properties</source>
         <translation>Texteigenschaften</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="233"/>
+        <location filename="../../Helper.cpp" line="235"/>
         <source>Left</source>
         <translation>Linksbündig</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="234"/>
+        <location filename="../../Helper.cpp" line="236"/>
         <source>Center</source>
         <translation>Zentriert</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="235"/>
+        <location filename="../../Helper.cpp" line="237"/>
         <source>Right</source>
         <translation>Rechtsbündig</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="172"/>
+        <location filename="../../Helper.cpp" line="173"/>
         <source>Import FMI</source>
         <translation>Importiere FMI</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="163"/>
+        <location filename="../../Helper.cpp" line="164"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="164"/>
+        <location filename="../../Helper.cpp" line="165"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="162"/>
+        <location filename="../../Helper.cpp" line="163"/>
         <source>Browse...</source>
         <translation>Durchsuchen...</translation>
     </message>
