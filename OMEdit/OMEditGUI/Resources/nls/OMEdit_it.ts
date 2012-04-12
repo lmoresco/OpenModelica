@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.0" language="it_IT">
 <context>
     <name>AddLibraryWidget</name>
     <message>
@@ -1402,8 +1402,7 @@ This is probably wrong because the component is declared as %3.</source>
     <message>
         <location filename="../../mainwindow.cpp" line="487"/>
         <source>About OMEdit</source>
-        <translatorcomment>&quot;OMEdit Information&quot;</translatorcomment>
-        <translation>OMEdit 情報</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="488"/>
@@ -1558,7 +1557,7 @@ This is probably wrong because the component is declared as %3.</source>
     <message>
         <location filename="../../mainwindow.cpp" line="663"/>
         <source>&amp;Help</source>
-        <translation>ヘルプ (&amp;H)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="683"/>
@@ -1636,12 +1635,7 @@ This is probably wrong because the component is declared as %3.</source>
 Distributed under OSMC-PL and GPL, see www.openmodelica.org.
 
 Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
-        <translation>著作 Linköping University
-OSMC-PLとGPLの下でライセンスされ、www.openmodelica.orgを参照してください。
-
-最終的な論文の一環として、Adeel AsgharとSonia Tariqによって作成された。
-
-あなたがOMEditを翻訳したい場合は、www.openmodelica.orgを参照してください。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1295"/>
