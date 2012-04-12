@@ -6,7 +6,7 @@
     <message>
         <location filename="../../OptionsWidget.cpp" line="1338"/>
         <source>Add Library</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibliothek hinzufügen</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="1346"/>
@@ -19,12 +19,12 @@
     <message>
         <location filename="../../BitmapAnnotation.cpp" line="276"/>
         <source>Open Bitmap</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne Bitmap</translation>
     </message>
     <message>
         <location filename="../../BitmapAnnotation.cpp" line="294"/>
         <source>Store picture in model</source>
-        <translation type="unfinished"></translation>
+        <translation>Speicher Bild im Modell</translation>
     </message>
 </context>
 <context>
@@ -45,22 +45,22 @@
     <message>
         <location filename="../../ConnectorWidget.cpp" line="801"/>
         <source>Enter index in the array for Start Component:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte Arrayindex für Startkomponente angeben:</translation>
     </message>
     <message>
         <location filename="../../ConnectorWidget.cpp" line="816"/>
         <source>Enter index in the array for End Component:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte Arrayindex für Endkomponente angeben:</translation>
     </message>
     <message>
         <location filename="../../ConnectorWidget.cpp" line="827"/>
         <source>Connect </source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinde </translation>
     </message>
     <message>
         <location filename="../../ConnectorWidget.cpp" line="827"/>
         <source> with </source>
-        <translation type="unfinished"></translation>
+        <translation> mit </translation>
     </message>
 </context>
 <context>
@@ -76,12 +76,12 @@
     <message>
         <location filename="../../ModelWidget.cpp" line="296"/>
         <source>Instantiation of </source>
-        <translation type="unfinished"></translation>
+        <translation>Instanziierung von </translation>
     </message>
     <message>
         <location filename="../../ModelWidget.cpp" line="296"/>
         <source> failed</source>
-        <translation type="unfinished"></translation>
+        <translation> fehlgeschlagen</translation>
     </message>
 </context>
 <context>
@@ -366,22 +366,22 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../OptionsWidget.cpp" line="564"/>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>Französisch</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="565"/>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>Deutsch</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="566"/>
         <source>Japanese</source>
-        <translation type="unfinished"></translation>
+        <translation>Japanisch</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="567"/>
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>Rumänisch</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="568"/>
@@ -396,17 +396,17 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../OptionsWidget.cpp" line="578"/>
         <source>Plotting View Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Plot Anzeigemodus:</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="579"/>
         <source>Tabbed View</source>
-        <translation type="unfinished"></translation>
+        <translation>in Tabs</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="581"/>
         <source>SubWindow View</source>
-        <translation type="unfinished"></translation>
+        <translation>in Unterfenstern</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="590"/>
@@ -416,7 +416,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../OptionsWidget.cpp" line="595"/>
         <source>Preserve User&apos;s GUI Customizations.</source>
-        <translation type="unfinished"></translation>
+        <translation>Behalte Benutzereinstellungen der GUI.</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../Helper.cpp" line="180"/>
         <source>Modelica Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelica Dateien</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="181"/>
@@ -647,12 +647,12 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../Helper.cpp" line="184"/>
         <source>Instantiate Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Instanziiere Modell</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="185"/>
         <source>Instantiates/Flatten the Modelica model</source>
-        <translation type="unfinished"></translation>
+        <translation>Instanziiert/reduziert das Modelica Modell</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="186"/>
@@ -797,47 +797,47 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../Helper.cpp" line="216"/>
         <source>Cross</source>
-        <translation type="unfinished"></translation>
+        <translation>Kreuz</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="217"/>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorwärts</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="218"/>
         <source>Backward</source>
-        <translation type="unfinished"></translation>
+        <translation>Rückwärts</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="219"/>
         <source>CrossDiag</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagonalkreuz</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="220"/>
         <source>HorizontalCylinder</source>
-        <translation type="unfinished"></translation>
+        <translation>Horinzontaler Zylinder</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="221"/>
         <source>VertitalCylinder</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikaler Zylinder</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="222"/>
         <source>Sphere</source>
-        <translation type="unfinished"></translation>
+        <translation>Kugel</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="223"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Entfernen</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="224"/>
         <source>Location</source>
-        <translation type="unfinished"></translation>
+        <translation>Position</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="225"/>
@@ -877,7 +877,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../Helper.cpp" line="162"/>
         <source>Browse...</source>
-        <translation type="unfinished"></translation>
+        <translation>Durchsuchen...</translation>
     </message>
 </context>
 <context>
@@ -885,7 +885,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../IconProperties.cpp" line="285"/>
         <source>Component Attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Attribute der Component</translation>
     </message>
 </context>
 <context>
@@ -893,7 +893,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../IconProperties.cpp" line="47"/>
         <source>Component Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenschaften der Component</translation>
     </message>
     <message>
         <location filename="../../IconProperties.cpp" line="104"/>
@@ -916,32 +916,32 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../FMIWidget.cpp" line="61"/>
         <source>FMU File:</source>
-        <translation type="unfinished"></translation>
+        <translation>FMU Datei:</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="66"/>
         <source>Output Directory (Optional):</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgabeverzeichnis (optional):</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="71"/>
         <source>* If no Output Directory specified then the FMU files are generated in the current working directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>* Wenn kein Ausgabeverzeichnis angegeben ist, dann werden die FMU Dateien im aktuellen Arbeitsverzeichnis angelegt.</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="76"/>
         <source>* This feature is experimental. Most models are not yet handled by it.</source>
-        <translation type="unfinished"></translation>
+        <translation>* Dieses Feature ist experimentell. Die meisten Modelle werden nicht damit funktionieren.</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="115"/>
         <source>FMU File</source>
-        <translation type="unfinished"></translation>
+        <translation>FMU Datei</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="127"/>
         <source>Could not open file </source>
-        <translation type="unfinished"></translation>
+        <translation>Konnte Datei nicht öffnen: </translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="161"/>
@@ -1227,12 +1227,12 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="388"/>
         <source>Welcome Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Wilkommensseite</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="389"/>
         <source>Shows Welcome Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt die Willkommensseite</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="397"/>
@@ -1242,7 +1242,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="398"/>
         <source>Shows Modeling View</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt die Modellierungsansicht</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="403"/>
@@ -1252,7 +1252,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="404"/>
         <source>Shows Plotting View</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt die Plotansicht</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="410"/>
@@ -1262,7 +1262,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="411"/>
         <source>Shows Interactive Simulation View</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt die Interaktive-Simulationsansicht</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="417"/>
@@ -1297,12 +1297,12 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="433"/>
         <source>Simulate the Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Simuliert das Model</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="437"/>
         <source>Interactive Simulate the Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Interaktive Simulation des Modells</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="450"/>
@@ -1322,12 +1322,12 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="460"/>
         <source>OMC Logger</source>
-        <translation type="unfinished"></translation>
+        <translation>OMC Logger</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="461"/>
         <source>Shows OMC Logger Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt das OMC Logger Fenster</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="464"/>
@@ -1342,32 +1342,32 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="469"/>
         <source>Exports the current model to OMNotebook</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportiert das aktuelle Modell nach OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="473"/>
         <source>Import from OMNotebook</source>
-        <translation type="unfinished"></translation>
+        <translation>Importiere von OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="474"/>
         <source>Imports the models from OMNotebook</source>
-        <translation type="unfinished"></translation>
+        <translation>Importiert die Modelle vom OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="478"/>
         <source>Shows the options window</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt das Optionsfenster</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="482"/>
         <source>User Manual</source>
-        <translation>OMEdit Hilfe</translation>
+        <translation>OMEdit Benutzerhandbuch</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="483"/>
         <source>Opens the User Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffnet das Benutzerhandbuch</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="487"/>
@@ -1377,7 +1377,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="488"/>
         <source>Information about OMEdit</source>
-        <translation type="unfinished"></translation>
+        <translation>Information über OMEdit</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="494"/>
@@ -1422,17 +1422,17 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="1186"/>
         <source>Connected to OpenModelica </source>
-        <translation type="unfinished"></translation>
+        <translation>Verbunden mit OpenModelica</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1300"/>
         <source>Exporting model as FMI</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportiere Modell als FMI</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="58"/>
         <source>Connecting to OpenModelica Compiler</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinde mit OpenModelica Compiler</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="62"/>
@@ -1462,23 +1462,23 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="519"/>
         <source>Bitmap</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitmap</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="520"/>
         <source>Imports a Bitmap.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importiert eine Bitmap.</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="524"/>
         <source>Connect Mode</source>
         <oldsource>Connect/Unconnect Mode</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Verbindungsmodus</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="525"/>
         <source>Changes to/from connect mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Wechselt in/aus dem Verbindungsmodus</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="530"/>
@@ -1488,27 +1488,27 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="531"/>
         <source>Inserts new plot window</source>
-        <translation type="unfinished"></translation>
+        <translation>Erstellt neues Plotfenster</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="533"/>
         <source>New Plot Parametric Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Neues Plot Parametric Fenster</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="534"/>
         <source>Inserts new plot parametric window</source>
-        <translation type="unfinished"></translation>
+        <translation>Erstellt ein neues Plot Parametric Fenster</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="538"/>
         <source>Export as an Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportiere als Bild</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="539"/>
         <source>Exports the current model to Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportiert das aktuelle Modell als Bild</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="554"/>
@@ -1533,22 +1533,22 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="593"/>
         <source>Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkzeugleisten</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="597"/>
         <source>Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenster</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="601"/>
         <source>Perspectives</source>
-        <translation type="unfinished"></translation>
+        <translation>Perspektiven</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="636"/>
         <source>&amp;Simulation</source>
-        <translation type="unfinished">&amp;Simulation</translation>
+        <translation>&amp;Simulation</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="645"/>
@@ -1568,32 +1568,32 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../mainwindow.cpp" line="683"/>
         <source>File Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateiwerkzeugleiste</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="713"/>
         <source>View Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Ansichtswerkzeugleiste</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="722"/>
         <source>Shapes Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Formenwerkzeugsleiste</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="926"/>
         <source>Exporting model to OMNotebook</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportiere Modell nach OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1039"/>
         <source>Importing model from OMNotebook</source>
-        <translation type="unfinished"></translation>
+        <translation>Importiere Modell von OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1094"/>
         <source>Exporting model as an Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportiere Modell als Bild</translation>
     </message>
     <message utf8="true">
         <location filename="../../mainwindow.cpp" line="1187"/>
@@ -1615,7 +1615,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../mainwindow.cpp" line="1295"/>
         <source>make FMU</source>
-        <translation type="unfinished"></translation>
+        <translation>erstelle FMU</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="743"/>
@@ -1625,22 +1625,22 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../mainwindow.cpp" line="749"/>
         <source>Plot Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Plotwerkzeugsleiste</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="755"/>
         <source>Perspective Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Perspektivenwerkzeugsleiste</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1058"/>
         <source>Error reading the xml file</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Lesen der XML Datei</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1087"/>
         <source>Export as Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportiere als Bild</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1107"/>
@@ -1650,7 +1650,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../mainwindow.cpp" line="1132"/>
         <source>Error saving the image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Speichern der Bilddatei</translation>
     </message>
 </context>
 <context>
@@ -1719,12 +1719,12 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../ModelicaEditor.cpp" line="208"/>
         <source>Undo changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Änderungen rückgängig machen</translation>
     </message>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="209"/>
         <source>Let me fix errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Lass mich die Fehler beheben</translation>
     </message>
 </context>
 <context>
@@ -1732,57 +1732,57 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../OptionsWidget.cpp" line="684"/>
         <source>Font and Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Schrift und Farben</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="686"/>
         <source>Font Family:</source>
-        <translation type="unfinished"></translation>
+        <translation>Schriftart:</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="693"/>
         <source>Font Size:</source>
-        <translation type="unfinished">Schriftgröße:</translation>
+        <translation>Schriftgröße:</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="700"/>
         <source>Item Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektfarbe:</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="701"/>
         <source>Pick Color</source>
-        <translation type="unfinished">Wähle Farbe</translation>
+        <translation>Wähle Farbe</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="704"/>
         <source>Items:</source>
-        <translation type="unfinished"></translation>
+        <translation>Objekte:</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="715"/>
         <source>Preview:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorschau:</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="758"/>
         <source>Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Zahl</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="763"/>
         <source>Keyword</source>
-        <translation type="unfinished"></translation>
+        <translation>Schlüsselwort</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="773"/>
         <source>Function</source>
-        <translation type="unfinished"></translation>
+        <translation>Funktion</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="778"/>
         <source>Quotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Anführungszeichen</translation>
     </message>
 </context>
 <context>
@@ -1795,7 +1795,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../LibraryWidget.cpp" line="433"/>
         <source>while deleting </source>
-        <translation type="unfinished"></translation>
+        <translation>beim Löschen von </translation>
     </message>
     <message>
         <location filename="../../LibraryWidget.cpp" line="130"/>
@@ -1818,12 +1818,12 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../OMCProxy.cpp" line="71"/>
         <source>OMC Messages Log</source>
-        <translation type="unfinished"></translation>
+        <translation>OMC Message Log</translation>
     </message>
     <message>
         <location filename="../../OMCProxy.cpp" line="82"/>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Senden</translation>
     </message>
     <message>
         <location filename="../../OMCProxy.cpp" line="293"/>
@@ -2036,7 +2036,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../OptionsWidget.cpp" line="488"/>
         <source>Modelica Text Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelica Text Editor</translation>
     </message>
 </context>
 <context>
@@ -2052,12 +2052,12 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../PlotWidget.cpp" line="169"/>
         <source>Delete Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Lösche Ergebnis</translation>
     </message>
     <message>
         <location filename="../../PlotWidget.cpp" line="170"/>
         <source>Delete the result</source>
-        <translation type="unfinished"></translation>
+        <translation>Löscht das Ergebnis</translation>
     </message>
     <message>
         <location filename="../../PlotWidget.cpp" line="183"/>
@@ -2073,17 +2073,17 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../PlotWidget.cpp" line="314"/>
         <source>File: </source>
-        <translation type="unfinished"></translation>
+        <translation>Datei: </translation>
     </message>
     <message>
         <location filename="../../PlotWidget.cpp" line="314"/>
         <source>Variable: </source>
-        <translation type="unfinished"></translation>
+        <translation>Variable: </translation>
     </message>
     <message>
         <location filename="../../PlotWidget.cpp" line="342"/>
         <source>No plot window is active for plotting. Please select a plot window or open a new.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kein Plotfenster aktiv. Bitte ein Plotfenster auswählen oder neues öffnen.</translation>
     </message>
 </context>
 <context>
@@ -2091,42 +2091,42 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../ProblemsWidget.cpp" line="241"/>
         <source>Kind</source>
-        <translation type="unfinished"></translation>
+        <translation>Art</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="241"/>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeit</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="241"/>
         <source>Resource</source>
-        <translation type="unfinished"></translation>
+        <translation>Ressource</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="241"/>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitteilung</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="245"/>
         <source>Select All</source>
-        <translation type="unfinished"></translation>
+        <translation>Wähle alle aus</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="246"/>
         <source>Selects all the Problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählt alle Probleme aus</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="249"/>
         <source>Copy the Problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiere Problem</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="252"/>
         <source>Remove the Problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Entferne Problem</translation>
     </message>
 </context>
 <context>
@@ -2134,27 +2134,27 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../ProblemsWidget.cpp" line="55"/>
         <source>Only Show Notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige nur Benachrichtigungen</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="65"/>
         <source>Only Show Warnings</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige nur Warnungen</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="74"/>
         <source>Only Show Errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige nur Fehler</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="83"/>
         <source>Show All Problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige alle Probleme</translation>
     </message>
     <message>
         <location filename="../../ProblemsWidget.cpp" line="104"/>
         <source>Clear All Problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Lösche alle Probleme</translation>
     </message>
 </context>
 <context>
@@ -2196,12 +2196,12 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../LibraryWidget.cpp" line="1259"/>
         <source>Searched Items</source>
-        <translation type="unfinished"></translation>
+        <translation>Durchsuchte Objekte</translation>
     </message>
     <message>
         <location filename="../../LibraryWidget.cpp" line="1317"/>
         <source>Sorry, no items found</source>
-        <translation type="unfinished"></translation>
+        <translation>Tut mir leid, keine Objekte gefunden.</translation>
     </message>
 </context>
 <context>
@@ -2209,7 +2209,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="157"/>
         <source>Shows the shape properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt die Eigenschaften der Form</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="161"/>
@@ -2286,13 +2286,13 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="698"/>
         <source>Shape Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Formeigenschaften</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="768"/>
         <source>Corner Radius:</source>
         <oldsource>CornerRadius:</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Radius der Ecken:</translation>
     </message>
 </context>
 <context>
@@ -2491,7 +2491,7 @@ Please wait for a while.</source>
     <message>
         <location filename="../../TextAnnotation.cpp" line="769"/>
         <source>Text of Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschriftungstext:</translation>
     </message>
     <message>
         <location filename="../../TextAnnotation.cpp" line="772"/>
