@@ -1059,27 +1059,27 @@ This is probably wrong because the component is declared as %3.</source>
 <context>
     <name>LibraryTree</name>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="586"/>
+        <location filename="../../LibraryWidget.cpp" line="583"/>
         <source>Modelica Standard Library</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="609"/>
+        <location filename="../../LibraryWidget.cpp" line="606"/>
         <source>Show Component</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="610"/>
+        <location filename="../../LibraryWidget.cpp" line="607"/>
         <source>Shows the component</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="613"/>
+        <location filename="../../LibraryWidget.cpp" line="610"/>
         <source>View Documentation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="614"/>
+        <location filename="../../LibraryWidget.cpp" line="611"/>
         <source>View component documentation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1087,7 +1087,7 @@ This is probably wrong because the component is declared as %3.</source>
 <context>
     <name>LibraryWidget</name>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="1349"/>
+        <location filename="../../LibraryWidget.cpp" line="1346"/>
         <source>Modelica Library</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1651,7 +1651,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
 <context>
     <name>ModelBrowserTree</name>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="1614"/>
+        <location filename="../../LibraryWidget.cpp" line="1611"/>
         <source>Outline</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1803,7 +1803,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="433"/>
+        <location filename="../../LibraryWidget.cpp" line="430"/>
         <source>while deleting </source>
         <translation type="unfinished"></translation>
     </message>
@@ -2189,12 +2189,12 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
 <context>
     <name>SearchMSLWidget</name>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="1259"/>
+        <location filename="../../LibraryWidget.cpp" line="1256"/>
         <source>Searched Items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="1317"/>
+        <location filename="../../LibraryWidget.cpp" line="1314"/>
         <source>Sorry, no items found</source>
         <translation type="unfinished"></translation>
     </message>

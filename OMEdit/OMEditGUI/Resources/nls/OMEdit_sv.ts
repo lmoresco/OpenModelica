@@ -1078,27 +1078,27 @@ Detta är förmodligen fel eftersom komponenten deklarerades som %3.</translatio
 <context>
     <name>LibraryTree</name>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="586"/>
+        <location filename="../../LibraryWidget.cpp" line="583"/>
         <source>Modelica Standard Library</source>
         <translation>Modelica Standardbibliotek</translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="609"/>
+        <location filename="../../LibraryWidget.cpp" line="606"/>
         <source>Show Component</source>
         <translation>Visa Komponent</translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="610"/>
+        <location filename="../../LibraryWidget.cpp" line="607"/>
         <source>Shows the component</source>
         <translation>Visar komponenten</translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="613"/>
+        <location filename="../../LibraryWidget.cpp" line="610"/>
         <source>View Documentation</source>
         <translation>Visa Dokumentation</translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="614"/>
+        <location filename="../../LibraryWidget.cpp" line="611"/>
         <source>View component documentation</source>
         <translation>Visa komponentdokumentation</translation>
     </message>
@@ -1106,7 +1106,7 @@ Detta är förmodligen fel eftersom komponenten deklarerades som %3.</translatio
 <context>
     <name>LibraryWidget</name>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="1349"/>
+        <location filename="../../LibraryWidget.cpp" line="1346"/>
         <source>Modelica Library</source>
         <translation>Modelica Bibliotek</translation>
     </message>
@@ -1683,7 +1683,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
 <context>
     <name>ModelBrowserTree</name>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="1614"/>
+        <location filename="../../LibraryWidget.cpp" line="1611"/>
         <source>Outline</source>
         <translation>Översikt</translation>
     </message>
@@ -1820,7 +1820,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
         <translation>Byter namn på Modelica modellen</translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="433"/>
+        <location filename="../../LibraryWidget.cpp" line="430"/>
         <source>while deleting </source>
         <translation>vid borttagning </translation>
     </message>
@@ -2222,12 +2222,12 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
 <context>
     <name>SearchMSLWidget</name>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="1259"/>
+        <location filename="../../LibraryWidget.cpp" line="1256"/>
         <source>Searched Items</source>
         <translation>Sökt Objekt</translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="1317"/>
+        <location filename="../../LibraryWidget.cpp" line="1314"/>
         <source>Sorry, no items found</source>
         <translation>Tyvärr, inga objekt hittades</translation>
     </message>

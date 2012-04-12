@@ -1066,27 +1066,27 @@ This is probably wrong because the component is decalred as %3.</oldsource>
 <context>
     <name>LibraryTree</name>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="586"/>
+        <location filename="../../LibraryWidget.cpp" line="583"/>
         <source>Modelica Standard Library</source>
         <translation>Modelica Standardbibliothek</translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="609"/>
+        <location filename="../../LibraryWidget.cpp" line="606"/>
         <source>Show Component</source>
         <translation>Zeige Komponente</translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="610"/>
+        <location filename="../../LibraryWidget.cpp" line="607"/>
         <source>Shows the component</source>
         <translation>Zeigt die Komponente an</translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="613"/>
+        <location filename="../../LibraryWidget.cpp" line="610"/>
         <source>View Documentation</source>
         <translation>Zeige Dokumentation</translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="614"/>
+        <location filename="../../LibraryWidget.cpp" line="611"/>
         <source>View component documentation</source>
         <translation>Zeigt die Dokumentation an</translation>
     </message>
@@ -1094,7 +1094,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
 <context>
     <name>LibraryWidget</name>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="1349"/>
+        <location filename="../../LibraryWidget.cpp" line="1346"/>
         <source>Modelica Library</source>
         <translation>Modelica Bibliothek</translation>
     </message>
@@ -1673,7 +1673,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
 <context>
     <name>ModelBrowserTree</name>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="1614"/>
+        <location filename="../../LibraryWidget.cpp" line="1611"/>
         <source>Outline</source>
         <translation>Gliederung</translation>
     </message>
@@ -1810,7 +1810,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
         <translation>Modelica Modell umbenennen</translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="433"/>
+        <location filename="../../LibraryWidget.cpp" line="430"/>
         <source>while deleting </source>
         <translation>beim Löschen von </translation>
     </message>
@@ -2211,12 +2211,12 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
 <context>
     <name>SearchMSLWidget</name>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="1259"/>
+        <location filename="../../LibraryWidget.cpp" line="1256"/>
         <source>Searched Items</source>
         <translation>Durchsuchte Objekte</translation>
     </message>
     <message>
-        <location filename="../../LibraryWidget.cpp" line="1317"/>
+        <location filename="../../LibraryWidget.cpp" line="1314"/>
         <source>Sorry, no items found</source>
         <translation>Tut mir leid, keine Objekte gefunden.</translation>
     </message>
