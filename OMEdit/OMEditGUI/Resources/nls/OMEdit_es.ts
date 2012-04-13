@@ -1935,7 +1935,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotMainWindow.cpp" line="69"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cerrar</translation>
     </message>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotMainWindow.cpp" line="73"/>
