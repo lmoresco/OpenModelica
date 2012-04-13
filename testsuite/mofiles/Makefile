@@ -259,6 +259,7 @@ EquationIf4.mo \
 ErrorExternalAlgorithm.mo \
 ErrorExternalModel.mo \
 ErrorMultipleClasses.mo \
+ErrorRecursionLimit.mo \
 EventFunctions.mo \
 Exp.mo \
 Expressions.mo \
