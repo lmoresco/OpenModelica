@@ -67,7 +67,6 @@ Identity.mos \
 IdealDiode.mos  \
 IfEquation.mos IfEquation2.mos IfEquation3.mos \
 Initialization.mos \
-InitialConstantSection.mos \
 InlineSolverCodeGenerationEuler.mos \
 InlineSolverCodeGenerationRK.mos \
 Interpolation.mos \
@@ -141,6 +140,7 @@ ForIterator2.mos \
 TankPIDOPRI5.mos TanksConnectedPIDOPRI5.mos\
 SpaceProbe.mos \
 BouncingBallExamplesDOPRI5.mos \
+InitialConstantSection.mos \
 
 # Dependency files that are not .mo .mos or Makefile
 # Add them here or they will be cleaned.
