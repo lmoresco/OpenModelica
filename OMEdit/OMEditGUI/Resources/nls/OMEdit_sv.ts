@@ -4,12 +4,12 @@
 <context>
     <name>AddLibraryWidget</name>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1340"/>
+        <location filename="../../OptionsWidget.cpp" line="1341"/>
         <source>Add Library</source>
         <translation>Lägg till Bibliotek</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1348"/>
+        <location filename="../../OptionsWidget.cpp" line="1349"/>
         <source>Value:</source>
         <translation>Värde:</translation>
     </message>
@@ -412,31 +412,36 @@ Detta är förmodligen fel eftersom komponenten deklarerades som %3.</translatio
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="571"/>
+        <source>Spanish</source>
+        <translation>Spanska</translation>
+    </message>
+    <message>
+        <location filename="../../OptionsWidget.cpp" line="572"/>
         <source>Swedish</source>
         <translation>Svenska</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="580"/>
+        <location filename="../../OptionsWidget.cpp" line="581"/>
         <source>Plotting View Mode:</source>
         <translation>Visningsläge Diagram:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="581"/>
+        <location filename="../../OptionsWidget.cpp" line="582"/>
         <source>Tabbed View</source>
         <translation>Visa i Flik</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="583"/>
+        <location filename="../../OptionsWidget.cpp" line="584"/>
         <source>SubWindow View</source>
         <translation>Visa i Nytt Fönster</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="592"/>
+        <location filename="../../OptionsWidget.cpp" line="593"/>
         <source>Working Directory:</source>
         <translation>Arbetskatalog:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="597"/>
+        <location filename="../../OptionsWidget.cpp" line="598"/>
         <source>Preserve User&apos;s GUI Customizations.</source>
         <translation>Bevara Användarens Gränssnittsanpassningar.</translation>
     </message>
@@ -1050,27 +1055,27 @@ Detta är förmodligen fel eftersom komponenten deklarerades som %3.</translatio
 <context>
     <name>LibrariesPage</name>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1260"/>
+        <location filename="../../OptionsWidget.cpp" line="1261"/>
         <source>Name</source>
         <translation>Namn</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1260"/>
+        <location filename="../../OptionsWidget.cpp" line="1261"/>
         <source>Value</source>
         <translation>Värde</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1264"/>
+        <location filename="../../OptionsWidget.cpp" line="1265"/>
         <source>Add</source>
         <translation>Lägg till</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1276"/>
+        <location filename="../../OptionsWidget.cpp" line="1277"/>
         <source>* The libraries changes will take effect after restart.</source>
         <translation>* Bibliotekändringarna kommer att träda i kraft efter omstart.</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1324"/>
+        <location filename="../../OptionsWidget.cpp" line="1325"/>
         <source>Edit Library</source>
         <translation>Redigera bibliotek</translation>
     </message>
@@ -1757,57 +1762,57 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
 <context>
     <name>ModelicaTextEditorPage</name>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="686"/>
+        <location filename="../../OptionsWidget.cpp" line="687"/>
         <source>Font and Colors</source>
         <translation>Typsnitt och Färger</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="688"/>
+        <location filename="../../OptionsWidget.cpp" line="689"/>
         <source>Font Family:</source>
         <translation>Teckensnittsfamilj:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="695"/>
+        <location filename="../../OptionsWidget.cpp" line="696"/>
         <source>Font Size:</source>
         <translation>Teckenstorlek:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="702"/>
+        <location filename="../../OptionsWidget.cpp" line="703"/>
         <source>Item Color:</source>
         <translation>Objekt Färg:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="703"/>
+        <location filename="../../OptionsWidget.cpp" line="704"/>
         <source>Pick Color</source>
         <translation>Välj Färg</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="706"/>
+        <location filename="../../OptionsWidget.cpp" line="707"/>
         <source>Items:</source>
         <translation>Objekt:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="717"/>
+        <location filename="../../OptionsWidget.cpp" line="718"/>
         <source>Preview:</source>
         <translation>Förhandsgranskning:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="760"/>
+        <location filename="../../OptionsWidget.cpp" line="761"/>
         <source>Number</source>
         <translation>Nummer</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="765"/>
+        <location filename="../../OptionsWidget.cpp" line="766"/>
         <source>Keyword</source>
         <translation>Nyckelord</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="775"/>
+        <location filename="../../OptionsWidget.cpp" line="776"/>
         <source>Function</source>
         <translation>Funktion</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="780"/>
+        <location filename="../../OptionsWidget.cpp" line="781"/>
         <source>Quotes</source>
         <translation>Sträng</translation>
     </message>

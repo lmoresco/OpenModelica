@@ -4,12 +4,12 @@
 <context>
     <name>AddLibraryWidget</name>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1340"/>
+        <location filename="../../OptionsWidget.cpp" line="1341"/>
         <source>Add Library</source>
         <translation>Bibliothek hinzufügen</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1348"/>
+        <location filename="../../OptionsWidget.cpp" line="1349"/>
         <source>Value:</source>
         <translation>Wert:</translation>
     </message>
@@ -361,7 +361,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../OptionsWidget.cpp" line="563"/>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation>Chinesisch</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="564"/>
@@ -381,7 +381,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../OptionsWidget.cpp" line="567"/>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>Italienisch</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="568"/>
@@ -400,31 +400,36 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="571"/>
+        <source>Spanish</source>
+        <translation>Spanisch</translation>
+    </message>
+    <message>
+        <location filename="../../OptionsWidget.cpp" line="572"/>
         <source>Swedish</source>
         <translation>Schwedisch</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="580"/>
+        <location filename="../../OptionsWidget.cpp" line="581"/>
         <source>Plotting View Mode:</source>
         <translation>Plot Anzeigemodus:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="581"/>
+        <location filename="../../OptionsWidget.cpp" line="582"/>
         <source>Tabbed View</source>
         <translation>in Tabs</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="583"/>
+        <location filename="../../OptionsWidget.cpp" line="584"/>
         <source>SubWindow View</source>
         <translation>in Unterfenstern</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="592"/>
+        <location filename="../../OptionsWidget.cpp" line="593"/>
         <source>Working Directory:</source>
         <translation>Arbeitsverzeichnis:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="597"/>
+        <location filename="../../OptionsWidget.cpp" line="598"/>
         <source>Preserve User&apos;s GUI Customizations.</source>
         <translation>Behalte Benutzereinstellungen der GUI.</translation>
     </message>
@@ -1038,27 +1043,27 @@ This is probably wrong because the component is decalred as %3.</oldsource>
 <context>
     <name>LibrariesPage</name>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1260"/>
+        <location filename="../../OptionsWidget.cpp" line="1261"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1260"/>
+        <location filename="../../OptionsWidget.cpp" line="1261"/>
         <source>Value</source>
         <translation>Wert</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1264"/>
+        <location filename="../../OptionsWidget.cpp" line="1265"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1276"/>
+        <location filename="../../OptionsWidget.cpp" line="1277"/>
         <source>* The libraries changes will take effect after restart.</source>
         <translation>* Änderungen an den Bibliotheken erfordern Neustart.</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1324"/>
+        <location filename="../../OptionsWidget.cpp" line="1325"/>
         <source>Edit Library</source>
         <translation>Bibliothek bearbeiten</translation>
     </message>
@@ -1747,57 +1752,57 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
 <context>
     <name>ModelicaTextEditorPage</name>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="686"/>
+        <location filename="../../OptionsWidget.cpp" line="687"/>
         <source>Font and Colors</source>
         <translation>Schrift und Farben</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="688"/>
+        <location filename="../../OptionsWidget.cpp" line="689"/>
         <source>Font Family:</source>
         <translation>Schriftart:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="695"/>
+        <location filename="../../OptionsWidget.cpp" line="696"/>
         <source>Font Size:</source>
         <translation>Schriftgröße:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="702"/>
+        <location filename="../../OptionsWidget.cpp" line="703"/>
         <source>Item Color:</source>
         <translation>Objektfarbe:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="703"/>
+        <location filename="../../OptionsWidget.cpp" line="704"/>
         <source>Pick Color</source>
         <translation>Wähle Farbe</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="706"/>
+        <location filename="../../OptionsWidget.cpp" line="707"/>
         <source>Items:</source>
         <translation>Objekte:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="717"/>
+        <location filename="../../OptionsWidget.cpp" line="718"/>
         <source>Preview:</source>
         <translation>Vorschau:</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="760"/>
+        <location filename="../../OptionsWidget.cpp" line="761"/>
         <source>Number</source>
         <translation>Zahl</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="765"/>
+        <location filename="../../OptionsWidget.cpp" line="766"/>
         <source>Keyword</source>
         <translation>Schlüsselwort</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="775"/>
+        <location filename="../../OptionsWidget.cpp" line="776"/>
         <source>Function</source>
         <translation>Funktion</translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="780"/>
+        <location filename="../../OptionsWidget.cpp" line="781"/>
         <source>Quotes</source>
         <translation>Anführungszeichen</translation>
     </message>
@@ -2218,7 +2223,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../LibraryWidget.cpp" line="1314"/>
         <source>Sorry, no items found</source>
-        <translation>Tut mir leid, keine Objekte gefunden.</translation>
+        <translation>Tut mir leid, keine Objekte gefunden</translation>
     </message>
 </context>
 <context>

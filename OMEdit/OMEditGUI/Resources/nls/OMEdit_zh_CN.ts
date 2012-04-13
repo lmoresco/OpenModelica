@@ -4,12 +4,12 @@
 <context>
     <name>AddLibraryWidget</name>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1340"/>
+        <location filename="../../OptionsWidget.cpp" line="1341"/>
         <source>Add Library</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1348"/>
+        <location filename="../../OptionsWidget.cpp" line="1349"/>
         <source>Value:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -394,31 +394,36 @@ This is probably wrong because the component is declared as %3.</source>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="571"/>
+        <source>Spanish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../OptionsWidget.cpp" line="572"/>
         <source>Swedish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="580"/>
+        <location filename="../../OptionsWidget.cpp" line="581"/>
         <source>Plotting View Mode:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="581"/>
+        <location filename="../../OptionsWidget.cpp" line="582"/>
         <source>Tabbed View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="583"/>
+        <location filename="../../OptionsWidget.cpp" line="584"/>
         <source>SubWindow View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="592"/>
+        <location filename="../../OptionsWidget.cpp" line="593"/>
         <source>Working Directory:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="597"/>
+        <location filename="../../OptionsWidget.cpp" line="598"/>
         <source>Preserve User&apos;s GUI Customizations.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1031,27 +1036,27 @@ This is probably wrong because the component is declared as %3.</source>
 <context>
     <name>LibrariesPage</name>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1260"/>
+        <location filename="../../OptionsWidget.cpp" line="1261"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1260"/>
+        <location filename="../../OptionsWidget.cpp" line="1261"/>
         <source>Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1264"/>
+        <location filename="../../OptionsWidget.cpp" line="1265"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1276"/>
+        <location filename="../../OptionsWidget.cpp" line="1277"/>
         <source>* The libraries changes will take effect after restart.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="1324"/>
+        <location filename="../../OptionsWidget.cpp" line="1325"/>
         <source>Edit Library</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1725,57 +1730,57 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
 <context>
     <name>ModelicaTextEditorPage</name>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="686"/>
+        <location filename="../../OptionsWidget.cpp" line="687"/>
         <source>Font and Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="688"/>
+        <location filename="../../OptionsWidget.cpp" line="689"/>
         <source>Font Family:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="695"/>
+        <location filename="../../OptionsWidget.cpp" line="696"/>
         <source>Font Size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="702"/>
+        <location filename="../../OptionsWidget.cpp" line="703"/>
         <source>Item Color:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="703"/>
+        <location filename="../../OptionsWidget.cpp" line="704"/>
         <source>Pick Color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="706"/>
+        <location filename="../../OptionsWidget.cpp" line="707"/>
         <source>Items:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="717"/>
+        <location filename="../../OptionsWidget.cpp" line="718"/>
         <source>Preview:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="760"/>
+        <location filename="../../OptionsWidget.cpp" line="761"/>
         <source>Number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="765"/>
+        <location filename="../../OptionsWidget.cpp" line="766"/>
         <source>Keyword</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="775"/>
+        <location filename="../../OptionsWidget.cpp" line="776"/>
         <source>Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../OptionsWidget.cpp" line="780"/>
+        <location filename="../../OptionsWidget.cpp" line="781"/>
         <source>Quotes</source>
         <translation type="unfinished"></translation>
     </message>
