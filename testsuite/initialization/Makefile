@@ -1,6 +1,7 @@
 TEST = ../rtest -v 
 
 TESTFILES = \
+gaspropreties.mos\
 _forest.mos \
 _startValue.mos \
 _scaling1.mos \
