@@ -2306,7 +2306,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</oldsourc
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="185"/>
-        <source>FilledArrow(End</source>
+        <source>FilledArrow(End)</source>
         <translation>Залитая стрелочка (Конец)</translation>
     </message>
 </context>

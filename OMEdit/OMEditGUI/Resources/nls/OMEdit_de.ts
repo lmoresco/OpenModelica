@@ -32,12 +32,12 @@
     <message>
         <location filename="../../Component.cpp" line="410"/>
         <source>Shows the item attributes</source>
-        <translation>Zeigt die Objektattribute</translation>
+        <translation>Zeigt die Elementattribute</translation>
     </message>
     <message>
         <location filename="../../Component.cpp" line="414"/>
         <source>Shows the item properties</source>
-        <translation>Zeigt die Objekteigenschaften</translation>
+        <translation>Zeigt die Elementeigenschaften</translation>
     </message>
 </context>
 <context>
@@ -89,178 +89,188 @@
     <message>
         <location filename="../../Helper.cpp" line="245"/>
         <source>Please check the Problems Tab below for more error specific details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte sehen Sie zu weiteren Details im Problemfenster nach.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="247"/>
         <source>A Component with the same name already exists. Please choose another Name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine Komponente mit dem selben Namen existiert bereits. Bitte wählen Sie einen anderen Namen aus.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="249"/>
         <source>You cannot connect a port to itself.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können keinen Port mit sich selbst verbinden.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="251"/>
         <source>There is no open Model to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es existiert kein Modell zu %1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="253"/>
         <source>Simulation Start Time is not defined. Default value (0.0) will be used.</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulationsstartzeit ist nicht definiert. Vorgabewert (0.0) wird benutzt.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="255"/>
         <source>Simulation Stop Time is not defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulationsstoppzeit ist nicht definiert.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="257"/>
         <source>Simulation Start Time should be less than or equal to Stop Time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulationsstartzeit muss kleiner/gleich der Stoppzeit sein.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="259"/>
         <source>Please enter %1 Name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte geben sie den %1-Namen ein.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="261"/>
         <source>%1 %2 already exists %3.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 existiert bereits %3.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="263"/>
         <source>An item with the same name already exists. Please try some other name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein Element mit dem selben Namen existiert bereits. Bitte wählen Sie einen anderen Namen.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="265"/>
         <source>Could not find environment variable OPENMODELICAHOME. Please make sure OpenModelica is installed properly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konnte Umgebungsvariable OPENMODELICAHOME nicht finden. Bitte vergewissern Sie sich, dass OpenModelica korrekt installiert ist.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="267"/>
         <source>Following Error has occurred. 
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Der folgende Fehler trat auf.
+
+%1</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="269"/>
         <source>Problems are found in Modelica Text. 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Es wurden Probleme im Modelica Text gefunden. 
+</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="271"/>
         <source>
 
 For normal users it is recommended to choose &apos;Undo changes&apos;. You can also choose &apos;Let me fix errors&apos; if you want to fix them by your own.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Normale Nutzer sollten &apos;Änderungen rückgängig machen&apos; wählen. Sie können auch &apos;Lass mich die Fehler beheben&apos; wählen um sie selbst zu beheben.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="273"/>
         <source>Please make sure you are not using any OpenModelica Keywords like (model, package, record, class etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte stellen Sie sicher keine OpenModelica Schlüsselworte (wie  model, package, record, class, etc.) zu nutzen</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="275"/>
         <source>Incompatible types for the connectors.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inkompatible Typen der Konnektoren.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="277"/>
         <source>Do you want to save your changes before closing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie die Änderungen vor derm Schließen speichern?</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="279"/>
         <source>Unable to delete. Server error has occurred while trying to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konnte nicht löschen. Ein Serverfehler ist aufgetreten während des Versuchs zu Löschen.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="281"/>
         <source>This item is not a model.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses Element ist kein Modell.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="283"/>
         <source>Error has occurred while loading the file &apos;%1&apos;. Unable to load the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein Fehler ist während des Ladens der Datei &apos;%1&apos; aufgetreten. Konnte die Datei nicht laden.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="285"/>
         <source>Error has occurred while loading the model : 
 %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein Fehler ist während des Ladens des Modells aufgetreten:
+%1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="287"/>
         <source>Delete the existing models before loading the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte löschen Sie die existierenden Modelle bevor Sie die Datei laden.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="289"/>
         <source>Redefining models &apos;%1&apos; which already exists.</source>
         <oldsource>Redefing models &apos;%1&apos; which already exists.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Redefiniere Modelle &apos;%1&apos;, welche schon existieren.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="291"/>
         <source>The Annotations for the component %1 (%2) are not correct. Unable to add component.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Annotationen für die Komponente %1 (%2) sind nicht richtig. Konte Komponente nicht hinzufügen.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="293"/>
         <source>The %1 &apos;%2&apos; is not saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das %1 &apos;%2&apos; ist nicht gespeichert.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="295"/>
         <source>Following Error has occurred while saving component comment. 
 
  %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der folgende Fehler trat während des Speichernd des Komponentenkommentars auf.
+
+ %1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="297"/>
         <source>Following Error has occurred while saving component attributes. 
 
  %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der folgende Fehler trat während des Speichernd der Komponentenattribute auf.
+
+ %1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="299"/>
         <source>The %1 &apos;%2&apos; is contained inside a package. It is automatically saved when you save the package.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das %1 &apos;%2&apos; ist innerhalb eines Packages enthalten. Es wird automatisch gespeichert, wenn Sie das Package speichern.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="301"/>
         <source>The search string &apos;%1&apos; is not found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Suchbegriff &apos;%1&apos; wurde nicht gefunden.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="303"/>
         <source>The file &apos;%1&apos; has been removed outside %2. Do you want to keep it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei &apos;%1&apos; wurde außerhalb %2 entfernt. Wollen Sie sie behalten?</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="305"/>
         <source>The file &apos;%1&apos; has been modified outside %2. Do you want to reload it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei &apos;%1&apos; wurde außerhalb %2 verändert. Wollen Sie sie neu laden?</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="307"/>
         <source>Are you sure you want to close &apos;%1&apos; interactive simulation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sind Sie sicher, dass Sie die &apos;%1&apos; interaktive Simulation schließen wollen?</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="309"/>
         <source>You cannot recover this window once its closed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können das Fenster nicht wiederherstellen, wenn es einmal geschlossen ist.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="311"/>
@@ -270,57 +280,59 @@ For normal users it is recommended to choose &apos;Undo changes&apos;. You can a
         <oldsource>You already have one interactive simulation running. Only one interactive simulaiton session is allowed at a time. 
 
  Please shutdown the interactive simulation or close the interactive simulation tab before launching the new one.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben bereits eine interaktive Simulation laufen. Nur eine interaktive Simulationssitzung ist erlaubt.
+
+ Bite beenden Sie die interaktive Simulation oder schließen Sie den interaktiven Simulationstab bevor Sie den neuen starten.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="313"/>
         <source>Please select a variable to plot before starting.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte wählen Sie eine Variable zum Plotten bevor Sie anfangen.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="315"/>
         <source>You cannot insert %1, it is a %2. Only model, class, connector, record or block are allowed on diagram layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können %1 nicht einfügen, es ist ein %2. Nur model, class, connector record und block sind in der Diagrammansicht erlaubt.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="317"/>
         <source>You cannot insert %1, it is a %2. Only connector is allowed on the icon layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können %1 nicht einfügen, es ist ein %2. Nur connector ist in der Iconansicht erlaubt.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="319"/>
         <source>You cannot do a plot parametric between two different simulation result files. Make sure you select two variables from the same simulation result file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können kein PlotParametric zwischen zwei unterschiedlichen Simulationsergebnisdateien erstellen. Stellen Sie sicher, dass Sie zwei Variablen aus der selben Simulationsergebnisdatei auswählen.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="321"/>
         <source>The file &apos;%1&apos; is not a valid Modelica file. The file format is not supported. You can only open .mo files here.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei &apos;%1&apos; ist keine gültige Modelica-Datei. Das Dateiformat wird nicht unterstützt. Sie können hier nur .mo Dateien öffnen.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="323"/>
         <source>The html tags in the documentation are incorrect. Give correct starting and ending html tags and save it again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die HTML-Tags in der Dokumentation stimmen nicht. Bitte korrigieren Sie Start- und Endtags und speichern noch mal.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="325"/>
         <source>Enter a valid Positive Integer</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie eine gültige positive Ganzzahl ein</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="327"/>
         <source>You cannot drop an item on itself.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können ein Element nicht auf sich selbst ziehen.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="329"/>
         <source>Are you sure you want to delete &apos;%1&apos;? Everything contained inside this Package will also be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sind Sie sich sicher, dass Sie &apos;%1&apos; löschen wollen? Alles innerhalb dieses Packages wird ebenfalls gelöscht werden.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="331"/>
         <source>Are you sure you want to delete &apos;%1&apos;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sind Sie sich sicher, dass Sie &apos;%1&apos; löschen wollen?</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="333"/>
@@ -328,22 +340,23 @@ For normal users it is recommended to choose &apos;Undo changes&apos;. You can a
 This is probably wrong because the component is declared as %3.</source>
         <oldsource>A component with the name %1 already exists. The name is changed from %1 to %2.
 This is probably wrong because the component is decalred as %3.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Eine Komponente mit dem Namen %1 existiert bereits. Der Name wurde von %1 nach %2 geändert.
+Dies ist allerdings whrscheinlich falsch, das die Komponente als %3 deklariert wurde.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="335"/>
         <source>The FMI is generated at %1/%2.fmu</source>
-        <translation type="unfinished"></translation>
+        <translation>Das FMI wurde unter %1/%2.fmu generiert</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="337"/>
         <source>The Modifier &apos;%1&apos; format is invalid. The correct format is &apos;phi(start=1)&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Modifiziererformat von &apos;%1&apos; ist ungültig. Das korrekte Format ist &apos;phi(start=1)&apos;</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="339"/>
         <source>Unknown file format. The supported file formats are %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekanntes Dateiformat. Die unterstützten Dateiformate sind %1.</translation>
     </message>
 </context>
 <context>
@@ -467,7 +480,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="742"/>
         <source>Rotate the item clockwise</source>
-        <translation>Dreht Objekt im Uhrzeigersinn</translation>
+        <translation>Dreht das Element im Uhrzeigersinn</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="745"/>
@@ -477,7 +490,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="747"/>
         <source>Flip the item horizontally</source>
-        <translation>Spiegelt Objekt horizontal</translation>
+        <translation>Spiegelt das Element horizontal</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="749"/>
@@ -487,7 +500,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="750"/>
         <source>Flip the item vertically</source>
-        <translation>Spiegelt Objekt vertikal</translation>
+        <translation>Spiegelt das Element vertikal</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="752"/>
@@ -497,7 +510,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="753"/>
         <source>Rotate the item anticlockwise</source>
-        <translation>Dreht Objekt gegen den Uhrzeigersinn</translation>
+        <translation>Dreht das Element gegen den Uhrzeigersinn</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="756"/>
@@ -507,7 +520,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="757"/>
         <source>Reset the item rotation</source>
-        <translation>Macht Drehung des Objekts rückgängig</translation>
+        <translation>Macht Drehung des Elements rückgängig</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="901"/>
@@ -522,7 +535,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="760"/>
         <source>Delete the item</source>
-        <translation>Lösche Objekt</translation>
+        <translation>Lösche Element</translation>
     </message>
 </context>
 <context>
@@ -853,13 +866,13 @@ This is probably wrong because the component is decalred as %3.</oldsource>
         <location filename="../../Helper.cpp" line="225"/>
         <source>Location</source>
         <comment>For files</comment>
-        <translation type="unfinished">Position</translation>
+        <translation>Pfad</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="226"/>
         <source>Location</source>
         <comment>For errors</comment>
-        <translation type="unfinished">Position</translation>
+        <translation>Position</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="227"/>
@@ -920,17 +933,17 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../IconProperties.cpp" line="104"/>
         <source>Modifiers</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifizierer</translation>
     </message>
     <message>
         <location filename="../../IconProperties.cpp" line="109"/>
         <source>Component</source>
-        <translation type="unfinished"></translation>
+        <translation>Komponente</translation>
     </message>
     <message>
         <location filename="../../IconProperties.cpp" line="158"/>
         <source>Add new modifiers, e.g phi(start=1),w(start=2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue Modifizierer hinzufügen, z.B. phi(start=1),w(start=2)</translation>
     </message>
 </context>
 <context>
@@ -963,18 +976,18 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../FMIWidget.cpp" line="127"/>
         <source>Could not open file </source>
-        <translation>Konnte Datei nicht öffnen: </translation>
+        <translation>Konnte Datei nicht öffnen </translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="161"/>
         <location filename="../../FMIWidget.cpp" line="167"/>
         <source>while importing </source>
-        <translation type="unfinished"></translation>
+        <translation>während des Importierens von </translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="166"/>
         <source>unknown error </source>
-        <translation type="unfinished"></translation>
+        <translation>unbekannter Fehler </translation>
     </message>
 </context>
 <context>
@@ -982,62 +995,62 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="520"/>
         <source>Initialize</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisieren</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="524"/>
         <source>Initializes the interactive simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisiert die interaktive Simulation.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="530"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="534"/>
         <source>Starts or continues the interactive simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Startet die interaktive Simulation oder setzt sie fort.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="541"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="545"/>
         <source>Pauses the running interactive simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hält die laufende interaktive Simulation an.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="552"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Stop</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="556"/>
         <source>Stops the running interactive simulation and resets all values to the beginning.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bricht die laufende interaktive Simulation ab und setzt alle Werte auf den Startwert zurück.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="562"/>
         <source>Shut Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Beenden</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="566"/>
         <source>Shut down the running interactive simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beendet die laufende interaktive Simulation.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="572"/>
         <source>Show OMI Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige OMI Log</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="576"/>
         <source>Shows the OMI Log Message Window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt das OMI Log Ausgabefenster.</translation>
     </message>
 </context>
 <context>
@@ -1667,7 +1680,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../mainwindow.cpp" line="1107"/>
         <source>Generated by OpenModelica Connection Editor Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Erstellt von OpenModelica Connection Editor</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1132"/>
@@ -1703,7 +1716,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../ModelWidget.cpp" line="108"/>
         <source>in Global Scope</source>
-        <translation type="unfinished"></translation>
+        <translation>in der globalen Umgebung</translation>
     </message>
     <message>
         <location filename="../../ModelWidget.cpp" line="113"/>
@@ -1736,7 +1749,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../ModelicaEditor.cpp" line="110"/>
         <source>Start and End modifiers are different</source>
-        <translation type="unfinished"></translation>
+        <translation>Start- und Endmodifikatoren sind unterschiedlich</translation>
     </message>
     <message>
         <location filename="../../ModelicaEditor.cpp" line="208"/>
@@ -1769,7 +1782,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../OptionsWidget.cpp" line="703"/>
         <source>Item Color:</source>
-        <translation>Objektfarbe:</translation>
+        <translation>Elementfarbe:</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="704"/>
@@ -1779,7 +1792,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../OptionsWidget.cpp" line="707"/>
         <source>Items:</source>
-        <translation>Objekte:</translation>
+        <translation>Elemente:</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="718"/>
@@ -1850,32 +1863,32 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../OMCProxy.cpp" line="293"/>
         <source> will close.</source>
-        <translation type="unfinished"></translation>
+        <translation> wird beendet.</translation>
     </message>
     <message>
         <location filename="../../OMCProxy.cpp" line="303"/>
         <source>Unable to communicate with OpenModelica Compiler.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konnte nicht mit OpenModelica Compiler kommunizieren.</translation>
     </message>
     <message>
         <location filename="../../OMCProxy.cpp" line="389"/>
         <source>Connection with the OpenModelica Compiler has been lost.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbindung mit dem OpenModelica Compiler wurde unterbrochen.</translation>
     </message>
     <message>
         <location filename="../../OMCProxy.cpp" line="747"/>
         <source> requires Modelica 3 annotations</source>
-        <translation type="unfinished"></translation>
+        <translation> benötigt Modelica 3 Annotationen</translation>
     </message>
     <message>
         <location filename="../../OMCProxy.cpp" line="748"/>
         <source>Modelica Standard Library version </source>
-        <translation type="unfinished"></translation>
+        <translation>Modelica Standard Library Version </translation>
     </message>
     <message>
         <location filename="../../OMCProxy.cpp" line="748"/>
         <source> is unsupported.</source>
-        <translation type="unfinished"></translation>
+        <translation> wird nicht unterstützt.</translation>
     </message>
 </context>
 <context>
@@ -1883,42 +1896,42 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="159"/>
         <source>OMI Messages Log</source>
-        <translation type="unfinished"></translation>
+        <translation>OMI Nachrichten Log</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="161"/>
         <source>OMI Runtime Output</source>
-        <translation type="unfinished"></translation>
+        <translation>OMI Runtime Ausgabe</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="170"/>
         <source>OMI Control Server</source>
-        <translation type="unfinished"></translation>
+        <translation>OMI Control Server</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="179"/>
         <source>OMI Transfer Server</source>
-        <translation type="unfinished"></translation>
+        <translation>OMI Transfer Server</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="188"/>
         <source>OMI Control Client</source>
-        <translation type="unfinished"></translation>
+        <translation>OMI Control Client</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="443"/>
         <source>The OMI control server was not found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der OMI control server konnte nicht gefunden werden.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="448"/>
         <source>The OMI control server refuse the connection.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der OMI control server verweigerte die Verbindung.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="454"/>
         <source>The following error occurred while communicating with OMI control server:</source>
-        <translation type="unfinished"></translation>
+        <translation>Der folgende Fehler trat während der Kommunikation mit dem OMI control server auf:</translation>
     </message>
 </context>
 <context>
@@ -1980,7 +1993,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="70"/>
         <source>Plot by OpenModelica</source>
-        <translation type="unfinished"></translation>
+        <translation>Plot von OpenModelica</translation>
     </message>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="75"/>
@@ -2045,7 +2058,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="749"/>
         <source>Generated by OpenModelica Plot Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Generiert von OpenModelica Plot Tool</translation>
     </message>
 </context>
 <context>
@@ -2053,7 +2066,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../OptionsWidget.cpp" line="406"/>
         <source>NoBrush</source>
-        <translation type="unfinished"></translation>
+        <translation>Kein Pinsel</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="488"/>
@@ -2066,7 +2079,7 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="83"/>
         <source>* The parameters default value is used if no value is specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>* Parameter bekommt Vorgabewert wenn kein Wert spezifiziert ist.</translation>
     </message>
 </context>
 <context>
@@ -2085,12 +2098,12 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
         <location filename="../../PlotWidget.cpp" line="183"/>
         <location filename="../../PlotWidget.cpp" line="191"/>
         <source>Failed to read variables. Could not open file </source>
-        <translation type="unfinished"></translation>
+        <translation>Variablen Lesen fehlgeschlagen. Konnte Datei nicht öffnen </translation>
     </message>
     <message>
         <location filename="../../PlotWidget.cpp" line="224"/>
         <source>Simulation Result File: </source>
-        <translation type="unfinished"></translation>
+        <translation>Simulationsergebnisdatei: </translation>
     </message>
     <message>
         <location filename="../../PlotWidget.cpp" line="314"/>
@@ -2218,12 +2231,12 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../LibraryWidget.cpp" line="1256"/>
         <source>Searched Items</source>
-        <translation>Durchsuchte Objekte</translation>
+        <translation>Durchsuchte Elemente</translation>
     </message>
     <message>
         <location filename="../../LibraryWidget.cpp" line="1314"/>
         <source>Sorry, no items found</source>
-        <translation>Tut mir leid, keine Objekte gefunden</translation>
+        <translation>Tut mir leid, keine Elemente gefunden</translation>
     </message>
 </context>
 <context>
@@ -2236,71 +2249,71 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="161"/>
         <source>Shows the shape text properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt die Texteigenschaften der Form</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="164"/>
         <source>NoArrow(Start)</source>
-        <translation type="unfinished"></translation>
+        <translation>KeinPfeil(Start)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="165"/>
         <location filename="../../ShapeAnnotation.cpp" line="177"/>
         <source>No Arrow on the line</source>
-        <translation type="unfinished"></translation>
+        <translation>Kein Pfeil am Linienende</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="167"/>
         <source>HalfArrow(Start)</source>
-        <translation type="unfinished"></translation>
+        <translation>Halbpfeil(Start)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="168"/>
         <location filename="../../ShapeAnnotation.cpp" line="180"/>
         <source>Half Arrow for the line</source>
-        <translation type="unfinished"></translation>
+        <translation>Halbpfeil am Linienende</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="170"/>
         <source>OpenArrow(Start)</source>
-        <translation type="unfinished"></translation>
+        <translation>OffenerPfeil(Start)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="171"/>
         <location filename="../../ShapeAnnotation.cpp" line="183"/>
         <source>Open Arrow on the line</source>
-        <translation type="unfinished"></translation>
+        <translation>Offener Pfeil am Linienende</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="173"/>
         <source>FilledArrow(Start)</source>
-        <translation type="unfinished"></translation>
+        <translation>GefüllterPfeil(Start)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="174"/>
         <location filename="../../ShapeAnnotation.cpp" line="186"/>
         <source>Filled Arrow for the line</source>
-        <translation type="unfinished"></translation>
+        <translation>Gefüllter Pfeil am Linienende</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="176"/>
         <source>NoArrow(End)</source>
-        <translation type="unfinished"></translation>
+        <translation>KeinPfeil(Ende)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="179"/>
         <source>HalfArrow(End)</source>
-        <translation type="unfinished"></translation>
+        <translation>Halbpfeil(Ende)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="182"/>
         <source>OpenArrow(End)</source>
-        <translation type="unfinished"></translation>
+        <translation>OffenerPfeil(Ende)</translation>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="185"/>
-        <source>FilledArrow(End</source>
-        <translation type="unfinished"></translation>
+        <source>FilledArrow(End)</source>
+        <translation>GefüllterPfeil(Ende)</translation>
     </message>
 </context>
 <context>
@@ -2322,169 +2335,171 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     <message>
         <location filename="../../SimulationWidget.cpp" line="80"/>
         <source>Simulation Interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulationsinterval</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="81"/>
         <source>Start Time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Startzeit:</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="83"/>
         <source>Stop Time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stoppzeit:</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="93"/>
         <source>Integration</source>
-        <translation type="unfinished"></translation>
+        <translation>Integration</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="94"/>
         <source>Method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Methode:</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="97"/>
         <source>Tolerance:</source>
-        <translation type="unfinished"></translation>
+        <translation>Toleranz:</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="106"/>
         <source>Compiler Flags (Optional):</source>
-        <translation type="unfinished"></translation>
+        <translation>Compiler Flags (optional):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="121"/>
         <source>Number of Intervals:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl der Schritte:</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="124"/>
         <source>Output Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgabeformat:</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="128"/>
         <source>File Name (Optional):</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateiname (optional):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="131"/>
         <source>Variable Filter (Optional):</source>
-        <translation type="unfinished"></translation>
+        <translation>Variablenfilter (optional):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="146"/>
         <source>Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgabe</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="150"/>
         <source>Model Setup File (Optional):</source>
-        <translation type="unfinished"></translation>
+        <translation>Modell Setup Datei (optional):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="155"/>
         <source>Initialization Method (Optional):</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisierungsmethode (optional):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="159"/>
         <source>Optimization Method (Optional):</source>
-        <translation type="unfinished"></translation>
+        <translation>Omtimierungsmethode (optional):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="163"/>
         <source>Equation System Initialization File (Optional):</source>
-        <translation type="unfinished"></translation>
+        <translation>Gleichungssystemsinitialisierungsdatei (optional):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="168"/>
         <source>Equation System Initialization Time (Optional):</source>
-        <translation type="unfinished"></translation>
+        <translation>Gleichungssystemsinitialisierungszeit (optional):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="171"/>
         <source>Stats</source>
-        <translation type="unfinished"></translation>
+        <translation>Statistiken</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="172"/>
         <source>Initialization</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisierung</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="173"/>
         <source>Result Initialization</source>
-        <translation type="unfinished"></translation>
+        <translation>Ergebnisinitialisierung</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="174"/>
         <source>Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Solver</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="175"/>
         <source>Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Ereignisse</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="176"/>
         <source>Non Linear Systems</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht-lineare Systeme</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="177"/>
         <source>Zero Crossings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nulldurchgänge</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="178"/>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="189"/>
         <source>Logging (Optional)</source>
-        <translation type="unfinished"></translation>
+        <translation>Logging (optional)</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="209"/>
         <source>Simulation Flags</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulationsflags</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="227"/>
         <source>Save simulation settings inside model</source>
-        <translation type="unfinished"></translation>
+        <translation>Speicher Simulationseinstellungen im Modell</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="423"/>
         <source>Compiling Model.
 Please wait for a while.</source>
-        <translation type="unfinished"></translation>
+        <translation>Übersetze Modell.
+Bitte warten Sie einen Moment.</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="428"/>
         <source>Compiling Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Übersetze Modell</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="509"/>
         <source>Running Simulation.
 Please wait for a while.</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulation läuft.
+Bitte warten Sie einen Moment.</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="513"/>
         <source>Running Simulation</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulation läuft</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="588"/>
         <source>Starting Interactive Simulation Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Starte Interaktive-Simulation Server</translation>
     </message>
 </context>
 <context>

@@ -2261,8 +2261,8 @@ Crée par Adeel Asghar et Sonia Tariq en tant que partie de leurs thèses finale
     </message>
     <message>
         <location filename="ShapeAnnotation.cpp" line="185"/>
-        <source>FilledArrow(End</source>
-        <translation>FilledArrow(End</translation>
+        <source>FilledArrow(End)</source>
+        <translation>FilledArrow(End)</translation>
     </message>
 </context>
 <context>

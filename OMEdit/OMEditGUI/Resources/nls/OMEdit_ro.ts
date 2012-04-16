@@ -2291,7 +2291,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="185"/>
-        <source>FilledArrow(End</source>
+        <source>FilledArrow(End)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

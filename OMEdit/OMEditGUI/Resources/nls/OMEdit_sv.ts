@@ -2310,7 +2310,7 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     </message>
     <message>
         <location filename="../../ShapeAnnotation.cpp" line="185"/>
-        <source>FilledArrow(End</source>
+        <source>FilledArrow(End)</source>
         <translation>Fylld Pil (Slut)</translation>
     </message>
 </context>
