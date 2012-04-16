@@ -848,7 +848,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="222"/>
-        <source>VertitalCylinder</source>
+        <source>VerticalCylinder</source>
         <translation>Вертикальный цилиндр</translation>
     </message>
     <message>

@@ -848,7 +848,7 @@ Detta är förmodligen fel eftersom komponenten deklarerades som %3.</translatio
     </message>
     <message>
         <location filename="../../Helper.cpp" line="222"/>
-        <source>VertitalCylinder</source>
+        <source>VerticalCylinder</source>
         <translation>Lodrät Cylinder</translation>
     </message>
     <message>

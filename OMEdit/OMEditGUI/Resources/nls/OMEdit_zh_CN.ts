@@ -814,7 +814,7 @@ This is probably wrong because the component is declared as %3.</source>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="222"/>
-        <source>VertitalCylinder</source>
+        <source>VerticalCylinder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -369,7 +369,7 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
     <message>
         <location filename="../../OptionsWidget.cpp" line="563"/>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation>Chineză</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="564"/>
@@ -389,7 +389,7 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
     <message>
         <location filename="../../OptionsWidget.cpp" line="567"/>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>Italiană</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="568"/>
@@ -409,7 +409,7 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
     <message>
         <location filename="../../OptionsWidget.cpp" line="571"/>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>Spaniolă</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="572"/>
@@ -475,62 +475,62 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="745"/>
         <source>Horizontal Flip</source>
-        <translation>Flip Orizontal</translation>
+        <translation>Învîrtire Orizontală</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="747"/>
         <source>Flip the item horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>Învîrtire element pe  orizontală</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="749"/>
         <source>Vertical Flip</source>
-        <translation type="unfinished"></translation>
+        <translation>Învîrtire Verticală</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="750"/>
         <source>Flip the item vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>Învîrtire  element pe verticală</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="752"/>
         <source>Rotate Anticlockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotire în contra acelor de ceasornic</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="753"/>
         <source>Rotate the item anticlockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotire element în contra acelor de ceasornic</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="756"/>
         <source>Reset Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetare Rotire</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="757"/>
         <source>Reset the item rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetare rotire element</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="760"/>
         <source>Delete the item</source>
-        <translation type="unfinished"></translation>
+        <translation>Șterge element</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="901"/>
         <source>The class needs to be saved before you can insert a bitmap.</source>
-        <translation type="unfinished"></translation>
+        <translation>Clasa trebuie salvată înainte de introducerea imaginii.</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="933"/>
         <source>Cancel Connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Anulează Conexiunea</translation>
     </message>
     <message>
         <location filename="../../ProjectTabWidget.cpp" line="1395"/>
         <source>Error in class annotation </source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare în adnotarea clasei</translation>
     </message>
 </context>
 <context>
@@ -548,365 +548,365 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
     <message>
         <location filename="../../Helper.cpp" line="165"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Anulează</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="166"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="167"/>
         <source>Choose File</source>
-        <translation type="unfinished"></translation>
+        <translation>Alege Fișier</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="168"/>
         <source>Attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribute</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="169"/>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Proprietăți</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="170"/>
         <source>Connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Conexiune</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="171"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Editare</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="172"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvare</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="173"/>
         <source>Import FMI</source>
-        <translation type="unfinished"></translation>
+        <translation>Importă FMI</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="174"/>
         <source>Choose Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Alege Director</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="175"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="176"/>
         <source>Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Parametri</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="177"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nume:</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="178"/>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Comentariu:</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="179"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tip</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="180"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informție</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="181"/>
         <source>Modelica Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Fișiere Modelica</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="182"/>
         <source>rename</source>
-        <translation type="unfinished"></translation>
+        <translation>redenumește</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="183"/>
         <source>Check Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Verificare Model</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="184"/>
         <source>Check the Modelica model</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifică modelul Modelica</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="185"/>
         <source>Instantiate Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Instanțiere Model</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="186"/>
         <source>Instantiates/Flatten the Modelica model</source>
-        <translation type="unfinished"></translation>
+        <translation>Instanțiază/Aplatizează modelul Modelica</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="187"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ștergere</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="188"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiere</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="189"/>
         <source>Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Lipire</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="190"/>
         <source>Loading</source>
-        <translation type="unfinished"></translation>
+        <translation>Încărcare</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="191"/>
         <source>Question</source>
-        <translation type="unfinished"></translation>
+        <translation>Întrebare</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="192"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Căutare</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="193"/>
         <source>Simulate</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulează</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="194"/>
         <source>Simulation</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulare</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="195"/>
         <source>Interactive Simulation</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulare Interactivă</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="196"/>
         <source>Export to OMNotebook</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportă către OMNotebook</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="197"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opțiuni</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="198"/>
         <source>Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation>Biblioteci</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="199"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Text</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="200"/>
         <source>Pen Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Stil Creion</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="201"/>
         <source>Brush Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Stil Pensulă</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="202"/>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Culoare:</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="203"/>
         <source>Pick Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Alege Culoare</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="204"/>
         <source>No Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Fără Culoare</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="205"/>
         <source>Thickness:</source>
-        <translation type="unfinished"></translation>
+        <translation>Grosime:</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="206"/>
         <source>Smooth:</source>
-        <translation type="unfinished"></translation>
+        <translation>Netezire:</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="207"/>
         <source>Bezier Curve</source>
-        <translation type="unfinished"></translation>
+        <translation>Curbă Bezier</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="208"/>
         <location filename="../../Helper.cpp" line="214"/>
         <source>Solid</source>
-        <translation type="unfinished"></translation>
+        <translation>Solid</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="209"/>
         <source>Dash</source>
-        <translation type="unfinished"></translation>
+        <translation>Linie</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="210"/>
         <source>Dot</source>
-        <translation type="unfinished"></translation>
+        <translation>Punct</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="211"/>
         <source>Dash Dot</source>
-        <translation type="unfinished"></translation>
+        <translation>Linie Punct</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="212"/>
         <source>Dash Dot Dot</source>
-        <translation type="unfinished"></translation>
+        <translation>Linie Punct Punct</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="213"/>
         <source>No Brush</source>
-        <translation type="unfinished"></translation>
+        <translation>Fără Pensulă</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="215"/>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Orizontal</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="216"/>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="217"/>
         <source>Cross</source>
-        <translation type="unfinished"></translation>
+        <translation>Cruce</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="218"/>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Înainte</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="219"/>
         <source>Backward</source>
-        <translation type="unfinished"></translation>
+        <translation>Înapoi</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="220"/>
         <source>CrossDiag</source>
-        <translation type="unfinished"></translation>
+        <translation>Cruce Diagonală</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="221"/>
         <source>HorizontalCylinder</source>
-        <translation type="unfinished"></translation>
+        <translation>Cilindru Orizontal</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="222"/>
-        <source>VertitalCylinder</source>
-        <translation type="unfinished"></translation>
+        <source>VerticalCylinder</source>
+        <translation>Cilindru Vertical</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="223"/>
         <source>Sphere</source>
-        <translation type="unfinished"></translation>
+        <translation>Sferă</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="224"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimină</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="225"/>
         <source>Location</source>
         <comment>For files</comment>
-        <translation type="unfinished"></translation>
+        <translation>Locație</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="226"/>
         <source>Location</source>
         <comment>For errors</comment>
-        <translation type="unfinished"></translation>
+        <translation>Locație</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="227"/>
         <source>Text Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Proprietăți Text</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="228"/>
         <source>Read-Only</source>
-        <translation type="unfinished"></translation>
+        <translation>Doar-Citire</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="229"/>
         <source>Writable</source>
-        <translation type="unfinished"></translation>
+        <translation>Scriere</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="230"/>
         <source>Icon View</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedere Icoană</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="231"/>
         <source>Diagram View</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedere Diagramă</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="232"/>
         <source>Modelica Text View</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedere Text Modelica</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="233"/>
         <source>View Documentation</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedere Documentație</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="234"/>
         <source>Search Modelica Standard Library</source>
-        <translation type="unfinished"></translation>
+        <translation>Cautare Biblioteca Standard Modelica</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="235"/>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Stînga</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="236"/>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Centru</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="237"/>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Dreapta</translation>
     </message>
 </context>
 <context>

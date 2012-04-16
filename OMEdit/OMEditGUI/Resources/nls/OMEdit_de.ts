@@ -849,7 +849,7 @@ Dies ist allerdings whrscheinlich falsch, das die Komponente als %3 deklariert w
     </message>
     <message>
         <location filename="../../Helper.cpp" line="222"/>
-        <source>VertitalCylinder</source>
+        <source>VerticalCylinder</source>
         <translation>Vertikaler Zylinder</translation>
     </message>
     <message>

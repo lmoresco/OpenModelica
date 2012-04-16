@@ -802,7 +802,7 @@ Ceci est probablement incorrect car le composant est déclaré en tant que %3.</
     </message>
     <message>
         <location filename="Helper.cpp" line="221"/>
-        <source>VertitalCylinder</source>
+        <source>VerticalCylinder</source>
         <translation>Cylindre vertical</translation>
     </message>
     <message>
