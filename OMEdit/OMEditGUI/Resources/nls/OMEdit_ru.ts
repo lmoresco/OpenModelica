@@ -43,22 +43,22 @@
 <context>
     <name>ConnectorArrayMenu</name>
     <message>
-        <location filename="../../ConnectorWidget.cpp" line="801"/>
+        <location filename="../../ConnectorWidget.cpp" line="803"/>
         <source>Enter index in the array for Start Component:</source>
         <translation>Введите индекс массива для Start Component:</translation>
     </message>
     <message>
-        <location filename="../../ConnectorWidget.cpp" line="816"/>
+        <location filename="../../ConnectorWidget.cpp" line="818"/>
         <source>Enter index in the array for End Component:</source>
         <translation>Введите индекс массива для End Component:</translation>
     </message>
     <message>
-        <location filename="../../ConnectorWidget.cpp" line="827"/>
+        <location filename="../../ConnectorWidget.cpp" line="829"/>
         <source>Connect </source>
         <translation>Соединить </translation>
     </message>
     <message>
-        <location filename="../../ConnectorWidget.cpp" line="827"/>
+        <location filename="../../ConnectorWidget.cpp" line="829"/>
         <source> with </source>
         <translation> с </translation>
     </message>
@@ -66,7 +66,7 @@
 <context>
     <name>ConnectorLine</name>
     <message>
-        <location filename="../../ConnectorWidget.cpp" line="671"/>
+        <location filename="../../ConnectorWidget.cpp" line="673"/>
         <source>Delete Connection</source>
         <translation>Удалить соединение</translation>
     </message>
@@ -2497,12 +2497,12 @@ Please wait for a while.</source>
 <context>
     <name>StringHandler</name>
     <message>
-        <location filename="../../StringHandler.cpp" line="615"/>
+        <location filename="../../StringHandler.cpp" line="619"/>
         <source>Description</source>
         <translation>Описание</translation>
     </message>
     <message>
-        <location filename="../../StringHandler.cpp" line="620"/>
+        <location filename="../../StringHandler.cpp" line="624"/>
         <source>Path</source>
         <translation>Путь</translation>
     </message>

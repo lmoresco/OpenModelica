@@ -43,22 +43,22 @@
 <context>
     <name>ConnectorArrayMenu</name>
     <message>
-        <location filename="../../ConnectorWidget.cpp" line="801"/>
+        <location filename="../../ConnectorWidget.cpp" line="803"/>
         <source>Enter index in the array for Start Component:</source>
         <translation>Ange index i arrayen för den första komponenten:</translation>
     </message>
     <message>
-        <location filename="../../ConnectorWidget.cpp" line="816"/>
+        <location filename="../../ConnectorWidget.cpp" line="818"/>
         <source>Enter index in the array for End Component:</source>
         <translation>Ange index i arrayen för den sista komponenten:</translation>
     </message>
     <message>
-        <location filename="../../ConnectorWidget.cpp" line="827"/>
+        <location filename="../../ConnectorWidget.cpp" line="829"/>
         <source>Connect </source>
         <translation>Anslut </translation>
     </message>
     <message>
-        <location filename="../../ConnectorWidget.cpp" line="827"/>
+        <location filename="../../ConnectorWidget.cpp" line="829"/>
         <source> with </source>
         <translation> med </translation>
     </message>
@@ -66,7 +66,7 @@
 <context>
     <name>ConnectorLine</name>
     <message>
-        <location filename="../../ConnectorWidget.cpp" line="671"/>
+        <location filename="../../ConnectorWidget.cpp" line="673"/>
         <source>Delete Connection</source>
         <translation>Ta Bort Anslutning</translation>
     </message>
@@ -2503,12 +2503,12 @@ Var god vänta.</translation>
 <context>
     <name>StringHandler</name>
     <message>
-        <location filename="../../StringHandler.cpp" line="615"/>
+        <location filename="../../StringHandler.cpp" line="619"/>
         <source>Description</source>
         <translation>Beskrivning</translation>
     </message>
     <message>
-        <location filename="../../StringHandler.cpp" line="620"/>
+        <location filename="../../StringHandler.cpp" line="624"/>
         <source>Path</source>
         <translation>Sökväg</translation>
     </message>
