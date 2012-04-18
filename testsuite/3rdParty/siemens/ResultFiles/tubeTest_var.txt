@@ -1,0 +1,24 @@
+StopTime = 2000
+number of intervals = 2000
+SiemensPower.Components.Pipes.Tests.tubeTest
+
+SH.h[1]
+SH.h[2]
+SH.h[3]
+SH.h[4]
+SH.h[5]
+SH.h[6]
+SH.h[7]
+SH.h[8]
+SH.h[9]
+SH.h[10]
+SH.qMetalFluidDelayed[1]
+SH.p
+SH.m_flow
+SH.T[1]
+SH.T[2]
+SH.T[3]
+
+timeTable.C1signal.y
+timeTable1.C1signal.y
+timeTable2.C1signal.y

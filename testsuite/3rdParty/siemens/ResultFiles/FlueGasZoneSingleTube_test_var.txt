@@ -1,0 +1,32 @@
+SiemensPower.Components.FlueGasZones.Tests.FlueGasZoneSingleTube_test.mo
+stopTime = 200
+number of intervals = 500
+
+flueGasZoneSingleCompGas.tube.h[1]
+flueGasZoneSingleCompGas.tube.h[2]
+flueGasZoneSingleCompGas.tube.h[3]
+flueGasZoneSingleCompGas.tube.h[4]
+flueGasZoneSingleCompGas.tube.h[5]
+flueGasZoneSingleCompGas.tube.h[6]
+flueGasZoneSingleCompGas.tube.h[7]
+flueGasZoneSingleCompGas.tube.h[8]
+flueGasZoneSingleCompGas.tube.h[9]
+flueGasZoneSingleCompGas.tube.h[10]
+flueGasZoneSingleCompGas.tube.h[11]
+flueGasZoneSingleCompGas.tube.h[12]
+flueGasZoneSingleCompGas.tube.h[13]
+flueGasZoneSingleCompGas.tube.h[14]
+flueGasZoneSingleCompGas.tube.h[15]
+flueGasZoneSingleCompGas.tube.h[16]
+flueGasZoneSingleCompGas.tube.h[17]
+flueGasZoneSingleCompGas.tube.h[18]
+flueGasZoneSingleCompGas.tube.h[19]
+flueGasZoneSingleCompGas.tube.h[20]
+
+flueGasZoneSingleCompGas.tube.wall.layer[1].T[1]
+flueGasZoneSingleCompGas.tube.wall.layer[2].T[1]
+flueGasZoneSingleCompGas.tube.wall.layer[3].T[1]
+timeTable.C1signal.y
+
+flueGasZoneSingleCompGas.hOut
+flueGasZoneSingleCompGas.T

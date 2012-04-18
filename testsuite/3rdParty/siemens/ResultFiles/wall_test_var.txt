@@ -1,0 +1,22 @@
+stopTime = 25
+Number of intervals = 500
+SiemensPower.Components.SolidComponents.Tests.wall_test.mo
+
+
+heatInput.C1signal.y
+
+wall.layer[1].T[1]
+wall.layer[1].T[2]
+wall.layer[1].T[3]
+wall.layer[1].T[4]
+wall.layer[1].T[5]
+wall.layer[2].T[1]
+wall.layer[2].T[2]
+wall.layer[2].T[3]
+wall.layer[2].T[4]
+wall.layer[2].T[5]
+wall.layer[3].T[1]
+wall.layer[3].T[2]
+wall.layer[3].T[3]
+wall.layer[3].T[4]
+wall.layer[3].T[5]

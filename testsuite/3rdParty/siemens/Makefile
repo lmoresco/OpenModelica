@@ -1,12 +1,23 @@
 TEST = ../../rtest -v
 
 TESTFILES = \
+testFlueGasZones.mos \
+testHeatExchanger.mos \
+testJunctions.mos \
+testSolidComponents.mos \
+testPipes.mos \
 valve_test.mos \
+
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES= \
 paralleFlowEVA_test.mos \
+$(WRONGRESULTTESTFILES)
+
+WRONGRESULTTESTFILES= \
+testPipes.mos
+
 
 # Dependency files that are not .mo .mos or Makefile
 # Add them here or they will be cleaned.
@@ -14,7 +25,9 @@ DEPENDENCIES = \
 *.mo \
 *.mos \
 Makefile \
-SiemensPowerOMCtest
+SiemensPowerOMCtest \
+SiemensPower \
+ResultFiles 
 
 
 CLEAN = `ls | grep -w -v -f deps.tmp`

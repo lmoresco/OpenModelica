@@ -1,0 +1,15 @@
+StopTime=12
+number of intervals = 500
+SiemensPower.Components.Junctions.Tests.splitterMixer_testTubeOwnMedia_simpleInput.mo
+
+mixer.h
+pipe1.portIn.h_outflow
+pipe1.portOut.p
+pipe1.portOut.h_outflow
+pipe2.portIn.h_outflow
+pipe2.portOut.p
+pipe2.portOut.h_outflow
+pipe3.portIn.h_outflow
+pipe3.portOut.p
+pipe3.portOut.h_outflow
+step.y
