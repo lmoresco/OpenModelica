@@ -268,8 +268,12 @@ For normal users it is recommended to choose &apos;Undo changes&apos;. You can a
     </message>
     <message>
         <location filename="../../Helper.cpp" line="309"/>
-        <source>You cannot recover this window once its closed.</source>
+        <source>You cannot recover this window once it is closed.</source>
         <translation>Вы не можете восстановить окно после того как оно было закрыто.</translation>
+    </message>
+    <message>
+        <source>You cannot recover this window once its closed.</source>
+        <translation type="obsolete">Вы не можете восстановить окно после того как оно было закрыто.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="311"/>
@@ -373,7 +377,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../OptionsWidget.cpp" line="563"/>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation>китайский</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="564"/>
@@ -383,27 +387,27 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../OptionsWidget.cpp" line="565"/>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>французский</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="566"/>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>немецкий</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="567"/>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>итальянский</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="568"/>
         <source>Japanese</source>
-        <translation type="unfinished"></translation>
+        <translation>японский</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="569"/>
         <source>Romanian</source>
-        <translation type="unfinished"></translation>
+        <translation>румынский</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="570"/>
@@ -413,7 +417,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../OptionsWidget.cpp" line="571"/>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>испанский</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="572"/>
@@ -659,7 +663,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../Helper.cpp" line="182"/>
         <source>rename</source>
-        <translation type="unfinished">Переименовать</translation>
+        <translation>Переименовать</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="183"/>
@@ -677,8 +681,12 @@ This is probably wrong because the component is decalred as %3.</oldsource>
         <translation>Представить модель в виде кода</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="186"/>
         <source>Instantiates/Flatten the Modelica model</source>
+        <translation type="obsolete">Представить модель в виде кода</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="186"/>
+        <source>Instantiate/Flatten the Modelica model</source>
         <translation>Представить модель в виде кода</translation>
     </message>
     <message>
@@ -865,13 +873,13 @@ This is probably wrong because the component is decalred as %3.</oldsource>
         <location filename="../../Helper.cpp" line="225"/>
         <source>Location</source>
         <comment>For files</comment>
-        <translation type="unfinished">Местоположение</translation>
+        <translation>Местоположение</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="226"/>
         <source>Location</source>
         <comment>For errors</comment>
-        <translation type="unfinished">Местоположение</translation>
+        <translation>Местоположение</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="227"/>
@@ -1166,7 +1174,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
         <location filename="../../mainwindow.cpp" line="148"/>
         <source>Documentation</source>
         <oldsource> Documentation</oldsource>
-        <translation type="unfinished">Описание</translation>
+        <translation>документация</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="157"/>
@@ -2382,6 +2390,11 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</oldsourc
         <translation>Настройки компилятора (опционально):</translation>
     </message>
     <message>
+        <location filename="../../SimulationWidget.cpp" line="173"/>
+        <source>Initialization Result</source>
+        <translation>Результат инициализации</translation>
+    </message>
+    <message>
         <location filename="../../SimulationWidget.cpp" line="227"/>
         <source>Save simulation settings inside model</source>
         <translation>Сохранить настройки расчета внутри модели</translation>
@@ -2427,9 +2440,8 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</oldsourc
         <translation>Инициализация</translation>
     </message>
     <message>
-        <location filename="../../SimulationWidget.cpp" line="173"/>
         <source>Result Initialization</source>
-        <translation>Инициализация результатов</translation>
+        <translation type="obsolete">Инициализация результатов</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="174"/>

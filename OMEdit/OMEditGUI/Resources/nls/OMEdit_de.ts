@@ -269,8 +269,12 @@ Normale Nutzer sollten &apos;Änderungen rückgängig machen&apos; wählen. Sie 
     </message>
     <message>
         <location filename="../../Helper.cpp" line="309"/>
-        <source>You cannot recover this window once its closed.</source>
+        <source>You cannot recover this window once it is closed.</source>
         <translation>Sie können das Fenster nicht wiederherstellen, wenn es einmal geschlossen ist.</translation>
+    </message>
+    <message>
+        <source>You cannot recover this window once its closed.</source>
+        <translation type="obsolete">Sie können das Fenster nicht wiederherstellen, wenn es einmal geschlossen ist.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="311"/>
@@ -678,9 +682,13 @@ Dies ist allerdings whrscheinlich falsch, das die Komponente als %3 deklariert w
         <translation>Instanziiere Modell</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="186"/>
         <source>Instantiates/Flatten the Modelica model</source>
-        <translation>Instanziiert/reduziert das Modelica Modell</translation>
+        <translation type="obsolete">Instanziiert/reduziert das Modelica Modell</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="186"/>
+        <source>Instantiate/Flatten the Modelica model</source>
+        <translation>Instanziieren/reduziert das Modelica Modell</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="187"/>
@@ -2429,8 +2437,12 @@ Möchten Sie OpenModelica übersetzen? Kontaktieren Sie uns unter www.openmodeli
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="173"/>
+        <source>Initialization Result</source>
+        <translation>Initialisierung Ergebnis</translation>
+    </message>
+    <message>
         <source>Result Initialization</source>
-        <translation>Ergebnisinitialisierung</translation>
+        <translation type="obsolete">Ergebnisinitialisierung</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="174"/>

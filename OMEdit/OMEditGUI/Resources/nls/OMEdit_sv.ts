@@ -268,8 +268,12 @@ För vanliga användare rekommenderas att välja &apos;Ångra ändringar&apos;. 
     </message>
     <message>
         <location filename="../../Helper.cpp" line="309"/>
-        <source>You cannot recover this window once its closed.</source>
+        <source>You cannot recover this window once it is closed.</source>
         <translation>Du kan inte återställa det här fönstret när det stängts.</translation>
+    </message>
+    <message>
+        <source>You cannot recover this window once its closed.</source>
+        <translation type="obsolete">Du kan inte återställa det här fönstret när det stängts.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="311"/>
@@ -677,8 +681,12 @@ Detta är förmodligen fel eftersom komponenten deklarerades som %3.</translatio
         <translation>Instantiera Modell</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="186"/>
         <source>Instantiates/Flatten the Modelica model</source>
+        <translation type="obsolete">Instantierar den aktuella modellen</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="186"/>
+        <source>Instantiate/Flatten the Modelica model</source>
         <translation>Instantierar den aktuella modellen</translation>
     </message>
     <message>
@@ -2427,8 +2435,12 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="173"/>
-        <source>Result Initialization</source>
+        <source>Initialization Result</source>
         <translation>Initieringsresultat</translation>
+    </message>
+    <message>
+        <source>Result Initialization</source>
+        <translation type="obsolete">Initieringsresultat</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="174"/>

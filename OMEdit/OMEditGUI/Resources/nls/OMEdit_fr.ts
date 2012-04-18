@@ -272,8 +272,12 @@ Pour les utilisateurs normaux il est recommandé de choisir &apos;Annuler change
     </message>
     <message>
         <location filename="../../Helper.cpp" line="309"/>
-        <source>You cannot recover this window once its closed.</source>
+        <source>You cannot recover this window once it is closed.</source>
         <translation>Vous ne pouvez pas récupérer cette fenêtre une fois celle-ci fermée.</translation>
+    </message>
+    <message>
+        <source>You cannot recover this window once its closed.</source>
+        <translation type="obsolete">Vous ne pouvez pas récupérer cette fenêtre une fois celle-ci fermée.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="311"/>
@@ -654,8 +658,12 @@ Ceci est probablement incorrect car le composant est déclaré en tant que %3.</
         <translation>Instancier le modèle</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="186"/>
         <source>Instantiates/Flatten the Modelica model</source>
+        <translation type="obsolete">Instancier/Ecraser le modèle Modelica</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="186"/>
+        <source>Instantiate/Flatten the Modelica model</source>
         <translation>Instancier/Ecraser le modèle Modelica</translation>
     </message>
     <message>
@@ -2417,8 +2425,12 @@ Crée par Adeel Asghar et Sonia Tariq en tant que partie de leurs thèses finale
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="173"/>
-        <source>Result Initialization</source>
+        <source>Initialization Result</source>
         <translation>Résultat de l&apos;initialisation</translation>
+    </message>
+    <message>
+        <source>Result Initialization</source>
+        <translation type="obsolete">Résultat de l&apos;initialisation</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="174"/>

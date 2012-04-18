@@ -258,7 +258,7 @@ For normal users it is recommended to choose &apos;Undo changes&apos;. You can a
     </message>
     <message>
         <location filename="../../Helper.cpp" line="309"/>
-        <source>You cannot recover this window once its closed.</source>
+        <source>You cannot recover this window once it is closed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -638,7 +638,7 @@ This is probably wrong because the component is declared as %3.</source>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="186"/>
-        <source>Instantiates/Flatten the Modelica model</source>
+        <source>Instantiate/Flatten the Modelica model</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2393,7 +2393,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="173"/>
-        <source>Result Initialization</source>
+        <source>Initialization Result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

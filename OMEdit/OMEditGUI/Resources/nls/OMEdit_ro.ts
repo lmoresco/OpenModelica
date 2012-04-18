@@ -269,8 +269,12 @@ Utilizatorii neexperimentați selectați &apos;Anulează modificarile&apos;. Se 
     </message>
     <message>
         <location filename="../../Helper.cpp" line="309"/>
+        <source>You cannot recover this window once it is closed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>You cannot recover this window once its closed.</source>
-        <translation>Fereastra aceasta nu poate fi recuperată dacă este închisă.</translation>
+        <translation type="obsolete">Fereastra aceasta nu poate fi recuperată dacă este închisă.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="311"/>
@@ -651,9 +655,13 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
         <translation>Instanțiere Model</translation>
     </message>
     <message>
-        <location filename="../../Helper.cpp" line="186"/>
         <source>Instantiates/Flatten the Modelica model</source>
-        <translation>Instanțiază/Aplatizează modelul Modelica</translation>
+        <translation type="obsolete">Instanțiază/Aplatizează modelul Modelica</translation>
+    </message>
+    <message>
+        <location filename="../../Helper.cpp" line="186"/>
+        <source>Instantiate/Flatten the Modelica model</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="187"/>
@@ -1095,7 +1103,7 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
     <message>
         <location filename="../../LibraryWidget.cpp" line="610"/>
         <source>View Documentation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vedere Documentație</translation>
     </message>
     <message>
         <location filename="../../LibraryWidget.cpp" line="611"/>
@@ -1306,7 +1314,7 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
     <message>
         <location filename="../../mainwindow.cpp" line="410"/>
         <source>Interactive Simulation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Simulare Interactivă</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="411"/>
@@ -1766,7 +1774,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
     <message>
         <location filename="../../OptionsWidget.cpp" line="704"/>
         <source>Pick Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alege Culoare</translation>
     </message>
     <message>
         <location filename="../../OptionsWidget.cpp" line="707"/>
@@ -1997,7 +2005,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="194"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Salvare</translation>
     </message>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotWindow.cpp" line="201"/>
@@ -2407,7 +2415,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="173"/>
-        <source>Result Initialization</source>
+        <source>Initialization Result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
