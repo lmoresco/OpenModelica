@@ -659,7 +659,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
     <message>
         <location filename="../../Helper.cpp" line="182"/>
         <source>rename</source>
-        <translation>переименовать</translation>
+        <translation type="unfinished">Переименовать</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="183"/>
@@ -1166,7 +1166,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
         <location filename="../../mainwindow.cpp" line="148"/>
         <source>Documentation</source>
         <oldsource> Documentation</oldsource>
-        <translation>Документация</translation>
+        <translation type="unfinished">Описание</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="157"/>
