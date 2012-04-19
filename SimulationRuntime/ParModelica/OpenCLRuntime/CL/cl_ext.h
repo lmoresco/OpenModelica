@@ -34,10 +34,10 @@ extern "C" {
 #endif
 
 #ifdef __APPLE__
-	#include <OpenCL/cl.h>
-    #include <AvailabilityMacros.h>
+  #include <OpenCL/cl.h>
+  #include <AvailabilityMacros.h>
 #else
-	#include <CL/cl.h>
+  #include <CL/cl.h>
 #endif
 
 /* cl_khr_fp64 extension - no extension #define since it has no functions  */
@@ -64,7 +64,7 @@ extern "C" {
      * before using.
      */
 #define cl_APPLE_SetMemObjectDestructor 1
-cl_int	CL_API_ENTRY clSetMemObjectDestructorAPPLE(  cl_mem /* memobj */, 
+cl_int CL_API_ENTRY clSetMemObjectDestructorAPPLE(  cl_mem /* memobj */, 
                                             void (* /*pfn_notify*/)( cl_mem /* memobj */, void* /*user_data*/), 
                                         void * /*user_data */ )             CL_EXT_SUFFIX__VERSION_1_0;  
 

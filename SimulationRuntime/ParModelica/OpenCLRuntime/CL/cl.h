@@ -59,7 +59,7 @@ typedef cl_uint             cl_device_local_mem_type;
 typedef cl_bitfield         cl_device_exec_capabilities;
 typedef cl_bitfield         cl_command_queue_properties;
 
-typedef intptr_t			cl_context_properties;
+typedef intptr_t            cl_context_properties;
 typedef cl_uint             cl_context_info;
 typedef cl_uint             cl_command_queue_info;
 typedef cl_uint             cl_channel_order;
@@ -958,7 +958,7 @@ clEnqueueTask(cl_command_queue  /* command_queue */,
 
 extern CL_API_ENTRY cl_int CL_API_CALL
 clEnqueueNativeKernel(cl_command_queue  /* command_queue */,
-					  void (*user_func)(void *),
+                      void (*user_func)(void *),
                       void *            /* args */,
                       size_t            /* cb_args */,
                       cl_uint           /* num_mem_objects */,
