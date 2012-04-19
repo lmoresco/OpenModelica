@@ -272,10 +272,6 @@ For normal users it is recommended to choose &apos;Undo changes&apos;. You can a
         <translation>Вы не можете восстановить окно после того как оно было закрыто.</translation>
     </message>
     <message>
-        <source>You cannot recover this window once its closed.</source>
-        <translation type="obsolete">Вы не можете восстановить окно после того как оно было закрыто.</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="311"/>
         <source>You already have one interactive simulation running. Only one interactive simulation session is allowed at a time. 
 
@@ -679,10 +675,6 @@ This is probably wrong because the component is decalred as %3.</oldsource>
         <location filename="../../Helper.cpp" line="185"/>
         <source>Instantiate Model</source>
         <translation>Представить модель в виде кода</translation>
-    </message>
-    <message>
-        <source>Instantiates/Flatten the Modelica model</source>
-        <translation type="obsolete">Представить модель в виде кода</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="186"/>
@@ -2438,10 +2430,6 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</oldsourc
         <location filename="../../SimulationWidget.cpp" line="172"/>
         <source>Initialization</source>
         <translation>Инициализация</translation>
-    </message>
-    <message>
-        <source>Result Initialization</source>
-        <translation type="obsolete">Инициализация результатов</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="174"/>

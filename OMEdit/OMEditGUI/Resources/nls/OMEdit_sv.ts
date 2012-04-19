@@ -272,10 +272,6 @@ För vanliga användare rekommenderas att välja &apos;Ångra ändringar&apos;. 
         <translation>Du kan inte återställa det här fönstret när det stängts.</translation>
     </message>
     <message>
-        <source>You cannot recover this window once its closed.</source>
-        <translation type="obsolete">Du kan inte återställa det här fönstret när det stängts.</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="311"/>
         <source>You already have one interactive simulation running. Only one interactive simulation session is allowed at a time. 
 
@@ -679,10 +675,6 @@ Detta är förmodligen fel eftersom komponenten deklarerades som %3.</translatio
         <location filename="../../Helper.cpp" line="185"/>
         <source>Instantiate Model</source>
         <translation>Instantiera Modell</translation>
-    </message>
-    <message>
-        <source>Instantiates/Flatten the Modelica model</source>
-        <translation type="obsolete">Instantierar den aktuella modellen</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="186"/>
@@ -2437,10 +2429,6 @@ Skapad av Adeel Asghar och Sonia Tariq som en del av deras examensarbete.</trans
         <location filename="../../SimulationWidget.cpp" line="173"/>
         <source>Initialization Result</source>
         <translation>Initieringsresultat</translation>
-    </message>
-    <message>
-        <source>Result Initialization</source>
-        <translation type="obsolete">Initieringsresultat</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="174"/>

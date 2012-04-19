@@ -273,10 +273,6 @@ Utilizatorii neexperimentați selectați &apos;Anulează modificarile&apos;. Se 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You cannot recover this window once its closed.</source>
-        <translation type="obsolete">Fereastra aceasta nu poate fi recuperată dacă este închisă.</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="311"/>
         <source>You already have one interactive simulation running. Only one interactive simulation session is allowed at a time. 
 
@@ -653,10 +649,6 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
         <location filename="../../Helper.cpp" line="185"/>
         <source>Instantiate Model</source>
         <translation>Instanțiere Model</translation>
-    </message>
-    <message>
-        <source>Instantiates/Flatten the Modelica model</source>
-        <translation type="obsolete">Instanțiază/Aplatizează modelul Modelica</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="186"/>

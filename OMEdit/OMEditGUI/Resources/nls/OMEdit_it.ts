@@ -268,10 +268,6 @@ Si raccomanda normalmente di scecliere &apos;annulla i cambiamenti&apos;. E&apos
         <translation>Questa finestra non può essere recuperata una volta chiusa.</translation>
     </message>
     <message>
-        <source>You cannot recover this window once its closed.</source>
-        <translation type="obsolete">Questa finestra non può essere recuperata una volta chiusa.</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="311"/>
         <source>You already have one interactive simulation running. Only one interactive simulation session is allowed at a time. 
 
@@ -648,10 +644,6 @@ Questo è probabilmente errato in quanto il componente è dichiarato come %3.</t
         <translation>Istanzia il Modello</translation>
     </message>
     <message>
-        <source>Instantiates/Flatten the Modelica model</source>
-        <translation type="obsolete">Istanzia/Appiattisce il modello Modelica</translation>
-    </message>
-    <message>
         <location filename="../../Helper.cpp" line="186"/>
         <source>Instantiate/Flatten the Modelica model</source>
         <translation>Istanzia/Appiattisce il modello Modelica</translation>
@@ -831,10 +823,6 @@ Questo è probabilmente errato in quanto il componente è dichiarato come %3.</t
         <location filename="../../Helper.cpp" line="222"/>
         <source>VerticalCylinder</source>
         <translation>Cilindro verticale</translation>
-    </message>
-    <message>
-        <source>VertitalCylinder</source>
-        <translation type="obsolete">Cilindro verticale</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="223"/>
@@ -2300,10 +2288,6 @@ Distribuito in accordo con OSMC-PL e GPL. Vedi www.openmodelica.org.</translatio
         <source>FilledArrow(End)</source>
         <translation>Freccia piena (fine)</translation>
     </message>
-    <message>
-        <source>FilledArrow(End</source>
-        <translation type="obsolete">Freccia piena (fine)</translation>
-    </message>
 </context>
 <context>
     <name>ShapeProperties</name>
@@ -2419,10 +2403,6 @@ Distribuito in accordo con OSMC-PL e GPL. Vedi www.openmodelica.org.</translatio
         <location filename="../../SimulationWidget.cpp" line="173"/>
         <source>Initialization Result</source>
         <translation>Risultato dell&apos;inizializzazione</translation>
-    </message>
-    <message>
-        <source>Result Initialization</source>
-        <translation type="obsolete">Risultato dell&apos;inizializzazione</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="174"/>
