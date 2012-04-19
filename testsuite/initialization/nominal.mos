@@ -1,0 +1,63 @@
+// name: nominal
+// keywords: forest, initialization, nominal
+// status: correct
+// cflags:
+// teardown_command: rm -rf initializationTests.forest* _initializationTests.forest* output.log
+// 
+//  case for initialization with nominal-values
+//
+
+loadString("
+within ;
+package initializationTests
+  model forest
+    Real foxes(nominal=100000000);
+    Real rabbits(nominal=0.000000000001);
+    Real population(start=850);
+    Real value;
+    discrete Integer seasons(start=0, fixed=true);
+
+    parameter Real g_r = 0.4;
+    parameter Real d_rf= 0.005;
+    parameter Real d_f = 0.9;
+    parameter Real g_fr= 1.0;
+    parameter Real priceFox = 150;
+    parameter Real priceRabbit = 12;
+    parameter Real priceSeason = 1000;
+
+  initial equation 
+    der(foxes) = 20*10000000000;
+    value = 11000;
+
+  equation 
+    der(rabbits)/0.0000000001 =  rabbits/0.0000000001*g_r - rabbits/0.0000000001*foxes/10000000000*d_rf;
+    der(foxes)/10000000000 = -foxes/10000000000*d_f + rabbits/0.0000000001*foxes/10000000000*d_rf*g_fr;
+    population = foxes/10000000000+rabbits/0.0000000001;
+    value = priceFox*foxes/10000000000 + priceRabbit*rabbits/0.0000000001 + priceSeason*seasons;
+
+    when sample(1, 1) and foxes/10000000000 > 50 then
+      reinit(foxes, foxes/2);
+      seasons = pre(seasons)+1;
+    end when;
+  end forest;
+end initializationTests;
+");
+getErrorString();
+
+simulate(initializationTests.forest, startTime=0.0, stopTime=0.0);
+readFile("output.log");
+val(foxes, 0.0);
+val(rabbits, 0.0);
+
+// Result:
+// true
+// ""
+// record SimulationResult
+//     resultFile = "initializationTests.forest_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.forest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = ""
+// end SimulationResult;
+// ""
+// 60511922013.08156
+// 0.00000008410267641443267
+// endResult

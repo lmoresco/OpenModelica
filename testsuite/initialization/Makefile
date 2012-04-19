@@ -1,16 +1,18 @@
 TEST = ../rtest -v 
 
 TESTFILES = \
-gaspropreties.mos\
-_forest.mos \
-_startValue.mos \
-_scaling1.mos \
-_scaling2.mos \
-_nominal.mos
+gaspropreties.mos \
+forest.mos \
+startValue.mos \
+scaling1.mos \
+scaling2.mos \
+nominal.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES = \
+minvalue.mos \
+nonlinear.mos
 
 # Dependency files that are not .mo .mos or Makefile
 # Add them here or they will be cleaned.

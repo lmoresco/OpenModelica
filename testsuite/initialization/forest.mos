@@ -1,0 +1,89 @@
+// name: forest
+// keywords: forest, initialization
+// status: correct
+// cflags:
+// teardown_command: rm -rf initializationTests.forest_* _initializationTests.forest_* output.log
+// 
+//  case for initialization of forest model
+//
+
+loadString("
+within ;
+package initializationTests
+  model forest
+    Real foxes;
+    Real rabbits;
+    Real population(start=350);
+    Real value;
+    discrete Integer seasons(start=0, fixed=true);
+
+    parameter Real g_r = 0.4;
+    parameter Real d_rf= 0.005;
+    parameter Real d_f = 0.9;
+    parameter Real g_fr= 1.0;
+    parameter Real priceFox = 150;
+    parameter Real priceRabbit = 12;
+    parameter Real priceSeason = 1000;
+
+  initial equation 
+    der(foxes) = 20;
+    value = 11000;
+
+  equation 
+    der(rabbits) =  rabbits*g_r - rabbits*foxes*d_rf;
+    der(foxes) = -foxes*d_f + rabbits*foxes*d_rf*g_fr;
+    population = foxes+rabbits;
+    value = priceFox*foxes + priceRabbit*rabbits + priceSeason*seasons;
+
+    when sample(1, 1) and foxes > 50 then
+      reinit(foxes, foxes/2);
+      seasons = pre(seasons)+1;
+    end when;
+  end forest;
+
+  model forest_350
+    extends forest(population(start=350));
+  end forest_350;
+
+  model forest_850
+    extends forest(population(start=850));
+  end forest_850;
+end initializationTests;
+");
+getErrorString();
+
+simulate(initializationTests.forest_350, startTime=0.0, stopTime=0.0);
+readFile("output.log");
+print("with population(start=350)");
+val(foxes, 0.0);
+val(rabbits, 0.0);
+
+simulate(initializationTests.forest_850, startTime=0.0, stopTime=0.0);
+readFile("output.log");
+print("with population(start=850)");
+val(foxes, 0.0);
+val(rabbits, 0.0);
+
+// Result:
+// true
+// ""
+// record SimulationResult
+//     resultFile = "initializationTests.forest_350_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.forest_350', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = ""
+// end SimulationResult;
+// ""
+// with population(start=350)
+// 52.882140522046654
+// 255.63990423508562
+// record SimulationResult
+//     resultFile = "initializationTests.forest_850_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.forest_850', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = ""
+// end SimulationResult;
+// ""
+// with population(start=850)
+// 6.051192281038914
+// 841.0267521607786
+// endResult
+
