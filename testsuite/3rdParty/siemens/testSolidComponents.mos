@@ -1,7 +1,7 @@
 // name:     SiemensPower SolidComponents
 // keywords: SiemensPower SolidComponents
 // status:   correct
-// teardown_command: rm -rf 
+// teardown_command: rm -rf SiemensPower.Components.SolidComponents.Tests.wall_test* _SiemensPower.Components.SolidComponents.Tests.wall_test* output.log
 //
 //  Test SiemensPower component SolidComponents
 //

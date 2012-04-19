@@ -1,8 +1,9 @@
 // name:     valve_test
 // keywords: fluid media siemens
 // status:   correct
+// teardown_command: rm -rf SiemensPowerOMCtest.Components.Valves.Tests.valve_test* _SiemensPowerOMCtest.Components.Valves.Tests.valve_test* output.log
 // 
-// Siemens fluid test.
+//  Siemens fluid test.
 //
 
 loadModel(Modelica);
