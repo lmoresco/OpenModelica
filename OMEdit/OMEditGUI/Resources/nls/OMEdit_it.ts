@@ -45,12 +45,12 @@
     <message>
         <location filename="../../ConnectorWidget.cpp" line="803"/>
         <source>Enter index in the array for Start Component:</source>
-        <translation>Inserisci l&apos;indice nell&apos;array per il Componente Start:</translation>
+        <translation>Inserisci l&apos;indice di array per il componente di partenza:</translation>
     </message>
     <message>
         <location filename="../../ConnectorWidget.cpp" line="818"/>
         <source>Enter index in the array for End Component:</source>
-        <translation>Inserisci l&apos;indice nell&apos;array per il Componente End:</translation>
+        <translation>Inserisci l&apos;indice di array per il componente di arrivo:</translation>
     </message>
     <message>
         <location filename="../../ConnectorWidget.cpp" line="829"/>
@@ -104,7 +104,7 @@
     <message>
         <location filename="../../Helper.cpp" line="251"/>
         <source>There is no open Model to %1.</source>
-        <translation>Non esiste un modello aperto in %1.</translation>
+        <translation>Non esiste un modello aperto per %1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="253"/>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../../Helper.cpp" line="259"/>
         <source>Please enter %1 Name.</source>
-        <translation>Immettere il %1 nome.</translation>
+        <translation>Immettere il nome di %1.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="261"/>
@@ -207,7 +207,7 @@ Si raccomanda normalmente di scecliere &apos;annulla i cambiamenti&apos;. E&apos
     <message>
         <location filename="../../Helper.cpp" line="289"/>
         <source>Redefining models &apos;%1&apos; which already exists.</source>
-        <translation>Ridefinendo modelli &apos;%1&apos; che già esiste.</translation>
+        <translation>Ridefinizione di modelli &apos;%1&apos; già esistenti.</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="291"/>
@@ -571,7 +571,7 @@ Questo è probabilmente errato in quanto il componente è dichiarato come %3.</t
     <message>
         <location filename="../../Helper.cpp" line="171"/>
         <source>Edit</source>
-        <translation>Edita</translation>
+        <translation>Modifica</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="172"/>
@@ -1065,7 +1065,7 @@ Questo è probabilmente errato in quanto il componente è dichiarato come %3.</t
     <message>
         <location filename="../../OptionsWidget.cpp" line="1325"/>
         <source>Edit Library</source>
-        <translation>Edita la libreria</translation>
+        <translation>Modifica la libreria</translation>
     </message>
 </context>
 <context>
@@ -1119,7 +1119,7 @@ Questo è probabilmente errato in quanto il componente è dichiarato come %3.</t
     <message>
         <location filename="../../mainwindow.cpp" line="65"/>
         <source>Loading Widgets</source>
-        <translation>Carico i Widgets</translation>
+        <translation>Caricamento dei Widgets</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="84"/>
@@ -1129,7 +1129,7 @@ Questo è probabilmente errato in quanto il componente è dichiarato come %3.</t
     <message>
         <location filename="../../mainwindow.cpp" line="100"/>
         <source>Loading Modelica Standard Library</source>
-        <translation>Carico la Libreria Standard Modelica</translation>
+        <translation>Caricamento della Libreria Standard Modelica</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="103"/>
@@ -1159,7 +1159,7 @@ Questo è probabilmente errato in quanto il componente è dichiarato come %3.</t
     <message>
         <location filename="../../mainwindow.cpp" line="157"/>
         <source>Creating Components</source>
-        <translation>Creo i Componenti</translation>
+        <translation>Creazione dei Componenti</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="312"/>
@@ -1529,7 +1529,7 @@ Questo è probabilmente errato in quanto il componente è dichiarato come %3.</t
     <message>
         <location filename="../../mainwindow.cpp" line="579"/>
         <source>&amp;Edit</source>
-        <translation>&amp;Edit</translation>
+        <translation>M&amp;odifica</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="589"/>
@@ -1790,7 +1790,7 @@ Distribuito in accordo con OSMC-PL e GPL. Vedi www.openmodelica.org.</translatio
     <message>
         <location filename="../../OptionsWidget.cpp" line="781"/>
         <source>Quotes</source>
-        <translation>Virgolette</translation>
+        <translation>Stringhe</translation>
     </message>
 </context>
 <context>
@@ -2377,7 +2377,7 @@ Distribuito in accordo con OSMC-PL e GPL. Vedi www.openmodelica.org.</translatio
     <message>
         <location filename="../../SimulationWidget.cpp" line="159"/>
         <source>Optimization Method (Optional):</source>
-        <translation>Metodo di Ottimizzazione (Opzionale):</translation>
+        <translation>Metodo di ottimizzazione (Opzionale):</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="163"/>
@@ -2442,7 +2442,7 @@ Distribuito in accordo con OSMC-PL e GPL. Vedi www.openmodelica.org.</translatio
     <message>
         <location filename="../../SimulationWidget.cpp" line="227"/>
         <source>Save simulation settings inside model</source>
-        <translation>Salva i settaggi della simulazione all&apos;interno del modello</translation>
+        <translation>Salva i parametri della simulazione all&apos;interno del modello</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="423"/>
