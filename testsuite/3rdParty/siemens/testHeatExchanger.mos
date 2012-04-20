@@ -1,4 +1,4 @@
-// name:     SiemensPower ParallelFlowEvaporator
+// name:     simulate ParallelFlowEvaporator
 // keywords: SiemensPower ParallelFlowEvaporator
 // status:   correct
 // env:			 LD_LIBRARY_PATH="$OPENMODELICAHOME/../testsuite/3rdParty/siemens/TTSE_libs/"

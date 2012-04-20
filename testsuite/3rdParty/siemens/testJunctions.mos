@@ -1,4 +1,4 @@
-// name:     SiemensPower Junctions
+// name:     simulate Junctions
 // keywords: SiemensPower Junctions SplitterMixer
 // status:   correct
 // env:			 LD_LIBRARY_PATH="$OPENMODELICAHOME/../testsuite/3rdParty/siemens/TTSE_libs/"

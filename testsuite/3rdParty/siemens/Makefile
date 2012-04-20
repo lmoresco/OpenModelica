@@ -1,11 +1,11 @@
 TEST = ../../rtest -v
 
 TESTFILES = \
-testFlueGasZones.mos \
-testHeatExchanger.mos \
-testJunctions.mos \
+translateFlueGasZones.mos \
+translateHeatExchanger.mos \
+translateJunctions.mos \
+translatePipes.mos \
 testSolidComponents.mos \
-testPipes.mos \
 valve_test.mos \
 
 
@@ -14,9 +14,18 @@ valve_test.mos \
 FAILINGTESTFILES= \
 paralleFlowEVA_test.mos \
 $(WRONGRESULTTESTFILES)
+$(DOESNOTWORK)
 
 WRONGRESULTTESTFILES= \
-testPipes.mos
+testPipes.mos #small differences in one variable
+
+# test that do not work due to 
+# missing library
+DOESNOTWORK= \
+testFlueGasZones.mos \
+testHeatExchanger.mos \
+testJunctions.mos \
+testPipes.mos \
 
 
 # Dependency files that are not .mo .mos or Makefile
@@ -27,7 +36,7 @@ DEPENDENCIES = \
 Makefile \
 SiemensPowerOMCtest \
 SiemensPower \
-ResultFiles 
+ResultFiles \
 
 
 CLEAN = `ls | grep -w -v -f deps.tmp`

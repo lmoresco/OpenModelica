@@ -1,0 +1,24 @@
+// name:     translate Pipes
+// keywords: SiemensPower Pipes
+// status:   correct
+// teardown_command: rm -rf SiemensPower.Components.Pipes.Tests.tube* _SiemensPower.Components.Pipes.Tests.tube
+//
+//  Test SiemensPower component Pipes
+//  TODO: check small differences in SH.qMetalFluidDelayed[1]
+//
+
+loadModel(Modelica);
+loadFile("./SiemensPower/package.mo");
+
+// test simple model
+translateModel(SiemensPower.Components.Pipes.Tests.tubeTest, stopTime=2000, method="dassl", cflags="-L./TTSE_libs/", simflags="-iim none -iif ./ResultFiles/tubeTest.mat");
+
+// test full model
+translateModel(SiemensPower.Components.Pipes.Tests.tube_ownMedia_test, stopTime=2000, method="dassl", cflags="-L./TTSE_libs/", simflags="-iim none -iif ./ResultFiles/tube_ownMedia_test.mat");
+
+// Result:
+// true
+// true
+// "SimCode: The model  has been translated"
+// "SimCode: The model  has been translated"
+// endResults

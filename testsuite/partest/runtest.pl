@@ -104,6 +104,9 @@ sub make_test_specific_links {
     when ("./3rdParty/PlanarMechanics") {
       make_link("simulation");
     }
+    when ("./3rdParty/siemens") {
+      make_link("ResultFiles");
+    }
   }
 }
 

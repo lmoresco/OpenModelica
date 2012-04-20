@@ -1,4 +1,4 @@
-// name:     SiemensPower Pipes
+// name:     simulate Pipes
 // keywords: SiemensPower Pipes
 // status:   correct
 // env:			 LD_LIBRARY_PATH="$OPENMODELICAHOME/../testsuite/3rdParty/siemens/TTSE_libs/"
