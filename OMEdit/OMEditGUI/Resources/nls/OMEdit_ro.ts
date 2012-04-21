@@ -538,12 +538,12 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
     <message>
         <location filename="../../Helper.cpp" line="163"/>
         <source>Browse...</source>
-        <translation type="unfinished"></translation>
+        <translation>Răsfoire...</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="164"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../../Helper.cpp" line="165"/>
@@ -945,43 +945,43 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
     <message>
         <location filename="../../FMIWidget.cpp" line="61"/>
         <source>FMU File:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fișier FMU:</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="66"/>
         <source>Output Directory (Optional):</source>
-        <translation type="unfinished"></translation>
+        <translation>Director Generare Ieșire (Opțional):</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="71"/>
         <source>* If no Output Directory specified then the FMU files are generated in the current working directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>* Daca un Director Generare Ieșire nu e specificat atunci fișierele FMU sînt generate in directorul curent.</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="76"/>
         <source>* This feature is experimental. Most models are not yet handled by it.</source>
-        <translation type="unfinished"></translation>
+        <translation>* Această facilitate e experimentală. Majoritatea modelelor nu e acoperită de această facilitate.</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="115"/>
         <source>FMU File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fișier FMU</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="127"/>
         <source>Could not open file </source>
-        <translation type="unfinished"></translation>
+        <translation>Fișierul nu poate fi deschis</translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="161"/>
         <location filename="../../FMIWidget.cpp" line="167"/>
         <source>while importing </source>
-        <translation type="unfinished"></translation>
+        <translation>în timpul importării </translation>
     </message>
     <message>
         <location filename="../../FMIWidget.cpp" line="166"/>
         <source>unknown error </source>
-        <translation type="unfinished"></translation>
+        <translation>eroare necunoscută</translation>
     </message>
 </context>
 <context>
@@ -989,62 +989,62 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="520"/>
         <source>Initialize</source>
-        <translation type="unfinished"></translation>
+        <translation>Inițializare</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="524"/>
         <source>Initializes the interactive simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inițializare simulare interactivă.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="530"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="534"/>
         <source>Starts or continues the interactive simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Startează sau continuă simularea interactivă.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="541"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pauză</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="545"/>
         <source>Pauses the running interactive simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pauză în rularea simulării interactive.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="552"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Oprire</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="556"/>
         <source>Stops the running interactive simulation and resets all values to the beginning.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oprire rulare simulare interactivă și resetare a valorilor la valoarea de la început.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="562"/>
         <source>Shut Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Închidere</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="566"/>
         <source>Shut down the running interactive simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Închidere simulare interactivă.</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="572"/>
         <source>Show OMI Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Afișează OMI Log</translation>
     </message>
     <message>
         <location filename="../../InteractiveSimulationTabWidget.cpp" line="576"/>
         <source>Shows the OMI Log Message Window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Afișează Fereastra de Mesage OMI Log.</translation>
     </message>
 </context>
 <context>
@@ -1080,27 +1080,27 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
     <message>
         <location filename="../../LibraryWidget.cpp" line="583"/>
         <source>Modelica Standard Library</source>
-        <translation type="unfinished"></translation>
+        <translation>Biblioteca Standard Modelica</translation>
     </message>
     <message>
         <location filename="../../LibraryWidget.cpp" line="606"/>
         <source>Show Component</source>
-        <translation type="unfinished"></translation>
+        <translation>Vizualizează Componentă</translation>
     </message>
     <message>
         <location filename="../../LibraryWidget.cpp" line="607"/>
         <source>Shows the component</source>
-        <translation type="unfinished"></translation>
+        <translation>Vizualizare componentă</translation>
     </message>
     <message>
         <location filename="../../LibraryWidget.cpp" line="610"/>
         <source>View Documentation</source>
-        <translation type="unfinished">Vedere Documentație</translation>
+        <translation>Vizualizare Documentație</translation>
     </message>
     <message>
         <location filename="../../LibraryWidget.cpp" line="611"/>
         <source>View component documentation</source>
-        <translation type="unfinished"></translation>
+        <translation>Vizualizare Documentație Componentă</translation>
     </message>
 </context>
 <context>
@@ -1116,537 +1116,537 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
     <message>
         <location filename="../../mainwindow.cpp" line="58"/>
         <source>Connecting to OpenModelica Compiler</source>
-        <translation type="unfinished"></translation>
+        <translation>Conectare la Compilatorul OpenModelica</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="62"/>
         <source>Reading Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Citire Setări</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="65"/>
         <source>Loading Widgets</source>
-        <translation type="unfinished"></translation>
+        <translation>Încărcare Widgets</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="84"/>
         <source>Messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Mesaje</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="100"/>
         <source>Loading Modelica Standard Library</source>
-        <translation type="unfinished"></translation>
+        <translation>Încărcare Biblioteca Standard Modelica</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="103"/>
         <source>Search MSL</source>
-        <translation type="unfinished"></translation>
+        <translation>Caută în Biblioteca Standard Modelica</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="112"/>
         <source>Components</source>
-        <translation type="unfinished"></translation>
+        <translation>Componente</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="119"/>
         <source>Model Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Răsfoire Model</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="139"/>
         <source>Plot Variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Plotare Variabile</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="148"/>
         <source>Documentation</source>
-        <translation type="unfinished"></translation>
+        <translation>Documentație</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="157"/>
         <source>Creating Components</source>
-        <translation type="unfinished"></translation>
+        <translation>Creare Componente</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="312"/>
         <source>Create New Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Creare Model Nou</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="317"/>
         <source>Create New Class</source>
-        <translation type="unfinished"></translation>
+        <translation>Creare Clasă Nouă</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="321"/>
         <source>Create New Connector</source>
-        <translation type="unfinished"></translation>
+        <translation>Creare Conector Nou</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="325"/>
         <source>Create New Record</source>
-        <translation type="unfinished"></translation>
+        <translation>Creare Record Nou</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="329"/>
         <source>Create New Block</source>
-        <translation type="unfinished"></translation>
+        <translation>Creare Bloc Nou</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="333"/>
         <source>Create New Function</source>
-        <translation type="unfinished"></translation>
+        <translation>Creare Funție Nouă</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="337"/>
         <source>Create New Package</source>
-        <translation type="unfinished"></translation>
+        <translation>Creare Pachet Nou</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="341"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Deschide</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="343"/>
         <source>Opens Modelica file</source>
-        <translation type="unfinished"></translation>
+        <translation>Deschide fișier Modelica</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="347"/>
         <source>Save a file</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvează fișier</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="349"/>
         <source>Save As</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvează Ca Și</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="351"/>
         <source>Save As a File</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvează Ca Și Fișier</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="353"/>
         <source>Save All</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvează Toate</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="354"/>
         <source>Save All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvează Toate Fișierele</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="363"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Închidere</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="364"/>
         <source>Exits the </source>
-        <translation type="unfinished"></translation>
+        <translation>Ieșire din </translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="369"/>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Anulează</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="371"/>
         <source>Undo last activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Anulează ultima acțiune</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="373"/>
         <source>Redo</source>
-        <translation type="unfinished"></translation>
+        <translation>Refă</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="375"/>
         <source>Redo last activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Refă ultima acțiune</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="377"/>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Tăiere</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="388"/>
         <source>Welcome Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagina De Start</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="389"/>
         <source>Shows Welcome Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Arată Pagina De Start</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="397"/>
         <source>Modeling</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelare</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="398"/>
         <source>Shows Modeling View</source>
-        <translation type="unfinished"></translation>
+        <translation>Afișează Partea de Modeling</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="403"/>
         <source>Plotting</source>
-        <translation type="unfinished"></translation>
+        <translation>Plotare</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="404"/>
         <source>Shows Plotting View</source>
-        <translation type="unfinished"></translation>
+        <translation>Afișează Partea de Plotare</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="410"/>
         <source>Interactive Simulation</source>
-        <translation type="unfinished">Simulare Interactivă</translation>
+        <translation>Simulare Interactivă</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="411"/>
         <source>Shows Interactive Simulation View</source>
-        <translation type="unfinished"></translation>
+        <translation>Arată Partea de Simulare Interactivă</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="417"/>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Linii Grilaj</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="418"/>
         <source>Show/Hide the grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Afișează/Ascunde Linii Grilaj</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="421"/>
         <source>Reset Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetează Mărire</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="422"/>
         <source>Resets the zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetează Mărirea</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="425"/>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>Marește</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="428"/>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Micșorează</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="433"/>
         <source>Simulate the Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulare Model</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="437"/>
         <source>Interactive Simulate the Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulare Interactivă Model</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="450"/>
         <source>Export FMI</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportă FMI</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="451"/>
         <source>Exports the model as Functional Mockup Interface (FMI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportă modelul ca și FMI</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="456"/>
         <source>Imports the model from Functional Mockup Interface (FMI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Importă modelul din FMI</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="460"/>
         <source>OMC Logger</source>
-        <translation type="unfinished"></translation>
+        <translation>Jurnal OMC</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="461"/>
         <source>Shows OMC Logger Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Afișează Fereastra Jurnal OMC</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="464"/>
         <source>OMShell</source>
-        <translation type="unfinished"></translation>
+        <translation>OMShell</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="465"/>
         <source>Opens OpenModelica Shell (OMShell)</source>
-        <translation type="unfinished"></translation>
+        <translation>Deschide OpenModelica Shell (OMShell)</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="469"/>
         <source>Exports the current model to OMNotebook</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportă modelul curent către OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="473"/>
         <source>Import from OMNotebook</source>
-        <translation type="unfinished"></translation>
+        <translation>Importă din OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="474"/>
         <source>Imports the models from OMNotebook</source>
-        <translation type="unfinished"></translation>
+        <translation>Importă modelele din OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="478"/>
         <source>Shows the options window</source>
-        <translation type="unfinished"></translation>
+        <translation>Afișează fereastra de opțiuni</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="482"/>
         <source>User Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual Utilizator</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="483"/>
         <source>Opens the User Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Deschide Manualul Utilizator</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="487"/>
         <source>About OMEdit</source>
-        <translation type="unfinished"></translation>
+        <translation>Despre OMEdit</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="488"/>
         <source>Information about OMEdit</source>
-        <translation type="unfinished"></translation>
+        <translation>Informații despre OMEdit</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="494"/>
         <source>Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Linie</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="495"/>
         <source>Draws a line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deseanează o linie.</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="499"/>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligon</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="500"/>
         <source>Draws a polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desenează un poligon.</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="504"/>
         <source>Rectangle</source>
-        <translation type="unfinished"></translation>
+        <translation>Dreptunghi</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="505"/>
         <source>Draws a rectangle.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desenează un dreptunghi.</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="509"/>
         <source>Ellipse</source>
-        <translation type="unfinished"></translation>
+        <translation>Elipsă</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="510"/>
         <source>Draws an Ellipse.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desenează o Elipsă.</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="515"/>
         <source>Draws a Text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desenează un Text.</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="519"/>
         <source>Bitmap</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagine</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="520"/>
         <source>Imports a Bitmap.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importă o Imagine.</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="524"/>
         <source>Connect Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modul Conectare</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="525"/>
         <source>Changes to/from connect mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Schimbă din/în modul conectare</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="530"/>
         <source>New Plot Window</source>
-        <translation type="unfinished"></translation>
+        <translation>O nouă Fereastră de Plotare</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="531"/>
         <source>Inserts new plot window</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserează o nouă fereastă de plotare</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="533"/>
         <source>New Plot Parametric Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Nouă Fereastră de Plotare Parametrică</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="534"/>
         <source>Inserts new plot parametric window</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserează o noua fereastră de plotare parametrică</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="538"/>
         <source>Export as an Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportă ca și Imagine</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="539"/>
         <source>Exports the current model to Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportă modelul curent ca și Imagine</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="554"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Fișier</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="558"/>
         <source>New</source>
-        <translation type="unfinished"></translation>
+        <translation>Nou</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="579"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editare</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="589"/>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Vizualizare</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="593"/>
         <source>Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Bară de instrumente</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="597"/>
         <source>Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Ferestre</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="601"/>
         <source>Perspectives</source>
-        <translation type="unfinished"></translation>
+        <translation>Perspective</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="636"/>
         <source>&amp;Simulation</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Simulare</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="645"/>
         <source>F&amp;MI</source>
-        <translation type="unfinished"></translation>
+        <translation>F&amp;MI</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="651"/>
         <source>&amp;Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Unelte</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="663"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ajutor</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="683"/>
         <source>File Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Bară Unelte Fișier</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="713"/>
         <source>View Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Bară Unelte Vizualizare</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="722"/>
         <source>Shapes Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Bară Unelte Forme</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="743"/>
         <source>OMNotebook</source>
-        <translation type="unfinished"></translation>
+        <translation>OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="749"/>
         <source>Plot Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Bară Unelte Plotare</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="755"/>
         <source>Perspective Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Bară Unelte Perspectivă</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="926"/>
         <source>Exporting model to OMNotebook</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportă model către OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1039"/>
         <source>Importing model from OMNotebook</source>
-        <translation type="unfinished"></translation>
+        <translation>Importă model din OMNotebook</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1058"/>
         <source>Error reading the xml file</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare citire fișier XML</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1087"/>
         <source>Export as Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportă ca și Imagine</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1094"/>
         <source>Exporting model as an Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportă model ca și Imagine</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1107"/>
         <source>Generated by OpenModelica Connection Editor Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Generat de Editorul de Conectare OpenModelica</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1132"/>
         <source>Error saving the image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare la salvarea fișierului imagine</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1186"/>
         <source>Connected to OpenModelica </source>
-        <translation type="unfinished"></translation>
+        <translation>Conectat la compilatorul interactiv OpenModelica </translation>
     </message>
     <message utf8="true">
         <location filename="../../mainwindow.cpp" line="1187"/>
@@ -1654,17 +1654,17 @@ Probabil este o greșala pentru că această componentă este declarată ca și 
 Distributed under OSMC-PL and GPL, see www.openmodelica.org.
 
 Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1295"/>
         <source>make FMU</source>
-        <translation type="unfinished"></translation>
+        <translation>generează FMU</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="1300"/>
         <source>Exporting model as FMI</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportă model ca și FMI</translation>
     </message>
 </context>
 <context>
