@@ -69,15 +69,18 @@ end translateModel;
 protected function lm_29
   input Tpl.Text in_txt;
   input list<list<SimCode.SimEqSystem>> in_items;
+  input Tpl.Text in_a_funDecls;
   input BackendQSS.QSSinfo in_a_qssInfo;
 
   output Tpl.Text out_txt;
+  output Tpl.Text out_a_funDecls;
 algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items, in_a_qssInfo)
+  (out_txt, out_a_funDecls) :=
+  matchcontinue(in_txt, in_items, in_a_funDecls, in_a_qssInfo)
     local
       Tpl.Text txt;
       list<list<SimCode.SimEqSystem>> rest;
+      Tpl.Text a_funDecls;
       BackendQSS.QSSinfo a_qssInfo;
       list<SimCode.SimEqSystem> i_eq;
       list<DAE.ComponentRef> ret_3;
@@ -87,28 +90,31 @@ algorithm
 
     case ( txt,
            {},
+           a_funDecls,
            _ )
-      then txt;
+      then (txt, a_funDecls);
 
     case ( txt,
            i_eq :: rest,
+           a_funDecls,
            a_qssInfo )
       equation
         ret_0 = BackendQSS.getStateIndexList(a_qssInfo);
         ret_1 = BackendQSS.getStates(a_qssInfo);
         ret_2 = BackendQSS.getDisc(a_qssInfo);
         ret_3 = BackendQSS.getAlgs(a_qssInfo);
-        txt = generateOdeEqs(txt, i_eq, ret_0, ret_1, ret_2, ret_3);
+        (txt, a_funDecls) = generateOdeEqs(txt, i_eq, ret_0, ret_1, ret_2, ret_3, a_funDecls);
         txt = Tpl.nextIter(txt);
-        txt = lm_29(txt, rest, a_qssInfo);
-      then txt;
+        (txt, a_funDecls) = lm_29(txt, rest, a_funDecls, a_qssInfo);
+      then (txt, a_funDecls);
 
     case ( txt,
            _ :: rest,
+           a_funDecls,
            a_qssInfo )
       equation
-        txt = lm_29(txt, rest, a_qssInfo);
-      then txt;
+        (txt, a_funDecls) = lm_29(txt, rest, a_funDecls, a_qssInfo);
+      then (txt, a_funDecls);
   end matchcontinue;
 end lm_29;
 
@@ -126,48 +132,60 @@ algorithm
       BackendQSS.QSSinfo a_qssInfo;
       list<SimCode.SimWhenClause> i_whenClauses;
       list<BackendDAE.ZeroCrossing> i_zeroCrossings;
-      list<list<SimCode.SimEqSystem>> i_odeEquations;
       Option<SimCode.SimulationSettings> i_simulationSettingsOpt;
+      list<SimCode.SimEqSystem> i_parameterEquations;
+      list<SimCode.SampleCondition> i_sampleConditions;
       SimCode.ModelInfo i_modelInfo;
-      BackendDAE.EquationArray ret_6;
+      list<list<SimCode.SimEqSystem>> i_odeEquations;
+      BackendDAE.EquationArray ret_8;
+      list<DAE.ComponentRef> ret_7;
+      list<DAE.ComponentRef> ret_6;
       list<DAE.ComponentRef> ret_5;
       list<DAE.ComponentRef> ret_4;
       list<DAE.ComponentRef> ret_3;
       list<DAE.ComponentRef> ret_2;
-      list<DAE.ComponentRef> ret_1;
-      list<DAE.ComponentRef> ret_0;
+      Tpl.Text l_eqs;
+      Tpl.Text l_funDecls;
 
     case ( txt,
-           SimCode.SIMCODE(modelInfo = i_modelInfo, simulationSettingsOpt = i_simulationSettingsOpt, odeEquations = i_odeEquations, zeroCrossings = i_zeroCrossings, whenClauses = i_whenClauses),
+           SimCode.SIMCODE(odeEquations = i_odeEquations, modelInfo = i_modelInfo, sampleConditions = i_sampleConditions, parameterEquations = i_parameterEquations, simulationSettingsOpt = i_simulationSettingsOpt, zeroCrossings = i_zeroCrossings, whenClauses = i_whenClauses),
            a_qssInfo )
       equation
-        ret_0 = BackendQSS.getStates(a_qssInfo);
-        ret_1 = BackendQSS.getDisc(a_qssInfo);
-        ret_2 = BackendQSS.getAlgs(a_qssInfo);
-        txt = generateModelInfo(txt, i_modelInfo, ret_0, ret_1, ret_2);
+        l_funDecls = Tpl.emptyTxt;
+        l_eqs = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        (l_eqs, l_funDecls) = lm_29(l_eqs, i_odeEquations, l_funDecls, a_qssInfo);
+        l_eqs = Tpl.popIter(l_eqs);
+        ret_2 = BackendQSS.getStates(a_qssInfo);
+        ret_3 = BackendQSS.getDisc(a_qssInfo);
+        ret_4 = BackendQSS.getAlgs(a_qssInfo);
+        txt = generateModelInfo(txt, i_modelInfo, ret_2, ret_3, ret_4, i_sampleConditions, i_parameterEquations);
         txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeText(txt, l_funDecls);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = generateAnnotation(txt, i_simulationSettingsOpt);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("equation\n"));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_29(txt, i_odeEquations, a_qssInfo);
-        txt = Tpl.popIter(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
+                                    "/* Equations */\n",
+                                    "equation\n"
+                                }, true));
+        txt = Tpl.writeText(txt, l_eqs);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("algorithm\n"));
-        ret_3 = BackendQSS.getStates(a_qssInfo);
-        ret_4 = BackendQSS.getDisc(a_qssInfo);
-        ret_5 = BackendQSS.getAlgs(a_qssInfo);
-        ret_6 = BackendQSS.getEqs(a_qssInfo);
-        txt = generateDiscont(txt, i_zeroCrossings, ret_3, ret_4, ret_5, i_whenClauses, ret_6);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "algorithm\n",
+                                    "/* Discontinuities */\n"
+                                }, true));
+        ret_5 = BackendQSS.getStates(a_qssInfo);
+        ret_6 = BackendQSS.getDisc(a_qssInfo);
+        ret_7 = BackendQSS.getAlgs(a_qssInfo);
+        ret_8 = BackendQSS.getEqs(a_qssInfo);
+        txt = generateDiscont(txt, i_zeroCrossings, ret_5, ret_6, ret_7, i_whenClauses, ret_8);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("end "));
         txt = getName(txt, i_modelInfo);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ";\n",
-                                    "\n"
-                                }, true));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
       then txt;
 
     case ( txt,
@@ -207,28 +225,32 @@ public function generateModelInfo
   input list<DAE.ComponentRef> in_a_states;
   input list<DAE.ComponentRef> in_a_disc;
   input list<DAE.ComponentRef> in_a_algs;
+  input list<SimCode.SampleCondition> in_a_sampleConditions;
+  input list<SimCode.SimEqSystem> in_a_parameterEquations;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_modelInfo, in_a_states, in_a_disc, in_a_algs)
+  matchcontinue(in_txt, in_a_modelInfo, in_a_states, in_a_disc, in_a_algs, in_a_sampleConditions, in_a_parameterEquations)
     local
       Tpl.Text txt;
       list<DAE.ComponentRef> a_states;
       list<DAE.ComponentRef> a_disc;
       list<DAE.ComponentRef> a_algs;
-      Integer i_varInfo_numAlgVars;
-      Integer i_varInfo_numBoolAlgVars;
-      Integer i_varInfo_numIntAlgVars;
+      list<SimCode.SampleCondition> a_sampleConditions;
+      list<SimCode.SimEqSystem> a_parameterEquations;
       Integer i_varInfo_numStateVars;
       SimCode.ModelInfo i_modelInfo;
+      Integer ret_1;
       Integer ret_0;
 
     case ( txt,
-           (i_modelInfo as SimCode.MODELINFO(varInfo = SimCode.VARINFO(numStateVars = i_varInfo_numStateVars, numIntAlgVars = i_varInfo_numIntAlgVars, numBoolAlgVars = i_varInfo_numBoolAlgVars, numAlgVars = i_varInfo_numAlgVars), name = Absyn.IDENT(name = _))),
+           (i_modelInfo as SimCode.MODELINFO(varInfo = SimCode.VARINFO(numStateVars = i_varInfo_numStateVars), name = Absyn.IDENT(name = _))),
            a_states,
            a_disc,
-           a_algs )
+           a_algs,
+           a_sampleConditions,
+           a_parameterEquations )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("model "));
         txt = getName(txt, i_modelInfo);
@@ -241,21 +263,32 @@ algorithm
                                     "Real x[N](start=xinit());\n",
                                     "discrete Real d["
                                 }, false));
-        ret_0 = intAdd(i_varInfo_numIntAlgVars, i_varInfo_numBoolAlgVars);
+        ret_0 = listLength(a_disc);
         txt = Tpl.writeStr(txt, intString(ret_0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "](start=dinit());\n",
                                     "Real a["
                                 }, false));
-        txt = Tpl.writeStr(txt, intString(i_varInfo_numAlgVars));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("];\n"));
-        txt = generateExtraVars(txt, i_modelInfo);
+        ret_1 = listLength(a_algs);
+        txt = Tpl.writeStr(txt, intString(ret_1));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "];\n",
+                                    "\n",
+                                    "/* Parameters */\n"
+                                }, true));
+        txt = generateParameters(txt, i_modelInfo, a_parameterEquations);
         txt = Tpl.softNewLine(txt);
-        txt = generateInitFunction(txt, i_modelInfo, a_states, a_disc, a_algs);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
+                                    "/* Init functions */\n"
+                                }, true));
+        txt = generateInitFunction(txt, i_modelInfo, a_states, a_disc, a_algs, a_sampleConditions);
         txt = Tpl.popBlock(txt);
       then txt;
 
     case ( txt,
+           _,
+           _,
            _,
            _,
            _,
@@ -357,24 +390,20 @@ algorithm
     local
       Tpl.Text txt;
       list<DAE.ComponentRef> a_vars;
-      Option<DAE.Exp> i_initialValue;
       DAE.ComponentRef i_name;
       Integer ret_1;
       Integer ret_0;
 
     case ( txt,
-           SimCode.SIMVAR(name = i_name, initialValue = i_initialValue),
+           SimCode.SIMVAR(name = i_name),
            a_vars )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("a["));
         ret_0 = List.position(i_name, a_vars);
         ret_1 = intAdd(ret_0, 1);
         txt = Tpl.writeStr(txt, intString(ret_1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]:= "));
-        txt = OptionInitial(txt, i_initialValue);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" /* "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] is "));
         txt = CodegenC.crefStr(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" */;"));
       then txt;
 
     case ( txt,
@@ -385,42 +414,12 @@ algorithm
 end InitAlgVariable;
 
 public function InitDiscVariable
-  input Tpl.Text in_txt;
-  input SimCode.SimVar in_a_simVar;
-  input list<DAE.ComponentRef> in_a_vars;
+  input Tpl.Text txt;
+  input DAE.ComponentRef a_var;
 
   output Tpl.Text out_txt;
 algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_simVar, in_a_vars)
-    local
-      Tpl.Text txt;
-      list<DAE.ComponentRef> a_vars;
-      Option<DAE.Exp> i_initialValue;
-      DAE.ComponentRef i_name;
-      Integer ret_1;
-      Integer ret_0;
-
-    case ( txt,
-           SimCode.SIMVAR(name = i_name, initialValue = i_initialValue),
-           a_vars )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("d["));
-        ret_0 = List.position(i_name, a_vars);
-        ret_1 = intAdd(ret_0, 1);
-        txt = Tpl.writeStr(txt, intString(ret_1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]:= "));
-        txt = OptionInitial(txt, i_initialValue);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" /* "));
-        txt = CodegenC.crefStr(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" */;"));
-      then txt;
-
-    case ( txt,
-           _,
-           _ )
-      then txt;
-  end matchcontinue;
+  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING("0.0"));
 end InitDiscVariable;
 
 public function generateVarDefinition
@@ -555,22 +554,66 @@ algorithm
   end matchcontinue;
 end lm_40;
 
-public function generateExtraVars
+protected function lm_41
   input Tpl.Text in_txt;
-  input SimCode.ModelInfo in_a_modelInfo;
+  input list<SimCode.SimEqSystem> in_items;
+  input SimCode.SimVars in_a_vars;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_modelInfo)
+  matchcontinue(in_txt, in_items, in_a_vars)
     local
       Tpl.Text txt;
+      list<SimCode.SimEqSystem> rest;
+      SimCode.SimVars a_vars;
+      SimCode.SimEqSystem i_eq;
+      String ret_0;
+
+    case ( txt,
+           {},
+           _ )
+      then txt;
+
+    case ( txt,
+           i_eq :: rest,
+           a_vars )
+      equation
+        ret_0 = BackendQSS.generateExtraParams(i_eq, a_vars);
+        txt = Tpl.writeStr(txt, ret_0);
+        txt = Tpl.nextIter(txt);
+        txt = lm_41(txt, rest, a_vars);
+      then txt;
+
+    case ( txt,
+           _ :: rest,
+           a_vars )
+      equation
+        txt = lm_41(txt, rest, a_vars);
+      then txt;
+  end matchcontinue;
+end lm_41;
+
+public function generateParameters
+  input Tpl.Text in_txt;
+  input SimCode.ModelInfo in_a_modelInfo;
+  input list<SimCode.SimEqSystem> in_a_parameterEquations;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_modelInfo, in_a_parameterEquations)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimEqSystem> a_parameterEquations;
+      SimCode.SimVars i_vars;
       list<SimCode.SimVar> i_vars_boolParamVars;
       list<SimCode.SimVar> i_vars_intParamVars;
       list<SimCode.SimVar> i_vars_paramVars;
 
     case ( txt,
-           SimCode.MODELINFO(vars = SimCode.SIMVARS(paramVars = i_vars_paramVars, intParamVars = i_vars_intParamVars, boolParamVars = i_vars_boolParamVars)) )
+           SimCode.MODELINFO(vars = (i_vars as SimCode.SIMVARS(paramVars = i_vars_paramVars, intParamVars = i_vars_intParamVars, boolParamVars = i_vars_boolParamVars))),
+           a_parameterEquations )
       equation
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         txt = lm_38(txt, i_vars_paramVars);
@@ -583,15 +626,20 @@ algorithm
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         txt = lm_40(txt, i_vars_boolParamVars);
         txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_41(txt, a_parameterEquations, i_vars);
+        txt = Tpl.popIter(txt);
       then txt;
 
     case ( txt,
+           _,
            _ )
       then txt;
   end matchcontinue;
-end generateExtraVars;
+end generateParameters;
 
-protected function lm_42
+protected function lm_43
   input Tpl.Text in_txt;
   input list<SimCode.SimVar> in_items;
   input list<DAE.ComponentRef> in_a_states;
@@ -617,52 +665,14 @@ algorithm
       equation
         txt = InitStateVariable(txt, i_var, a_states);
         txt = Tpl.nextIter(txt);
-        txt = lm_42(txt, rest, a_states);
+        txt = lm_43(txt, rest, a_states);
       then txt;
 
     case ( txt,
            _ :: rest,
            a_states )
       equation
-        txt = lm_42(txt, rest, a_states);
-      then txt;
-  end matchcontinue;
-end lm_42;
-
-protected function lm_43
-  input Tpl.Text in_txt;
-  input list<SimCode.SimVar> in_items;
-  input list<DAE.ComponentRef> in_a_disc;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items, in_a_disc)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> rest;
-      list<DAE.ComponentRef> a_disc;
-      SimCode.SimVar i_var;
-
-    case ( txt,
-           {},
-           _ )
-      then txt;
-
-    case ( txt,
-           i_var :: rest,
-           a_disc )
-      equation
-        txt = InitDiscVariable(txt, i_var, a_disc);
-        txt = Tpl.nextIter(txt);
-        txt = lm_43(txt, rest, a_disc);
-      then txt;
-
-    case ( txt,
-           _ :: rest,
-           a_disc )
-      equation
-        txt = lm_43(txt, rest, a_disc);
+        txt = lm_43(txt, rest, a_states);
       then txt;
   end matchcontinue;
 end lm_43;
@@ -670,16 +680,16 @@ end lm_43;
 protected function lm_44
   input Tpl.Text in_txt;
   input list<SimCode.SimVar> in_items;
-  input list<DAE.ComponentRef> in_a_disc;
+  input list<DAE.ComponentRef> in_a_algs;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_items, in_a_disc)
+  matchcontinue(in_txt, in_items, in_a_algs)
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
-      list<DAE.ComponentRef> a_disc;
+      list<DAE.ComponentRef> a_algs;
       SimCode.SimVar i_var;
 
     case ( txt,
@@ -689,109 +699,116 @@ algorithm
 
     case ( txt,
            i_var :: rest,
-           a_disc )
+           a_algs )
       equation
-        txt = InitDiscVariable(txt, i_var, a_disc);
+        txt = InitAlgVariable(txt, i_var, a_algs);
         txt = Tpl.nextIter(txt);
-        txt = lm_44(txt, rest, a_disc);
+        txt = lm_44(txt, rest, a_algs);
       then txt;
 
     case ( txt,
            _ :: rest,
-           a_disc )
+           a_algs )
       equation
-        txt = lm_44(txt, rest, a_disc);
+        txt = lm_44(txt, rest, a_algs);
       then txt;
   end matchcontinue;
 end lm_44;
 
-protected function fun_45
+public function generateInitFunction
   input Tpl.Text in_txt;
   input SimCode.ModelInfo in_a_modelInfo;
   input list<DAE.ComponentRef> in_a_states;
   input list<DAE.ComponentRef> in_a_disc;
+  input list<DAE.ComponentRef> in_a_algs;
+  input list<SimCode.SampleCondition> in_a_sampleConditions;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_modelInfo, in_a_states, in_a_disc)
+  matchcontinue(in_txt, in_a_modelInfo, in_a_states, in_a_disc, in_a_algs, in_a_sampleConditions)
     local
       Tpl.Text txt;
       list<DAE.ComponentRef> a_states;
       list<DAE.ComponentRef> a_disc;
-      list<SimCode.SimVar> i_vars_boolAlgVars;
-      list<SimCode.SimVar> i_vars_intAlgVars;
+      list<DAE.ComponentRef> a_algs;
+      list<SimCode.SampleCondition> a_sampleConditions;
+      list<SimCode.SimVar> i_vars_algVars;
+      SimCode.SimVars i_vars;
       list<SimCode.SimVar> i_vars_stateVars;
-      Integer ret_2;
+      String ret_2;
       Integer ret_1;
       Integer ret_0;
 
     case ( txt,
-           SimCode.MODELINFO(vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, intAlgVars = i_vars_intAlgVars, boolAlgVars = i_vars_boolAlgVars)),
+           SimCode.MODELINFO(vars = (i_vars as SimCode.SIMVARS(stateVars = i_vars_stateVars, algVars = i_vars_algVars))),
            a_states,
-           a_disc )
+           a_disc,
+           a_algs,
+           a_sampleConditions )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
                                     "function boolToReal\n",
                                     "  input Boolean b;\n",
                                     "  output Real r;\n",
                                     "algorithm\n",
                                     "  r:=if b then 1.0 else 0.0;\n",
                                     "end boolToReal;\n",
+                                    "\n",
                                     "function xinit\n",
                                     "  output Real x[N];\n",
                                     "algorithm\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_42(txt, i_vars_stateVars, a_states);
+        txt = lm_43(txt, i_vars_stateVars, a_states);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "end xinit;\n",
+                                    "\n",
                                     "function dinit\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("output Real d["));
-        ret_0 = listLength(i_vars_intAlgVars);
-        ret_1 = listLength(i_vars_boolAlgVars);
-        ret_2 = intAdd(ret_0, ret_1);
-        txt = Tpl.writeStr(txt, intString(ret_2));
+        ret_0 = listLength(a_disc);
+        txt = Tpl.writeStr(txt, intString(ret_0));
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("];\n"));
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("algorithm\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_43(txt, i_vars_intAlgVars, a_disc);
-        txt = Tpl.popIter(txt);
+        ret_1 = listLength(a_disc);
+        ret_2 = BackendQSS.generateDInit(a_disc, a_sampleConditions, i_vars, 0, ret_1, 1);
+        txt = Tpl.writeStr(txt, ret_2);
         txt = Tpl.softNewLine(txt);
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "end dinit;\n",
+                                    "\n",
+                                    "/* Algebraic vars\n"
+                                }, true));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_44(txt, i_vars_boolAlgVars, a_disc);
+        txt = lm_44(txt, i_vars_algVars, a_algs);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("end dinit;"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "*/\n",
+                                    "\n"
+                                }, true));
       then txt;
 
     case ( txt,
            _,
            _,
+           _,
+           _,
            _ )
       then txt;
   end matchcontinue;
-end fun_45;
-
-public function generateInitFunction
-  input Tpl.Text txt;
-  input SimCode.ModelInfo a_modelInfo;
-  input list<DAE.ComponentRef> a_states;
-  input list<DAE.ComponentRef> a_disc;
-  input list<DAE.ComponentRef> a_algs;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt := fun_45(txt, a_modelInfo, a_states, a_disc);
 end generateInitFunction;
 
 public function generateAnnotation
@@ -836,21 +853,24 @@ algorithm
   end matchcontinue;
 end generateAnnotation;
 
-protected function lm_48
+protected function lm_47
   input Tpl.Text in_txt;
   input list<SimCode.SimEqSystem> in_items;
+  input Tpl.Text in_a_funDecls;
   input list<DAE.ComponentRef> in_a_algs;
   input list<DAE.ComponentRef> in_a_disc;
   input list<DAE.ComponentRef> in_a_states;
   input list<list<Integer>> in_a_indexs;
 
   output Tpl.Text out_txt;
+  output Tpl.Text out_a_funDecls;
 algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items, in_a_algs, in_a_disc, in_a_states, in_a_indexs)
+  (out_txt, out_a_funDecls) :=
+  matchcontinue(in_txt, in_items, in_a_funDecls, in_a_algs, in_a_disc, in_a_states, in_a_indexs)
     local
       Tpl.Text txt;
       list<SimCode.SimEqSystem> rest;
+      Tpl.Text a_funDecls;
       list<DAE.ComponentRef> a_algs;
       list<DAE.ComponentRef> a_disc;
       list<DAE.ComponentRef> a_states;
@@ -860,36 +880,39 @@ algorithm
 
     case ( txt,
            {},
+           a_funDecls,
            _,
            _,
            _,
            _ )
-      then txt;
+      then (txt, a_funDecls);
 
     case ( txt,
            i_eq :: rest,
+           a_funDecls,
            a_algs,
            a_disc,
            a_states,
            a_indexs )
       equation
         ret_0 = listNth(a_indexs, 0);
-        txt = generateOdeEq(txt, i_eq, ret_0, a_states, a_disc, a_algs);
+        (txt, a_funDecls) = generateOdeEq(txt, i_eq, ret_0, a_states, a_disc, a_algs, a_funDecls);
         txt = Tpl.nextIter(txt);
-        txt = lm_48(txt, rest, a_algs, a_disc, a_states, a_indexs);
-      then txt;
+        (txt, a_funDecls) = lm_47(txt, rest, a_funDecls, a_algs, a_disc, a_states, a_indexs);
+      then (txt, a_funDecls);
 
     case ( txt,
            _ :: rest,
+           a_funDecls,
            a_algs,
            a_disc,
            a_states,
            a_indexs )
       equation
-        txt = lm_48(txt, rest, a_algs, a_disc, a_states, a_indexs);
-      then txt;
+        (txt, a_funDecls) = lm_47(txt, rest, a_funDecls, a_algs, a_disc, a_states, a_indexs);
+      then (txt, a_funDecls);
   end matchcontinue;
-end lm_48;
+end lm_47;
 
 public function generateOdeEqs
   input Tpl.Text txt;
@@ -898,49 +921,43 @@ public function generateOdeEqs
   input list<DAE.ComponentRef> a_states;
   input list<DAE.ComponentRef> a_disc;
   input list<DAE.ComponentRef> a_algs;
+  input Tpl.Text a_funDecls;
 
   output Tpl.Text out_txt;
+  output Tpl.Text out_a_funDecls;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  out_txt := lm_48(out_txt, a_odeEquations, a_algs, a_disc, a_states, a_indexs);
+  (out_txt, out_a_funDecls) := lm_47(out_txt, a_odeEquations, a_funDecls, a_algs, a_disc, a_states, a_indexs);
   out_txt := Tpl.popIter(out_txt);
 end generateOdeEqs;
 
-protected function fun_50
+protected function fun_49
   input Tpl.Text in_txt;
-  input SimCode.SimEqSystem in_a_odeEquation;
-  input list<DAE.ComponentRef> in_a_states;
-  input list<DAE.ComponentRef> in_a_disc;
+  input SimCode.SimVar in_a_v;
   input list<DAE.ComponentRef> in_a_algs;
+  input list<DAE.ComponentRef> in_a_disc;
+  input list<DAE.ComponentRef> in_a_states;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_odeEquation, in_a_states, in_a_disc, in_a_algs)
+  matchcontinue(in_txt, in_a_v, in_a_algs, in_a_disc, in_a_states)
     local
       Tpl.Text txt;
-      list<DAE.ComponentRef> a_states;
-      list<DAE.ComponentRef> a_disc;
       list<DAE.ComponentRef> a_algs;
-      DAE.Exp i_exp;
-      DAE.ComponentRef i_cref;
-      String ret_2;
-      DAE.Exp ret_1;
+      list<DAE.ComponentRef> a_disc;
+      list<DAE.ComponentRef> a_states;
+      DAE.ComponentRef i_name;
       String ret_0;
 
     case ( txt,
-           SimCode.SES_SIMPLE_ASSIGN(cref = i_cref, exp = i_exp),
-           a_states,
+           SimCode.SIMVAR(name = i_name),
+           a_algs,
            a_disc,
-           a_algs )
+           a_states )
       equation
-        ret_0 = BackendQSS.replaceCref(i_cref, a_states, a_disc, a_algs);
+        ret_0 = BackendQSS.replaceCref(i_name, a_states, a_disc, a_algs);
         txt = Tpl.writeStr(txt, ret_0);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
-        ret_1 = BackendQSS.replaceVars(i_exp, a_states, a_disc, a_algs);
-        ret_2 = ExpressionDump.printExpStr(ret_1);
-        txt = Tpl.writeStr(txt, ret_2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
       then txt;
 
     case ( txt,
@@ -950,7 +967,343 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_50;
+end fun_49;
+
+protected function lm_50
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+  input list<DAE.ComponentRef> in_a_algs;
+  input list<DAE.ComponentRef> in_a_disc;
+  input list<DAE.ComponentRef> in_a_states;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items, in_a_algs, in_a_disc, in_a_states)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      list<DAE.ComponentRef> a_algs;
+      list<DAE.ComponentRef> a_disc;
+      list<DAE.ComponentRef> a_states;
+      SimCode.SimVar i_v;
+
+    case ( txt,
+           {},
+           _,
+           _,
+           _ )
+      then txt;
+
+    case ( txt,
+           i_v :: rest,
+           a_algs,
+           a_disc,
+           a_states )
+      equation
+        txt = fun_49(txt, i_v, a_algs, a_disc, a_states);
+        txt = Tpl.nextIter(txt);
+        txt = lm_50(txt, rest, a_algs, a_disc, a_states);
+      then txt;
+
+    case ( txt,
+           _ :: rest,
+           a_algs,
+           a_disc,
+           a_states )
+      equation
+        txt = lm_50(txt, rest, a_algs, a_disc, a_states);
+      then txt;
+  end matchcontinue;
+end lm_50;
+
+protected function lm_51
+  input Tpl.Text in_txt;
+  input list<DAE.ComponentRef> in_items;
+  input list<DAE.ComponentRef> in_a_algs;
+  input list<DAE.ComponentRef> in_a_disc;
+  input list<DAE.ComponentRef> in_a_states;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items, in_a_algs, in_a_disc, in_a_states)
+    local
+      Tpl.Text txt;
+      list<DAE.ComponentRef> rest;
+      list<DAE.ComponentRef> a_algs;
+      list<DAE.ComponentRef> a_disc;
+      list<DAE.ComponentRef> a_states;
+      DAE.ComponentRef i_cref;
+      String ret_0;
+
+    case ( txt,
+           {},
+           _,
+           _,
+           _ )
+      then txt;
+
+    case ( txt,
+           i_cref :: rest,
+           a_algs,
+           a_disc,
+           a_states )
+      equation
+        ret_0 = BackendQSS.replaceCref(i_cref, a_states, a_disc, a_algs);
+        txt = Tpl.writeStr(txt, ret_0);
+        txt = Tpl.nextIter(txt);
+        txt = lm_51(txt, rest, a_algs, a_disc, a_states);
+      then txt;
+
+    case ( txt,
+           _ :: rest,
+           a_algs,
+           a_disc,
+           a_states )
+      equation
+        txt = lm_51(txt, rest, a_algs, a_disc, a_states);
+      then txt;
+  end matchcontinue;
+end lm_51;
+
+protected function lm_52
+  input Tpl.Text in_txt;
+  input list<DAE.ComponentRef> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<DAE.ComponentRef> rest;
+      Integer x_i0;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        x_i0 = Tpl.getIteri_i0(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("input Real i"));
+        txt = Tpl.writeStr(txt, intString(x_i0));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
+        txt = Tpl.nextIter(txt);
+        txt = lm_52(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_52(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_52;
+
+protected function lm_53
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      Integer x_i0;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        x_i0 = Tpl.getIteri_i0(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("output Real o"));
+        txt = Tpl.writeStr(txt, intString(x_i0));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
+        txt = Tpl.nextIter(txt);
+        txt = lm_53(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_53(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_53;
+
+protected function fun_54
+  input Tpl.Text in_txt;
+  input SimCode.SimEqSystem in_a_odeEquation;
+  input list<DAE.ComponentRef> in_a_states;
+  input list<DAE.ComponentRef> in_a_disc;
+  input list<DAE.ComponentRef> in_a_algs;
+  input Tpl.Text in_a_funDecls;
+
+  output Tpl.Text out_txt;
+  output Tpl.Text out_a_funDecls;
+algorithm
+  (out_txt, out_a_funDecls) :=
+  matchcontinue(in_txt, in_a_odeEquation, in_a_states, in_a_disc, in_a_algs, in_a_funDecls)
+    local
+      Tpl.Text txt;
+      list<DAE.ComponentRef> a_states;
+      list<DAE.ComponentRef> a_disc;
+      list<DAE.ComponentRef> a_algs;
+      Tpl.Text a_funDecls;
+      Integer i_index;
+      list<tuple<Integer, Integer, SimCode.SimEqSystem>> i_simJac;
+      list<DAE.Exp> i_beqs;
+      list<SimCode.SimVar> i_vars;
+      DAE.Exp i_exp;
+      DAE.ComponentRef i_cref;
+      list<DAE.ComponentRef> ret_6;
+      list<DAE.ComponentRef> ret_5;
+      Tpl.Text l_in__vars;
+      Tpl.Text l_out__vars;
+      String ret_2;
+      DAE.Exp ret_1;
+      String ret_0;
+
+    case ( txt,
+           SimCode.SES_SIMPLE_ASSIGN(cref = i_cref, exp = i_exp),
+           a_states,
+           a_disc,
+           a_algs,
+           a_funDecls )
+      equation
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
+        ret_0 = BackendQSS.replaceCref(i_cref, a_states, a_disc, a_algs);
+        txt = Tpl.writeStr(txt, ret_0);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
+        ret_1 = BackendQSS.replaceVars(i_exp, a_states, a_disc, a_algs);
+        ret_2 = ExpressionDump.printExpStr(ret_1);
+        txt = Tpl.writeStr(txt, ret_2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
+        txt = Tpl.popBlock(txt);
+      then (txt, a_funDecls);
+
+    case ( txt,
+           SimCode.SES_LINEAR(vars = i_vars, index = i_index, beqs = i_beqs, simJac = i_simJac),
+           a_states,
+           a_disc,
+           a_algs,
+           a_funDecls )
+      equation
+        l_out__vars = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        l_out__vars = lm_50(l_out__vars, i_vars, a_algs, a_disc, a_states);
+        l_out__vars = Tpl.popIter(l_out__vars);
+        ret_5 = BackendQSS.getRHSVars(i_beqs, i_vars, i_simJac, a_states, a_disc, a_algs);
+        l_in__vars = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        l_in__vars = lm_51(l_in__vars, ret_5, a_algs, a_disc, a_states);
+        l_in__vars = Tpl.popIter(l_in__vars);
+        a_funDecls = Tpl.pushBlock(a_funDecls, Tpl.BT_INDENT(2));
+        a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_STRING("function fsolve"));
+        a_funDecls = Tpl.writeStr(a_funDecls, intString(i_index));
+        a_funDecls = Tpl.softNewLine(a_funDecls);
+        a_funDecls = Tpl.pushBlock(a_funDecls, Tpl.BT_INDENT(2));
+        ret_6 = BackendQSS.getRHSVars(i_beqs, i_vars, i_simJac, a_states, a_disc, a_algs);
+        a_funDecls = Tpl.pushIter(a_funDecls, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        a_funDecls = lm_52(a_funDecls, ret_6);
+        a_funDecls = Tpl.popIter(a_funDecls);
+        a_funDecls = Tpl.softNewLine(a_funDecls);
+        a_funDecls = Tpl.pushIter(a_funDecls, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        a_funDecls = lm_53(a_funDecls, i_vars);
+        a_funDecls = Tpl.popIter(a_funDecls);
+        a_funDecls = Tpl.softNewLine(a_funDecls);
+        a_funDecls = Tpl.popBlock(a_funDecls);
+        a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_STRING_LIST({
+                                                  "external \"C\" annotation(Include=\"#include \\\"model.c\\\"\");\n",
+                                                  "end fsolve"
+                                              }, false));
+        a_funDecls = Tpl.writeStr(a_funDecls, intString(i_index));
+        a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_STRING(";"));
+        a_funDecls = Tpl.popBlock(a_funDecls);
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
+        txt = Tpl.writeText(txt, l_out__vars);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")=fsolve"));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
+        txt = Tpl.writeText(txt, l_in__vars);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(");"));
+        txt = Tpl.popBlock(txt);
+      then (txt, a_funDecls);
+
+    case ( txt,
+           SimCode.SES_RESIDUAL(exp = _),
+           _,
+           _,
+           _,
+           a_funDecls )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("  /* Residual */"));
+      then (txt, a_funDecls);
+
+    case ( txt,
+           SimCode.SES_ARRAY_CALL_ASSIGN(componentRef = _),
+           _,
+           _,
+           _,
+           a_funDecls )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("  /* Array */"));
+      then (txt, a_funDecls);
+
+    case ( txt,
+           SimCode.SES_NONLINEAR(index = _),
+           _,
+           _,
+           _,
+           a_funDecls )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("  /* Non linear */"));
+      then (txt, a_funDecls);
+
+    case ( txt,
+           SimCode.SES_MIXED(index = _),
+           _,
+           _,
+           _,
+           a_funDecls )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("  /* Mixed */"));
+      then (txt, a_funDecls);
+
+    case ( txt,
+           SimCode.SES_WHEN(left = _),
+           _,
+           _,
+           _,
+           a_funDecls )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("  /* When */"));
+      then (txt, a_funDecls);
+
+    case ( txt,
+           SimCode.SES_ALGORITHM(statements = _),
+           _,
+           _,
+           _,
+           a_funDecls )
+      then (txt, a_funDecls);
+
+    case ( txt,
+           _,
+           _,
+           _,
+           _,
+           a_funDecls )
+      then (txt, a_funDecls);
+  end matchcontinue;
+end fun_54;
 
 public function generateOdeEq
   input Tpl.Text txt;
@@ -959,13 +1312,15 @@ public function generateOdeEq
   input list<DAE.ComponentRef> a_states;
   input list<DAE.ComponentRef> a_disc;
   input list<DAE.ComponentRef> a_algs;
+  input Tpl.Text a_funDecls;
 
   output Tpl.Text out_txt;
+  output Tpl.Text out_a_funDecls;
 algorithm
-  out_txt := fun_50(txt, a_odeEquation, a_states, a_disc, a_algs);
+  (out_txt, out_a_funDecls) := fun_54(txt, a_odeEquation, a_states, a_disc, a_algs, a_funDecls);
 end generateOdeEq;
 
-protected function lm_52
+protected function lm_56
   input Tpl.Text in_txt;
   input list<BackendDAE.ZeroCrossing> in_items;
   input BackendDAE.EquationArray in_a_eqs;
@@ -1003,7 +1358,7 @@ algorithm
       equation
         txt = generateOneZC(txt, i_zc, a_states, a_disc, a_algs, a_eqs);
         txt = Tpl.nextIter(txt);
-        txt = lm_52(txt, rest, a_eqs, a_algs, a_disc, a_states);
+        txt = lm_56(txt, rest, a_eqs, a_algs, a_disc, a_states);
       then txt;
 
     case ( txt,
@@ -1013,10 +1368,10 @@ algorithm
            a_disc,
            a_states )
       equation
-        txt = lm_52(txt, rest, a_eqs, a_algs, a_disc, a_states);
+        txt = lm_56(txt, rest, a_eqs, a_algs, a_disc, a_states);
       then txt;
   end matchcontinue;
-end lm_52;
+end lm_56;
 
 public function generateZC
   input Tpl.Text txt;
@@ -1024,13 +1379,12 @@ public function generateZC
   input list<DAE.ComponentRef> a_states;
   input list<DAE.ComponentRef> a_disc;
   input list<DAE.ComponentRef> a_algs;
-  input list<SimCode.SimWhenClause> a_whens;
   input BackendDAE.EquationArray a_eqs;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  out_txt := lm_52(out_txt, a_zcs, a_eqs, a_algs, a_disc, a_states);
+  out_txt := lm_56(out_txt, a_zcs, a_eqs, a_algs, a_disc, a_states);
   out_txt := Tpl.popIter(out_txt);
 end generateZC;
 
@@ -1117,47 +1471,222 @@ algorithm
   end matchcontinue;
 end generateOneZC;
 
+public function generateWhen
+  input Tpl.Text in_txt;
+  input SimCode.SimWhenClause in_a_when;
+  input list<DAE.ComponentRef> in_a_states;
+  input list<DAE.ComponentRef> in_a_disc;
+  input list<DAE.ComponentRef> in_a_algs;
+  input Integer in_a_index;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_when, in_a_states, in_a_disc, in_a_algs, in_a_index)
+    local
+      Tpl.Text txt;
+      list<DAE.ComponentRef> a_states;
+      list<DAE.ComponentRef> a_disc;
+      list<DAE.ComponentRef> a_algs;
+      Integer a_index;
+      DAE.Exp i_right;
+      DAE.ComponentRef i_left;
+      list<tuple<DAE.Exp, Integer>> i_conditions;
+      String ret_5;
+      DAE.Exp ret_4;
+      String ret_3;
+      Integer ret_2;
+      Integer ret_1;
+      Tpl.Text l_extraCode;
+
+    case ( txt,
+           SimCode.SIM_WHEN_CLAUSE(conditions = i_conditions, whenEq = SOME(BackendDAE.WHEN_EQ(left = i_left, right = i_right, elsewhenPart = NONE()))),
+           a_states,
+           a_disc,
+           a_algs,
+           a_index )
+      equation
+        l_extraCode = Tpl.emptyTxt;
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("when "));
+        ret_1 = listLength(a_disc);
+        ret_2 = intAdd(a_index, ret_1);
+        (txt, l_extraCode) = generateCond(txt, i_conditions, a_states, a_disc, a_algs, l_extraCode, ret_2);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(" then\n"));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
+        ret_3 = BackendQSS.replaceCref(i_left, a_states, a_disc, a_algs);
+        txt = Tpl.writeStr(txt, ret_3);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" := "));
+        ret_4 = BackendQSS.replaceVars(i_right, a_states, a_disc, a_algs);
+        ret_5 = ExpressionDump.printExpStr(ret_4);
+        txt = Tpl.writeStr(txt, ret_5);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(";\n"));
+        txt = Tpl.writeText(txt, l_extraCode);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("end when;"));
+        txt = Tpl.popBlock(txt);
+      then txt;
+
+    case ( txt,
+           _,
+           _,
+           _,
+           _,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/*  NOT MATCHED WHEN */"));
+      then txt;
+  end matchcontinue;
+end generateWhen;
+
 public function generateCond
   input Tpl.Text in_txt;
   input list<tuple<DAE.Exp, Integer>> in_a_conds;
   input list<DAE.ComponentRef> in_a_states;
   input list<DAE.ComponentRef> in_a_disc;
   input list<DAE.ComponentRef> in_a_algs;
+  input Tpl.Text in_a_extraCode;
+  input Integer in_a_index;
 
   output Tpl.Text out_txt;
+  output Tpl.Text out_a_extraCode;
 algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_conds, in_a_states, in_a_disc, in_a_algs)
+  (out_txt, out_a_extraCode) :=
+  matchcontinue(in_txt, in_a_conds, in_a_states, in_a_disc, in_a_algs, in_a_extraCode, in_a_index)
     local
       Tpl.Text txt;
       list<DAE.ComponentRef> a_states;
       list<DAE.ComponentRef> a_disc;
       list<DAE.ComponentRef> a_algs;
+      Tpl.Text a_extraCode;
+      Integer a_index;
       DAE.Exp i_e;
-      String ret_1;
-      DAE.Exp ret_0;
+      DAE.Exp i_start;
+      DAE.Exp i_interval;
+      String ret_8;
+      DAE.Exp ret_7;
+      Integer ret_6;
+      String ret_5;
+      DAE.Exp ret_4;
+      String ret_3;
+      DAE.Exp ret_2;
+      Integer ret_1;
+      Integer ret_0;
+
+    case ( txt,
+           {(DAE.CALL(path = Absyn.IDENT(name = "sample"), expLst = {i_start, i_interval, _}), _)},
+           a_states,
+           a_disc,
+           a_algs,
+           a_extraCode,
+           a_index )
+      equation
+        a_extraCode = Tpl.writeTok(a_extraCode, Tpl.ST_STRING("d["));
+        ret_0 = intAdd(a_index, 1);
+        a_extraCode = Tpl.writeStr(a_extraCode, intString(ret_0));
+        a_extraCode = Tpl.writeTok(a_extraCode, Tpl.ST_STRING("] := pre(d["));
+        ret_1 = intAdd(a_index, 1);
+        a_extraCode = Tpl.writeStr(a_extraCode, intString(ret_1));
+        a_extraCode = Tpl.writeTok(a_extraCode, Tpl.ST_STRING("]) + "));
+        ret_2 = BackendQSS.replaceVars(i_interval, a_states, a_disc, a_algs);
+        ret_3 = ExpressionDump.printExpStr(ret_2);
+        a_extraCode = Tpl.writeStr(a_extraCode, ret_3);
+        a_extraCode = Tpl.writeTok(a_extraCode, Tpl.ST_STRING(";"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("time > "));
+        ret_4 = BackendQSS.replaceVars(i_start, a_states, a_disc, a_algs);
+        ret_5 = ExpressionDump.printExpStr(ret_4);
+        txt = Tpl.writeStr(txt, ret_5);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" + d["));
+        ret_6 = intAdd(a_index, 1);
+        txt = Tpl.writeStr(txt, intString(ret_6));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_extraCode);
 
     case ( txt,
            {(i_e, _)},
            a_states,
            a_disc,
-           a_algs )
+           a_algs,
+           a_extraCode,
+           _ )
       equation
-        ret_0 = BackendQSS.replaceVars(i_e, a_states, a_disc, a_algs);
-        ret_1 = ExpressionDump.printExpStr(ret_0);
-        txt = Tpl.writeStr(txt, ret_1);
-      then txt;
+        ret_7 = BackendQSS.replaceVars(i_e, a_states, a_disc, a_algs);
+        ret_8 = ExpressionDump.printExpStr(ret_7);
+        txt = Tpl.writeStr(txt, ret_8);
+      then (txt, a_extraCode);
 
     case ( txt,
            _,
            _,
            _,
+           _,
+           a_extraCode,
            _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("initial()"));
-      then txt;
+      then (txt, a_extraCode);
   end matchcontinue;
 end generateCond;
+
+protected function lm_62
+  input Tpl.Text in_txt;
+  input list<SimCode.SimWhenClause> in_items;
+  input list<SimCode.SimWhenClause> in_a_whens;
+  input list<DAE.ComponentRef> in_a_algs;
+  input list<DAE.ComponentRef> in_a_disc;
+  input list<DAE.ComponentRef> in_a_states;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items, in_a_whens, in_a_algs, in_a_disc, in_a_states)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimWhenClause> rest;
+      list<SimCode.SimWhenClause> a_whens;
+      list<DAE.ComponentRef> a_algs;
+      list<DAE.ComponentRef> a_disc;
+      list<DAE.ComponentRef> a_states;
+      Integer x_i0;
+      SimCode.SimWhenClause i_w;
+      Integer ret_1;
+      Integer ret_0;
+
+    case ( txt,
+           {},
+           _,
+           _,
+           _,
+           _ )
+      then txt;
+
+    case ( txt,
+           i_w :: rest,
+           a_whens,
+           a_algs,
+           a_disc,
+           a_states )
+      equation
+        x_i0 = Tpl.getIteri_i0(txt);
+        ret_0 = listLength(a_whens);
+        ret_1 = intSub(x_i0, ret_0);
+        txt = generateWhen(txt, i_w, a_states, a_disc, a_algs, ret_1);
+        txt = Tpl.nextIter(txt);
+        txt = lm_62(txt, rest, a_whens, a_algs, a_disc, a_states);
+      then txt;
+
+    case ( txt,
+           _ :: rest,
+           a_whens,
+           a_algs,
+           a_disc,
+           a_states )
+      equation
+        txt = lm_62(txt, rest, a_whens, a_algs, a_disc, a_states);
+      then txt;
+  end matchcontinue;
+end lm_62;
 
 public function generateDiscont
   input Tpl.Text txt;
@@ -1170,7 +1699,11 @@ public function generateDiscont
 
   output Tpl.Text out_txt;
 algorithm
-  out_txt := generateZC(txt, a_zcs, a_states, a_disc, a_algs, a_whens, a_eqs);
+  out_txt := generateZC(txt, a_zcs, a_states, a_disc, a_algs, a_eqs);
+  out_txt := Tpl.softNewLine(out_txt);
+  out_txt := Tpl.pushIter(out_txt, Tpl.ITER_OPTIONS(0, NONE(), NONE(), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+  out_txt := lm_62(out_txt, a_whens, a_whens, a_algs, a_disc, a_states);
+  out_txt := Tpl.popIter(out_txt);
 end generateDiscont;
 
 end CodegenQSS;
