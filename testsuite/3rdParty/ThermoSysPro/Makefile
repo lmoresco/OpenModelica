@@ -13,14 +13,14 @@ ThermoSysPro.Examples.SimpleExamples.TestSensors.mos \
 ThermoSysPro.Examples.SimpleExamples.TestSingularPressureLoss.mos \
 ThermoSysPro.Examples.SimpleExamples.TestStaticCentrifugalPump1.mos \
 ThermoSysPro.Examples.SimpleExamples.TestStaticCentrifugalPumpWaterSolution.mos \
-ThermoSysPro.Examples.SimpleExamples.TestStaticWaterWaterExchangerDTorWorEff.mos \
 ThermoSysPro.Examples.SimpleExamples.TestSteamEngine.mos \
 ThermoSysPro.Examples.SimpleExamples.TestStodolaTurbine2.mos \
-ThermoSysPro.Examples.SimpleExamples.TestThreeWayValve.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
+ThermoSysPro.Examples.SimpleExamples.TestThreeWayValve.mos \
+ThermoSysPro.Examples.SimpleExamples.TestStaticWaterWaterExchangerDTorWorEff.mos \
 ThermoSysPro.Examples.SimpleExamples.TestIdealSwitchValve.mos \
 ThermoSysPro.Examples.SimpleExamples.TestAirHumidity.mos \
 ThermoSysPro.Examples.SimpleExamples.TestBend.mos \

@@ -78,9 +78,9 @@ public
   Modelica.SIunits.Power Wout 
     "Thermal power exchanged from the steam to the pipes";
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph prol 
-    "Propriétés de l'eau dans le ballon" annotation (extent=[-100,80; -80,100]);
+    "PropriÃ©tÃ©s de l'eau dans le ballon" annotation (extent=[-100,80; -80,100]);
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph prov 
-    "Propriétés de la vapeur dans le ballon" annotation (extent=[80,80; 100,100]);
+    "PropriÃ©tÃ©s de la vapeur dans le ballon" annotation (extent=[80,80; 100,100]);
   ThermoSysPro.Properties.WaterSteam.Common.PropThermoSat lsat 
     annotation (extent=[-30,40; -10,60]);
   ThermoSysPro.Properties.WaterSteam.Common.PropThermoSat vsat 
@@ -273,7 +273,7 @@ public
   Connectors.FluidInlet Cee    annotation(extent=[-110,-32; -90,-12]);
   Connectors.FluidOutlet Cse   annotation(extent=[90,-30; 110,-10]);
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph proe 
-    "Propriétés de l'eau "                   annotation (extent=[40,20; 60,40]);
+    "PropriÃ©tÃ©s de l'eau "                   annotation (extent=[40,20; 60,40]);
 initial equation 
   if steady_state then
     der(hl) = 0;

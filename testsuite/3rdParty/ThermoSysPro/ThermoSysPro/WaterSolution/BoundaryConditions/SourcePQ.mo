@@ -44,7 +44,7 @@ model SourcePQ "Pressure and mass flow source"
 <u><p><b>Authors</u> : </p></b>
 <ul style='margin-top:0cm' type=disc>
 <li>
-    Benoît Bride</li>
+    BenoÃ®t Bride</li>
 <li>
     Daniel Bouskela</li>
 </html>

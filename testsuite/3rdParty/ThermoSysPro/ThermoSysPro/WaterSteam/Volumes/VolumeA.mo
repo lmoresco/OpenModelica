@@ -64,7 +64,7 @@ public
   Connectors.FluidOutlet Cs1 
                            annotation (extent=[90,-10; 110,10]);
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph pro 
-    "Propriétés de l'eau" 
+    "PropriÃ©tÃ©s de l'eau" 
     annotation (extent=[-100,80; -80,100]);
   Connectors.FluidOutlet Cs2 
                            annotation (extent=[-10,-110; 10,-90]);

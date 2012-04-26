@@ -1,9 +1,9 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.NonLineaire;
 block LimiteurVar 
   parameter Real maxval=1 
-    "Valeur maximale de la sortie si limit1 n'est pas connecté";
+    "Valeur maximale de la sortie si limit1 n'est pas connectÃ©";
   parameter Real minval=-1 
-    "Valeur minimale de la sortie si limit2 n'est pas connecté";
+    "Valeur minimale de la sortie si limit2 n'est pas connectÃ©";
 protected 
   Real uMax;
   Real uMin;

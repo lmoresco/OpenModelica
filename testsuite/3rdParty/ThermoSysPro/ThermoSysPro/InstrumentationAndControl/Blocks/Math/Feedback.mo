@@ -1,5 +1,5 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Math;
-block Feedback "Différence entre la commande et le feedback" 
+block Feedback "DiffÃ©rence entre la commande et le feedback" 
   
   annotation (
     Documentation(info="<html>

@@ -7,8 +7,8 @@ block PIsat
   parameter Real maxval=1 "Valeur maximale de la sortie";
   parameter Real minval=0 "Valeur minimale de la sortie";
   
-  parameter Real SampleOffset=0 "Instant de départ de l'échantillonnage (s)";
-  parameter Real SampleInterval=0.01 "Période d'échantillonnage (s)";
+  parameter Real SampleOffset=0 "Instant de dÃ©part de l'Ã©chantillonnage (s)";
+  parameter Real SampleInterval=0.01 "PÃ©riode d'Ã©chantillonnage (s)";
   annotation (
     Coordsys(
       extent=[-100, -100; 100, 100],

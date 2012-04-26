@@ -123,10 +123,10 @@ equation
   deltaP = 8*khi*ThermoSysPro.Functions.ThermoSquare(
                                                     Q, eps)/(pi^2*D^4*rho);
   
-    /* Coude à parois concentriques (Idel'cik p. 192). Quadratic flow regime is assumed and Re > 2e5 (Re > Relim). */
+    /* Coude Ã  parois concentriques (Idel'cik p. 192). Quadratic flow regime is assumed and Re > 2e5 (Re > Relim). */
   assert(R0/D > 0.5, "Coude: on doit avoir R0/D > 0.5");
   assert((delta > 0) and not (delta > 180),
-    "Bend: parameter delta should be such as 0° < delta <= 180°");
+    "Bend: parameter delta should be such as 0Â° < delta <= 180Â°");
   
   khi = kdelta*khim + khif;
   

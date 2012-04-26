@@ -1,7 +1,7 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Tables;
 block Table1DTempsBool 
   parameter Real Table[:, 2]=[0, 0] 
-    "Table (temps = première colonne, sequence strictement croissante).";
+    "Table (temps = premiÃ¨re colonne, sequence strictement croissante).";
 protected 
   parameter Integer iMax=size(Table, 1);
   Integer index(start=1, fixed=true);

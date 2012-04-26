@@ -1,9 +1,9 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.NonLineaire;
-block SelecteurEntier "Sélection entre deux entiers" 
+block SelecteurEntier "SÃ©lection entre deux entiers" 
   parameter Integer C1=-1 
-    "Valeur de la sortie pour uCond=true si u1 non connecté";
+    "Valeur de la sortie pour uCond=true si u1 non connectÃ©";
   parameter Integer C2=1 
-    "Valeur de la sortie pour uCond=false si u2 non connecté";
+    "Valeur de la sortie pour uCond=false si u2 non connectÃ©";
   annotation (
     Coordsys(
       extent=[-100, -100; 100, 100],

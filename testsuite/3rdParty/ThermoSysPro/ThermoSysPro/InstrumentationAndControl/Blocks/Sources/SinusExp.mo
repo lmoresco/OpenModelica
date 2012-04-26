@@ -1,11 +1,11 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Sources;
 block SinusExp 
   parameter Real amplitude=1 "Amplitude du sinus";
-  parameter Real frequence=2 "Fréquence du sinus (Hz)";
+  parameter Real frequence=2 "FrÃ©quence du sinus (Hz)";
   parameter Real phase=0 "Phase du sinus (rad)";
   parameter Real damping=1 "Coefficient d'amortissement du sinus";
-  parameter Real offset=0 "Décalage de la sortie";
-  parameter Real startTime=0 "Instant de départ de l'échelon";
+  parameter Real offset=0 "DÃ©calage de la sortie";
+  parameter Real startTime=0 "Instant de dÃ©part de l'Ã©chelon";
   
 protected 
   constant Real pi=Modelica.Constants.pi;

@@ -1,5 +1,5 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks;
-package Math "Bibliothèque de blocs mathématiques"
+package Math "BibliothÃ¨que de blocs mathÃ©matiques"
 annotation (
   Coordsys(
     extent=[0, 0; 312, 210],

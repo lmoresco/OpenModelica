@@ -1,8 +1,8 @@
 within ThermoSysPro.Properties.FlueGases;
 function XSat 
 //---------------------------------------------------------------------------
-// Fonction  de l'humidité absolue a saturation xs(T)
-// Tair en °K, attention formule avec T en °C
+// Fonction  de l'humiditÃ© absolue a saturation xs(T)
+// Tair en Â°K, attention formule avec T en Â°C
 //---------------------------------------------------------------------------
   input ThermoSysPro.Units.AbsoluteTemperature Tair "Air temperature";
   input ThermoSysPro.Units.AbsolutePressure Patm "Atmospheric pressure";

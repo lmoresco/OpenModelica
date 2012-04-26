@@ -3,7 +3,7 @@ block PT1
   parameter Real k=1 "Gain";
   parameter Real Ti=1 "Constante de temps (s)";
   parameter Real U0=0 
-    "Valeur de la sortie à l'instant initial (si non permanent et si u0 non connecté)";
+    "Valeur de la sortie Ã  l'instant initial (si non permanent et si u0 non connectÃ©)";
   parameter Boolean permanent=false "Calcul du permanent";
   
 protected 

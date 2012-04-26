@@ -2,7 +2,7 @@ within ThermoSysPro.InstrumentationAndControl.Blocks.Logique;
 block Pulse 
   parameter Real width=0.5 "Largeur des impulsions (s)";
   parameter Real period=1 "Periode des impulsions (s)";
-  parameter Real startTime=0 "Instant de départ des impulsions";
+  parameter Real startTime=0 "Instant de dÃ©part des impulsions";
   
 protected 
   Real T0;

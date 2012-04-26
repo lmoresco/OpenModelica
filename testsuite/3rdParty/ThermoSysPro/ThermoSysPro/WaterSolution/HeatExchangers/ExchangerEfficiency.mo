@@ -168,7 +168,7 @@ equation
 <u><p><b>Authors</u> : </p></b>
 <ul style='margin-top:0cm' type=disc>
 <li>
-    Benoît Bride</li>
+    BenoÃ®t Bride</li>
 </html>
 "));
 end ExchangerEfficiency;

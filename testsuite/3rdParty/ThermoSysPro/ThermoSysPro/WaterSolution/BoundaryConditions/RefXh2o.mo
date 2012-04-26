@@ -60,7 +60,7 @@ model RefXh2o "Fixed Xh20 reference"
 <u><p><b>Authors</u> : </p></b>
 <ul style='margin-top:0cm' type=disc>
 <li>
-    Benoît Bride</li>
+    BenoÃ®t Bride</li>
 <li>
     Daniel Bouskela</li>
 </html>

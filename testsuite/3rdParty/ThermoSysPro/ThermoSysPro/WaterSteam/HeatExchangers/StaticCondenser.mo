@@ -2,7 +2,7 @@ within ThermoSysPro.WaterSteam.HeatExchangers;
 model StaticCondenser "Static condenser" 
   parameter Modelica.SIunits.Area SCO=10000 "Heat exchange surface";
   parameter Real CPCE=0.02 
-    "Pressure loss coefficient for the water side (Pa.s²/(kg.m**3))";
+    "Pressure loss coefficient for the water side (Pa.sÂ²/(kg.m**3))";
   parameter Modelica.SIunits.Height z=5 "Water level in the condenser";
   parameter Modelica.SIunits.CoefficientOfHeatTransfer KCO=1 
     "Reference heat exchange coefficient";
@@ -94,15 +94,15 @@ public
   Connectors.FluidInlet Cvt "Turbine outlet" 
     annotation (extent=[-13,88; 13,114]);
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph proex 
-    "Propriétés de l'eau" 
+    "PropriÃ©tÃ©s de l'eau" 
     annotation (extent=[60,80; 80,100]);
 public 
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph proee 
-    "Propriétés de l'eau" 
+    "PropriÃ©tÃ©s de l'eau" 
     annotation (extent=[20,80; 40,100]);
 public 
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph prose 
-    "Propriétés de l'eau" 
+    "PropriÃ©tÃ©s de l'eau" 
     annotation (extent=[80,-100; 100,-80]);
   ThermoSysPro.Properties.WaterSteam.Common.PropThermoSat lsat1 
     annotation (extent=[-100,80; -80,100]);

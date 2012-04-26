@@ -1,11 +1,11 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Continu;
 block FctTrans 
   parameter Real b[:]={1} 
-    "Coefficients numérateurs de la fonction de transfert (par puissances décroissantes)";
+    "Coefficients numÃ©rateurs de la fonction de transfert (par puissances dÃ©croissantes)";
   parameter Real a[:]={1,1} 
-    "Coefficients dénominateurs de la fonction de transfert (par puissances décroissantes)";
+    "Coefficients dÃ©nominateurs de la fonction de transfert (par puissances dÃ©croissantes)";
   parameter Real U0=0 
-    "Valeur de la sortie à l'instant initial (si non permanent et si u0 non connecté)";
+    "Valeur de la sortie Ã  l'instant initial (si non permanent et si u0 non connectÃ©)";
   parameter Boolean permanent=false "Calcul du permanent";
   
 protected 

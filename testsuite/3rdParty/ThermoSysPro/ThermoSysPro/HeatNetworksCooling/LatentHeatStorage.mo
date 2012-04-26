@@ -61,7 +61,7 @@ public
   ThermoSysPro.Units.SpecificEnthalpy hm(start=100000) 
     "Water average specific enthalpy";
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph proe 
-    "Propriétés de l'eau" 
+    "PropriÃ©tÃ©s de l'eau" 
     annotation (extent=[-100, 80; -80, 100]);
   annotation (
     Coordsys(
@@ -105,7 +105,7 @@ public
 <u><p><b>Authors</u> : </p></b>
 <ul style='margin-top:0cm' type=disc>
 <li>
-    Benoît Bride</li>
+    BenoÃ®t Bride</li>
 </ul>
 </html>
 "));
@@ -114,7 +114,7 @@ public
   ThermoSysPro.WaterSteam.Connectors.FluidOutlet Cs 
                                      annotation (extent=[80,-40; 100,-20]);
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph pros 
-    "Propriétés de l'eau" 
+    "PropriÃ©tÃ©s de l'eau" 
     annotation (extent=[80,80; 100,100]);
 initial equation 
   if steady_state then

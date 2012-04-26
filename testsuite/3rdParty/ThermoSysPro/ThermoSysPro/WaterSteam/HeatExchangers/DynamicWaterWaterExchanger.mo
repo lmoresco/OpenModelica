@@ -98,19 +98,19 @@ public
     "Cold fluid average specific enthalpy";
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph proc[
                                                               N] 
-    "Propriétés du fluide chaud" annotation(extent=[-60, -100; -40, -80]);
+    "PropriÃ©tÃ©s du fluide chaud" annotation(extent=[-60, -100; -40, -80]);
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph prof[
                                                               N] 
-    "Propriétés du fluide froid" annotation(extent=[-100, -100; -80, -80]);
+    "PropriÃ©tÃ©s du fluide froid" annotation(extent=[-100, -100; -80, -80]);
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph proce 
-    "Propriétés du fluide chaud en entrée" annotation(extent=[-20, 80; 0, 100]);
+    "PropriÃ©tÃ©s du fluide chaud en entrÃ©e" annotation(extent=[-20, 80; 0, 100]);
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph procs 
-    "Propriétés du fluide chaud en sortie" annotation(extent=[20, 80; 40, 100]);
+    "PropriÃ©tÃ©s du fluide chaud en sortie" annotation(extent=[20, 80; 40, 100]);
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph profe 
-    "Propriétés du fluide froid en entrée" 
+    "PropriÃ©tÃ©s du fluide froid en entrÃ©e" 
     annotation(extent=[-100, 80; -80, 100]);
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph profs 
-    "Propriétés du fluide froid en sortie" 
+    "PropriÃ©tÃ©s du fluide froid en sortie" 
     annotation(extent=[-60, 80; -40, 100]);
   annotation (
     Coordsys(

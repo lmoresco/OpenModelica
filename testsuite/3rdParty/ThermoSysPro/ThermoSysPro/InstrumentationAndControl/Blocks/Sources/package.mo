@@ -1,5 +1,5 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks;
-package Sources "Bibliothèque des blocs sources"
+package Sources "BibliothÃ¨que des blocs sources"
 annotation (
   Coordsys(
     extent=[0, 0; 312, 210],

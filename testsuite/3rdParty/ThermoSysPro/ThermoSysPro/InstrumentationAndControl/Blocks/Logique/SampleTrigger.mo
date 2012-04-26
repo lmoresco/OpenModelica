@@ -1,7 +1,7 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Logique;
 block SampleTrigger 
   parameter Real period=1 "Periode des impulsions (s)";
-  parameter Real startTime=0 "Instant de départ des impulsions";
+  parameter Real startTime=0 "Instant de dÃ©part des impulsions";
   annotation (
     Coordsys(
       extent=[-100, -100; 100, 100],

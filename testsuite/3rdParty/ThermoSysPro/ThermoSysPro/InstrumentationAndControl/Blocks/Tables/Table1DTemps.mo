@@ -2,10 +2,10 @@ within ThermoSysPro.InstrumentationAndControl.Blocks.Tables;
 
 
 block Table1DTemps 
-  parameter Real Table[:, 2]=[0, 0; 1, 0] "Table (temps = première colonne)";
+  parameter Real Table[:, 2]=[0, 0; 1, 0] "Table (temps = premiÃ¨re colonne)";
   
 protected 
-  parameter Real Tu[:]=Table[:, 1] "Entrées de la table";
+  parameter Real Tu[:]=Table[:, 1] "EntrÃ©es de la table";
   parameter Real Ty[:]=Table[:, 2] "Sorties de la table";
   annotation (
     Coordsys(

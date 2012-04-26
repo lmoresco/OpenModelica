@@ -9,14 +9,14 @@ function MassFraction_eq_PT
 protected 
   Real lnP "ln de la pression en Pa";
   Real lnPlim "limite des zones du ln de la pression en Pa";
-  Real Tinv "Inverse négatif de la température";
+  Real Tinv "Inverse nÃ©gatif de la tempÃ©rature";
   
-  Real A1 "Coefficient directeur zone inférieure";
-  Real B1 "Ordonnée à l'origine zone inférieure";
-  Real A2 "Coefficient directeur zone supérieure";
-  Real B2 "Ordonnée à l'origine zone supérieure";
+  Real A1 "Coefficient directeur zone infÃ©rieure";
+  Real B1 "OrdonnÃ©e Ã  l'origine zone infÃ©rieure";
+  Real A2 "Coefficient directeur zone supÃ©rieure";
+  Real B2 "OrdonnÃ©e Ã  l'origine zone supÃ©rieure";
   Real a "Coefficient directeur de la loi ln P lim = a (-1/T) + b";
-  Real b "Ordonnée à l'origine de la loi ln P lim = a (-1/T) + b";
+  Real b "OrdonnÃ©e Ã  l'origine de la loi ln P lim = a (-1/T) + b";
   
 algorithm 
   /* Units conversions */

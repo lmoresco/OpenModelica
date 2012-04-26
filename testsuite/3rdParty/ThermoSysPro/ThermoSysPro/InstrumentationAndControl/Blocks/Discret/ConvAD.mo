@@ -1,10 +1,10 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Discret;
 block ConvAD 
-  parameter Real maxval=1 "Valeur maximale en entrée";
-  parameter Real minval=-maxval "Valeur minimale en entrée";
+  parameter Real maxval=1 "Valeur maximale en entrÃ©e";
+  parameter Real minval=-maxval "Valeur minimale en entrÃ©e";
   parameter Real bits=12 "Nombre de bits du convertisseur AD";
-  parameter Real SampleOffset=0 "Instant de départ de l'échantillonnage (s)";
-  parameter Real SampleInterval=0.01 "Période d'échantillonnage (s)";
+  parameter Real SampleOffset=0 "Instant de dÃ©part de l'Ã©chantillonnage (s)";
+  parameter Real SampleInterval=0.01 "PÃ©riode d'Ã©chantillonnage (s)";
   
 protected 
   Real qInterval(start=((maxval - minval)/2^bits)) "quantization interval";

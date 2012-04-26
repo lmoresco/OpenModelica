@@ -1,7 +1,7 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Math;
 block InfegEntier 
-  parameter Integer C1=0 "Valeur de u1 si u1 non connecté";
-  parameter Integer C2=0 "Valeur de u2 si u2 non connecté";
+  parameter Integer C1=0 "Valeur de u1 si u1 non connectÃ©";
+  parameter Integer C2=0 "Valeur de u2 si u2 non connectÃ©";
   
   annotation (
     Coordsys(

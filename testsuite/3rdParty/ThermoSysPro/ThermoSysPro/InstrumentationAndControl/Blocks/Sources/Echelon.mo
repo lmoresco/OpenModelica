@@ -1,8 +1,8 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Sources;
 block Echelon 
-  parameter Real hauteur=1 "Hauteur de l'échelon";
-  parameter Real offset=0 "Décalage de la sortie";
-  parameter Real startTime=0 "Instant de départ de l'échelon";
+  parameter Real hauteur=1 "Hauteur de l'Ã©chelon";
+  parameter Real offset=0 "DÃ©calage de la sortie";
+  parameter Real startTime=0 "Instant de dÃ©part de l'Ã©chelon";
   annotation (
     Coordsys(
       extent=[-100, -100; 100, 100],

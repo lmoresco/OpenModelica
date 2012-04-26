@@ -1,7 +1,7 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Tables;
 block Table2D 
-  parameter Real Tu1[:,1]=[0; 0] "Entrées lignes de la table";
-  parameter Real Tu2[1,:]=[0, 0] "Entrées colonnes de la table";
+  parameter Real Tu1[:,1]=[0; 0] "EntrÃ©es lignes de la table";
+  parameter Real Tu2[1,:]=[0, 0] "EntrÃ©es colonnes de la table";
   parameter Real Ty[size(Tu1, 1), size(Tu2, 2)]=[0, 0; 0, 0] 
     "Sorties de la table";
   annotation (

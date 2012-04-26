@@ -335,7 +335,7 @@ package Common
     Modelica.SIunits.SpecificHeatCapacity cv;
   public 
     input HelmholtzDerivs f 
-      "Dérivées adimensionnelles de la fonction de Helmholtz" 
+      "DÃ©rivÃ©es adimensionnelles de la fonction de Helmholtz" 
       annotation (extent=[-85, 15; -15, 85]);
     input HelmholtzData dTR annotation (extent=[15, 15; 85, 85]);
     output NewtonDerivatives_ph nderivs annotation (extent=[-85, -85; -15, -15]);
@@ -465,7 +465,7 @@ package Common
     Modelica.SIunits.SpecificHeatCapacity cv;
   public 
     input HelmholtzDerivs f 
-      "Dérivées adimensionnelles de la fonction de Helmholtz" 
+      "DÃ©rivÃ©es adimensionnelles de la fonction de Helmholtz" 
       annotation (extent=[-85, 15; -15, 85]);
     input HelmholtzData dTR annotation (extent=[15, 15; 85, 85]);
     output NewtonDerivatives_ps nderivs annotation (extent=[-85, -85; -15, -15]);
@@ -550,7 +550,7 @@ package Common
     input ThermoSysPro.Units.AbsoluteTemperature T "Temperature";
     
     output Modelica.SIunits.Density rho "density";
-    input GibbsDerivs g "Dérivées de la fonction de Gibbs" 
+    input GibbsDerivs g "DÃ©rivÃ©es de la fonction de Gibbs" 
       annotation (extent=[-70, -70; 70, 70]);
   algorithm 
     
@@ -586,7 +586,7 @@ package Common
     input ThermoSysPro.Units.AbsolutePressure P "Pressure";
     input ThermoSysPro.Units.AbsoluteTemperature T "Temperature";
     
-    input GibbsDerivs g "Dérivées de la fonction de Gibbs" 
+    input GibbsDerivs g "DÃ©rivÃ©es de la fonction de Gibbs" 
       annotation (extent=[-85, 15; -15, 85]);
     output PropThermoSat sat annotation (extent=[15, 15; 85, 85]);
   algorithm 

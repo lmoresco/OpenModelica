@@ -55,7 +55,7 @@ package Common
     Integer nb_heures(min=0, max=23) "Nombre d'heures";
     Integer nb_minutes(min=0, max=59) "Nombre de minutes";
     Integer nb_secondes(min=0, max=59) "Nombre de secondes";
-    Integer nb_dixiemes_secondes(min=0, max=9) "Nombre de dixèmes de secondes";
+    Integer nb_dixiemes_secondes(min=0, max=9) "Nombre de dixÃ¨mes de secondes";
     annotation (
       Coordsys(
         extent=[-100, -100; 100, 100],
@@ -83,13 +83,13 @@ package Common
   end Duree;
   
   record DateEtHeure 
-    Integer annee(min=2000) "Année";
-    Integer mois(min=1, max=12) "Mois dans l'année";
+    Integer annee(min=2000) "AnnÃ©e";
+    Integer mois(min=1, max=12) "Mois dans l'annÃ©e";
     Integer jour(min=1, max=31) "Jour dans le mois";
     Integer heure(min=0, max=23) "Heure du jour";
     Integer minutes(min=0, max=59) "Nombre de minutes";
     Integer secondes(min=0, max=59) "Nombre de secondes";
-    Integer nb_dixemes_secondes(min=0, max=9) "Nombre de dixèmes de secondes";
+    Integer nb_dixemes_secondes(min=0, max=9) "Nombre de dixÃ¨mes de secondes";
     annotation (
       Coordsys(
         extent=[-100, -100; 100, 100],

@@ -273,7 +273,7 @@ equation
   lambdac = ThermoSysPro.Properties.WaterSteam.IF97.ThermalConductivity_rhoT(rhoc, Tmc, Pmc);
   lambdaf = ThermoSysPro.Properties.WaterSteam.IF97.ThermalConductivity_rhoT(rhof, Tmf, Pmf);
   
-  /* Calcul des températures en entrée et en sortie de l'échangeur */
+  /* Calcul des tempÃ©ratures en entrÃ©e et en sortie de l'Ã©changeur */
   proce = ThermoSysPro.Properties.WaterSteam.IF97.Water_Ph(Ec.P, Ec.h, modec);
   procs = ThermoSysPro.Properties.WaterSteam.IF97.Water_Ph(Sc.P, Sc.h, modec);
   

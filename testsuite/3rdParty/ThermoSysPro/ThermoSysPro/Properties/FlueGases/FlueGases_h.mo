@@ -30,7 +30,7 @@ algorithm
   state0.X :={Xn2,Xo2,Xh2o,Xco2,Xso2};
   //state0 := ThermoSysPro.Properties.ModelicaMediaFlueGases.setState_pTX(0.006112*1e5, 273.16, {Xn2,Xo2,Xh2o,Xco2,Xso2});
   
-  /* Computation of the specific enthalpy minus a reference at (0.006112 bars, 0.01°C) */
+  /* Computation of the specific enthalpy minus a reference at (0.006112 bars, 0.01Â°C) */
   h := ThermoSysPro.Properties.ModelicaMediaFlueGases.specificEnthalpy(state)
        - ThermoSysPro.Properties.ModelicaMediaFlueGases.specificEnthalpy(state0) + Xh2o*Hlat;
   

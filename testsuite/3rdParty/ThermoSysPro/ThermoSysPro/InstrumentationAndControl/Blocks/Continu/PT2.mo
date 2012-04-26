@@ -1,7 +1,7 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Continu;
 block PT2 
   parameter Real k=1 "Gain";
-  parameter Real w=1 "Fréquence angulaire";
+  parameter Real w=1 "FrÃ©quence angulaire";
   parameter Real D=1 "Amortissement";
   parameter Boolean permanent=false "Calcul du permanent";
   

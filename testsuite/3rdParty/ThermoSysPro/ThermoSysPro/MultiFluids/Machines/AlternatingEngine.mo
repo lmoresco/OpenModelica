@@ -53,7 +53,7 @@ public
   Modelica.SIunits.Power Wpth_ref(start=1e6) 
     "Power of thermal losses + cooling";
   Real exc(start=1) "Combustion air ratio";
-  Real PCScomb "Pouvoir Calorifique Supérieur du combustible sur brut(en J/kg)";
+  Real PCScomb "Pouvoir Calorifique SupÃ©rieur du combustible sur brut(en J/kg)";
   ThermoSysPro.Units.AbsoluteTemperature Tm(start=500) 
     "Air-gas mixture temperature";
   ThermoSysPro.Units.AbsoluteTemperature Tfcp(start=500) 
@@ -177,7 +177,7 @@ public
 <u><p><b>Authors</u> : </p></b>
 <ul style='margin-top:0cm' type=disc>
 <li>
-    Benoît Bride</li>
+    BenoÃ®t Bride</li>
 </html>
 ", info="<html>
 <p><b>Copyright &copy; EDF 2002 - 2010</b></p>

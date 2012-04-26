@@ -1,5 +1,5 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks;
-package NonLineaire "Bibliothèque des blocs non-linéaires"
+package NonLineaire "BibliothÃ¨que des blocs non-linÃ©aires"
 annotation (
   Coordsys(
     extent=[0, 0; 312, 210],

@@ -53,9 +53,9 @@ public
     "Thermal power exchanged from the gas phase to the liquid phase";
   
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph prol 
-    "Propriétés de l'eau dans le ballon" annotation (extent=[-60, 40; -20, 80]);
+    "PropriÃ©tÃ©s de l'eau dans le ballon" annotation (extent=[-60, 40; -20, 80]);
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph prov 
-    "Propriétés de la vapeur dans le ballon" annotation (extent=[0, 40; 40, 80]);
+    "PropriÃ©tÃ©s de la vapeur dans le ballon" annotation (extent=[0, 40; 40, 80]);
   ThermoSysPro.Properties.WaterSteam.Common.PropThermoSat lsat 
     annotation (extent=[-60, -80; -20, -40]);
   ThermoSysPro.Properties.WaterSteam.Common.PropThermoSat vsat 

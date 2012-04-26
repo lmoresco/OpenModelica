@@ -112,7 +112,7 @@ equation
   /* Pressure loss */
   deltaP = 8*khi*ThermoSysPro.Functions.ThermoSquare(Q, eps)/(pi^2*D^4*rho);
   
-    /* Diaphragme avec ouvertures à arêtes vives (Idel'cik p. 103). One assumes that Re > 1.e5 (Re > Relim) */
+    /* Diaphragme avec ouvertures Ã  arÃªtes vives (Idel'cik p. 103). One assumes that Re > 1.e5 (Re > Relim) */
   assert((Ouv > 0) and not (Ouv > 1), "Diaphragm: parameter Ouv should be such as 0 < Ouv <= 1");
   
   khi = ((1.707 - Ouv)/Ouv)^2;

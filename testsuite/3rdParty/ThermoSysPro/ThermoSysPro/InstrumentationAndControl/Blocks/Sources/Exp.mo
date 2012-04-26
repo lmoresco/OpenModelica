@@ -1,13 +1,13 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Sources;
 block Exp 
   parameter Real ymax=1 "Hauteur de la sortie pour riseTime infini";
-  parameter Real riseTime(min=0) = 0.5 "Durée du front montant";
+  parameter Real riseTime(min=0) = 0.5 "DurÃ©e du front montant";
   parameter Real riseTimeConst(min=Modelica.Constants.small) = 0.1 
     "Constante du front montant";
   parameter Real fallTimeConst(min=Modelica.Constants.small) = 0.1 
     "Constante du front descendant";
-  parameter Real offset=0 "Décalage de la sortie";
-  parameter Real startTime=0 "Instant de départ de l'exponentielle";
+  parameter Real offset=0 "DÃ©calage de la sortie";
+  parameter Real startTime=0 "Instant de dÃ©part de l'exponentielle";
   
 protected 
   Real y_riseTime;

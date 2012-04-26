@@ -37,7 +37,7 @@ model Drum_LevelControl "Drum level control"
           fillColor=51,
           rgbfillColor={255,255,170},
           fillPattern=1),
-        string="Régulation Niveau "),
+        string="RÃ©gulation Niveau "),
       Text(
         extent=[-41,-9; 38,-58],
         style(

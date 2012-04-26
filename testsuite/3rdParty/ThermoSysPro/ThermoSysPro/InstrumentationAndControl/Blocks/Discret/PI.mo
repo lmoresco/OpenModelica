@@ -3,8 +3,8 @@ block PI
   parameter Real k=1 "Gain";
   parameter Real Ti=1 "Constante de temps";
   parameter Real initialCond=0 "Condition initiale";
-  parameter Real SampleOffset=0 "Instant de départ de l'échantillonnage (s)";
-  parameter Real SampleInterval=0.01 "Période d'échantillonnage (s)";
+  parameter Real SampleOffset=0 "Instant de dÃ©part de l'Ã©chantillonnage (s)";
+  parameter Real SampleInterval=0.01 "PÃ©riode d'Ã©chantillonnage (s)";
   
 protected 
   Real x(start=initialCond);

@@ -1,16 +1,16 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Sources;
 block Trapezoide 
-  parameter Real amplitude=1 "Amplitude du trapèze";
-  parameter Real rising(final min=0) = 0.5 "Durée du front montant (s)";
-  parameter Real largeur(final min=0) = 2 "Largeur du trapèze (s)";
-  parameter Real falling(final min=0) = 0.5 "Durée du front descendant (s)";
-  parameter Real periode(final min=Modelica.Constants.small) = 4 "Période (s)";
-  parameter Integer n=-1 "Nombre de périodes (< 0 nombre de périodes infini)";
-  parameter Real offset=0 "Décalage de la sortie";
-  parameter Real startTime=0 "Instant de départ de l'échelon";
+  parameter Real amplitude=1 "Amplitude du trapÃ¨ze";
+  parameter Real rising(final min=0) = 0.5 "DurÃ©e du front montant (s)";
+  parameter Real largeur(final min=0) = 2 "Largeur du trapÃ¨ze (s)";
+  parameter Real falling(final min=0) = 0.5 "DurÃ©e du front descendant (s)";
+  parameter Real periode(final min=Modelica.Constants.small) = 4 "PÃ©riode (s)";
+  parameter Integer n=-1 "Nombre de pÃ©riodes (< 0 nombre de pÃ©riodes infini)";
+  parameter Real offset=0 "DÃ©calage de la sortie";
+  parameter Real startTime=0 "Instant de dÃ©part de l'Ã©chelon";
   
 protected 
-  Real T0(final start=startTime) "Instant de départ de la période courante";
+  Real T0(final start=startTime) "Instant de dÃ©part de la pÃ©riode courante";
   Integer counter(start=n);
   Integer counter2(start=n);
   annotation (

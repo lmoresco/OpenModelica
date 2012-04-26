@@ -1,7 +1,7 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Math;
 block Inf 
-  parameter Real C1=0 "Valeur de u1 si u1 non connecté";
-  parameter Real C2=0 "Valeur de u2 si u2 non connecté";
+  parameter Real C1=0 "Valeur de u1 si u1 non connectÃ©";
+  parameter Real C2=0 "Valeur de u2 si u2 non connectÃ©";
   annotation (
     Coordsys(
       extent=[-100, -100; 100, 100],

@@ -3,8 +3,8 @@ block Pulse
   parameter Real amplitude=1 "Amplitude des impulsions";
   parameter Real width=0.5 "Largeur des impulsions (s)";
   parameter Real period=1 "Periode des impulsions (s)";
-  parameter Real offset=0 "Décalage de la sortie";
-  parameter Real startTime=0 "Instant de départ des impulsions";
+  parameter Real offset=0 "DÃ©calage de la sortie";
+  parameter Real startTime=0 "Instant de dÃ©part des impulsions";
   
 protected 
   Real T0;

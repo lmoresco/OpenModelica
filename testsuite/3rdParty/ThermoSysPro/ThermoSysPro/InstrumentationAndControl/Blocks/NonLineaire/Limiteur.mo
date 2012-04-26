@@ -62,7 +62,7 @@ block Limiteur
 equation 
   
   assert(maxval > minval,
-    "Limiteur : Le paramètre maxval doit être supérieur au paramètre minval");
+    "Limiteur : Le paramÃ¨tre maxval doit Ãªtre supÃ©rieur au paramÃ¨tre minval");
   
   y.signal = if u.signal > maxval then maxval else if u.signal < minval then 
     minval else u.signal;

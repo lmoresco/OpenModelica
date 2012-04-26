@@ -571,7 +571,7 @@ package IF97_packages
     function Water_Ph_der "Derivative function of Water_Ph" 
       input ThermoSysPro.Units.AbsolutePressure p "Pressure";
       input ThermoSysPro.Units.SpecificEnthalpy h "Specific enthalpy";
-      input Integer mode = 0 "Région IF97 - 0:calcul automatique";
+      input Integer mode = 0 "RÃ©gion IF97 - 0:calcul automatique";
       //input CombiPlant.ThermoFluidPro.Media.Common.IF97TwoPhaseAnalytic aux "auxiliary record";
       
       input Real p_der "derivative of Pressure";
@@ -1133,8 +1133,8 @@ package IF97_packages
     
     function Water_Ps_der 
       input ThermoSysPro.Units.AbsolutePressure p "Pression";
-      input Modelica.SIunits.SpecificEntropy s "Entropie spécifique";
-      input Integer mode = 0 "Région IF97 - 0:calcul automatique";
+      input Modelica.SIunits.SpecificEntropy s "Entropie spÃ©cifique";
+      input Integer mode = 0 "RÃ©gion IF97 - 0:calcul automatique";
       
       input Real p_der "derivative of Pressure";
       input Real s_der "derivative of Specific enthropy";
@@ -1569,10 +1569,10 @@ package IF97_packages
       input ThermoSysPro.Units.AbsolutePressure p "pressure";
       input ThermoSysPro.Units.AbsoluteTemperature 
                                            T "Temperature";
-      input Integer mode = 0 "Région IF97 - 0:calcul automatique";
+      input Integer mode = 0 "RÃ©gion IF97 - 0:calcul automatique";
       
       input Real p_der "Pression";
-      input Real T_der "Température";
+      input Real T_der "TempÃ©rature";
       
       output ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_pT pro_der;
     protected 
@@ -1846,7 +1846,7 @@ package IF97_packages
         "dp/dT derivative of saturation curve";
       Modelica.SIunits.Density d "density";
       Modelica.SIunits.SpecificHeatCapacity cp 
-        "Chaleur spécifique à pression constante";
+        "Chaleur spÃ©cifique Ã  pression constante";
       Modelica.SIunits.SpecificHeatCapacity cv "specific heat capacity";
       Real vt(unit="m3/(kg.K)") 
         "derivative of specific volume w.r.t. temperature";
@@ -2030,10 +2030,10 @@ package IF97_packages
       input ThermoSysPro.Units.AbsolutePressure p "pressure";
       input ThermoSysPro.Units.AbsoluteTemperature 
                                            T "Temperature";
-      input Integer mode = 0 "Région IF97 - 0:calcul automatique";
+      input Integer mode = 0 "RÃ©gion IF97 - 0:calcul automatique";
       
       input Real p_der "Pression";
-      input Real T_der "Température";
+      input Real T_der "TempÃ©rature";
       
       output Real H "specific enthalpy";
     protected 
@@ -2131,9 +2131,9 @@ package IF97_packages
       "unused functions for which no analytic derivative can be provided" 
       function Water_rhoT 
         input Modelica.SIunits.Density rho "Masse volumique";
-        input ThermoSysPro.Units.AbsoluteTemperature T "Température";
+        input ThermoSysPro.Units.AbsoluteTemperature T "TempÃ©rature";
         input Integer phase "2: diphasique, 1 sinon";
-        input Integer mode = 0 "Région IF97 - 0:calcul automatique";
+        input Integer mode = 0 "RÃ©gion IF97 - 0:calcul automatique";
         output ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_dT 
                                           pro;
         
@@ -2180,7 +2180,7 @@ package IF97_packages
                                         g);
           pro.x := if (supercritical) then -1 else 1;
         else
-          assert(false, "Eau_rhoT: Numéro de région incorrect");
+          assert(false, "Eau_rhoT: NumÃ©ro de rÃ©gion incorrect");
         end if;
         annotation (
           Coordsys(
@@ -2250,7 +2250,7 @@ package IF97_packages
           (T,error) := ThermoSysPro.Properties.WaterSteam.BaseIF97.Inverses.tofps5(p=p, s=s, relds=1.0e-7);
           h := ThermoSysPro.Properties.WaterSteam.BaseIF97.Isentropic.hofpT5(p, T);
         else
-          assert(false, "Eau_H_is: Numéro de région incorrect");
+          assert(false, "Eau_H_is: NumÃ©ro de rÃ©gion incorrect");
         end if;
         annotation (
           Coordsys(
@@ -3091,7 +3091,7 @@ Modelica in file \"Modelica/package.mo\".
           //Gerald Farin, Curves and Surfaces in CAGD (page 161 'Finding a Knot
           //Sequence'). For a comparison of the different parametrizations see
           //the diploma thesis of Gerhard Schillhuber: 'Geometrische Modellierung
-          //oszillationsarmer Trajektorien von Industrierobotern (TU München)'
+          //oszillationsarmer Trajektorien von Industrierobotern (TU MÃ¼nchen)'
           //(only available in german)
           n_points := size(points,1);
             if paramType == ParametrizationType.Equidistant then

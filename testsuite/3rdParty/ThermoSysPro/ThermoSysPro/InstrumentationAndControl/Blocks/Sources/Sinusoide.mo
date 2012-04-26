@@ -3,8 +3,8 @@ block Sinusoide
   parameter Real amplitude=1 "Amplitude";
   parameter Real period=1 "Periode (s)";
   parameter Real phase=0 "Phase (rad)";
-  parameter Real offset=0 "Décalage de la sortie";
-  parameter Real startTime=0 "Instant de départ de la sinusoide (s)";
+  parameter Real offset=0 "DÃ©calage de la sortie";
+  parameter Real startTime=0 "Instant de dÃ©part de la sinusoide (s)";
   
 protected 
   constant Real pi=Modelica.Constants.pi;

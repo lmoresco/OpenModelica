@@ -1,11 +1,11 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Discret;
 block FctTrans 
   parameter Real b[:]={1} 
-    "Coefficients numérateurs de la fonction de transfert";
+    "Coefficients numÃ©rateurs de la fonction de transfert";
   parameter Real a[:]={1,1} 
-    "Coefficients dénominateurs de la fonction de transfert";
-  parameter Real SampleOffset=0 "Instant de départ de l'échantillonnage (s)";
-  parameter Real SampleInterval=0.01 "Période d'échantillonnage (s)";
+    "Coefficients dÃ©nominateurs de la fonction de transfert";
+  parameter Real SampleOffset=0 "Instant de dÃ©part de l'Ã©chantillonnage (s)";
+  parameter Real SampleInterval=0.01 "PÃ©riode d'Ã©chantillonnage (s)";
   
 protected 
   Real x[size(a, 1) - 1];

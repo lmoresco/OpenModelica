@@ -1,7 +1,7 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.NonLineaire;
 block BandeMorte 
-  parameter Real uMax=1 "Limite supérieure de la bande morte";
-  parameter Real uMin=-uMax "Limite inférieure de la bande morte";
+  parameter Real uMax=1 "Limite supÃ©rieure de la bande morte";
+  parameter Real uMin=-uMax "Limite infÃ©rieure de la bande morte";
   annotation (
     Coordsys(
       extent=[-100, -100; 100, 100],

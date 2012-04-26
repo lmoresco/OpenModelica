@@ -11,7 +11,7 @@ protected
   constant Real HfCO=9.201e+06 "CO formation specific enthalpy";
   constant Real HfH2O=2.418e+08 "H2O steam formation specific enthalpy";
   constant ThermoSysPro.Units.SpecificEnthalpy H0v=2501551.43 
-    "Vaporisation specific enthalpy at 0°C";
+    "Vaporisation specific enthalpy at 0Â°C";
   constant Modelica.SIunits.MassFlowRate Qeps=0.0001 "Minimum value for Qmel";
   Modelica.SIunits.MassFlowRate Qmelc(start=10) 
     "Intermediate variable for the computation of Qmel";

@@ -1,8 +1,8 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Sources;
 block Random 
-  parameter Integer seed=1 "Source du générateur aléatoire";
-  parameter Real SampleOffset=0 "Instant de départ de l'échantillonnage (s)";
-  parameter Real SampleInterval=0.01 "Période d'échantillonnage (s)";
+  parameter Integer seed=1 "Source du gÃ©nÃ©rateur alÃ©atoire";
+  parameter Real SampleOffset=0 "Instant de dÃ©part de l'Ã©chantillonnage (s)";
+  parameter Real SampleInterval=0.01 "PÃ©riode d'Ã©chantillonnage (s)";
   annotation (
     Coordsys(
       extent=[-100, -100; 100, 100],

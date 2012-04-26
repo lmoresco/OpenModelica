@@ -21,7 +21,7 @@ public
   ThermoSysPro.Units.SpecificEnthalpy h(start=100000) "Fluid specific enthalpy";
   Modelica.SIunits.Density rho(start=1) "Fluid density";
   Modelica.SIunits.SpecificHeatCapacity cp(start=1000) 
-    "Fluid spécific heat capacity";
+    "Fluid spÃ©cific heat capacity";
   Real Xco2 "CO2 mass fraction";
   Real Xh2o "H20 mass fraction";
   Real Xo2 "O2 mass fraction";

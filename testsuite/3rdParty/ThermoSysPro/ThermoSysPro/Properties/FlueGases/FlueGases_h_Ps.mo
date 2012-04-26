@@ -33,7 +33,7 @@ algorithm
   /* Computation of the thermodynamic state */
   state :=ThermoSysPro.Properties.ModelicaMediaFlueGases.setState_psX(PMF, SMF + S0 - Xh2o*Slat, {Xn2,Xo2,Xh2o,Xco2,Xso2});
   
-  /* Computation of the specific enthalpy minus a reference at (0.006112 bars, 0.01°C) */
+  /* Computation of the specific enthalpy minus a reference at (0.006112 bars, 0.01Â°C) */
   h := ThermoSysPro.Properties.ModelicaMediaFlueGases.specificEnthalpy(state)
        -ThermoSysPro.Properties.ModelicaMediaFlueGases.specificEnthalpy(state0) + Xh2o*Hlat;
   

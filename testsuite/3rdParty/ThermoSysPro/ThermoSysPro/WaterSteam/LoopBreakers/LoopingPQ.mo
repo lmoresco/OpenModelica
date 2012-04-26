@@ -2,8 +2,8 @@ within ThermoSysPro.WaterSteam.LoopBreakers;
 model LoopingPQ 
   
   parameter ThermoSysPro.Units.AbsolutePressure P=1e5 
-    "Pression imposée en sortie";
-  parameter Modelica.SIunits.MassFlowRate Q=1.0 "Débit imposé";
+    "Pression imposÃ©e en sortie";
+  parameter Modelica.SIunits.MassFlowRate Q=1.0 "DÃ©bit imposÃ©";
   
   annotation (Diagram,    Icon(Rectangle(extent=[-100,30; 100,-30], style(
           color=3,
@@ -22,7 +22,7 @@ model LoopingPQ
 <u><p><b>Authors</u> : </p></b>
 <ul style='margin-top:0cm' type=disc>
 <li>
-    Bruno Péchiné</li>
+    Bruno PÃ©chinÃ©</li>
 </ul>
 </html>
 "));

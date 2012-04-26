@@ -87,7 +87,7 @@ public
   Connectors.FluidInlet Ce4 
     annotation (extent=[-112,30; -92,50],    layer="icon");
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph pro 
-    "Propriétés de l'eau" 
+    "PropriÃ©tÃ©s de l'eau" 
     annotation (extent=[-80,80; -60,100]);
 equation 
   /* Unconnected connectors */

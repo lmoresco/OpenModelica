@@ -118,7 +118,7 @@ model CHPEngineTrigenParamSystem
 <li>
     Guillaume Larrignon</li>
 <li>
-    Bruno Péchiné</li>
+    Bruno PÃ©chinÃ©</li>
 </html>
 ", info="<html>
 <p><b>Copyright &copy; EDF 2002 - 2010</b></p>

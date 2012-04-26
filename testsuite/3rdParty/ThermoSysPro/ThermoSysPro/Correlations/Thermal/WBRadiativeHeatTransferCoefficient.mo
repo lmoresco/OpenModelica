@@ -19,14 +19,14 @@ protected
   Real Pperl "Intermediate variable";
   
   /****************************************************************************
-        Valeurs du coefficient de rayonnement de base tirées de :
+        Valeurs du coefficient de rayonnement de base tirÃ©es de :
                 D. Annaratone - GENERATORI DI VAPORE - fig. 9.8.6
                 The Babcock & Wilcox Company - STEAM - fig 26.
-        Les valeurs correspondantes à une température de paroi de 1366.483
-        (2000. F) (tirées de STEAM) sont obtenues en supposant la courbe 
-        une droite et en actionnant une conversion d'unités de mesure
+        Les valeurs correspondantes Ã  une tempÃ©rature de paroi de 1366.483
+        (2000. F) (tirÃ©es de STEAM) sont obtenues en supposant la courbe 
+        une droite et en actionnant une conversion d'unitÃ©s de mesure
                                 7.75      9
-          Kr = 5.67826*[15.5 + ------- * --- DeltaT(°K)]
+          Kr = 5.67826*[15.5 + ------- * --- DeltaT(Â°K)]
                                 1500.     5
  
   ******************************************************************************/

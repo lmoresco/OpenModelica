@@ -9,13 +9,13 @@ function Pressure_eq_TX
   
 protected 
   Real a "Coefficient directeur de la loi ln P = a (-1/T) + b";
-  Real b "Ordonnée à l'origine de la loi ln P = a (-1/T) + b";
-  Real A1 "Coefficient directeur borne inférieure";
-  Real B1 "Ordonnée à l'origine borne inférieure";
-  Real A2 "Coefficient directeur borne supérieure";
-  Real B2 "Ordonnée à l'origine borne supérieure";
+  Real b "OrdonnÃ©e Ã  l'origine de la loi ln P = a (-1/T) + b";
+  Real A1 "Coefficient directeur borne infÃ©rieure";
+  Real B1 "OrdonnÃ©e Ã  l'origine borne infÃ©rieure";
+  Real A2 "Coefficient directeur borne supÃ©rieure";
+  Real B2 "OrdonnÃ©e Ã  l'origine borne supÃ©rieure";
   
-// Table utilisée extraite d'un diagramme de Oldham
+// Table utilisÃ©e extraite d'un diagramme de Oldham
 // Xh2o     a               b
 // 1        5467.383523        26.36790788
 // 0.6        5379.103071        25.44182656

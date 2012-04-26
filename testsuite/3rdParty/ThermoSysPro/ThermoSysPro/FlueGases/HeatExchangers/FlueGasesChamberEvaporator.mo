@@ -4,8 +4,8 @@ model FlueGasesChamberEvaporator "Flue gases chamber  for water evaporation"
     "Heat exchange surface on the flue gases side";
   parameter Modelica.SIunits.Length rugosi=1e-5 "Pipe roughness";
   parameter Real rencrf=0.1 
-    "Fouling resistance on the flue gases side (m².K/m)";
-  parameter Real rencrc=0.1 "Fouling resistance on the coolant side (m².K/m)";
+    "Fouling resistance on the flue gases side (mÂ².K/m)";
+  parameter Real rencrc=0.1 "Fouling resistance on the coolant side (mÂ².K/m)";
   parameter Real FVN=0 "Ashes volume fraction";
   parameter Modelica.SIunits.Height haut=15 "Flux wall height";
   parameter Real alpha=1 "Chamber width/depth ratio";
@@ -139,7 +139,7 @@ public
   Real Rb2(start=0.1) "Concrete surface thermal resistance";
   Real Rt(start=0.1) "Total surface thermal resistance (K/W)";
   Real U(start=50) 
-    "Global heat exchange coefficient per external surface unit (W/m²/K)";
+    "Global heat exchange coefficient per external surface unit (W/mÂ²/K)";
   Modelica.SIunits.Area Set(start=500) "Total external surface";
   Modelica.SIunits.Velocity vit(start=1) "Gases veolicity";
   
@@ -452,7 +452,7 @@ equation
 <li>
     Baligh El Hefni</li>
 <li>
-    Benoît Bride</li></ul>
+    BenoÃ®t Bride</li></ul>
 </html>
 ", info="<html>
 <p><b>Copyright &copy; EDF 2002 - 2010</b></p>

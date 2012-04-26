@@ -105,7 +105,7 @@ public
   
 protected 
   constant ThermoSysPro.Units.SpecificEnthalpy H0v=2501551.43 
-    "Vaporisation energy at 0°C";
+    "Vaporisation energy at 0Â°C";
   constant ThermoSysPro.Units.SpecificEnthalpy HfCO2=3.2791664e7 
     "CO2 formation enthalpy";
   constant ThermoSysPro.Units.SpecificEnthalpy HfCO=9.201e6 
@@ -368,7 +368,7 @@ public
   Modelica.SIunits.MassFlowRate Q5hd(start=10) 
     "H mass flow rate available in zone 5";
   Modelica.SIunits.MassFlowRate Q5ost(start=10) 
-    "Stoechiométrique O mass flow rate for zone 5";
+    "StoechiomÃ©trique O mass flow rate for zone 5";
   Real exc5(start=0.1) "Air excess for zone 5";
   Modelica.SIunits.Power P5(start=1e6) "Power released by oxydation in zone 5";
   Modelica.SIunits.MassFlowRate Q5sCO2(start=10) 
@@ -490,7 +490,7 @@ equation
   /* Primary air specific enthalpy at Teap */
   Heap = ThermoSysPro.Properties.FlueGases.FlueGases_h(Peap, Teap, XeapCO2, XeapH2O, XeapO2, XeapSO2);
   
-  /* Secondary air specific enthalpy at à Teas */
+  /* Secondary air specific enthalpy at Ã  Teas */
   Heas = ThermoSysPro.Properties.FlueGases.FlueGases_h(Peap, Teas, XeasCO2, XeasH2O, XeasO2, XeasSO2);
   
   /* Primary air specific enthalpy at T1sfm */

@@ -1,12 +1,12 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.NonLineaire;
 block Switch 
-  parameter Real C1=1 "Valeur de la sortie pour sel=1 si u1 non connecté";
-  parameter Real C2=1 "Valeur de la sortie pour sel=2 si u2 non connecté";
-  parameter Real C3=1 "Valeur de la sortie pour sel=3 si u3 non connecté";
-  parameter Real C4=1 "Valeur de la sortie pour sel=4 si u4 non connecté";
+  parameter Real C1=1 "Valeur de la sortie pour sel=1 si u1 non connectÃ©";
+  parameter Real C2=1 "Valeur de la sortie pour sel=2 si u2 non connectÃ©";
+  parameter Real C3=1 "Valeur de la sortie pour sel=3 si u3 non connectÃ©";
+  parameter Real C4=1 "Valeur de la sortie pour sel=4 si u4 non connectÃ©";
   parameter Real C5=1 
-    "Valeur de la sortie pour des autres valeur de sel si u5 non connecté";
-  parameter Integer Sel0=1 "Valeur de sel s'il n'est pas connecté";
+    "Valeur de la sortie pour des autres valeur de sel si u5 non connectÃ©";
+  parameter Integer Sel0=1 "Valeur de sel s'il n'est pas connectÃ©";
   
   annotation (
     Coordsys(
@@ -275,11 +275,11 @@ block Switch
 <par>
 Selection entre plusieurs valeurs :
 <ul>
-<li>   y==u1 (ou C1 si u1 n'est pas connecté) si Sel == 1; <\\li>
-<li>   y==u2 (ou C2 si u2 n'est pas connecté) si Sel == 2; <\\li>
-<li>   y==u3 (ou C3 si u3 n'est pas connecté) si Sel == 3; <\\li>
-<li>   y==u4 (ou C4 si u4 n'est pas connecté) si Sel == 4; <\\li>
-<li>   y==u5 (ou C5 si u5 n'est pas connecté) dans tous les autres cas; <\\li>
+<li>   y==u1 (ou C1 si u1 n'est pas connectÃ©) si Sel == 1; <\\li>
+<li>   y==u2 (ou C2 si u2 n'est pas connectÃ©) si Sel == 2; <\\li>
+<li>   y==u3 (ou C3 si u3 n'est pas connectÃ©) si Sel == 3; <\\li>
+<li>   y==u4 (ou C4 si u4 n'est pas connectÃ©) si Sel == 4; <\\li>
+<li>   y==u5 (ou C5 si u5 n'est pas connectÃ©) dans tous les autres cas; <\\li>
 <\\ul>
 <\\par>
 </HTML>

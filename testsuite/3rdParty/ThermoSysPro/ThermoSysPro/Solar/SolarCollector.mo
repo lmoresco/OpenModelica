@@ -80,7 +80,7 @@ public
 <li>
     Baligh El Hefni</li>
 <li>
-    Benoît Bride</li>
+    BenoÃ®t Bride</li>
 </ul>
 </html>
 ", info="<html>
@@ -91,9 +91,9 @@ public
 </HTML>
 "));
   ThermoSysPro.InstrumentationAndControl.Connectors.InputReal ISun 
-    "Flux (W/m²)" 
+    "Flux (W/mÂ²)" 
     annotation (extent=[-100,0; -80,20]);
-  ThermoSysPro.InstrumentationAndControl.Connectors.InputReal IncidenceAngle "Degré" 
+  ThermoSysPro.InstrumentationAndControl.Connectors.InputReal IncidenceAngle "DegrÃ©" 
     annotation (extent=[-100,-40; -80,-20]);
   ThermoSysPro.InstrumentationAndControl.Connectors.InputReal AtmTemp 
     "Atmospheric temperature (K)" 

@@ -1,7 +1,7 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.Sources;
 block Rampe 
-  parameter Real Starttime=1 "Instant de départ de la rampe (s)";
-  parameter Real Duration=2 "Durée de la rampe (s)";
+  parameter Real Starttime=1 "Instant de dÃ©part de la rampe (s)";
+  parameter Real Duration=2 "DurÃ©e de la rampe (s)";
   parameter Real Initialvalue=0 "Valeur initiale de la sortie";
   parameter Real Finalvalue=1 "Valeur finale de la sortie";
   annotation (

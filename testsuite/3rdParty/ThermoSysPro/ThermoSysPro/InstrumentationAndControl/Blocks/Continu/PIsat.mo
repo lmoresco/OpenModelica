@@ -5,7 +5,7 @@ block PIsat
   parameter Real maxval=1 "Valeur maximale de la sortie";
   parameter Real minval=0 "Valeur minimale de la sortie";
   parameter Real ureset0=0 
-    "Valeur de la sortie sur reset (si ureset non connecté)";
+    "Valeur de la sortie sur reset (si ureset non connectÃ©)";
   parameter Boolean permanent=false "Calcul du permanent";
   annotation (
     Coordsys(

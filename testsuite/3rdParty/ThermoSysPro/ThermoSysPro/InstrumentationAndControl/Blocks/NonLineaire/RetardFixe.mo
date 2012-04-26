@@ -1,6 +1,6 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.NonLineaire;
 block RetardFixe 
-  parameter Real retard=1 "Retard de la sortie sur l'entrée (s)";
+  parameter Real retard=1 "Retard de la sortie sur l'entrÃ©e (s)";
   annotation (
     Coordsys(
       extent=[-100, -100; 100, 100],

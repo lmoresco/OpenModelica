@@ -45,7 +45,7 @@ public
   Real Os1;
   Real Os2;
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph pro 
-    "Propriétés de l'eau" 
+    "PropriÃ©tÃ©s de l'eau" 
     annotation (extent=[-100, 80; -80, 100]);
   annotation (
     Coordsys(

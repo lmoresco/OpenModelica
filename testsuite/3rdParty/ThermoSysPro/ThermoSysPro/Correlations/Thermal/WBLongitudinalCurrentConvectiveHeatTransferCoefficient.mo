@@ -17,7 +17,7 @@ protected
   Real Qfb "Flue gases mass flow rate in pound/hour";
   Real Sgazb "Geometrical parameter Sgaz in feet^2";
   Real TFilmb "Film temperature in Farenheit";
-  Real Tmfb "Température moyenne des fumées en °F";
+  Real Tmfb "TempÃ©rature moyenne des fumÃ©es en Â°F";
   
   //**********************************************************************************
   //   Values of "Physical properties factor" for transverse flow combustion flue gases

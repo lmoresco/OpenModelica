@@ -1,7 +1,7 @@
 within ThermoSysPro.InstrumentationAndControl.Blocks.NonLineaire;
 block LimiteurVitesse 
-  parameter Real dmax=1 "Valeur maximale de la dérivée de la sortie";
-  parameter Real dmin=-1 "Valeur minimale de la dérivée de la sortie";
+  parameter Real dmax=1 "Valeur maximale de la dÃ©rivÃ©e de la sortie";
+  parameter Real dmin=-1 "Valeur minimale de la dÃ©rivÃ©e de la sortie";
   parameter Real Ti(min=Modelica.Constants.small) = 0.01 
     "Constante de temps (s)";
   annotation (

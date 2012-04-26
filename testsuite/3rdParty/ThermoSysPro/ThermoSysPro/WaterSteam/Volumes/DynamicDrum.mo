@@ -82,9 +82,9 @@ public
     "Heat exchange surface between the liquid and gas phases";
   
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph prol 
-    "Propriétés de l'eau dans le ballon" annotation (extent=[-60, 40; -20, 80]);
+    "PropriÃ©tÃ©s de l'eau dans le ballon" annotation (extent=[-60, 40; -20, 80]);
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph prov 
-    "Propriétés de la vapeur dans le ballon" annotation (extent=[0, 40; 40, 80]);
+    "PropriÃ©tÃ©s de la vapeur dans le ballon" annotation (extent=[0, 40; 40, 80]);
 public 
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph prom 
     annotation (extent=[-60, -20; -20, 20]);

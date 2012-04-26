@@ -3,7 +3,7 @@ block PI
   parameter Real k=1 "Gain";
   parameter Real Ti=1 "Constante de temps (s)";
   parameter Real ureset0=0 
-    "Valeur de la sortie sur reset (si ureset non connecté)";
+    "Valeur de la sortie sur reset (si ureset non connectÃ©)";
   parameter Boolean permanent=false "Calcul du permanent";
   
 protected 

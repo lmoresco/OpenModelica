@@ -23,7 +23,7 @@ public
     "Right hand side of the mass balance equation";
   Modelica.SIunits.Power BH "Right hand side of the energybalance equation";
   ThermoSysPro.Properties.WaterSteam.Common.ThermoProperties_ph pro 
-    "Propriétés de l'eau" 
+    "PropriÃ©tÃ©s de l'eau" 
     annotation (extent=[-80, 80; -60, 100]);
   annotation (
     Coordsys(
