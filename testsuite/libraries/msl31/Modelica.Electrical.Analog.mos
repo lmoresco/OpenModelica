@@ -1953,7 +1953,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Lines.OLine has 55 equation(s) and 55 variable(s).
-// 33 of these are trivial equation(s).
+// 34 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -5743,7 +5743,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Lines.ULine has 34 equation(s) and 34 variable(s).
-// 21 of these are trivial equation(s).
+// 22 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Lines.TLine2

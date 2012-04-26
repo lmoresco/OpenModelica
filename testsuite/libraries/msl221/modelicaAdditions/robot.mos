@@ -11892,7 +11892,7 @@ getErrorString();
 // 
 // 
 // Class MultiBody.Examples.Robots.r3.robot has 6169 equation(s) and 6169 variable(s).
-// 4997 of these are trivial equation(s).
+// 5037 of these are trivial equation(s).
 // "
 // ""
 // endResult

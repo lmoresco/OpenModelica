@@ -53,7 +53,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // [Continuous.mo:1333:5-1336:31:writable] Warning: Failed to deduce dimensions of y_start due to unknown dimensions of modifier fill(0,ny).
 // 
 // Class Modelica.Blocks.Continuous.StateSpace has 2 equation(s) and 2 variable(s).
-// 1 of these are trivial equation(s).
+// 0 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin

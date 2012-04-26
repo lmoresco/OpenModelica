@@ -6475,7 +6475,7 @@ checkModel(DP); getErrorString();
 // 
 // 
 // Class DP has 1772 equation(s) and 1772 variable(s).
-// 1116 of these are trivial equation(s).
+// 1136 of these are trivial equation(s).
 // "
 // ""
 // endResult

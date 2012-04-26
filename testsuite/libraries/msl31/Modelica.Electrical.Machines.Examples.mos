@@ -15058,7 +15058,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.AIMC_Steinmetz has 315 equation(s) and 315 variable(s).
-// 211 of these are trivial equation(s).
+// 214 of these are trivial equation(s).
 // "
 // 
 // endResult

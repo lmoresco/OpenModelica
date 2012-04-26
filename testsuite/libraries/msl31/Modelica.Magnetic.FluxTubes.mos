@@ -9205,7 +9205,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.Utilities.TranslatoryArmatureAndStopper has 40 equation(s) and 40 variable(s).
-// 23 of these are trivial equation(s).
+// 25 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin

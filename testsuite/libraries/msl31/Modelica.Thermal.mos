@@ -413,7 +413,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 // 
 // 
 // Class Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve has 114 equation(s) and 114 variable(s).
-// 56 of these are trivial equation(s).
+// 72 of these are trivial equation(s).
 // "
 // ""
 // endResult
