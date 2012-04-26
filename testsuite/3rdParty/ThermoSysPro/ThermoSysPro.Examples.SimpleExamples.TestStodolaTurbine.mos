@@ -8,7 +8,7 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-loadModel(ThermoSysPro); getErrorString();
+loadFile("ThermoSysPro/package.mo"); getErrorString();
 
 simulate(ThermoSysPro.Examples.SimpleExamples.TestStodolaTurbine, stopTime=1000); getErrorString();
 
@@ -30,35 +30,6 @@ res := OpenModelica.Scripting.compareSimulationResults(
 // [GenericCombustion.mo:157:20-157:24:writable] Warning: Treating .001 as 0.001. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [GridFurnace.mo:85:20-85:23:writable] Warning: Treating .01 as 0.01. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [Pro_FlueGases.mo:4:40-4:42:writable] Warning: Treating .5 as 0.5. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:31-46:34:writable] Warning: Treating .64 as 0.64. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:35-46:38:writable] Warning: Treating .68 as 0.68. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:39-46:42:writable] Warning: Treating .80 as 0.80. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:43-46:46:writable] Warning: Treating .75 as 0.75. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:47-46:50:writable] Warning: Treating .87 as 0.87. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:51-46:54:writable] Warning: Treating .83 as 0.83. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:55-46:57:writable] Warning: Treating .9 as 0.9. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:58-46:61:writable] Warning: Treating .89 as 0.89. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:62-46:65:writable] Warning: Treating .92 as 0.92. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:68-46:71:writable] Warning: Treating .92 as 0.92. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:72-46:75:writable] Warning: Treating .94 as 0.94. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:76-46:79:writable] Warning: Treating .95 as 0.95. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:80-46:83:writable] Warning: Treating .96 as 0.96. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:84-46:87:writable] Warning: Treating .97 as 0.97. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:88-46:91:writable] Warning: Treating .98 as 0.98. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:92-46:95:writable] Warning: Treating .98 as 0.98. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:96-46:99:writable] Warning: Treating .99 as 0.99. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:46:100-46:103:writable] Warning: Treating .99 as 0.99. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:181:75-181:77:writable] Warning: Treating .8 as 0.8. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:184:22-184:26:writable] Warning: Treating .023 as 0.023. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:184:55-184:57:writable] Warning: Treating .6 as 0.6. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:184:81-184:83:writable] Warning: Treating .9 as 0.9. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:184:91-184:94:writable] Warning: Treating .98 as 0.98. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:185:38-185:40:writable] Warning: Treating .2 as 0.2. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:185:83-185:86:writable] Warning: Treating .68 as 0.68. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:189:20-189:24:writable] Warning: Treating .023 as 0.023. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:189:49-189:52:writable] Warning: Treating .66 as 0.66. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:190:81-190:85:writable] Warning: Treating .654 as 0.654. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUConvectiveHeatTransferCoefficient.mo:223:55-223:57:writable] Warning: Treating .8 as 0.8. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [WBInternalHeatTransferCoefficient.mo:93:26-93:29:writable] Warning: Treating .12 as 0.12. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [WBInternalTwoPhaseFlowHeatTransferCoefficient.mo:92:24-92:27:writable] Warning: Treating .12 as 0.12. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [CombustionTurbine.mo:12:18-12:21:writable] Warning: Treating .07 as 0.07. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
@@ -72,14 +43,6 @@ res := OpenModelica.Scripting.compareSimulationResults(
 // [BoilerSystem.mo:61:8-61:13:writable] Warning: Treating .2088 as 0.2088. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [BoilerSystem.mo:62:8-62:13:writable] Warning: Treating .0017 as 0.0017. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [BoilerSystem.mo:63:8-63:13:writable] Warning: Treating .0003 as 0.0003. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUTechnologicalExchangerWaterSteamFlueGases.mo:17:43-17:48:writable] Warning: Treating .8e-3 as 0.8e-3. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUTechnologicalExchangerWaterSteamFlueGases.mo:36:46-36:52:writable] Warning: Treating .22989 as 0.22989. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUTechnologicalExchangerWaterSteamFlueGases.mo:142:42-142:47:writable] Warning: Treating .0001 as 0.0001. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUTechnologicalExchangerWaterSteamFlueGases.mo:180:17-180:22:writable] Warning: Treating .0001 as 0.0001. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUTechnologicalExchangerWaterSteamFlueGases.mo:340:22-340:29:writable] Warning: Treating .912088 as 0.912088. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUTechnologicalExchangerWaterSteamFlueGases.mo:434:46-434:48:writable] Warning: Treating .5 as 0.5. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [NTUTechnologicalExchangerWaterSteamFlueGases.mo:437:46-437:48:writable] Warning: Treating .5 as 0.5. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [StaticAerocondenser.mo:55:17-55:19:writable] Warning: Treating .8 as 0.8. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [CHPEngineBarkantineSystem.mo:132:8-132:11:writable] Warning: Treating .25 as 0.25. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [CHPEngineBarkantineSystem.mo:136:8-136:11:writable] Warning: Treating .75 as 0.75. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [CHPEngineTriGenPredSystem.mo:147:8-147:11:writable] Warning: Treating .25 as 0.25. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
@@ -95,7 +58,6 @@ res := OpenModelica.Scripting.compareSimulationResults(
 // [IF97_packages.mo:4093:29-4093:45:writable] Warning: Treating .224926465333340 as 0.224926465333340. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [IF97_packages.mo:4094:17-4094:33:writable] Warning: Treating .242611071901408 as 0.242611071901408. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [Degasifier.mo:100:71-100:73:writable] Warning: Treating .1 as 0.1. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// Warning: Requested package Modelica of version 2.2.2, but this package was already loaded with version 3.1. You might experience problems if these versions are incompatible.
 // "
 // record SimulationResult
 //     resultFile = "",
@@ -104,7 +66,7 @@ res := OpenModelica.Scripting.compareSimulationResults(
 // warning | Error solving nonlinear system SES_ALGORITHM 1 at time 0
 // warning | division by zero in partial equation: DynamicCentrifugalPump1.Wh / DynamicCentrifugalPump1.w because DynamicCentrifugalPump1.w == 0
 //         | [line] 2473 | [file] ThermoSysPro.Examples.SimpleExamples.TestStodolaTurbine.c
-// throw   | [line] 43 | [file] util/division.c
+// throw   | [line] 44 | [file] util/division.c
 //         | division by zero
 // "
 // end SimulationResult;

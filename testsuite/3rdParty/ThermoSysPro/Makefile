@@ -3,7 +3,6 @@ TEST = ../../rtest -v
 TESTFILES = \
 ThermoSysPro.Examples.SimpleExamples.TestCentrifugalPumpWaterSolution.mos \
 ThermoSysPro.Examples.SimpleExamples.TestControlValve.mos \
-ThermoSysPro.Examples.SimpleExamples.TestIdealSwitchValve.mos \
 ThermoSysPro.Examples.SimpleExamples.TestInvSingularPressureLoss.mos \
 ThermoSysPro.Examples.SimpleExamples.TestJunctions.mos \
 ThermoSysPro.Examples.SimpleExamples.TestJunctions2.mos \
@@ -14,14 +13,15 @@ ThermoSysPro.Examples.SimpleExamples.TestSensors.mos \
 ThermoSysPro.Examples.SimpleExamples.TestSingularPressureLoss.mos \
 ThermoSysPro.Examples.SimpleExamples.TestStaticCentrifugalPump1.mos \
 ThermoSysPro.Examples.SimpleExamples.TestStaticCentrifugalPumpWaterSolution.mos \
+ThermoSysPro.Examples.SimpleExamples.TestStaticWaterWaterExchangerDTorWorEff.mos \
 ThermoSysPro.Examples.SimpleExamples.TestSteamEngine.mos \
 ThermoSysPro.Examples.SimpleExamples.TestStodolaTurbine2.mos \
-
-
+ThermoSysPro.Examples.SimpleExamples.TestThreeWayValve.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
+ThermoSysPro.Examples.SimpleExamples.TestIdealSwitchValve.mos \
 ThermoSysPro.Examples.SimpleExamples.TestAirHumidity.mos \
 ThermoSysPro.Examples.SimpleExamples.TestBend.mos \
 ThermoSysPro.Examples.SimpleExamples.TestCheckValve.mos \
@@ -57,7 +57,6 @@ ThermoSysPro.Examples.SimpleExamples.TestStaticDrum1.mos \
 ThermoSysPro.Examples.SimpleExamples.TestStaticDrum2.mos \
 ThermoSysPro.Examples.SimpleExamples.TestStaticExchangerWaterSteamFlueGases.mos \
 ThermoSysPro.Examples.SimpleExamples.TestStaticWaterWaterExchanger.mos \
-ThermoSysPro.Examples.SimpleExamples.TestStaticWaterWaterExchangerDTorWorEff.mos \
 ThermoSysPro.Examples.SimpleExamples.TestSteamDryer.mos \
 ThermoSysPro.Examples.SimpleExamples.TestSteamDryer2.mos \
 ThermoSysPro.Examples.SimpleExamples.TestSteamExtractionSplitter.mos \
@@ -65,7 +64,6 @@ ThermoSysPro.Examples.SimpleExamples.TestStodolaTurbine.mos \
 ThermoSysPro.Examples.SimpleExamples.TestStodolaTurbine1.mos \
 ThermoSysPro.Examples.SimpleExamples.TestSwitchValve.mos \
 ThermoSysPro.Examples.SimpleExamples.TestTank.mos \
-ThermoSysPro.Examples.SimpleExamples.TestThreeWayValve.mos \
 ThermoSysPro.Examples.SimpleExamples.TestWaterHammer.mos \
 ThermoSysPro.Examples.SimpleExamples.TestVolumes.mos \
 ThermoSysPro.Examples.SimpleExamples.TestVolumes1.mos \

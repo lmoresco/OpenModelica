@@ -37,7 +37,8 @@ msl31media.log \
 msl31mediasimulation.log \
 msl31fluid.log \
 siemens.log \
-hummod.log
+hummod.log \
+ThermoSysPro.log
 
 SIMULATIONLOGS = \
 linearize.log \
@@ -189,6 +190,9 @@ siemens.log: omc-diff
 	@echo $@ done
 hummod.log: omc-diff
 	$(MAKE) -C 3rdParty/HumMod -f Makefile test > $@
+	@echo $@ done
+ThermoSysPro.log: omc-diff
+	$(MAKE) -C 3rdParty/ThermoSysPro -f Makefile test > $@
 	@echo $@ done
 fmi.log: omc-diff
 	$(MAKE) -C fmi -f Makefile test > $@
