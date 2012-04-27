@@ -1644,7 +1644,7 @@ simulate(TestMedia.TestModels.TestSteam); getErrorString();
 // 
 // 
 // Class TestMedia.TestModels.TestSteam has 9 equation(s) and 9 variable(s).
-// 1 of these are trivial equation(s).
+// 4 of these are trivial equation(s).
 // "
 // ""
 // record SimulationResult
