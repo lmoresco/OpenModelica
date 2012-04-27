@@ -5080,7 +5080,8 @@ getErrorString();
 //   Continuing flattening by only considering the 'outer' component declaration.
 // 
 // Class Modelica.Mechanics.MultiBody.Parts.BodyCylinder has 3402 equation(s) and 3420 variable(s).
-// 1971 of these are trivial equation(s).
+// 1970 of these are trivial equation(s).
+// 1970 of these are trivial equation(s).
 // "
 // ""
 // endResult

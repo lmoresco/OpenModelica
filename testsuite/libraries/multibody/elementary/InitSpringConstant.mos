@@ -3075,7 +3075,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant has 1755 equation(s) and 1755 variable(s).
-// 1118 of these are trivial equation(s).
+// 1117 of these are trivial equation(s).
 // "
 // ""
 // endResult
