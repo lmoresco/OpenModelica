@@ -6,6 +6,7 @@
 //  Simulate Pendulum example (index reduction, linear and nonlinear equation systems)
 //
 loadFile("Pendulum.mo");
+setIndexReductionMethod("DynamicStateSelection");
 simulate(Pendulum,numberOfIntervals=300,stopTime=5.0, tolerance=1e-10);
 val(x,1.0);
 val(x,2.0);
@@ -16,15 +17,16 @@ val(y,2.0);
 val(y,3.0);
 // Result:
 // true
+// true
 // record SimulationResult
 //     resultFile = "Pendulum_res.mat",
 //     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 300, tolerance = 0.0000000001, method = 'dassl', fileNamePrefix = 'Pendulum', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
-// -0.986442414229606
-// 0.79570147747475
-// -0.18325797464336194
-// -0.1641077798547848
-// -0.6056889950663619
-// -0.9830648578448988
+// -0.986023970971412
+// 0.794779823165942
+// -0.189547473120416
+// -0.166603507375351
+// -0.606897876654972
+// -0.981871557503151
 // endResult

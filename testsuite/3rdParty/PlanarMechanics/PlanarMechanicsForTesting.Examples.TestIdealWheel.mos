@@ -25,14 +25,8 @@ res := OpenModelica.Scripting.compareSimulationResults("PlanarMechanicsForTestin
 // record SimulationResult
 //     resultFile = "PlanarMechanicsForTesting.Examples.TestIdealWheel_res.mat",
 //     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'PlanarMechanicsForTesting.Examples.TestIdealWheel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
-//     messages = " DASSL--  AT T (=R1) AND STEPSIZE H (=R2) THE
-//       In above,  R1 =   .2100000000000E-03   R2 =   .1220703125000E-08
-//  DASSL--  ITERATION MATRIX IS SINGULAR
-// warning | DDASRT: The matrix of partial derivatives is singular.
-// info    | DASRT can't continue. time = 0.020210
-// info    | model terminate | Simulation terminated at time 0.02021
-// "
+//     messages = ""
 // end SimulationResult;
 // ""
-// "Files not Equal!"
+// "Files Equal!"
 // endResult

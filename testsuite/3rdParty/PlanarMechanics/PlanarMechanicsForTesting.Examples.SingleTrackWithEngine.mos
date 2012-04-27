@@ -33,5 +33,4 @@ res := OpenModelica.Scripting.compareSimulationResults("PlanarMechanicsForTestin
 // end SimulationResult;
 // ""
 // "Files Equal!"
-// "Files not Equal!"
 // endResult

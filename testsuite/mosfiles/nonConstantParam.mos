@@ -20,7 +20,7 @@ getErrorString();
 // {0.0,0.0,0.0,31.6587054087371,29.8376021433651,29.2574901634923,29.4976107929488,29.4457560531944,29.4528259903643,29.4525963434734,29.45237516804}
 // "Warning: Alias variables LoadInertia.w = DCEE1.inertiaRotor.w have start values LoadInertia.w_start != DCEE1.inertiaRotor.w_start. Use value from LoadInertia.w.
 // 
-// Warning: Alias variables LoadInertia.phi = DCEE1.airGapDC.flange_a.phi have start values LoadInertia.phi_start != DCEE1.inertiaRotor.phi_start. Use value from LoadInertia.phi.
+// Warning: Alias variables LoadInertia.phi = DCEE1.inertiaRotor.phi have start values LoadInertia.phi_start != DCEE1.inertiaRotor.phi_start. Use value from LoadInertia.phi.
 // 
 // "
 // endResult

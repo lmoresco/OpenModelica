@@ -6,6 +6,7 @@
 //  Simulate model containing EventIterations
 //
 loadFile("./DummyDerMatching.mo");
+setIndexReductionMethod("DynamicStateSelection");
 simulate(testDummyDerMatching,  tolerance=1e-5, startTime=0, stopTime=10);
 val(x,0.0);
 val(x,5.0);
@@ -22,9 +23,9 @@ val(y,10.0);
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 0.957938897731829
-// -0.568926185912963
+// 0.958329119611704
+// -0.566628311533206
 // 0.0
-// 0.2869722429300901
-// -0.822388591228337
+// 0.285666411228647
+// -0.823973516909996
 // endResult

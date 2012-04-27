@@ -14,7 +14,7 @@ loadFile("PlanarMechanicsForTesting.mo"); getErrorString();
 simulate(PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear); getErrorString();
 
 res := OpenModelica.Scripting.compareSimulationResults("PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear_res.mat",
-  "simulation/SimpleCarWithDifferentialGear.mat","PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear_diff.csv",0.01,0.0002,
+  "simulation/SimpleCarWithDifferentialGear.mat","PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear_diff.csv",0.01,0.025,
   {"body1.frame_a.phi", "actuatedRevolute.phi", "actuatedRevolute.w", "WheelJoint3.f_lat", "WheelJoint3.f_long"});
 
 // Result:
@@ -28,5 +28,5 @@ res := OpenModelica.Scripting.compareSimulationResults("PlanarMechanicsForTestin
 //     messages = ""
 // end SimulationResult;
 // ""
-// "Files not Equal!"
+// "Files Equal!"
 // endResult

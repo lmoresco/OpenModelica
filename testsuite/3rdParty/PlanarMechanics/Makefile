@@ -12,18 +12,18 @@ PlanarMechanicsForTesting.Examples.ControlledCraneCrab.mos \
 PlanarMechanicsForTesting.Examples.InvertedCraneCrab.mos \
 PlanarMechanicsForTesting.Examples.WheelBasedCranCrab.mos \
 PlanarMechanicsForTesting.Examples.PistonEngine.mos \
-PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.mos \
 PlanarMechanicsForTesting.Examples.TestDryFrictionWheel.mos \
 PlanarMechanicsForTesting.Examples.TestSlipBasedWheel.mos \
 PlanarMechanicsForTesting.Examples.KinematicLoop.mos \
+PlanarMechanicsForTesting.Examples.SingleTrackWithEngine.mos \
+PlanarMechanicsForTesting.Examples.TestIdealWheel.mos \
+PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
+PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.mos \
 PlanarMechanicsForTesting.Examples.KinematicLoop_DynamicStateSelection.mos \
-PlanarMechanicsForTesting.Examples.TestIdealWheel.mos \
-PlanarMechanicsForTesting.Examples.SingleTrackWithEngine.mos \
-PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear.mos \
 
 
 # Dependency files that are not .mo .mos or Makefile

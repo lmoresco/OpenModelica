@@ -21,11 +21,8 @@ Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic.mos \
@@ -48,7 +45,6 @@ Modelica.Mechanics.Translational.Examples.Brake.mos \
 Modelica.Mechanics.Translational.Examples.Damper.mos \
 Modelica.Mechanics.Translational.Examples.ElastoGap.mos \
 Modelica.Mechanics.Translational.Examples.Friction.mos \
-Modelica.Mechanics.Translational.Examples.InitialConditions.mos \
 Modelica.Mechanics.Translational.Examples.Oscillator.mos \
 Modelica.Mechanics.Translational.Examples.Sensors.mos \
 Modelica.Mechanics.Translational.Examples.SignConvention.mos \
@@ -141,6 +137,10 @@ Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.mos \
 Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.mos \
 Modelica.Mechanics.Rotational.Examples.LossyGearDemo2.mos \
 Modelica.Mechanics.Translational.Examples.PreLoad.mos \
+Modelica.Mechanics.Translational.Examples.InitialConditions.mos \
+Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity.mos \
+Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem.mos \
+Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass.mos \
 Modelica.StateGraph.Examples.ExecutionPaths.mos \
 Modelica.StateGraph.Examples.FirstExample.mos \
 Modelica.StateGraph.Examples.FirstExample_Variant2.mos \
