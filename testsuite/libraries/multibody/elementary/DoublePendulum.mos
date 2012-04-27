@@ -3245,7 +3245,7 @@ checkModel(DP); getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum has 1772 equation(s) and 1772 variable(s).
-// 1116 of these are trivial equation(s).
+// 1134 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.Vectors.length \"Inline before index reduction\" \"Return length of a vectorReturn length of a vector (better as norm(), if further symbolic processing is performed)\"
