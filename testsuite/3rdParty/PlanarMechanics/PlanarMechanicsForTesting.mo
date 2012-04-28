@@ -2818,8 +2818,8 @@ package PlanarMechanicsForTesting
             extent={{-10,-10},{10,10}},
             rotation=90,
             origin={40,66})));
-	initial equation 
-		body1.frame_a.phi=0;
+    initial equation 
+      body1.frame_a.phi=0;
    
     equation
       connect(WheelJoint2.flange_a, inertia1.flange_b) annotation (Line(
