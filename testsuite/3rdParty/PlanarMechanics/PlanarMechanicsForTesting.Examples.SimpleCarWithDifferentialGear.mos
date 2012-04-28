@@ -15,7 +15,9 @@ simulate(PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear); getE
 
 res := OpenModelica.Scripting.compareSimulationResults("PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear_res.mat",
   "simulation/SimpleCarWithDifferentialGear.mat","PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear_diff.csv",0.01,0.025,
-  {"body1.frame_a.phi", "actuatedRevolute.phi", "actuatedRevolute.w", "WheelJoint3.f_lat", "WheelJoint3.f_long"});
+  {"body1.frame_a.phi", "actuatedRevolute.phi", "actuatedRevolute.w", "WheelJoint3.f_lat", "WheelJoint3.f_long", "body.v[1]",
+   "body1.r[1]", "body1.r[2]", "body1.w", "body2.v[2]", "inertia.phi", "inertia.w", "inertia1.phi", "inertia1.w", "inertia2.phi",
+   "inertia2.w", "inertia3.phi", "inertia3.w"});
 
 // Result:
 // true

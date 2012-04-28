@@ -16,12 +16,12 @@ PlanarMechanicsForTesting.Examples.TestDryFrictionWheel.mos \
 PlanarMechanicsForTesting.Examples.TestSlipBasedWheel.mos \
 PlanarMechanicsForTesting.Examples.KinematicLoop.mos \
 PlanarMechanicsForTesting.Examples.TestIdealWheel.mos \
+PlanarMechanicsForTesting.Examples.SingleTrackWithEngine.mos \
+PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
-PlanarMechanicsForTesting.Examples.SingleTrackWithEngine.mos \
-PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear.mos \
 PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.mos \
 PlanarMechanicsForTesting.Examples.KinematicLoop_DynamicStateSelection.mos \
 
