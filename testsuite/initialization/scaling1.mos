@@ -27,7 +27,7 @@ package initializationTests
 
   initial equation 
     der(foxes) = 20;
-    10000000000*value = 10000000000*11000;
+    10000000000.0*value = 10000000000.0*11000;
 
   equation 
     der(rabbits) =  rabbits*g_r - rabbits*foxes*d_rf;

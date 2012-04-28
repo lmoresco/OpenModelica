@@ -11,7 +11,7 @@ loadString("
 within ;
 package initializationTests
   model forest
-    Real foxes(nominal=100000000);
+    Real foxes(nominal=100000000.0);
     Real rabbits(nominal=0.000000000001);
     Real population(start=850);
     Real value;
@@ -26,16 +26,16 @@ package initializationTests
     parameter Real priceSeason = 1000;
 
   initial equation 
-    der(foxes) = 20*10000000000;
+    der(foxes) = 20*10000000000.0;
     value = 11000;
 
   equation 
-    der(rabbits)/0.0000000001 =  rabbits/0.0000000001*g_r - rabbits/0.0000000001*foxes/10000000000*d_rf;
-    der(foxes)/10000000000 = -foxes/10000000000*d_f + rabbits/0.0000000001*foxes/10000000000*d_rf*g_fr;
-    population = foxes/10000000000+rabbits/0.0000000001;
-    value = priceFox*foxes/10000000000 + priceRabbit*rabbits/0.0000000001 + priceSeason*seasons;
+    der(rabbits)/0.0000000001 =  rabbits/0.0000000001*g_r - rabbits/0.0000000001*foxes/10000000000.0*d_rf;
+    der(foxes)/10000000000.0 = -foxes/10000000000.0*d_f + rabbits/0.0000000001*foxes/10000000000.0*d_rf*g_fr;
+    population = foxes/10000000000.0+rabbits/0.0000000001;
+    value = priceFox*foxes/10000000000.0 + priceRabbit*rabbits/0.0000000001 + priceSeason*seasons;
 
-    when sample(1, 1) and foxes/10000000000 > 50 then
+    when sample(1, 1) and foxes/10000000000.0 > 50 then
       reinit(foxes, foxes/2);
       seasons = pre(seasons)+1;
     end when;
