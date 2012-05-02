@@ -533,6 +533,7 @@ RecursiveShort.mo \
 Reductions.mo \
 reinit.mo \
 ReinitArray.mo \
+ReinitInvalidType.mo \
 Rem.mo \
 ReturnError.mo \
 SampleError.mo \
