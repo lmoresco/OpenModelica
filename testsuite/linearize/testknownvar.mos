@@ -1,7 +1,7 @@
 // name:     Jacobian for Knownvars
 // keywords: linearization, Jacobian
 // status:   correct
-// cflags: 	 +d=linearization
+// cflags: 	 +postOptModules=inlineArrayEqn,constantLinearSystem,removeSimpleEquations,generateSymbolicLinearization
 // teardown_command: rm -rf TestKV* linear_TestKV* output.log
 // 
 //  Case for generating Jacobian for symstem with more simply equations

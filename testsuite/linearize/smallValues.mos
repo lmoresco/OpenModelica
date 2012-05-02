@@ -1,7 +1,7 @@
 // name:     small values in linearization
 // keywords: VanDerPolSmallValueSmallValue, linearization, small value
 // status:   correct
-// cflags:   +d=linearization
+// cflags:   +postOptModules=inlineArrayEqn,constantLinearSystem,removeSimpleEquations,generateSymbolicLinearization
 // teardown_command: rm -rf VanDerPolSmallValue.* VanDerPolSmallValue_* output.log linear_VanDerPolSmallValue.* linear_VanDerPolSmallValue_* linear_VanDerPolSmallValue VanDerPolSmallValue
 // 
 //  Case for linearization of VanDerPolSmallValue model

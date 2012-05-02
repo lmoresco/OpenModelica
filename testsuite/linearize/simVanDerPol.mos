@@ -1,7 +1,7 @@
 // name:     VanDerPol linearization
 // keywords: VanDerPol, linearization
 // status:   correct
-// cflags:   +d=linearization
+// cflags:   +postOptModules=inlineArrayEqn,constantLinearSystem,removeSimpleEquations,generateSymbolicLinearization
 // teardown_command: rm -rf VanDerPol.* VanDerPol_* output.log linear_VanDerPol.* linear_VanDerPol_* linear_VanDerPol VanDerPol
 // 
 //  Case for linearization of VanDerPol model

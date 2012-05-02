@@ -6,6 +6,7 @@ translateHeatExchanger.mos \
 translateJunctions.mos \
 translatePipes.mos \
 testSolidComponents.mos \
+testSolidComponentsJac.mos \
 valve_test.mos \
 
 

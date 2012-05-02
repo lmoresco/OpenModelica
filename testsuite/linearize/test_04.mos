@@ -1,7 +1,7 @@
 // name:     test_04.mos
 // keywords: <...>
 // status:   correct
-// cflags:   +d=linearization
+// cflags:   +postOptModules=inlineArrayEqn,constantLinearSystem,removeSimpleEquations,generateSymbolicLinearization
 // teardown_command: rm -rf *simple_test* output.log
 // 
 // <insert description here>

@@ -1,7 +1,7 @@
 // name:     LotkaVolterra linearization
 // keywords: LotkaVolterra, linearization
 // status:   correct
-// cflags:   +d=linearization
+// cflags:   +postOptModules=inlineArrayEqn,constantLinearSystem,removeSimpleEquations,generateSymbolicLinearization
 // teardown_command: rm -rf LotkaVolterra.* LotkaVolterra_* output.log linear_LotkaVolterra.* linear_LotkaVolterra_* linear_LotkaVolterra LotkaVolterra
 // 
 //  Case for linearization of LotkaVolterra model

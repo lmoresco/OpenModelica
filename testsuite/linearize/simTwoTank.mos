@@ -1,7 +1,7 @@
 // name:     twoflattankmodel linearization
 // keywords: twoflattankmodel, linearization
 // status:   correct
-// cflags:   +d=linearization
+// cflags:   +postOptModules=inlineArrayEqn,constantLinearSystem,removeSimpleEquations,generateSymbolicLinearization
 // teardown_command: rm -rf twoflattankmodel.* twoflattankmodel_* output.log linear_twoflattankmodel.* linear_twoflattankmodel_* linear_twoflattankmodel twoflattankmodel
 // 
 //  Case for linearization of twoflattankmodel model
@@ -12,7 +12,7 @@ simulate(twoflattankmodel,numberOfIntervals=1); // 1 intervals == 2 values
 system("twoflattankmodel -l 0");
 loadFile("linear_twoflattankmodel.mo");
 list(linear_twoflattankmodel);
-simulate(linear_twoflattankmodel,method="dassl2");
+simulate(linear_twoflattankmodel,method="dassl");
 readFile("output.log"); // Check that output log is emtpy
 //echo(false); // turns of output
 // Result:
@@ -54,7 +54,7 @@ readFile("output.log"); // Check that output log is emtpy
 // "
 // record SimulationResult
 //     resultFile = "linear_twoflattankmodel_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl2', fileNamePrefix = 'linear_twoflattankmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'linear_twoflattankmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
 // ""
