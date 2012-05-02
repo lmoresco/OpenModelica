@@ -1,6 +1,6 @@
 // name:     ReinitInvalidType
 // keywords: reinit
-// status:   correct
+// status:   incorrect
 // 
 // Tests that the compiler checks that the first argument to reinit is a Real.
 // 
