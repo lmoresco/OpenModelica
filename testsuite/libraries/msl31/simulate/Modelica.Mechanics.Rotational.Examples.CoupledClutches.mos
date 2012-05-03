@@ -1,7 +1,7 @@
 // name:     Modelica.Mechanics.Rotational.Examples.CoupledClutches
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Mechanics.Rotational.Examples.CoupledClutches_* Modelica.Mechanics.Rotational.Examples.CoupledClutches Modelica.Mechanics.Rotational.Examples.CoupledClutches.exe Modelica.Mechanics.Rotational.Examples.CoupledClutches.cpp Modelica.Mechanics.Rotational.Examples.CoupledClutches.makefile Modelica.Mechanics.Rotational.Examples.CoupledClutches.libs Modelica.Mechanics.Rotational.Examples.CoupledClutches.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

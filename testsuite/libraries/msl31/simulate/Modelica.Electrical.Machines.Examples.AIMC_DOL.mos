@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Machines.Examples.AIMC_DOL
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Machines.Examples.AIMC_DOL_* Modelica.Electrical.Machines.Examples.AIMC_DOL Modelica.Electrical.Machines.Examples.AIMC_DOL.exe Modelica.Electrical.Machines.Examples.AIMC_DOL.cpp Modelica.Electrical.Machines.Examples.AIMC_DOL.makefile Modelica.Electrical.Machines.Examples.AIMC_DOL.libs Modelica.Electrical.Machines.Examples.AIMC_DOL.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

@@ -1,7 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling_* Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.exe Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.libs Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

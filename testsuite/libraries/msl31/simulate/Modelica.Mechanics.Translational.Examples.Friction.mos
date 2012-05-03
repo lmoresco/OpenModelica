@@ -1,7 +1,7 @@
 // name:     Modelica.Mechanics.Translational.Examples.Friction
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.Friction_* Modelica.Mechanics.Translational.Examples.Friction Modelica.Mechanics.Translational.Examples.Friction.exe Modelica.Mechanics.Translational.Examples.Friction.cpp Modelica.Mechanics.Translational.Examples.Friction.makefile Modelica.Mechanics.Translational.Examples.Friction.libs Modelica.Mechanics.Translational.Examples.Friction.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

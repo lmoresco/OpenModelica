@@ -1,7 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_* Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.exe Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.cpp Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.makefile Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.libs Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

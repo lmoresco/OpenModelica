@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Machines.Examples.Rectifier6pulse
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Machines.Examples.Rectifier6pulse_* Modelica.Electrical.Machines.Examples.Rectifier6pulse Modelica.Electrical.Machines.Examples.Rectifier6pulse.exe Modelica.Electrical.Machines.Examples.Rectifier6pulse.cpp Modelica.Electrical.Machines.Examples.Rectifier6pulse.makefile Modelica.Electrical.Machines.Examples.Rectifier6pulse.libs Modelica.Electrical.Machines.Examples.Rectifier6pulse.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

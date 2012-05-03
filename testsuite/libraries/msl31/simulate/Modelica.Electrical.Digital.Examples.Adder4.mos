@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Digital.Examples.Adder4
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Digital.Examples.Adder4_* Modelica.Electrical.Digital.Examples.Adder4 Modelica.Electrical.Digital.Examples.Adder4.exe Modelica.Electrical.Digital.Examples.Adder4.cpp Modelica.Electrical.Digital.Examples.Adder4.makefile Modelica.Electrical.Digital.Examples.Adder4.libs Modelica.Electrical.Digital.Examples.Adder4.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

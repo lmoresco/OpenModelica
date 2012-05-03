@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.CharacteristicThyristors
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Analog.Examples.CharacteristicThyristors_* Modelica.Electrical.Analog.Examples.CharacteristicThyristors Modelica.Electrical.Analog.Examples.CharacteristicThyristors.exe Modelica.Electrical.Analog.Examples.CharacteristicThyristors.cpp Modelica.Electrical.Analog.Examples.CharacteristicThyristors.makefile Modelica.Electrical.Analog.Examples.CharacteristicThyristors.libs Modelica.Electrical.Analog.Examples.CharacteristicThyristors.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

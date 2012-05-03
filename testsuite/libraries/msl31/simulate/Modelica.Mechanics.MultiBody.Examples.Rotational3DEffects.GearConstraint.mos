@@ -1,7 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint_* Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint.exe Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint.cpp Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint.makefile Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint.libs Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Digital.Examples.HalfAdder
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Digital.Examples.HalfAdder_* Modelica.Electrical.Digital.Examples.HalfAdder Modelica.Electrical.Digital.Examples.HalfAdder.exe Modelica.Electrical.Digital.Examples.HalfAdder.cpp Modelica.Electrical.Digital.Examples.HalfAdder.makefile Modelica.Electrical.Digital.Examples.HalfAdder.libs Modelica.Electrical.Digital.Examples.HalfAdder.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

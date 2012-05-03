@@ -1,7 +1,7 @@
 // name:     Modelica.Mechanics.Translational.Examples.SignConvention
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.SignConvention_* Modelica.Mechanics.Translational.Examples.SignConvention Modelica.Mechanics.Translational.Examples.SignConvention.exe Modelica.Mechanics.Translational.Examples.SignConvention.cpp Modelica.Mechanics.Translational.Examples.SignConvention.makefile Modelica.Mechanics.Translational.Examples.SignConvention.libs Modelica.Mechanics.Translational.Examples.SignConvention.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

@@ -1,7 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem_* Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.exe Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.libs Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

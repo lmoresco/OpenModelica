@@ -1,7 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant_* Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant.exe Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant.libs Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

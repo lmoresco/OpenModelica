@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Digital.Examples.FlipFlop
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Digital.Examples.FlipFlop_* Modelica.Electrical.Digital.Examples.FlipFlop Modelica.Electrical.Digital.Examples.FlipFlop.exe Modelica.Electrical.Digital.Examples.FlipFlop.cpp Modelica.Electrical.Digital.Examples.FlipFlop.makefile Modelica.Electrical.Digital.Examples.FlipFlop.libs Modelica.Electrical.Digital.Examples.FlipFlop.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

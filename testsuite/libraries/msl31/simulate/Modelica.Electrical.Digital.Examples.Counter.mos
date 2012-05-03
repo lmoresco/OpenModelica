@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Digital.Examples.Counter
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Digital.Examples.Counter_* Modelica.Electrical.Digital.Examples.Counter Modelica.Electrical.Digital.Examples.Counter.exe Modelica.Electrical.Digital.Examples.Counter.cpp Modelica.Electrical.Digital.Examples.Counter.makefile Modelica.Electrical.Digital.Examples.Counter.libs Modelica.Electrical.Digital.Examples.Counter.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

@@ -1,7 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings_* Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings.exe Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings.libs Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

@@ -2,6 +2,7 @@
 //name:        Simulate Modelica.Blocks.Examples [version 3.1]
 //keyword:     instantiating/check/simulate MSL 3.1 Modelica.Blocks.Examples
 //status:      correct
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // instantiate/check/simulate model example
 //

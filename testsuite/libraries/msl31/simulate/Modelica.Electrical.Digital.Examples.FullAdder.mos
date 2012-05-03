@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Digital.Examples.FullAdder
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Digital.Examples.FullAdder_* Modelica.Electrical.Digital.Examples.FullAdder Modelica.Electrical.Digital.Examples.FullAdder.exe Modelica.Electrical.Digital.Examples.FullAdder.cpp Modelica.Electrical.Digital.Examples.FullAdder.makefile Modelica.Electrical.Digital.Examples.FullAdder.libs Modelica.Electrical.Digital.Examples.FullAdder.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

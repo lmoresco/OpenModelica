@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Machines.Examples.DCSE_Start
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Machines.Examples.DCSE_Start_* Modelica.Electrical.Machines.Examples.DCSE_Start Modelica.Electrical.Machines.Examples.DCSE_Start.exe Modelica.Electrical.Machines.Examples.DCSE_Start.cpp Modelica.Electrical.Machines.Examples.DCSE_Start.makefile Modelica.Electrical.Machines.Examples.DCSE_Start.libs Modelica.Electrical.Machines.Examples.DCSE_Start.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

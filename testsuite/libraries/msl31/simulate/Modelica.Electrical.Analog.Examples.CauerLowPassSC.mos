@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.CauerLowPassSC
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Analog.Examples.CauerLowPassSC_* Modelica.Electrical.Analog.Examples.CauerLowPassSC Modelica.Electrical.Analog.Examples.CauerLowPassSC.exe Modelica.Electrical.Analog.Examples.CauerLowPassSC.cpp Modelica.Electrical.Analog.Examples.CauerLowPassSC.makefile Modelica.Electrical.Analog.Examples.CauerLowPassSC.libs Modelica.Electrical.Analog.Examples.CauerLowPassSC.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

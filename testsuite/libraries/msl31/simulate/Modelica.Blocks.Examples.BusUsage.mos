@@ -1,7 +1,7 @@
 // name:     Modelica.Blocks.Examples.BusUsage
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Blocks.Examples.BusUsage_* Modelica.Blocks.Examples.BusUsage Modelica.Blocks.Examples.BusUsage.exe Modelica.Blocks.Examples.BusUsage.cpp Modelica.Blocks.Examples.BusUsage.makefile Modelica.Blocks.Examples.BusUsage.libs Modelica.Blocks.Examples.BusUsage.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

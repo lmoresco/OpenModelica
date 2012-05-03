@@ -1,7 +1,7 @@
 // name:     Modelica.StateGraph.Examples.ExecutionPaths
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.StateGraph.Examples.ExecutionPaths_* Modelica.StateGraph.Examples.ExecutionPaths Modelica.StateGraph.Examples.ExecutionPaths.exe Modelica.StateGraph.Examples.ExecutionPaths.cpp Modelica.StateGraph.Examples.ExecutionPaths.makefile Modelica.StateGraph.Examples.ExecutionPaths.libs Modelica.StateGraph.Examples.ExecutionPaths.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

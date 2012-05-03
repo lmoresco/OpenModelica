@@ -1,7 +1,7 @@
 // name:     Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut_* Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut.exe Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut.cpp Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut.makefile Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut.libs Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

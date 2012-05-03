@@ -1,7 +1,7 @@
 // name:     Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour_* Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour.exe Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour.cpp Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour.makefile Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour.libs Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

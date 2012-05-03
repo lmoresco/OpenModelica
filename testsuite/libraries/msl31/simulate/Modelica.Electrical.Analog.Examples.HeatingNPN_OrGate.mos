@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate_* Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate.exe Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate.cpp Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate.makefile Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate.libs Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

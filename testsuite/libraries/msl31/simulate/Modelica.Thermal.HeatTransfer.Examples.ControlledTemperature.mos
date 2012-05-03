@@ -1,7 +1,7 @@
 // name:     Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature_* Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.exe Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.cpp Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.makefile Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.libs Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

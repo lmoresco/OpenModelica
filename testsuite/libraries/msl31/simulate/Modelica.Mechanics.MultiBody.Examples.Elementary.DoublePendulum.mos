@@ -1,7 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum_* Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.exe Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.libs Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

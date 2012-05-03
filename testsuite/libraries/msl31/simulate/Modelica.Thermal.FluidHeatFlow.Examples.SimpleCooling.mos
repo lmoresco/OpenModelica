@@ -1,7 +1,7 @@
 // name:     Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling_* Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.exe Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.cpp Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.makefile Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.libs Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

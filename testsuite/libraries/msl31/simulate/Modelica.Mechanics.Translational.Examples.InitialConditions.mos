@@ -1,7 +1,7 @@
 // name:     Modelica.Mechanics.Translational.Examples.InitialConditions
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.InitialConditions_* Modelica.Mechanics.Translational.Examples.InitialConditions Modelica.Mechanics.Translational.Examples.InitialConditions.exe Modelica.Mechanics.Translational.Examples.InitialConditions.cpp Modelica.Mechanics.Translational.Examples.InitialConditions.makefile Modelica.Mechanics.Translational.Examples.InitialConditions.libs Modelica.Mechanics.Translational.Examples.InitialConditions.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library
@@ -38,3 +38,4 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Trans
 // end SimulationResult;
 // "Files Equal!"
 // endResult
+rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv

@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Machines.Examples.AIMC_Steinmetz
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Machines.Examples.AIMC_Steinmetz_* Modelica.Electrical.Machines.Examples.AIMC_Steinmetz Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.exe Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.cpp Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.makefile Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.libs Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

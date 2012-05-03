@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Machines.Examples.SMEE_Generator
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Machines.Examples.SMEE_Generator_* Modelica.Electrical.Machines.Examples.SMEE_Generator Modelica.Electrical.Machines.Examples.SMEE_Generator.exe Modelica.Electrical.Machines.Examples.SMEE_Generator.cpp Modelica.Electrical.Machines.Examples.SMEE_Generator.makefile Modelica.Electrical.Machines.Examples.SMEE_Generator.libs Modelica.Electrical.Machines.Examples.SMEE_Generator.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

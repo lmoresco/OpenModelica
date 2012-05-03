@@ -1,7 +1,7 @@
 // name:     Modelica.StateGraph.Examples.ShowCompositeStep
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.StateGraph.Examples.ShowCompositeStep_* Modelica.StateGraph.Examples.ShowCompositeStep Modelica.StateGraph.Examples.ShowCompositeStep.exe Modelica.StateGraph.Examples.ShowCompositeStep.cpp Modelica.StateGraph.Examples.ShowCompositeStep.makefile Modelica.StateGraph.Examples.ShowCompositeStep.libs Modelica.StateGraph.Examples.ShowCompositeStep.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

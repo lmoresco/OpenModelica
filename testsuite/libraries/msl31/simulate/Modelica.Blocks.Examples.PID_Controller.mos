@@ -1,7 +1,7 @@
 // name:     Modelica.Blocks.Examples.PID_Controller
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Blocks.Examples.PID_Controller_* Modelica.Blocks.Examples.PID_Controller Modelica.Blocks.Examples.PID_Controller.exe Modelica.Blocks.Examples.PID_Controller.cpp Modelica.Blocks.Examples.PID_Controller.makefile Modelica.Blocks.Examples.PID_Controller.libs Modelica.Blocks.Examples.PID_Controller.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

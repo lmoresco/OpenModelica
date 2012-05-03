@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes_* Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes.exe Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes.cpp Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes.makefile Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes.libs Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

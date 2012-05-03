@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Machines.Examples.AIMS_Start
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Machines.Examples.AIMS_Start_* Modelica.Electrical.Machines.Examples.AIMS_Start Modelica.Electrical.Machines.Examples.AIMS_Start.exe Modelica.Electrical.Machines.Examples.AIMS_Start.cpp Modelica.Electrical.Machines.Examples.AIMS_Start.makefile Modelica.Electrical.Machines.Examples.AIMS_Start.libs Modelica.Electrical.Machines.Examples.AIMS_Start.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

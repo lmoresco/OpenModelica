@@ -1,7 +1,7 @@
 // name:     Modelica.StateGraph.Examples.FirstExample
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.StateGraph.Examples.FirstExample_* Modelica.StateGraph.Examples.FirstExample Modelica.StateGraph.Examples.FirstExample.exe Modelica.StateGraph.Examples.FirstExample.cpp Modelica.StateGraph.Examples.FirstExample.makefile Modelica.StateGraph.Examples.FirstExample.libs Modelica.StateGraph.Examples.FirstExample.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

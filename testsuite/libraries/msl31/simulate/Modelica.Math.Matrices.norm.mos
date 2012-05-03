@@ -1,6 +1,7 @@
 // name: Modelica.Math.Matrices.norm
 // status: correct
-// teardown_command: rm -f TestNorm*
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
+
 loadModel(Modelica,{"3.1"});
 loadString("
 package TestNorm

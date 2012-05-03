@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.HeatingResistor
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.Analog.Examples.HeatingResistor_* Modelica.Electrical.Analog.Examples.HeatingResistor Modelica.Electrical.Analog.Examples.HeatingResistor.exe Modelica.Electrical.Analog.Examples.HeatingResistor.cpp Modelica.Electrical.Analog.Examples.HeatingResistor.makefile Modelica.Electrical.Analog.Examples.HeatingResistor.libs Modelica.Electrical.Analog.Examples.HeatingResistor.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

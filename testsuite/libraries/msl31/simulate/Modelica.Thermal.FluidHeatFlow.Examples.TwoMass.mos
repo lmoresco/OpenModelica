@@ -1,7 +1,7 @@
 // name:     Modelica.Thermal.FluidHeatFlow.Examples.TwoMass
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Thermal.FluidHeatFlow.Examples.TwoMass_* Modelica.Thermal.FluidHeatFlow.Examples.TwoMass Modelica.Thermal.FluidHeatFlow.Examples.TwoMass.exe Modelica.Thermal.FluidHeatFlow.Examples.TwoMass.cpp Modelica.Thermal.FluidHeatFlow.Examples.TwoMass.makefile Modelica.Thermal.FluidHeatFlow.Examples.TwoMass.libs Modelica.Thermal.FluidHeatFlow.Examples.TwoMass.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library

@@ -1,7 +1,7 @@
 // name:     Modelica.Electrical.MultiPhase.Examples.TransformerYD
 // keywords: simulation MSL Examples
 // status: correct
-// teardown_command: rm -rf Modelica.Electrical.MultiPhase.Examples.TransformerYD_* Modelica.Electrical.MultiPhase.Examples.TransformerYD Modelica.Electrical.MultiPhase.Examples.TransformerYD.exe Modelica.Electrical.MultiPhase.Examples.TransformerYD.cpp Modelica.Electrical.MultiPhase.Examples.TransformerYD.makefile Modelica.Electrical.MultiPhase.Examples.TransformerYD.libs Modelica.Electrical.MultiPhase.Examples.TransformerYD.log output.log
+// teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h *_diff.csv
 //
 // Simulation Results 
 // Modelica Standard Library
