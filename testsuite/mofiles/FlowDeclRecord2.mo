@@ -38,7 +38,7 @@ end FlowDeclRecord2;
 //   c2.r.y = 0.0;
 //   -c1.r.x + -c2.r.x = 0.0;
 //   -c1.r.y + -c2.r.y = 0.0;
-//   c1.x[2] = c2.x[2];
 //   c1.x[1] = c2.x[1];
+//   c1.x[2] = c2.x[2];
 // end FlowDeclRecord2;
 // endResult

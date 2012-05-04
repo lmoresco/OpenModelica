@@ -53,11 +53,11 @@ end test2;
 //   t1.n.i_dq0[1] + t2.p.i_dq0[1] = 0.0;
 //   t1.n.i_dq0[2] + t2.p.i_dq0[2] = 0.0;
 //   t1.n.i_dq0[3] + t2.p.i_dq0[3] = 0.0;
-//   t1.n.u_dq0[3] = t2.p.u_dq0[3];
-//   t1.n.u_dq0[2] = t2.p.u_dq0[2];
 //   t1.n.u_dq0[1] = t2.p.u_dq0[1];
-//   t1.p.u_dq0[3] = t2.n.u_dq0[3];
-//   t1.p.u_dq0[2] = t2.n.u_dq0[2];
+//   t1.n.u_dq0[2] = t2.p.u_dq0[2];
+//   t1.n.u_dq0[3] = t2.p.u_dq0[3];
 //   t1.p.u_dq0[1] = t2.n.u_dq0[1];
+//   t1.p.u_dq0[2] = t2.n.u_dq0[2];
+//   t1.p.u_dq0[3] = t2.n.u_dq0[3];
 // end test2;
 // endResult

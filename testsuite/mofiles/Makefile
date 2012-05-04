@@ -118,6 +118,7 @@ Connect13.mo \
 Connect14.mo \
 Connect15.mo \
 Connect16.mo \
+Connect17.mo \
 Connect1.mo \
 Connect2.mo \
 Connect4.mo \

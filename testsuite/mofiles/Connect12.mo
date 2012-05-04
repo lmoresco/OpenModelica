@@ -44,7 +44,7 @@ end test;
 // equation
 //   x - y = 0.0;
 //   x = x2;
-//   v2[2] = v[2];
 //   v2[1] = v[1];
+//   v2[2] = v[2];
 // end test;
 // endResult
