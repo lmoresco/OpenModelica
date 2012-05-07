@@ -1,0 +1,29 @@
+// name: MainTest
+// status: correct
+setCommandLineOptions({"+g=MetaModelica","+d=rml,generateCodeCheat"});
+
+runScript("LoadCompilerSources.mos");
+getErrorString();
+loadFile("LexerCodeModelica.mo");
+loadFile("ParseCodeModelica.mo");
+loadFile("TokenModelica.mo");
+loadFile("LexerModelica.mo");
+loadFile("ParserModelica.mo");
+loadFile("LexTableModelica.mo");
+loadFile("ParseTableModelica.mo");
+loadFile("Types.mo");
+loadFile("NewParser.mo");
+// list();
+
+generateCode(Main.main);
+getErrorString();
+
+// Result:
+// {true,true}
+// Loaded all files without error
+// "true
+// "
+// ""
+// true
+// ""
+// endResult

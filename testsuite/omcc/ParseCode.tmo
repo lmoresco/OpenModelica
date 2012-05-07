@@ -1,0 +1,130 @@
+package %ParseCode% // %time%
+import Types;
+
+%prologue%
+
+uniontype AstStack
+  record ASTSTACK
+%astStack%  end ASTSTACK;
+  record EMPTY end EMPTY;
+end AstStack;
+
+function initAstStack
+  input AstStack astStack;
+  output AstStack astStack2;
+ algorithm 
+   astStack2 := ASTSTACK(%initStack%);
+end initAstStack;
+
+function getAST "returns the AST built by the parsing"
+  input AstStack astStk "MultiTypedStack used by the parser";
+  output AstTree ast "returns the AST in the final type of the tree";
+  protected
+  list<%astTree%> retStk;
+  algorithm
+    ASTSTACK(stack%astTree%=retStk) := astStk;
+    ast::_ := retStk;
+end getAST;  
+
+
+
+function actionRed
+  input Integer act;
+  input AstStack astStk;
+  input array<Integer> mm_r2;
+  output AstStack astStk2;
+  output Boolean error=false;
+  output String errorMsg="";
+  protected
+  OMCCTypes.Info info;
+  // env variables       
+  // AstStack 
+%astStackVar%
+
+  
+algorithm
+   
+  // printContentStack(astStk);
+   //printAny(" rule:" + intString(act));
+   %GETASTSTACK%  
+  (_) := matchcontinue(act,astStk)
+    local
+      //local variables
+%caseAction%    
+    case (_,_) 
+      equation
+        //lAST = intString(act);
+        errorMsg = "\n" + OMCCTypes.printInfoError(info) + " : Ilegal action case " + intString(act);
+        error = true;
+      then ();
+  end matchcontinue;
+    %PUTASTSTACK% 
+ /* astStk2 := ASTSTACK(idStk,inStk,boStk,roStk,exStk,ilStk,stStk); */
+  
+end actionRed;  
+
+function reduceStringStack
+  input list<String> skString;
+  input Integer nTokens;
+  output list<String> skStringRes;
+  protected
+  list<String> skString1:=skString;
+  String strReduce;
+  Integer i;
+ algorithm 
+  for i in 1:nTokens loop 
+    strReduce::skString1 := skString1; 
+  end for;
+  skStringRes := skString1;
+end reduceStringStack;
+
+function getInfo
+  input list<Token> skToken;
+  input Integer nTokens;
+  output OMCCTypes.Info info;
+  output list<Token> skTokenRes;
+  protected
+  list<Token> skToken1:=skToken;
+  Token token;
+  OMCCTypes.Info tmpInfo;
+  Integer lns,cns,lne,cne,i;
+  String fn;
+algorithm  
+  for i in 1:nTokens loop
+     token::skToken1 := skToken1;
+     OMCCTypes.TOKEN(loc=info) := token;
+     if (i==nTokens) then
+        OMCCTypes.INFO(fileName=fn,lineNumberStart=lns,columnNumberStart=cns) := info;
+     end if;
+     if (i==1) then
+        OMCCTypes.INFO(lineNumberEnd=lne,columnNumberEnd=cne) := info;
+     end if;
+  end for;
+  if (nTokens==0) then
+     token::_ := skToken1;
+     OMCCTypes.TOKEN(loc=info) := token;  
+     OMCCTypes.INFO(fileName=fn,lineNumberStart=lns,columnNumberStart=cns,lineNumberEnd=lne,columnNumberEnd=cne) := info;
+  end if;
+  info := OMCCTypes.INFO(fn,false,lns,cns,lne,cne,OMCCTypes.getTimeStamp()); 
+  token := OMCCTypes.TOKEN("grupped",0,{},info);
+  skTokenRes := token::skToken1; 
+end getInfo;
+
+function push
+  input AstStack astStk;
+  input String inVal;
+  input OMCCTypes.Token token;
+  output AstStack astStk2;
+  protected
+  // AstStack 
+%astStackVar%
+algorithm
+ %GETASTSTACK%
+  skString := inVal::skString;
+  skToken := token::skToken;
+  %PUTASTSTACK%
+end push;
+
+%epilogue%
+
+end %ParseCode%;

@@ -1,0 +1,9 @@
+perl C:/OpenModelica1.8.0/share/omc/scripts/convert_lines.pl System_getCurrentTimeStr.c System_getCurrentTimeStr.conv.c.tmp
+gcc -I"C:/OpenModelica1.8.0/include/omc"  -O0 -falign-functions -msse2 -mfpmath=sse  -c -o System_getCurrentTimeStr.o System_getCurrentTimeStr.conv.c
+gcc -I"C:/OpenModelica1.8.0/include/omc"  -O0 -falign-functions -msse2 -mfpmath=sse  -c -o System_getCurrentTimeStr_records.o System_getCurrentTimeStr_records.c
+g++ -shared -export-dynamic -o System_getCurrentTimeStr.dll System_getCurrentTimeStr.o System_getCurrentTimeStr_records.o -lomcruntime -liconv -lexpat -lsqlite3 -llpsolve55 -lmico2313 -lws2_32 -lregex -llapack-mingw -ltmglib-mingw -lblas-mingw -lf2c -I"C:/OpenModelica1.8.0/include/omc"  -O0 -falign-functions -msse2 -mfpmath=sse  -L"C:/OpenModelica1.8.0/lib/omc" -lSimulationRuntimeC -lregex -lexpat -static-libgcc -luuid -lole32 -lws2_32 -lm
+c:/omdev/tools/mingw/bin/../lib/gcc/mingw32/4.4.0/../../../../mingw32/bin/ld.exe: warning: --export-dynamic is not supported for PE targets, did you mean --export-all-symbols?
+C:/OpenModelica1.8.0/lib/omc/libomcruntime.a(System_omc.o):System_omc.cpp:(.text+0xb34): undefined reference to `emulateStreamData2'
+C:/OpenModelica1.8.0/lib/omc/libomcruntime.a(System_omc.o):System_omc.cpp:(.text+0xb40): undefined reference to `emulateStreamData'
+collect2: ld returned 1 exit status
+mingw32-make: *** [System_getCurrentTimeStr] Error 1

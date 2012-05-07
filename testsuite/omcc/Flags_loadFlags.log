@@ -1,0 +1,3 @@
+perl C:/OpenModelica1.8.0/share/omc/scripts/convert_lines.pl Flags_loadFlags.c Flags_loadFlags.conv.c.tmp
+gcc -I"C:/OpenModelica1.8.0/include/omc"  -O0 -falign-functions -msse2 -mfpmath=sse  -c -o Flags_loadFlags.o Flags_loadFlags.conv.c
+^CTerminate batch job (Y/N)? ^C
