@@ -28,15 +28,15 @@ end O;
 
 // Result:
 // function f
-//   output String s = "N.<Prefix.NOPRE()>";
+//   output String s = "f";
 // end f;
 // 
 // class O.N
 //   String m.s1 = "N.m";
-//   String m.s2 = "N.<Prefix.NOPRE()>";
-//   String m.s3 = "N.<Prefix.NOPRE()>";
+//   String m.s2 = "f";
+//   String m.s3 = "P";
 //   String p.m.s1 = "N.p.m";
-//   String p.m.s2 = "N.<Prefix.NOPRE()>";
-//   String p.m.s3 = "N.<Prefix.NOPRE()>";
+//   String p.m.s2 = "f";
+//   String p.m.s3 = "P";
 // end O.N;
 // endResult
