@@ -48,15 +48,27 @@ algorithm
     local
       Tpl.Text txt;
       BackendQSS.QSSinfo a_qssInfo;
+      SimCode.ModelInfo i_modelInfo;
       SimCode.SimCode i_simCode;
+      Tpl.Text txt_4;
+      Tpl.Text txt_3;
+      Tpl.Text txt_2;
+      Tpl.Text txt_1;
       Tpl.Text txt_0;
 
     case ( txt,
-           (i_simCode as SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(name = _))),
+           (i_simCode as SimCode.SIMCODE(modelInfo = (i_modelInfo as SimCode.MODELINFO(name = _)))),
            a_qssInfo )
       equation
         txt_0 = generateQsmModel(Tpl.emptyTxt, i_simCode, a_qssInfo);
-        Tpl.textFile(txt_0, "model.mo");
+        txt_1 = getName(Tpl.emptyTxt, i_modelInfo);
+        txt_1 = Tpl.writeTok(txt_1, Tpl.ST_STRING(".mo"));
+        Tpl.textFile(txt_0, Tpl.textString(txt_1));
+        txt_2 = getName(Tpl.emptyTxt, i_modelInfo);
+        txt_3 = generateMakefile(Tpl.emptyTxt, Tpl.textString(txt_2));
+        txt_4 = getName(Tpl.emptyTxt, i_modelInfo);
+        txt_4 = Tpl.writeTok(txt_4, Tpl.ST_STRING(".makefile"));
+        Tpl.textFile(txt_3, Tpl.textString(txt_4));
       then txt;
 
     case ( txt,
@@ -143,13 +155,14 @@ algorithm
       list<SimCode.SampleCondition> i_sampleConditions;
       SimCode.ModelInfo i_modelInfo;
       list<list<SimCode.SimEqSystem>> i_odeEquations;
-      BackendDAE.EquationArray ret_9;
+      BackendDAE.EquationArray ret_10;
+      list<DAE.ComponentRef> ret_9;
       list<DAE.ComponentRef> ret_8;
       list<DAE.ComponentRef> ret_7;
       list<DAE.ComponentRef> ret_6;
       list<DAE.ComponentRef> ret_5;
       list<DAE.ComponentRef> ret_4;
-      list<DAE.ComponentRef> ret_3;
+      Tpl.Text txt_3;
       Tpl.Text l_eqs;
       Tpl.Text l_externalFuncs;
       Tpl.Text l_funDecls;
@@ -170,11 +183,13 @@ algorithm
         l_eqs = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         (l_eqs, l_externalFuncs, l_funDecls) = lm_29(l_eqs, i_odeEquations, l_externalFuncs, l_funDecls, a_qssInfo);
         l_eqs = Tpl.popIter(l_eqs);
-        Tpl.textFile(l_externalFuncs, "external_functions.c");
-        ret_3 = BackendQSS.getStates(a_qssInfo);
-        ret_4 = BackendQSS.getDisc(a_qssInfo);
-        ret_5 = BackendQSS.getAlgs(a_qssInfo);
-        txt = generateModelInfo(txt, i_modelInfo, ret_3, ret_4, ret_5, i_sampleConditions, i_parameterEquations);
+        txt_3 = getName(Tpl.emptyTxt, i_modelInfo);
+        txt_3 = Tpl.writeTok(txt_3, Tpl.ST_STRING("_external_functions.c"));
+        Tpl.textFile(l_externalFuncs, Tpl.textString(txt_3));
+        ret_4 = BackendQSS.getStates(a_qssInfo);
+        ret_5 = BackendQSS.getDisc(a_qssInfo);
+        ret_6 = BackendQSS.getAlgs(a_qssInfo);
+        txt = generateModelInfo(txt, i_modelInfo, ret_4, ret_5, ret_6, i_sampleConditions, i_parameterEquations);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeText(txt, l_funDecls);
         txt = Tpl.softNewLine(txt);
@@ -192,11 +207,11 @@ algorithm
                                     "algorithm\n",
                                     "/* Discontinuities */\n"
                                 }, true));
-        ret_6 = BackendQSS.getStates(a_qssInfo);
-        ret_7 = BackendQSS.getDisc(a_qssInfo);
-        ret_8 = BackendQSS.getAlgs(a_qssInfo);
-        ret_9 = BackendQSS.getEqs(a_qssInfo);
-        txt = generateDiscont(txt, i_zeroCrossings, ret_6, ret_7, ret_8, i_whenClauses, ret_9);
+        ret_7 = BackendQSS.getStates(a_qssInfo);
+        ret_8 = BackendQSS.getDisc(a_qssInfo);
+        ret_9 = BackendQSS.getAlgs(a_qssInfo);
+        ret_10 = BackendQSS.getEqs(a_qssInfo);
+        txt = generateDiscont(txt, i_zeroCrossings, ret_7, ret_8, ret_9, i_whenClauses, ret_10);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("end "));
         txt = getName(txt, i_modelInfo);
@@ -630,6 +645,7 @@ algorithm
       list<SimCode.SimVar> i_vars_intParamVars;
       list<SimCode.SimVar> i_vars_paramVars;
       SimCode.ModelInfo i_modelInfo;
+      Tpl.Text txt_1;
       Tpl.Text txt_0;
 
     case ( txt,
@@ -637,7 +653,9 @@ algorithm
            a_parameterEquations )
       equation
         txt_0 = generateHeader(Tpl.emptyTxt, i_modelInfo, a_parameterEquations);
-        Tpl.textFile(txt_0, "parameters.h");
+        txt_1 = getName(Tpl.emptyTxt, i_modelInfo);
+        txt_1 = Tpl.writeTok(txt_1, Tpl.ST_STRING("_parameters.h"));
+        Tpl.textFile(txt_0, Tpl.textString(txt_1));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         txt = lm_38(txt, i_vars_paramVars);
         txt = Tpl.popIter(txt);
@@ -853,29 +871,23 @@ algorithm
   matchcontinue(in_txt, in_a_simulationSettingsOpt)
     local
       Tpl.Text txt;
-      String i_s_variableFilter;
-      String i_s_outputFormat;
       Real i_s_tolerance;
       Real i_s_stopTime;
       Real i_s_startTime;
 
     case ( txt,
-           SOME(SimCode.SIMULATION_SETTINGS(startTime = i_s_startTime, stopTime = i_s_stopTime, tolerance = i_s_tolerance, outputFormat = i_s_outputFormat, variableFilter = i_s_variableFilter)) )
+           SOME(SimCode.SIMULATION_SETTINGS(startTime = i_s_startTime, stopTime = i_s_stopTime, tolerance = i_s_tolerance)) )
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("annotation(experiment(StartTime = "));
         txt = Tpl.writeStr(txt, realString(i_s_startTime));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", StopTime = "));
         txt = Tpl.writeStr(txt, realString(i_s_stopTime));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", Tolerance = "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", Tolerance = 1e-3, AbsTolerance = "));
         txt = Tpl.writeStr(txt, realString(i_s_tolerance));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", AbsTolerance = "));
-        txt = Tpl.writeStr(txt, realString(i_s_tolerance));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", Solver = QSS3, Output = {x[1]},  OutputFormat = "));
-        txt = Tpl.writeStr(txt, i_s_outputFormat);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", VariableFilter = \""));
-        txt = Tpl.writeStr(txt, i_s_variableFilter);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\"));"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", Solver = LIQSS2, Output = {x[1]}, StepSize = "));
+        txt = Tpl.writeStr(txt, realString(i_s_stopTime));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/500));"));
         txt = Tpl.popBlock(txt);
       then txt;
 
@@ -1267,10 +1279,8 @@ algorithm
         a_funDecls = Tpl.popIter(a_funDecls);
         a_funDecls = Tpl.softNewLine(a_funDecls);
         a_funDecls = Tpl.popBlock(a_funDecls);
-        a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_STRING("external \"C\" annotation(Include=\"#include \\\"external_function_"));
-        a_funDecls = Tpl.writeStr(a_funDecls, intString(i_index));
         a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_STRING_LIST({
-                                                  ".c\\\"\");\n",
+                                                  "external \"C\" ;\n",
                                                   "end fsolve"
                                               }, false));
         a_funDecls = Tpl.writeStr(a_funDecls, intString(i_index));
@@ -2765,5 +2775,38 @@ public function generateHeader
 algorithm
   out_txt := fun_78(txt, a_modelInfo);
 end generateHeader;
+
+public function generateMakefile
+  input Tpl.Text txt;
+  input String a_name;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING("all: "));
+  out_txt := Tpl.writeStr(out_txt, a_name);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING(".mo "));
+  out_txt := Tpl.writeStr(out_txt, a_name);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("_parameters.h "));
+  out_txt := Tpl.writeStr(out_txt, a_name);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE("_external_functions.c\n"));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\t"));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("mo2qsm ./"));
+  out_txt := Tpl.writeStr(out_txt, a_name);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE(".mo\n"));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\t"));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("qssmg  ./"));
+  out_txt := Tpl.writeStr(out_txt, a_name);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE(".qsm $(QSSPATH)\n"));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\t"));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE("make\n"));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\t"));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("./"));
+  out_txt := Tpl.writeStr(out_txt, a_name);
+  out_txt := Tpl.softNewLine(out_txt);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\t"));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("echo \"set terminal wxt persist; set grid; plot \\\""));
+  out_txt := Tpl.writeStr(out_txt, a_name);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("_x0.dat\\\" with lines \" | gnuplot"));
+end generateMakefile;
 
 end CodegenQSS;
