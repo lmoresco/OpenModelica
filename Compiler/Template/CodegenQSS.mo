@@ -153,8 +153,8 @@ algorithm
       Option<SimCode.SimulationSettings> i_simulationSettingsOpt;
       list<SimCode.SimEqSystem> i_parameterEquations;
       list<SimCode.SampleCondition> i_sampleConditions;
-      SimCode.ModelInfo i_modelInfo;
       list<list<SimCode.SimEqSystem>> i_odeEquations;
+      SimCode.ModelInfo i_modelInfo;
       BackendDAE.EquationArray ret_10;
       list<DAE.ComponentRef> ret_9;
       list<DAE.ComponentRef> ret_8;
@@ -168,7 +168,7 @@ algorithm
       Tpl.Text l_funDecls;
 
     case ( txt,
-           SimCode.SIMCODE(odeEquations = i_odeEquations, modelInfo = i_modelInfo, sampleConditions = i_sampleConditions, parameterEquations = i_parameterEquations, simulationSettingsOpt = i_simulationSettingsOpt, zeroCrossings = i_zeroCrossings, whenClauses = i_whenClauses),
+           SimCode.SIMCODE(modelInfo = i_modelInfo, odeEquations = i_odeEquations, sampleConditions = i_sampleConditions, parameterEquations = i_parameterEquations, simulationSettingsOpt = i_simulationSettingsOpt, zeroCrossings = i_zeroCrossings, whenClauses = i_whenClauses),
            a_qssInfo )
       equation
         l_funDecls = Tpl.emptyTxt;
@@ -178,8 +178,10 @@ algorithm
                                                          "#include <gsl/gsl_vector.h>\n",
                                                          "#include <gsl/gsl_matrix.h>\n",
                                                          "#include <gsl/gsl_linalg.h>\n",
-                                                         "#include \"parameters.h\" // Parameters\n"
-                                                     }, true));
+                                                         "#include \""
+                                                     }, false));
+        l_externalFuncs = getName(l_externalFuncs, i_modelInfo);
+        l_externalFuncs = Tpl.writeTok(l_externalFuncs, Tpl.ST_LINE("_parameters.h\" // Parameters\n"));
         l_eqs = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         (l_eqs, l_externalFuncs, l_funDecls) = lm_29(l_eqs, i_odeEquations, l_externalFuncs, l_funDecls, a_qssInfo);
         l_eqs = Tpl.popIter(l_eqs);
