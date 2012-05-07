@@ -160,7 +160,6 @@ algorithm
         ret_4 = BackendQSS.getAlgs(a_qssInfo);
         txt = generateModelInfo(txt, i_modelInfo, ret_2, ret_3, ret_4, i_sampleConditions, i_parameterEquations);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.writeText(txt, l_funDecls);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
@@ -206,11 +205,15 @@ algorithm
     local
       Tpl.Text txt;
       Absyn.Path i_name;
+      String ret_1;
+      Tpl.Text txt_0;
 
     case ( txt,
            SimCode.MODELINFO(name = i_name) )
       equation
-        txt = CodegenC.dotPath(txt, i_name);
+        txt_0 = CodegenC.dotPath(Tpl.emptyTxt, i_name);
+        ret_1 = System.stringReplace(Tpl.textString(txt_0), ".", "_");
+        txt = Tpl.writeStr(txt, ret_1);
       then txt;
 
     case ( txt,
@@ -245,7 +248,7 @@ algorithm
       Integer ret_0;
 
     case ( txt,
-           (i_modelInfo as SimCode.MODELINFO(varInfo = SimCode.VARINFO(numStateVars = i_varInfo_numStateVars), name = Absyn.IDENT(name = _))),
+           (i_modelInfo as SimCode.MODELINFO(varInfo = SimCode.VARINFO(numStateVars = i_varInfo_numStateVars))),
            a_states,
            a_disc,
            a_algs,
@@ -618,7 +621,7 @@ algorithm
            a_parameterEquations )
       equation
         txt_0 = generateHeader(Tpl.emptyTxt, i_modelInfo, a_parameterEquations);
-        Tpl.textFile(txt_0, "model.h");
+        Tpl.textFile(txt_0, "parameters.h");
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         txt = lm_38(txt, i_vars_paramVars);
         txt = Tpl.popIter(txt);
@@ -1169,7 +1172,8 @@ algorithm
       list<SimCode.SimVar> i_vars;
       DAE.Exp i_exp;
       DAE.ComponentRef i_cref;
-      list<DAE.ComponentRef> ret_7;
+      list<DAE.ComponentRef> ret_8;
+      Tpl.Text txt_7;
       Tpl.Text txt_6;
       list<DAE.ComponentRef> ret_5;
       Tpl.Text l_in__vars;
@@ -1211,15 +1215,19 @@ algorithm
         l_in__vars = lm_51(l_in__vars, ret_5, a_algs, a_disc, a_states);
         l_in__vars = Tpl.popIter(l_in__vars);
         txt_6 = generateLinear(Tpl.emptyTxt, i_e, a_states, a_disc, a_algs);
-        Tpl.textFile(txt_6, "model.c");
+        txt_7 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("external_function_"));
+        txt_7 = Tpl.writeStr(txt_7, intString(i_index));
+        txt_7 = Tpl.writeTok(txt_7, Tpl.ST_STRING(".c"));
+        Tpl.textFile(txt_6, Tpl.textString(txt_7));
+        a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_NEW_LINE());
         a_funDecls = Tpl.pushBlock(a_funDecls, Tpl.BT_INDENT(2));
         a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_STRING("function fsolve"));
         a_funDecls = Tpl.writeStr(a_funDecls, intString(i_index));
         a_funDecls = Tpl.softNewLine(a_funDecls);
         a_funDecls = Tpl.pushBlock(a_funDecls, Tpl.BT_INDENT(2));
-        ret_7 = BackendQSS.getRHSVars(i_beqs, i_vars, i_simJac, a_states, a_disc, a_algs);
+        ret_8 = BackendQSS.getRHSVars(i_beqs, i_vars, i_simJac, a_states, a_disc, a_algs);
         a_funDecls = Tpl.pushIter(a_funDecls, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        a_funDecls = lm_52(a_funDecls, ret_7);
+        a_funDecls = lm_52(a_funDecls, ret_8);
         a_funDecls = Tpl.popIter(a_funDecls);
         a_funDecls = Tpl.softNewLine(a_funDecls);
         a_funDecls = Tpl.pushIter(a_funDecls, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
@@ -1227,12 +1235,17 @@ algorithm
         a_funDecls = Tpl.popIter(a_funDecls);
         a_funDecls = Tpl.softNewLine(a_funDecls);
         a_funDecls = Tpl.popBlock(a_funDecls);
+        a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_STRING("external \"C\" annotation(Include=\"#include \\\"external_function_"));
+        a_funDecls = Tpl.writeStr(a_funDecls, intString(i_index));
         a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_STRING_LIST({
-                                                  "external \"C\" annotation(Include=\"#include \\\"model.c\\\"\");\n",
+                                                  ".c\\\"\");\n",
                                                   "end fsolve"
                                               }, false));
         a_funDecls = Tpl.writeStr(a_funDecls, intString(i_index));
-        a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_STRING(";"));
+        a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_STRING_LIST({
+                                                  ";\n",
+                                                  "\n"
+                                              }, true));
         a_funDecls = Tpl.popBlock(a_funDecls);
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
@@ -1709,7 +1722,7 @@ public function generateDiscont
 algorithm
   out_txt := generateZC(txt, a_zcs, a_states, a_disc, a_algs, a_eqs);
   out_txt := Tpl.softNewLine(out_txt);
-  out_txt := Tpl.pushIter(out_txt, Tpl.ITER_OPTIONS(0, NONE(), NONE(), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+  out_txt := Tpl.pushIter(out_txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
   out_txt := lm_62(out_txt, a_whens, a_whens, a_algs, a_disc, a_states);
   out_txt := Tpl.popIter(out_txt);
 end generateDiscont;
@@ -1795,13 +1808,14 @@ protected function lm_66
   input list<tuple<Integer, Integer, SimCode.SimEqSystem>> in_a_simJac;
   input list<SimCode.SimVar> in_a_vars;
   input list<DAE.Exp> in_a_beqs;
+  input Integer in_a_index;
 
   output Tpl.Text out_txt;
   output Tpl.Text out_a_varDecls;
   output Tpl.Text out_a_preExp;
 algorithm
   (out_txt, out_a_varDecls, out_a_preExp) :=
-  matchcontinue(in_txt, in_items, in_a_varDecls, in_a_preExp, in_a_algs, in_a_disc, in_a_states, in_a_simJac, in_a_vars, in_a_beqs)
+  matchcontinue(in_txt, in_items, in_a_varDecls, in_a_preExp, in_a_algs, in_a_disc, in_a_states, in_a_simJac, in_a_vars, in_a_beqs, in_a_index)
     local
       Tpl.Text txt;
       list<DAE.Exp> rest;
@@ -1813,6 +1827,7 @@ algorithm
       list<tuple<Integer, Integer, SimCode.SimEqSystem>> a_simJac;
       list<SimCode.SimVar> a_vars;
       list<DAE.Exp> a_beqs;
+      Integer a_index;
       Integer x_i0;
       DAE.Exp i_exp;
       String ret_3;
@@ -1824,6 +1839,7 @@ algorithm
            {},
            a_varDecls,
            a_preExp,
+           _,
            _,
            _,
            _,
@@ -1841,10 +1857,13 @@ algorithm
            a_states,
            a_simJac,
            a_vars,
-           a_beqs )
+           a_beqs,
+           a_index )
       equation
         x_i0 = Tpl.getIteri_i0(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("gsl_vector_set(b,"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("gsl_vector_set(b"));
+        txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
         txt = Tpl.writeStr(txt, intString(x_i0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
         ret_0 = BackendQSS.getRHSVars(a_beqs, a_vars, a_simJac, a_states, a_disc, a_algs);
@@ -1854,7 +1873,7 @@ algorithm
         txt = Tpl.writeStr(txt, ret_3);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(");"));
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls, a_preExp) = lm_66(txt, rest, a_varDecls, a_preExp, a_algs, a_disc, a_states, a_simJac, a_vars, a_beqs);
+        (txt, a_varDecls, a_preExp) = lm_66(txt, rest, a_varDecls, a_preExp, a_algs, a_disc, a_states, a_simJac, a_vars, a_beqs, a_index);
       then (txt, a_varDecls, a_preExp);
 
     case ( txt,
@@ -1866,9 +1885,10 @@ algorithm
            a_states,
            a_simJac,
            a_vars,
-           a_beqs )
+           a_beqs,
+           a_index )
       equation
-        (txt, a_varDecls, a_preExp) = lm_66(txt, rest, a_varDecls, a_preExp, a_algs, a_disc, a_states, a_simJac, a_vars, a_beqs);
+        (txt, a_varDecls, a_preExp) = lm_66(txt, rest, a_varDecls, a_preExp, a_algs, a_disc, a_states, a_simJac, a_vars, a_beqs, a_index);
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
 end lm_66;
@@ -1884,13 +1904,14 @@ protected function lm_67
   input list<tuple<Integer, Integer, SimCode.SimEqSystem>> in_a_simJac;
   input list<SimCode.SimVar> in_a_vars;
   input list<DAE.Exp> in_a_beqs;
+  input Integer in_a_index;
 
   output Tpl.Text out_txt;
   output Tpl.Text out_a_varDecls;
   output Tpl.Text out_a_preExp;
 algorithm
   (out_txt, out_a_varDecls, out_a_preExp) :=
-  matchcontinue(in_txt, in_items, in_a_varDecls, in_a_preExp, in_a_algs, in_a_disc, in_a_states, in_a_simJac, in_a_vars, in_a_beqs)
+  matchcontinue(in_txt, in_items, in_a_varDecls, in_a_preExp, in_a_algs, in_a_disc, in_a_states, in_a_simJac, in_a_vars, in_a_beqs, in_a_index)
     local
       Tpl.Text txt;
       list<tuple<Integer, Integer, SimCode.SimEqSystem>> rest;
@@ -1902,6 +1923,7 @@ algorithm
       list<tuple<Integer, Integer, SimCode.SimEqSystem>> a_simJac;
       list<SimCode.SimVar> a_vars;
       list<DAE.Exp> a_beqs;
+      Integer a_index;
       DAE.Exp i_eq_exp;
       Integer i_col;
       Integer i_row;
@@ -1919,6 +1941,7 @@ algorithm
            _,
            _,
            _,
+           _,
            _ )
       then (txt, a_varDecls, a_preExp);
 
@@ -1931,9 +1954,12 @@ algorithm
            a_states,
            a_simJac,
            a_vars,
-           a_beqs )
+           a_beqs,
+           a_index )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("gsl_matrix_set(A, "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("gsl_matrix_set(A"));
+        txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
         txt = Tpl.writeStr(txt, intString(i_row));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
         txt = Tpl.writeStr(txt, intString(i_col));
@@ -1945,7 +1971,7 @@ algorithm
         txt = Tpl.writeStr(txt, ret_3);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(");"));
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls, a_preExp) = lm_67(txt, rest, a_varDecls, a_preExp, a_algs, a_disc, a_states, a_simJac, a_vars, a_beqs);
+        (txt, a_varDecls, a_preExp) = lm_67(txt, rest, a_varDecls, a_preExp, a_algs, a_disc, a_states, a_simJac, a_vars, a_beqs, a_index);
       then (txt, a_varDecls, a_preExp);
 
     case ( txt,
@@ -1957,9 +1983,10 @@ algorithm
            a_states,
            a_simJac,
            a_vars,
-           a_beqs )
+           a_beqs,
+           a_index )
       equation
-        (txt, a_varDecls, a_preExp) = lm_67(txt, rest, a_varDecls, a_preExp, a_algs, a_disc, a_states, a_simJac, a_vars, a_beqs);
+        (txt, a_varDecls, a_preExp) = lm_67(txt, rest, a_varDecls, a_preExp, a_algs, a_disc, a_states, a_simJac, a_vars, a_beqs, a_index);
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
 end lm_67;
@@ -1967,37 +1994,44 @@ end lm_67;
 protected function lm_68
   input Tpl.Text in_txt;
   input list<SimCode.SimVar> in_items;
+  input Integer in_a_index;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_items)
+  matchcontinue(in_txt, in_items, in_a_index)
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
+      Integer a_index;
       Integer x_i0;
 
     case ( txt,
-           {} )
+           {},
+           _ )
       then txt;
 
     case ( txt,
-           SimCode.SIMVAR(name = _) :: rest )
+           _ :: rest,
+           a_index )
       equation
         x_i0 = Tpl.getIteri_i0(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("*o"));
         txt = Tpl.writeStr(txt, intString(x_i0));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = gsl_vector_get(x, "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = gsl_vector_get(x"));
+        txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
         txt = Tpl.writeStr(txt, intString(x_i0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(");"));
         txt = Tpl.nextIter(txt);
-        txt = lm_68(txt, rest);
+        txt = lm_68(txt, rest, a_index);
       then txt;
 
     case ( txt,
-           _ :: rest )
+           _ :: rest,
+           a_index )
       equation
-        txt = lm_68(txt, rest);
+        txt = lm_68(txt, rest, a_index);
       then txt;
   end matchcontinue;
 end lm_68;
@@ -2041,7 +2075,7 @@ algorithm
                                     "#include <gsl/gsl_vector.h>\n",
                                     "#include <gsl/gsl_matrix.h>\n",
                                     "#include <gsl/gsl_linalg.h>\n",
-                                    "#include \"model.h\" // Parameters\n",
+                                    "#include \"parameters.h\" // Parameters\n",
                                     "\n",
                                     "void fsolve"
                                 }, false));
@@ -2057,53 +2091,92 @@ algorithm
         txt = Tpl.popIter(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ")\n",
-                                    "{\n",
-                                    "  gsl_matrix *A;\n",
-                                    "  gsl_vector *b,*x;\n",
-                                    "  gsl_permutation *p;\n"
+                                    "{\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("const int DIM = "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("gsl_matrix *A"));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ";\n",
+                                    "gsl_vector *b"
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",*x"));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ";\n",
+                                    "const int DIM = "
+                                }, false));
         ret_3 = listLength(i_beqs);
         txt = Tpl.writeStr(txt, intString(ret_3));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ";\n",
                                     "\n",
                                     "/* Alloc space */\n",
-                                    "A = gsl_matrix_alloc(DIM, DIM);\n",
-                                    "b = gsl_vector_alloc(DIM);\n",
-                                    "x = gsl_vector_alloc(DIM);\n",
-                                    "p = gsl_permutation_alloc(DIM);\n",
+                                    "A"
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    " = gsl_matrix_alloc(DIM, DIM);\n",
+                                    "b"
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    " = gsl_vector_alloc(DIM);\n",
+                                    "x"
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    " = gsl_vector_alloc(DIM);\n",
                                     "\n",
                                     "/* Fill A and B */\n"
                                 }, true));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        (txt, l_varDecls, l_preExp) = lm_66(txt, i_beqs, l_varDecls, l_preExp, a_algs, a_disc, a_states, i_simJac, i_vars, i_beqs);
+        (txt, l_varDecls, l_preExp) = lm_66(txt, i_beqs, l_varDecls, l_preExp, a_algs, a_disc, a_states, i_simJac, i_vars, i_beqs, i_index);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        (txt, l_varDecls, l_preExp) = lm_67(txt, i_simJac, l_varDecls, l_preExp, a_algs, a_disc, a_states, i_simJac, i_vars, i_beqs);
+        (txt, l_varDecls, l_preExp) = lm_67(txt, i_simJac, l_varDecls, l_preExp, a_algs, a_disc, a_states, i_simJac, i_vars, i_beqs, i_index);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "\n",
                                     "/* Solve system */\n",
-                                    "gsl_linalg_LU_solve(A,p,b,x);\n",
+                                    "gsl_linalg_HH_solve(A"
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",b"));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",x"));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ");\n",
                                     "\n",
                                     "/* Get x values out */\n"
                                 }, true));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_68(txt, i_vars);
+        txt = lm_68(txt, i_vars, i_index);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "\n",
                                     "/* Free structures */\n",
-                                    "gsl_vector_free(x);\n",
-                                    "gsl_vector_free(b);\n",
-                                    "gsl_permutation_free(p);\n",
-                                    "gsl_matrix_free(A);\n",
+                                    "gsl_vector_free(x"
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ");\n",
+                                    "gsl_vector_free(b"
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ");\n",
+                                    "gsl_matrix_free(A"
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ");\n",
                                     "\n"
                                 }, true));
         txt = Tpl.popBlock(txt);
