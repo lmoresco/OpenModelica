@@ -1,8 +1,0 @@
-perl /home/arupa162/trunk/build/share/omc/scripts/convert_lines.pl Main_main.c Main_main.conv.c.tmp
-gcc-4.4 -I"/home/arupa162/trunk/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Main_main.o Main_main.conv.c
-Main_main.c:3: warning: "MODELICA_ASSERT" redefined
-/home/arupa162/trunk/build/include/omc/openmodelica.h:267: note: this is the location of the previous definition
-Main_main.c:4: warning: "MODELICA_TERMINATE" redefined
-/home/arupa162/trunk/build/include/omc/openmodelica.h:270: note: this is the location of the previous definition
-gcc-4.4 -I"/home/arupa162/trunk/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Main_main_records.o Main_main_records.c
-gcc-4.4 -shared -o Main_main.so Main_main.o Main_main_records.o -lomcruntime -lexpat -lsqlite3 -llpsolve55_pic -lcolamd -lm -ldl  -I"/home/arupa162/trunk/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -L"/home/arupa162/trunk/build/lib/omc" -lSimulationRuntimeC -lexpat -lrt -lpthread -lm
