@@ -4,7 +4,7 @@
 // cflags:
 // teardown_command: rm -rf initializationTests.nonlinear_* _initializationTests.nonlinear_* output.log
 //
-// case for nonlinear problems with singular jacobian
+//  case for nonlinear problems
 //
 
 loadString("
@@ -12,7 +12,7 @@ within ;
 package initializationTests
   model nonlinear
     parameter Integer N = 3;
-    Real x[N](each min = 0, each start = 0, each fixed = false);
+    Real x[N](each min = 0, each start = 1, each fixed = false);
   initial equation
     for i in 1:N - 1 loop
       x[i] ^ i * x[i + 1] = i ^ i * (i + 1);
@@ -35,12 +35,14 @@ end initializationTests;
 ");
 getErrorString();
 
-simulate(initializationTests.nonlinear_03);
+simulate(initializationTests.nonlinear_03, startTime=0.0, stopTime=0.0);
+readFile("output.log");
 val(x[1], 0);
 val(x[2], 0);
 val(x[3], 0);
 
-simulate(initializationTests.nonlinear_05);
+simulate(initializationTests.nonlinear_05, startTime=0.0, stopTime=0.0);
+readFile("output.log");
 val(x[1], 0);
 val(x[2], 0);
 val(x[3], 0);
@@ -52,17 +54,19 @@ val(x[5], 0);
 // ""
 // record SimulationResult
 //     resultFile = "initializationTests.nonlinear_03_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.nonlinear_03', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.nonlinear_03', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
+// ""
 // 1.0
 // 2.0
 // 3.0
 // record SimulationResult
 //     resultFile = "initializationTests.nonlinear_05_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.nonlinear_05', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.nonlinear_05', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = ""
 // end SimulationResult;
+// ""
 // 1.0
 // 2.0
 // 3.0

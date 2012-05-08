@@ -3,7 +3,7 @@
 // status: correct
 // cflags:
 // teardown_command: rm -rf initializationTests.forest* _initializationTests.forest* output.log
-// 
+//
 //  case for initial scaling-coefficients
 //
 
@@ -25,11 +25,11 @@ package initializationTests
     parameter Real priceRabbit = 12;
     parameter Real priceSeason = 1000;
 
-  initial equation 
+  initial equation
     der(foxes) = 20;
     10000000000.0*value = 10000000000.0*11000;
 
-  equation 
+  equation
     der(rabbits) =  rabbits*g_r - rabbits*foxes*d_rf;
     der(foxes) = -foxes*d_f + rabbits*foxes*d_rf*g_fr;
     population = foxes+rabbits;

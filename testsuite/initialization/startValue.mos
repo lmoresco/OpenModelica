@@ -3,7 +3,7 @@
 // status: correct
 // cflags:
 // teardown_command: rm -rf initializationTests.startValue* _initializationTests.startValue* output.log
-// 
+//
 //  case for start-values
 //
 
@@ -13,9 +13,9 @@ package initializationTests
   model startValue
     Real x(start=-3);
     Real y(start=-3);
-  initial equation 
+  initial equation
     x^2 = 10;
-  equation 
+  equation
     der(x) = time;
     y = x;
   end startValue;

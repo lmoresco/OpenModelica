@@ -1,0 +1,100 @@
+// name: nonlinear2
+// keywords: initialization, nonlinear
+// status: correct
+// cflags:
+// teardown_command: rm -rf initializationTests.nonlinear2_* _initializationTests.nonlinear2_* output.log
+//
+//  case for nonlinear problems
+//
+
+loadString("
+within ;
+package initializationTests
+  model nonlinear
+    parameter Integer N = 49;
+    Real x[N](each min = 0.0, each start = 1.0, each fixed = false);
+  initial equation
+    for i in 1:N-1 loop
+      x[i] * x[i+1] = i*(i+1);
+    end for;
+    x[1] * x[N] = N;
+  equation
+    for i in 1:N loop
+      der(x[i]) = time;
+    end for;
+  end nonlinear;
+
+  model nonlinear2_03
+    extends nonlinear(N=3);
+  end nonlinear2_03;
+
+  model nonlinear2_05
+    extends nonlinear(N=5);
+  end nonlinear2_05;
+
+  model nonlinear2_49
+    extends nonlinear(N=49);
+  end nonlinear2_49;
+end initializationTests;
+");
+getErrorString();
+
+simulate(initializationTests.nonlinear2_03, startTime=0.0, stopTime=0.0);
+readFile("output.log");
+val(x[1], 0.0);
+val(x[2], 0.0);
+val(x[3], 0.0);
+
+simulate(initializationTests.nonlinear2_05, startTime=0.0, stopTime=0.0);
+readFile("output.log");
+val(x[1], 0.0);
+val(x[2], 0.0);
+val(x[3], 0.0);
+val(x[4], 0.0);
+val(x[5], 0.0);
+
+simulate(initializationTests.nonlinear2_49, startTime=0.0, stopTime=0.0, simflags="-iom kinsol");
+readFile("output.log");
+val(x[1], 0.0);
+val(x[2], 0.0);
+val(x[3], 0.0);
+val(x[47], 0.0);
+val(x[48], 0.0);
+val(x[49], 0.0);
+
+// Result:
+// true
+// ""
+// record SimulationResult
+//     resultFile = "initializationTests.nonlinear2_03_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.nonlinear2_03', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = ""
+// end SimulationResult;
+// ""
+// 1.0
+// 2.0
+// 3.0
+// record SimulationResult
+//     resultFile = "initializationTests.nonlinear2_05_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.nonlinear2_05', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = ""
+// end SimulationResult;
+// ""
+// 1.0
+// 2.0
+// 3.0
+// 4.0
+// 5.0
+// record SimulationResult
+//     resultFile = "initializationTests.nonlinear2_49_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.nonlinear2_49', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = '-iom kinsol'",
+//     messages = ""
+// end SimulationResult;
+// ""
+// 1.0
+// 2.0
+// 3.0
+// 47.0
+// 48.0
+// 49.0
+// endResult

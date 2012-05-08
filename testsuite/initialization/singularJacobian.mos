@@ -1,0 +1,75 @@
+// name: singularJacobian
+// keywords: initialization, singular jacobian
+// status: correct
+// cflags:
+// teardown_command: rm -rf initializationTests.singularJacobian_* _initializationTests.singularJacobian_* output.log
+//
+//  case for nonlinear problems with singular jacobian
+//
+
+loadString("
+within ;
+package initializationTests
+  model nonlinear
+    parameter Integer N = 3;
+    Real x[N](each min = 0, each start = 0, each fixed = false);
+  initial equation
+    for i in 1:N - 1 loop
+      x[i] ^ i * x[i + 1] = i ^ i * (i + 1);
+    end for;
+    x[N] ^ N * x[1] = N ^ N;
+  equation
+    for i in 1:N loop
+      der(x[i]) = time;
+    end for;
+  end nonlinear;
+
+  model singularJacobian_03
+    extends nonlinear(N=3);
+  end singularJacobian_03;
+
+  model singularJacobian_05
+    extends nonlinear(N=5);
+  end singularJacobian_05;
+end initializationTests;
+");
+getErrorString();
+
+simulate(initializationTests.singularJacobian_03, startTime=0.0, stopTime=0.0);
+readFile("output.log");
+val(x[1], 0);
+val(x[2], 0);
+val(x[3], 0);
+
+simulate(initializationTests.singularJacobian_05, startTime=0.0, stopTime=0.0);
+readFile("output.log");
+val(x[1], 0);
+val(x[2], 0);
+val(x[3], 0);
+val(x[4], 0);
+val(x[5], 0);
+
+// Result:
+// true
+// ""
+// record SimulationResult
+//     resultFile = "initializationTests.singularJacobian_03_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.singularJacobian_03', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = ""
+// end SimulationResult;
+// ""
+// 1.0
+// 2.0
+// 3.0
+// record SimulationResult
+//     resultFile = "initializationTests.singularJacobian_05_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.singularJacobian_05', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = ""
+// end SimulationResult;
+// ""
+// 1.0
+// 2.0
+// 3.0
+// 4.0
+// 5.0
+// endResult

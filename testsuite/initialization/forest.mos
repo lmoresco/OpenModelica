@@ -3,7 +3,7 @@
 // status: correct
 // cflags:
 // teardown_command: rm -rf initializationTests.forest_* _initializationTests.forest_* output.log
-// 
+//
 //  case for initialization of forest model
 //
 
@@ -25,11 +25,11 @@ package initializationTests
     parameter Real priceRabbit = 12;
     parameter Real priceSeason = 1000;
 
-  initial equation 
+  initial equation
     der(foxes) = 20;
     value = 11000;
 
-  equation 
+  equation
     der(rabbits) =  rabbits*g_r - rabbits*foxes*d_rf;
     der(foxes) = -foxes*d_f + rabbits*foxes*d_rf*g_fr;
     population = foxes+rabbits;
@@ -86,4 +86,3 @@ val(rabbits, 0.0);
 // 6.051192281038914
 // 841.0267521607786
 // endResult
-

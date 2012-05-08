@@ -1,25 +1,27 @@
 TEST = ../rtest -v 
 
 TESTFILES = \
+minvalue.mos\
 gaspropreties.mos \
+nonlinear.mos \
+nonlinear2.mos \
 forest.mos \
 startValue.mos \
 scaling1.mos \
 scaling2.mos \
-nominal.mos
+nominal.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES = \
-minvalue.mos \
-nonlinear.mos
+singularJacobian.mos \
 
 # Dependency files that are not .mo .mos or Makefile
 # Add them here or they will be cleaned.
 DEPENDENCIES = \
 *.mo \
 *.mos \
-Makefile 
+Makefile \
 
 
 CLEAN = `ls | grep -w -v -f deps.tmp`
