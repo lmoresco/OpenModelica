@@ -13,7 +13,7 @@ builddir_inc=$(top_builddir)/build/include/omc
 
 CC = gcc
 FC = g77
-CFLAGS = -O2 -falign-functions -msse2 -mfpmath=sse
+CFLAGS = -O2 -falign-functions -msse2 -mfpmath=sse -I$(OMDEV)/lib/3rdParty/Sundials/include
 
 LIBMAKEFILE = Makefile.omdev.mingw
 INTERACTIVELIBS = 
@@ -22,8 +22,5 @@ LIBF2C=simulation/libf2c/libf2c.a
 EXTERNALCMAKEFILE=Makefile.omdev.mingw 
 
 include Makefile.common
-
-omdevinstall:
-	cp omdev_qtdeps/*.a ${builddir_lib}
 	
 
