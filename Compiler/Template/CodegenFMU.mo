@@ -7384,14 +7384,17 @@ algorithm
         txt = lm_207(txt, i_makefileParams_includes);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("LDFLAGS=-L\""));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "SUNDIALSLIBS=-lsundials_kinsol -lsundials_nvecserial -llapack\n",
+                                    "LDFLAGS=-L\""
+                                }, false));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc\" -lSimulationRuntimeC -linteractive "));
         txt = Tpl.writeStr(txt, i_makefileParams_ldflags);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, i_makefileParams_senddatalibs);
-        txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    " $(SUNDIALSLIBS)\n",
                                     "PERL=perl\n",
                                     "MAINFILE="
                                 }, false));
