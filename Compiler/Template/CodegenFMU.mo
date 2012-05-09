@@ -7259,12 +7259,14 @@ algorithm
 
     case ( txt,
            false )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-llapack"));
       then txt;
 
     case ( txt,
            _ )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-llapack-mingw"));
       then txt;
   end matchcontinue;
 end fun_208;
@@ -7292,6 +7294,29 @@ algorithm
   end matchcontinue;
 end fun_209;
 
+protected function fun_210
+  input Tpl.Text in_txt;
+  input Boolean in_mArg;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_mArg)
+    local
+      Tpl.Text txt;
+
+    case ( txt,
+           false )
+      then txt;
+
+    case ( txt,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv"));
+      then txt;
+  end matchcontinue;
+end fun_210;
+
 public function fmuMakefile
   input Tpl.Text in_txt;
   input SimCode.SimCode in_a_simCode;
@@ -7317,6 +7342,7 @@ algorithm
       Option<SimCode.SimulationSettings> i_sopt;
       list<String> i_makefileParams_libs;
       String i_modelInfo_directory;
+      Boolean ret_8;
       Boolean ret_7;
       Boolean ret_6;
       Tpl.Text l_compilecmds;
@@ -7384,10 +7410,11 @@ algorithm
         txt = lm_207(txt, i_makefileParams_includes);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "SUNDIALSLIBS=-lsundials_kinsol -lsundials_nvecserial -llapack\n",
-                                    "LDFLAGS=-L\""
-                                }, false));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("SUNDIALSLIBS=-lsundials_kinsol -lsundials_nvecserial "));
+        ret_6 = stringEq(i_makefileParams_platform, "win32");
+        txt = fun_208(txt, ret_6);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("LDFLAGS=-L\""));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc\" -lSimulationRuntimeC -linteractive "));
         txt = Tpl.writeStr(txt, i_makefileParams_ldflags);
@@ -7400,16 +7427,16 @@ algorithm
                                 }, false));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU"));
-        ret_6 = Config.acceptMetaModelicaGrammar();
-        txt = fun_208(txt, ret_6);
+        ret_7 = Config.acceptMetaModelicaGrammar();
+        txt = fun_209(txt, ret_7);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".c\n",
                                     "MAINOBJ="
                                 }, false));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU"));
-        ret_7 = Config.acceptMetaModelicaGrammar();
-        txt = fun_209(txt, ret_7);
+        ret_8 = Config.acceptMetaModelicaGrammar();
+        txt = fun_210(txt, ret_8);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".o\n",
                                     "\n",
