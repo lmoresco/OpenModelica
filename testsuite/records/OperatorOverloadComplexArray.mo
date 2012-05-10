@@ -409,22 +409,22 @@ end Test;
 // end Test;
 // [OperatorOverloadComplexArray.mo:173:4-173:19:writable] Error: Function argument im was not given by the function call, and does not have a default value.
 // [OperatorOverloadComplexArray.mo:184:4-184:16:writable] Warning: Operator Overloading: 
-// - No excat match overloading found for operator ' + ' on record array of type: 'Complex'
+// - No exact match overloading found for operator ' + ' on record array of type: 'Complex'
 // - Automatically expanded using operator function: .Complex.'+'.
 // [OperatorOverloadComplexArray.mo:189:4-189:16:writable] Warning: Operator Overloading: 
-// - No excat match overloading found for operator ' / ' on record array of type: 'Complex'
+// - No exact match overloading found for operator ' / ' on record array of type: 'Complex'
 // - Automatically expanded using operator function: .Complex.'/'.
 // [OperatorOverloadComplexArray.mo:190:4-190:16:writable] Warning: Operator Overloading: 
-// - No excat match overloading found for operator ' == ' on record array of type: 'Complex'
+// - No exact match overloading found for operator ' == ' on record array of type: 'Complex'
 // - Automatically expanded using operator function: .Complex.'=='.
 // [OperatorOverloadComplexArray.mo:191:4-191:16:writable] Warning: Operator Overloading: 
-// - No excat match overloading found for operator ' ^ ' on record array of type: 'Complex'
+// - No exact match overloading found for operator ' ^ ' on record array of type: 'Complex'
 // - Automatically expanded using operator function: .Complex.'^'.
 // [OperatorOverloadComplexArray.mo:197:4-197:21:writable] Warning: Operator Overloading: 
-// - No excat match overloading found for operator ' + ' on record array of type: 'Complex'
+// - No exact match overloading found for operator ' + ' on record array of type: 'Complex'
 // - Automatically expanded using operator function: .Complex.'+'.
 // [OperatorOverloadComplexArray.mo:207:4-207:17:writable] Warning: Operator Overloading: 
-// - No excat match overloading found for operator ' and ' on record array of type: 'Complex'
+// - No exact match overloading found for operator ' and ' on record array of type: 'Complex'
 // - Automatically expanded using operator function: .Complex.'and'.
 // 
 // endResult
