@@ -45,6 +45,6 @@ end OperatorIllegal;
 // equation
 //   r1.r = 1.0;
 //   r2.r = 2.0;
-//   r3 = Rec.'+'(r1,r2);
+//   r3 = Rec.'+'(r1, r2);
 // end OperatorIllegal;
 // endResult

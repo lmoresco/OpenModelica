@@ -34,7 +34,7 @@ end PolynomialEvaluator2;
 // algorithm
 //   y := 0.0;
 //   xpower := 1.0;
-//   for i in 1:size(a,1) loop
+//   for i in 1:size(a, 1) loop
 //     y := y + a[i] * xpower;
 //     xpower := xpower * x;
 //   end for;
@@ -46,6 +46,6 @@ end PolynomialEvaluator2;
 //   Real inVector[3] = 5.0;
 //   Real result;
 // equation
-//   result = polyeval({inVector[1],inVector[2],inVector[3]},1);
+//   result = polyeval({inVector[1], inVector[2], inVector[3]}, 1);
 // end PolynomialEvaluator2;
 // endResult

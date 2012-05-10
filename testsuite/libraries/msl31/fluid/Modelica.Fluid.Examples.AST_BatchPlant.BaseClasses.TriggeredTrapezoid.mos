@@ -29,7 +29,7 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TriggeredTrapezoid
 // equation
 //   y_high = time < T;
 //   y = if y_high then endValue - (T - time) * rate else endValue;
-//   when {initial(),u,not u} then
+//   when {initial(), u, not u} then
 //   endValue = if u then offset + amplitude else offset;
 //   rate = if u and rising > 0.0 then amplitude / rising else if not u and falling > 0.0 then (-amplitude) / falling else 0.0;
 //   T = if u and not rising > 0.0 or not u and not falling > 0.0 or not abs(amplitude) > 0.0 or initial() then time else time + (endValue - pre(y)) / rate;

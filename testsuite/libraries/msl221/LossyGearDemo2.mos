@@ -36,25 +36,25 @@ getErrorString();
 //   protected Real y1;
 //   protected Real y2;
 // algorithm
-//   n := size(table,1);
+//   n := size(table, 1);
 //   if n <= 1 then
-//     y := table[1,icol];
+//     y := table[1, icol];
 //   else
 //     if u <= table[1,1] then
 //       i := 1;
 //     else
 //       i := 2;
-//       while i < n and u >= table[i,1] loop
+//       while i < n and u >= table[i, 1] loop
 //         i := 1 + i;
 //       end while;
 //       i := i + -1;
 //     end if;
-//     u1 := table[i,1];
-//     u2 := table[1 + i,1];
-//     y1 := table[i,icol];
-//     y2 := table[1 + i,icol];
+//     u1 := table[i, 1];
+//     u2 := table[1 + i, 1];
+//     y1 := table[i, icol];
+//     y2 := table[1 + i, icol];
 //     assert( u2 > u1, \"Table index must be increasing\");
-//     y := y1 + (y2 - y1 * (u - u1)) / (u2 - u1);
+//     y := y1 + (y2 - y1) * (u - u1) / (u2 - u1);
 //   end if;
 // end Modelica.Math.tempInterpol1;
 // 
@@ -62,48 +62,48 @@ getErrorString();
 //   input Real u \"input value (first column of table)\";
 //   input Real[:, :] table \"table to be interpolated\";
 //   input Integer[:] icol \"column(s) of table to be interpolated\";
-//   output Real[1, size(icol,1)] y \"interpolated input value(s) (column(s) icol of table)\";
+//   output Real[1, size(icol, 1)] y \"interpolated input value(s) (column(s) icol of table)\";
 //   protected Integer i;
 //   protected Integer n \"number of rows of table\";
 //   protected Real u1;
 //   protected Real u2;
-//   protected Real[1, size(icol,1)] y1;
-//   protected Real[1, size(icol,1)] y2;
+//   protected Real[1, size(icol, 1)] y1;
+//   protected Real[1, size(icol, 1)] y2;
 // algorithm
-//   n := size(table,1);
+//   n := size(table, 1);
 //   if n <= 1 then
-//     y := transpose(promote(table[1,icol],1));
+//     y := transpose(promote(table[1,icol], 1));
 //   else
 //     if u <= table[1,1] then
 //       i := 1;
 //     else
 //       i := 2;
-//       while i < n and u >= table[i,1] loop
+//       while i < n and u >= table[i, 1] loop
 //         i := 1 + i;
 //       end while;
 //       i := i + -1;
 //     end if;
-//     u1 := table[i,1];
-//     u2 := table[1 + i,1];
-//     y1 := transpose(promote(table[i,icol],1));
-//     y2 := transpose(promote(table[1 + i,icol],1));
+//     u1 := table[i, 1];
+//     u2 := table[1 + i, 1];
+//     y1 := transpose(promote(table[i,icol], 1));
+//     y2 := transpose(promote(table[1 + i,icol], 1));
 //     assert( u2 > u1, \"Table index must be increasing\");
-//     y := y1 + (y2 - y1 * (u - u1)) / (u2 - u1);
+//     y := y1 + (y2 - y1) * (u - u1) / (u2 - u1);
 //   end if;
 // end Modelica.Math.tempInterpol2;
 // 
 // function Modelica.Mechanics.Rotational.LossyGear.equal \"Compare whether two Real matrices are identical\"
 //   input Real[:, :] A;
 //   input Real[:, :] B;
-//   input Real eps = 1e-15 \"two numbers r1, r2 are identical if abs(r1-r2) <= eps\";
+//   input Real eps = 0.000000000000001 \"two numbers r1, r2 are identical if abs(r1-r2) <= eps\";
 //   output Boolean result;
 // algorithm
 //   result := false;
-//   if size(A,1) == size(B,1) and size(A,2) == size(B,2) then
+//   if size(A, 1) == size(B, 1) and size(A, 2) == size(B, 2) then
 //     result := true;
-//     for i in 1:size(A,1) loop
-//       for j in 1:size(A,2) loop
-//         if abs(A[i,j] - B[i,j]) >= eps then
+//     for i in 1:size(A, 1) loop
+//       for j in 1:size(A, 2) loop
+//         if abs(A[i, j] - B[i, j]) >= eps then
 //           result := false;
 //         end if;
 //       end for;
@@ -201,7 +201,7 @@ getErrorString();
 //   parameter Real DriveSine.phase(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") = 0.0 \"Phase of sine wave\";
 //   parameter Real DriveSine.offset = 0.0 \"Offset of output signal\";
 //   parameter Real DriveSine.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
-//   protected constant Real DriveSine.pi = 3.14159265358979;
+//   protected constant Real DriveSine.pi = 3.141592653589793;
 //   output Real load.y \"Connector of Real output signal\";
 //   parameter Real load.height = 5.0 \"Height of ramps\";
 //   parameter Real load.duration(min = 1e-60) = 2.0 \"Durations of ramp\";
@@ -245,8 +245,8 @@ getErrorString();
 //   Integer bearingFriction.mode(min = -1, max = 3, start = 3, fixed = true);
 // equation
 //   assert(abs(gear.i) > 0.0,\"Error in initialization of LossyGear: i may not be zero\");
-//   gear.ideal = Modelica.Mechanics.Rotational.LossyGear.equal({{gear.lossTable[1,1],gear.lossTable[1,2],gear.lossTable[1,3],gear.lossTable[1,4],gear.lossTable[1,5]}},{{0.0,1.0,1.0,0.0,0.0}},1e-15);
-//   gear.interpolation_result = if gear.ideal then {{1.0,1.0,0.0,0.0}} else Modelica.Math.tempInterpol2(abs(gear.w_a),{{gear.lossTable[1,1],gear.lossTable[1,2],gear.lossTable[1,3],gear.lossTable[1,4],gear.lossTable[1,5]}},{2,3,4,5});
+//   gear.ideal = Modelica.Mechanics.Rotational.LossyGear.equal({{gear.lossTable[1,1], gear.lossTable[1,2], gear.lossTable[1,3], gear.lossTable[1,4], gear.lossTable[1,5]}}, {{0.0, 1.0, 1.0, 0.0, 0.0}}, 0.000000000000001);
+//   gear.interpolation_result = if gear.ideal then {{1.0, 1.0, 0.0, 0.0}} else Modelica.Math.tempInterpol2(abs(gear.w_a), {{gear.lossTable[1,1], gear.lossTable[1,2], gear.lossTable[1,3], gear.lossTable[1,4], gear.lossTable[1,5]}}, {2, 3, 4, 5});
 //   gear.eta_mf1 = gear.interpolation_result[1,1];
 //   gear.eta_mf2 = gear.interpolation_result[1,2];
 //   gear.tau_bf1 = abs(gear.interpolation_result[1,3]);
@@ -269,7 +269,7 @@ getErrorString();
 //   gear.a_a = gear.unitAcceleration * (if gear.locked then 0.0 else gear.sa + (-gear.tauLoss) / gear.unitTorque);
 //   gear.mode = if gear.ideal then 2 else if (pre(gear.mode) == 1 or gear.startForward) and gear.w_a > 0.0 then 1 else if (pre(gear.mode) == -1 or gear.startBackward) and gear.w_a < 0.0 then -1 else 0;
 //   gear.bearing.phi = 0.0;
-//   0.0 = gear.flange_a.tau + (gear.flange_b.tau + gear.tau_support);
+//   0.0 = gear.flange_a.tau + gear.flange_b.tau + gear.tau_support;
 //   gear.phi_a = gear.flange_a.phi - gear.bearing.phi;
 //   gear.phi_b = gear.flange_b.phi - gear.bearing.phi;
 //   Inertia1.w = der(Inertia1.phi);
@@ -286,9 +286,9 @@ getErrorString();
 //   torque1.bearing.phi = 0.0;
 //   torque2.flange_b.tau = -torque2.tau;
 //   torque2.bearing.phi = 0.0;
-//   DriveSine.y = DriveSine.offset + (if time < DriveSine.startTime then 0.0 else DriveSine.amplitude * sin(6.28318530717959 * (DriveSine.freqHz * (time - DriveSine.startTime)) + DriveSine.phase));
-//   load.y = load.offset + (if time < load.startTime then 0.0 else if time < load.startTime + load.duration then ((time - load.startTime) * load.height) / load.duration else load.height);
-//   bearingFriction.tau0 = Modelica.Math.tempInterpol1(0.0,{{bearingFriction.tau_pos[1,1],bearingFriction.tau_pos[1,2]},{bearingFriction.tau_pos[2,1],bearingFriction.tau_pos[2,2]}},2);
+//   DriveSine.y = DriveSine.offset + (if time < DriveSine.startTime then 0.0 else DriveSine.amplitude * sin(6.283185307179586 * DriveSine.freqHz * (time - DriveSine.startTime) + DriveSine.phase));
+//   load.y = load.offset + (if time < load.startTime then 0.0 else if time < load.startTime + load.duration then (time - load.startTime) * load.height / load.duration else load.height);
+//   bearingFriction.tau0 = Modelica.Math.tempInterpol1(0.0, {{bearingFriction.tau_pos[1,1], bearingFriction.tau_pos[1,2]}, {bearingFriction.tau_pos[2,1], bearingFriction.tau_pos[2,2]}}, 2);
 //   bearingFriction.tau0_max = bearingFriction.peak * bearingFriction.tau0;
 //   bearingFriction.free = false;
 //   bearingFriction.phi = bearingFriction.phi_a;
@@ -297,14 +297,14 @@ getErrorString();
 //   bearingFriction.a = der(bearingFriction.w);
 //   bearingFriction.w_relfric = bearingFriction.w;
 //   bearingFriction.a_relfric = bearingFriction.a;
-//   0.0 = bearingFriction.flange_a.tau + (bearingFriction.flange_b.tau - bearingFriction.tau);
-//   bearingFriction.tau = if bearingFriction.locked then bearingFriction.sa * bearingFriction.unitTorque else if bearingFriction.startForward then Modelica.Math.tempInterpol1(bearingFriction.w,{{bearingFriction.tau_pos[1,1],bearingFriction.tau_pos[1,2]},{bearingFriction.tau_pos[2,1],bearingFriction.tau_pos[2,2]}},2) else if bearingFriction.startBackward then -Modelica.Math.tempInterpol1(-bearingFriction.w,{{bearingFriction.tau_pos[1,1],bearingFriction.tau_pos[1,2]},{bearingFriction.tau_pos[2,1],bearingFriction.tau_pos[2,2]}},2) else if pre(bearingFriction.mode) == 1 then Modelica.Math.tempInterpol1(bearingFriction.w,{{bearingFriction.tau_pos[1,1],bearingFriction.tau_pos[1,2]},{bearingFriction.tau_pos[2,1],bearingFriction.tau_pos[2,2]}},2) else -Modelica.Math.tempInterpol1(-bearingFriction.w,{{bearingFriction.tau_pos[1,1],bearingFriction.tau_pos[1,2]},{bearingFriction.tau_pos[2,1],bearingFriction.tau_pos[2,2]}},2);
+//   0.0 = bearingFriction.flange_a.tau + bearingFriction.flange_b.tau - bearingFriction.tau;
+//   bearingFriction.tau = if bearingFriction.locked then bearingFriction.sa * bearingFriction.unitTorque else if bearingFriction.startForward then Modelica.Math.tempInterpol1(bearingFriction.w, {{bearingFriction.tau_pos[1,1], bearingFriction.tau_pos[1,2]}, {bearingFriction.tau_pos[2,1], bearingFriction.tau_pos[2,2]}}, 2) else if bearingFriction.startBackward then -Modelica.Math.tempInterpol1(-bearingFriction.w, {{bearingFriction.tau_pos[1,1], bearingFriction.tau_pos[1,2]}, {bearingFriction.tau_pos[2,1], bearingFriction.tau_pos[2,2]}}, 2) else if pre(bearingFriction.mode) == 1 then Modelica.Math.tempInterpol1(bearingFriction.w, {{bearingFriction.tau_pos[1,1], bearingFriction.tau_pos[1,2]}, {bearingFriction.tau_pos[2,1], bearingFriction.tau_pos[2,2]}}, 2) else -Modelica.Math.tempInterpol1(-bearingFriction.w, {{bearingFriction.tau_pos[1,1], bearingFriction.tau_pos[1,2]}, {bearingFriction.tau_pos[2,1], bearingFriction.tau_pos[2,2]}}, 2);
 //   bearingFriction.bearing.phi = 0.0;
-//   0.0 = bearingFriction.flange_a.tau + (bearingFriction.flange_b.tau + bearingFriction.tau_support);
+//   0.0 = bearingFriction.flange_a.tau + bearingFriction.flange_b.tau + bearingFriction.tau_support;
 //   bearingFriction.phi_a = bearingFriction.flange_a.phi - bearingFriction.bearing.phi;
 //   bearingFriction.phi_b = bearingFriction.flange_b.phi - bearingFriction.bearing.phi;
 //   bearingFriction.startForward = pre(bearingFriction.mode) == 0 and (bearingFriction.sa > bearingFriction.tau0_max or pre(bearingFriction.startForward) and bearingFriction.sa > bearingFriction.tau0) or pre(bearingFriction.mode) == -1 and bearingFriction.w_relfric > bearingFriction.w_small or initial() and bearingFriction.w_relfric > 0.0;
-//   bearingFriction.startBackward = pre(bearingFriction.mode) == 0 and (bearingFriction.sa < -bearingFriction.tau0_max or pre(bearingFriction.startBackward) and bearingFriction.sa < -bearingFriction.tau0) or pre(bearingFriction.mode) == 1 and bearingFriction.w_relfric < -bearingFriction.w_small or initial() and bearingFriction.w_relfric < 0.0;
+//   bearingFriction.startBackward = pre(bearingFriction.mode) == 0 and (bearingFriction.sa < (-bearingFriction.tau0_max) or pre(bearingFriction.startBackward) and bearingFriction.sa < (-bearingFriction.tau0)) or pre(bearingFriction.mode) == 1 and bearingFriction.w_relfric < (-bearingFriction.w_small) or initial() and bearingFriction.w_relfric < 0.0;
 //   bearingFriction.locked = not bearingFriction.free and not (pre(bearingFriction.mode) == 1 or bearingFriction.startForward or pre(bearingFriction.mode) == -1 or bearingFriction.startBackward);
 //   bearingFriction.a_relfric = bearingFriction.unitAngularAcceleration * (if bearingFriction.locked then 0.0 else if bearingFriction.free then bearingFriction.sa else if bearingFriction.startForward then bearingFriction.sa + (-bearingFriction.tau0_max) / bearingFriction.unitTorque else if bearingFriction.startBackward then bearingFriction.sa + bearingFriction.tau0_max / bearingFriction.unitTorque else if pre(bearingFriction.mode) == 1 then bearingFriction.sa + (-bearingFriction.tau0) / bearingFriction.unitTorque else bearingFriction.sa + bearingFriction.tau0 / bearingFriction.unitTorque);
 //   bearingFriction.mode = if bearingFriction.free then 2 else if (pre(bearingFriction.mode) == 1 or pre(bearingFriction.mode) == 2 or bearingFriction.startForward) and bearingFriction.w_relfric > 0.0 then 1 else if (pre(bearingFriction.mode) == -1 or pre(bearingFriction.mode) == 2 or bearingFriction.startBackward) and bearingFriction.w_relfric < 0.0 then -1 else 0;

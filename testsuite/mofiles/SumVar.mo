@@ -35,6 +35,6 @@ end SumVar;
 //   Integer i[3] = 3;
 //   Integer j;
 // equation
-//   j = mySum(3,{i[1],i[2],i[3]});
+//   j = mySum(3, {i[1], i[2], i[3]});
 // end SumVar;
 // endResult

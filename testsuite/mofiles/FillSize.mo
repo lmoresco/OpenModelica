@@ -26,12 +26,12 @@ end FillSize;
 // Result:
 // function z
 //   input Real[:] B;
-//   output Real[size(B,1)] A = fill(1.0,size(B,1));
+//   output Real[size(B, 1)] A = fill(1.0, size(B, 1));
 // end z;
 // 
 // function z2
 //   input Real[:, :] B;
-//   output Real[size(B,1), size(B,2)] A = fill(0.0,size(B,1),size(B,2));
+//   output Real[size(B, 1), size(B, 2)] A = fill(0.0, size(B, 1), size(B, 2));
 // end z2;
 // 
 // class FillSize

@@ -41,7 +41,7 @@ end TupleSingleAssign;
 //   Real a;
 //   Real b;
 // equation
-//   (b,_,_) = tuple_ret(time);
+//   (b, _, _) = tuple_ret(time);
 // algorithm
 //   (a, _, _) := tuple_ret(time);
 // end TupleSingleAssign;

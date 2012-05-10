@@ -50,7 +50,7 @@ end HeatTankExpanded;
 //   inlet.temp = 25.0;
 //   Area * der(level) = inlet.volumeFlowRate + outlet.volumeFlowRate;
 //   outlet.pressure = inlet.pressure;
-//   Area * (level * der(temp)) = inlet.volumeFlowRate * inlet.temp + outlet.volumeFlowRate * outlet.temp;
+//   Area * level * der(temp) = inlet.volumeFlowRate * inlet.temp + outlet.volumeFlowRate * outlet.temp;
 //   outlet.temp = temp;
 //   outlet.volumeFlowRate = 2.0;
 //   inlet.volumeFlowRate = 0.0;

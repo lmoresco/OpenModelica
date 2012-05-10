@@ -137,7 +137,7 @@ end Circuit1;
 //   L.v = L.p.v - L.n.v;
 //   0.0 = L.p.i + L.n.i;
 //   L.i = L.p.i;
-//   AC.v = AC.VA * sin(6.283185307179586 * (AC.f * time));
+//   AC.v = AC.VA * sin(6.283185307179586 * AC.f * time);
 //   AC.v = AC.p.v - AC.n.v;
 //   0.0 = AC.p.i + AC.n.i;
 //   AC.i = AC.p.i;

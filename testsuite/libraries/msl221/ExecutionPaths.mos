@@ -15,7 +15,7 @@ getErrorString();
 //   output Boolean result;
 // algorithm
 //   result := true;
-//   for i in 1:size(b,1) loop
+//   for i in 1:size(b, 1) loop
 //     result := result and b[i];
 //   end for;
 // end Modelica.StateGraph.Temporary.allTrue;
@@ -25,7 +25,7 @@ getErrorString();
 //   output Boolean result;
 // algorithm
 //   result := false;
-//   for i in 1:size(b,1) loop
+//   for i in 1:size(b, 1) loop
 //     result := result or b[i];
 //   end for;
 // end Modelica.StateGraph.Temporary.anyTrue;
@@ -522,8 +522,8 @@ getErrorString();
 //   alternative.join[1].occupied = alternative.outPort.occupied;
 //   alternative.join[2].occupied = alternative.outPort.occupied;
 //   alternative.join[3].occupied = alternative.outPort.occupied;
-//   alternative.inPort.reset = Modelica.StateGraph.Temporary.anyTrue({alternative.split[1].reset,alternative.split[2].reset,alternative.split[3].reset});
-//   alternative.outPort.set = Modelica.StateGraph.Temporary.anyTrue({alternative.join[1].set,alternative.join[2].set,alternative.join[3].set});
+//   alternative.inPort.reset = Modelica.StateGraph.Temporary.anyTrue({alternative.split[1].reset, alternative.split[2].reset, alternative.split[3].reset});
+//   alternative.outPort.set = Modelica.StateGraph.Temporary.anyTrue({alternative.join[1].set, alternative.join[2].set, alternative.join[3].set});
 //   assert(true,\"Connector inPort is not connected to exactly one other connector\");
 //   assert(true,\"Connector outPort is not connected to exactly one other connector\");
 //   assert(true,\"Connector split[1] is not connected to exactly one other connector\");
@@ -534,8 +534,8 @@ getErrorString();
 //   Parallel1.split[2].set = Parallel1.inPort.set;
 //   Parallel1.join[1].reset = Parallel1.outPort.reset;
 //   Parallel1.join[2].reset = Parallel1.outPort.reset;
-//   Parallel1.inPort.occupied = Modelica.StateGraph.Temporary.anyTrue({Parallel1.split[1].occupied,Parallel1.split[2].occupied});
-//   Parallel1.outPort.available = Modelica.StateGraph.Temporary.allTrue({Parallel1.join[1].available,Parallel1.join[2].available});
+//   Parallel1.inPort.occupied = Modelica.StateGraph.Temporary.anyTrue({Parallel1.split[1].occupied, Parallel1.split[2].occupied});
+//   Parallel1.outPort.available = Modelica.StateGraph.Temporary.allTrue({Parallel1.join[1].available, Parallel1.join[2].available});
 //   stateGraphRoot.subgraphStatePort.activeSteps + step0.subgraphStatePort.activeSteps + step1.subgraphStatePort.activeSteps + step6.subgraphStatePort.activeSteps + step2.subgraphStatePort.activeSteps + step3.subgraphStatePort.activeSteps + step4.subgraphStatePort.activeSteps + step5.subgraphStatePort.activeSteps + step4a.subgraphStatePort.activeSteps = 0.0;
 //   Parallel1.split[1].occupied = step2.inPort[1].occupied;
 //   Parallel1.split[1].set = step2.inPort[1].set;

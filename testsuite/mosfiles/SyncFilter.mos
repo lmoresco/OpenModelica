@@ -63,9 +63,9 @@ val(syncFilter.y, 6.2*10e-6);
 //   syncFilter.x[2] = syncFilter.xext[2];
 //   syncFilter.x[3] = syncFilter.xext[3];
 //   syncFilter.x[4] = syncFilter.xext[4];
-//   syncFilter.y = syncFilter.b[1] * syncFilter.xext[1] + (syncFilter.b[2] * syncFilter.xext[2] + (syncFilter.b[3] * syncFilter.xext[3] + (syncFilter.b[4] * syncFilter.xext[4] + syncFilter.b[5] * syncFilter.xext[5])));
+//   syncFilter.y = syncFilter.b[1] * syncFilter.xext[1] + syncFilter.b[2] * syncFilter.xext[2] + syncFilter.b[3] * syncFilter.xext[3] + syncFilter.b[4] * syncFilter.xext[4] + syncFilter.b[5] * syncFilter.xext[5];
 //   end when;
-//   syncFilter.sampleTrigger = sample(syncFilter.startTime,syncFilter.samplePeriod);
+//   syncFilter.sampleTrigger = sample(syncFilter.startTime, syncFilter.samplePeriod);
 //   when syncFilter.sampleTrigger then
 //   syncFilter.firstTrigger = time <= syncFilter.startTime + syncFilter.samplePeriod / 2.0;
 //   end when;

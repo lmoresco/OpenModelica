@@ -1,4 +1,4 @@
-TEST = ../rtest -v
+TEST = ../rtest -b
 
 TESTFILES = \
 DefaultComponentName.mos \

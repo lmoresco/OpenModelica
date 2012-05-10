@@ -96,6 +96,6 @@ Modelica.Math.Matrices.inv([1,0;0,1]); getErrorString();
 // 
 // "
 // ""
-// {{1.0,0.0},{0.0,1.0}}
+// {{1.0,-0.0},{0.0,1.0}}
 // ""
 // endResult

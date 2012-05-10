@@ -29,7 +29,7 @@ end joinThreeVectors;
 //   input Real[:] v1;
 //   input Real[:] v2;
 //   input Real[:] v3;
-//   output Real[(size(v1,1)) + ((size(v2,1)) + (size(v3,1)))] vres;
+//   output Real[size(v1, 1) + size(v2, 1) + size(v3, 1)] vres;
 // 
 //   external "C" join3vec(v1, v2, v3, vres, size(v1, 1), size(v2, 1), size(v3, 1));
 // end joinThreeVectors2;
@@ -54,6 +54,6 @@ end joinThreeVectors;
 //   Real x[8];
 //   Real x[9];
 // algorithm
-//   x := joinThreeVectors2({a[1],a[2]},{b[1],b[2],b[3]},{c[1],c[2],c[3],c[4]});
+//   x := joinThreeVectors2({a[1], a[2]}, {b[1], b[2], b[3]}, {c[1], c[2], c[3], c[4]});
 // end joinThreeVectors;
 // endResult

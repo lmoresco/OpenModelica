@@ -19,13 +19,13 @@ getErrorString();
 //   output Boolean y \"Value of y at simulationStartTime\";
 //   protected Real t_last(quantity = \"Time\", unit = \"s\");
 //   protected Integer j;
-//   protected Integer n = size(table,1) \"Number of table points\";
+//   protected Integer n = size(table, 1) \"Number of table points\";
 // algorithm
-//   if size(table,1) == 0 then
+//   if size(table, 1) == 0 then
 //     index := 0;
 //     nextTime := -1e+60;
 //     y := startValue;
-//   elseif size(table,1) == 1 then
+//   elseif size(table, 1) == 1 then
 //     index := 1;
 //     if table[1] > simulationStartTime then
 //       nextTime := table[1];
@@ -37,7 +37,7 @@ getErrorString();
 //   else
 //     t_last := table[1];
 //     for i in 2:n loop
-//       assert( table[i] > t_last, \"Time values of table not strict monotonically increasing: table[\" + String(i + -1,0,true) + \"] = \" + String(table[i + -1],0,true,6) + \"table[\" + String(i,0,true) + \"] = \" + String(table[i],0,true,6));
+//       assert( table[i] > t_last, \"Time values of table not strict monotonically increasing: table[\" + String(i + -1, 0, true) + \"] = \" + String(table[i + -1], 0, true, 6) + \"table[\" + String(i, 0, true) + \"] = \" + String(table[i], 0, true, 6));
 //     end for;
 //     j := 1;
 //     y := startValue;
@@ -70,7 +70,7 @@ getErrorString();
 //   output Boolean result;
 // algorithm
 //   result := false;
-//   for i in 1:size(b,1) loop
+//   for i in 1:size(b, 1) loop
 //     result := result or b[i];
 //   end for;
 // end Modelica.StateGraph.Temporary.anyTrue;
@@ -471,9 +471,9 @@ getErrorString();
 //   pre(tankController.T2.enableFire) = false;
 //   pre(tankController.T6.enableFire) = false;
 // initial algorithm
-//   (start.table.index, start.table.nextTime, start.table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({start.table.table[1],start.table.table[2],start.table.table[3],start.table.table[4]},time,start.table.startValue);
-//   (stop.table.index, stop.table.nextTime, stop.table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({stop.table.table[1],stop.table.table[2],stop.table.table[3],stop.table.table[4]},time,stop.table.startValue);
-//   (shut.table.index, shut.table.nextTime, shut.table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({shut.table.table[1],shut.table.table[2]},time,shut.table.startValue);
+//   (start.table.index, start.table.nextTime, start.table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({start.table.table[1], start.table.table[2], start.table.table[3], start.table.table[4]}, time, start.table.startValue);
+//   (stop.table.index, stop.table.nextTime, stop.table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({stop.table.table[1], stop.table.table[2], stop.table.table[3], stop.table.table[4]}, time, stop.table.startValue);
+//   (shut.table.index, shut.table.nextTime, shut.table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({shut.table.table[1], shut.table.table[2]}, time, shut.table.startValue);
 // equation
 //   stateGraphRoot.activeSteps = -integer(stateGraphRoot.subgraphStatePort.activeSteps);
 //   stateGraphRoot.suspend = stateGraphRoot.subgraphStatePort.suspend;
@@ -482,7 +482,7 @@ getErrorString();
 //   assert(true,\"Connector inPort[2] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[1] of the step is connected to more than one transition\");
 //   tankController.s1.localActive = pre(tankController.s1.newActive);
-//   tankController.s1.newActive = if tankController.s1.subgraphStatePort.resume then tankController.s1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.s1.inPort[1].set,tankController.s1.inPort[2].set}) or tankController.s1.localActive and not Modelica.StateGraph.Temporary.anyTrue({tankController.s1.outPort[1].reset})) and not tankController.s1.subgraphStatePort.suspend;
+//   tankController.s1.newActive = if tankController.s1.subgraphStatePort.resume then tankController.s1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.s1.inPort[1].set, tankController.s1.inPort[2].set}) or tankController.s1.localActive and not Modelica.StateGraph.Temporary.anyTrue({tankController.s1.outPort[1].reset})) and not tankController.s1.subgraphStatePort.suspend;
 //   when tankController.s1.subgraphStatePort.suspend then
 //   tankController.s1.oldActive = tankController.s1.localActive;
 //   end when;
@@ -494,7 +494,7 @@ getErrorString();
 //   assert(true,\"Connector outPort[1] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[2] of the step is connected to more than one transition\");
 //   tankController.s2.localActive = pre(tankController.s2.newActive);
-//   tankController.s2.newActive = if tankController.s2.subgraphStatePort.resume then tankController.s2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.s2.inPort[1].set}) or tankController.s2.localActive and not Modelica.StateGraph.Temporary.anyTrue({tankController.s2.outPort[1].reset,tankController.s2.outPort[2].reset})) and not tankController.s2.subgraphStatePort.suspend;
+//   tankController.s2.newActive = if tankController.s2.subgraphStatePort.resume then tankController.s2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.s2.inPort[1].set}) or tankController.s2.localActive and not Modelica.StateGraph.Temporary.anyTrue({tankController.s2.outPort[1].reset, tankController.s2.outPort[2].reset})) and not tankController.s2.subgraphStatePort.suspend;
 //   when tankController.s2.subgraphStatePort.suspend then
 //   tankController.s2.oldActive = tankController.s2.localActive;
 //   end when;
@@ -670,14 +670,14 @@ getErrorString();
 //   tankController.T6.outPort.set = tankController.T6.fire;
 //   der(tank1.level) = (tank1.inflow1.Fi - tank1.outflow1.Fo) / (tank1.A * tank1.hmax);
 //   if tank1.outflow1.open then
-//   tank1.outflow1.Fo = sqrt(19.6133 * (tank1.hmax * tank1.level)) * tank1.a;
+//   tank1.outflow1.Fo = sqrt(19.6133 * tank1.hmax * tank1.level) * tank1.a;
 //   else
 //   tank1.outflow1.Fo = 0.0;
 //   end if;
 //   tank1.levelSensor = tank1.level;
 //   der(tank2.level) = (tank2.inflow1.Fi - tank2.outflow1.Fo) / (tank2.A * tank2.hmax);
 //   if tank2.outflow1.open then
-//   tank2.outflow1.Fo = sqrt(19.6133 * (tank2.hmax * tank2.level)) * tank2.a;
+//   tank2.outflow1.Fo = sqrt(19.6133 * tank2.hmax * tank2.level) * tank2.a;
 //   else
 //   tank2.outflow1.Fo = 0.0;
 //   end if;
@@ -789,7 +789,7 @@ getErrorString();
 //     end if;
 //   end when;
 //   start.on := start.table.y;
-//   when {pre(start.reset[1]),pre(start.reset[2])} then
+//   when {pre(start.reset[1]), pre(start.reset[2])} then
 //     start.on := false;
 //   end when;
 //   when time >= pre(stop.table.nextTime) and stop.table.n > 0 then
@@ -803,7 +803,7 @@ getErrorString();
 //     end if;
 //   end when;
 //   stop.on := stop.table.y;
-//   when {pre(stop.reset[1]),pre(stop.reset[2])} then
+//   when {pre(stop.reset[1]), pre(stop.reset[2])} then
 //     stop.on := false;
 //   end when;
 //   when time >= pre(shut.table.nextTime) and shut.table.n > 0 then
@@ -817,7 +817,7 @@ getErrorString();
 //     end if;
 //   end when;
 //   shut.on := shut.table.y;
-//   when {pre(shut.reset[1]),pre(shut.reset[2])} then
+//   when {pre(shut.reset[1]), pre(shut.reset[2])} then
 //     shut.on := false;
 //   end when;
 // end Modelica.StateGraph.Examples.ControlledTanks;

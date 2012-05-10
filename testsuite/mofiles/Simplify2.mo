@@ -37,14 +37,14 @@ end Test;
 //   input Real[3] x;
 //   output Real[3] y;
 // algorithm
-//   y := {x[1],x[2],x[3]};
+//   y := {x[1], x[2], x[3]};
 // end dfoo;
 // 
 // function foo
 //   input Real[3] x;
 //   output Real[3] y;
 // algorithm
-//   y := {x[1],x[2],x[3]};
+//   y := {x[1], x[2], x[3]};
 // end foo;
 // 
 // class Test
@@ -56,7 +56,7 @@ end Test;
 // equation
 //   m[1] = 1.0 + x;
 //   m[3] = 2.0 + x;
-//   4.0 = der(foo({m[1],m[2],m[3]}) * {0.0,1.0,0.0} + x);
+//   4.0 = der(foo({m[1], m[2], m[3]}) * {0.0, 1.0, 0.0} + x);
 //   der(x) + x = x_end;
 // end Test;
 // endResult

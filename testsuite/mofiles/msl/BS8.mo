@@ -1214,7 +1214,7 @@ end BS8;
 // Result:
 // class BS8
 //   parameter Real sawTooth1.amplitude[1] = 1.0 "Amplitudes of saw tooths";
-//   parameter Real sawTooth1.period[1](quantity = "Time", unit = "s", min = 1e-060) = 1.0 "Times for one period";
+//   parameter Real sawTooth1.period[1](quantity = "Time", unit = "s", min = 1e-60) = 1.0 "Times for one period";
 //   parameter Real sawTooth1.offset[1] = 0.0 "Offsets of output signals";
 //   parameter Real sawTooth1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
 //   parameter Integer sawTooth1.nout(min = 1) = 1 "Number of outputs";
@@ -1234,17 +1234,17 @@ end BS8;
 //   output Real der1.outPort.signal[1] "Real output signals";
 //   output Real der1.y[1] "Output signals";
 // equation
-//   when sample(sawTooth1.p_startTime[1],sawTooth1.p_period[1]) then
+//   when sample(sawTooth1.p_startTime[1], sawTooth1.p_period[1]) then
 //   sawTooth1.T0[1] = time;
 //   end when;
-//   sawTooth1.outPort.signal[1] = sawTooth1.p_offset[1] + (if time < sawTooth1.p_startTime[1] then 0.0 else ((time - sawTooth1.T0[1]) * sawTooth1.p_amplitude[1]) / sawTooth1.p_period[1]);
+//   sawTooth1.outPort.signal[1] = sawTooth1.p_offset[1] + (if time < sawTooth1.p_startTime[1] then 0.0 else (time - sawTooth1.T0[1]) * sawTooth1.p_amplitude[1] / sawTooth1.p_period[1]);
 //   sawTooth1.y[1] = sawTooth1.outPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
 //   assert(sawTooth1.outPort.n == der1.inPort.n,"automatically generated from connect");
 //   der1.inPort.signal[1] = sawTooth1.outPort.signal[1];
 // end BS8;
-// [BS8.mo:685:11-686:31:writable] Warning: Variable sawTooth1.period: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [BS8.mo:685:11-686:31:writable] Warning: Variable sawTooth1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // 
 // endResult

@@ -22,6 +22,6 @@ end Delay;
 //   constant Real b = 2.0;
 // equation
 //   x = sin(time);
-//   y = delay(x,a,2.0);
+//   y = delay(x, a, 2.0);
 // end Delay;
 // endResult

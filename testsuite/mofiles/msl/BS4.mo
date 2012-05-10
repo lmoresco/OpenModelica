@@ -1336,10 +1336,10 @@ end BS4;
 //   output Real der1.y[1] "Output signals";
 //   parameter Real exponentials1.outMax[1] = 1.0 "Height of output for infinite riseTime";
 //   parameter Real exponentials1.riseTime[1](quantity = "Time", unit = "s", min = 0.0) = 0.5 "Rise time";
-//   parameter Real exponentials1.riseTimeConst[1](quantity = "Time", unit = "s", min = 1e-060) = 0.1 "Rise time constant";
+//   parameter Real exponentials1.riseTimeConst[1](quantity = "Time", unit = "s", min = 1e-60) = 0.1 "Rise time constant";
 //   parameter Real exponentials1.offset[1] = 0.0 "Offsets of output signals";
 //   parameter Real exponentials1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
-//   parameter Real exponentials1.fallTimeConst[1](quantity = "Time", unit = "s", min = 1e-060) = exponentials1.riseTimeConst[1] "Fall time constant";
+//   parameter Real exponentials1.fallTimeConst[1](quantity = "Time", unit = "s", min = 1e-60) = exponentials1.riseTimeConst[1] "Fall time constant";
 //   parameter Integer exponentials1.nout(min = 1) = 1 "Number of outputs";
 //   parameter Integer exponentials1.outPort.n = exponentials1.nout "Dimension of signal vector";
 //   output Real exponentials1.outPort.signal[1] "Real output signals";
@@ -1362,15 +1362,15 @@ end BS4;
 // end BS4;
 // [BS4.mo:686:11-686:65:writable] Warning: Variable exponentials1.riseTime: Non-array modification '0' for array component, possibly due to missing 'each'.
 // 
-// [BS4.mo:687:11-688:29:writable] Warning: Variable exponentials1.riseTimeConst: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [BS4.mo:687:11-688:29:writable] Warning: Variable exponentials1.riseTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS4.mo:689:11-690:29:writable] Warning: Variable exponentials1.fallTimeConst: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [BS4.mo:689:11-690:29:writable] Warning: Variable exponentials1.fallTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [BS4.mo:686:11-686:65:writable] Warning: Variable exponentials1.riseTime: Non-array modification '0' for array component, possibly due to missing 'each'.
 // 
-// [BS4.mo:687:11-688:29:writable] Warning: Variable exponentials1.riseTimeConst: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [BS4.mo:687:11-688:29:writable] Warning: Variable exponentials1.riseTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS4.mo:689:11-690:29:writable] Warning: Variable exponentials1.fallTimeConst: Non-array modification '1e-060' for array component, possibly due to missing 'each'.
+// [BS4.mo:689:11-690:29:writable] Warning: Variable exponentials1.fallTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // 
 // endResult

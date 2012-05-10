@@ -27,6 +27,6 @@ end StringInteger;
 //   s1 = "4711";
 //   s2 = "        1138";
 //   i = 1337;
-//   s3 = String(i,0,true);
+//   s3 = String(i, 0, true);
 // end StringInteger;
 // endResult

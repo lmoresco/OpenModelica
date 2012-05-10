@@ -42,20 +42,20 @@ end OptimizeContinue;
 // function OptimizeContinue.f
 //   output Real r;
 // algorithm
-//   r := match /* switch */ (OptimizeContinue.Ut.UT1()) 
+//   r := match /* switch */ (OptimizeContinue.Ut.UT1())
 //     case (OptimizeContinue.Ut.UT1()) then 1.0;
 //     case (OptimizeContinue.Ut.UT2()) then 2.0;
 //     case (OptimizeContinue.Ut.UT3()) then 3.0;
 //   end match /* switch */;
-//   r := match (OptimizeContinue.Ut2.UT4(#(1))) 
+//   r := match (OptimizeContinue.Ut2.UT4(#(1)))
 //     case (OptimizeContinue.Ut2.UT4(1)) then 1.0;
 //     case (OptimizeContinue.Ut2.UT4(2)) then 2.0;
 //   end match;
-//   r := matchcontinue (OptimizeContinue.Ut.UT1()) 
+//   r := matchcontinue (OptimizeContinue.Ut.UT1())
 //     case (OptimizeContinue.Ut.UT1()) then 1.0;
 //     case (OptimizeContinue.Ut.UT1()) then 2.0;
 //   end matchcontinue;
-//   r := matchcontinue (OptimizeContinue.Ut2.UT4(#(1))) 
+//   r := matchcontinue (OptimizeContinue.Ut2.UT4(#(1)))
 //     case (OptimizeContinue.Ut2.UT4(1)) then 1.0;
 //     case (OptimizeContinue.Ut2.UT4(_)) then 2.0;
 //   end matchcontinue;

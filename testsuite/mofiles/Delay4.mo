@@ -23,6 +23,6 @@ end Delay;
 // equation
 //   a = 1.0;
 //   x = sin(time);
-//   y = delay(x,a,a);
+//   y = delay(x, a, a);
 // end Delay;
 // endResult

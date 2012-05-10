@@ -66,7 +66,7 @@ end HeatTank;
 //   Real temp;
 // equation
 //   inlet.temp = 25.0;
-//   area * (level * der(temp)) = inlet.volumeFlowRate * inlet.temp + outlet.volumeFlowRate * outlet.temp;
+//   area * level * der(temp) = inlet.volumeFlowRate * inlet.temp + outlet.volumeFlowRate * outlet.temp;
 //   outlet.temp = temp;
 //   inlet.volumeFlowRate = 1.0;
 //   inlet.pressure = 1.0;

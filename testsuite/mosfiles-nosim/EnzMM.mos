@@ -43,7 +43,7 @@ getErrorString();
 //   F6P.c = F6P.n1.c;
 //   V = F6P.n1.V;
 //   F6P.c = F6P.n / V;
-//   uur.rr = ((uur.vF * uur.s1.c) / uur.KmS + ((-uur.vR) * uur.p1.c) / uur.KmP) / (1.0 + (uur.s1.c / uur.KmS + uur.p1.c / uur.KmP));
+//   uur.rr = (uur.vF * uur.s1.c / uur.KmS + (-uur.vR) * uur.p1.c / uur.KmP) / (1.0 + uur.s1.c / uur.KmS + uur.p1.c / uur.KmP);
 //   uur.s1.r = uur.nS1 * uur.rr;
 //   uur.p1.r = (-uur.nP1) * uur.rr;
 //   der(G6P.n) = G6P.rNet;

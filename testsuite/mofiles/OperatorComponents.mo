@@ -50,6 +50,6 @@ end OperatorComplex;
 // equation
 //   r1.r = 2.0;
 //   r2.r = 3.0;
-//   r3 = Rec.'+'.add(r1,r2);
+//   r3 = Rec.'+'.add(r1, r2);
 // end OperatorComplex;
 // endResult

@@ -32,7 +32,7 @@ end OverrideFinalTest;
 //   input Real[3] inArr;
 //   output Real[3] outArr;
 // algorithm
-//   outArr := {inArr[1],inArr[2],inArr[3]};
+//   outArr := {inArr[1], inArr[2], inArr[3]};
 // end OverrideFinalTest.fcall;
 // 
 // class OverrideFinalTest

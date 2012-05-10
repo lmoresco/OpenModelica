@@ -21,14 +21,14 @@ getErrorString();
 //   input Real rpm(quantity = \"AngularVelocity\", unit = \"rev/min\") \"revolutions per minute value\";
 //   output Real rs(quantity = \"AngularVelocity\", unit = \"rad/s\", displayUnit = \"rev/min\") \"radian per second value\";
 // algorithm
-//   rs := 0.10471975511966 * rpm;
+//   rs := 0.10471975511965977 * rpm;
 // end Modelica.SIunits.Conversions.from_rpm;
 // 
 // function Modelica.SIunits.Conversions.to_rpm \"Convert from radian per second to revolutions per minute\"
 //   input Real rs(quantity = \"AngularVelocity\", unit = \"rad/s\", displayUnit = \"rev/min\") \"radian per second value\";
 //   output Real rpm(quantity = \"AngularVelocity\", unit = \"rev/min\") \"revolutions per minute value\";
 // algorithm
-//   rpm := 9.54929658551372 * rs;
+//   rpm := 9.549296585513721 * rs;
 // end Modelica.SIunits.Conversions.to_rpm;
 // 
 // class Modelica.Electrical.Machines.Examples.DCPM_start
@@ -186,8 +186,8 @@ getErrorString();
 //   DCPM1.airGapDC.psi_e = DCPM1.airGapDC.Le * DCPM1.airGapDC.ie;
 //   DCPM1.airGapDC.vei = der(DCPM1.airGapDC.psi_e);
 //   DCPM1.airGapDC.w = der(DCPM1.airGapDC.flange_a.phi) - der(DCPM1.airGapDC.support.phi);
-//   DCPM1.airGapDC.vai = DCPM1.airGapDC.TurnsRatio * (DCPM1.airGapDC.psi_e * DCPM1.airGapDC.w);
-//   DCPM1.airGapDC.tau_electrical = DCPM1.airGapDC.TurnsRatio * (DCPM1.airGapDC.psi_e * DCPM1.airGapDC.ia);
+//   DCPM1.airGapDC.vai = DCPM1.airGapDC.TurnsRatio * DCPM1.airGapDC.psi_e * DCPM1.airGapDC.w;
+//   DCPM1.airGapDC.tau_electrical = DCPM1.airGapDC.TurnsRatio * DCPM1.airGapDC.psi_e * DCPM1.airGapDC.ia;
 //   DCPM1.airGapDC.flange_a.tau = -DCPM1.airGapDC.tau_electrical;
 //   DCPM1.airGapDC.support.tau = DCPM1.airGapDC.tau_electrical;
 //   assert(DCPM1.VaNominal > DCPM1.Ra * DCPM1.IaNominal,\"VaNominal has to be > (Ra+Re)*IaNominal\");
@@ -195,8 +195,8 @@ getErrorString();
 //   SignalVoltage1.v = SignalVoltage1.p.v - SignalVoltage1.n.v;
 //   0.0 = SignalVoltage1.p.i + SignalVoltage1.n.i;
 //   SignalVoltage1.i = SignalVoltage1.p.i;
-//   Ramp1.y = Ramp1.offset + (if time < Ramp1.startTime then 0.0 else if time < Ramp1.startTime + Ramp1.duration then ((time - Ramp1.startTime) * Ramp1.height) / Ramp1.duration else Ramp1.height);
-//   TorqueStep1.tau = -TorqueStep1.offsetTorque - (if time < TorqueStep1.startTime then 0.0 else TorqueStep1.stepTorque);
+//   Ramp1.y = Ramp1.offset + (if time < Ramp1.startTime then 0.0 else if time < Ramp1.startTime + Ramp1.duration then (time - Ramp1.startTime) * Ramp1.height / Ramp1.duration else Ramp1.height);
+//   TorqueStep1.tau = (-TorqueStep1.offsetTorque) - (if time < TorqueStep1.startTime then 0.0 else TorqueStep1.stepTorque);
 //   TorqueStep1.bearing.phi = 0.0;
 //   LoadInertia.w = der(LoadInertia.phi);
 //   LoadInertia.a = der(LoadInertia.w);
@@ -204,18 +204,18 @@ getErrorString();
 //   LoadInertia.flange_a.phi = LoadInertia.phi;
 //   LoadInertia.flange_b.phi = LoadInertia.phi;
 //   DCPM1.flange_a.tau + LoadInertia.flange_a.tau = 0.0;
-//   DCPM1.fixedHousing.flange_b.tau + -DCPM1.internalSupport.tau + DCPM1.airGapDC.support.tau = 0.0;
+//   DCPM1.fixedHousing.flange_b.tau + (-DCPM1.internalSupport.tau) + DCPM1.airGapDC.support.tau = 0.0;
 //   DCPM1.internalSupport.tau = 0.0;
 //   DCPM1.pin_ap.i + SignalVoltage1.p.i = 0.0;
 //   DCPM1.pin_an.i + Ground1.p.i + SignalVoltage1.n.i = 0.0;
 //   DCPM1.eGround.p.i + DCPM1.ie.p.i + DCPM1.airGapDC.pin_en.i = 0.0;
 //   DCPM1.inertiaRotor.flange_a.tau + DCPM1.airGapDC.flange_a.tau = 0.0;
-//   -DCPM1.flange_a.tau + DCPM1.inertiaRotor.flange_b.tau = 0.0;
-//   -DCPM1.pin_ap.i + DCPM1.ra.p.i = 0.0;
+//   (-DCPM1.flange_a.tau) + DCPM1.inertiaRotor.flange_b.tau = 0.0;
+//   (-DCPM1.pin_ap.i) + DCPM1.ra.p.i = 0.0;
 //   DCPM1.ra.n.i + DCPM1.la.p.i = 0.0;
 //   DCPM1.la.n.i + DCPM1.airGapDC.pin_ap.i = 0.0;
 //   DCPM1.ie.n.i + DCPM1.airGapDC.pin_ep.i = 0.0;
-//   -DCPM1.pin_an.i + DCPM1.airGapDC.pin_an.i = 0.0;
+//   (-DCPM1.pin_an.i) + DCPM1.airGapDC.pin_an.i = 0.0;
 //   DCPM1.airGapDC.pin_ep.v = DCPM1.ie.n.v;
 //   DCPM1.airGapDC.pin_en.v = DCPM1.eGround.p.v;
 //   DCPM1.airGapDC.pin_en.v = DCPM1.ie.p.v;

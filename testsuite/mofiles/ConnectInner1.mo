@@ -43,7 +43,7 @@ end ConnectInner1;
 //   a.my.f = 10.0 + a.my.e;
 //   global.e = 10.0;
 //   global.f = 0.0;
-//   -global.f + b.a.my.f + a.my.f = 0.0;
+//   (-global.f) + b.a.my.f + a.my.f = 0.0;
 //   a.my.e = b.a.my.e;
 //   a.my.e = global.e;
 // end ConnectInner1;

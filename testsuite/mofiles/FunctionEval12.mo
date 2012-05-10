@@ -35,17 +35,17 @@ end FunctionEval12;
 
 // Result:
 // function FunctionEval12.myFun
-//   input Real[1, :] x = {{0.0,1.0}};
+//   input Real[1, :] x = {{0.0, 1.0}};
 //   output Real y;
 //   protected Integer index;
-//   protected Real[1, size(x,2)] locX;
+//   protected Real[1, size(x, 2)] locX;
 // algorithm
 //   index := 1;
-//   while index <= size(x,2) loop
-//     locX[1,index] := x[1,index];
+//   while index <= size(x, 2) loop
+//     locX[1,index] := x[1, index];
 //     index := 1 + index;
 //   end while;
-//   y := locX[1,size(x,2)];
+//   y := locX[1, size(x, 2)];
 // end FunctionEval12.myFun;
 // 
 // class FunctionEval12

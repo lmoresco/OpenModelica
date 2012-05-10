@@ -206,12 +206,12 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 //   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from port_a to port_b (m_flow > 0 is design flow direction)\";
 //   Real dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure drop from port_a to port_b\";
 // equation
-//   port_a.H_flow = semiLinear(port_a.m_flow,port_a.h,port_b.h);
+//   port_a.H_flow = semiLinear(port_a.m_flow, port_a.h, port_b.h);
 //   port_a.H_flow + port_b.H_flow = 0.0;
 //   port_a.m_flow + port_b.m_flow = 0.0;
 //   m_flow = port_a.m_flow;
 //   dp = port_a.p - port_b.p;
-//   m_flow = (dp * m_flow_nominal) / dp_nominal;
+//   m_flow = dp * m_flow_nominal / dp_nominal;
 //   port_a.H_flow = 0.0;
 //   port_a.m_flow = 0.0;
 //   port_b.H_flow = 0.0;

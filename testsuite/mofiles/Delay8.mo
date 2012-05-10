@@ -23,8 +23,8 @@ end Delay8;
 //   input Real u[2];
 //   input Real u[3];
 // equation
-//   y[1] = delay(u[1],delayTime,delayMax);
-//   y[2] = delay(u[2],delayTime,delayMax);
-//   y[3] = delay(u[3],delayTime,delayMax);
+//   y[1] = delay(u[1], delayTime, delayMax);
+//   y[2] = delay(u[2], delayTime, delayMax);
+//   y[3] = delay(u[3], delayTime, delayMax);
 // end Delay8;
 // endResult

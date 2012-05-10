@@ -21,7 +21,7 @@ end WhenValidResult;
 //   Real y;
 // equation
 //   x + y = 5.0;
-//   when sample(0.0,2.0) then
+//   when sample(0.0, 2.0) then
 //   y = 7.0;
 //   end when;
 // end WhenValidResult;

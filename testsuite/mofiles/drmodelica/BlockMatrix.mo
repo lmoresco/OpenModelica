@@ -24,7 +24,7 @@ end BlockMatrix;
 
 // Result:
 // Error processing file: BlockMatrix.mo
-// [BlockMatrix.mo:19:3-19:44:writable] Error: Type mismatch in equation {{Q[4,1],Q[4,2],Q[4,3]},{Q[5,1],Q[5,2],Q[5,3]},{Q[6,1],Q[6,2],Q[6,3]}}=cat(2,{{Q[1,1],Q[1,2],Q[1,3]},{Q[2,1],Q[2,2],Q[2,3]}},-{{Q[3,1],Q[3,2],Q[3,3]}}) of type Real[3, 3]=Real[1, 6]
+// [BlockMatrix.mo:19:3-19:44:writable] Error: Type mismatch in equation {{Q[4,1], Q[4,2], Q[4,3]}, {Q[5,1], Q[5,2], Q[5,3]}, {Q[6,1], Q[6,2], Q[6,3]}}=cat(2, {{Q[1,1], Q[1,2], Q[1,3]}, {Q[2,1], Q[2,2], Q[2,3]}}, -{{Q[3,1], Q[3,2], Q[3,3]}}) of type Real[3, 3]=Real[1, 6]
 // Error: Error occurred while flattening model BlockMatrix
 // 
 // # Error encountered! Exiting...

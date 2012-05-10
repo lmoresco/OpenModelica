@@ -34,9 +34,9 @@ end test;
 // class test
 //   Real w;
 //   Real v;
-//   Real x = foo(2.0,w);
-//   Real y = foo(v,w);
-//   Real z = foo(w,v);
-//   Real z2 = foo(w,v);
+//   Real x = foo(2.0, w);
+//   Real y = foo(v, w);
+//   Real z = foo(w, v);
+//   Real z2 = foo(w, v);
 // end test;
 // endResult

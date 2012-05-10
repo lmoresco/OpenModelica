@@ -44,7 +44,7 @@ end TwoRateSampler;
 //   when fastSample then
 //   x = sin(time);
 //   end when;
-//   fastSample = sample(0.0,1.0);
+//   fastSample = sample(0.0, 1.0);
 //   when fastSample then
 //   cyCounter = if pre(cyCounter) < 5 then 1 + pre(cyCounter) else 0;
 //   slowSample = pre(cyCounter) == 0;

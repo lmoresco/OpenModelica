@@ -28,6 +28,6 @@ end Connect4;
 //   c1.f = 0.0;
 //   c2.f = 0.0;
 //   c1.i = c2.i;
-//   -c1.f + -c2.f = 0.0;
+//   (-c1.f) + (-c2.f) = 0.0;
 // end Connect4;
 // endResult

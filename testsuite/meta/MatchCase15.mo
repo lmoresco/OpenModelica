@@ -34,11 +34,11 @@ end MatchCase15;
 // function MatchCase15.winCitation
 //   output String outString;
 // algorithm
-//   outString := matchcontinue () 
+//   outString := matchcontinue ()
 //     case ()
 //       algorithm
-//         "WIN32" := MatchCase15.platform();
-//       then "\"";
+//       then
+//         "\"";
 //     case () then "";
 //   end matchcontinue;
 // end MatchCase15.winCitation;

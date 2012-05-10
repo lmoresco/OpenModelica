@@ -48,7 +48,7 @@ end EngineSAAB95;
 //   Real engine2.displacement;
 //   constant Real engine2.pi = 3.1415956;
 // equation
-//   engine.displacement = 0.7853989 * (engine.data.bore ^ 2.0 * engine.data.stroke);
-//   engine2.displacement = 0.7853989 * (engine2.data.bore ^ 2.0 * engine2.data.stroke);
+//   engine.displacement = 0.7853989 * engine.data.bore ^ 2.0 * engine.data.stroke;
+//   engine2.displacement = 0.7853989 * engine2.data.bore ^ 2.0 * engine2.data.stroke;
 // end EngineSAAB95;
 // endResult

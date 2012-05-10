@@ -50,13 +50,13 @@ checkModel(Modelica.Fluid.Examples.HeatExchanger.BaseClasses.WallConstProps); ge
 //   Real heatPort_b[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
 //   Real Tb[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0, start = T_start + 0.5 * dT);
 //   Real Ta[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0, start = T_start + -0.5 * dT);
-//   parameter Real m[1](quantity = \"Mass\", unit = \"kg\", min = 0.0) = (rho_wall * (area_h * s)) / Real(n) \"Distribution of wall mass\";
+//   parameter Real m[1](quantity = \"Mass\", unit = \"kg\", min = 0.0) = rho_wall * area_h * s / Real(n) \"Distribution of wall mass\";
 //   Real T[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0, start = T_start, StateSelect = StateSelect.prefer) \"Wall temperature\";
 // equation
 //   assert(m[1] > 0.0,\"Wall has negative dimensions\");
-//   c_wall * (m[1] * der(T[1])) = heatPort_a[1].Q_flow + heatPort_b[1].Q_flow;
-//   heatPort_a[1].Q_flow = (area_h * ((Ta[1] - T[1]) * k_wall)) / (Real(n) * s);
-//   heatPort_b[1].Q_flow = (area_h * ((Tb[1] - T[1]) * k_wall)) / (Real(n) * s);
+//   c_wall * m[1] * der(T[1]) = heatPort_a[1].Q_flow + heatPort_b[1].Q_flow;
+//   heatPort_a[1].Q_flow = area_h * (Ta[1] - T[1]) * k_wall / (Real(n) * s);
+//   heatPort_b[1].Q_flow = area_h * (Tb[1] - T[1]) * k_wall / (Real(n) * s);
 //   Ta[1] = heatPort_a[1].T;
 //   Tb[1] = heatPort_b[1].T;
 //   heatPort_a[1].Q_flow = 0.0;

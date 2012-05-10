@@ -27,7 +27,7 @@ getErrorString();
 // "
 // ""
 // "Error: trying to override final variable in class: PI
-// 	by using modifiers: c2( = {33},  = final {c2.T * c2.k,c2.k}) that do not agree.
+// 	by using modifiers: c2( = {33},  = final {c2.T * c2.k, c2.k}) that do not agree.
 // Error: Error occurred while flattening model test3
 // "
 // endResult

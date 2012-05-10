@@ -66,8 +66,8 @@ end DefaultRecordParameters;
 //   Real body3.displacement;
 //   constant Real body3.pi = 3.1415956;
 // equation
-//   body1.displacement = 0.7853989 * (body1.data.length * body1.data.volume);
-//   body2.displacement = 0.7853989 * (body2.data.length * body2.data.volume);
-//   body3.displacement = 0.7853989 * (body3.data.length * body3.data.volume);
+//   body1.displacement = 0.7853989 * body1.data.length * body1.data.volume;
+//   body2.displacement = 0.7853989 * body2.data.length * body2.data.volume;
+//   body3.displacement = 0.7853989 * body3.data.length * body3.data.volume;
 // end DefaultRecordParameters;
 // endResult

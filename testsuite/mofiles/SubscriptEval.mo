@@ -19,6 +19,6 @@ end SubscriptEval;
 //   parameter Integer c = 1;
 //   Real r[1,1,1];
 // equation
-//   r[1,n,1] = 2.0;
+//   r[1, n, 1] = 2.0;
 // end SubscriptEval;
 // endResult

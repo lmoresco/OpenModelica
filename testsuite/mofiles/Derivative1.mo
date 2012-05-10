@@ -115,7 +115,7 @@ end Derivative1;
 //   Real ic[2](start = 0.0, fixed = true) = x[2] - u[2];
 //   parameter Boolean b = true;
 // equation
-//   x[1] = FooFunctions.foo0(exp(time),b);
+//   x[1] = FooFunctions.foo0(exp(time), b);
 //   der(x[1]) = x[2];
 //   der(x[2]) = x[3];
 //   x[3] = u[3];

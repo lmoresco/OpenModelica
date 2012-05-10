@@ -154,7 +154,7 @@ getErrorString();
 //   parameter Real Sine1.phase(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") = 0.0 \"Phase of sine wave\";
 //   parameter Real Sine1.offset = 0.0 \"Offset of output signal\";
 //   parameter Real Sine1.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
-//   protected constant Real Sine1.pi = 3.14159265358979;
+//   protected constant Real Sine1.pi = 3.141592653589793;
 // equation
 //   InnerContactA.v_rel = der(InnerContactA.s_rel);
 //   InnerContactA.Contact = InnerContactA.s_rel < InnerContactA.s_rel0;
@@ -221,7 +221,7 @@ getErrorString();
 //   0.0 = Rod2.flange_a.f + Rod2.flange_b.f;
 //   Rod2.flange_a.s = Rod2.s + (-Rod2.L) / 2.0;
 //   Rod2.flange_b.s = Rod2.s + Rod2.L / 2.0;
-//   Sine1.y = Sine1.offset + (if time < Sine1.startTime then 0.0 else Sine1.amplitude * sin(6.28318530717959 * (Sine1.freqHz * (time - Sine1.startTime)) + Sine1.phase));
+//   Sine1.y = Sine1.offset + (if time < Sine1.startTime then 0.0 else Sine1.amplitude * sin(6.283185307179586 * Sine1.freqHz * (time - Sine1.startTime) + Sine1.phase));
 //   InnerContactA.flange_a.f + Friction.flange_b.f + Rod3.flange_a.f = 0.0;
 //   InnerContactA.flange_b.f + Rod1.flange_b.f = 0.0;
 //   InnerContactB.flange_a.f + Rod2.flange_a.f = 0.0;

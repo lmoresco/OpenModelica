@@ -33,6 +33,6 @@ end AddReal1;
 //   parameter Real b = 4.5;
 //   Real c;
 // equation
-//   c = addReal1_(a,b);
+//   c = addReal1_(a, b);
 // end AddReal1;
 // endResult

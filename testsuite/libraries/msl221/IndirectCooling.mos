@@ -354,15 +354,15 @@ getErrorString();
 //   output Real innerPump.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0, start = innerPump.T0) \"outlet temperature of medium\";
 // initial algorithm
 //   assert(Pipe1.V_flowNominal > Pipe1.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
-//   Pipe1.k := (Pipe1.V_flowNominal * Pipe1.dpLaminar) / Pipe1.V_flowLaminar;
+//   Pipe1.k := Pipe1.V_flowNominal * Pipe1.dpLaminar / Pipe1.V_flowLaminar;
 //   assert(Pipe1.dpNominal >= Pipe1.k, \"SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!\");
 //   Pipe1.k := (Pipe1.dpNominal - Pipe1.k) / (Pipe1.V_flowNominal - Pipe1.V_flowLaminar) ^ 2.0;
 //   assert(outerPipe.V_flowNominal > outerPipe.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
-//   outerPipe.k := (outerPipe.V_flowNominal * outerPipe.dpLaminar) / outerPipe.V_flowLaminar;
+//   outerPipe.k := outerPipe.V_flowNominal * outerPipe.dpLaminar / outerPipe.V_flowLaminar;
 //   assert(outerPipe.dpNominal >= outerPipe.k, \"SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!\");
 //   outerPipe.k := (outerPipe.dpNominal - outerPipe.k) / (outerPipe.V_flowNominal - outerPipe.V_flowLaminar) ^ 2.0;
 //   assert(innerPipe.V_flowNominal > innerPipe.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
-//   innerPipe.k := (innerPipe.V_flowNominal * innerPipe.dpLaminar) / innerPipe.V_flowLaminar;
+//   innerPipe.k := innerPipe.V_flowNominal * innerPipe.dpLaminar / innerPipe.V_flowLaminar;
 //   assert(innerPipe.dpNominal >= innerPipe.k, \"SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!\");
 //   innerPipe.k := (innerPipe.dpNominal - innerPipe.k) / (innerPipe.V_flowNominal - innerPipe.V_flowLaminar) ^ 2.0;
 // equation
@@ -388,72 +388,72 @@ getErrorString();
 //   AbsolutePressure1.flowPort.H_flow = 0.0;
 //   Ambient1.flowPort.p = Ambient1.p_Ambient;
 //   Ambient1.T = Ambient1.T_Ambient;
-//   Ambient1.flowPort.H_flow = semiLinear(Ambient1.flowPort.m_flow,Ambient1.flowPort.h,Ambient1.h);
+//   Ambient1.flowPort.H_flow = semiLinear(Ambient1.flowPort.m_flow, Ambient1.flowPort.h, Ambient1.h);
 //   outerPump.Q_flow = 0.0;
 //   outerPump.V_flow = outerPump.VolumeFlow;
 //   outerPump.flowPort_a.m_flow + outerPump.flowPort_b.m_flow = 0.0;
-//   outerPump.flowPort_a.H_flow + (outerPump.flowPort_b.H_flow + outerPump.Q_flow) = 0.0;
-//   outerPump.flowPort_a.H_flow = semiLinear(outerPump.flowPort_a.m_flow,outerPump.flowPort_a.h,outerPump.h);
-//   outerPump.flowPort_b.H_flow = semiLinear(outerPump.flowPort_b.m_flow,outerPump.flowPort_b.h,outerPump.h);
+//   outerPump.flowPort_a.H_flow + outerPump.flowPort_b.H_flow + outerPump.Q_flow = 0.0;
+//   outerPump.flowPort_a.H_flow = semiLinear(outerPump.flowPort_a.m_flow, outerPump.flowPort_a.h, outerPump.h);
+//   outerPump.flowPort_b.H_flow = semiLinear(outerPump.flowPort_b.m_flow, outerPump.flowPort_b.h, outerPump.h);
 //   Ambient2.flowPort.p = Ambient2.p_Ambient;
 //   Ambient2.T = Ambient2.T_Ambient;
-//   Ambient2.flowPort.H_flow = semiLinear(Ambient2.flowPort.m_flow,Ambient2.flowPort.h,Ambient2.h);
+//   Ambient2.flowPort.H_flow = semiLinear(Ambient2.flowPort.m_flow, Ambient2.flowPort.h, Ambient2.h);
 //   HeatCapacitor1.T = HeatCapacitor1.port.T;
 //   HeatCapacitor1.C * der(HeatCapacitor1.T) = HeatCapacitor1.port.Q_flow;
 //   Pipe1.VolumeFlow = Pipe1.V_flow;
-//   Pipe1.dp = Pipe1.pressureDrop + 9.80665 * (Pipe1.medium.rho * Pipe1.h_g);
+//   Pipe1.dp = Pipe1.pressureDrop + 9.80665 * Pipe1.medium.rho * Pipe1.h_g;
 //   Pipe1.Q_flow = Pipe1.heatPort.Q_flow + Pipe1.Q_friction;
 //   Pipe1.heatPort.T = Pipe1.T_q;
 //   Pipe1.flowPort_a.m_flow + Pipe1.flowPort_b.m_flow = 0.0;
-//   Pipe1.flowPort_a.H_flow + (Pipe1.flowPort_b.H_flow + Pipe1.Q_flow) = Pipe1.m * (Pipe1.medium.cv * der(Pipe1.T));
-//   Pipe1.flowPort_a.H_flow = semiLinear(Pipe1.flowPort_a.m_flow,Pipe1.flowPort_a.h,Pipe1.h);
-//   Pipe1.flowPort_b.H_flow = semiLinear(Pipe1.flowPort_b.m_flow,Pipe1.flowPort_b.h,Pipe1.h);
+//   Pipe1.flowPort_a.H_flow + Pipe1.flowPort_b.H_flow + Pipe1.Q_flow = Pipe1.m * Pipe1.medium.cv * der(Pipe1.T);
+//   Pipe1.flowPort_a.H_flow = semiLinear(Pipe1.flowPort_a.m_flow, Pipe1.flowPort_a.h, Pipe1.h);
+//   Pipe1.flowPort_b.H_flow = semiLinear(Pipe1.flowPort_b.m_flow, Pipe1.flowPort_b.h, Pipe1.h);
 //   if Pipe1.VolumeFlow > Pipe1.V_flowLaminar then
-//   Pipe1.pressureDrop = (Pipe1.VolumeFlow * Pipe1.dpLaminar) / Pipe1.V_flowLaminar + Pipe1.k * (Pipe1.VolumeFlow - Pipe1.V_flowLaminar) ^ 2.0;
-//   elseif Pipe1.VolumeFlow < -Pipe1.V_flowLaminar then
-//   Pipe1.pressureDrop = (Pipe1.VolumeFlow * Pipe1.dpLaminar) / Pipe1.V_flowLaminar - Pipe1.k * (Pipe1.VolumeFlow + Pipe1.V_flowLaminar) ^ 2.0;
+//   Pipe1.pressureDrop = Pipe1.VolumeFlow * Pipe1.dpLaminar / Pipe1.V_flowLaminar + Pipe1.k * (Pipe1.VolumeFlow - Pipe1.V_flowLaminar) ^ 2.0;
+//   elseif Pipe1.VolumeFlow < (-Pipe1.V_flowLaminar) then
+//   Pipe1.pressureDrop = Pipe1.VolumeFlow * Pipe1.dpLaminar / Pipe1.V_flowLaminar - Pipe1.k * (Pipe1.VolumeFlow + Pipe1.V_flowLaminar) ^ 2.0;
 //   else
-//   Pipe1.pressureDrop = (Pipe1.VolumeFlow * Pipe1.dpLaminar) / Pipe1.V_flowLaminar;
+//   Pipe1.pressureDrop = Pipe1.VolumeFlow * Pipe1.dpLaminar / Pipe1.V_flowLaminar;
 //   end if;
-//   Pipe1.Q_friction = Pipe1.frictionLoss * (Pipe1.VolumeFlow * Pipe1.pressureDrop);
+//   Pipe1.Q_friction = Pipe1.frictionLoss * Pipe1.VolumeFlow * Pipe1.pressureDrop;
 //   outerPipe.VolumeFlow = outerPipe.V_flow;
-//   outerPipe.dp = outerPipe.pressureDrop + 9.80665 * (outerPipe.medium.rho * outerPipe.h_g);
+//   outerPipe.dp = outerPipe.pressureDrop + 9.80665 * outerPipe.medium.rho * outerPipe.h_g;
 //   outerPipe.Q_flow = outerPipe.heatPort.Q_flow + outerPipe.Q_friction;
 //   outerPipe.heatPort.T = outerPipe.T_q;
 //   outerPipe.flowPort_a.m_flow + outerPipe.flowPort_b.m_flow = 0.0;
-//   outerPipe.flowPort_a.H_flow + (outerPipe.flowPort_b.H_flow + outerPipe.Q_flow) = outerPipe.m * (outerPipe.medium.cv * der(outerPipe.T));
-//   outerPipe.flowPort_a.H_flow = semiLinear(outerPipe.flowPort_a.m_flow,outerPipe.flowPort_a.h,outerPipe.h);
-//   outerPipe.flowPort_b.H_flow = semiLinear(outerPipe.flowPort_b.m_flow,outerPipe.flowPort_b.h,outerPipe.h);
+//   outerPipe.flowPort_a.H_flow + outerPipe.flowPort_b.H_flow + outerPipe.Q_flow = outerPipe.m * outerPipe.medium.cv * der(outerPipe.T);
+//   outerPipe.flowPort_a.H_flow = semiLinear(outerPipe.flowPort_a.m_flow, outerPipe.flowPort_a.h, outerPipe.h);
+//   outerPipe.flowPort_b.H_flow = semiLinear(outerPipe.flowPort_b.m_flow, outerPipe.flowPort_b.h, outerPipe.h);
 //   if outerPipe.VolumeFlow > outerPipe.V_flowLaminar then
-//   outerPipe.pressureDrop = (outerPipe.VolumeFlow * outerPipe.dpLaminar) / outerPipe.V_flowLaminar + outerPipe.k * (outerPipe.VolumeFlow - outerPipe.V_flowLaminar) ^ 2.0;
-//   elseif outerPipe.VolumeFlow < -outerPipe.V_flowLaminar then
-//   outerPipe.pressureDrop = (outerPipe.VolumeFlow * outerPipe.dpLaminar) / outerPipe.V_flowLaminar - outerPipe.k * (outerPipe.VolumeFlow + outerPipe.V_flowLaminar) ^ 2.0;
+//   outerPipe.pressureDrop = outerPipe.VolumeFlow * outerPipe.dpLaminar / outerPipe.V_flowLaminar + outerPipe.k * (outerPipe.VolumeFlow - outerPipe.V_flowLaminar) ^ 2.0;
+//   elseif outerPipe.VolumeFlow < (-outerPipe.V_flowLaminar) then
+//   outerPipe.pressureDrop = outerPipe.VolumeFlow * outerPipe.dpLaminar / outerPipe.V_flowLaminar - outerPipe.k * (outerPipe.VolumeFlow + outerPipe.V_flowLaminar) ^ 2.0;
 //   else
-//   outerPipe.pressureDrop = (outerPipe.VolumeFlow * outerPipe.dpLaminar) / outerPipe.V_flowLaminar;
+//   outerPipe.pressureDrop = outerPipe.VolumeFlow * outerPipe.dpLaminar / outerPipe.V_flowLaminar;
 //   end if;
-//   outerPipe.Q_friction = outerPipe.frictionLoss * (outerPipe.VolumeFlow * outerPipe.pressureDrop);
+//   outerPipe.Q_friction = outerPipe.frictionLoss * outerPipe.VolumeFlow * outerPipe.pressureDrop;
 //   innerPipe.VolumeFlow = innerPipe.V_flow;
-//   innerPipe.dp = innerPipe.pressureDrop + 9.80665 * (innerPipe.medium.rho * innerPipe.h_g);
+//   innerPipe.dp = innerPipe.pressureDrop + 9.80665 * innerPipe.medium.rho * innerPipe.h_g;
 //   innerPipe.Q_flow = innerPipe.heatPort.Q_flow + innerPipe.Q_friction;
 //   innerPipe.heatPort.T = innerPipe.T_q;
 //   innerPipe.flowPort_a.m_flow + innerPipe.flowPort_b.m_flow = 0.0;
-//   innerPipe.flowPort_a.H_flow + (innerPipe.flowPort_b.H_flow + innerPipe.Q_flow) = innerPipe.m * (innerPipe.medium.cv * der(innerPipe.T));
-//   innerPipe.flowPort_a.H_flow = semiLinear(innerPipe.flowPort_a.m_flow,innerPipe.flowPort_a.h,innerPipe.h);
-//   innerPipe.flowPort_b.H_flow = semiLinear(innerPipe.flowPort_b.m_flow,innerPipe.flowPort_b.h,innerPipe.h);
+//   innerPipe.flowPort_a.H_flow + innerPipe.flowPort_b.H_flow + innerPipe.Q_flow = innerPipe.m * innerPipe.medium.cv * der(innerPipe.T);
+//   innerPipe.flowPort_a.H_flow = semiLinear(innerPipe.flowPort_a.m_flow, innerPipe.flowPort_a.h, innerPipe.h);
+//   innerPipe.flowPort_b.H_flow = semiLinear(innerPipe.flowPort_b.m_flow, innerPipe.flowPort_b.h, innerPipe.h);
 //   if innerPipe.VolumeFlow > innerPipe.V_flowLaminar then
-//   innerPipe.pressureDrop = (innerPipe.VolumeFlow * innerPipe.dpLaminar) / innerPipe.V_flowLaminar + innerPipe.k * (innerPipe.VolumeFlow - innerPipe.V_flowLaminar) ^ 2.0;
-//   elseif innerPipe.VolumeFlow < -innerPipe.V_flowLaminar then
-//   innerPipe.pressureDrop = (innerPipe.VolumeFlow * innerPipe.dpLaminar) / innerPipe.V_flowLaminar - innerPipe.k * (innerPipe.VolumeFlow + innerPipe.V_flowLaminar) ^ 2.0;
+//   innerPipe.pressureDrop = innerPipe.VolumeFlow * innerPipe.dpLaminar / innerPipe.V_flowLaminar + innerPipe.k * (innerPipe.VolumeFlow - innerPipe.V_flowLaminar) ^ 2.0;
+//   elseif innerPipe.VolumeFlow < (-innerPipe.V_flowLaminar) then
+//   innerPipe.pressureDrop = innerPipe.VolumeFlow * innerPipe.dpLaminar / innerPipe.V_flowLaminar - innerPipe.k * (innerPipe.VolumeFlow + innerPipe.V_flowLaminar) ^ 2.0;
 //   else
-//   innerPipe.pressureDrop = (innerPipe.VolumeFlow * innerPipe.dpLaminar) / innerPipe.V_flowLaminar;
+//   innerPipe.pressureDrop = innerPipe.VolumeFlow * innerPipe.dpLaminar / innerPipe.V_flowLaminar;
 //   end if;
-//   innerPipe.Q_friction = innerPipe.frictionLoss * (innerPipe.VolumeFlow * innerPipe.pressureDrop);
+//   innerPipe.Q_friction = innerPipe.frictionLoss * innerPipe.VolumeFlow * innerPipe.pressureDrop;
 //   innerPump.Q_flow = 0.0;
 //   innerPump.V_flow = innerPump.VolumeFlow;
 //   innerPump.flowPort_a.m_flow + innerPump.flowPort_b.m_flow = 0.0;
-//   innerPump.flowPort_a.H_flow + (innerPump.flowPort_b.H_flow + innerPump.Q_flow) = 0.0;
-//   innerPump.flowPort_a.H_flow = semiLinear(innerPump.flowPort_a.m_flow,innerPump.flowPort_a.h,innerPump.h);
-//   innerPump.flowPort_b.H_flow = semiLinear(innerPump.flowPort_b.m_flow,innerPump.flowPort_b.h,innerPump.h);
+//   innerPump.flowPort_a.H_flow + innerPump.flowPort_b.H_flow + innerPump.Q_flow = 0.0;
+//   innerPump.flowPort_a.H_flow = semiLinear(innerPump.flowPort_a.m_flow, innerPump.flowPort_a.h, innerPump.h);
+//   innerPump.flowPort_b.H_flow = semiLinear(innerPump.flowPort_b.m_flow, innerPump.flowPort_b.h, innerPump.h);
 //   assert(outerPipe.flowPort_b.medium.rho == Ambient2.flowPort.medium.rho,\"automatically generated from connect\");
 //   assert(outerPipe.flowPort_b.medium.cp == Ambient2.flowPort.medium.cp,\"automatically generated from connect\");
 //   assert(outerPipe.flowPort_b.medium.cv == Ambient2.flowPort.medium.cv,\"automatically generated from connect\");

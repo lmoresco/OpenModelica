@@ -44,7 +44,7 @@ end mo;
 //   Real xvar(start = 100.0);
 // equation
 //   xvar = der(xvar);
-//   (x,z,_) = fooTuple(xvar);
-//   (y,_,_) = fooTuple(der(xvar));
+//   (x, z, _) = fooTuple(xvar);
+//   (y, _, _) = fooTuple(der(xvar));
 // end mo;
 // endResult

@@ -65,7 +65,7 @@ end PartialFn7;
 // end PartialFn7.TestRecord; rc;
 //   output PartialFn7.TestRecord tr;
 // algorithm
-//   tr := mmc_unbox_record(rc(#(i),#(r)));
+//   tr := mmc_unbox_record(rc(#(i), #(r)));
 // end PartialFn7.CreateTestRecord;
 // 
 // function PartialFn7.TestCreateTestRecord
@@ -74,7 +74,7 @@ end PartialFn7;
 //   output Integer o;
 //   protected PartialFn7.TestRecord tr;
 // algorithm
-//   tr := PartialFn7.CreateTestRecord(i,r,PartialFn7.TestRecord);
+//   tr := PartialFn7.CreateTestRecord(i, r, PartialFn7.TestRecord);
 //   o := 2;
 // end PartialFn7.TestCreateTestRecord;
 // 

@@ -59,7 +59,7 @@ end getPerson;
 // algorithm
 //   p.name := name;
 //   p.age := age;
-//   p.children := {children[1],children[2]};
+//   p.children := {children[1], children[2]};
 // end mkperson;
 // 
 // class getPerson

@@ -43,16 +43,16 @@ end PartialFn15;
 //   protected binop<function>(r1:#Real, r2:#Real) => #Real binop;
 // algorithm
 //   lst := List();
-//   binops := List(realAdd,realSub,realMul,realDiv,realPow,realMax,realMin);
+//   binops := List(realAdd, realSub, realMul, realDiv, realPow, realMax, realMin);
 //   while not listEmpty(binops) loop
-//     lst := match (binops) 
-//     case (binop::binops) then listCons(binop(#(r1),#(r2)),lst);
+//     lst := match (binops)
+//     case (binop::binops) then listCons(binop(#(r1), #(r2)), lst);
 //   end match;
 //   end while;
 //   lst := listReverse(lst);
 // end PartialFn15.elabRealBinOps;
 // 
 // class PartialFn15
-//   constant list<#Real> rs = List(#(11.0),#(5.0),#(24.0),#(2.6666666666666665),#(512.0),#(8.0),#(3.0));
+//   constant list<#Real> rs = List(#(11.0), #(5.0), #(24.0), #(2.6666666666666665), #(512.0), #(8.0), #(3.0));
 // end PartialFn15;
 // endResult

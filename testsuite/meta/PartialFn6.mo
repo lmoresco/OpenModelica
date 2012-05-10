@@ -59,7 +59,7 @@ end PartialFn6;
 //   input Real x;
 //   output Real y;
 // algorithm
-//   y := ApplyRealOp(ExtFunc,x);
+//   y := ApplyRealOp(ExtFunc, x);
 // end TestApplyRealOp;
 // 
 // class PartialFn6

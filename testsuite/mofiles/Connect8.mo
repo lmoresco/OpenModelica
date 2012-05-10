@@ -39,6 +39,6 @@ end Connect8;
 //   cy.x = 0.0;
 //   c[2].r = cx.r;
 //   c[2].r = cy.r;
-//   -c[2].x + -cx.x + -cy.x = 0.0;
+//   (-c[2].x) + (-cx.x) + (-cy.x) = 0.0;
 // end Connect8;
 // endResult

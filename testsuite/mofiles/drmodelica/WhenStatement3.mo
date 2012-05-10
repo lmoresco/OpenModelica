@@ -44,7 +44,7 @@ end WhenStat3;
 //     y1 := sin(x);
 //   end when;
 //   when x > 2.0 then
-//     y3 := 2.0 * x + (pre(y1) + y2);
+//     y3 := 2.0 * x + pre(y1) + y2;
 //   end when;
 // end WhenStat3;
 // endResult

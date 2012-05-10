@@ -56,7 +56,7 @@ checkModel(Modelica.Fluid.Sensors.RelativeTemperature); getErrorString();
 //   port_b.m_flow = 0.0;
 //   port_a.h_outflow = 0.0;
 //   port_b.h_outflow = 0.0;
-//   T_rel = Modelica.Fluid.Sensors.RelativeTemperature.Medium.temperature(Modelica.Fluid.Sensors.RelativeTemperature.Medium.setState_phX(port_a.p,port_a.h_outflow,{})) - Modelica.Fluid.Sensors.RelativeTemperature.Medium.temperature(Modelica.Fluid.Sensors.RelativeTemperature.Medium.setState_phX(port_b.p,port_b.h_outflow,{}));
+//   T_rel = Modelica.Fluid.Sensors.RelativeTemperature.Medium.temperature(Modelica.Fluid.Sensors.RelativeTemperature.Medium.setState_phX(port_a.p, port_a.h_outflow, {})) - Modelica.Fluid.Sensors.RelativeTemperature.Medium.temperature(Modelica.Fluid.Sensors.RelativeTemperature.Medium.setState_phX(port_b.p, port_b.h_outflow, {}));
 //   port_a.m_flow = 0.0;
 //   port_b.m_flow = 0.0;
 // end Modelica.Fluid.Sensors.RelativeTemperature;

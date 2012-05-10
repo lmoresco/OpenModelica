@@ -27,8 +27,8 @@ end ExternalFunction3;
 // Result:
 // function ExternalFunction3.addmatrices
 //   input Real[:, :] a;
-//   input Real[size(a,1), size(a,2)] b;
-//   output Real[size(a,1), size(a,2)] c;
+//   input Real[size(a, 1), size(a, 2)] b;
+//   output Real[size(a, 1), size(a, 2)] c;
 // 
 //   external "C" addmatrices(a, size(a, 1), size(a, 2), b, size(b, 1), size(b, 2), c, size(c, 1), size(c, 2));
 // end ExternalFunction3.addmatrices;

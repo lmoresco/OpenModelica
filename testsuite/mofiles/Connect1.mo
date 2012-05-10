@@ -29,7 +29,7 @@ end Connect1;
 //   c2.f = time;
 //   c1.f = 0.0;
 //   c2.f = 0.0;
-//   -c1.f + -c2.f = 0.0;
+//   (-c1.f) + (-c2.f) = 0.0;
 //   c1.e = c2.e;
 // end Connect1;
 // endResult

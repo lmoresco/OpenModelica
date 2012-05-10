@@ -38,7 +38,7 @@ end NamedCall;
 // algorithm
 //   sum := 0.0;
 //   xpower := 1.0;
-//   for i in 1:size(A,1) loop
+//   for i in 1:size(A, 1) loop
 //     sum := sum + A[i] * xpower;
 //     xpower := xpower * x;
 //   end for;

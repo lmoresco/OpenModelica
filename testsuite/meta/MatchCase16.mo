@@ -23,7 +23,7 @@ end MatchCase16;
 //   input String str;
 //   output String outStr;
 // algorithm
-//   "" := match (str) 
+//   "" := match (str)
 //     case (str) then str;
 //   end match;
 //   outStr := "";

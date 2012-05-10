@@ -27,7 +27,7 @@ end FunctionDefaultArgs;
 
 // Result:
 // function FunctionDefaultArgs.set
-//   input Integer[:] X = {1,2,3};
+//   input Integer[:] X = {1, 2, 3};
 //   output Integer x1;
 // algorithm
 //   x1 := X[1];

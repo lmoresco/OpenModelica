@@ -20,6 +20,6 @@ end Modif1;
 
 // Result:
 // class Modif1
-//   Real b[1:3].a.x = {0.0,0.0,0.0};
+//   Real b[1:3].a.x = {0.0, 0.0, 0.0};
 // end Modif1;
 // endResult

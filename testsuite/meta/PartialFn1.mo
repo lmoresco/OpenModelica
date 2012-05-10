@@ -64,13 +64,13 @@ end PartialFn1;
 //   output Integer i2;
 // algorithm
 //   i1 := 18;
-//   i2 := PartialFn1.ApplyIntOp(PartialFn1.AddInt,i1);
+//   i2 := PartialFn1.ApplyIntOp(PartialFn1.AddInt, i1);
 // end PartialFn1.test;
 // 
 // class PartialFn1
 //   Integer i1;
 //   Integer i2;
 // equation
-//   (i1,i2) = (18,19);
+//   (i1, i2) = (18, 19);
 // end PartialFn1;
 // endResult

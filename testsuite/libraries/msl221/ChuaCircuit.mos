@@ -71,7 +71,7 @@ getErrorString();
 //   Ro.v = Ro.p.v - Ro.n.v;
 //   0.0 = Ro.p.i + Ro.n.i;
 //   Ro.i = Ro.p.i;
-//   Nr.i = if Nr.v < -Nr.Ve then Nr.Gb * (Nr.v + Nr.Ve) - Nr.Ga * Nr.Ve else if Nr.v > Nr.Ve then Nr.Gb * (Nr.v - Nr.Ve) + Nr.Ga * Nr.Ve else Nr.Ga * Nr.v;
+//   Nr.i = if Nr.v < (-Nr.Ve) then Nr.Gb * (Nr.v + Nr.Ve) - Nr.Ga * Nr.Ve else if Nr.v > Nr.Ve then Nr.Gb * (Nr.v - Nr.Ve) + Nr.Ga * Nr.Ve else Nr.Ga * Nr.v;
 //   Nr.v = Nr.p.v - Nr.n.v;
 //   0.0 = Nr.p.i + Nr.n.i;
 //   Nr.i = Nr.p.i;

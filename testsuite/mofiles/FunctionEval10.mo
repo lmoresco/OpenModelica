@@ -27,7 +27,7 @@ end FunctionEval10;
 //   output Real[:] m;
 //   protected Real[:] tmp;
 // algorithm
-//   tmp := fill(1.0,n);
+//   tmp := fill(1.0, n);
 //   m := tmp;
 // end fun;
 // 

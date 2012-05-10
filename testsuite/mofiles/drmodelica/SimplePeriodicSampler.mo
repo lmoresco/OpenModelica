@@ -25,7 +25,7 @@ end Sampler;
 //   Real y;
 // equation
 //   der(x) = -x;
-//   when sample(0.0,sample_interval) then
+//   when sample(0.0, sample_interval) then
 //   y = x;
 //   end when;
 // end Sampler;

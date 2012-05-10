@@ -18,9 +18,9 @@ end VectorizeUnknownDim;
 // Result:
 // function VectorizeUnknownDim.Foo
 //   input Integer[:] x;
-//   output Integer[size(x,1)] y;
+//   output Integer[size(x, 1)] y;
 // algorithm
-//   y := <reduction>array(abs($vectorizeArg) for $vectorizeArg in x);
+//   y := array(abs($vectorizeArg) for $vectorizeArg in x);
 // end VectorizeUnknownDim.Foo;
 // 
 // class VectorizeUnknownDim
@@ -29,6 +29,6 @@ end VectorizeUnknownDim;
 //   Integer b[1];
 //   Integer b[2];
 // algorithm
-//   b := VectorizeUnknownDim.Foo({a[1],a[2]});
+//   b := VectorizeUnknownDim.Foo({a[1], a[2]});
 // end VectorizeUnknownDim;
 // endResult

@@ -18,7 +18,7 @@ end End;
 //   Real vals[1,2];
 //   Real vals[1,3];
 // algorithm
-//   vals[1,:] := {1.0,1.0,1.0};
-//   vals[1,{1,3}] := {0.0,0.0};
+//   vals[1,:] := {1.0, 1.0, 1.0};
+//   vals[1,{1, 3}] := {0.0, 0.0};
 // end End;
 // endResult

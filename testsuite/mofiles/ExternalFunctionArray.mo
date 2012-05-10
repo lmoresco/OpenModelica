@@ -29,7 +29,7 @@ end ExternalFunctionArray;
 // Result:
 // function ExternalFunctionArray.f
 //   input Real r;
-//   output Real[2] res = ExternalFunctionArray.get_results(r,"abc",2) + ExternalFunctionArray.get_results(2.0 * r,"abc",2);
+//   output Real[2] res = ExternalFunctionArray.get_results(r, "abc", 2) + ExternalFunctionArray.get_results(2.0 * r, "abc", 2);
 // end ExternalFunctionArray.f;
 // 
 // function ExternalFunctionArray.get_results

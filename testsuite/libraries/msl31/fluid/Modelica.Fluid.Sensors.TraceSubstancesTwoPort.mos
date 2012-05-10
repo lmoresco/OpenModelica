@@ -17,10 +17,10 @@ checkModel(Modelica.Fluid.Sensors.TraceSubstancesTwoPort); getErrorString();
 //   input Real x \"Abscissa value\";
 //   input Real y1 \"Ordinate value for x > 0\";
 //   input Real y2 \"Ordinate value for x < 0\";
-//   input Real x_small(min = 0.0) = 1e-05 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
+//   input Real x_small(min = 0.0) = 0.00001 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
 //   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
 // algorithm
-//   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
+//   y := smooth(1, if x > x_small then y1 else if x < (-x_small) then y2 else if abs(x_small) > 0.0 then (y2 - y1) * (-3.0 + (x / x_small) ^ 2.0) * x / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
 // end Modelica.Fluid.Utilities.regStep;
 // 
 // function Modelica.Math.asin
@@ -52,7 +52,7 @@ checkModel(Modelica.Fluid.Sensors.TraceSubstancesTwoPort); getErrorString();
 //   input Boolean caseSensitive = true \"= false, if lower and upper case are ignored for the comparison\";
 //   output Boolean identical \"True, if string1 is identical to string2\";
 // algorithm
-//   identical := Modelica.Utilities.Strings.compare(string1,string2,caseSensitive) == Modelica.Utilities.Types.Compare.Equal;
+//   identical := Modelica.Utilities.Strings.compare(string1, string2, caseSensitive) == Modelica.Utilities.Types.Compare.Equal;
 // end Modelica.Utilities.Strings.isEqual;
 // 
 // class Modelica.Fluid.Sensors.TraceSubstancesTwoPort
@@ -87,14 +87,14 @@ checkModel(Modelica.Fluid.Sensors.TraceSubstancesTwoPort); getErrorString();
 // initial algorithm
 //   ind := -1;
 //   for i in 1:0 loop
-//     if Modelica.Utilities.Strings.isEqual({}[i],substanceName,true) then
+//     if Modelica.Utilities.Strings.isEqual({}[i], substanceName, true) then
 //       ind := i;
 //     end if;
 //   end for;
 //   assert(ind > 0, \"Trace substance '\" + substanceName + \"' is not present in medium '\" + \"unusablePartialMedium\" + \"'.
 // \" + \"Check sensor parameter and medium model.\");
 // equation
-//   C = Modelica.Fluid.Utilities.regStep(port_a.m_flow,{}[ind],{}[ind],m_flow_small);
+//   C = Modelica.Fluid.Utilities.regStep(port_a.m_flow, {}[ind], {}[ind], m_flow_small);
 //   0.0 = port_a.m_flow + port_b.m_flow;
 //   port_a.p = port_b.p;
 //   port_a.h_outflow = port_b.h_outflow;

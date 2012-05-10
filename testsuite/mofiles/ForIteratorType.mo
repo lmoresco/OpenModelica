@@ -24,7 +24,7 @@ end ForIteratorType;
 //   Integer ints[2];
 //   Integer ints[3];
 // algorithm
-//   for e in {ForIteratorType.E.one,ForIteratorType.E.two,ForIteratorType.E.three} loop
+//   for e in {ForIteratorType.E.one, ForIteratorType.E.two, ForIteratorType.E.three} loop
 //     ints[Integer(e)] := Integer(e);
 //   end for;
 //   for i in 1:3 loop

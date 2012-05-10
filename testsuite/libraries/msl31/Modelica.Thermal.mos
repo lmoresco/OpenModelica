@@ -72,7 +72,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   Real speed.w(quantity = \"AngularVelocity\", unit = \"rad/s\", StateSelect = StateSelect.default) \"Angular velocity of flange with respect to support\";
 //   Real speed.a(quantity = \"AngularAcceleration\", unit = \"rad/s2\") \"If exact=false, angular acceleration of flange with respect to support else dummy\";
 //   input Real speed.w_ref \"Reference angular velocity of flange with respect to support as input signal\";
-//   protected parameter Real speed.w_crit(quantity = \"AngularFrequency\", unit = \"rad/s\") = 6.28318530717959 * speed.f_crit \"Critical frequency\";
+//   protected parameter Real speed.w_crit(quantity = \"AngularFrequency\", unit = \"rad/s\") = 6.283185307179586 * speed.f_crit \"Critical frequency\";
 //   output Real speedRamp.y \"Connector of Real output signal\";
 //   parameter Real speedRamp.height = 0.5 \"Height of ramps\";
 //   parameter Real speedRamp.duration(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 2.0) = 0.1 \"Durations of ramp\";
@@ -125,7 +125,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   output Real idealPump.T_b(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = idealPump.flowPort_b.h / idealPump.medium.cp \"Temperature at flowPort_b\";
 //   output Real idealPump.dT(quantity = \"ThermodynamicTemperature\", unit = \"K\") = if noEvent(idealPump.V_flow >= 0.0) then idealPump.T - idealPump.T_a else idealPump.T_b - idealPump.T \"Temperature increase of coolant in flow direction\";
 //   protected Real idealPump.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") = idealPump.medium.cp * idealPump.T \"Medium's specific enthalpy\";
-//   protected Real idealPump.T_q(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = idealPump.T - Real(sign(idealPump.V_flow)) * ((1.0 - idealPump.tapT) * idealPump.dT) \"Temperature relevant for heat exchange with ambient\";
+//   protected Real idealPump.T_q(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = idealPump.T - Real(sign(idealPump.V_flow)) * (1.0 - idealPump.tapT) * idealPump.dT \"Temperature relevant for heat exchange with ambient\";
 //   parameter Real idealPump.wNominal(quantity = \"AngularVelocity\", unit = \"rad/s\", displayUnit = \"1/min\", start = 1.0) \"Nominal speed\";
 //   parameter Real idealPump.dp0(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = 2.0) \"Max. pressure increase @ V_flow=0\";
 //   parameter Real idealPump.V_flow0(quantity = \"VolumeFlowRate\", unit = \"m3/s\", start = 2.0) \"Max. volume flow rate @ dp=0\";
@@ -168,15 +168,15 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   output Real valve.T_b(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = valve.flowPort_b.h / valve.medium.cp \"Temperature at flowPort_b\";
 //   output Real valve.dT(quantity = \"ThermodynamicTemperature\", unit = \"K\") = if noEvent(valve.V_flow >= 0.0) then valve.T - valve.T_a else valve.T_b - valve.T \"Temperature increase of coolant in flow direction\";
 //   protected Real valve.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") = valve.medium.cp * valve.T \"Medium's specific enthalpy\";
-//   protected Real valve.T_q(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = valve.T - Real(sign(valve.V_flow)) * ((1.0 - valve.tapT) * valve.dT) \"Temperature relevant for heat exchange with ambient\";
+//   protected Real valve.T_q(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = valve.T - Real(sign(valve.V_flow)) * (1.0 - valve.tapT) * valve.dT \"Temperature relevant for heat exchange with ambient\";
 //   parameter Boolean valve.LinearCharacteristic(start = true) = false \"Type of characteristic\";
 //   parameter Real valve.dp0(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = 1.0) \"Standard pressure drop\";
 //   parameter Real valve.rho0(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, start = 10.0) \"Standard medium's density\";
 //   parameter Real valve.frictionLoss(min = 0.0, max = 1.0, start = 0.0) \"Part of friction losses fed to medium\";
 //   protected constant Real valve.unitVolumeFlowRate(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = 1.0;
 //   protected constant Real valve.small = 1e-60;
-//   protected constant Real valve.eps = 1e-15;
-//   protected Real valve.yLim = max(min(valve.y,valve.y1),0.0) \"Limited valve opening\";
+//   protected constant Real valve.eps = 0.000000000000001;
+//   protected Real valve.yLim = max(min(valve.y, valve.y1), 0.0) \"Limited valve opening\";
 //   protected Real valve.Kv(quantity = \"VolumeFlowRate\", unit = \"m3/s\") \"Standard flow rate\";
 //   input Real valve.y;
 //   parameter Real valve.flowPort_a.medium.rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = valve.medium.rho \"Density\";
@@ -200,7 +200,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   output Real valve.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0, start = valve.T0) \"Outlet temperature of medium\";
 //   parameter Real valve.y1(min = 1e-60, start = 1.0) \"Max. valve opening\";
 //   parameter Real valve.Kv1(quantity = \"VolumeFlowRate\", unit = \"m3/s\", min = 1e-60, start = 1.0) \"Max. flow @ y = y1\";
-//   protected constant Real valve.smallVolumeFlowRate(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = 1e-15;
+//   protected constant Real valve.smallVolumeFlowRate(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = 0.000000000000001;
 //   parameter Real valve.kv0(min = 1e-60, max = 1.0, start = 0.01) \"Leakage flow / max.flow @ y = 0\";
 //   parameter Real pipe.medium.rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = medium.rho \"Density\";
 //   parameter Real pipe.medium.cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") = medium.cp \"Specific heat capacity at constant pressure\";
@@ -217,7 +217,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   output Real pipe.T_b(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = pipe.flowPort_b.h / pipe.medium.cp \"Temperature at flowPort_b\";
 //   output Real pipe.dT(quantity = \"ThermodynamicTemperature\", unit = \"K\") = if noEvent(pipe.V_flow >= 0.0) then pipe.T - pipe.T_a else pipe.T_b - pipe.T \"Temperature increase of coolant in flow direction\";
 //   protected Real pipe.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") = pipe.medium.cp * pipe.T \"Medium's specific enthalpy\";
-//   protected Real pipe.T_q(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = pipe.T - Real(sign(pipe.V_flow)) * ((1.0 - pipe.tapT) * pipe.dT) \"Temperature relevant for heat exchange with ambient\";
+//   protected Real pipe.T_q(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = pipe.T - Real(sign(pipe.V_flow)) * (1.0 - pipe.tapT) * pipe.dT \"Temperature relevant for heat exchange with ambient\";
 //   parameter Real pipe.V_flowLaminar(quantity = \"VolumeFlowRate\", unit = \"m3/s\", min = 1e-60, start = 0.1) \"Laminar volume flow\";
 //   parameter Real pipe.dpLaminar(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = 0.1) \"Laminar pressure drop\";
 //   parameter Real pipe.V_flowNominal(quantity = \"VolumeFlowRate\", unit = \"m3/s\", start = 1.0) \"Nominal volume flow\";
@@ -249,7 +249,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   Real pipe.flowPort_b.h(quantity = \"SpecificEnergy\", unit = \"J/kg\");
 //   Real pipe.flowPort_b.H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\");
 //   output Real pipe.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0, start = pipe.T0) \"Outlet temperature of medium\";
-//   protected parameter Real pipe.dpNomMin(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = (pipe.V_flowNominal * pipe.dpLaminar) / pipe.V_flowLaminar;
+//   protected parameter Real pipe.dpNomMin(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = pipe.V_flowNominal * pipe.dpLaminar / pipe.V_flowLaminar;
 //   parameter Real ambient2.medium.rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = medium.rho \"Density\";
 //   parameter Real ambient2.medium.cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") = medium.cp \"Specific heat capacity at constant pressure\";
 //   parameter Real ambient2.medium.cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") = medium.cv \"Specific heat capacity at constant volume\";
@@ -284,7 +284,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   Real heatCapacitor.port.Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
 // initial algorithm
 //   assert(valve.y1 > 1e-60, \"Valve characteristic: y1 has to be > 0 !\");
-//   assert(valve.Kv1 > 1e-15, \"Valve characteristic: Kv1 has to be > 0 !\");
+//   assert(valve.Kv1 > 0.000000000000001, \"Valve characteristic: Kv1 has to be > 0 !\");
 //   assert(valve.kv0 > 1e-60, \"Valve characteristic: kv0 has to be > 0 !\");
 //   assert(valve.kv0 < 0.999999999999999, \"Valve characteristic: kv0 has to be < 1 !\");
 //   assert(pipe.V_flowNominal > pipe.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
@@ -303,15 +303,15 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   speed.w = speed.w_ref;
 //   speed.a = 0.0;
 //   speed.phi_support = 0.0;
-//   speedRamp.y = speedRamp.offset + (if time < speedRamp.startTime then 0.0 else if time < speedRamp.startTime + speedRamp.duration then ((time - speedRamp.startTime) * speedRamp.height) / speedRamp.duration else speedRamp.height);
-//   valveRamp.y = valveRamp.offset + (if time < valveRamp.startTime then 0.0 else if time < valveRamp.startTime + valveRamp.duration then ((time - valveRamp.startTime) * valveRamp.height) / valveRamp.duration else valveRamp.height);
+//   speedRamp.y = speedRamp.offset + (if time < speedRamp.startTime then 0.0 else if time < speedRamp.startTime + speedRamp.duration then (time - speedRamp.startTime) * speedRamp.height / speedRamp.duration else speedRamp.height);
+//   valveRamp.y = valveRamp.offset + (if time < valveRamp.startTime then 0.0 else if time < valveRamp.startTime + valveRamp.duration then (time - valveRamp.startTime) * valveRamp.height / valveRamp.duration else valveRamp.height);
 //   ambient1.constPressure.y = ambient1.constPressure.k;
 //   ambient1.constTemperature.y = ambient1.constTemperature.k;
 //   ambient1.flowPort.p = ambient1.pAmbient;
 //   ambient1.T = ambient1.TAmbient;
-//   ambient1.flowPort.H_flow = semiLinear(ambient1.flowPort.m_flow,ambient1.flowPort.h,ambient1.h);
-//   idealPump.dp1 = idealPump.dp0 * (Real(sign(idealPump.w / idealPump.wNominal)) * (idealPump.w / idealPump.wNominal) ^ 2.0);
-//   idealPump.V_flow1 = (idealPump.V_flow0 * idealPump.w) / idealPump.wNominal;
+//   ambient1.flowPort.H_flow = semiLinear(ambient1.flowPort.m_flow, ambient1.flowPort.h, ambient1.h);
+//   idealPump.dp1 = idealPump.dp0 * Real(sign(idealPump.w / idealPump.wNominal)) * (idealPump.w / idealPump.wNominal) ^ 2.0;
+//   idealPump.V_flow1 = idealPump.V_flow0 * idealPump.w / idealPump.wNominal;
 //   if noEvent(abs(idealPump.w) < 1e-60) then
 //   idealPump.dp = 0.0;
 //   idealPump.flange_a.tau = 0.0;
@@ -321,37 +321,37 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   end if;
 //   idealPump.Q_flow = 0.0;
 //   idealPump.flowPort_a.m_flow + idealPump.flowPort_b.m_flow = 0.0;
-//   idealPump.flowPort_a.H_flow + (idealPump.flowPort_b.H_flow + idealPump.Q_flow) = 0.0;
-//   idealPump.flowPort_a.H_flow = semiLinear(idealPump.flowPort_a.m_flow,idealPump.flowPort_a.h,idealPump.h);
-//   idealPump.flowPort_b.H_flow = semiLinear(idealPump.flowPort_b.m_flow,idealPump.flowPort_b.h,idealPump.h);
-//   valve.Kv / valve.Kv1 = if valve.LinearCharacteristic then valve.kv0 + ((1.0 - valve.kv0) * valve.yLim) / valve.y1 else valve.kv0 * exp((log(1.0 / valve.kv0) * valve.yLim) / valve.y1);
-//   valve.dp / valve.dp0 = (abs(valve.V_flow / valve.Kv) * (valve.V_flow * valve.medium.rho)) / (valve.rho0 * valve.Kv);
-//   valve.Q_flow = valve.frictionLoss * (valve.V_flow * valve.dp);
+//   idealPump.flowPort_a.H_flow + idealPump.flowPort_b.H_flow + idealPump.Q_flow = 0.0;
+//   idealPump.flowPort_a.H_flow = semiLinear(idealPump.flowPort_a.m_flow, idealPump.flowPort_a.h, idealPump.h);
+//   idealPump.flowPort_b.H_flow = semiLinear(idealPump.flowPort_b.m_flow, idealPump.flowPort_b.h, idealPump.h);
+//   valve.Kv / valve.Kv1 = if valve.LinearCharacteristic then valve.kv0 + (1.0 - valve.kv0) * valve.yLim / valve.y1 else valve.kv0 * exp(log(1.0 / valve.kv0) * valve.yLim / valve.y1);
+//   valve.dp / valve.dp0 = abs(valve.V_flow / valve.Kv) * valve.V_flow * valve.medium.rho / (valve.rho0 * valve.Kv);
+//   valve.Q_flow = valve.frictionLoss * valve.V_flow * valve.dp;
 //   valve.flowPort_a.m_flow + valve.flowPort_b.m_flow = 0.0;
-//   valve.flowPort_a.H_flow + (valve.flowPort_b.H_flow + valve.Q_flow) = 0.0;
-//   valve.flowPort_a.H_flow = semiLinear(valve.flowPort_a.m_flow,valve.flowPort_a.h,valve.h);
-//   valve.flowPort_b.H_flow = semiLinear(valve.flowPort_b.m_flow,valve.flowPort_b.h,valve.h);
+//   valve.flowPort_a.H_flow + valve.flowPort_b.H_flow + valve.Q_flow = 0.0;
+//   valve.flowPort_a.H_flow = semiLinear(valve.flowPort_a.m_flow, valve.flowPort_a.h, valve.h);
+//   valve.flowPort_b.H_flow = semiLinear(valve.flowPort_b.m_flow, valve.flowPort_b.h, valve.h);
 //   pipe.volumeFlow = pipe.V_flow;
-//   pipe.dp = pipe.pressureDrop + 9.80665 * (pipe.medium.rho * pipe.h_g);
+//   pipe.dp = pipe.pressureDrop + 9.80665 * pipe.medium.rho * pipe.h_g;
 //   pipe.Q_flow = pipe.heatPort.Q_flow + pipe.Q_friction;
 //   pipe.heatPort.T = pipe.T_q;
 //   pipe.flowPort_a.m_flow + pipe.flowPort_b.m_flow = 0.0;
-//   pipe.flowPort_a.H_flow + (pipe.flowPort_b.H_flow + pipe.Q_flow) = pipe.m * (pipe.medium.cv * der(pipe.T));
-//   pipe.flowPort_a.H_flow = semiLinear(pipe.flowPort_a.m_flow,pipe.flowPort_a.h,pipe.h);
-//   pipe.flowPort_b.H_flow = semiLinear(pipe.flowPort_b.m_flow,pipe.flowPort_b.h,pipe.h);
+//   pipe.flowPort_a.H_flow + pipe.flowPort_b.H_flow + pipe.Q_flow = pipe.m * pipe.medium.cv * der(pipe.T);
+//   pipe.flowPort_a.H_flow = semiLinear(pipe.flowPort_a.m_flow, pipe.flowPort_a.h, pipe.h);
+//   pipe.flowPort_b.H_flow = semiLinear(pipe.flowPort_b.m_flow, pipe.flowPort_b.h, pipe.h);
 //   if pipe.volumeFlow > pipe.V_flowLaminar then
-//   pipe.pressureDrop = (pipe.volumeFlow * pipe.dpLaminar) / pipe.V_flowLaminar + pipe.k * (pipe.volumeFlow - pipe.V_flowLaminar) ^ 2.0;
-//   elseif pipe.volumeFlow < -pipe.V_flowLaminar then
-//   pipe.pressureDrop = (pipe.volumeFlow * pipe.dpLaminar) / pipe.V_flowLaminar - pipe.k * (pipe.volumeFlow + pipe.V_flowLaminar) ^ 2.0;
+//   pipe.pressureDrop = pipe.volumeFlow * pipe.dpLaminar / pipe.V_flowLaminar + pipe.k * (pipe.volumeFlow - pipe.V_flowLaminar) ^ 2.0;
+//   elseif pipe.volumeFlow < (-pipe.V_flowLaminar) then
+//   pipe.pressureDrop = pipe.volumeFlow * pipe.dpLaminar / pipe.V_flowLaminar - pipe.k * (pipe.volumeFlow + pipe.V_flowLaminar) ^ 2.0;
 //   else
-//   pipe.pressureDrop = (pipe.volumeFlow * pipe.dpLaminar) / pipe.V_flowLaminar;
+//   pipe.pressureDrop = pipe.volumeFlow * pipe.dpLaminar / pipe.V_flowLaminar;
 //   end if;
-//   pipe.Q_friction = pipe.frictionLoss * (pipe.volumeFlow * pipe.pressureDrop);
+//   pipe.Q_friction = pipe.frictionLoss * pipe.volumeFlow * pipe.pressureDrop;
 //   ambient2.constPressure.y = ambient2.constPressure.k;
 //   ambient2.constTemperature.y = ambient2.constTemperature.k;
 //   ambient2.flowPort.p = ambient2.pAmbient;
 //   ambient2.T = ambient2.TAmbient;
-//   ambient2.flowPort.H_flow = semiLinear(ambient2.flowPort.m_flow,ambient2.flowPort.h,ambient2.h);
+//   ambient2.flowPort.H_flow = semiLinear(ambient2.flowPort.m_flow, ambient2.flowPort.h, ambient2.h);
 //   heatCapacitor.T = heatCapacitor.port.T;
 //   heatCapacitor.der_T = der(heatCapacitor.T);
 //   heatCapacitor.C * der(heatCapacitor.T) = heatCapacitor.port.Q_flow;

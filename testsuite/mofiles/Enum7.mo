@@ -103,7 +103,7 @@ end X;
 //   x = if frame_r_out == frame_r_in then 0.0 else 1.0;
 //   f = enum.a;
 // algorithm
-//   for e in {Types.EnumTest.DigitalCurrentChoices.zero,Types.EnumTest.DigitalCurrentChoices.one} loop
+//   for e in {Types.EnumTest.DigitalCurrentChoices.zero, Types.EnumTest.DigitalCurrentChoices.one} loop
 //     enumtest.x[e] := 0.0;
 //   end for;
 //   for e in 1:2 loop

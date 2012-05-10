@@ -1029,7 +1029,7 @@ end BM17;
 //   output Real constant2.outPort.signal[1] "Real output signals";
 //   output Real constant2.y[1];
 // equation
-//   max1.y[1] = max(max1.u1[1],max1.u2[1]);
+//   max1.y[1] = max(max1.u1[1], max1.u2[1]);
 //   max1.y[1] = max1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

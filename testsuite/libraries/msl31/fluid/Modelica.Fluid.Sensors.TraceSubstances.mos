@@ -42,7 +42,7 @@ checkModel(Modelica.Fluid.Sensors.TraceSubstances); getErrorString();
 //   input Boolean caseSensitive = true \"= false, if lower and upper case are ignored for the comparison\";
 //   output Boolean identical \"True, if string1 is identical to string2\";
 // algorithm
-//   identical := Modelica.Utilities.Strings.compare(string1,string2,caseSensitive) == Modelica.Utilities.Types.Compare.Equal;
+//   identical := Modelica.Utilities.Strings.compare(string1, string2, caseSensitive) == Modelica.Utilities.Types.Compare.Equal;
 // end Modelica.Utilities.Strings.isEqual;
 // 
 // class Modelica.Fluid.Sensors.TraceSubstances
@@ -55,7 +55,7 @@ checkModel(Modelica.Fluid.Sensors.TraceSubstances); getErrorString();
 // initial algorithm
 //   ind := -1;
 //   for i in 1:0 loop
-//     if Modelica.Utilities.Strings.isEqual({}[i],substanceName,true) then
+//     if Modelica.Utilities.Strings.isEqual({}[i], substanceName, true) then
 //       ind := i;
 //     end if;
 //   end for;

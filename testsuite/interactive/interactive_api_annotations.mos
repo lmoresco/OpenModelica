@@ -7966,9 +7966,9 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-60,-15},{-30,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-30,-15},{0,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,-15},{30,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{30,-15},{60,15}},0,360),Rectangle(true,{0.0,0.0},0,{255,255,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,-20},{62,0}},0),Line(true,{0.0,0.0},0,{{60,0},{90,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-90,0},{-60,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,255},LinePattern.Solid,FillPattern.Sphere,0.25,BorderPattern.None,{{-60,-10},{60,-20}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-148,-50},{152,-80}},"Lnom=%Lnom",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-148,91},{152,51}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-60, -15}, {-30, 15}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-30, -15}, {0, 15}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{0, -15}, {30, 15}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{30, -15}, {60, 15}}, 0, 360), Rectangle(true, {0.0, 0.0}, 0, {255, 255, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-60, -20}, {62, 0}}, 0), Line(true, {0.0, 0.0}, 0, {{60, 0}, {90, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-90, 0}, {-60, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 255}, LinePattern.Solid, FillPattern.Sphere, 0.25, BorderPattern.None, {{-60, -10}, {60, -20}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-148, -50}, {152, -80}}, "Lnom=%Lnom", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-148, 91}, {152, 51}}, "%name", 0, TextAlignment.Center)}}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-60,-15},{-30,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-30,-15},{0,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,-15},{30,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{30,-15},{60,15}},0,360),Rectangle(true,{0.0,0.0},0,{255,255,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,-20},{62,0}},0),Line(true,{0.0,0.0},0,{{60,0},{96,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-96,0},{-60,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,255},LinePattern.Solid,FillPattern.Sphere,0.25,BorderPattern.None,{{-60,-10},{60,-20}},0)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-60, -15}, {-30, 15}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-30, -15}, {0, 15}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{0, -15}, {30, 15}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{30, -15}, {60, 15}}, 0, 360), Rectangle(true, {0.0, 0.0}, 0, {255, 255, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-60, -20}, {62, 0}}, 0), Line(true, {0.0, 0.0}, 0, {{60, 0}, {96, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-96, 0}, {-60, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 255}, LinePattern.Solid, FillPattern.Sphere, 0.25, BorderPattern.None, {{-60, -10}, {60, -20}}, 0)}}
 // ""
 // {"<HTML>
 // <p>
@@ -8005,9 +8005,9 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </dl>
 // </html>"}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Line(true,{0.0,0.0},0,{{-90,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-144,-40},{142,-72}},"R=%R",0,TextAlignment.Center),Line(false,{0.0,0.0},0,{{0,-100},{0,-30}},{127,0,0},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-152,87},{148,47}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-70, 30}, {70, -30}}, 0), Line(true, {0.0, 0.0}, 0, {{-90, 0}, {-70, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{70, 0}, {90, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-144, -40}, {142, -72}}, "R=%R", 0, TextAlignment.Center), Line(false, {0.0, 0.0}, 0, {{0, -100}, {0, -30}}, {127, 0, 0}, LinePattern.Dot, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-152, 87}, {148, 47}}, "%name", 0, TextAlignment.Center)}}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Line(true,{0.0,0.0},0,{{-96,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{96,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, BorderPattern.None, {{-70, 30}, {70, -30}}, 0), Line(true, {0.0, 0.0}, 0, {{-96, 0}, {-70, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{70, 0}, {96, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {"<HTML>
 // <P>
@@ -8030,9 +8030,9 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </ul>
 // </html>"}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{-90,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Line(true,{0.0,0.0},0,{{-52,-50},{48,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{40,52},{50,42},{54,56},{40,52}},Smooth.None),Line(true,{0.0,0.0},0,{{0,-100},{0,-30}},{127,0,0},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-156,109},{144,69}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true, {0.0, 0.0}, 0, {{-90, 0}, {-70, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{70, 0}, {90, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-70, 30}, {70, -30}}, 0), Line(true, {0.0, 0.0}, 0, {{-52, -50}, {48, 50}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{40, 52}, {50, 42}, {54, 56}, {40, 52}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0, -100}, {0, -30}}, {127, 0, 0}, LinePattern.Dot, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-156, 109}, {144, 69}}, "%name", 0, TextAlignment.Center)}}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{-110,20},{-85,20}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{160,160,164},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{-95,23},{-85,20},{-95,17},{-95,23}},Smooth.None),Line(true,{0.0,0.0},0,{{90,20},{115,20}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-125,0},{-115,0}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-120,-5},{-120,5}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-110,25},{-90,45}},"i",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{160,160,164},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{105,23},{115,20},{105,17},{105,23}},Smooth.None),Line(true,{0.0,0.0},0,{{115,0},{125,0}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{90,45},{110,25}},"i",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true, {0.0, 0.0}, 0, {{-110, 20}, {-85, 20}}, {160, 160, 164}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {160, 160, 164}, {160, 160, 164}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-95, 23}, {-85, 20}, {-95, 17}, {-95, 23}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{90, 20}, {115, 20}}, {160, 160, 164}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-125, 0}, {-115, 0}}, {160, 160, 164}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-120, -5}, {-120, 5}}, {160, 160, 164}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {160, 160, 164}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-110, 25}, {-90, 45}}, "i", 0, TextAlignment.Center), Polygon(true, {0.0, 0.0}, 0, {160, 160, 164}, {160, 160, 164}, LinePattern.Solid, FillPattern.Solid, 0.25, {{105, 23}, {115, 20}, {105, 17}, {105, 23}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{115, 0}, {125, 0}}, {160, 160, 164}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {160, 160, 164}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{90, 45}, {110, 25}}, "i", 0, TextAlignment.Center)}}
 // ""
 // {"<HTML>
 // <p>This is a model for an electrical resistor where the generated heat
@@ -8069,9 +8069,9 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </ul>
 // </html>"}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{-85,10},{-36,-10}},0),Line(true,{0.0,0.0},0,{{0,90},{0,40}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{35,10},{100,-10}},0),Ellipse(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-40,40},{40,-40}},0,360),Line(true,{0.0,0.0},0,{{0,-90},{0,-40}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,-50},{199,-90}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,80},{189,46}},"k=%k",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-100,-30},{-40,-30}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-100,-50},{-80,-30}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-80,-50},{-60,-30}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-60,-50},{-40,-30}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-70,-30},{-70,-10}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, BorderPattern.None, {{-85, 10}, {-36, -10}}, 0), Line(true, {0.0, 0.0}, 0, {{0, 90}, {0, 40}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, BorderPattern.None, {{35, 10}, {100, -10}}, 0), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-40, 40}, {40, -40}}, 0, 360), Line(true, {0.0, 0.0}, 0, {{0, -90}, {0, -40}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{0, -50}, {199, -90}}, "%name", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {160, 160, 164}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{0, 80}, {189, 46}}, "k=%k", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{-100, -30}, {-40, -30}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-100, -50}, {-80, -30}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-80, -50}, {-60, -30}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-60, -50}, {-40, -30}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-70, -30}, {-70, -10}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true,{0.0,0.0},0,{160,160,164},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{-17,95},{-20,85},{-23,95},{-17,95}},Smooth.None),Line(true,{0.0,0.0},0,{{-20,110},{-20,85}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-40,110},{-30,90}},"i",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{9,75},{19,75}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-20,-110},{-20,-85}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{160,160,164},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{-17,-100},{-20,-110},{-23,-100},{-17,-100}},Smooth.None),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-40,-110},{-30,-90}},"i",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{8,-79},{18,-79}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{14,80},{14,70}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true, {0.0, 0.0}, 0, {160, 160, 164}, {160, 160, 164}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-17, 95}, {-20, 85}, {-23, 95}, {-17, 95}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-20, 110}, {-20, 85}}, {160, 160, 164}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {160, 160, 164}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-40, 110}, {-30, 90}}, "i", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{9, 75}, {19, 75}}, {192, 192, 192}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-20, -110}, {-20, -85}}, {160, 160, 164}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {160, 160, 164}, {160, 160, 164}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-17, -100}, {-20, -110}, {-23, -100}, {-17, -100}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {160, 160, 164}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-40, -110}, {-30, -90}}, "i", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{8, -79}, {18, -79}}, {192, 192, 192}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{14, 80}, {14, 70}}, {192, 192, 192}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {"<html>
 // <p>EMF transforms electrical energy into rotational mechanical energy. It is used as basic building block of an electrical motor. The mechanical connector flange can be connected to elements of the Modelica.Mechanics.Rotational library. flange.tau is the cut-torque, flange.phi is the angle at the rotational connection. </p>
@@ -8083,9 +8083,9 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </ul>
 // </html>"}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Line(true,{0.0,0.0},0,{{-90,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.None,FillPattern.None,0.25,{{-136,-42},{142,-74}},"G=%G",0,TextAlignment.Center),Line(false,{0.0,0.0},0,{{0,-100},{0,-30}},{127,0,0},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-152,87},{148,47}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-144,-40},{142,-72}},"G=%G",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-70, 30}, {70, -30}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, BorderPattern.None, {{-70, 30}, {70, -30}}, 0), Line(true, {0.0, 0.0}, 0, {{-90, 0}, {-70, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{70, 0}, {90, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.None, FillPattern.None, 0.25, {{-136, -42}, {142, -74}}, "G=%G", 0, TextAlignment.Center), Line(false, {0.0, 0.0}, 0, {{0, -100}, {0, -30}}, {127, 0, 0}, LinePattern.Dot, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-152, 87}, {148, 47}}, "%name", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-144, -40}, {142, -72}}, "G=%G", 0, TextAlignment.Center)}}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true,{0.0,0.0},0,{{-96,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{96,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-70,30},{70,-30}},0)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true, {0.0, 0.0}, 0, {{-96, 0}, {-70, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{70, 0}, {96, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, BorderPattern.None, {{-70, 30}, {70, -30}}, 0)}}
 // ""
 // {"<HTML>
 // <P>
@@ -8109,7 +8109,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </html>"}
 // ""
 // "I am using MSL31"
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true,{0.0,0.0},0,{{-60,50},{60,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-40,30},{40,30}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-20,10},{20,10}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,90},{0,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-144,-19},{156,-59}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true, {0.0, 0.0}, 0, {{-60, 50}, {60, 50}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-40, 30}, {40, 30}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-20, 10}, {20, 10}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0, 90}, {0, 50}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-144, -19}, {156, -59}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {{Placement(true,0.0,100.0,10.0,-10.0,-10.0,10.0,270.0,0.0,0.0,-,-,-,-,0.0)}}
 // ""
@@ -8867,9 +8867,9 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,68},{-32,54}},"start",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,6},{-32,-8}},"stop",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,-54},{-32,-68}},"shut",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-94,-82},{-18,-96}},"level1",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{24,-84},{96,-98}},"level2",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{31,68},{99,54}},"valve1",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{33,9},{101,-5}},"valve2",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{34,-53},{102,-67}},"valve3",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-100, 68}, {-32, 54}}, "start", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-100, 6}, {-32, -8}}, "stop", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-100, -54}, {-32, -68}}, "shut", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-94, -82}, {-18, -96}}, "level1", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{24, -84}, {96, -98}}, "level2", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{31, 68}, {99, 54}}, "valve1", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{33, 9}, {101, -5}}, "valve2", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{34, -53}, {102, -67}}, "valve3", 0, TextAlignment.Center)}}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-100,100},{100,-100}},0)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, BorderPattern.None, {{-100, 100}, {100, -100}}, 0)}}
 // ""
 // {"",""}
 // ""
@@ -8879,43 +8879,43 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.5,{{-100,-100},{0,100},{100,-100},{-100,-100}},Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.5, {{-100, -100}, {0, 100}, {100, -100}, {-100, -100}}, Smooth.None)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.5,{{-100,-100},{0,100},{100,-100},{-100,-100}},Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.5, {{-100, -100}, {0, 100}, {100, -100}, {-100, -100}}, Smooth.None)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.5,{{-100,100},{0,-100},{100,100},{-100,100}},Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.5, {{-100, 100}, {0, -100}, {100, 100}, {-100, 100}}, Smooth.None)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.5,{{-100,100},{0,-100},{100,100},{-100,100}},Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.5, {{-100, 100}, {0, -100}, {100, 100}, {-100, 100}}, Smooth.None)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{20,20},{20,20}},{0,0,0},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-131,125},{136,67}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{0,0},{0,-60}},{255,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true, {0.0, 0.0}, 0, {{20, 20}, {20, 20}}, {0, 0, 0}, LinePattern.Solid, 0.5, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-131, 125}, {136, 67}}, "%name", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{0, 0}, {0, -60}}, {255, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{0,-60},{0,0}},{255,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true, {0.0, 0.0}, 0, {{0, -60}, {0, 0}}, {255, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-122,-82},{88,-42}},"%name",0,TextAlignment.Center),Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.5,BorderPattern.None,{{-60,60},{80,-40}},0),Rectangle(true,{0.0,0.0},0,{0,0,0},{191,0,95},LinePattern.Solid,FillPattern.HorizontalCylinder,0.5,BorderPattern.None,{{-60,-40},{-60,-40}},0)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-122, -82}, {88, -42}}, "%name", 0, TextAlignment.Center), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.5, BorderPattern.None, {{-60, 60}, {80, -40}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {191, 0, 95}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.5, BorderPattern.None, {{-60, -40}, {-60, -40}}, 0)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.5,BorderPattern.None,{{-80,40},{80,-40}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-144,54},{152,114}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.5, BorderPattern.None, {{-80, 40}, {80, -40}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-144, 54}, {152, 114}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
@@ -8971,7 +8971,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{160,110},{-160,150}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 100}, {100, -100}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{160, 110}, {-160, 150}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
@@ -8987,7 +8987,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,110},{200,150}},"%name",0,TextAlignment.Center),Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-92,78},{96,34}},"root",0,TextAlignment.Center),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-82,-6},{-44,-40}},0),Line(true,{0.0,0.0},0,{{0,10},{0,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{48,-6},{86,-40}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-12,-16},{0,-22},{-12,-28},{-12,-16}},Smooth.None),Line(true,{0.0,0.0},0,{{-44,-22},{-12,-22}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{36,-16},{48,-22},{36,-28},{36,-16}},Smooth.None),Line(true,{0.0,0.0},0,{{0,-22},{36,-22}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-200, 110}, {200, 150}}, "%name", 0, TextAlignment.Center), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 100}, {100, -100}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-92, 78}, {96, 34}}, "root", 0, TextAlignment.Center), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, BorderPattern.None, {{-82, -6}, {-44, -40}}, 0), Line(true, {0.0, 0.0}, 0, {{0, 10}, {0, -60}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, BorderPattern.None, {{48, -6}, {86, -40}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-12, -16}, {0, -22}, {-12, -28}, {-12, -16}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-44, -22}, {-12, -22}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{36, -16}, {48, -22}, {36, -28}, {36, -16}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0, -22}, {36, -22}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {}
 // ""
@@ -9009,7 +9009,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{245,245,245},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.Raised,{{-100,40},{100,-40}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,90},{150,50}},"%name =",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-96,15},{96,-15}},"%value",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {245, 245, 245}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.Raised, {{-100, 40}, {100, -40}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 90}, {150, 50}}, "%name =", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-96, 15}, {96, -15}}, "%value", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
@@ -9061,7 +9061,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{128,128,128},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.5,BorderPattern.None,{{-100,-100},{100,100}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-80,-40},{80,40}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {128, 128, 128}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.5, BorderPattern.None, {{-100, -100}, {100, 100}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-80, -40}, {80, 40}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -9069,7 +9069,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{236,233,216},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.Raised,{{100,50},{-100,-50}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-90,-46},{90,34}}," ",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {236, 233, 216}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.Raised, {{100, 50}, {-100, -50}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-90, -46}, {90, 34}}, " ", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
@@ -9077,7 +9077,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,0},{235,235,235},LinePattern.None,FillPattern.Sphere,0.25,{{-100,-100},{100,100}},0,360),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,110}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {235, 235, 235}, LinePattern.None, FillPattern.Sphere, 0.25, {{-100, -100}, {100, 100}}, 0, 360), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 150}, {150, 110}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
@@ -9375,175 +9375,175 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"K",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"°C",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "K", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "°C", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"°C",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"K",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "°C", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "K", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"K",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"°F",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "K", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "°F", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"°F",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"K",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "°F", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "K", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"K",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"°Rk",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "K", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "°Rk", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"°Rk",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"K",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "°Rk", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "K", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"rad",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"deg",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "rad", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "deg", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"deg",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"rad",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "deg", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "rad", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"rad/s",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"1/min",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "rad/s", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "1/min", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"1/min",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"rad/s",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "1/min", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "rad/s", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"m/s",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"km/h",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "m/s", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "km/h", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"km/h",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"m/s",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "km/h", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "m/s", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"s",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"day",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "s", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "day", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"day",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"s",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "day", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "s", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"s",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"hour",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "s", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "hour", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"hour",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"s",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "hour", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "s", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"s",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"minute",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "s", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "minute", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"minute",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"s",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "minute", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "s", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"m3",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"litre",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "m3", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "litre", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"litre",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"m3",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "litre", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "m3", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"J",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"kWh",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "J", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "kWh", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"kWh",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"J",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "kWh", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "J", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"Pa",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"bar",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "Pa", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "bar", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"bar",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"Pa",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "bar", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "Pa", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"kg/s",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"g/s",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "kg/s", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "g/s", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"g/s",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"kg/s",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "g/s", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "kg/s", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{191,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Line(true,{0.0,0.0},0,{{-90,0},{30,0}},{191,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{191,0,0},{191,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{90,0},{30,20},{30,-20},{90,0}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-115,155},{115,105}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {191, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 100}, {100, -100}}, 0), Line(true, {0.0, 0.0}, 0, {{-90, 0}, {30, 0}}, {191, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {191, 0, 0}, {191, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{90, 0}, {30, 20}, {30, -20}, {90, 0}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-115, 155}, {115, 105}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"Hz",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"1/s",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "Hz", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "1/s", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,100},{-100,20}},"1/s",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{100,-20},{20,-100}},"Hz",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, 100}, {-100, 20}}, "1/s", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{100, -20}, {20, -100}}, "Hz", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
@@ -12465,7 +12465,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,-100},{80,50}},0),Polygon(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-100,50},{-80,70},{100,70},{80,50},{-100,50}},Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{100,70},{100,-80},{80,-100},{80,50},{100,70}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-96,3},{77,-49}},"Example",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-120,132},{120,73}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, -100}, {80, 50}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-100, 50}, {-80, 70}, {100, 70}, {80, 50}, {-100, 50}}, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{100, 70}, {100, -80}, {80, -100}, {80, 50}, {100, 70}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-96, 3}, {77, -49}}, "Example", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-120, 132}, {120, 73}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
@@ -12476,7 +12476,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-140,162},{136,102}},"%name",0,TextAlignment.Center),Ellipse(true,{0.0,0.0},0,{255,127,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-100,100},{100,-100}},0,360),Text(true,{0.0,0.0},0,{255,127,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,100},{100,-100}},"f",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-140, 162}, {136, 102}}, "%name", 0, TextAlignment.Center), Ellipse(true, {0.0, 0.0}, 0, {255, 127, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-100, 100}, {100, -100}}, 0, 360), Text(true, {0.0, 0.0}, 0, {255, 127, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-100, 100}, {100, -100}}, "f", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
@@ -12486,7 +12486,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,127},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,50},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-127,115},{127,55}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-100,-50},{100,-50}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-100,0},{100,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,50},{0,-100}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 127}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 50}, {100, -100}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-127, 115}, {127, 55}}, "%name", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{-100, -50}, {100, -50}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-100, 0}, {100, 0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0, 50}, {0, -100}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {}
 // ""
@@ -12496,7 +12496,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{181,181,181},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-94,94},{94,-94}},"R",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {181, 181, 181}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 100}, {100, -100}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-94, 94}, {94, -94}}, "R", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
@@ -12506,7 +12506,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{181,181,181},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-94,94},{94,-94}},"I",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {181, 181, 181}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 100}, {100, -100}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-94, 94}, {94, -94}}, "I", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
@@ -12516,7 +12516,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{181,181,181},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-94,94},{94,-94}},"B",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {181, 181, 181}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 100}, {100, -100}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-94, 94}, {94, -94}}, "B", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
@@ -12526,7 +12526,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{181,181,181},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-94,94},{94,-94}},"S",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {181, 181, 181}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 100}, {100, -100}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-94, 94}, {94, -94}}, "S", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
@@ -12536,7 +12536,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-70,-60},{70,20}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{0,-40},{-10,-16},{10,-16},{0,-40}},Smooth.None),Line(true,{0.0,0.0},0,{{0,0},{0,-16}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-70,0},{0,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-50,-40},{-50,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-30,-40},{-30,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-10,-40},{-10,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{10,-40},{10,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{30,-40},{30,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{50,-40},{50,-60}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-70, -60}, {70, 20}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{0, -40}, {-10, -16}, {10, -16}, {0, -40}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0, 0}, {0, -16}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-70, 0}, {0, 0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-50, -40}, {-50, -60}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-30, -40}, {-30, -60}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-10, -40}, {-10, -60}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{10, -40}, {10, -60}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{30, -40}, {30, -60}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{50, -40}, {50, -60}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -12546,7 +12546,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-70,70},{70,-70}},0,360),Line(true,{0.0,0.0},0,{{0,70},{0,40}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{22.9,32.8},{40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-22.9,32.8},{-40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{37.6,13.7},{65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-37.6,13.7},{-65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0.0,0.0},{9.02,28.6}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-0.48,31.6},{18.0,26.0},{18.0,57.2},{-0.48,31.6}},Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-5,5},{5,-5}},0,360)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-70, 70}, {70, -70}}, 0, 360), Line(true, {0.0, 0.0}, 0, {{0, 70}, {0, 40}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{22.9, 32.8}, {40.2, 57.3}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-22.9, 32.8}, {-40.2, 57.3}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{37.6, 13.7}, {65.8, 23.9}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-37.6, 13.7}, {-65.8, 23.9}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0.0, 0.0}, {9.02, 28.6}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-0.48, 31.6}, {18.0, 26.0}, {18.0, 57.2}, {-0.48, 31.6}}, Smooth.None), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-5, 5}, {5, -5}}, 0, 360)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -12556,7 +12556,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{-90,10},{-60,-10}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{128,128,128},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,{{-60,10},{-60,20},{-40,40},{-40,-40},{-60,-20},{-60,10}},Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{-40,60},{40,-60}},0),Polygon(true,{0.0,0.0},0,{128,128,128},{128,128,128},LinePattern.Solid,FillPattern.Solid,0.25,{{60,20},{40,40},{40,-40},{60,-20},{60,20}},Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{60,10},{90,-10}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-60,-90},{-50,-90},{-20,-30},{20,-30},{48,-90},{60,-90},{60,-100},{-60,-100},{-60,-90}},Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, BorderPattern.None, {{-90, 10}, {-60, -10}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {128, 128, 128}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, {{-60, 10}, {-60, 20}, {-40, 40}, {-40, -40}, {-60, -20}, {-60, 10}}, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, BorderPattern.None, {{-40, 60}, {40, -60}}, 0), Polygon(true, {0.0, 0.0}, 0, {128, 128, 128}, {128, 128, 128}, LinePattern.Solid, FillPattern.Solid, 0.25, {{60, 20}, {40, 40}, {40, -40}, {60, -20}, {60, 20}}, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, BorderPattern.None, {{60, 10}, {90, -10}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-60, -90}, {-50, -90}, {-20, -30}, {20, -30}, {48, -90}, {60, -90}, {60, -100}, {-60, -100}, {-60, -90}}, Smooth.None)}}
 // ""
 // {}
 // ""
@@ -12566,7 +12566,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,0,0},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{-100,50},{30,-50}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-100,-90},{-90,-90},{-60,-20},{-10,-20},{20,-90},{30,-90},{30,-100},{-100,-100},{-100,-90}},Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{30,10},{90,-10}},0)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 0, 0}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, BorderPattern.None, {{-100, 50}, {30, -50}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-100, -90}, {-90, -90}, {-60, -20}, {-10, -20}, {20, -90}, {30, -90}, {30, -100}, {-100, -100}, {-100, -90}}, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, BorderPattern.None, {{30, 10}, {90, -10}}, 0)}}
 // ""
 // {}
 // ""
@@ -12576,7 +12576,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Dash,FillPattern.None,0.5,BorderPattern.None,{{-102,102},{102,-102}},0)}}
+// {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 0}, LinePattern.Dash, FillPattern.None, 0.5, BorderPattern.None, {{-102, 102}, {102, -102}}, 0)}}
 // ""
 // {}
 // ""
@@ -13152,7 +13152,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,-100},{80,60}},0),Polygon(true,{0.0,0.0},0,{0,0,255},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-100,60},{-80,100},{100,100},{80,60},{-100,60}},Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,255},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{100,100},{100,-60},{80,-100},{80,60},{100,100}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,-100},{80,60}},"%shapeType",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-132,160},{128,100}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, -100}, {80, 60}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-100, 60}, {-80, 100}, {100, 100}, {80, 60}, {-100, 60}}, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {160, 160, 164}, LinePattern.Solid, FillPattern.Solid, 0.25, {{100, 100}, {100, -60}, {80, -100}, {80, 60}, {100, 100}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-100, -100}, {80, 60}}, "%shapeType", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-132, 160}, {128, 100}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
@@ -14298,7 +14298,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Block generating the sum of two ramps.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,0,0},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-90,20},{90,-20}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,100},{150,40}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-90, 20}, {90, -20}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 100}, {150, 40}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14309,7 +14309,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // leads to neglection of temperature transient cv*m*der(T).
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,0,0},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-90,20},{90,-20}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,100},{150,40}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-10,-90},{-10,-40},{0,-20},{10,-40},{10,-90},{-10,-90}},Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-90, 20}, {90, -20}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 100}, {150, 40}}, "%name", 0, TextAlignment.Center), Polygon(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-10, -90}, {-10, -40}, {0, -20}, {10, -40}, {10, -90}, {-10, -90}}, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
@@ -14323,7 +14323,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // temperature rise defined by storing heat in medium's mass.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,-60},{150,-120}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{255,0,0},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-90,10},{-60,10},{-60,60},{0,0},{60,60},{60,10},{90,10},{90,-10},{60,-10},{60,-60},{0,0},{-60,-60},{-60,-10},{-90,-10},{-90,10}},Smooth.None),Line(true,{0.0,0.0},0,{{0,80},{0,0}},{0,0,127},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, -60}, {150, -120}}, "%name", 0, TextAlignment.Center), Polygon(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-90, 10}, {-60, 10}, {-60, 60}, {0, 0}, {60, 60}, {60, 10}, {90, 10}, {90, -10}, {60, -10}, {60, -60}, {0, 0}, {-60, -60}, {-60, -10}, {-90, -10}, {-90, 10}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0, 80}, {0, 0}}, {0, 0, 127}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
@@ -14378,7 +14378,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Medium: properties of water
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{20,80},{80,20}},"p",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{20,-20},{80,-80}},"T",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{20, 80}, {80, 20}}, "p", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{20, -20}, {80, -80}}, "T", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14387,7 +14387,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Thermodynamic equations are defined by Partials.Ambient.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,90}},"%name",0,TextAlignment.Center),Ellipse(true,{0.0,0.0},0,{255,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-90,90},{90,-90}},0,360)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 150}, {150, 90}}, "%name", 0, TextAlignment.Center), Ellipse(true, {0.0, 0.0}, 0, {255, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-90, 90}, {90, -90}}, 0, 360)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14396,7 +14396,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Coolant's mass flow, temperature and enthalpy flow are not affected.<br>
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{255,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-90,90},{90,-90}},0,360),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,-90},{150,-150}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{255,0,0},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-60,68},{90,10},{90,-10},{-60,-68},{-60,68}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-40,20},{0,-20}},"V",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true, {0.0, 0.0}, 0, {255, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-90, 90}, {90, -90}}, 0, 360), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, -90}, {150, -150}}, "%name", 0, TextAlignment.Center), Polygon(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-60, 68}, {90, 10}, {90, -10}, {-60, -68}, {-60, 68}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-40, 20}, {0, -20}}, "V", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14408,7 +14408,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Thermodynamic equations are defined by Partials.TwoPort.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{255,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-90,90},{90,-90}},0,360),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,-90},{150,-150}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{0,0,255},{255,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-60,68},{90,10},{90,-10},{-60,-68},{-60,68}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-40,20},{0,-20}},"dp",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true, {0.0, 0.0}, 0, {255, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-90, 90}, {90, -90}}, 0, 360), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, -90}, {150, -150}}, "%name", 0, TextAlignment.Center), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-60, 68}, {90, 10}, {90, -10}, {-60, -68}, {-60, 68}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-40, 20}, {0, -20}}, "dp", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14420,7 +14420,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Thermodynamic equations are defined by Partials.TwoPort.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{255,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-90,90},{90,-90}},0,360),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,90}},"%name",0,TextAlignment.Center),Rectangle(true,{0.0,0.0},0,{0,0,0},{175,175,175},LinePattern.Solid,FillPattern.VerticalCylinder,0.25,BorderPattern.None,{{-10,-40},{10,-100}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,255},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,{{-60,68},{90,10},{90,-10},{-60,-68},{-60,68}},Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true, {0.0, 0.0}, 0, {255, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-90, 90}, {90, -90}}, 0, 360), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 150}, {150, 90}}, "%name", 0, TextAlignment.Center), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {175, 175, 175}, LinePattern.Solid, FillPattern.VerticalCylinder, 0.25, BorderPattern.None, {{-10, -40}, {10, -100}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 255}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, {{-60, 68}, {90, 10}, {90, -10}, {-60, -68}, {-60, 68}}, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14440,7 +14440,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Thermodynamic equations are defined by Partials.TwoPort.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"p",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-22, -20}, {20, -60}}, "p", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14449,7 +14449,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Thermodynamic equations are defined by Partials.AbsoluteSensor.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"T",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-22, -20}, {20, -60}}, "T", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14458,7 +14458,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Thermodynamic equations are defined by Partials.AbsoluteSensor.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"dp",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-22, -20}, {20, -60}}, "dp", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14467,7 +14467,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Thermodynamic equations are defined by Partials.RelativeSensor.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"dT",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-22, -20}, {20, -60}}, "dT", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14479,7 +14479,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Outlet temperature is defined by variable T of the corresponding component.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"m",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-22, -20}, {20, -60}}, "m", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14488,7 +14488,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Thermodynamic equations are defined by Partials.FlowSensor.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"V",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-22, -20}, {20, -60}}, "V", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14497,7 +14497,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Thermodynamic equations are defined by Partials.FlowSensor.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-22,-20},{20,-60}},"H",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-22, -20}, {20, -60}}, "H", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14524,7 +14524,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{-80,0},{80,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,80},{0,-80}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-40,-20},{40,20}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{40,20},{60,40},{70,60},{74,80}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-40,-20},{-60,-40},{-70,-60},{-74,-80}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{40,20},{40,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{60,40},{60,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{40,20},{0,20}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{60,40},{0,40}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{18,0},{48,-20}},"V_flowLaminar",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{50,0},{80,-20}},"V_flowNominal",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-30,30},{-4,10}},"dpLaminar",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-30,50},{-4,30}},"dpNominal",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,20},{30,0}},"dp ~ V_flow",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{30,60},{60,40}},"dp ~ V_flow²",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true, {0.0, 0.0}, 0, {{-80, 0}, {80, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0, 80}, {0, -80}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-40, -20}, {40, 20}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{40, 20}, {60, 40}, {70, 60}, {74, 80}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-40, -20}, {-60, -40}, {-70, -60}, {-74, -80}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{40, 20}, {40, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{60, 40}, {60, 0}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{40, 20}, {0, 20}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{60, 40}, {0, 40}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{18, 0}, {48, -20}}, "V_flowLaminar", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{50, 0}, {80, -20}}, "V_flowNominal", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-30, 30}, {-4, 10}}, "dpLaminar", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-30, 50}, {-4, 30}}, "dpNominal", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{0, 20}, {30, 0}}, "dp ~ V_flow", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{30, 60}, {60, 40}}, "dp ~ V_flow²", 0, TextAlignment.Center)}}
 // ""
 // {"<HTML>
 // Definition of relationship between pressure drop and volume flow rate:<br>
@@ -14548,7 +14548,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Parameter 0 &lt; tapT &lt; 1 defines temperature of heatPort between medium's inlet and outlet temperature.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{255,0,0},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-90,90},{90,-90}},0,360),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,90}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-90, 90}, {90, -90}}, 0, 360), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 150}, {150, 90}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
@@ -14558,7 +14558,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-70,70},{70,-70}},0,360),Line(true,{0.0,0.0},0,{{0,70},{0,40}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{22.9,32.8},{40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-22.9,32.8},{-40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{37.6,13.7},{65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-37.6,13.7},{-65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0.0,0.0},{9.02,28.6}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-0.48,31.6},{18.0,26.0},{18.0,57.2},{-0.48,31.6}},Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-5,5},{5,-5}},0,360),Line(true,{0.0,0.0},0,{{-70,0},{-90,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{100,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,130},{150,70}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-70, 70}, {70, -70}}, 0, 360), Line(true, {0.0, 0.0}, 0, {{0, 70}, {0, 40}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{22.9, 32.8}, {40.2, 57.3}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-22.9, 32.8}, {-40.2, 57.3}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{37.6, 13.7}, {65.8, 23.9}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-37.6, 13.7}, {-65.8, 23.9}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0.0, 0.0}, {9.02, 28.6}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-0.48, 31.6}, {18.0, 26.0}, {18.0, 57.2}, {-0.48, 31.6}}, Smooth.None), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-5, 5}, {5, -5}}, 0, 360), Line(true, {0.0, 0.0}, 0, {{-70, 0}, {-90, 0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{70, 0}, {100, 0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 130}, {150, 70}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14567,7 +14567,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Pressure, mass flow, temperature and enthalpy flow of medium are not affected.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-70,70},{70,-70}},0,360),Line(true,{0.0,0.0},0,{{0,70},{0,40}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{22.9,32.8},{40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-22.9,32.8},{-40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{37.6,13.7},{65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-37.6,13.7},{-65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0.0,0.0},{9.02,28.6}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-0.48,31.6},{18.0,26.0},{18.0,57.2},{-0.48,31.6}},Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-5,5},{5,-5}},0,360),Line(true,{0.0,0.0},0,{{-70,0},{-90,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,-100},{0,-70}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,130},{150,70}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-70, 70}, {70, -70}}, 0, 360), Line(true, {0.0, 0.0}, 0, {{0, 70}, {0, 40}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{22.9, 32.8}, {40.2, 57.3}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-22.9, 32.8}, {-40.2, 57.3}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{37.6, 13.7}, {65.8, 23.9}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-37.6, 13.7}, {-65.8, 23.9}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0.0, 0.0}, {9.02, 28.6}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-0.48, 31.6}, {18.0, 26.0}, {18.0, 57.2}, {-0.48, 31.6}}, Smooth.None), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-5, 5}, {5, -5}}, 0, 360), Line(true, {0.0, 0.0}, 0, {{-70, 0}, {-90, 0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{70, 0}, {90, 0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0, -100}, {0, -70}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 130}, {150, 70}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -14576,7 +14576,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // Pressure, mass flow, temperature and enthalpy flow of medium are not affected.
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-70,70},{70,-70}},0,360),Line(true,{0.0,0.0},0,{{0,70},{0,40}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{22.9,32.8},{40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-22.9,32.8},{-40.2,57.3}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{37.6,13.7},{65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-37.6,13.7},{-65.8,23.9}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0.0,0.0},{9.02,28.6}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-0.48,31.6},{18.0,26.0},{18.0,57.2},{-0.48,31.6}},Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-5,5},{5,-5}},0,360),Line(true,{0.0,0.0},0,{{-70,0},{-90,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,-100},{0,-70}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,130},{150,70}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-70, 70}, {70, -70}}, 0, 360), Line(true, {0.0, 0.0}, 0, {{0, 70}, {0, 40}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{22.9, 32.8}, {40.2, 57.3}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-22.9, 32.8}, {-40.2, 57.3}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{37.6, 13.7}, {65.8, 23.9}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-37.6, 13.7}, {-65.8, 23.9}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0.0, 0.0}, {9.02, 28.6}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-0.48, 31.6}, {18.0, 26.0}, {18.0, 57.2}, {-0.48, 31.6}}, Smooth.None), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-5, 5}, {5, -5}}, 0, 360), Line(true, {0.0, 0.0}, 0, {{-70, 0}, {-90, 0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{70, 0}, {90, 0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0, -100}, {0, -70}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 130}, {150, 70}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
@@ -14664,7 +14664,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </HTML>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true,{0.0,0.0},0,{95,95,95},{175,175,175},LinePattern.Solid,FillPattern.Solid,0.25,{{-10,-90},{-10,0},{-100,90},{-80,90},{0,20},{80,90},{100,90},{10,0},{10,-90},{-10,-90}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,-20},{100,-80}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,80},{100,40}},"m=%m",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true, {0.0, 0.0}, 0, {95, 95, 95}, {175, 175, 175}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-10, -90}, {-10, 0}, {-100, 90}, {-80, 90}, {0, 20}, {80, 90}, {100, 90}, {10, 0}, {10, -90}, {-10, -90}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-100, -20}, {100, -80}}, "%name", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-100, 80}, {100, 40}}, "m=%m", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -15546,7 +15546,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </html>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Line(true,{0.0,0.0},0,{{-100,-118},{-100,61}},{0,0,0},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-100,100},{-120,60},{-80,60},{-100,100},{-100,100}},Smooth.None),Line(true,{0.0,0.0},0,{{-119,-100},{59,-100}},{0,0,0},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{99,-100},{59,-80},{59,-120},{99,-100}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-140,165},{140,103}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{95,-113},{144,-162}},"%label1",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-170,127},{-119,77}},"%label2",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-56,78},{-56,-26}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-68,-26},{-56,-66},{-44,-26},{-68,-26}},Smooth.None),Line(true,{0.0,0.0},0,{{2,78},{2,-26}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-10,-26},{2,-66},{14,-26},{-10,-26}},Smooth.None),Line(true,{0.0,0.0},0,{{66,80},{66,-26}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{54,-26},{66,-66},{78,-26},{54,-26}},Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 100}, {100, -100}}, 0), Line(true, {0.0, 0.0}, 0, {{-100, -118}, {-100, 61}}, {0, 0, 0}, LinePattern.Solid, 0.5, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-100, 100}, {-120, 60}, {-80, 60}, {-100, 100}, {-100, 100}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-119, -100}, {59, -100}}, {0, 0, 0}, LinePattern.Solid, 0.5, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{99, -100}, {59, -80}, {59, -120}, {99, -100}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-140, 165}, {140, 103}}, "%name", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{95, -113}, {144, -162}}, "%label1", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-170, 127}, {-119, 77}}, "%label2", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{-56, 78}, {-56, -26}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-68, -26}, {-56, -66}, {-44, -26}, {-68, -26}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{2, 78}, {2, -26}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-10, -26}, {2, -66}, {14, -26}, {-10, -26}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{66, 80}, {66, -26}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{54, -26}, {66, -66}, {78, -26}, {54, -26}}, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
@@ -16031,7 +16031,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {-100.0,-120.0,150.0,120.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{3,117},{88,-23}},0),Text(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,{{65,-30},{145,-39}},"jointRRP in model",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,{{66,-34},{141,-52}},"Loops.Engine1b_analytic",0,TextAlignment.Center)}}
+// {-100.0,-120.0,150.0,120.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.5, BorderPattern.None, {{3, 117}, {88, -23}}, 0), Text(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.5, {{65, -30}, {145, -39}}, "jointRRP in model", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.5, {{66, -34}, {141, -52}}, "Loops.Engine1b_analytic", 0, TextAlignment.Center)}}
 // ""
 // {"<html>
 // <p>
@@ -16254,19 +16254,19 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </html>",""}
 // ""
-// {-100.0,-150.0,100.0,150.0,true,0.1,1.0,1.0,{Polygon(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-60,-50},{-60,100},{60,100},{60,-52},{100,-52},{100,150},{-100,150},{-100,-50},{-60,-50}},Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.VerticalCylinder,0.25,BorderPattern.None,{{-58,89},{58,13}},0),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,81},{60,75}},0),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,67},{60,61}},0),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,55},{60,49}},0),Polygon(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.None,FillPattern.Solid,0.25,{{-60,11},{-42,23},{38,23},{56,11},{-60,11}},Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-6,41},{2,33}},0,360),Ellipse(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-40,-129},{40,-49}},0,360),Line(true,{0.0,0.0},0,{{0,-90},{26,-58},{-2,37}},{0,0,0},LinePattern.Solid,1,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,-124},{164,-186}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-100,-90},{100,-91}},{0,0,0},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-150.0,100.0,150.0,true,0.1,1.0,1.0,{Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-60, -50}, {-60, 100}, {60, 100}, {60, -52}, {100, -52}, {100, 150}, {-100, 150}, {-100, -50}, {-60, -50}}, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.VerticalCylinder, 0.25, BorderPattern.None, {{-58, 89}, {58, 13}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-60, 81}, {60, 75}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-60, 67}, {60, 61}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-60, 55}, {60, 49}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.None, FillPattern.Solid, 0.25, {{-60, 11}, {-42, 23}, {38, 23}, {56, 11}, {-60, 11}}, Smooth.None), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-6, 41}, {2, 33}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {192, 192, 192}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-40, -129}, {40, -49}}, 0, 360), Line(true, {0.0, 0.0}, 0, {{0, -90}, {26, -58}, {-2, 37}}, {0, 0, 0}, LinePattern.Solid, 1, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, -124}, {164, -186}}, "%name", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{-100, -90}, {100, -91}}, {0, 0, 0}, LinePattern.Solid, 0.5, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {-100.0,-150.0,100.0,150.0,true,0.1,1.0,1.0}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-90,50},{90,-50}},0),Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-40,50},{-20,-50}},0),Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-90,10},{-40,-10}},0),Polygon(true,{0.0,0.0},0,{255,0,0},{255,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{60,2},{54,2},{0,2},{0,10},{-20,0},{0,-10},{0,-4},{60,-4},{60,2}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,120},{100,60}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-90, 50}, {90, -50}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-40, 50}, {-20, -50}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-90, 10}, {-40, -10}}, 0), Polygon(true, {0.0, 0.0}, 0, {255, 0, 0}, {255, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{60, 2}, {54, 2}, {0, 2}, {0, 10}, {-20, 0}, {0, -10}, {0, -4}, {60, -4}, {60, 2}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-100, 120}, {100, 60}}, "%name", 0, TextAlignment.Center)}}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-90,50},{90,-50}},0),Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-40,50},{-20,-50}},0),Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-90,10},{-40,-10}},0),Polygon(true,{0.0,0.0},0,{255,0,0},{255,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{60,2},{54,2},{0,2},{0,10},{-20,0},{0,-10},{0,-4},{60,-4},{60,2}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,120},{100,60}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-90, 50}, {90, -50}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-40, 50}, {-20, -50}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-90, 10}, {-40, -10}}, 0), Polygon(true, {0.0, 0.0}, 0, {255, 0, 0}, {255, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{60, 2}, {54, 2}, {0, 2}, {0, 10}, {-20, 0}, {0, -10}, {0, -4}, {60, -4}, {60, 2}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-100, 120}, {100, 60}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-60,-61},{-60,64},{60,64},{60,-61},{100,-61},{100,114},{-100,114},{-100,-61},{-60,-61}},Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.VerticalCylinder,0.25,BorderPattern.None,{{-58,63},{58,-13}},0),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,55},{60,49}},0),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,41},{60,35}},0),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,29},{60,23}},0),Polygon(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.None,FillPattern.Solid,0.25,{{-57,-13},{-39,-1},{41,-1},{59,-13},{-57,-13}},Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-6,15},{2,7}},0,360),Ellipse(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-41,-139},{39,-59}},0,360),Line(true,{0.0,0.0},0,{{-1,-99},{25,-67},{-2,10}},{0,0,0},LinePattern.Solid,1,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-156,178},{158,116}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-100,-99},{100,-100}},{0,0,0},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-60, -61}, {-60, 64}, {60, 64}, {60, -61}, {100, -61}, {100, 114}, {-100, 114}, {-100, -61}, {-60, -61}}, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.VerticalCylinder, 0.25, BorderPattern.None, {{-58, 63}, {58, -13}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-60, 55}, {60, 49}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-60, 41}, {60, 35}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-60, 29}, {60, 23}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.None, FillPattern.Solid, 0.25, {{-57, -13}, {-39, -1}, {41, -1}, {59, -13}, {-57, -13}}, Smooth.None), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-6, 15}, {2, 7}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {192, 192, 192}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-41, -139}, {39, -59}}, 0, 360), Line(true, {0.0, 0.0}, 0, {{-1, -99}, {25, -67}, {-2, 10}}, {0, 0, 0}, LinePattern.Solid, 1, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-156, 178}, {158, 116}}, "%name", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{-100, -99}, {100, -100}}, {0, 0, 0}, LinePattern.Solid, 0.5, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -16278,7 +16278,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-137,160},{137,104}},"%name",0,TextAlignment.Center),Bitmap(true,{0.0,0.0},0,{{-97,75},{99,-39}},"../../../../Images/MultiBody/Examples/Loops/EngineV6_CAD.png")}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 100}, {100, -100}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-137, 160}, {137, 104}}, "%name", 0, TextAlignment.Center), Bitmap(true, {0.0, 0.0}, 0, {{-97, 75}, {99, -39}}, "../../../../Images/MultiBody/Examples/Loops/EngineV6_CAD.png")}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -16329,7 +16329,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </HTML>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,0.5,0.5,{Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-99.5,100.0},{100.0,-100.0}},0),Bitmap(true,{0.0,0.0},0,{{-75.5,98.25},{87.0,-96.75}},"../../../../Images/MultiBody/Examples/Systems/robot_kr15.bmp"),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-111.5,130.0},{108.5,100.0}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-104.5,-104.0},{115.0,-128.0}},"mLoad=%mLoad",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,0.5,0.5,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-99.5, 100.0}, {100.0, -100.0}}, 0), Bitmap(true, {0.0, 0.0}, 0, {{-75.5, 98.25}, {87.0, -96.75}}, "../../../../Images/MultiBody/Examples/Systems/robot_kr15.bmp"), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-111.5, 130.0}, {108.5, 100.0}}, "%name", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-104.5, -104.0}, {115.0, -128.0}}, "mLoad=%mLoad", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,0.5,0.5}
 // ""
@@ -16345,7 +16345,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,204,51},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{-20,2},{22,-2}},0)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 204, 51}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.5, BorderPattern.None, {{-20, 2}, {22, -2}}, 0)}}
 // ""
 // {}
 // ""
@@ -16362,7 +16362,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,204,51},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{-20,2},{22,-2}},0)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 204, 51}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.5, BorderPattern.None, {{-20, 2}, {22, -2}}, 0)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -16378,7 +16378,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,110}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-80,90},{-88,68},{-72,68},{-80,88},{-80,90}},Smooth.None),Line(true,{0.0,0.0},0,{{-80,78},{-80,-82}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-90,0},{82,0}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{90,0},{68,8},{68,-8},{90,0}},Smooth.None),Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-42,55},{29,12}},"w",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-80,0},{-41,69},{26,69},{58,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-73,-44},{82,-69}},"1 axis",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 100}, {100, -100}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 150}, {150, 110}}, "%name", 0, TextAlignment.Center), Polygon(true, {0.0, 0.0}, 0, {192, 192, 192}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-80, 90}, {-88, 68}, {-72, 68}, {-80, 88}, {-80, 90}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-80, 78}, {-80, -82}}, {192, 192, 192}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-90, 0}, {82, 0}}, {192, 192, 192}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {192, 192, 192}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, {{90, 0}, {68, 8}, {68, -8}, {90, 0}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {192, 192, 192}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-42, 55}, {29, 12}}, "w", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{-80, 0}, {-41, 69}, {26, 69}, {58, 0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-73, -44}, {82, -69}}, "1 axis", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -16417,20 +16417,20 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </html>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,100},{100,-100}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,110}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-80,90},{-88,68},{-72,68},{-80,88},{-80,90}},Smooth.None),Line(true,{0.0,0.0},0,{{-80,78},{-80,-82}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-90,0},{82,0}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{90,0},{68,8},{68,-8},{90,0}},Smooth.None),Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-42,55},{29,12}},"w",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-80,0},{-41,69},{26,69},{58,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-70,-43},{85,-68}},"6 axes",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 100}, {100, -100}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 150}, {150, 110}}, "%name", 0, TextAlignment.Center), Polygon(true, {0.0, 0.0}, 0, {192, 192, 192}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-80, 90}, {-88, 68}, {-72, 68}, {-80, 88}, {-80, 90}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-80, 78}, {-80, -82}}, {192, 192, 192}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-90, 0}, {82, 0}}, {192, 192, 192}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {192, 192, 192}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, {{90, 0}, {68, 8}, {68, -8}, {90, 0}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {192, 192, 192}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-42, 55}, {29, 12}}, "w", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{-80, 0}, {-41, 69}, {26, 69}, {58, 0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-70, -43}, {85, -68}}, "6 axes", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
 // 
 // "Error: Class getDocumentationnnotation not found in scope <global scope> (looking for a function or record).
 // "
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,98},{-24,68}},"q",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-94,46},{-18,16}},"qd",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-96,-16},{-20,-46}},"qdd",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-2,20},{80,-18}},"%axisUsed",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{2,52},{76,28}},"axis",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-94,-70},{32,-96}},"moving",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-100, 98}, {-24, 68}}, "q", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-94, 46}, {-18, 16}}, "qd", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-96, -16}, {-20, -46}}, "qdd", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-2, 20}, {80, -18}}, "%axisUsed", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{2, 52}, {76, 28}}, "axis", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-94, -70}, {32, -96}}, "moving", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{-100,10},{-60,-10}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{128,128,128},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,{{-60,10},{-60,20},{-40,40},{-40,-40},{-60,-20},{-60,10}},Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{-40,60},{40,-60}},0),Polygon(true,{0.0,0.0},0,{128,128,128},{128,128,128},LinePattern.Solid,FillPattern.Solid,0.25,{{60,20},{40,40},{40,-40},{60,-20},{60,20}},Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{60,10},{100,-10}},0),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-60,-90},{-50,-90},{-20,-30},{20,-30},{48,-90},{60,-90},{60,-100},{-60,-100},{-60,-90}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,128},{0,68}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-36,40},{38,-30}},"2",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, BorderPattern.None, {{-100, 10}, {-60, -10}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {128, 128, 128}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, {{-60, 10}, {-60, 20}, {-40, 40}, {-40, -40}, {-60, -20}, {-60, 10}}, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, BorderPattern.None, {{-40, 60}, {40, -60}}, 0), Polygon(true, {0.0, 0.0}, 0, {128, 128, 128}, {128, 128, 128}, LinePattern.Solid, FillPattern.Solid, 0.25, {{60, 20}, {40, 40}, {40, -40}, {60, -20}, {60, 20}}, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, BorderPattern.None, {{60, 10}, {100, -10}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-60, -90}, {-50, -90}, {-20, -30}, {20, -30}, {48, -90}, {60, -90}, {60, -100}, {-60, -100}, {-60, -90}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{0, 128}, {0, 68}}, "%name", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-36, 40}, {38, -30}}, "2", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
@@ -16443,7 +16443,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </html>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,120},{0,60}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{80,-102},{80,-10}},{255,204,51},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{0, 120}, {0, 60}}, "%name", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{80, -102}, {80, -10}}, {255, 204, 51}, LinePattern.Solid, 0.5, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -16457,7 +16457,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </html>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{235,235,235},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,-100},{100,100}},0),Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-30,54},{30,24}},0),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-30,40},{-60,50},{-60,30},{-30,40}},Smooth.None),Line(true,{0.0,0.0},0,{{-31,-41},{-78,-41},{-78,39},{-30,39}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-30,-26},{30,-56}},0),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{60,-32},{30,-42},{60,-52},{60,-32}},Smooth.None),Line(true,{0.0,0.0},0,{{30,39},{76,39},{76,-41},{30,-41}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,150},{100,110}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {235, 235, 235}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, -100}, {100, 100}}, 0), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-30, 54}, {30, 24}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-30, 40}, {-60, 50}, {-60, 30}, {-30, 40}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-31, -41}, {-78, -41}, {-78, 39}, {-30, 39}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-30, -26}, {30, -56}}, 0), Polygon(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{60, -32}, {30, -42}, {60, -52}, {60, -32}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{30, 39}, {76, 39}, {76, -41}, {30, -41}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-100, 150}, {100, 110}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -16478,7 +16478,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{160,160,164},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{-100,50},{100,-50}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,57},{150,97}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {160, 160, 164}, LinePattern.Solid, FillPattern.HorizontalCylinder, 0.25, BorderPattern.None, {{-100, 50}, {100, -50}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 57}, {150, 97}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -16501,7 +16501,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </HTML>
 // ",""}
 // ""
-// {-200.0,-200.0,200.0,200.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-200,200},{200,-200}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,280},{200,200}},"%name",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,-150},{-140,-190}},"1",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,-30},{-140,-70}},"3",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,-90},{-140,-130}},"2",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,90},{-140,50}},"5",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-200,28},{-140,-12}},"4",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-198,150},{-138,110}},"6",0,TextAlignment.Center),Bitmap(true,{0.0,0.0},0,{{-130,195},{195,-195}},"../../../../Images/MultiBody/Examples/Systems/robot_kr15.bmp")}}
+// {-200.0,-200.0,200.0,200.0,true,0.1,2.0,2.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-200, 200}, {200, -200}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-200, 280}, {200, 200}}, "%name", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-200, -150}, {-140, -190}}, "1", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-200, -30}, {-140, -70}}, "3", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-200, -90}, {-140, -130}}, "2", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-200, 90}, {-140, 50}}, "5", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-200, 28}, {-140, -12}}, "4", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-198, 150}, {-138, 110}}, "6", 0, TextAlignment.Center), Bitmap(true, {0.0, 0.0}, 0, {{-130, 195}, {195, -195}}, "../../../../Images/MultiBody/Examples/Systems/robot_kr15.bmp")}}
 // ""
 // {-200.0,-200.0,200.0,200.0,true,0.1,2.0,2.0}
 // ""
@@ -16587,7 +16587,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {"",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-89,-46},{91,-76}},"resolve",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-100,10},{50,10},{50,31},{94,0},{50,-31},{50,-10},{-100,-10},{-100,10}},Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-149,103},{136,42}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{0,-10},{0,-95}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {192, 192, 192}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-89, -46}, {91, -76}}, "resolve", 0, TextAlignment.Center), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-100, 10}, {50, 10}, {50, 31}, {94, 0}, {50, -31}, {50, -10}, {-100, -10}, {-100, 10}}, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-149, 103}, {136, 42}}, "%name", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{0, -10}, {0, -95}}, {95, 95, 95}, LinePattern.Dot, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -16659,7 +16659,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </HTML>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-61,64},{46,27}},"resolve",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-145,-28},{140,-89}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{0,95},{0,82}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-100,0},{-94,13},{-86,28},{-74,48},{-65,60},{-52,72},{-35,81},{-22,84},{-8,84},{7,80},{19,73},{32,65},{44,55},{52,47},{58,40}},{0,0,0},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{94,10},{75,59},{41,24},{94,10}},Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {192, 192, 192}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-61, 64}, {46, 27}}, "resolve", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-145, -28}, {140, -89}}, "%name", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{0, 95}, {0, 82}}, {95, 95, 95}, LinePattern.Dot, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-100, 0}, {-94, 13}, {-86, 28}, {-74, 48}, {-65, 60}, {-52, 72}, {-35, 81}, {-22, 84}, {-8, 84}, {7, 80}, {19, 73}, {32, 65}, {44, 55}, {52, 47}, {58, 40}}, {0, 0, 0}, LinePattern.Solid, 0.5, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{94, 10}, {75, 59}, {41, 24}, {94, 10}}, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -16730,7 +16730,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </HTML>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-63,56},{44,19}},"resolve",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-151,-73},{134,-134}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-100,60},{-86,68},{-80,72},{-70,78},{-64,82},{-46,86},{-34,88},{-16,88},{-2,86},{12,80},{24,74},{34,68},{46,58},{52,54},{58,48}},{0,0,0},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{89,17},{64,76},{30,41},{89,17}},Smooth.None),Line(true,{0.0,0.0},0,{{0,95},{0,-26}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,0},{96,0}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-104,-48},{54,0},{46,20},{96,0},{66,-42},{60,-22},{-96,-72},{-104,-48}},Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {192, 192, 192}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-63, 56}, {44, 19}}, "resolve", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-151, -73}, {134, -134}}, "%name", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{-100, 60}, {-86, 68}, {-80, 72}, {-70, 78}, {-64, 82}, {-46, 86}, {-34, 88}, {-16, 88}, {-2, 86}, {12, 80}, {24, 74}, {34, 68}, {46, 58}, {52, 54}, {58, 48}}, {0, 0, 0}, LinePattern.Solid, 0.5, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{89, 17}, {64, 76}, {30, 41}, {89, 17}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0, 95}, {0, -26}}, {95, 95, 95}, LinePattern.Dot, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{0, 0}, {96, 0}}, {95, 95, 95}, LinePattern.Dot, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-104, -48}, {54, 0}, {46, 20}, {96, 0}, {66, -42}, {60, -22}, {-96, -72}, {-104, -48}}, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -16805,7 +16805,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </HTML>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,255,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-98,99},{99,-98}},0),Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-92,61},{87,35}},"resolve",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-136,-52},{149,-113}},"%name",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{40,100},{40,0}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-94,0},{-64,11},{-64,-10},{-94,0}},Smooth.None),Line(true,{0.0,0.0},0,{{-60,100},{40,100}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{94,0},{65,12},{65,-11},{94,0}},Smooth.None),Line(true,{0.0,0.0},0,{{-64,0},{-20,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{20,0},{65,0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 255, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-98, 99}, {99, -98}}, 0), Text(true, {0.0, 0.0}, 0, {192, 192, 192}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-92, 61}, {87, 35}}, "resolve", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-136, -52}, {149, -113}}, "%name", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{40, 100}, {40, 0}}, {95, 95, 95}, LinePattern.Dot, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-94, 0}, {-64, 11}, {-64, -10}, {-94, 0}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-60, 100}, {40, 100}}, {95, 95, 95}, LinePattern.Dot, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{94, 0}, {65, 12}, {65, -11}, {94, 0}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-64, 0}, {-20, 0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{20, 0}, {65, 0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -16870,7 +16870,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </html>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,255,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-98,99},{99,-98}},0),Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-59,55},{72,30}},"resolve",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-139,-27},{146,-88}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{100,20},{84,52},{69,39},{100,20}},Smooth.None),Line(true,{0.0,0.0},0,{{40,100},{76,46}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.Solid,0.25,{{-99,20},{-86,53},{-70,42},{-99,20}},Smooth.None),Line(true,{0.0,0.0},0,{{-60,100},{40,100}},{95,95,95},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-79,47},{-70,61},{-59,72},{-45,81},{-32,84},{-20,85}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{77,45},{66,60},{55,69},{49,74},{41,80},{31,84},{20,85}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 255, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-98, 99}, {99, -98}}, 0), Text(true, {0.0, 0.0}, 0, {192, 192, 192}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-59, 55}, {72, 30}}, "resolve", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-139, -27}, {146, -88}}, "%name", 0, TextAlignment.Center), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{100, 20}, {84, 52}, {69, 39}, {100, 20}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{40, 100}, {76, 46}}, {95, 95, 95}, LinePattern.Dot, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-99, 20}, {-86, 53}, {-70, 42}, {-99, 20}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-60, 100}, {40, 100}}, {95, 95, 95}, LinePattern.Dot, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-79, 47}, {-70, 61}, {-59, 72}, {-45, 81}, {-32, 84}, {-20, 85}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{77, 45}, {66, 60}, {55, 69}, {49, 74}, {41, 80}, {31, 84}, {20, 85}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -20050,7 +20050,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-88,102},{92,48}},"Characteristic Ideal Diodes",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-88, 102}, {92, 48}}, "Characteristic Ideal Diodes", 0, TextAlignment.Center)}}
 // ""
 // {"<HTML>
 // <P>
@@ -20084,7 +20084,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-96,100},{98,60}},"Characteristic Thyristors",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-96, 100}, {98, 60}}, "Characteristic Thyristors", 0, TextAlignment.Center)}}
 // ""
 // {"<HTML>
 // <P>
@@ -20113,7 +20113,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-60,-80},{60,-100}},"try considerMagnetization=false/true",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-60,20},{60,0}},"Basic.Transformer (mutual inductance)",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-60, -80}, {60, -100}}, "try considerMagnetization=false/true", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-60, 20}, {60, 0}}, "Basic.Transformer (mutual inductance)", 0, TextAlignment.Center)}}
 // ""
 // {"<html>
 // <p>
@@ -20148,7 +20148,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-100,80},{100,60}},"Compare voltage and current of inductor1 and inductor2",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-100, 80}, {100, 60}}, "Compare voltage and current of inductor1 and inductor2", 0, TextAlignment.Center)}}
 // ""
 // {"<html>
 // <P>
@@ -20195,7 +20195,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
-// {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-36,24},{-18,42}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{18,24},{36,42}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,24},{18,42}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-18,24},{0,42}},0,360),Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.None,FillPattern.Solid,0.25,BorderPattern.None,{{42,24},{-44,34}},0),Line(true,{0.0,0.0},0,{{-36,34},{-62,34}},{0,0,255},LinePattern.None,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{62,34},{36,34}},{0,0,255},LinePattern.None,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-36,8},{-18,26}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{18,8},{36,26}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,8},{18,26}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-18,8},{0,26}},0,360),Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.None,FillPattern.Solid,0.25,BorderPattern.None,{{42,6},{-44,18}},0),Line(true,{0.0,0.0},0,{{-36,18},{-62,18}},{0,0,255},LinePattern.None,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{62,18},{36,18}},{0,0,255},LinePattern.None,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-36,-29},{-62,-29}},{0,0,255},LinePattern.None,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-36,-40},{-18,-22}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-18,-40},{0,-22}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,-40},{18,-22}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{18,-40},{36,-22}},0,360),Line(true,{0.0,0.0},0,{{62,-29},{36,-29}},{0,0,255},LinePattern.None,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.None,FillPattern.Solid,0.25,BorderPattern.None,{{42,-42},{-44,-30}},0),Line(true,{0.0,0.0},0,{{0,8},{0,-18}},{0,0,255},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,103},{150,63}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0,{Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-36, 24}, {-18, 42}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{18, 24}, {36, 42}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{0, 24}, {18, 42}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-18, 24}, {0, 42}}, 0, 360), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.None, FillPattern.Solid, 0.25, BorderPattern.None, {{42, 24}, {-44, 34}}, 0), Line(true, {0.0, 0.0}, 0, {{-36, 34}, {-62, 34}}, {0, 0, 255}, LinePattern.None, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{62, 34}, {36, 34}}, {0, 0, 255}, LinePattern.None, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-36, 8}, {-18, 26}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{18, 8}, {36, 26}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{0, 8}, {18, 26}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-18, 8}, {0, 26}}, 0, 360), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.None, FillPattern.Solid, 0.25, BorderPattern.None, {{42, 6}, {-44, 18}}, 0), Line(true, {0.0, 0.0}, 0, {{-36, 18}, {-62, 18}}, {0, 0, 255}, LinePattern.None, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{62, 18}, {36, 18}}, {0, 0, 255}, LinePattern.None, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-36, -29}, {-62, -29}}, {0, 0, 255}, LinePattern.None, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-36, -40}, {-18, -22}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-18, -40}, {0, -22}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{0, -40}, {18, -22}}, 0, 360), Ellipse(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{18, -40}, {36, -22}}, 0, 360), Line(true, {0.0, 0.0}, 0, {{62, -29}, {36, -29}}, {0, 0, 255}, LinePattern.None, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {255, 255, 255}, LinePattern.None, FillPattern.Solid, 0.25, BorderPattern.None, {{42, -42}, {-44, -30}}, 0), Line(true, {0.0, 0.0}, 0, {{0, 8}, {0, -18}}, {0, 0, 255}, LinePattern.Dot, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 103}, {150, 63}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,false,0.1,1.0,1.0}
 // ""
@@ -20777,7 +20777,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-99,48},{-32,8}},0),Text(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-98,59},{-31,51}},"reference speed generation",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-98,-46},{-60,-52}},"PI controller",0,TextAlignment.Center),Line(true,{0.0,0.0},0,{{-76,-44},{-57,-23}},{255,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.Filled},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-25,6},{99,-50}},0),Text(true,{0.0,0.0},0,{255,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{4,14},{71,7}},"plant (simple drive train)",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, BorderPattern.None, {{-99, 48}, {-32, 8}}, 0), Text(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-98, 59}, {-31, 51}}, "reference speed generation", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-98, -46}, {-60, -52}}, "PI controller", 0, TextAlignment.Center), Line(true, {0.0, 0.0}, 0, {{-76, -44}, {-57, -23}}, {255, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.Filled}, 3, Smooth.None), Rectangle(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, BorderPattern.None, {{-25, 6}, {99, -50}}, 0), Text(true, {0.0, 0.0}, 0, {255, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{4, 14}, {71, 7}}, "plant (simple drive train)", 0, TextAlignment.Center)}}
 // ""
 // {"<html>
 // 
@@ -21069,7 +21069,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,204,51},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{-20,2},{22,-2}},0)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 204, 51}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.5, BorderPattern.None, {{-20, 2}, {22, -2}}, 0)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -21083,7 +21083,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,204,51},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{-20,2},{22,-2}},0)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 204, 51}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.5, BorderPattern.None, {{-20, 2}, {22, -2}}, 0)}}
 // ""
 // {}
 // ""
@@ -21097,7 +21097,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,204,51},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{-20,2},{22,-2}},0)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 204, 51}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.5, BorderPattern.None, {{-20, 2}, {22, -2}}, 0)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -21109,7 +21109,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{255,204,51},{0,0,0},LinePattern.Solid,FillPattern.None,0.5,BorderPattern.None,{{-20,2},{22,-2}},0)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {255, 204, 51}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.5, BorderPattern.None, {{-20, 2}, {22, -2}}, 0)}}
 // ""
 // {}
 // ""
@@ -21121,7 +21121,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{159,159,223},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,60},{100,-60}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-106,124},{114,68}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 255}, {159, 159, 223}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, 60}, {100, -60}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-106, 124}, {114, 68}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -21134,7 +21134,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true,{0.0,0.0},0,{{-80,78},{-80,-90}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-80,90},{-88,68},{-72,68},{-80,90}},Smooth.None),Line(true,{0.0,0.0},0,{{-90,-80},{82,-80}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{90,-80},{68,-72},{68,-88},{90,-80}},Smooth.None),Line(true,{0.0,0.0},0,{{-80,-80},{-80,50},{-80,-20},{60,80}},{0,0,127},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,-20},{80,-60}},"PID",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,-150},{150,-110}},"Ti=%Ti",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true, {0.0, 0.0}, 0, {{-80, 78}, {-80, -90}}, {192, 192, 192}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {192, 192, 192}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-80, 90}, {-88, 68}, {-72, 68}, {-80, 90}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-90, -80}, {82, -80}}, {192, 192, 192}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {192, 192, 192}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, {{90, -80}, {68, -72}, {68, -88}, {90, -80}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-80, -80}, {-80, 50}, {-80, -20}, {60, 80}}, {0, 0, 127}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {192, 192, 192}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, -20}, {80, -60}}, "PID", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, -150}, {150, -110}}, "Ti=%Ti", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
@@ -21220,7 +21220,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </HTML>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{-80,78},{-80,-90}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{-80,90},{-88,68},{-72,68},{-80,90}},Smooth.None),Line(true,{0.0,0.0},0,{{-90,-80},{82,-80}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{192,192,192},{192,192,192},LinePattern.Solid,FillPattern.Solid,0.25,{{90,-80},{68,-72},{68,-88},{90,-80}},Smooth.None),Line(true,{0.0,0.0},0,{{-80,-80},{-80,50},{-80,-20},{30,60},{80,60}},{0,0,127},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{192,192,192},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-20,-20},{80,-60}},"PID",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true, {0.0, 0.0}, 0, {{-80, 78}, {-80, -90}}, {192, 192, 192}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {192, 192, 192}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, {{-80, 90}, {-88, 68}, {-72, 68}, {-80, 90}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-90, -80}, {82, -80}}, {192, 192, 192}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Polygon(true, {0.0, 0.0}, 0, {192, 192, 192}, {192, 192, 192}, LinePattern.Solid, FillPattern.Solid, 0.25, {{90, -80}, {68, -72}, {68, -88}, {90, -80}}, Smooth.None), Line(true, {0.0, 0.0}, 0, {{-80, -80}, {-80, 50}, {-80, -20}, {30, 60}, {80, 60}}, {0, 0, 127}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Text(true, {0.0, 0.0}, 0, {192, 192, 192}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-20, -20}, {80, -60}}, "PID", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0}
 // ""
@@ -21380,7 +21380,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </HTML>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true,{0.0,0.0},0,{0,0,127},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-80,76},{80,-82}},"der()",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Text(true, {0.0, 0.0}, 0, {0, 0, 127}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-80, 76}, {80, -82}}, "der()", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
@@ -21395,7 +21395,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </HTML>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true,{0.0,0.0},0,{{-78,-42},{-52,-42},{-52,0},{-26,0},{-26,24},{-6,24},{-6,64},{18,64},{18,20},{38,20},{38,0},{44,0},{44,0},{62,0}},{0,0,127},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true, {0.0, 0.0}, 0, {{-78, -42}, {-52, -42}, {-52, 0}, {-26, 0}, {-26, 24}, {-6, 24}, {-6, 64}, {18, 64}, {18, 20}, {38, 20}, {38, 0}, {44, 0}, {44, 0}, {62, 0}}, {0, 0, 127}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {}
 // ""
@@ -21408,7 +21408,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </HTML>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{-79,-41},{-59,-33},{-40,1},{-20,9},{0,63},{21,20},{41,10},{60,20}},{0,0,127},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{60,19},{81,10}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true, {0.0, 0.0}, 0, {{-79, -41}, {-59, -33}, {-40, 1}, {-20, 9}, {0, 63}, {21, 20}, {41, 10}, {60, 20}}, {0, 0, 127}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None), Line(true, {0.0, 0.0}, 0, {{60, 19}, {81, 10}}, {0, 0, 255}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}}
 // ""
 // {}
 // ""
@@ -21420,7 +21420,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </HTML>
 // ",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,127},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-100,-100},{100,100}},0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,150},{150,110}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 127}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.None, {{-100, -100}, {100, 100}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 150}, {150, 110}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {}
 // ""
@@ -21780,7 +21780,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
-// {-100.0,-100.0,100.0,100.0,false,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{235,235,235},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.Raised,{{-100,40},{100,-40}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-96,15},{96,-15}},"%y",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,90},{140,50}},"%name",0,TextAlignment.Center)}}
+// {-100.0,-100.0,100.0,100.0,false,0.1,2.0,2.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {235, 235, 235}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.Raised, {{-100, 40}, {100, -40}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-96, 15}, {96, -15}}, "%y", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 90}, {140, 50}}, "%name", 0, TextAlignment.Center)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""
@@ -21797,7 +21797,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </p>
 // </html>",""}
 // ""
-// {-100.0,-100.0,100.0,100.0,false,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{235,235,235},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.Raised,{{-100,40},{100,-40}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-96,15},{96,-15}},"%y",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-150,90},{140,50}},"%name",0,TextAlignment.Center),Polygon(true,{0.0,0.0},0,{255,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{100,10},{120,0},{100,-10},{100,10}},Smooth.None)}}
+// {-100.0,-100.0,100.0,100.0,false,0.1,2.0,2.0,{Rectangle(true, {0.0, 0.0}, 0, {0, 0, 0}, {235, 235, 235}, LinePattern.Solid, FillPattern.Solid, 0.25, BorderPattern.Raised, {{-100, 40}, {100, -40}}, 0), Text(true, {0.0, 0.0}, 0, {0, 0, 0}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-96, 15}, {96, -15}}, "%y", 0, TextAlignment.Center), Text(true, {0.0, 0.0}, 0, {0, 0, 255}, {0, 0, 0}, LinePattern.Solid, FillPattern.None, 0.25, {{-150, 90}, {140, 50}}, "%name", 0, TextAlignment.Center), Polygon(true, {0.0, 0.0}, 0, {255, 0, 255}, {255, 255, 255}, LinePattern.Solid, FillPattern.Solid, 0.25, {{100, 10}, {120, 0}, {100, -10}, {100, 10}}, Smooth.None)}}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0}
 // ""

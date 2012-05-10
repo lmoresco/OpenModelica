@@ -49,14 +49,11 @@ end List4;
 //   input Integer a;
 //   output Integer out1;
 // algorithm
-//   out1 := matchcontinue (a) 
+//   out1 := matchcontinue (a)
 //     case (var5)
 //       algorithm
-//         7 := List4.func2(var5);
-//         _ := List4.func2(var5);
-//         7 := List4.func2(var5);
-//         (_,_,7) := List4.func3(var5);
-//       then 7;
+//       then
+//         7;
 //     case (_) then 9;
 //   end matchcontinue;
 // end List4.func1;

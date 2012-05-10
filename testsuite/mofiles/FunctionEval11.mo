@@ -19,7 +19,7 @@ end FunctionEval11;
 // Result:
 // function f
 //   input Integer i1;
-//   output Integer i = max({1,2,3,i1});
+//   output Integer i = max({1, 2, 3, i1});
 // end f;
 // 
 // class FunctionEval11

@@ -106,14 +106,14 @@ end WillowForest;
 //   Real wBiomass "Biomass produced during a year";
 //   Integer mbiomass "Measured biomass for current year";
 // equation
-//   when sample(0.0,1.0) then
+//   when sample(0.0, 1.0) then
 //   t = 1 + pre(t);
 //   mbiomass = mbiomasses[t];
 //   c = growthCycles[t];
-//   w = pre(w) + (wGrowth + (-wMort - wHarvest));
+//   w = pre(w) + wGrowth + (-wMort) - wHarvest;
 //   wBiomass = wGrowth - wMort;
-//   wGrowth = e[c] * (a[c] * Real(r[t]));
-//   wMort = if c == 1 and t > 1 then (1.0 - h) * (m[t] * (pre(w) + wGrowth)) else m[t] * (pre(w) + wGrowth);
+//   wGrowth = e[c] * a[c] * Real(r[t]);
+//   wMort = if c == 1 and t > 1 then (1.0 - h) * m[t] * (pre(w) + wGrowth) else m[t] * (pre(w) + wGrowth);
 //   wHarvest = if c == 1 and t > 1 then h * pre(w) + pre(wMortAcc) else 0.0;
 //   wMortAcc = if c == 1 then wMort else pre(wMortAcc) + wMort;
 //   end when;

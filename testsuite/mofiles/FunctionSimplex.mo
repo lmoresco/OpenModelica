@@ -119,44 +119,44 @@ end FunctionSimplex;
 // Result:
 // function misc_simplex1
 //   input Real[:, :] matr;
-//   output Real[(size(matr,2)) + -1] x;
+//   output Real[size(matr, 2) + -1] x;
 //   output Real z;
 //   output Integer q;
 //   output Integer p;
 //   protected Integer M;
 //   protected Integer N;
-//   protected Real[size(matr,1), size(matr,2)] a;
+//   protected Real[size(matr, 1), size(matr, 2)] a;
 // algorithm
-//   N := size(a,1) + -1;
-//   M := size(a,2) + -1;
+//   N := size(a, 1) + -1;
+//   M := size(a, 2) + -1;
 //   a := matr;
 //   p := 0;
 //   q := 0;
-//   a := pivot1(a,1 + p,1 + q);
+//   a := pivot1(a, 1 + p, 1 + q);
 //   while not (q == M or p == N) loop
 //     q := 0;
-//     while not (q == M or a[1,1 + q] > 1.0) loop
+//     while not (q == M or a[1, 1 + q] > 1.0) loop
 //       q := 1 + q;
 //     end while;
 //     p := 0;
-//     while not (p == N or a[1 + p,1 + q] > 0.1) loop
+//     while not (p == N or a[1 + p, 1 + q] > 0.1) loop
 //       p := 1 + p;
 //     end while;
 //     if q < M and p < N and p > 0 and q > 0 then
-//       a := pivot1(a,p,q);
+//       a := pivot1(a, p, q);
 //     end if;
 //     if p <= 0 and q <= 0 then
-//       a := pivot1(a,1 + p,1 + q);
+//       a := pivot1(a, 1 + p, 1 + q);
 //     end if;
 //     if p <= 0 and q > 0 then
-//       a := pivot1(a,1 + p,q);
+//       a := pivot1(a, 1 + p, q);
 //     end if;
 //     if p > 0 and q <= 0 then
-//       a := pivot1(a,p,1 + q);
+//       a := pivot1(a, p, 1 + q);
 //     end if;
 //   end while;
-//   z := a[1,M];
-//   x := <reduction>array(a[1,i] for i in 1:(size(x,1)));
+//   z := a[1, M];
+//   x := array(a[1,i] for i in 1:size(x, 1));
 //   for i in 1:10 loop
 //     for j in 1:M loop
 //       x[j] := 1.01 * x[j];
@@ -168,17 +168,17 @@ end FunctionSimplex;
 //   input Real[:, :] b;
 //   input Integer p;
 //   input Integer q;
-//   output Real[size(b,1), size(b,2)] a;
+//   output Real[size(b, 1), size(b, 2)] a;
 //   protected Integer M;
 //   protected Integer N;
 // algorithm
 //   a := b;
-//   N := size(a,1) + -1;
-//   M := size(a,2) + -1;
+//   N := size(a, 1) + -1;
+//   M := size(a, 2) + -1;
 //   for j in 1:N loop
 //     for k in 1:M loop
 //       if j <> p and k <> q then
-//         a[j,k] := a[j,k] + -0.3 * /*T_REAL*/(j);
+//         a[j, k] := a[j, k] + -0.3 * Real(j);
 //       end if;
 //     end for;
 //   end for;
@@ -406,6 +406,6 @@ end FunctionSimplex;
 //   Real b[29];
 //   Real b[30];
 // equation
-//   ({b[1],b[2],b[3],b[4],b[5],b[6],b[7],b[8],b[9],b[10],b[11],b[12],b[13],b[14],b[15],b[16],b[17],b[18],b[19],b[20],b[21],b[22],b[23],b[24],b[25],b[26],b[27],b[28],b[29],b[30]},z,p,q) = ({0.05523110627056022,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,-1.1046221254112045,0.0,0.0,0.0,0.0,0.0},0.0,30,1);
+//   ({b[1], b[2], b[3], b[4], b[5], b[6], b[7], b[8], b[9], b[10], b[11], b[12], b[13], b[14], b[15], b[16], b[17], b[18], b[19], b[20], b[21], b[22], b[23], b[24], b[25], b[26], b[27], b[28], b[29], b[30]}, z, p, q) = ({0.05523110627056022, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, -1.1046221254112045, 0.0, 0.0, 0.0, 0.0, 0.0}, 0.0, 30, 1);
 // end FunctionSimplex;
 // endResult

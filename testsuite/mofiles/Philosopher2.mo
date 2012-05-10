@@ -328,17 +328,17 @@ end Philosopher_DiningTable;
 //   protected Real u2;
 //   protected Boolean my_break = false;
 // algorithm
-//   s1 := {si[1],si[2],si[3]};
+//   s1 := {si[1], si[2], si[3]};
 //   u2 := 1.0;
 //   while not my_break loop
-//     (u1, s2) := Philosopher.Random.random({s1[1],s1[2],s1[3]});
-//     (u2, s1) := Philosopher.Random.random({s2[1],s2[2],s2[3]});
+//     (u1, s2) := Philosopher.Random.random({s1[1], s1[2], s1[3]});
+//     (u2, s1) := Philosopher.Random.random({s2[1], s2[2], s2[3]});
 //     z := (-0.8577638849607068 + 1.7155277699214135 * u1) / u2;
 //     zz := z ^ 2.0 / 4.0;
-//     my_break := zz <= -log(u2);
+//     my_break := zz <= (-log(u2));
 //   end while;
 //   x := mu + z * sigma;
-//   so := {s1[1],s1[2],s1[3]};
+//   so := {s1[1], s1[2], s1[3]};
 // end Philosopher.Random.normalvariate;
 // 
 // function Philosopher.Random.random
@@ -346,9 +346,9 @@ end Philosopher_DiningTable;
 //   output Real x "uniform random variate between 0 and 1";
 //   output Real[3] so "output random seed";
 // algorithm
-//   so[1] := abs(rem(171.0 * si[1],30269.0));
-//   so[2] := abs(rem(172.0 * si[2],30307.0));
-//   so[3] := abs(rem(170.0 * si[3],30323.0));
+//   so[1] := abs(rem(171.0 * si[1], 30269.0));
+//   so[2] := abs(rem(172.0 * si[2], 30307.0));
+//   so[3] := abs(rem(170.0 * si[3], 30323.0));
 //   if so[1] <= 0.0 and so[1] >= 0.0 then
 //     so[1] := 1.0;
 //   end if;
@@ -358,7 +358,7 @@ end Philosopher_DiningTable;
 //   if so[3] <= 0.0 and so[3] >= 0.0 then
 //     so[3] := 1.0;
 //   end if;
-//   x := rem(so[1] / 30269.0 + so[2] / 30307.0 + so[3] / 3023.0,1.0);
+//   x := rem(so[1] / 30269.0 + so[2] / 30307.0 + so[3] / 3023.0, 1.0);
 // end Philosopher.Random.random;
 // 
 // class Philosopher_DiningTable
@@ -727,7 +727,7 @@ end Philosopher_DiningTable;
 //     phil[1].state := 0;
 //     phil[1].left.pickedUp := false;
 //     phil[1].right.pickedUp := false;
-//     (phil[1].T, phil[1].randomSeed) := Philosopher.Random.normalvariate(phil[1].mu,phil[1].sigma,{phil[1].startSeed[1],phil[1].startSeed[2],phil[1].startSeed[3]});
+//     (phil[1].T, phil[1].randomSeed) := Philosopher.Random.normalvariate(phil[1].mu, phil[1].sigma, {phil[1].startSeed[1], phil[1].startSeed[2], phil[1].startSeed[3]});
 //     phil[1].timeOfNextChange := abs(phil[1].T);
 //   elsewhen pre(phil[1].timeToGetHungry) then
 //     phil[1].state := 1;
@@ -740,7 +740,7 @@ end Philosopher_DiningTable;
 //     if pre(phil[1].canEat) then
 //       phil[1].left.pickedUp := true;
 //       phil[1].right.pickedUp := true;
-//       (phil[1].T, phil[1].randomSeed) := Philosopher.Random.normalvariate(phil[1].mu,phil[1].sigma,{pre(phil[1].randomSeed[1]),pre(phil[1].randomSeed[2]),pre(phil[1].randomSeed[3])});
+//       (phil[1].T, phil[1].randomSeed) := Philosopher.Random.normalvariate(phil[1].mu, phil[1].sigma, {pre(phil[1].randomSeed[1]), pre(phil[1].randomSeed[2]), pre(phil[1].randomSeed[3])});
 //       phil[1].timeOfNextChange := time + abs(phil[1].T);
 //       phil[1].state := 2;
 //     end if;
@@ -751,14 +751,14 @@ end Philosopher_DiningTable;
 //     phil[1].state := 0;
 //     phil[1].left.pickedUp := false;
 //     phil[1].right.pickedUp := false;
-//     (phil[1].T, phil[1].randomSeed) := Philosopher.Random.normalvariate(phil[1].mu,phil[1].sigma,{pre(phil[1].randomSeed[1]),pre(phil[1].randomSeed[2]),pre(phil[1].randomSeed[3])});
+//     (phil[1].T, phil[1].randomSeed) := Philosopher.Random.normalvariate(phil[1].mu, phil[1].sigma, {pre(phil[1].randomSeed[1]), pre(phil[1].randomSeed[2]), pre(phil[1].randomSeed[3])});
 //     phil[1].timeOfNextChange := time + abs(phil[1].T);
 //   end when;
 //   when initial() then
 //     phil[2].state := 0;
 //     phil[2].left.pickedUp := false;
 //     phil[2].right.pickedUp := false;
-//     (phil[2].T, phil[2].randomSeed) := Philosopher.Random.normalvariate(phil[2].mu,phil[2].sigma,{phil[2].startSeed[1],phil[2].startSeed[2],phil[2].startSeed[3]});
+//     (phil[2].T, phil[2].randomSeed) := Philosopher.Random.normalvariate(phil[2].mu, phil[2].sigma, {phil[2].startSeed[1], phil[2].startSeed[2], phil[2].startSeed[3]});
 //     phil[2].timeOfNextChange := abs(phil[2].T);
 //   elsewhen pre(phil[2].timeToGetHungry) then
 //     phil[2].state := 1;
@@ -771,7 +771,7 @@ end Philosopher_DiningTable;
 //     if pre(phil[2].canEat) then
 //       phil[2].left.pickedUp := true;
 //       phil[2].right.pickedUp := true;
-//       (phil[2].T, phil[2].randomSeed) := Philosopher.Random.normalvariate(phil[2].mu,phil[2].sigma,{pre(phil[2].randomSeed[1]),pre(phil[2].randomSeed[2]),pre(phil[2].randomSeed[3])});
+//       (phil[2].T, phil[2].randomSeed) := Philosopher.Random.normalvariate(phil[2].mu, phil[2].sigma, {pre(phil[2].randomSeed[1]), pre(phil[2].randomSeed[2]), pre(phil[2].randomSeed[3])});
 //       phil[2].timeOfNextChange := time + abs(phil[2].T);
 //       phil[2].state := 2;
 //     end if;
@@ -782,14 +782,14 @@ end Philosopher_DiningTable;
 //     phil[2].state := 0;
 //     phil[2].left.pickedUp := false;
 //     phil[2].right.pickedUp := false;
-//     (phil[2].T, phil[2].randomSeed) := Philosopher.Random.normalvariate(phil[2].mu,phil[2].sigma,{pre(phil[2].randomSeed[1]),pre(phil[2].randomSeed[2]),pre(phil[2].randomSeed[3])});
+//     (phil[2].T, phil[2].randomSeed) := Philosopher.Random.normalvariate(phil[2].mu, phil[2].sigma, {pre(phil[2].randomSeed[1]), pre(phil[2].randomSeed[2]), pre(phil[2].randomSeed[3])});
 //     phil[2].timeOfNextChange := time + abs(phil[2].T);
 //   end when;
 //   when initial() then
 //     phil[3].state := 0;
 //     phil[3].left.pickedUp := false;
 //     phil[3].right.pickedUp := false;
-//     (phil[3].T, phil[3].randomSeed) := Philosopher.Random.normalvariate(phil[3].mu,phil[3].sigma,{phil[3].startSeed[1],phil[3].startSeed[2],phil[3].startSeed[3]});
+//     (phil[3].T, phil[3].randomSeed) := Philosopher.Random.normalvariate(phil[3].mu, phil[3].sigma, {phil[3].startSeed[1], phil[3].startSeed[2], phil[3].startSeed[3]});
 //     phil[3].timeOfNextChange := abs(phil[3].T);
 //   elsewhen pre(phil[3].timeToGetHungry) then
 //     phil[3].state := 1;
@@ -802,7 +802,7 @@ end Philosopher_DiningTable;
 //     if pre(phil[3].canEat) then
 //       phil[3].left.pickedUp := true;
 //       phil[3].right.pickedUp := true;
-//       (phil[3].T, phil[3].randomSeed) := Philosopher.Random.normalvariate(phil[3].mu,phil[3].sigma,{pre(phil[3].randomSeed[1]),pre(phil[3].randomSeed[2]),pre(phil[3].randomSeed[3])});
+//       (phil[3].T, phil[3].randomSeed) := Philosopher.Random.normalvariate(phil[3].mu, phil[3].sigma, {pre(phil[3].randomSeed[1]), pre(phil[3].randomSeed[2]), pre(phil[3].randomSeed[3])});
 //       phil[3].timeOfNextChange := time + abs(phil[3].T);
 //       phil[3].state := 2;
 //     end if;
@@ -813,14 +813,14 @@ end Philosopher_DiningTable;
 //     phil[3].state := 0;
 //     phil[3].left.pickedUp := false;
 //     phil[3].right.pickedUp := false;
-//     (phil[3].T, phil[3].randomSeed) := Philosopher.Random.normalvariate(phil[3].mu,phil[3].sigma,{pre(phil[3].randomSeed[1]),pre(phil[3].randomSeed[2]),pre(phil[3].randomSeed[3])});
+//     (phil[3].T, phil[3].randomSeed) := Philosopher.Random.normalvariate(phil[3].mu, phil[3].sigma, {pre(phil[3].randomSeed[1]), pre(phil[3].randomSeed[2]), pre(phil[3].randomSeed[3])});
 //     phil[3].timeOfNextChange := time + abs(phil[3].T);
 //   end when;
 //   when initial() then
 //     phil[4].state := 0;
 //     phil[4].left.pickedUp := false;
 //     phil[4].right.pickedUp := false;
-//     (phil[4].T, phil[4].randomSeed) := Philosopher.Random.normalvariate(phil[4].mu,phil[4].sigma,{phil[4].startSeed[1],phil[4].startSeed[2],phil[4].startSeed[3]});
+//     (phil[4].T, phil[4].randomSeed) := Philosopher.Random.normalvariate(phil[4].mu, phil[4].sigma, {phil[4].startSeed[1], phil[4].startSeed[2], phil[4].startSeed[3]});
 //     phil[4].timeOfNextChange := abs(phil[4].T);
 //   elsewhen pre(phil[4].timeToGetHungry) then
 //     phil[4].state := 1;
@@ -833,7 +833,7 @@ end Philosopher_DiningTable;
 //     if pre(phil[4].canEat) then
 //       phil[4].left.pickedUp := true;
 //       phil[4].right.pickedUp := true;
-//       (phil[4].T, phil[4].randomSeed) := Philosopher.Random.normalvariate(phil[4].mu,phil[4].sigma,{pre(phil[4].randomSeed[1]),pre(phil[4].randomSeed[2]),pre(phil[4].randomSeed[3])});
+//       (phil[4].T, phil[4].randomSeed) := Philosopher.Random.normalvariate(phil[4].mu, phil[4].sigma, {pre(phil[4].randomSeed[1]), pre(phil[4].randomSeed[2]), pre(phil[4].randomSeed[3])});
 //       phil[4].timeOfNextChange := time + abs(phil[4].T);
 //       phil[4].state := 2;
 //     end if;
@@ -844,14 +844,14 @@ end Philosopher_DiningTable;
 //     phil[4].state := 0;
 //     phil[4].left.pickedUp := false;
 //     phil[4].right.pickedUp := false;
-//     (phil[4].T, phil[4].randomSeed) := Philosopher.Random.normalvariate(phil[4].mu,phil[4].sigma,{pre(phil[4].randomSeed[1]),pre(phil[4].randomSeed[2]),pre(phil[4].randomSeed[3])});
+//     (phil[4].T, phil[4].randomSeed) := Philosopher.Random.normalvariate(phil[4].mu, phil[4].sigma, {pre(phil[4].randomSeed[1]), pre(phil[4].randomSeed[2]), pre(phil[4].randomSeed[3])});
 //     phil[4].timeOfNextChange := time + abs(phil[4].T);
 //   end when;
 //   when initial() then
 //     phil[5].state := 0;
 //     phil[5].left.pickedUp := false;
 //     phil[5].right.pickedUp := false;
-//     (phil[5].T, phil[5].randomSeed) := Philosopher.Random.normalvariate(phil[5].mu,phil[5].sigma,{phil[5].startSeed[1],phil[5].startSeed[2],phil[5].startSeed[3]});
+//     (phil[5].T, phil[5].randomSeed) := Philosopher.Random.normalvariate(phil[5].mu, phil[5].sigma, {phil[5].startSeed[1], phil[5].startSeed[2], phil[5].startSeed[3]});
 //     phil[5].timeOfNextChange := abs(phil[5].T);
 //   elsewhen pre(phil[5].timeToGetHungry) then
 //     phil[5].state := 1;
@@ -864,7 +864,7 @@ end Philosopher_DiningTable;
 //     if pre(phil[5].canEat) then
 //       phil[5].left.pickedUp := true;
 //       phil[5].right.pickedUp := true;
-//       (phil[5].T, phil[5].randomSeed) := Philosopher.Random.normalvariate(phil[5].mu,phil[5].sigma,{pre(phil[5].randomSeed[1]),pre(phil[5].randomSeed[2]),pre(phil[5].randomSeed[3])});
+//       (phil[5].T, phil[5].randomSeed) := Philosopher.Random.normalvariate(phil[5].mu, phil[5].sigma, {pre(phil[5].randomSeed[1]), pre(phil[5].randomSeed[2]), pre(phil[5].randomSeed[3])});
 //       phil[5].timeOfNextChange := time + abs(phil[5].T);
 //       phil[5].state := 2;
 //     end if;
@@ -875,7 +875,7 @@ end Philosopher_DiningTable;
 //     phil[5].state := 0;
 //     phil[5].left.pickedUp := false;
 //     phil[5].right.pickedUp := false;
-//     (phil[5].T, phil[5].randomSeed) := Philosopher.Random.normalvariate(phil[5].mu,phil[5].sigma,{pre(phil[5].randomSeed[1]),pre(phil[5].randomSeed[2]),pre(phil[5].randomSeed[3])});
+//     (phil[5].T, phil[5].randomSeed) := Philosopher.Random.normalvariate(phil[5].mu, phil[5].sigma, {pre(phil[5].randomSeed[1]), pre(phil[5].randomSeed[2]), pre(phil[5].randomSeed[3])});
 //     phil[5].timeOfNextChange := time + abs(phil[5].T);
 //   end when;
 // end Philosopher_DiningTable;

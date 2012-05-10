@@ -30,7 +30,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow); getE
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
-//   d := Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.density(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.setState_pTX(p,T,X));
+//   d := Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.density(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.setState_pTX(p, T, X));
 // end Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.density_pTX;
 // 
 // function Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.dynamicViscosity \"Return dynamic viscosity\"
@@ -91,8 +91,8 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow); getE
 //   parameter Real Re_turbulent(quantity = \"ReynoldsNumber\", unit = \"1\") = 4000.0 \"Start of turbulent regime, depending on type of flow device\";
 //   parameter Boolean show_Res = false \"= true, if Reynolds numbers are included for plotting\";
 //   protected parameter Boolean use_rho_nominal = false \"= true, if rho_nominal is used, otherwise computed from medium\";
-//   protected parameter Real rho_nominal(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.density_pTX(101325.0,293.15,{1.0}) \"Nominal density (e.g. rho_liquidWater = 995, rho_air = 1.2)\";
-//   protected parameter Real mu_nominal(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) = Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.dynamicViscosity(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.setState_pTX(101325.0,293.15,{1.0})) \"Nominal dynamic viscosity (e.g. mu_liquidWater = 1e-3, mu_air = 1.8e-5)\";
+//   protected parameter Real rho_nominal(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.density_pTX(101325.0, 293.15, {1.0}) \"Nominal density (e.g. rho_liquidWater = 995, rho_air = 1.2)\";
+//   protected parameter Real mu_nominal(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) = Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.dynamicViscosity(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.setState_pTX(101325.0, 293.15, {1.0})) \"Nominal dynamic viscosity (e.g. mu_liquidWater = 1e-3, mu_air = 1.8e-5)\";
 //   parameter Real dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) \"Nominal pressure loss\";
 //   parameter Real m_flow_nominal(quantity = \"MassFlowRate\", unit = \"kg/s\") \"Mass flow rate for dp_nominal\";
 //   input Real vs[1](quantity = \"Velocity\", unit = \"m/s\") \"Mean velocities of fluid flow\";
@@ -121,12 +121,12 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow); getE
 //   Real Fs_fg[1](quantity = \"Force\", unit = \"N\") \"Friction and gravity forces\";
 //   Real dps_fg[1](quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = (p_a_start - p_b_start) / Real(n + -1)) \"pressure drop between states\";
 // equation
-//   dps_fg[1] = g * (dheights[1] * (if m_flows[1] > 0.0 then rhos[1] else rhos[2])) + (m_flows[1] * dp_nominal) / (m_flow_nominal * Real(n + -1));
+//   dps_fg[1] = g * dheights[1] * (if m_flows[1] > 0.0 then rhos[1] else rhos[2]) + m_flows[1] * dp_nominal / (m_flow_nominal * Real(n + -1));
 //   rhos_act[1] = if noEvent(m_flows[1] > 0.0) then rhos[1] else rhos[2];
 //   mus_act[1] = if noEvent(m_flows[1] > 0.0) then mus[1] else mus[2];
 //   Ib_flows[1] = 0.0;
-//   Fs_p[1] = 0.5 * ((crossAreas[1] + crossAreas[2]) * (Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.pressure(states[2]) - Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.pressure(states[1]))) * nParallel;
-//   dps_fg[1] = (2.0 * Fs_fg[1]) / ((crossAreas[1] + crossAreas[2]) * nParallel);
+//   Fs_p[1] = 0.5 * (crossAreas[1] + crossAreas[2]) * (Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.pressure(states[2]) - Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow.Medium.pressure(states[1])) * nParallel;
+//   dps_fg[1] = 2.0 * Fs_fg[1] / ((crossAreas[1] + crossAreas[2]) * nParallel);
 //   Is[1] = m_flows[1] * pathLengths[1];
 //   0.0 = Ib_flows[1] - Fs_p[1] - Fs_fg[1];
 // end Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow;

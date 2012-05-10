@@ -29,6 +29,6 @@ end LogCall1;
 // class LogCall1
 //   Real res;
 // equation
-//   res = 4.60517018598809;
+//   res = 4.605170185988092;
 // end LogCall1;
 // endResult

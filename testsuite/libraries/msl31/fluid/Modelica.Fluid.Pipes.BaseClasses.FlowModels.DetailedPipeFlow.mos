@@ -30,7 +30,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
-//   d := Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.density(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.setState_pTX(p,T,X));
+//   d := Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.density(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.setState_pTX(p, T, X));
 // end Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.density_pTX;
 // 
 // function Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.dynamicViscosity \"Return dynamic viscosity\"
@@ -78,19 +78,19 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //     rho := rho_b;
 //     mu := mu_b;
 //   end if;
-//   lambda2 := (2.0 * abs(dp_fric) * diameter ^ 3.0 * rho) / (mu ^ 2.0 * length);
-//   aux1 := (2.0 * diameter ^ 3.0 * rho) / (mu ^ 2.0 * length);
+//   lambda2 := 2.0 * abs(dp_fric) * diameter ^ 3.0 * rho / (mu ^ 2.0 * length);
+//   aux1 := 2.0 * diameter ^ 3.0 * rho / (mu ^ 2.0 * length);
 //   Re := lambda2 / 64.0;
 //   dRe_ddp := aux1 / 64.0;
 //   if Re > Re1 then
 //     Re := -2.0 * sqrt(lambda2) * log10(2.51 / sqrt(lambda2) + 0.27 * Delta);
 //     aux2 := sqrt(aux1 * abs(dp_fric));
-//     dRe_ddp := 0.43429448190325176 * ((-2.0 * log(2.51 / aux2 + 0.27 * Delta) * aux1) / (aux2 * 2.0) + 5.02 / ((2.51 / aux2 + 0.27 * Delta) * abs(dp_fric) * 2.0));
+//     dRe_ddp := 0.43429448190325176 * (-2.0 * log(2.51 / aux2 + 0.27 * Delta) * aux1 / (aux2 * 2.0) + 5.02 / ((2.51 / aux2 + 0.27 * Delta) * abs(dp_fric) * 2.0));
 //     if Re < Re2 then
-//       (Re, dRe_ddp) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.Internal.m_flow_of_dp_fric.interpolateInRegion2_withDerivative(lambda2,Re1,Re2,Delta,dp_fric);
+//       (Re, dRe_ddp) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.Internal.m_flow_of_dp_fric.interpolateInRegion2_withDerivative(lambda2, Re1, Re2, Delta, dp_fric);
 //     end if;
 //   end if;
-//   m_flow := 0.7853981633974483 * diameter * mu * if dp_fric >= 0.0 then Re else -Re;
+//   m_flow := 0.7853981633974483 * diameter * mu * (if dp_fric >= 0.0 then Re else -Re);
 //   dm_flow_ddp_fric := 0.7853981633974483 * diameter * mu * dRe_ddp;
 // end Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.Internal.m_flow_of_dp_fric;
 // 
@@ -109,7 +109,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //   protected Real aux3 = log10(aux2);
 //   protected Real L2 = 0.25 * (Re2 / aux3) ^ 2.0;
 //   protected Real aux4 = 2.51 / sqrt(L2) + 0.27 * Delta;
-//   protected Real aux5 = -2.0 * (sqrt(L2) * log10(aux4));
+//   protected Real aux5 = -2.0 * sqrt(L2) * log10(aux4);
 //   protected Real x2 = log10(L2);
 //   protected Real y2 = log10(aux5);
 //   protected Real y2d = 0.5 + 1.0900791495771618 / (aux5 * aux4);
@@ -117,9 +117,9 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //   protected Real y;
 //   protected Real dy_dx \"Derivative in transformed space\";
 // algorithm
-//   (y, dy_dx) := Modelica.Fluid.Utilities.cubicHermite_withDerivative(x,x1,x2,y1,y2,y1d,y2d);
+//   (y, dy_dx) := Modelica.Fluid.Utilities.cubicHermite_withDerivative(x, x1, x2, y1, y2, y1d, y2d);
 //   Re := 10.0 ^ y;
-//   dRe_ddp := (dy_dx * Re) / abs(dp_fric);
+//   dRe_ddp := dy_dx * Re / abs(dp_fric);
 // end Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.Internal.m_flow_of_dp_fric.interpolateInRegion2_withDerivative;
 // 
 // function Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.massFlowRate_dp_staticHead \"Return mass flow rate m_flow as function of pressure loss dp, i.e., m_flow = f(dp), due to wall friction and static head\"
@@ -150,20 +150,20 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //   protected Real dp_zero(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = dp_grav_a / 2.0 + dp_grav_b / 2.0;
 //   protected Real dm_flow_ddp_fric_zero;
 // algorithm
-//   dp_a := max(dp_grav_a,dp_grav_b) + dp_small;
-//   dp_b := min(dp_grav_a,dp_grav_b) - dp_small;
+//   dp_a := max(dp_grav_a, dp_grav_b) + dp_small;
+//   dp_b := min(dp_grav_a, dp_grav_b) - dp_small;
 //   if dp >= dp_a then
-//     (m_flow, _) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.Internal.m_flow_of_dp_fric(dp - dp_grav_a,rho_a,rho_b,mu_a,mu_b,length,diameter,Re1,4000.0,Delta);
+//     (m_flow, _) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.Internal.m_flow_of_dp_fric(dp - dp_grav_a, rho_a, rho_b, mu_a, mu_b, length, diameter, Re1, 4000.0, Delta);
 //   elseif dp <= dp_b then
-//     (m_flow, _) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.Internal.m_flow_of_dp_fric(dp - dp_grav_b,rho_a,rho_b,mu_a,mu_b,length,diameter,Re1,4000.0,Delta);
+//     (m_flow, _) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.Internal.m_flow_of_dp_fric(dp - dp_grav_b, rho_a, rho_b, mu_a, mu_b, length, diameter, Re1, 4000.0, Delta);
 //   else
-//     (m_flow_a, dm_flow_ddp_fric_a) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.Internal.m_flow_of_dp_fric(dp_a - dp_grav_a,rho_a,rho_b,mu_a,mu_b,length,diameter,Re1,4000.0,Delta);
-//     (m_flow_b, dm_flow_ddp_fric_b) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.Internal.m_flow_of_dp_fric(dp_b - dp_grav_b,rho_a,rho_b,mu_a,mu_b,length,diameter,Re1,4000.0,Delta);
-//     (m_flow, dm_flow_ddp_fric_zero) := Modelica.Fluid.Utilities.regFun3(dp_zero,dp_b,dp_a,m_flow_b,m_flow_a,dm_flow_ddp_fric_b,dm_flow_ddp_fric_a);
+//     (m_flow_a, dm_flow_ddp_fric_a) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.Internal.m_flow_of_dp_fric(dp_a - dp_grav_a, rho_a, rho_b, mu_a, mu_b, length, diameter, Re1, 4000.0, Delta);
+//     (m_flow_b, dm_flow_ddp_fric_b) := Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.Internal.m_flow_of_dp_fric(dp_b - dp_grav_b, rho_a, rho_b, mu_a, mu_b, length, diameter, Re1, 4000.0, Delta);
+//     (m_flow, dm_flow_ddp_fric_zero) := Modelica.Fluid.Utilities.regFun3(dp_zero, dp_b, dp_a, m_flow_b, m_flow_a, dm_flow_ddp_fric_b, dm_flow_ddp_fric_a);
 //     if dp > dp_zero then
-//       (m_flow, _) := Modelica.Fluid.Utilities.regFun3(dp,dp_zero,dp_a,m_flow_zero,m_flow_a,dm_flow_ddp_fric_zero,dm_flow_ddp_fric_a);
+//       (m_flow, _) := Modelica.Fluid.Utilities.regFun3(dp, dp_zero, dp_a, m_flow_zero, m_flow_a, dm_flow_ddp_fric_zero, dm_flow_ddp_fric_a);
 //     else
-//       (m_flow, _) := Modelica.Fluid.Utilities.regFun3(dp,dp_b,dp_zero,m_flow_b,m_flow_zero,dm_flow_ddp_fric_b,dm_flow_ddp_fric_zero);
+//       (m_flow, _) := Modelica.Fluid.Utilities.regFun3(dp, dp_b, dp_zero, m_flow_b, m_flow_zero, dm_flow_ddp_fric_b, dm_flow_ddp_fric_zero);
 //     end if;
 //   end if;
 // end Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.massFlowRate_dp_staticHead;
@@ -205,10 +205,10 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //     h01d := 6.0 * (t - aux2);
 //     h11d := 3.0 * aux2 + -2.0 * t;
 //     y := y1 * h00 + h * y1d * h10 + y2 * h01 + h * y2d * h11;
-//     dy_dx := (y1 * h00d) / h + y1d * h10d + (y2 * h01d) / h + y2d * h11d;
+//     dy_dx := y1 * h00d / h + y1d * h10d + y2 * h01d / h + y2d * h11d;
 //   else
 //     y := y1 / 2.0 + y2 / 2.0;
-//     dy_dx := 1e+60 * /*T_REAL*/(sign(y2 - y1));
+//     dy_dx := 1e+60 * Real(sign(y2 - y1));
 //   end if;
 // end Modelica.Fluid.Utilities.cubicHermite_withDerivative;
 // 
@@ -242,32 +242,32 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //   protected Real aux02;
 //   protected Boolean useSingleCubicPolynomial = false \"Indicate to override further logic and use single cubic\";
 // algorithm
-//   assert( x0 < x1, \"regFun3(): Data points not sorted appropriately (x0 = \" + String(x0,0,true,6) + \" > x1 = \" + String(x1,0,true,6) + \"). Please flip arguments.\");
+//   assert( x0 < x1, \"regFun3(): Data points not sorted appropriately (x0 = \" + String(x0, 0, true, 6) + \" > x1 = \" + String(x1, 0, true, 6) + \"). Please flip arguments.\");
 //   h0 := x1 - x0;
 //   Delta0 := (y1 - y0) / h0;
 //   if abs(Delta0) <= 0.0 then
 //     y := y0;
 //   else
 //     if abs(y1d + y0d + -2.0 * Delta0) < 0.0000000000001 then
-//       xstar := 1e+60 * (x1 - x0) * (2.0 * y0d + y1d + -3.0 * Delta0) * if y0d + y1d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
+//       xstar := 1e+60 * (x1 - x0) * (2.0 * y0d + y1d + -3.0 * Delta0) * (if y0d + y1d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0);
 //     else
-//       xstar := (0.3333333333333333 * (-3.0 * x0 * (y0d + y1d) + 6.0 * x0 * Delta0 + -2.0 * h0 * y0d + 3.0 * h0 * Delta0 - h0 * y1d)) / (2.0 * Delta0 + -y1d - y0d);
+//       xstar := 0.3333333333333333 * (-3.0 * x0 * (y0d + y1d) + 6.0 * x0 * Delta0 + -2.0 * h0 * y0d + 3.0 * h0 * Delta0 - h0 * y1d) / (2.0 * Delta0 + (-y1d) - y0d);
 //     end if;
 //     mu := xstar - x0;
 //     eta := x1 - xstar;
-//     omega := (3.0 * (y0d + y1d + -2.0 * Delta0) * (xstar - x0) ^ 2.0) / h0 ^ 2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (xstar - x0)) / h0 + y0d;
-//     aux01 := 0.25 * /*T_REAL*/(sign(Delta0)) * min(abs(omega),abs(Delta0));
+//     omega := 3.0 * (y0d + y1d + -2.0 * Delta0) * (xstar - x0) ^ 2.0 / h0 ^ 2.0 + 2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (xstar - x0) / h0 + y0d;
+//     aux01 := 0.25 * Real(sign(Delta0)) * min(abs(omega), abs(Delta0));
 //     if abs(y0d - y1d) <= 0.0000000000001 then
 //       aux02 := y0d;
 //       if y1 > y0 + y0d * (x1 - x0) then
 //         useSingleCubicPolynomial := true;
 //       end if;
 //     elseif abs(y1d + y0d + -2.0 * Delta0) < 0.0000000000001 then
-//       aux02 := 1e+60 * (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + -y1d * y0d + -y1d ^ 2.0 - y0d ^ 2.0) * if y1d + y0d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
+//       aux02 := 1e+60 * (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + (-y1d) * y0d + (-y1d ^ 2.0) - y0d ^ 2.0) * (if y1d + y0d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0);
 //     else
-//       aux02 := (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + -y1d * y0d + -y1d ^ 2.0 - y0d ^ 2.0) / (y1d + y0d + -2.0 * Delta0 * 3.0);
+//       aux02 := (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + (-y1d) * y0d + (-y1d ^ 2.0) - y0d ^ 2.0) / ((y1d + y0d + -2.0 * Delta0) * 3.0);
 //     end if;
-//     if mu > 0.0 and eta < h0 and Delta0 * omega <= 0.0 or abs(aux01) < abs(aux02) and aux02 * Delta0 >= 0.0 or abs(aux01) < abs(0.1 * Delta0) and not useSingleCubicPolynomial then
+//     if (mu > 0.0 and eta < h0 and Delta0 * omega <= 0.0 or abs(aux01) < abs(aux02) and aux02 * Delta0 >= 0.0 or abs(aux01) < abs(0.1 * Delta0)) and not useSingleCubicPolynomial then
 //       c := aux01;
 //       if abs(c) < abs(aux02) and aux02 * Delta0 >= 0.0 then
 //         c := aux02;
@@ -279,26 +279,26 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //       if abs(theta0 - c) < 0.000001 then
 //         c := 0.999999 * theta0;
 //       end if;
-//       rho := (3.0 * (Delta0 - c)) / (theta0 - c);
+//       rho := 3.0 * (Delta0 - c) / (theta0 - c);
 //       mu_tilde := rho * mu;
 //       eta_tilde := rho * eta;
 //       xi1 := x0 + mu_tilde;
 //       xi2 := x1 - eta_tilde;
-//       a1 := (y0d - c) / max(mu_tilde ^ 2.0,0.0000000000001);
-//       a2 := (y1d - c) / max(eta_tilde ^ 2.0,0.0000000000001);
-//       const12 := y0 + (-(x0 - xi1) ^ 3.0 * a1) / 3.0 - c * x0;
-//       const3 := y1 + (-(x1 - xi2) ^ 3.0 * a2) / 3.0 - c * x1;
+//       a1 := (y0d - c) / max(mu_tilde ^ 2.0, 0.0000000000001);
+//       a2 := (y1d - c) / max(eta_tilde ^ 2.0, 0.0000000000001);
+//       const12 := y0 + (-(x0 - xi1) ^ 3.0) * a1 / 3.0 - c * x0;
+//       const3 := y1 + (-(x1 - xi2) ^ 3.0) * a2 / 3.0 - c * x1;
 //       if x < xi1 then
-//         y := ((x - xi1) ^ 3.0 * a1) / 3.0 + c * x + const12;
+//         y := (x - xi1) ^ 3.0 * a1 / 3.0 + c * x + const12;
 //       elseif x < xi2 then
 //         y := c * x + const12;
 //       else
-//         y := ((x - xi2) ^ 3.0 * a2) / 3.0 + c * x + const3;
+//         y := (x - xi2) ^ 3.0 * a2 / 3.0 + c * x + const3;
 //       end if;
 //     else
-//       y := (y0d + y1d + -2.0 * Delta0 * (x - x0) ^ 3.0) / h0 ^ 2.0 + (-2.0 * y0d + 3.0 * Delta0 - y1d * (x - x0) ^ 2.0) / h0 + y0d * (x - x0) + y0;
+//       y := (y0d + y1d + -2.0 * Delta0) * (x - x0) ^ 3.0 / h0 ^ 2.0 + (-2.0 * y0d + 3.0 * Delta0 - y1d) * (x - x0) ^ 2.0 / h0 + y0d * (x - x0) + y0;
 //       aux01 := x0 / 2.0 + x1 / 2.0;
-//       c := (3.0 * (y0d + y1d + -2.0 * Delta0) * (aux01 - x0) ^ 2.0) / h0 ^ 2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (aux01 - x0)) / h0 + y0d;
+//       c := 3.0 * (y0d + y1d + -2.0 * Delta0) * (aux01 - x0) ^ 2.0 / h0 ^ 2.0 + 2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (aux01 - x0) / h0 + y0d;
 //     end if;
 //   end if;
 // end Modelica.Fluid.Utilities.regFun3;
@@ -365,9 +365,9 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //   parameter Real Re_turbulent(quantity = \"ReynoldsNumber\", unit = \"1\") = 4000.0 \"Start of turbulent regime, depending on type of flow device\";
 //   parameter Boolean show_Res = false \"= true, if Reynolds numbers are included for plotting\";
 //   protected parameter Boolean use_rho_nominal = false \"= true, if rho_nominal is used, otherwise computed from medium\";
-//   protected parameter Real rho_nominal(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.density_pTX(101325.0,293.15,{1.0}) \"Nominal density (e.g. rho_liquidWater = 995, rho_air = 1.2)\";
+//   protected parameter Real rho_nominal(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.density_pTX(101325.0, 293.15, {1.0}) \"Nominal density (e.g. rho_liquidWater = 995, rho_air = 1.2)\";
 //   protected parameter Boolean use_mu_nominal = false \"= true, if mu_nominal is used, otherwise computed from medium\";
-//   protected parameter Real mu_nominal(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) = Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.dynamicViscosity(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.setState_pTX(101325.0,293.15,{1.0})) \"Nominal dynamic viscosity (e.g. mu_liquidWater = 1e-3, mu_air = 1.8e-5)\";
+//   protected parameter Real mu_nominal(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) = Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.dynamicViscosity(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.setState_pTX(101325.0, 293.15, {1.0})) \"Nominal dynamic viscosity (e.g. mu_liquidWater = 1e-3, mu_air = 1.8e-5)\";
 //   parameter Real dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = system.dp_small \"Within regularization if |dp| < dp_small (may be wider for large discontinuities in static head)\";
 //   parameter Real m_flow_small(quantity = \"MassFlowRate\", unit = \"kg/s\") = system.m_flow_small \"Within regularization if |m_flows| < m_flow_small (may be wider for large discontinuities in static head)\";
 //   input Real vs[1](quantity = \"Velocity\", unit = \"m/s\") \"Mean velocities of fluid flow\";
@@ -402,13 +402,13 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow); getErr
 //   final parameter Boolean continuousFlowReversal = not useUpstreamScheme or constantPressureLossCoefficient or not allowFlowReversal \"= true if the pressure loss is continuous around zero flow\";
 //   Real dps_fg[1](quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = (p_a_start - p_b_start) / Real(n + -1)) \"pressure drop between states\";
 // equation
-//   assert(m_flows[1] > -m_flow_small or allowFlowReversal,\"Reverting flow occurs even though allowFlowReversal is false\");
-//   m_flows[1] = Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.massFlowRate_dp_staticHead(dps_fg[1],rhos[1],rhos[2],mus[1],mus[2],pathLengths_internal[1],diameters[1],dheights[1] * g,roughnesses[1] / 2.0 + roughnesses[2] / 2.0,dp_small / Real(n)) * nParallel;
+//   assert(m_flows[1] > (-m_flow_small) or allowFlowReversal,\"Reverting flow occurs even though allowFlowReversal is false\");
+//   m_flows[1] = Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.WallFriction.massFlowRate_dp_staticHead(dps_fg[1], rhos[1], rhos[2], mus[1], mus[2], pathLengths_internal[1], diameters[1], dheights[1] * g, roughnesses[1] / 2.0 + roughnesses[2] / 2.0, dp_small / Real(n)) * nParallel;
 //   rhos_act[1] = if noEvent(m_flows[1] > 0.0) then rhos[1] else rhos[2];
 //   mus_act[1] = if noEvent(m_flows[1] > 0.0) then mus[1] else mus[2];
 //   Ib_flows[1] = 0.0;
-//   Fs_p[1] = 0.5 * ((crossAreas[1] + crossAreas[2]) * (Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.pressure(states[2]) - Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.pressure(states[1]))) * nParallel;
-//   dps_fg[1] = (2.0 * Fs_fg[1]) / ((crossAreas[1] + crossAreas[2]) * nParallel);
+//   Fs_p[1] = 0.5 * (crossAreas[1] + crossAreas[2]) * (Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.pressure(states[2]) - Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow.Medium.pressure(states[1])) * nParallel;
+//   dps_fg[1] = 2.0 * Fs_fg[1] / ((crossAreas[1] + crossAreas[2]) * nParallel);
 //   Is[1] = m_flows[1] * pathLengths[1];
 //   0.0 = Ib_flows[1] - Fs_p[1] - Fs_fg[1];
 // end Modelica.Fluid.Pipes.BaseClasses.FlowModels.DetailedPipeFlow;

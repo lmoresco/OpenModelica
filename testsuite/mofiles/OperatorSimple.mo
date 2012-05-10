@@ -41,7 +41,7 @@ end OperatorSimple;
 //   input Complex c2;
 //   output Complex result;
 // algorithm
-//   result := Complex(c1.re * c2.re - c1.im * c2.im,c1.re * c2.im + c1.im * c2.re);
+//   result := Complex(c1.re * c2.re - c1.im * c2.im, c1.re * c2.im + c1.im * c2.re);
 // end Complex.'*'.mul;
 // 
 // class OperatorSimple
@@ -56,6 +56,6 @@ end OperatorSimple;
 //   c1.re = 2.0;
 //   c2.im = 3.14;
 //   c2.re = 7.0;
-//   c3 = Complex.'*'.mul(c1,c2);
+//   c3 = Complex.'*'.mul(c1, c2);
 // end OperatorSimple;
 // endResult

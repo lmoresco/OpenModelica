@@ -1393,7 +1393,7 @@ end BS3;
 //   parameter Real expSine1.damping[1](quantity = "DampingCoefficient", unit = "s-1") = 1.0 "Damping coefficients of sine waves";
 //   parameter Real expSine1.offset[1] = 0.0 "Offsets of output signals";
 //   parameter Real expSine1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
-//   protected constant Real expSine1.pi = 3.14159265358979;
+//   protected constant Real expSine1.pi = 3.141592653589793;
 //   parameter Integer expSine1.nout(min = 1) = 1 "Number of outputs";
 //   parameter Integer expSine1.outPort.n = expSine1.nout "Dimension of signal vector";
 //   output Real expSine1.outPort.signal[1] "Real output signals";
@@ -1407,7 +1407,7 @@ end BS3;
 // equation
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
-//   expSine1.outPort.signal[1] = expSine1.p_offset[1] + (if time < expSine1.p_startTime[1] then 0.0 else expSine1.p_amplitude[1] * (exp((expSine1.p_startTime[1] - time) * expSine1.p_damping[1]) * sin(6.28318530717959 * (expSine1.p_freqHz[1] * (time - expSine1.p_startTime[1])) + expSine1.p_phase[1])));
+//   expSine1.outPort.signal[1] = expSine1.p_offset[1] + (if time < expSine1.p_startTime[1] then 0.0 else expSine1.p_amplitude[1] * exp((expSine1.p_startTime[1] - time) * expSine1.p_damping[1]) * sin(6.283185307179586 * expSine1.p_freqHz[1] * (time - expSine1.p_startTime[1]) + expSine1.p_phase[1]));
 //   expSine1.y[1] = expSine1.outPort.signal[1];
 //   assert(der1.inPort.n == expSine1.outPort.n,"automatically generated from connect");
 //   der1.inPort.signal[1] = expSine1.outPort.signal[1];

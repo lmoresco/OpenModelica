@@ -1387,7 +1387,7 @@ end BS11;
 //   output Integer next "New lower grid index";
 //   protected Integer columns = 2 "Column to be interpolated";
 //   protected Integer ncol = 2 "Number of columns to be interpolated";
-//   protected Integer nrow = size(table,1) "Number of table rows";
+//   protected Integer nrow = size(table, 1) "Number of table rows";
 //   protected Integer next0;
 //   protected Real tp;
 //   protected Real dt;
@@ -1402,22 +1402,22 @@ end BS11;
 //   else
 //     if nrow < 2 then
 //       a := 0.0;
-//       b := offset + table[1,columns];
+//       b := offset + table[1, columns];
 //     else
-//       while next < nrow and tp >= table[next,1] loop
+//       while next < nrow and tp >= table[next, 1] loop
 //         next := 1 + next;
 //       end while;
 //       if next < nrow then
-//         nextEvent := startTime + table[next,1];
+//         nextEvent := startTime + table[next, 1];
 //       end if;
 //       next0 := next + -1;
-//       dt := table[next,1] - table[next0,1];
-//       if dt <= TimeEps * abs(table[next,1]) then
+//       dt := table[next, 1] - table[next0, 1];
+//       if dt <= TimeEps * abs(table[next, 1]) then
 //         a := 0.0;
-//         b := offset + table[next,columns];
+//         b := offset + table[next, columns];
 //       else
-//         a := (table[next,columns] - table[next0,columns]) / dt;
-//         b := offset + table[next0,columns] - a * table[next0,1];
+//         a := (table[next, columns] - table[next0, columns]) / dt;
+//         b := offset + table[next0, columns] - a * table[next0, 1];
 //       end if;
 //     end if;
 //   end if;
@@ -1456,8 +1456,8 @@ end BS11;
 //   assert(timeTable1.outPort.n == der1.inPort.n,"automatically generated from connect");
 //   der1.inPort.signal[1] = timeTable1.outPort.signal[1];
 // algorithm
-//   when {time >= pre(timeTable1.nextEvent),initial()} then
-//     (timeTable1.a, timeTable1.b, timeTable1.nextEvent, timeTable1.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{timeTable1.table[1,1],timeTable1.table[1,2]},{timeTable1.table[2,1],timeTable1.table[2,2]},{timeTable1.table[3,1],timeTable1.table[3,2]}},timeTable1.offset[1],timeTable1.startTime[1],time,timeTable1.last,1e-013);
+//   when {time >= pre(timeTable1.nextEvent), initial()} then
+//     (timeTable1.a, timeTable1.b, timeTable1.nextEvent, timeTable1.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{timeTable1.table[1,1], timeTable1.table[1,2]}, {timeTable1.table[2,1], timeTable1.table[2,2]}, {timeTable1.table[3,1], timeTable1.table[3,2]}}, timeTable1.offset[1], timeTable1.startTime[1], time, timeTable1.last, 0.0000000000001);
 //   end when;
 // end BS11;
 // endResult

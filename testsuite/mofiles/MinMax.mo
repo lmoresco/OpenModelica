@@ -25,7 +25,7 @@ end MinMax;
 //   constant Boolean b2 = false;
 //   constant Boolean b4 = true;
 //   constant Boolean b5 = true;
-//   parameter Integer n = min(m,3);
+//   parameter Integer n = min(m, 3);
 //   constant Boolean b3 = true;
 //   constant Boolean b6 = false;
 //   Real x[1];

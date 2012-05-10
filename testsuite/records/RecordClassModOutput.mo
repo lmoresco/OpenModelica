@@ -38,12 +38,12 @@ end test;
 // end R1;
 // 
 // function out1
-//   output R1 m = R1(2,2);
+//   output R1 m = R1(2, 2);
 // end out1;
 // 
 // function out2
-//   output R1 m = R1(2,2);
-//   protected R1 mintern = R1(1,1);
+//   output R1 m = R1(2, 2);
+//   protected R1 mintern = R1(1, 1);
 // algorithm
 //   m := mintern;
 // end out2;

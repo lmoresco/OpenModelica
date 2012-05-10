@@ -62,7 +62,7 @@ checkModel(Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer)
 //   Real heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
 //   Real Ts[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.temperature(states[1]) \"Temperatures defined by fluid states\";
 // equation
-//   Q_flows[1] = (alpha0 + k) * (surfaceAreas[1] * (heatPorts[1].T - Ts[1]));
+//   Q_flows[1] = (alpha0 + k) * surfaceAreas[1] * (heatPorts[1].T - Ts[1]);
 //   Q_flows[1] = heatPorts[1].Q_flow;
 //   heatPorts[1].Q_flow = 0.0;
 // end Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer;

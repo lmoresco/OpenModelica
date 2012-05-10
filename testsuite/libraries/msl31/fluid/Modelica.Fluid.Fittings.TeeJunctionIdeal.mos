@@ -44,12 +44,12 @@ checkModel(Modelica.Fluid.Fittings.TeeJunctionIdeal); getErrorString();
 //   port_1.m_flow = 0.0;
 //   port_2.m_flow = 0.0;
 //   port_3.m_flow = 0.0;
-//   -port_1.m_flow + -port_2.m_flow + -port_3.m_flow = 0.0;
+//   (-port_1.m_flow) + (-port_2.m_flow) + (-port_3.m_flow) = 0.0;
 //   port_1.p = port_2.p;
 //   port_1.p = port_3.p;
-//   port_3.h_outflow = (max(port_1.m_flow,1e-15) * port_1.h_outflow + max(port_2.m_flow,1e-15) * port_2.h_outflow) / (max(port_1.m_flow,1e-15) + max(port_2.m_flow,1e-15));
-//   port_2.h_outflow = (max(port_1.m_flow,1e-15) * port_1.h_outflow + max(port_3.m_flow,1e-15) * port_3.h_outflow) / (max(port_1.m_flow,1e-15) + max(port_3.m_flow,1e-15));
-//   port_1.h_outflow = (max(port_2.m_flow,1e-15) * port_2.h_outflow + max(port_3.m_flow,1e-15) * port_3.h_outflow) / (max(port_2.m_flow,1e-15) + max(port_3.m_flow,1e-15));
+//   port_3.h_outflow = (max(port_1.m_flow, 0.000000000000001) * port_1.h_outflow + max(port_2.m_flow, 0.000000000000001) * port_2.h_outflow) / (max(port_1.m_flow, 0.000000000000001) + max(port_2.m_flow, 0.000000000000001));
+//   port_2.h_outflow = (max(port_1.m_flow, 0.000000000000001) * port_1.h_outflow + max(port_3.m_flow, 0.000000000000001) * port_3.h_outflow) / (max(port_1.m_flow, 0.000000000000001) + max(port_3.m_flow, 0.000000000000001));
+//   port_1.h_outflow = (max(port_2.m_flow, 0.000000000000001) * port_2.h_outflow + max(port_3.m_flow, 0.000000000000001) * port_3.h_outflow) / (max(port_2.m_flow, 0.000000000000001) + max(port_3.m_flow, 0.000000000000001));
 // end Modelica.Fluid.Fittings.TeeJunctionIdeal;
 // "
 // ""

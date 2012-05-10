@@ -22,7 +22,7 @@ end MatchCase17;
 //   input String str;
 //   output String outStr;
 // algorithm
-//   outStr := match ("") 
+//   outStr := match ("")
 //     case (str) then str;
 //   end match;
 // end MatchCase17.fn;

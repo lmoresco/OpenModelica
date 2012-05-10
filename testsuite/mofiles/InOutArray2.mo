@@ -23,7 +23,7 @@ end InOutArray2;
 //   output String outVal;
 // algorithm
 //   outVal := "";
-//   for i in 1:size(inVal,1) loop
+//   for i in 1:size(inVal, 1) loop
 //     outVal := outVal + inVal[i];
 //   end for;
 // end strCombine;

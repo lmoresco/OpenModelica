@@ -31,7 +31,7 @@ end WhenStat;
 // algorithm
 //   when x > 2.0 then
 //     y1 := sin(x);
-//     y3 := 2.0 * x + (pre(y1) + y2);
+//     y3 := 2.0 * x + pre(y1) + y2;
 //   end when;
 // end WhenStat;
 // endResult

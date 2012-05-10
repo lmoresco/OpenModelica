@@ -61,99 +61,99 @@ end ListReduction;
 // ";
 //   protected String sList;
 //   protected String sArr;
-//   protected list<#Real> reals1 = List(#(1.0),#(2.0),#(3.0));
-//   protected list<#Real> reals2 = List(#(-3.0),#(-2.0),#(-1.0),#(0.0),#(1.0),#(2.0),#(3.0));
-//   protected Real[3] realsArr1 = {1.0,2.0,3.0};
-//   protected Real[7] realsArr2 = {-3.0,-2.0,-1.0,0.0,1.0,2.0,3.0};
+//   protected list<#Real> reals1 = List(#(1.0), #(2.0), #(3.0));
+//   protected list<#Real> reals2 = List(#(-3.0), #(-2.0), #(-1.0), #(0.0), #(1.0), #(2.0), #(3.0));
+//   protected Real[3] realsArr1 = {1.0, 2.0, 3.0};
+//   protected Real[7] realsArr2 = {-3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0};
 //   protected Real[3] realsArr3;
 // algorithm
-//   s := s + anyString(<reduction>list(r for r in List(#(1.0),#(2.0),#(3.0))));
+//   s := s + anyString(list(r for r in List(#(1.0), #(2.0), #(3.0))));
 //   s := s + "
 // ";
-//   s := s + anyString(<reduction>listReverse(r for r in List(#(1.0),#(2.0),#(3.0))));
+//   s := s + anyString(listReverse(r for r in List(#(1.0), #(2.0), #(3.0))));
 //   s := s + "
 // ";
-//   s := s + anyString(<reduction>listReverse(r for r in List(#(1.0),#(2.0),#(3.0))));
+//   s := s + anyString(listReverse(r for r in List(#(1.0), #(2.0), #(3.0))));
 //   s := s + "
 // ";
-//   s := s + anyString(<reduction>list(r for r in List(#(1.0),#(2.0),#(3.0))));
+//   s := s + anyString(list(r for r in List(#(1.0), #(2.0), #(3.0))));
 //   s := s + "
 // ";
-//   s := s + anyString(<reduction>list(#(3.5 * (unbox(r))) for r guard (unbox(r)) > (0.0) in List(#(-3.0),#(-2.0),#(-1.0),#(0.0),#(1.0),#(2.0),#(3.0))));
+//   s := s + anyString(list(#(3.5 * unbox(r)) for r guard unbox(r) > 0.0 in List(#(-3.0), #(-2.0), #(-1.0), #(0.0), #(1.0), #(2.0), #(3.0))));
 //   s := s + "
 // ";
-//   s := s + anyString(#(ListReduction.myMin(0.0,0.0) + <reduction>ListReduction.myMin(3.5 * (unbox(r)) for r guard abs(unbox(r)) < 3.0 in List(#(-3.0),#(-2.0),#(-1.0),#(0.0),#(1.0),#(2.0),#(3.0)))));
+//   s := s + anyString(#(ListReduction.myMin(0.0, 0.0) + ListReduction.myMin(3.5 * unbox(r) for r guard abs(unbox(r)) < 3.0 in List(#(-3.0), #(-2.0), #(-1.0), #(0.0), #(1.0), #(2.0), #(3.0)))));
 //   s := s + "
 // ";
 //   s := s + anyString(#(0.0));
 //   s := s + "
 // ";
-//   realsArr3 := <reduction>array(unbox(r) for r in List(#(1.0),#(2.0),#(3.0)));
+//   realsArr3 := array(unbox(r) for r in List(#(1.0), #(2.0), #(3.0)));
 //   s := s + "{" + realString(realsArr3[1]) + "," + realString(realsArr3[2]) + "," + realString(realsArr3[3]) + "," + "}";
 //   s := s + "
 // ";
-//   s := s + anyString(#(<reduction>min(unbox(r) for r in List(#(1.0),#(2.0),#(3.0)))));
+//   s := s + anyString(#(min(unbox(r) for r in List(#(1.0), #(2.0), #(3.0)))));
 //   s := s + "
 // ";
-//   s := s + anyString(#(<reduction>max(unbox(r) for r in List(#(1.0),#(2.0),#(3.0)))));
+//   s := s + anyString(#(max(unbox(r) for r in List(#(1.0), #(2.0), #(3.0)))));
 //   s := s + "
 // ";
-//   s := s + anyString(#(<reduction>realMax(1.5 * (unbox(r)) for r in List(#(1.0),#(2.0),#(3.0)))));
+//   s := s + anyString(#(realMax(1.5 * unbox(r) for r in List(#(1.0), #(2.0), #(3.0)))));
 //   s := s + "
 // ";
-//   s := s + anyString(#(<reduction>sum(3.5 * (unbox(r)) for r guard (unbox(r)) > (0.0) in List(#(-3.0),#(-2.0),#(-1.0),#(0.0),#(1.0),#(2.0),#(3.0)))));
+//   s := s + anyString(#(sum(3.5 * unbox(r) for r guard unbox(r) > 0.0 in List(#(-3.0), #(-2.0), #(-1.0), #(0.0), #(1.0), #(2.0), #(3.0)))));
 //   s := s + "
 // ";
-//   s := s + anyString(#(<reduction>product(3.5 * (unbox(r)) for r guard (unbox(r)) > (0.0) in List(#(-3.0),#(-2.0),#(-1.0),#(0.0),#(1.0),#(2.0),#(3.0)))));
+//   s := s + anyString(#(product(3.5 * unbox(r) for r guard unbox(r) > 0.0 in List(#(-3.0), #(-2.0), #(-1.0), #(0.0), #(1.0), #(2.0), #(3.0)))));
 //   s := s + "
 // ";
-//   s := s + anyString(#(<reduction>realMin(unbox(r) for r guard (unbox(r)) > (2.0) in List(#(1.0),#(2.0),#(3.0)))));
+//   s := s + anyString(#(realMin(unbox(r) for r guard unbox(r) > 2.0 in List(#(1.0), #(2.0), #(3.0)))));
 //   s := s + "
 // ";
 //   sList := s;
 //   s := "
 // ";
-//   s := s + anyString(<reduction>list(#(r) for r in {1.0,2.0,3.0}));
+//   s := s + anyString(list(#(r) for r in {1.0, 2.0, 3.0}));
 //   s := s + "
 // ";
-//   s := s + anyString(<reduction>listReverse(#(r) for r in {1.0,2.0,3.0}));
+//   s := s + anyString(listReverse(#(r) for r in {1.0, 2.0, 3.0}));
 //   s := s + "
 // ";
-//   s := s + anyString(<reduction>listReverse(#(r) for r in {1.0,2.0,3.0}));
+//   s := s + anyString(listReverse(#(r) for r in {1.0, 2.0, 3.0}));
 //   s := s + "
 // ";
-//   s := s + anyString(<reduction>list(#(r) for r in {1.0,2.0,3.0}));
+//   s := s + anyString(list(#(r) for r in {1.0, 2.0, 3.0}));
 //   s := s + "
 // ";
-//   s := s + anyString(<reduction>list(#(3.5 * r) for r guard r > 0.0 in {-3.0,-2.0,-1.0,0.0,1.0,2.0,3.0}));
+//   s := s + anyString(list(#(3.5 * r) for r guard r > 0.0 in {-3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0}));
 //   s := s + "
 // ";
-//   s := s + anyString(#(ListReduction.myMin(0.0,0.0) + <reduction>ListReduction.myMin(3.5 * r for r guard abs(r) < 3.0 in {-3.0,-2.0,-1.0,0.0,1.0,2.0,3.0})));
+//   s := s + anyString(#(ListReduction.myMin(0.0, 0.0) + ListReduction.myMin(3.5 * r for r guard abs(r) < 3.0 in {-3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0})));
 //   s := s + "
 // ";
 //   s := s + anyString(#(0.0));
 //   s := s + "
 // ";
-//   realsArr3 := {1.0,2.0,3.0};
+//   realsArr3 := {1.0, 2.0, 3.0};
 //   s := s + "{" + realString(realsArr3[1]) + "," + realString(realsArr3[2]) + "," + realString(realsArr3[3]) + "," + "}";
 //   s := s + "
 // ";
-//   s := s + anyString(#(min({1.0,2.0,3.0})));
+//   s := s + anyString(#(min({1.0, 2.0, 3.0})));
 //   s := s + "
 // ";
-//   s := s + anyString(#(max({1.0,2.0,3.0})));
+//   s := s + anyString(#(max({1.0, 2.0, 3.0})));
 //   s := s + "
 // ";
-//   s := s + anyString(#(<reduction>realMax(1.5 * r for r in {1.0,2.0,3.0})));
+//   s := s + anyString(#(realMax(1.5 * r for r in {1.0, 2.0, 3.0})));
 //   s := s + "
 // ";
-//   s := s + anyString(#(<reduction>sum(3.5 * r for r guard r > 0.0 in {-3.0,-2.0,-1.0,0.0,1.0,2.0,3.0})));
+//   s := s + anyString(#(sum(3.5 * r for r guard r > 0.0 in {-3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0})));
 //   s := s + "
 // ";
-//   s := s + anyString(#(<reduction>product(3.5 * r for r guard r > 0.0 in {-3.0,-2.0,-1.0,0.0,1.0,2.0,3.0})));
+//   s := s + anyString(#(product(3.5 * r for r guard r > 0.0 in {-3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0})));
 //   s := s + "
 // ";
-//   s := s + anyString(#(<reduction>realMin(r for r guard r > 2.0 in {1.0,2.0,3.0})));
+//   s := s + anyString(#(realMin(r for r guard r > 2.0 in {1.0, 2.0, 3.0})));
 //   s := s + "
 // ";
 //   sArr := s;
@@ -168,7 +168,7 @@ end ListReduction;
 // function ListReduction.myMin
 //   input Real r1;
 //   input Real r2;
-//   output Real r = min(r1,r2);
+//   output Real r = min(r1, r2);
 // end ListReduction.myMin;
 // 
 // class ListReduction

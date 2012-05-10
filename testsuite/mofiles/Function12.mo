@@ -39,7 +39,7 @@ end BaseSampler;
 //   protected discrete Real x;
 // equation
 //   when doSample then
-//   x = atan2(pre(x),u);
+//   x = atan2(pre(x), u);
 //   end when;
 // end BaseSampler;
 // endResult

@@ -42,7 +42,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real x_small(min = 0.0) = 0.00001 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
 //   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
 // algorithm
-//   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
+//   y := smooth(1, if x > x_small then y1 else if x < (-x_small) then y2 else if abs(x_small) > 0.0 then (y2 - y1) * (-3.0 + (x / x_small) ^ 2.0) * x / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
 // end Modelica.Media.Common.smoothStep;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.MixtureGases.Medium1.ThermodynamicState\"
@@ -58,9 +58,9 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   protected Real[2] etaX(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"component dynamic viscosities\";
 // algorithm
 //   for i in 1:2 loop
-//     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,126.2,0.0280134,0.0000901,0.037,0.0,0.0);
+//     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T, 126.2, 0.0280134, 0.0000901, 0.037, 0.0, 0.0);
 //   end for;
-//   eta := Modelica.Media.Examples.MixtureGases.Medium1.gasMixtureViscosity(Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions({state.X[1],state.X[2]},{0.0280134,0.0280134}),{0.0280134,0.0280134},{etaX[1],etaX[2]});
+//   eta := Modelica.Media.Examples.MixtureGases.Medium1.gasMixtureViscosity(Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions({state.X[1], state.X[2]}, {0.0280134, 0.0280134}), {0.0280134, 0.0280134}, {etaX[1], etaX[2]});
 // end Modelica.Media.Examples.MixtureGases.Medium1.dynamicViscosity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.gasMixtureViscosity \"Return viscosities of gas mixtures at low pressures (Wilke method)\"
@@ -68,31 +68,31 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real[:] M(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Mole masses\";
 //   input Real[:] eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Pure component viscosities\";
 //   output Real etam(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Viscosity of the mixture\";
-//   protected Real[size(yi,1), size(yi,1)] fi;
+//   protected Real[size(yi, 1), size(yi, 1)] fi;
 // algorithm
-//   for i in 1:size(eta,1) loop
-//     for j in 1:size(eta,1) loop
+//   for i in 1:size(eta, 1) loop
+//     for j in 1:size(eta, 1) loop
 //       if i == 1 then
-//         fi[i,j] := (1.0 + (eta[i] / eta[j]) ^ 0.5 * (M[j] / M[i]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5;
+//         fi[i, j] := (1.0 + (eta[i] / eta[j]) ^ 0.5 * (M[j] / M[i]) ^ 0.25) ^ 2.0 / (8.0 + 8.0 * M[i] / M[j]) ^ 0.5;
 //       elseif j < i then
-//         fi[i,j] := (fi[j,i] * M[j] * eta[i]) / (eta[j] * M[i]);
+//         fi[i, j] := fi[j, i] * M[j] * eta[i] / (eta[j] * M[i]);
 //       else
-//         fi[i,j] := (1.0 + (eta[i] / eta[j]) ^ 0.5 * (M[j] / M[i]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5;
+//         fi[i, j] := (1.0 + (eta[i] / eta[j]) ^ 0.5 * (M[j] / M[i]) ^ 0.25) ^ 2.0 / (8.0 + 8.0 * M[i] / M[j]) ^ 0.5;
 //       end if;
 //     end for;
 //   end for;
-//   etam := <reduction>sum((yi[i] * eta[i]) / (<reduction>sum(yi[j] * fi[i,j] for j in 1:(size(eta,1)))) for i in 1:(size(eta,1)));
+//   etam := sum(yi[i] * eta[i] / sum(yi[j] * fi[i,j] for j in 1:size(eta, 1)) for i in 1:size(eta, 1));
 // end Modelica.Media.Examples.MixtureGases.Medium1.gasMixtureViscosity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.h_TX \"Return specific enthalpy\"
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.768,0.232} \"Independent Mass fractions of gas mixture\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.768, 0.232} \"Independent Mass fractions of gas mixture\";
 //   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
 //   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at temperature T\";
 // algorithm
-//   h := X * {Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.4543111511,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,0.00001384646189,-0.00000000962579362,0.000000000002519705809},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,0.0000001491806679,-0.00000000001923105485,0.000000000000001061954386},{12832.10415,-15.86640027},296.8033869505308),T,exclEnthForm,refChoice,h_off),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"O2\",0.0319988,0.0,271263.4223783392,1000.0,{-34255.6342,484.700097,1.119010961,0.00429388924,-0.000000683630052,-0.0000000020233727,0.000000000001039040018},{-3391.45487,18.4969947},{-1037939.022,2344.830282,1.819732036,0.001267847582,-0.0000002188067988,0.00000000002053719572,-0.0000000000000008193467050000001},{-16890.10929,17.38716506},259.8369938872708),T,exclEnthForm,refChoice,h_off)};
+//   h := X * {Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\", 0.0280134, 0.0, 309498.4543111511, 1000.0, {22103.71497, -381.846182, 6.08273836, -0.00853091441, 0.00001384646189, -0.00000000962579362, 0.000000000002519705809}, {710.846086, -10.76003744}, {587712.406, -2239.249073, 6.06694922, -0.00061396855, 0.0000001491806679, -0.00000000001923105485, 0.000000000000001061954386}, {12832.10415, -15.86640027}, 296.8033869505308), T, exclEnthForm, refChoice, h_off), Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"O2\", 0.0319988, 0.0, 271263.4223783392, 1000.0, {-34255.6342, 484.700097, 1.119010961, 0.00429388924, -0.000000683630052, -0.0000000020233727, 0.000000000001039040018}, {-3391.45487, 18.4969947}, {-1037939.022, 2344.830282, 1.819732036, 0.001267847582, -0.0000002188067988, 0.00000000002053719572, -0.0000000000000008193467050000001}, {-16890.10929, 17.38716506}, 259.8369938872708), T, exclEnthForm, refChoice, h_off)};
 // end Modelica.Media.Examples.MixtureGases.Medium1.h_TX;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.lowPressureThermalConductivity \"Return thermal conductivites of low-pressure gas mixtures (Mason and Saxena Modification)\"
@@ -104,35 +104,35 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real[:] lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivities of the pure gases\";
 //   output Real lambdam(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivity of the gas mixture\";
 //   protected constant Real epsilon = 1.0 \"Numerical constant near unity\";
-//   protected Real[size(y,1)] gamma(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032);
-//   protected Real[size(y,1)] Tr \"Reduced temperature\";
-//   protected Real[size(y,1), size(y,1)] A \"Mason and Saxena Modification\";
+//   protected Real[size(y, 1)] gamma(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032);
+//   protected Real[size(y, 1)] Tr \"Reduced temperature\";
+//   protected Real[size(y, 1), size(y, 1)] A \"Mason and Saxena Modification\";
 // algorithm
-//   for i in 1:size(y,1) loop
+//   for i in 1:size(y, 1) loop
 //     gamma[i] := 210.0 * (Tc[i] * M[i] ^ 3.0 / Pc[i] ^ 4.0) ^ 0.16666666666666666;
 //     Tr[i] := T / Tc[i];
 //   end for;
-//   for i in 1:size(y,1) loop
-//     for j in 1:size(y,1) loop
-//       A[i,j] := (1.0 + (gamma[j] * (exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j]) * gamma[i])) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5;
+//   for i in 1:size(y, 1) loop
+//     for j in 1:size(y, 1) loop
+//       A[i, j] := (1.0 + (gamma[j] * (exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) / ((exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * gamma[i])) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + 8.0 * M[i] / M[j]) ^ 0.5;
 //     end for;
 //   end for;
-//   lambdam := <reduction>sum((y[i] * lambda[i]) / (<reduction>sum(y[j] * A[i,j] for j in 1:(size(y,1)))) for i in 1:(size(y,1)));
+//   lambdam := sum(y[i] * lambda[i] / sum(y[j] * A[i,j] for j in 1:size(y, 1)) for i in 1:size(y, 1));
 // end Modelica.Media.Examples.MixtureGases.Medium1.lowPressureThermalConductivity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions \"Return mole fractions from mass fractions X\"
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"1\") \"Mass fractions of mixture\";
 //   input Real[:] MMX(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar masses of components\";
-//   output Real[size(X,1)] moleFractions(quantity = \"MoleFraction\", unit = \"1\") \"Mole fractions of gas mixture\";
+//   output Real[size(X, 1)] moleFractions(quantity = \"MoleFraction\", unit = \"1\") \"Mole fractions of gas mixture\";
 //   protected Real Mmix(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar mass of mixture\";
-//   protected Real[size(X,1)] invMMX \"inverses of molar weights\";
+//   protected Real[size(X, 1)] invMMX \"inverses of molar weights\";
 // algorithm
-//   for i in 1:size(X,1) loop
+//   for i in 1:size(X, 1) loop
 //     invMMX[i] := 1.0 / MMX[i];
 //   end for;
 //   Mmix := 1.0 / (X * invMMX);
-//   for i in 1:size(X,1) loop
-//     moleFractions[i] := (Mmix * X[i]) / MMX[i];
+//   for i in 1:size(X, 1) loop
+//     moleFractions[i] := Mmix * X[i] / MMX[i];
 //   end for;
 // end Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions;
 // 
@@ -147,7 +147,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Modelica.Media.Examples.MixtureGases.Medium1.ThermodynamicState state \"thermodynamic state record\";
 //   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
 // algorithm
-//   cp := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.4543111511,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,0.00001384646189,-0.00000000962579362,0.000000000002519705809},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,0.0000001491806679,-0.00000000001923105485,0.000000000000001061954386},{12832.10415,-15.86640027},296.8033869505308),state.T) * state.X[1] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"O2\",0.0319988,0.0,271263.4223783392,1000.0,{-34255.6342,484.700097,1.119010961,0.00429388924,-0.000000683630052,-0.0000000020233727,0.000000000001039040018},{-3391.45487,18.4969947},{-1037939.022,2344.830282,1.819732036,0.001267847582,-0.0000002188067988,0.00000000002053719572,-0.0000000000000008193467050000001},{-16890.10929,17.38716506},259.8369938872708),state.T) * state.X[2];
+//   cp := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\", 0.0280134, 0.0, 309498.4543111511, 1000.0, {22103.71497, -381.846182, 6.08273836, -0.00853091441, 0.00001384646189, -0.00000000962579362, 0.000000000002519705809}, {710.846086, -10.76003744}, {587712.406, -2239.249073, 6.06694922, -0.00061396855, 0.0000001491806679, -0.00000000001923105485, 0.000000000000001061954386}, {12832.10415, -15.86640027}, 296.8033869505308), state.T) * state.X[1] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"O2\", 0.0319988, 0.0, 271263.4223783392, 1000.0, {-34255.6342, 484.700097, 1.119010961, 0.00429388924, -0.000000683630052, -0.0000000020233727, 0.000000000001039040018}, {-3391.45487, 18.4969947}, {-1037939.022, 2344.830282, 1.819732036, 0.001267847582, -0.0000002188067988, 0.00000000002053719572, -0.0000000000000008193467050000001}, {-16890.10929, 17.38716506}, 259.8369938872708), state.T) * state.X[2];
 // end Modelica.Media.Examples.MixtureGases.Medium1.specificHeatCapacityCp;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.thermalConductivity \"Return thermal conductivity for low pressure gas mixtures\"
@@ -159,11 +159,11 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   protected Real[2] cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"component heat capacity\";
 // algorithm
 //   for i in 1:2 loop
-//     eta[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,126.2,0.0280134,0.0000901,0.037,0.0,0.0);
-//     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T({Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.4543111511,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,0.00001384646189,-0.00000000962579362,0.000000000002519705809},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,0.0000001491806679,-0.00000000001923105485,0.000000000000001061954386},{12832.10415,-15.86640027},296.8033869505308),Modelica.Media.IdealGases.Common.DataRecord(\"O2\",0.0319988,0.0,271263.4223783392,1000.0,{-34255.6342,484.700097,1.119010961,0.00429388924,-0.000000683630052,-0.0000000020233727,0.000000000001039040018},{-3391.45487,18.4969947},{-1037939.022,2344.830282,1.819732036,0.001267847582,-0.0000002188067988,0.00000000002053719572,-0.0000000000000008193467050000001},{-16890.10929,17.38716506},259.8369938872708)}[i],state.T);
-//     lambdaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate({Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.4543111511,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,0.00001384646189,-0.00000000962579362,0.000000000002519705809},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,0.0000001491806679,-0.00000000001923105485,0.000000000000001061954386},{12832.10415,-15.86640027},296.8033869505308),Modelica.Media.IdealGases.Common.DataRecord(\"O2\",0.0319988,0.0,271263.4223783392,1000.0,{-34255.6342,484.700097,1.119010961,0.00429388924,-0.000000683630052,-0.0000000020233727,0.000000000001039040018},{-3391.45487,18.4969947},{-1037939.022,2344.830282,1.819732036,0.001267847582,-0.0000002188067988,0.00000000002053719572,-0.0000000000000008193467050000001},{-16890.10929,17.38716506},259.8369938872708)}[i],cp[i],eta[i],method);
+//     eta[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T, 126.2, 0.0280134, 0.0000901, 0.037, 0.0, 0.0);
+//     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T({Modelica.Media.IdealGases.Common.DataRecord(\"N2\", 0.0280134, 0.0, 309498.4543111511, 1000.0, {22103.71497, -381.846182, 6.08273836, -0.00853091441, 0.00001384646189, -0.00000000962579362, 0.000000000002519705809}, {710.846086, -10.76003744}, {587712.406, -2239.249073, 6.06694922, -0.00061396855, 0.0000001491806679, -0.00000000001923105485, 0.000000000000001061954386}, {12832.10415, -15.86640027}, 296.8033869505308), Modelica.Media.IdealGases.Common.DataRecord(\"O2\", 0.0319988, 0.0, 271263.4223783392, 1000.0, {-34255.6342, 484.700097, 1.119010961, 0.00429388924, -0.000000683630052, -0.0000000020233727, 0.000000000001039040018}, {-3391.45487, 18.4969947}, {-1037939.022, 2344.830282, 1.819732036, 0.001267847582, -0.0000002188067988, 0.00000000002053719572, -0.0000000000000008193467050000001}, {-16890.10929, 17.38716506}, 259.8369938872708)}[i], state.T);
+//     lambdaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate({Modelica.Media.IdealGases.Common.DataRecord(\"N2\", 0.0280134, 0.0, 309498.4543111511, 1000.0, {22103.71497, -381.846182, 6.08273836, -0.00853091441, 0.00001384646189, -0.00000000962579362, 0.000000000002519705809}, {710.846086, -10.76003744}, {587712.406, -2239.249073, 6.06694922, -0.00061396855, 0.0000001491806679, -0.00000000001923105485, 0.000000000000001061954386}, {12832.10415, -15.86640027}, 296.8033869505308), Modelica.Media.IdealGases.Common.DataRecord(\"O2\", 0.0319988, 0.0, 271263.4223783392, 1000.0, {-34255.6342, 484.700097, 1.119010961, 0.00429388924, -0.000000683630052, -0.0000000020233727, 0.000000000001039040018}, {-3391.45487, 18.4969947}, {-1037939.022, 2344.830282, 1.819732036, 0.001267847582, -0.0000002188067988, 0.00000000002053719572, -0.0000000000000008193467050000001}, {-16890.10929, 17.38716506}, 259.8369938872708)}[i], cp[i], eta[i], method);
 //   end for;
-//   lambda := Modelica.Media.Examples.MixtureGases.Medium1.lowPressureThermalConductivity(Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions({state.X[1],state.X[2]},{0.0280134,0.0280134}),state.T,{126.2,126.2},{3398000.0,3398000.0},{0.0280134,0.0280134},{lambdaX[1],lambdaX[2]});
+//   lambda := Modelica.Media.Examples.MixtureGases.Medium1.lowPressureThermalConductivity(Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions({state.X[1], state.X[2]}, {0.0280134, 0.0280134}), state.T, {126.2, 126.2}, {3398000.0, 3398000.0}, {0.0280134, 0.0280134}, {lambdaX[1], lambdaX[2]});
 // end Modelica.Media.Examples.MixtureGases.Medium1.thermalConductivity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState\"
@@ -179,9 +179,9 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   protected Real[6] etaX(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"component dynamic viscosities\";
 // algorithm
 //   for i in 1:6 loop
-//     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,190.56,0.01604246,0.0000986,0.011,0.0,0.0);
+//     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T, 190.56, 0.01604246, 0.0000986, 0.011, 0.0, 0.0);
 //   end for;
-//   eta := Modelica.Media.Examples.MixtureGases.Medium2.gasMixtureViscosity(Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions({state.X[1],state.X[2],state.X[3],state.X[4],state.X[5],state.X[6]},{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246}),{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246},{etaX[1],etaX[2],etaX[3],etaX[4],etaX[5],etaX[6]});
+//   eta := Modelica.Media.Examples.MixtureGases.Medium2.gasMixtureViscosity(Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions({state.X[1], state.X[2], state.X[3], state.X[4], state.X[5], state.X[6]}, {0.01604246, 0.01604246, 0.01604246, 0.01604246, 0.01604246, 0.01604246}), {0.01604246, 0.01604246, 0.01604246, 0.01604246, 0.01604246, 0.01604246}, {etaX[1], etaX[2], etaX[3], etaX[4], etaX[5], etaX[6]});
 // end Modelica.Media.Examples.MixtureGases.Medium2.dynamicViscosity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.gasMixtureViscosity \"Return viscosities of gas mixtures at low pressures (Wilke method)\"
@@ -189,31 +189,31 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real[:] M(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Mole masses\";
 //   input Real[:] eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Pure component viscosities\";
 //   output Real etam(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Viscosity of the mixture\";
-//   protected Real[size(yi,1), size(yi,1)] fi;
+//   protected Real[size(yi, 1), size(yi, 1)] fi;
 // algorithm
-//   for i in 1:size(eta,1) loop
-//     for j in 1:size(eta,1) loop
+//   for i in 1:size(eta, 1) loop
+//     for j in 1:size(eta, 1) loop
 //       if i == 1 then
-//         fi[i,j] := (1.0 + (eta[i] / eta[j]) ^ 0.5 * (M[j] / M[i]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5;
+//         fi[i, j] := (1.0 + (eta[i] / eta[j]) ^ 0.5 * (M[j] / M[i]) ^ 0.25) ^ 2.0 / (8.0 + 8.0 * M[i] / M[j]) ^ 0.5;
 //       elseif j < i then
-//         fi[i,j] := (fi[j,i] * M[j] * eta[i]) / (eta[j] * M[i]);
+//         fi[i, j] := fi[j, i] * M[j] * eta[i] / (eta[j] * M[i]);
 //       else
-//         fi[i,j] := (1.0 + (eta[i] / eta[j]) ^ 0.5 * (M[j] / M[i]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5;
+//         fi[i, j] := (1.0 + (eta[i] / eta[j]) ^ 0.5 * (M[j] / M[i]) ^ 0.25) ^ 2.0 / (8.0 + 8.0 * M[i] / M[j]) ^ 0.5;
 //       end if;
 //     end for;
 //   end for;
-//   etam := <reduction>sum((yi[i] * eta[i]) / (<reduction>sum(yi[j] * fi[i,j] for j in 1:(size(eta,1)))) for i in 1:(size(eta,1)));
+//   etam := sum(yi[i] * eta[i] / sum(yi[j] * fi[i,j] for j in 1:size(eta, 1)) for i in 1:size(eta, 1));
 // end Modelica.Media.Examples.MixtureGases.Medium2.gasMixtureViscosity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.h_TX \"Return specific enthalpy\"
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.92,0.048,0.005,0.002,0.015,0.01} \"Independent Mass fractions of gas mixture\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.92, 0.048, 0.005, 0.002, 0.015, 0.01} \"Independent Mass fractions of gas mixture\";
 //   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
 //   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at temperature T\";
 // algorithm
-//   h := X * {Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"CH4\",0.01604246,-4650159.63885838,624355.7409524474,1000.0,{-176685.0998,2786.18102,-12.0257785,0.0391761929,-0.0000361905443,0.00000002026853043,-0.000000000004976705489999999},{-23313.1436,89.0432275},{3730042.76,-13835.01485,20.49107091,-0.001961974759,0.000000472731304,-0.0000000000372881469,0.000000000000001623737207},{75320.6691,-121.9124889},518.2791167938085),T,exclEnthForm,refChoice,h_off),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"C2H6\",0.03006904,-2788633.890539904,395476.3437741943,1000.0,{-186204.4161,3406.19186,-19.51705092,0.0756583559,-0.0000820417322,0.000000050611358,-0.00000000001319281992},{-27029.3289,129.8140496},{5025782.13,-20330.22397,33.2255293,-0.00383670341,0.000000723840586,-0.000000000073191825,0.000000000000003065468699},{111596.395,-203.9410584},276.5127187299628),T,exclEnthForm,refChoice,h_off),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"C3H8\",0.04409562,-2373931.923397381,334301.1845620949,1000.0,{-243314.4337,4656.27081,-29.39466091,0.1188952745,-0.0001376308269,0.00000008814823909999999,-0.00000000002342987994},{-35403.3527,184.1749277},{6420731.680000001,-26597.91134,45.3435684,-0.00502066392,0.0000009471216939999999,-0.0000000000957540523,0.00000000000000400967288},{145558.2459,-281.8374734},188.5555073270316),T,exclEnthForm,refChoice,h_off),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"C4H10_n_butane\",0.0581222,-2164233.28779709,330832.0228759407,1000.0,{-317587.254,6176.331819999999,-38.9156212,0.1584654284,-0.0001860050159,0.0000001199676349,-0.0000000000320167055},{-45403.63390000001,237.9488665},{7682322.45,-32560.5151,57.3673275,-0.00619791681,0.000001180186048,-0.0000000001221893698,0.000000000000005250635250000001},{177452.656,-358.791876},143.0515706563069),T,exclEnthForm,refChoice,h_off),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.4543111511,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,0.00001384646189,-0.00000000962579362,0.000000000002519705809},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,0.0000001491806679,-0.00000000001923105485,0.000000000000001061954386},{12832.10415,-15.86640027},296.8033869505308),T,exclEnthForm,refChoice,h_off),Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"CO2\",0.0440095,-8941478.544405185,212805.6215135368,1000.0,{49436.5054,-626.411601,5.30172524,0.002503813816,-0.0000002127308728,-0.000000000768998878,0.0000000000002849677801},{-45281.9846,-7.04827944},{117696.2419,-1788.791477,8.29152319,-0.0000922315678,0.00000000486367688,-0.000000000001891053312,0.0000000000000006330036589999999},{-39083.5059,-26.52669281},188.9244822140674),T,exclEnthForm,refChoice,h_off)};
+//   h := X * {Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"CH4\", 0.01604246, -4650159.63885838, 624355.7409524474, 1000.0, {-176685.0998, 2786.18102, -12.0257785, 0.0391761929, -0.0000361905443, 0.00000002026853043, -0.000000000004976705489999999}, {-23313.1436, 89.0432275}, {3730042.76, -13835.01485, 20.49107091, -0.001961974759, 0.000000472731304, -0.0000000000372881469, 0.000000000000001623737207}, {75320.6691, -121.9124889}, 518.2791167938085), T, exclEnthForm, refChoice, h_off), Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"C2H6\", 0.03006904, -2788633.890539904, 395476.3437741943, 1000.0, {-186204.4161, 3406.19186, -19.51705092, 0.0756583559, -0.0000820417322, 0.000000050611358, -0.00000000001319281992}, {-27029.3289, 129.8140496}, {5025782.13, -20330.22397, 33.2255293, -0.00383670341, 0.000000723840586, -0.000000000073191825, 0.000000000000003065468699}, {111596.395, -203.9410584}, 276.5127187299628), T, exclEnthForm, refChoice, h_off), Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"C3H8\", 0.04409562, -2373931.923397381, 334301.1845620949, 1000.0, {-243314.4337, 4656.27081, -29.39466091, 0.1188952745, -0.0001376308269, 0.00000008814823909999999, -0.00000000002342987994}, {-35403.3527, 184.1749277}, {6420731.680000001, -26597.91134, 45.3435684, -0.00502066392, 0.0000009471216939999999, -0.0000000000957540523, 0.00000000000000400967288}, {145558.2459, -281.8374734}, 188.5555073270316), T, exclEnthForm, refChoice, h_off), Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"C4H10_n_butane\", 0.0581222, -2164233.28779709, 330832.0228759407, 1000.0, {-317587.254, 6176.331819999999, -38.9156212, 0.1584654284, -0.0001860050159, 0.0000001199676349, -0.0000000000320167055}, {-45403.63390000001, 237.9488665}, {7682322.45, -32560.5151, 57.3673275, -0.00619791681, 0.000001180186048, -0.0000000001221893698, 0.000000000000005250635250000001}, {177452.656, -358.791876}, 143.0515706563069), T, exclEnthForm, refChoice, h_off), Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\", 0.0280134, 0.0, 309498.4543111511, 1000.0, {22103.71497, -381.846182, 6.08273836, -0.00853091441, 0.00001384646189, -0.00000000962579362, 0.000000000002519705809}, {710.846086, -10.76003744}, {587712.406, -2239.249073, 6.06694922, -0.00061396855, 0.0000001491806679, -0.00000000001923105485, 0.000000000000001061954386}, {12832.10415, -15.86640027}, 296.8033869505308), T, exclEnthForm, refChoice, h_off), Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"CO2\", 0.0440095, -8941478.544405185, 212805.6215135368, 1000.0, {49436.5054, -626.411601, 5.30172524, 0.002503813816, -0.0000002127308728, -0.000000000768998878, 0.0000000000002849677801}, {-45281.9846, -7.04827944}, {117696.2419, -1788.791477, 8.29152319, -0.0000922315678, 0.00000000486367688, -0.000000000001891053312, 0.0000000000000006330036589999999}, {-39083.5059, -26.52669281}, 188.9244822140674), T, exclEnthForm, refChoice, h_off)};
 // end Modelica.Media.Examples.MixtureGases.Medium2.h_TX;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.lowPressureThermalConductivity \"Return thermal conductivites of low-pressure gas mixtures (Mason and Saxena Modification)\"
@@ -225,35 +225,35 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real[:] lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivities of the pure gases\";
 //   output Real lambdam(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivity of the gas mixture\";
 //   protected constant Real epsilon = 1.0 \"Numerical constant near unity\";
-//   protected Real[size(y,1)] gamma(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032);
-//   protected Real[size(y,1)] Tr \"Reduced temperature\";
-//   protected Real[size(y,1), size(y,1)] A \"Mason and Saxena Modification\";
+//   protected Real[size(y, 1)] gamma(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032);
+//   protected Real[size(y, 1)] Tr \"Reduced temperature\";
+//   protected Real[size(y, 1), size(y, 1)] A \"Mason and Saxena Modification\";
 // algorithm
-//   for i in 1:size(y,1) loop
+//   for i in 1:size(y, 1) loop
 //     gamma[i] := 210.0 * (Tc[i] * M[i] ^ 3.0 / Pc[i] ^ 4.0) ^ 0.16666666666666666;
 //     Tr[i] := T / Tc[i];
 //   end for;
-//   for i in 1:size(y,1) loop
-//     for j in 1:size(y,1) loop
-//       A[i,j] := (1.0 + (gamma[j] * (exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) / (exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j]) * gamma[i])) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + (8.0 * M[i]) / M[j]) ^ 0.5;
+//   for i in 1:size(y, 1) loop
+//     for j in 1:size(y, 1) loop
+//       A[i, j] := (1.0 + (gamma[j] * (exp(0.0464 * Tr[i]) - exp(-0.2412 * Tr[i])) / ((exp(0.0464 * Tr[j]) - exp(-0.2412 * Tr[j])) * gamma[i])) ^ 0.5 * (M[i] / M[j]) ^ 0.25) ^ 2.0 / (8.0 + 8.0 * M[i] / M[j]) ^ 0.5;
 //     end for;
 //   end for;
-//   lambdam := <reduction>sum((y[i] * lambda[i]) / (<reduction>sum(y[j] * A[i,j] for j in 1:(size(y,1)))) for i in 1:(size(y,1)));
+//   lambdam := sum(y[i] * lambda[i] / sum(y[j] * A[i,j] for j in 1:size(y, 1)) for i in 1:size(y, 1));
 // end Modelica.Media.Examples.MixtureGases.Medium2.lowPressureThermalConductivity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions \"Return mole fractions from mass fractions X\"
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"1\") \"Mass fractions of mixture\";
 //   input Real[:] MMX(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar masses of components\";
-//   output Real[size(X,1)] moleFractions(quantity = \"MoleFraction\", unit = \"1\") \"Mole fractions of gas mixture\";
+//   output Real[size(X, 1)] moleFractions(quantity = \"MoleFraction\", unit = \"1\") \"Mole fractions of gas mixture\";
 //   protected Real Mmix(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar mass of mixture\";
-//   protected Real[size(X,1)] invMMX \"inverses of molar weights\";
+//   protected Real[size(X, 1)] invMMX \"inverses of molar weights\";
 // algorithm
-//   for i in 1:size(X,1) loop
+//   for i in 1:size(X, 1) loop
 //     invMMX[i] := 1.0 / MMX[i];
 //   end for;
 //   Mmix := 1.0 / (X * invMMX);
-//   for i in 1:size(X,1) loop
-//     moleFractions[i] := (Mmix * X[i]) / MMX[i];
+//   for i in 1:size(X, 1) loop
+//     moleFractions[i] := Mmix * X[i] / MMX[i];
 //   end for;
 // end Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions;
 // 
@@ -271,23 +271,23 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real x_small(min = 0.0) \"Smooth transition in the region -x_small < x < x_small\";
 //   output Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState state \"Smooth thermodynamic state for all x (continuous and differentiable)\";
 // algorithm
-//   state := Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState(Modelica.Media.Common.smoothStep(x,state_a.p,state_b.p,x_small),Modelica.Media.Common.smoothStep(x,state_a.T,state_b.T,x_small),{Modelica.Media.Common.smoothStep(x,state_a.X[1],state_b.X[1],x_small),Modelica.Media.Common.smoothStep(x,state_a.X[2],state_b.X[2],x_small),Modelica.Media.Common.smoothStep(x,state_a.X[3],state_b.X[3],x_small),Modelica.Media.Common.smoothStep(x,state_a.X[4],state_b.X[4],x_small),Modelica.Media.Common.smoothStep(x,state_a.X[5],state_b.X[5],x_small),Modelica.Media.Common.smoothStep(x,state_a.X[6],state_b.X[6],x_small)});
+//   state := Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState(Modelica.Media.Common.smoothStep(x, state_a.p, state_b.p, x_small), Modelica.Media.Common.smoothStep(x, state_a.T, state_b.T, x_small), {Modelica.Media.Common.smoothStep(x, state_a.X[1], state_b.X[1], x_small), Modelica.Media.Common.smoothStep(x, state_a.X[2], state_b.X[2], x_small), Modelica.Media.Common.smoothStep(x, state_a.X[3], state_b.X[3], x_small), Modelica.Media.Common.smoothStep(x, state_a.X[4], state_b.X[4], x_small), Modelica.Media.Common.smoothStep(x, state_a.X[5], state_b.X[5], x_small), Modelica.Media.Common.smoothStep(x, state_a.X[6], state_b.X[6], x_small)});
 // end Modelica.Media.Examples.MixtureGases.Medium2.setSmoothState;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.setState_pTX \"Return thermodynamic state as function of p, T and composition X\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.92,0.048,0.005,0.002,0.015,0.01} \"Mass fractions\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.92, 0.048, 0.005, 0.002, 0.015, 0.01} \"Mass fractions\";
 //   output Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState state;
 // algorithm
-//   state := if size(X,1) == 6 then Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState(p,T,X) else Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState(p,T,cat(1,X,{1.0 - sum(X)}));
+//   state := if size(X, 1) == 6 then Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState(p, T, X) else Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState(p, T, cat(1, X, {1.0 - sum(X)}));
 // end Modelica.Media.Examples.MixtureGases.Medium2.setState_pTX;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
 //   input Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState state \"thermodynamic state record\";
 //   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
 // algorithm
-//   cp := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"CH4\",0.01604246,-4650159.63885838,624355.7409524474,1000.0,{-176685.0998,2786.18102,-12.0257785,0.0391761929,-0.0000361905443,0.00000002026853043,-0.000000000004976705489999999},{-23313.1436,89.0432275},{3730042.76,-13835.01485,20.49107091,-0.001961974759,0.000000472731304,-0.0000000000372881469,0.000000000000001623737207},{75320.6691,-121.9124889},518.2791167938085),state.T) * state.X[1] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"C2H6\",0.03006904,-2788633.890539904,395476.3437741943,1000.0,{-186204.4161,3406.19186,-19.51705092,0.0756583559,-0.0000820417322,0.000000050611358,-0.00000000001319281992},{-27029.3289,129.8140496},{5025782.13,-20330.22397,33.2255293,-0.00383670341,0.000000723840586,-0.000000000073191825,0.000000000000003065468699},{111596.395,-203.9410584},276.5127187299628),state.T) * state.X[2] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"C3H8\",0.04409562,-2373931.923397381,334301.1845620949,1000.0,{-243314.4337,4656.27081,-29.39466091,0.1188952745,-0.0001376308269,0.00000008814823909999999,-0.00000000002342987994},{-35403.3527,184.1749277},{6420731.680000001,-26597.91134,45.3435684,-0.00502066392,0.0000009471216939999999,-0.0000000000957540523,0.00000000000000400967288},{145558.2459,-281.8374734},188.5555073270316),state.T) * state.X[3] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"C4H10_n_butane\",0.0581222,-2164233.28779709,330832.0228759407,1000.0,{-317587.254,6176.331819999999,-38.9156212,0.1584654284,-0.0001860050159,0.0000001199676349,-0.0000000000320167055},{-45403.63390000001,237.9488665},{7682322.45,-32560.5151,57.3673275,-0.00619791681,0.000001180186048,-0.0000000001221893698,0.000000000000005250635250000001},{177452.656,-358.791876},143.0515706563069),state.T) * state.X[4] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.4543111511,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,0.00001384646189,-0.00000000962579362,0.000000000002519705809},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,0.0000001491806679,-0.00000000001923105485,0.000000000000001061954386},{12832.10415,-15.86640027},296.8033869505308),state.T) * state.X[5] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"CO2\",0.0440095,-8941478.544405185,212805.6215135368,1000.0,{49436.5054,-626.411601,5.30172524,0.002503813816,-0.0000002127308728,-0.000000000768998878,0.0000000000002849677801},{-45281.9846,-7.04827944},{117696.2419,-1788.791477,8.29152319,-0.0000922315678,0.00000000486367688,-0.000000000001891053312,0.0000000000000006330036589999999},{-39083.5059,-26.52669281},188.9244822140674),state.T) * state.X[6];
+//   cp := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"CH4\", 0.01604246, -4650159.63885838, 624355.7409524474, 1000.0, {-176685.0998, 2786.18102, -12.0257785, 0.0391761929, -0.0000361905443, 0.00000002026853043, -0.000000000004976705489999999}, {-23313.1436, 89.0432275}, {3730042.76, -13835.01485, 20.49107091, -0.001961974759, 0.000000472731304, -0.0000000000372881469, 0.000000000000001623737207}, {75320.6691, -121.9124889}, 518.2791167938085), state.T) * state.X[1] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"C2H6\", 0.03006904, -2788633.890539904, 395476.3437741943, 1000.0, {-186204.4161, 3406.19186, -19.51705092, 0.0756583559, -0.0000820417322, 0.000000050611358, -0.00000000001319281992}, {-27029.3289, 129.8140496}, {5025782.13, -20330.22397, 33.2255293, -0.00383670341, 0.000000723840586, -0.000000000073191825, 0.000000000000003065468699}, {111596.395, -203.9410584}, 276.5127187299628), state.T) * state.X[2] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"C3H8\", 0.04409562, -2373931.923397381, 334301.1845620949, 1000.0, {-243314.4337, 4656.27081, -29.39466091, 0.1188952745, -0.0001376308269, 0.00000008814823909999999, -0.00000000002342987994}, {-35403.3527, 184.1749277}, {6420731.680000001, -26597.91134, 45.3435684, -0.00502066392, 0.0000009471216939999999, -0.0000000000957540523, 0.00000000000000400967288}, {145558.2459, -281.8374734}, 188.5555073270316), state.T) * state.X[3] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"C4H10_n_butane\", 0.0581222, -2164233.28779709, 330832.0228759407, 1000.0, {-317587.254, 6176.331819999999, -38.9156212, 0.1584654284, -0.0001860050159, 0.0000001199676349, -0.0000000000320167055}, {-45403.63390000001, 237.9488665}, {7682322.45, -32560.5151, 57.3673275, -0.00619791681, 0.000001180186048, -0.0000000001221893698, 0.000000000000005250635250000001}, {177452.656, -358.791876}, 143.0515706563069), state.T) * state.X[4] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\", 0.0280134, 0.0, 309498.4543111511, 1000.0, {22103.71497, -381.846182, 6.08273836, -0.00853091441, 0.00001384646189, -0.00000000962579362, 0.000000000002519705809}, {710.846086, -10.76003744}, {587712.406, -2239.249073, 6.06694922, -0.00061396855, 0.0000001491806679, -0.00000000001923105485, 0.000000000000001061954386}, {12832.10415, -15.86640027}, 296.8033869505308), state.T) * state.X[5] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"CO2\", 0.0440095, -8941478.544405185, 212805.6215135368, 1000.0, {49436.5054, -626.411601, 5.30172524, 0.002503813816, -0.0000002127308728, -0.000000000768998878, 0.0000000000002849677801}, {-45281.9846, -7.04827944}, {117696.2419, -1788.791477, 8.29152319, -0.0000922315678, 0.00000000486367688, -0.000000000001891053312, 0.0000000000000006330036589999999}, {-39083.5059, -26.52669281}, 188.9244822140674), state.T) * state.X[6];
 // end Modelica.Media.Examples.MixtureGases.Medium2.specificHeatCapacityCp;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.thermalConductivity \"Return thermal conductivity for low pressure gas mixtures\"
@@ -299,11 +299,11 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   protected Real[6] cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"component heat capacity\";
 // algorithm
 //   for i in 1:6 loop
-//     eta[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,190.56,0.01604246,0.0000986,0.011,0.0,0.0);
-//     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T({Modelica.Media.IdealGases.Common.DataRecord(\"CH4\",0.01604246,-4650159.63885838,624355.7409524474,1000.0,{-176685.0998,2786.18102,-12.0257785,0.0391761929,-0.0000361905443,0.00000002026853043,-0.000000000004976705489999999},{-23313.1436,89.0432275},{3730042.76,-13835.01485,20.49107091,-0.001961974759,0.000000472731304,-0.0000000000372881469,0.000000000000001623737207},{75320.6691,-121.9124889},518.2791167938085),Modelica.Media.IdealGases.Common.DataRecord(\"C2H6\",0.03006904,-2788633.890539904,395476.3437741943,1000.0,{-186204.4161,3406.19186,-19.51705092,0.0756583559,-0.0000820417322,0.000000050611358,-0.00000000001319281992},{-27029.3289,129.8140496},{5025782.13,-20330.22397,33.2255293,-0.00383670341,0.000000723840586,-0.000000000073191825,0.000000000000003065468699},{111596.395,-203.9410584},276.5127187299628),Modelica.Media.IdealGases.Common.DataRecord(\"C3H8\",0.04409562,-2373931.923397381,334301.1845620949,1000.0,{-243314.4337,4656.27081,-29.39466091,0.1188952745,-0.0001376308269,0.00000008814823909999999,-0.00000000002342987994},{-35403.3527,184.1749277},{6420731.680000001,-26597.91134,45.3435684,-0.00502066392,0.0000009471216939999999,-0.0000000000957540523,0.00000000000000400967288},{145558.2459,-281.8374734},188.5555073270316),Modelica.Media.IdealGases.Common.DataRecord(\"C4H10_n_butane\",0.0581222,-2164233.28779709,330832.0228759407,1000.0,{-317587.254,6176.331819999999,-38.9156212,0.1584654284,-0.0001860050159,0.0000001199676349,-0.0000000000320167055},{-45403.63390000001,237.9488665},{7682322.45,-32560.5151,57.3673275,-0.00619791681,0.000001180186048,-0.0000000001221893698,0.000000000000005250635250000001},{177452.656,-358.791876},143.0515706563069),Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.4543111511,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,0.00001384646189,-0.00000000962579362,0.000000000002519705809},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,0.0000001491806679,-0.00000000001923105485,0.000000000000001061954386},{12832.10415,-15.86640027},296.8033869505308),Modelica.Media.IdealGases.Common.DataRecord(\"CO2\",0.0440095,-8941478.544405185,212805.6215135368,1000.0,{49436.5054,-626.411601,5.30172524,0.002503813816,-0.0000002127308728,-0.000000000768998878,0.0000000000002849677801},{-45281.9846,-7.04827944},{117696.2419,-1788.791477,8.29152319,-0.0000922315678,0.00000000486367688,-0.000000000001891053312,0.0000000000000006330036589999999},{-39083.5059,-26.52669281},188.9244822140674)}[i],state.T);
-//     lambdaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate({Modelica.Media.IdealGases.Common.DataRecord(\"CH4\",0.01604246,-4650159.63885838,624355.7409524474,1000.0,{-176685.0998,2786.18102,-12.0257785,0.0391761929,-0.0000361905443,0.00000002026853043,-0.000000000004976705489999999},{-23313.1436,89.0432275},{3730042.76,-13835.01485,20.49107091,-0.001961974759,0.000000472731304,-0.0000000000372881469,0.000000000000001623737207},{75320.6691,-121.9124889},518.2791167938085),Modelica.Media.IdealGases.Common.DataRecord(\"C2H6\",0.03006904,-2788633.890539904,395476.3437741943,1000.0,{-186204.4161,3406.19186,-19.51705092,0.0756583559,-0.0000820417322,0.000000050611358,-0.00000000001319281992},{-27029.3289,129.8140496},{5025782.13,-20330.22397,33.2255293,-0.00383670341,0.000000723840586,-0.000000000073191825,0.000000000000003065468699},{111596.395,-203.9410584},276.5127187299628),Modelica.Media.IdealGases.Common.DataRecord(\"C3H8\",0.04409562,-2373931.923397381,334301.1845620949,1000.0,{-243314.4337,4656.27081,-29.39466091,0.1188952745,-0.0001376308269,0.00000008814823909999999,-0.00000000002342987994},{-35403.3527,184.1749277},{6420731.680000001,-26597.91134,45.3435684,-0.00502066392,0.0000009471216939999999,-0.0000000000957540523,0.00000000000000400967288},{145558.2459,-281.8374734},188.5555073270316),Modelica.Media.IdealGases.Common.DataRecord(\"C4H10_n_butane\",0.0581222,-2164233.28779709,330832.0228759407,1000.0,{-317587.254,6176.331819999999,-38.9156212,0.1584654284,-0.0001860050159,0.0000001199676349,-0.0000000000320167055},{-45403.63390000001,237.9488665},{7682322.45,-32560.5151,57.3673275,-0.00619791681,0.000001180186048,-0.0000000001221893698,0.000000000000005250635250000001},{177452.656,-358.791876},143.0515706563069),Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.4543111511,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,0.00001384646189,-0.00000000962579362,0.000000000002519705809},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,0.0000001491806679,-0.00000000001923105485,0.000000000000001061954386},{12832.10415,-15.86640027},296.8033869505308),Modelica.Media.IdealGases.Common.DataRecord(\"CO2\",0.0440095,-8941478.544405185,212805.6215135368,1000.0,{49436.5054,-626.411601,5.30172524,0.002503813816,-0.0000002127308728,-0.000000000768998878,0.0000000000002849677801},{-45281.9846,-7.04827944},{117696.2419,-1788.791477,8.29152319,-0.0000922315678,0.00000000486367688,-0.000000000001891053312,0.0000000000000006330036589999999},{-39083.5059,-26.52669281},188.9244822140674)}[i],cp[i],eta[i],method);
+//     eta[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T, 190.56, 0.01604246, 0.0000986, 0.011, 0.0, 0.0);
+//     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T({Modelica.Media.IdealGases.Common.DataRecord(\"CH4\", 0.01604246, -4650159.63885838, 624355.7409524474, 1000.0, {-176685.0998, 2786.18102, -12.0257785, 0.0391761929, -0.0000361905443, 0.00000002026853043, -0.000000000004976705489999999}, {-23313.1436, 89.0432275}, {3730042.76, -13835.01485, 20.49107091, -0.001961974759, 0.000000472731304, -0.0000000000372881469, 0.000000000000001623737207}, {75320.6691, -121.9124889}, 518.2791167938085), Modelica.Media.IdealGases.Common.DataRecord(\"C2H6\", 0.03006904, -2788633.890539904, 395476.3437741943, 1000.0, {-186204.4161, 3406.19186, -19.51705092, 0.0756583559, -0.0000820417322, 0.000000050611358, -0.00000000001319281992}, {-27029.3289, 129.8140496}, {5025782.13, -20330.22397, 33.2255293, -0.00383670341, 0.000000723840586, -0.000000000073191825, 0.000000000000003065468699}, {111596.395, -203.9410584}, 276.5127187299628), Modelica.Media.IdealGases.Common.DataRecord(\"C3H8\", 0.04409562, -2373931.923397381, 334301.1845620949, 1000.0, {-243314.4337, 4656.27081, -29.39466091, 0.1188952745, -0.0001376308269, 0.00000008814823909999999, -0.00000000002342987994}, {-35403.3527, 184.1749277}, {6420731.680000001, -26597.91134, 45.3435684, -0.00502066392, 0.0000009471216939999999, -0.0000000000957540523, 0.00000000000000400967288}, {145558.2459, -281.8374734}, 188.5555073270316), Modelica.Media.IdealGases.Common.DataRecord(\"C4H10_n_butane\", 0.0581222, -2164233.28779709, 330832.0228759407, 1000.0, {-317587.254, 6176.331819999999, -38.9156212, 0.1584654284, -0.0001860050159, 0.0000001199676349, -0.0000000000320167055}, {-45403.63390000001, 237.9488665}, {7682322.45, -32560.5151, 57.3673275, -0.00619791681, 0.000001180186048, -0.0000000001221893698, 0.000000000000005250635250000001}, {177452.656, -358.791876}, 143.0515706563069), Modelica.Media.IdealGases.Common.DataRecord(\"N2\", 0.0280134, 0.0, 309498.4543111511, 1000.0, {22103.71497, -381.846182, 6.08273836, -0.00853091441, 0.00001384646189, -0.00000000962579362, 0.000000000002519705809}, {710.846086, -10.76003744}, {587712.406, -2239.249073, 6.06694922, -0.00061396855, 0.0000001491806679, -0.00000000001923105485, 0.000000000000001061954386}, {12832.10415, -15.86640027}, 296.8033869505308), Modelica.Media.IdealGases.Common.DataRecord(\"CO2\", 0.0440095, -8941478.544405185, 212805.6215135368, 1000.0, {49436.5054, -626.411601, 5.30172524, 0.002503813816, -0.0000002127308728, -0.000000000768998878, 0.0000000000002849677801}, {-45281.9846, -7.04827944}, {117696.2419, -1788.791477, 8.29152319, -0.0000922315678, 0.00000000486367688, -0.000000000001891053312, 0.0000000000000006330036589999999}, {-39083.5059, -26.52669281}, 188.9244822140674)}[i], state.T);
+//     lambdaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate({Modelica.Media.IdealGases.Common.DataRecord(\"CH4\", 0.01604246, -4650159.63885838, 624355.7409524474, 1000.0, {-176685.0998, 2786.18102, -12.0257785, 0.0391761929, -0.0000361905443, 0.00000002026853043, -0.000000000004976705489999999}, {-23313.1436, 89.0432275}, {3730042.76, -13835.01485, 20.49107091, -0.001961974759, 0.000000472731304, -0.0000000000372881469, 0.000000000000001623737207}, {75320.6691, -121.9124889}, 518.2791167938085), Modelica.Media.IdealGases.Common.DataRecord(\"C2H6\", 0.03006904, -2788633.890539904, 395476.3437741943, 1000.0, {-186204.4161, 3406.19186, -19.51705092, 0.0756583559, -0.0000820417322, 0.000000050611358, -0.00000000001319281992}, {-27029.3289, 129.8140496}, {5025782.13, -20330.22397, 33.2255293, -0.00383670341, 0.000000723840586, -0.000000000073191825, 0.000000000000003065468699}, {111596.395, -203.9410584}, 276.5127187299628), Modelica.Media.IdealGases.Common.DataRecord(\"C3H8\", 0.04409562, -2373931.923397381, 334301.1845620949, 1000.0, {-243314.4337, 4656.27081, -29.39466091, 0.1188952745, -0.0001376308269, 0.00000008814823909999999, -0.00000000002342987994}, {-35403.3527, 184.1749277}, {6420731.680000001, -26597.91134, 45.3435684, -0.00502066392, 0.0000009471216939999999, -0.0000000000957540523, 0.00000000000000400967288}, {145558.2459, -281.8374734}, 188.5555073270316), Modelica.Media.IdealGases.Common.DataRecord(\"C4H10_n_butane\", 0.0581222, -2164233.28779709, 330832.0228759407, 1000.0, {-317587.254, 6176.331819999999, -38.9156212, 0.1584654284, -0.0001860050159, 0.0000001199676349, -0.0000000000320167055}, {-45403.63390000001, 237.9488665}, {7682322.45, -32560.5151, 57.3673275, -0.00619791681, 0.000001180186048, -0.0000000001221893698, 0.000000000000005250635250000001}, {177452.656, -358.791876}, 143.0515706563069), Modelica.Media.IdealGases.Common.DataRecord(\"N2\", 0.0280134, 0.0, 309498.4543111511, 1000.0, {22103.71497, -381.846182, 6.08273836, -0.00853091441, 0.00001384646189, -0.00000000962579362, 0.000000000002519705809}, {710.846086, -10.76003744}, {587712.406, -2239.249073, 6.06694922, -0.00061396855, 0.0000001491806679, -0.00000000001923105485, 0.000000000000001061954386}, {12832.10415, -15.86640027}, 296.8033869505308), Modelica.Media.IdealGases.Common.DataRecord(\"CO2\", 0.0440095, -8941478.544405185, 212805.6215135368, 1000.0, {49436.5054, -626.411601, 5.30172524, 0.002503813816, -0.0000002127308728, -0.000000000768998878, 0.0000000000002849677801}, {-45281.9846, -7.04827944}, {117696.2419, -1788.791477, 8.29152319, -0.0000922315678, 0.00000000486367688, -0.000000000001891053312, 0.0000000000000006330036589999999}, {-39083.5059, -26.52669281}, 188.9244822140674)}[i], cp[i], eta[i], method);
 //   end for;
-//   lambda := Modelica.Media.Examples.MixtureGases.Medium2.lowPressureThermalConductivity(Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions({state.X[1],state.X[2],state.X[3],state.X[4],state.X[5],state.X[6]},{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246}),state.T,{190.56,190.56,190.56,190.56,190.56,190.56},{4599000.0,4599000.0,4599000.0,4599000.0,4599000.0,4599000.0},{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246},{lambdaX[1],lambdaX[2],lambdaX[3],lambdaX[4],lambdaX[5],lambdaX[6]});
+//   lambda := Modelica.Media.Examples.MixtureGases.Medium2.lowPressureThermalConductivity(Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions({state.X[1], state.X[2], state.X[3], state.X[4], state.X[5], state.X[6]}, {0.01604246, 0.01604246, 0.01604246, 0.01604246, 0.01604246, 0.01604246}), state.T, {190.56, 190.56, 190.56, 190.56, 190.56, 190.56}, {4599000.0, 4599000.0, 4599000.0, 4599000.0, 4599000.0, 4599000.0}, {0.01604246, 0.01604246, 0.01604246, 0.01604246, 0.01604246, 0.01604246}, {lambdaX[1], lambdaX[2], lambdaX[3], lambdaX[4], lambdaX[5], lambdaX[6]});
 // end Modelica.Media.Examples.MixtureGases.Medium2.thermalConductivity;
 // 
 // function Modelica.Media.IdealGases.Common.DataRecord \"Automatically generated record constructor for Modelica.Media.IdealGases.Common.DataRecord\"
@@ -339,14 +339,14 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) \"Dynamic viscosity of gas\";
 //   protected parameter Real Const1_SI = 0.000000012897349436996735 \"Constant in formula for eta converted to SI units\";
 //   protected parameter Real Const2_SI = 0.1313 \"Constant in formula for mur converted to SI units\";
-//   protected Real mur = (Const2_SI * mu) / sqrt(Vc * Tc) \"Dimensionless dipole moment of gas molecule\";
-//   protected Real Fc = 1.0 + (-0.2756 * w + (0.059035 * mur ^ 4.0 + k)) \"Factor to account for molecular shape and polarities of gas\";
+//   protected Real mur = Const2_SI * mu / sqrt(Vc * Tc) \"Dimensionless dipole moment of gas molecule\";
+//   protected Real Fc = 1.0 + -0.2756 * w + 0.059035 * mur ^ 4.0 + k \"Factor to account for molecular shape and polarities of gas\";
 //   protected Real Tstar \"Dimensionless temperature defined by equation below\";
 //   protected Real Ov \"Viscosity collision integral for the gas\";
 // algorithm
-//   Tstar := (1.2593 * T) / Tc;
+//   Tstar := 1.2593 * T / Tc;
 //   Ov := 1.16145 / Tstar ^ 0.14874 + 0.52487 * exp(-0.7732 * Tstar) + 2.16178 * exp(-2.43787 * Tstar);
-//   eta := (Const1_SI * Fc * sqrt(M * T)) / (Vc ^ 0.6666666666666666 * Ov);
+//   eta := Const1_SI * Fc * sqrt(M * T) / (Vc ^ 0.6666666666666666 * Ov);
 // end Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure;
 // 
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.h_T \"Compute specific enthalpy from temperature and gas data; reference is decided by the
@@ -358,7 +358,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at temperature T\";
 // algorithm
-//   h := if T < data.Tlimit then (data.R * (T * (data.blow[1] + data.alow[2] * log(T) + T * (data.alow[3] + T * (0.5 * data.alow[4] + T * (0.3333333333333333 * data.alow[5] + T * (0.25 * data.alow[6] + 0.2 * data.alow[7] * T))))) - data.alow[1])) / T else (data.R * (T * (data.bhigh[1] + data.ahigh[2] * log(T) + T * (data.ahigh[3] + T * (0.5 * data.ahigh[4] + T * (0.3333333333333333 * data.ahigh[5] + T * (0.25 * data.ahigh[6] + 0.2 * data.ahigh[7] * T))))) - data.ahigh[1])) / T + if exclEnthForm then -data.Hf else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K then data.H0 else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_off else 0.0;
+//   h := (if T < data.Tlimit then data.R * (T * (data.blow[1] + data.alow[2] * log(T) + T * (data.alow[3] + T * (0.5 * data.alow[4] + T * (0.3333333333333333 * data.alow[5] + T * (0.25 * data.alow[6] + 0.2 * data.alow[7] * T))))) - data.alow[1]) / T else data.R * (T * (data.bhigh[1] + data.ahigh[2] * log(T) + T * (data.ahigh[3] + T * (0.5 * data.ahigh[4] + T * (0.3333333333333333 * data.ahigh[5] + T * (0.25 * data.ahigh[6] + 0.2 * data.ahigh[7] * T))))) - data.ahigh[1]) / T) + (if exclEnthForm then -data.Hf else 0.0) + (if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K then data.H0 else 0.0) + (if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_off else 0.0);
 // end Modelica.Media.IdealGases.Common.SingleGasNasa.h_T;
 // 
 // function Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate \"Thermal conductivity of polyatomic gases(Eucken and Modified Eucken correlation)\"
@@ -419,7 +419,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   Real U1(quantity = \"Energy\", unit = \"J\");
 //   Real cp1(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.MixtureGases.Medium1.specificHeatCapacityCp(medium1.state);
 //   Real eta1(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Examples.MixtureGases.Medium1.dynamicViscosity(medium1.state);
-//   Real lambda1(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) = Modelica.Media.Examples.MixtureGases.Medium1.thermalConductivity(medium1.state,1);
+//   Real lambda1(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) = Modelica.Media.Examples.MixtureGases.Medium1.thermalConductivity(medium1.state, 1);
 //   input Real medium2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = 100000.0, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
 //   input Real medium2.Xi[1](quantity = \"MassFraction\", unit = \"1\", start = 0.92, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
 //   input Real medium2.Xi[2](quantity = \"MassFraction\", unit = \"1\", start = 0.048, StateSelect = StateSelect.default) \"Structurally independent mass fractions\";
@@ -455,7 +455,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   Real U2(quantity = \"Energy\", unit = \"J\");
 //   Real cp2(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.MixtureGases.Medium2.specificHeatCapacityCp(medium2.state);
 //   Real eta2(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Examples.MixtureGases.Medium2.dynamicViscosity(medium2.state);
-//   Real lambda2(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) = Modelica.Media.Examples.MixtureGases.Medium2.thermalConductivity(medium2.state,1);
+//   Real lambda2(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) = Modelica.Media.Examples.MixtureGases.Medium2.thermalConductivity(medium2.state, 1);
 //   Real state2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 100500.0 \"Absolute pressure of medium\";
 //   Real state2.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 302.0 \"Temperature of medium\";
 //   Real state2.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.3 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
@@ -477,11 +477,11 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   Real der_T;
 // equation
 //   assert(medium1.T >= 200.0 and medium1.T <= 6000.0,\"
-// Temperature T (=\" + String(medium1.T,0,true,6) + \" K = 200 K) is not in the allowed range
+// Temperature T (=\" + String(medium1.T, 0, true, 6) + \" K = 200 K) is not in the allowed range
 // 200 K <= T <= 6000 K
 // required from medium model \\\"\" + \"CombustionAirN2O2\" + \"\\\".\");
 //   medium1.MM = Modelica.Media.Examples.MixtureGases.Medium1.molarMass(medium1.state);
-//   medium1.h = Modelica.Media.Examples.MixtureGases.Medium1.h_TX(medium1.T,{medium1.X[1],medium1.X[2]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   medium1.h = Modelica.Media.Examples.MixtureGases.Medium1.h_TX(medium1.T, {medium1.X[1], medium1.X[2]}, true, Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K, 0.0);
 //   medium1.R = 296.8033869505308 * (medium1.X[1] + medium1.X[2]);
 //   medium1.u = medium1.h - medium1.R * medium1.T;
 //   medium1.d = medium1.p / (medium1.T * medium1.R);
@@ -491,19 +491,19 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   medium1.state.X[2] = medium1.X[2];
 //   medium1.Xi[1] = medium1.X[1];
 //   medium1.Xi[2] = medium1.X[2];
-//   assert(medium1.X[1] >= -0.00001 and medium1.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium1.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(medium1.X[1] >= -0.00001 and medium1.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium1.X[1], 0, true, 6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"CombustionAirN2O2\" + \" is not in the range 0..1\");
-//   assert(medium1.X[2] >= -0.00001 and medium1.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium1.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
+//   assert(medium1.X[2] >= -0.00001 and medium1.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium1.X[2], 0, true, 6) + \"of substance \" + \"Oxygen\" + \"
 // of medium \" + \"CombustionAirN2O2\" + \" is not in the range 0..1\");
-//   assert(medium1.p >= 0.0,\"Pressure (= \" + String(medium1.p,0,true,6) + \" Pa) of medium \\\"\" + \"CombustionAirN2O2\" + \"\\\" is negative
-// (Temperature = \" + String(medium1.T,0,true,6) + \" K)\");
+//   assert(medium1.p >= 0.0,\"Pressure (= \" + String(medium1.p, 0, true, 6) + \" Pa) of medium \\\"\" + \"CombustionAirN2O2\" + \"\\\" is negative
+// (Temperature = \" + String(medium1.T, 0, true, 6) + \" K)\");
 //   assert(medium2.T >= 200.0 and medium2.T <= 6000.0,\"
-// Temperature T (=\" + String(medium2.T,0,true,6) + \" K = 200 K) is not in the allowed range
+// Temperature T (=\" + String(medium2.T, 0, true, 6) + \" K = 200 K) is not in the allowed range
 // 200 K <= T <= 6000 K
 // required from medium model \\\"\" + \"SimpleNaturalGas\" + \"\\\".\");
 //   medium2.MM = Modelica.Media.Examples.MixtureGases.Medium2.molarMass(medium2.state);
-//   medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{medium2.X[1],medium2.X[2],medium2.X[3],medium2.X[4],medium2.X[5],medium2.X[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//   medium2.R = 518.2791167938085 * (medium2.X[1] + (medium2.X[2] + (medium2.X[3] + (medium2.X[4] + (medium2.X[5] + medium2.X[6])))));
+//   medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T, {medium2.X[1], medium2.X[2], medium2.X[3], medium2.X[4], medium2.X[5], medium2.X[6]}, true, Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K, 0.0);
+//   medium2.R = 518.2791167938085 * (medium2.X[1] + medium2.X[2] + medium2.X[3] + medium2.X[4] + medium2.X[5] + medium2.X[6]);
 //   medium2.u = medium2.h - medium2.R * medium2.T;
 //   medium2.d = medium2.p / (medium2.T * medium2.R);
 //   medium2.state.T = medium2.T;
@@ -520,20 +520,20 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   medium2.Xi[4] = medium2.X[4];
 //   medium2.Xi[5] = medium2.X[5];
 //   medium2.Xi[6] = medium2.X[6];
-//   assert(medium2.X[1] >= -0.00001 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
+//   assert(medium2.X[1] >= -0.00001 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1], 0, true, 6) + \"of substance \" + \"Methane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[2] >= -0.00001 and medium2.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium2.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
+//   assert(medium2.X[2] >= -0.00001 and medium2.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium2.X[2], 0, true, 6) + \"of substance \" + \"Ethane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[3] >= -0.00001 and medium2.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(medium2.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
+//   assert(medium2.X[3] >= -0.00001 and medium2.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(medium2.X[3], 0, true, 6) + \"of substance \" + \"Propane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[4] >= -0.00001 and medium2.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(medium2.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
+//   assert(medium2.X[4] >= -0.00001 and medium2.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(medium2.X[4], 0, true, 6) + \"of substance \" + \"N-Butane,\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[5] >= -0.00001 and medium2.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(medium2.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(medium2.X[5] >= -0.00001 and medium2.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(medium2.X[5], 0, true, 6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[6] >= -0.00001 and medium2.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(medium2.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
+//   assert(medium2.X[6] >= -0.00001 and medium2.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(medium2.X[6], 0, true, 6) + \"of substance \" + \"Carbondioxide\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.p >= 0.0,\"Pressure (= \" + String(medium2.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleNaturalGas\" + \"\\\" is negative
-// (Temperature = \" + String(medium2.T,0,true,6) + \" K)\");
+//   assert(medium2.p >= 0.0,\"Pressure (= \" + String(medium2.p, 0, true, 6) + \" Pa) of medium \\\"\" + \"SimpleNaturalGas\" + \"\\\" is negative
+// (Temperature = \" + String(medium2.T, 0, true, 6) + \" K)\");
 //   medium1.X[1] = 0.8;
 //   medium1.X[2] = 0.2;
 //   m1 = medium1.d * V;
@@ -551,7 +551,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   der(m2) = m_flow_ext;
 //   der(U2) = H_flow_ext;
 //   m_flow_ext2 = time + -0.5;
-//   smoothState = Modelica.Media.Examples.MixtureGases.Medium2.setSmoothState(m_flow_ext2,medium2.state,state2,0.2);
+//   smoothState = Modelica.Media.Examples.MixtureGases.Medium2.setSmoothState(m_flow_ext2, medium2.state, state2, 0.2);
 //   der_p = der(smoothState.p);
 //   der_T = der(smoothState.T);
 // end Modelica.Media.Examples.MixtureGases;

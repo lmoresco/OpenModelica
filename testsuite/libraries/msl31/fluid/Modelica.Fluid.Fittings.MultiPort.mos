@@ -17,7 +17,7 @@ checkModel(Modelica.Fluid.Fittings.MultiPort); getErrorString();
 //   input Real x;
 //   output Real y;
 // algorithm
-//   y := max(x,1e-10);
+//   y := max(x, 0.0000000001);
 // end Modelica.Fluid.Fittings.MultiPort.positiveMax;
 // 
 // function Modelica.Math.asin

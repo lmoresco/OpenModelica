@@ -46,24 +46,24 @@ getErrorString();
 //   parameter Real sine1.phase(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") = 0.0 \"Phase of sine wave\";
 //   parameter Real sine1.offset = 0.0 \"Offset of output signal\";
 //   parameter Real sine1.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
-//   protected constant Real sine1.pi = 3.14159265358979;
+//   protected constant Real sine1.pi = 3.141592653589793;
 //   output Real pulse1.y \"Connector of Real output signal\";
 //   parameter Real pulse1.amplitude = 1.0 \"Amplitude of pulse\";
 //   parameter Real pulse1.width(min = 1e-60, max = 100.0) = 50.0 \"Width of pulse in % of periods\";
 //   parameter Real pulse1.period(quantity = \"Time\", unit = \"s\", min = 1e-60) = 1.0 \"Time for one period\";
 //   parameter Real pulse1.offset = 0.0 \"Offset of output signals\";
 //   parameter Real pulse1.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
-//   protected Real pulse1.T_width(quantity = \"Time\", unit = \"s\") = (pulse1.period * pulse1.width) / 100.0;
+//   protected Real pulse1.T_width(quantity = \"Time\", unit = \"s\") = pulse1.period * pulse1.width / 100.0;
 //   protected Real pulse1.T0(quantity = \"Time\", unit = \"s\", start = pulse1.startTime) \"Start time of current period\";
 // equation
-//   when {initial(),change(extractor1.index)} then
+//   when {initial(), change(extractor1.index)} then
 //   extractor1.k[1] = if extractor1.index == 1 then 1.0 else 0.0;
 //   extractor1.k[2] = if extractor1.index == 2 then 1.0 else 0.0;
 //   end when;
 //   extractor1.y = if not extractor1.allowOutOfRange or extractor1.index > 0 and extractor1.index <= extractor1.nin then extractor1.k[1] * extractor1.u[1] + extractor1.k[2] * extractor1.u[2] else extractor1.outOfRangeValue;
 //   integerStep1.y = integerStep1.offset + (if time < integerStep1.startTime then 0 else integerStep1.height);
-//   sine1.y = sine1.offset + (if time < sine1.startTime then 0.0 else sine1.amplitude * sin(6.28318530717959 * (sine1.freqHz * (time - sine1.startTime)) + sine1.phase));
-//   when sample(pulse1.startTime,pulse1.period) then
+//   sine1.y = sine1.offset + (if time < sine1.startTime then 0.0 else sine1.amplitude * sin(6.283185307179586 * sine1.freqHz * (time - sine1.startTime) + sine1.phase));
+//   when sample(pulse1.startTime, pulse1.period) then
 //   pulse1.T0 = time;
 //   end when;
 //   pulse1.y = pulse1.offset + (if time < pulse1.startTime or time >= pulse1.T0 + pulse1.T_width then 0.0 else pulse1.amplitude);

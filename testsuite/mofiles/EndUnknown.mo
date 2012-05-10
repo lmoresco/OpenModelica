@@ -33,10 +33,10 @@ end EndUnknown;
 //   input Real b "Upper limit";
 //   output Real res;
 // algorithm
-//   if size(vals,1) >= 3 then
-//     res := (vals[1] + 2.0 * sum(vals[3:2:(size(vals,1) + -1)]) + 4.0 * sum(vals[2:2:(size(vals,1) + -1)]) + vals[size(vals,1)] * (b - a)) / (/*T_REAL*/(size(vals,1) + -1) * 3.0);
+//   if size(vals, 1) >= 3 then
+//     res := (vals[1] + 2.0 * sum(vals[3:2:size(vals, 1) + -1]) + 4.0 * sum(vals[2:2:size(vals, 1) + -1]) + vals[size(vals, 1)]) * (b - a) / (Real(size(vals, 1) + -1) * 3.0);
 //   else
-//     res := (b - a * sum(vals)) / 2.0;
+//     res := (b - a) * sum(vals) / 2.0;
 //   end if;
 // end EndUnknown.simpson;
 // 

@@ -58,7 +58,7 @@ end PartialFn4;
 //   input Integer i;
 //   output Integer j;
 // algorithm
-//   j := PartialFn4.ApplyVoidOp(PartialFn4.VoidOp,i);
+//   j := PartialFn4.ApplyVoidOp(PartialFn4.VoidOp, i);
 // end PartialFn4.TestApplyVoidOp;
 // 
 // function PartialFn4.VoidOp

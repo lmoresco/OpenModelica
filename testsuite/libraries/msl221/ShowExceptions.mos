@@ -15,7 +15,7 @@ getErrorString();
 //   output Boolean result;
 // algorithm
 //   result := false;
-//   for i in 1:size(b,1) loop
+//   for i in 1:size(b, 1) loop
 //     result := result or b[i];
 //   end for;
 // end Modelica.StateGraph.Temporary.anyTrue;
@@ -539,8 +539,8 @@ getErrorString();
 //   compositeStep.Alternative1.split[2].available = compositeStep.Alternative1.split[1].available and not compositeStep.Alternative1.split[1].reset;
 //   compositeStep.Alternative1.join[1].occupied = compositeStep.Alternative1.outPort.occupied;
 //   compositeStep.Alternative1.join[2].occupied = compositeStep.Alternative1.outPort.occupied;
-//   compositeStep.Alternative1.inPort.reset = Modelica.StateGraph.Temporary.anyTrue({compositeStep.Alternative1.split[1].reset,compositeStep.Alternative1.split[2].reset});
-//   compositeStep.Alternative1.outPort.set = Modelica.StateGraph.Temporary.anyTrue({compositeStep.Alternative1.join[1].set,compositeStep.Alternative1.join[2].set});
+//   compositeStep.Alternative1.inPort.reset = Modelica.StateGraph.Temporary.anyTrue({compositeStep.Alternative1.split[1].reset, compositeStep.Alternative1.split[2].reset});
+//   compositeStep.Alternative1.outPort.set = Modelica.StateGraph.Temporary.anyTrue({compositeStep.Alternative1.join[1].set, compositeStep.Alternative1.join[2].set});
 //   compositeStep.outerState.subgraphStatePort.activeSteps = if compositeStep.active then 1.0 else 0.0;
 //   compositeStep.activeSteps = -integer(compositeStep.stateGraphRoot.subgraphStatePort.activeSteps);
 //   compositeStep.active = pre(compositeStep.newActive);

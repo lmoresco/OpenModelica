@@ -109,42 +109,42 @@ simulate(testRandom2, stopTime=3); getErrorString();
 //   output Real x \"Random number between 0 and 1\";
 //   output Integer[3] seedOut \"Modified seed for next call\";
 // algorithm
-//   seedOut[1] := rem(171 * seedIn[1],30269);
-//   seedOut[2] := rem(172 * seedIn[2],30307);
-//   seedOut[3] := rem(170 * seedIn[3],30323);
+//   seedOut[1] := rem(171 * seedIn[1], 30269);
+//   seedOut[2] := rem(172 * seedIn[2], 30307);
+//   seedOut[3] := rem(170 * seedIn[3], 30323);
 //   for i in 1:3 loop
 //     if seedOut[i] == 0 then
 //       seedOut[i] := 1;
 //     end if;
 //   end for;
-//   x := rem(/*T_REAL*/(seedOut[1]) / 30269.0 + /*T_REAL*/(seedOut[2]) / 30307.0 + /*T_REAL*/(seedOut[3]) / 30323.0,1.0);
+//   x := rem(Real(seedOut[1]) / 30269.0 + Real(seedOut[2]) / 30307.0 + Real(seedOut[3]) / 30323.0, 1.0);
 // end random;
 // 
 // function testRandom3
-//   input Integer[3] seed_start = {23,87,187};
+//   input Integer[3] seed_start = {23, 87, 187};
 //   output Real x;
-//   protected Integer[3] seed = {seed_start[1],seed_start[2],seed_start[3]};
+//   protected Integer[3] seed = {seed_start[1], seed_start[2], seed_start[3]};
 // algorithm
 //   Modelica.Utilities.Streams.print(\"See if seed_start is OK
-// \",\"\");
-//   Modelica.Utilities.Streams.print(\"seed_start[1] = \" + String(seed_start[1],0,true) + \"
-// \",\"\");
-//   Modelica.Utilities.Streams.print(\"seed_start[2] = \" + String(seed_start[2],0,true) + \"
-// \",\"\");
-//   Modelica.Utilities.Streams.print(\"seed_start[3] = \" + String(seed_start[3],0,true) + \"
-// \",\"\");
+// \", \"\");
+//   Modelica.Utilities.Streams.print(\"seed_start[1] = \" + String(seed_start[1], 0, true) + \"
+// \", \"\");
+//   Modelica.Utilities.Streams.print(\"seed_start[2] = \" + String(seed_start[2], 0, true) + \"
+// \", \"\");
+//   Modelica.Utilities.Streams.print(\"seed_start[3] = \" + String(seed_start[3], 0, true) + \"
+// \", \"\");
 //   Modelica.Utilities.Streams.print(\"See if seed is set from seed_start
-// \",\"\");
-//   Modelica.Utilities.Streams.print(\"seed[1] = \" + String(seed[1],0,true) + \"
-// \",\"\");
-//   Modelica.Utilities.Streams.print(\"seed[2] = \" + String(seed[2],0,true) + \"
-// \",\"\");
-//   Modelica.Utilities.Streams.print(\"seed[3] = \" + String(seed[3],0,true) + \"
-// \",\"\");
+// \", \"\");
+//   Modelica.Utilities.Streams.print(\"seed[1] = \" + String(seed[1], 0, true) + \"
+// \", \"\");
+//   Modelica.Utilities.Streams.print(\"seed[2] = \" + String(seed[2], 0, true) + \"
+// \", \"\");
+//   Modelica.Utilities.Streams.print(\"seed[3] = \" + String(seed[3], 0, true) + \"
+// \", \"\");
 //   for i in 1:10 loop
-//     (x, seed) := random({seed[1],seed[2],seed[3]});
-//     Modelica.Utilities.Streams.print(\"x = \" + String(x,0,true,16) + \"
-// \",\"\");
+//     (x, seed) := random({seed[1], seed[2], seed[3]});
+//     Modelica.Utilities.Streams.print(\"x = \" + String(x, 0, true, 16) + \"
+// \", \"\");
 //   end for;
 // end testRandom3;
 // 
@@ -156,12 +156,12 @@ simulate(testRandom2, stopTime=3); getErrorString();
 //   Integer seed[1](start = seed_start[1], fixed = true);
 //   Integer seed[2](start = seed_start[2], fixed = true);
 //   Integer seed[3](start = seed_start[3], fixed = true);
-//   parameter Real y = testRandom3({seed_start[1],seed_start[2],seed_start[3]});
+//   parameter Real y = testRandom3({seed_start[1], seed_start[2], seed_start[3]});
 // algorithm
-//   when sample(0.0,0.2) then
-//     (x, seed) := random({pre(seed[1]),pre(seed[2]),pre(seed[3])});
-//     Modelica.Utilities.Streams.print(\"time = \" + String(time,\".1f\") + \", x = \" + String(x,\".6f\") + \"
-// \",\"\");
+//   when sample(0.0, 0.2) then
+//     (x, seed) := random({pre(seed[1]), pre(seed[2]), pre(seed[3])});
+//     Modelica.Utilities.Streams.print(\"time = \" + String(time, \".1f\") + \", x = \" + String(x, \".6f\") + \"
+// \", \"\");
 //   end when;
 // end testRandom2;
 // "

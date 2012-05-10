@@ -17,7 +17,7 @@ end Array_builtin;
 
 // Result:
 // Error processing file: Array_builtin.mo
-// [Array_builtin.mo:12:4-12:29:writable] Error: Array dimension mismatch, expression {{1,2,3,4,5}} has type Integer[1, 5], expected array dimensions [5]
+// [Array_builtin.mo:12:4-12:29:writable] Error: Array dimension mismatch, expression {{1, 2, 3, 4, 5}} has type Integer[1, 5], expected array dimensions [5]
 // Error: Error occurred while flattening model Array_builtin
 // 
 // # Error encountered! Exiting...

@@ -1029,7 +1029,7 @@ end BM18;
 //   output Real constant2.outPort.signal[1] "Real output signals";
 //   output Real constant2.y[1];
 // equation
-//   min1.y[1] = min(min1.u1[1],min1.u2[1]);
+//   min1.y[1] = min(min1.u1[1], min1.u2[1]);
 //   min1.y[1] = min1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

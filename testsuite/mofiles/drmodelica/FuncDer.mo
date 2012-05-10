@@ -59,7 +59,7 @@ end FuncDer;
 //   input Boolean linear;
 //   output Real y;
 // algorithm
-//   y := exp(x) + /*T_REAL*/(i1);
+//   y := exp(x) + Real(i1);
 // end h0;
 // 
 // function h1
@@ -88,8 +88,8 @@ end FuncDer;
 //   Real fn1;
 //   Real fn2;
 // algorithm
-//   fn0 := 150.413159102577;
-//   fn1 := h1(2,5.0,true,fn0);
-//   fn2 := h2(2,5.0,true,fn0,fn1);
+//   fn0 := 150.4131591025766;
+//   fn1 := h1(2, 5.0, true, fn0);
+//   fn2 := h2(2, 5.0, true, fn0, fn1);
 // end FuncDer;
 // endResult

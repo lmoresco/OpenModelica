@@ -41,6 +41,6 @@ end myTanCall;
 // class myTanCall
 //   Real t;
 // equation
-//   t = 1.5574077246549;
+//   t = 1.557407724654902;
 // end myTanCall;
 // endResult

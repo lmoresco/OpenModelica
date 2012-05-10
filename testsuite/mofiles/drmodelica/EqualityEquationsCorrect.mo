@@ -51,6 +51,6 @@ end EqualityEquationsCorrect;
 //   Real v = 2.0;
 // equation
 //   u = v;
-//   (x,y,z) = (3.0,-1.0,2.0);
+//   (x, y, z) = (3.0, -1.0, 2.0);
 // end EqualityEquationsCorrect;
 // endResult

@@ -24,7 +24,7 @@ end ExternalFunction2;
 // Result:
 // function ext_f
 //   input Real[:] x;
-//   output Real[size(x,1)] y;
+//   output Real[size(x, 1)] y;
 // 
 //   external "C" ExternalFunction2_f(x, size(x, 1), y, size(y, 1));
 // end ext_f;

@@ -18,7 +18,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   output Boolean result;
 // algorithm
 //   result := false;
-//   for i in 1:size(b,1) loop
+//   for i in 1:size(b, 1) loop
 //     result := result or b[i];
 //   end for;
 // end Modelica.StateGraph.Temporary.anyTrue;
@@ -380,7 +380,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
 //   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
 //   s1.localActive = pre(s1.newActive);
-//   s1.newActive = if s1.outerStatePort.subgraphStatePort.resume then s1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({s1.inPort[1].set,s1.inPort[2].set}) or s1.localActive and not Modelica.StateGraph.Temporary.anyTrue({s1.outPort[1].reset})) and not s1.outerStatePort.subgraphStatePort.suspend;
+//   s1.newActive = if s1.outerStatePort.subgraphStatePort.resume then s1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({s1.inPort[1].set, s1.inPort[2].set}) or s1.localActive and not Modelica.StateGraph.Temporary.anyTrue({s1.outPort[1].reset})) and not s1.outerStatePort.subgraphStatePort.suspend;
 //   when s1.outerStatePort.subgraphStatePort.suspend then
 //   s1.oldActive = s1.localActive;
 //   end when;
@@ -396,7 +396,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController
 //   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
 //   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
 //   s2.localActive = pre(s2.newActive);
-//   s2.newActive = if s2.outerStatePort.subgraphStatePort.resume then s2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({s2.inPort[1].set}) or s2.localActive and not Modelica.StateGraph.Temporary.anyTrue({s2.outPort[1].reset,s2.outPort[2].reset})) and not s2.outerStatePort.subgraphStatePort.suspend;
+//   s2.newActive = if s2.outerStatePort.subgraphStatePort.resume then s2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({s2.inPort[1].set}) or s2.localActive and not Modelica.StateGraph.Temporary.anyTrue({s2.outPort[1].reset, s2.outPort[2].reset})) and not s2.outerStatePort.subgraphStatePort.suspend;
 //   when s2.outerStatePort.subgraphStatePort.suspend then
 //   s2.oldActive = s2.localActive;
 //   end when;

@@ -48,8 +48,8 @@ end ExternalFunction4;
 // Result:
 // function ExternalFunction4.dgetrf
 //   input Real[:, :] A;
-//   output Real[size(A,1), size(A,2)] LU = A;
-//   output Integer[min(size(A,1),size(A,2))] pivots;
+//   output Real[size(A, 1), size(A, 2)] LU = A;
+//   output Integer[min(size(A, 1), size(A, 2))] pivots;
 //   output Integer info;
 // 
 //   external "FORTRAN 77" dgetrf(size(A, 1), size(A, 2), LU, size(A, 1), pivots, info);
@@ -57,9 +57,9 @@ end ExternalFunction4;
 // 
 // function ExternalFunction4.dgetri
 //   input Real[:, :] LU;
-//   input Integer[size(LU,1)] pivots;
-//   output Real[size(LU,1), size(LU,2)] inv = LU;
-//   protected Integer lwork = min(10,size(LU,1)) * (size(LU,1));
+//   input Integer[size(LU, 1)] pivots;
+//   output Real[size(LU, 1), size(LU, 2)] inv = LU;
+//   protected Integer lwork = min(10, size(LU, 1)) * size(LU, 1);
 //   protected Integer info;
 //   protected Real[lwork] work;
 // 
@@ -73,9 +73,9 @@ end ExternalFunction4;
 //   protected Integer[2] pivots;
 //   protected Real[2, 2] LU;
 // algorithm
-//   (LU, pivots, info) := ExternalFunction4.dgetrf({{A[1,1],A[1,2]},{A[2,1],A[2,2]}});
+//   (LU, pivots, info) := ExternalFunction4.dgetrf({{A[1,1], A[1,2]}, {A[2,1], A[2,2]}});
 //   assert( info == 0, "Calculating an inverse matrix with function \"Matrices.inv\" is not possible, since matrix A is singular.");
-//   invA := ExternalFunction4.dgetri(<matrix>[LU[1,1],LU[1,2];LU[2,1],LU[2,2]],{pivots[1],pivots[2]});
+//   invA := ExternalFunction4.dgetri({{LU[1,1], LU[1,2]}, {LU[2,1], LU[2,2]}}, {pivots[1], pivots[2]});
 // end ExternalFunction4.inv;
 // 
 // class ExternalFunction4
@@ -85,7 +85,7 @@ end ExternalFunction4;
 //   constant Real r[2,2] = 4.0;
 //   Real r2[1,1] = 1.0;
 //   Real r2[1,2] = 0.0;
-//   Real r2[2,1] = 0.0;
-//   Real r2[2,2] = 1.0;
+//   Real r2[2,1] = 0.0000000000000008881784197001252;
+//   Real r2[2,2] = 0.9999999999999996;
 // end ExternalFunction4;
 // endResult

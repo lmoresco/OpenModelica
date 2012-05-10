@@ -1040,8 +1040,8 @@ end BN3;
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
-//   variableLimiter1.uMax[1] = max(variableLimiter1.limit1.signal[1],variableLimiter1.limit2.signal[1]);
-//   variableLimiter1.uMin[1] = min(variableLimiter1.limit1.signal[1],variableLimiter1.limit2.signal[1]);
+//   variableLimiter1.uMax[1] = max(variableLimiter1.limit1.signal[1], variableLimiter1.limit2.signal[1]);
+//   variableLimiter1.uMin[1] = min(variableLimiter1.limit1.signal[1], variableLimiter1.limit2.signal[1]);
 //   variableLimiter1.y[1] = if variableLimiter1.u[1] > variableLimiter1.uMax[1] then variableLimiter1.uMax[1] else if variableLimiter1.u[1] < variableLimiter1.uMin[1] then variableLimiter1.uMin[1] else variableLimiter1.u[1];
 //   variableLimiter1.y[1] = variableLimiter1.outPort.signal[1];
 //   constant2.outPort.signal[1] = constant2.k[1];

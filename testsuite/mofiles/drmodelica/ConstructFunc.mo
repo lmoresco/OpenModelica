@@ -23,8 +23,8 @@ end ConstructFunc;
 //   input Integer n "number";
 //   output Real[n] v;
 // algorithm
-//   assert( n >= 2, "linspace requires n>=2 but got " + String(n,0,true));
-//   v := <reduction>array(x1 + ((x2 - x1) * Real(i + -1)) / Real(n + -1) for i in 1:n);
+//   assert( n >= 2, "linspace requires n>=2 but got " + String(n, 0, true));
+//   v := array(x1 + (x2 - x1) * Real(i + -1) / Real(n + -1) for i in 1:n);
 // end linspace;
 // 
 // class ConstructFunc

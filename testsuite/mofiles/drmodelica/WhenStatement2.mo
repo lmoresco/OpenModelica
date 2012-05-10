@@ -29,9 +29,9 @@ end WhenStat2;
 // equation
 //   der(x) = 2.0 * x;
 // algorithm
-//   when {x > 2.0,sample(0.0,2.0),x < 5.0} then
+//   when {x > 2.0, sample(0.0, 2.0), x < 5.0} then
 //     y1 := sin(x);
-//     y3 := 2.0 * x + (y1 + y2);
+//     y3 := 2.0 * x + y1 + y2;
 //   end when;
 // end WhenStat2;
 // endResult

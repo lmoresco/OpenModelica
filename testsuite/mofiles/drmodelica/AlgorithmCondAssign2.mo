@@ -43,6 +43,6 @@ end CondAssignFuncCall;
 //   Real a;
 //   Real b;
 // equation
-//   (a,b) = (400.0,45.0);
+//   (a, b) = (400.0, 45.0);
 // end CondAssignFuncCall;
 // endResult

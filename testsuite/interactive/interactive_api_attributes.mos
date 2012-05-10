@@ -140,7 +140,7 @@ list(A);                                                                        
 // ""
 // {a,b, ""}
 // ""
-// {Line(true,{{-22.0,15.0},{32.0,15.0},{32.0,16.0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false)}
+// {Line(true, {{-22.0, 15.0}, {32.0, 15.0}, {32.0, 16.0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3.0, false)}
 // ""
 // true
 // ""
@@ -220,7 +220,7 @@ list(A);                                                                        
 // ""
 // {a,b, ""}
 // ""
-// {Line(true,{0.0,0.0},0,{{-22.0,15.0},{32.0,15.0},{32.0,16.0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}
+// {Line(true, {0.0, 0.0}, 0, {{-22.0, 15.0}, {32.0, 15.0}, {32.0, 16.0}}, {0, 0, 0}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.None}, 3, Smooth.None)}
 // ""
 // true
 // ""

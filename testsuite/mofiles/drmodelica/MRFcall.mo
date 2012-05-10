@@ -42,6 +42,6 @@ end MRFcall;
 //   Real b;
 //   Real c;
 // equation
-//   (a,b,c) = (3.0,2.0,1.0);
+//   (a, b, c) = (3.0, 2.0, 1.0);
 // end MRFcall;
 // endResult

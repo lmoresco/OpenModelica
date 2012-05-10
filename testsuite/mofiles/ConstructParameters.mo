@@ -69,6 +69,6 @@ end ConstructParameters;
 // class ConstructParameters
 //   parameter Real p1 = 2.0;
 //   parameter Real p2 = 3.0;
-//   protected parameter Real p3 = fc(p1,p2);
+//   protected parameter Real p3 = fc(p1, p2);
 // end ConstructParameters;
 // endResult

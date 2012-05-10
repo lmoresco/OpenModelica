@@ -58,7 +58,7 @@ end PartialFn5;
 //   input Real rin;
 //   output Real rout;
 // algorithm
-//   rout := PartialFn5.ApplyRealOp(PartialFn5.ceil_,rin);
+//   rout := PartialFn5.ApplyRealOp(PartialFn5.ceil_, rin);
 // end PartialFn5.TestApplyRealOp;
 // 
 // function PartialFn5.ceil_

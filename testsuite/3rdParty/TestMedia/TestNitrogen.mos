@@ -73,7 +73,7 @@ simulate(TestMedia.TestModels.TestNitrogen); getErrorString();
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at temperature T\";
 // algorithm
-//   h := if T < data.Tlimit then (data.R * (T * (data.blow[1] + data.alow[2] * log(T) + T * (data.alow[3] + T * (0.5 * data.alow[4] + T * (0.3333333333333333 * data.alow[5] + T * (0.25 * data.alow[6] + 0.2 * data.alow[7] * T))))) - data.alow[1])) / T else (data.R * (T * (data.bhigh[1] + data.ahigh[2] * log(T) + T * (data.ahigh[3] + T * (0.5 * data.ahigh[4] + T * (0.3333333333333333 * data.ahigh[5] + T * (0.25 * data.ahigh[6] + 0.2 * data.ahigh[7] * T))))) - data.ahigh[1])) / T + if exclEnthForm then -data.Hf else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K then data.H0 else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_off else 0.0;
+//   h := (if T < data.Tlimit then data.R * (T * (data.blow[1] + data.alow[2] * log(T) + T * (data.alow[3] + T * (0.5 * data.alow[4] + T * (0.3333333333333333 * data.alow[5] + T * (0.25 * data.alow[6] + 0.2 * data.alow[7] * T))))) - data.alow[1]) / T else data.R * (T * (data.bhigh[1] + data.ahigh[2] * log(T) + T * (data.ahigh[3] + T * (0.5 * data.ahigh[4] + T * (0.3333333333333333 * data.ahigh[5] + T * (0.25 * data.ahigh[6] + 0.2 * data.ahigh[7] * T))))) - data.ahigh[1]) / T) + (if exclEnthForm then -data.Hf else 0.0) + (if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K then data.H0 else 0.0) + (if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_off else 0.0);
 // end TestMedia.TestModels.TestNitrogen.Medium.h_T;
 // 
 // function TestMedia.TestModels.TestNitrogen.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X\"
@@ -82,14 +82,14 @@ simulate(TestMedia.TestModels.TestNitrogen); getErrorString();
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output TestMedia.TestModels.TestNitrogen.Medium.ThermodynamicState state;
 // algorithm
-//   state := TestMedia.TestModels.TestNitrogen.Medium.ThermodynamicState(p,T);
+//   state := TestMedia.TestModels.TestNitrogen.Medium.ThermodynamicState(p, T);
 // end TestMedia.TestModels.TestNitrogen.Medium.setState_pTX;
 // 
 // function TestMedia.TestModels.TestNitrogen.Medium.specificEnthalpy \"Return specific enthalpy\"
 //   input TestMedia.TestModels.TestNitrogen.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := TestMedia.TestModels.TestNitrogen.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.4543111511,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,0.00001384646189,-0.00000000962579362,0.000000000002519705809},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,0.0000001491806679,-0.00000000001923105485,0.000000000000001061954386},{12832.10415,-15.86640027},296.8033869505308),state.T,true,TestMedia.TestModels.TestNitrogen.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := TestMedia.TestModels.TestNitrogen.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\", 0.0280134, 0.0, 309498.4543111511, 1000.0, {22103.71497, -381.846182, 6.08273836, -0.00853091441, 0.00001384646189, -0.00000000962579362, 0.000000000002519705809}, {710.846086, -10.76003744}, {587712.406, -2239.249073, 6.06694922, -0.00061396855, 0.0000001491806679, -0.00000000001923105485, 0.000000000000001061954386}, {12832.10415, -15.86640027}, 296.8033869505308), state.T, true, TestMedia.TestModels.TestNitrogen.Medium.Choices.ReferenceEnthalpy.ZeroAt0K, 0.0);
 // end TestMedia.TestModels.TestNitrogen.Medium.specificEnthalpy;
 // 
 // class TestMedia.TestModels.TestNitrogen
@@ -102,7 +102,7 @@ simulate(TestMedia.TestModels.TestNitrogen); getErrorString();
 // equation
 //   T = 300.0 + 300.0 * time;
 //   p = 100000.0;
-//   state = TestMedia.TestModels.TestNitrogen.Medium.setState_pTX(p,T,{1.0});
+//   state = TestMedia.TestModels.TestNitrogen.Medium.setState_pTX(p, T, {1.0});
 //   d = TestMedia.TestModels.TestNitrogen.Medium.density(state);
 //   h = TestMedia.TestModels.TestNitrogen.Medium.specificEnthalpy(state);
 // end TestMedia.TestModels.TestNitrogen;

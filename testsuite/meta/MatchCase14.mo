@@ -21,7 +21,7 @@ end MatchCase14;
 //   input Integer i;
 //   output Integer outInt;
 // algorithm
-//   outInt := match (i) 
+//   outInt := match (i)
 //     case (-3) then -3;
 //   end match;
 // end MatchCase14.fn;

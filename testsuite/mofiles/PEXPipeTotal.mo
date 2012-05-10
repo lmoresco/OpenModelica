@@ -1052,25 +1052,25 @@ end Toneco_PEXPipe;
 //   output Real T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0, start = T0) "outlet temperature of medium";
 // initial algorithm
 //   assert(V_flowNominal > V_flowLaminar, "SimpleFriction: V_flowNominal has to be > V_flowLaminar!");
-//   k := (V_flowNominal * dpLaminar) / V_flowLaminar;
+//   k := V_flowNominal * dpLaminar / V_flowLaminar;
 //   assert(dpNominal >= k, "SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!");
 //   k := (dpNominal - k) / (V_flowNominal - V_flowLaminar) ^ 2.0;
 // equation
 //   VolumeFlow = V_flow;
-//   dp = pressureDrop + 9.80665 * (medium.rho * h_g);
+//   dp = pressureDrop + 9.80665 * medium.rho * h_g;
 //   Q_flow = Q_friction;
 //   flowPort_a.m_flow + flowPort_b.m_flow = 0.0;
-//   flowPort_a.H_flow + (flowPort_b.H_flow + Q_flow) = m * (medium.cv * der(T));
-//   flowPort_a.H_flow = semiLinear(flowPort_a.m_flow,flowPort_a.h,h);
-//   flowPort_b.H_flow = semiLinear(flowPort_b.m_flow,flowPort_b.h,h);
+//   flowPort_a.H_flow + flowPort_b.H_flow + Q_flow = m * medium.cv * der(T);
+//   flowPort_a.H_flow = semiLinear(flowPort_a.m_flow, flowPort_a.h, h);
+//   flowPort_b.H_flow = semiLinear(flowPort_b.m_flow, flowPort_b.h, h);
 //   if VolumeFlow > V_flowLaminar then
-//   pressureDrop = (VolumeFlow * dpLaminar) / V_flowLaminar + k * (VolumeFlow - V_flowLaminar) ^ 2.0;
-//   elseif VolumeFlow < -V_flowLaminar then
-//   pressureDrop = (VolumeFlow * dpLaminar) / V_flowLaminar - k * (VolumeFlow + V_flowLaminar) ^ 2.0;
+//   pressureDrop = VolumeFlow * dpLaminar / V_flowLaminar + k * (VolumeFlow - V_flowLaminar) ^ 2.0;
+//   elseif VolumeFlow < (-V_flowLaminar) then
+//   pressureDrop = VolumeFlow * dpLaminar / V_flowLaminar - k * (VolumeFlow + V_flowLaminar) ^ 2.0;
 //   else
-//   pressureDrop = (VolumeFlow * dpLaminar) / V_flowLaminar;
+//   pressureDrop = VolumeFlow * dpLaminar / V_flowLaminar;
 //   end if;
-//   Q_friction = frictionLoss * (VolumeFlow * pressureDrop);
+//   Q_friction = frictionLoss * VolumeFlow * pressureDrop;
 //   flowPort_a.H_flow = 0.0;
 //   flowPort_a.m_flow = 0.0;
 //   flowPort_b.H_flow = 0.0;

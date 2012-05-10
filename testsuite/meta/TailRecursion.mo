@@ -68,7 +68,7 @@ end TailRecursion;
 //   input Real x;
 //   output Real y;
 // algorithm
-//   y := match (x) 
+//   y := match (x)
 //     case (x) then if x > 200000.0 then x else TailRecursion.matchShadowing(1.0 + x);
 //   end match;
 // end TailRecursion.matchShadowing;
@@ -77,7 +77,7 @@ end TailRecursion;
 //   input Real x;
 //   output Real y;
 // algorithm
-//   y := match (realString(x)) 
+//   y := match (realString(x))
 //     case ("200000.5") then 200000.5;
 //     case ("200000.0") then 200000.0;
 //     case (_) then TailRecursion.match_(1.0 + x);

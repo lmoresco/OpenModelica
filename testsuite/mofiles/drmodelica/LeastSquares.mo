@@ -34,9 +34,9 @@ end LeastSquares;
 // function ls
 //   input Real[:, :] A;
 //   input Real[:, :] B;
-//   output Real[size(A,1), size(A,2)] Ares = A;
-//   output Real[size(A,2), size(B,2)] x;
-//   protected Integer lwork = min(size(A,1),size(A,2)) + 32 * max(max(size(A,1),size(A,2)),size(B,2));
+//   output Real[size(A, 1), size(A, 2)] Ares = A;
+//   output Real[size(A, 2), size(B, 2)] x;
+//   protected Integer lwork = min(size(A, 1), size(A, 2)) + 32 * max(max(size(A, 1), size(A, 2)), size(B, 2));
 //   protected Integer info;
 //   protected String transposed = "NNNN";
 //   protected Real[lwork] work;
@@ -58,6 +58,6 @@ end LeastSquares;
 //   Real x[2,1];
 //   Real x[2,2];
 // equation
-//   (x,_) = ls({{in1[1,1],in1[1,2]},{in1[2,1],in1[2,2]}},{{in2[1,1],in2[1,2]},{in2[2,1],in2[2,2]}});
+//   (x, _) = ls({{in1[1,1], in1[1,2]}, {in1[2,1], in1[2,2]}}, {{in2[1,1], in2[1,2]}, {in2[2,1], in2[2,2]}});
 // end LeastSquares;
 // endResult

@@ -22,13 +22,13 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton); 
 //   output Boolean y \"Value of y at simulationStartTime\";
 //   protected Real t_last(quantity = \"Time\", unit = \"s\");
 //   protected Integer j;
-//   protected Integer n = size(table,1) \"Number of table points\";
+//   protected Integer n = size(table, 1) \"Number of table points\";
 // algorithm
-//   if size(table,1) == 0 then
+//   if size(table, 1) == 0 then
 //     index := 0;
 //     nextTime := -1e+60;
 //     y := startValue;
-//   elseif size(table,1) == 1 then
+//   elseif size(table, 1) == 1 then
 //     index := 1;
 //     if table[1] > simulationStartTime then
 //       nextTime := table[1];
@@ -40,7 +40,7 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton); 
 //   else
 //     t_last := table[1];
 //     for i in 2:n loop
-//       assert( table[i] > t_last, \"Time values of table not strict monotonically increasing: table[\" + String(i + -1,0,true) + \"] = \" + String(table[i + -1],0,true,6) + \"table[\" + String(i,0,true) + \"] = \" + String(table[i],0,true,6));
+//       assert( table[i] > t_last, \"Time values of table not strict monotonically increasing: table[\" + String(i + -1, 0, true) + \"] = \" + String(table[i + -1], 0, true, 6) + \"table[\" + String(i, 0, true) + \"] = \" + String(table[i], 0, true, 6));
 //     end for;
 //     j := 1;
 //     y := startValue;
@@ -77,9 +77,9 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton); 
 //   parameter Real table.table[1](quantity = \"Time\", unit = \"s\") = buttonTimeTable[1] \"Vector of time points. At every time point, the output y gets its opposite value (e.g. table={0,1})\";
 //   protected Real table.nextTime(quantity = \"Time\", unit = \"s\");
 //   protected Integer table.index \"Index of actual table entry\";
-//   protected parameter Integer table.n = size(table.table,1) \"Number of table points\";
+//   protected parameter Integer table.n = size(table.table, 1) \"Number of table points\";
 // initial algorithm
-//   (table.index, table.nextTime, table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex(table.table,time,table.startValue);
+//   (table.index, table.nextTime, table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex(table.table, time, table.startValue);
 // algorithm
 //   when time >= pre(table.nextTime) and table.n > 0 then
 //     if table.index < table.n then

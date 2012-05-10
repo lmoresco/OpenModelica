@@ -59,7 +59,7 @@ end A;
 //   protected parameter Real cp.y;
 //   protected parameter Real cp.z;
 // equation
-//   cp.red + (cp.blue + cp.green) = 1.0;
+//   cp.red + cp.blue + cp.green = 1.0;
 //   a = cp.x;
 // end A;
 // Warning: Parameter cp.x has neither value nor start value, and is fixed during initialization (fixed=true)

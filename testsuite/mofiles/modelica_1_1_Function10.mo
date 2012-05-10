@@ -45,6 +45,6 @@ end Function10;
 //   Real y;
 //   Real z;
 // equation
-//   (x,y,z) = (1.0,2.0,3.0);
+//   (x, y, z) = (1.0, 2.0, 3.0);
 // end Function10;
 // endResult

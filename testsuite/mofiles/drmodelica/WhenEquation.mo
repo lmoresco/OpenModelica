@@ -26,7 +26,7 @@ end WhenEquation;
 //   x = time - y2;
 //   when x > 2.0 then
 //   y1 = sin(x);
-//   y3 = 2.0 * x + (y1 + y2);
+//   y3 = 2.0 * x + y1 + y2;
 //   end when;
 // end WhenEquation;
 // endResult

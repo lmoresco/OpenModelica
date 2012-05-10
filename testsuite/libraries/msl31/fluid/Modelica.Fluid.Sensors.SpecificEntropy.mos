@@ -49,7 +49,7 @@ checkModel(Modelica.Fluid.Sensors.SpecificEntropy); getErrorString();
 //   Real port.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Specific entropy in port medium\";
 // equation
-//   s = Modelica.Fluid.Sensors.SpecificEntropy.Medium.specificEntropy(Modelica.Fluid.Sensors.SpecificEntropy.Medium.setState_phX(port.p,port.h_outflow,{}));
+//   s = Modelica.Fluid.Sensors.SpecificEntropy.Medium.specificEntropy(Modelica.Fluid.Sensors.SpecificEntropy.Medium.setState_phX(port.p, port.h_outflow, {}));
 //   port.m_flow = 0.0;
 //   port.h_outflow = 0.0;
 //   port.m_flow = 0.0;

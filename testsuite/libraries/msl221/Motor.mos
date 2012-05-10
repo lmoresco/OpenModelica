@@ -164,10 +164,10 @@ getErrorString();
 //   Tcore.T = Modelica.SIunits.Conversions.to_degC(Tcore.port.T);
 //   Tcore.port.Q_flow = 0.0;
 //   assert(true,\"tableOnFile = false and parameter table is an empty matrix\");
-//   lossTable.y[1] = lossTable.p_offset[1] + Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo(lossTable.tableID,lossTable.columns[1],time);
-//   lossTable.y[2] = lossTable.p_offset[2] + Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo(lossTable.tableID,lossTable.columns[2],time);
+//   lossTable.y[1] = lossTable.p_offset[1] + Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo(lossTable.tableID, lossTable.columns[1], time);
+//   lossTable.y[2] = lossTable.p_offset[2] + Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo(lossTable.tableID, lossTable.columns[2], time);
 //   when initial() then
-//   lossTable.tableID = Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit(0.0,lossTable.startTime,lossTable.smoothness,lossTable.extrapolation,if not lossTable.tableOnFile then \"NoName\" else lossTable.tableName,if not lossTable.tableOnFile then \"NoName\" else lossTable.fileName,{{lossTable.table[1,1],lossTable.table[1,2],lossTable.table[1,3]},{lossTable.table[2,1],lossTable.table[2,2],lossTable.table[2,3]},{lossTable.table[3,1],lossTable.table[3,2],lossTable.table[3,3]},{lossTable.table[4,1],lossTable.table[4,2],lossTable.table[4,3]}},0);
+//   lossTable.tableID = Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit(0.0, lossTable.startTime, lossTable.smoothness, lossTable.extrapolation, if not lossTable.tableOnFile then \"NoName\" else lossTable.tableName, if not lossTable.tableOnFile then \"NoName\" else lossTable.fileName, {{lossTable.table[1,1], lossTable.table[1,2], lossTable.table[1,3]}, {lossTable.table[2,1], lossTable.table[2,2], lossTable.table[2,3]}, {lossTable.table[3,1], lossTable.table[3,2], lossTable.table[3,3]}, {lossTable.table[4,1], lossTable.table[4,2], lossTable.table[4,3]}}, 0);
 //   end when;
 //   winding.T = winding.port.T;
 //   winding.C * der(winding.T) = winding.port.Q_flow;

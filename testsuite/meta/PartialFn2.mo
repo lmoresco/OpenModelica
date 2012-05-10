@@ -78,7 +78,7 @@ end PartialFn2;
 //   input Integer i;
 //   output Integer outInt;
 // algorithm
-//   outInt := unbox(inFuncFunc(inFunc,#(i)));
+//   outInt := unbox(inFuncFunc(inFunc, #(i)));
 // end PartialFn2.ApplyApplyIntOp;
 // 
 // function PartialFn2.ApplyIntOp
@@ -93,7 +93,7 @@ end PartialFn2;
 //   input Integer i1;
 //   output Integer out;
 // algorithm
-//   out := PartialFn2.ApplyApplyIntOp(PartialFn2.ApplyIntOp,PartialFn2.AddInt,i1);
+//   out := PartialFn2.ApplyApplyIntOp(PartialFn2.ApplyIntOp, PartialFn2.AddInt, i1);
 // end PartialFn2.TestApplyApplyIntOp;
 // 
 // class PartialFn2

@@ -36,7 +36,7 @@ checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 //   input Real x_small(min = 0.0) = 0.00001 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
 //   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
 // algorithm
-//   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
+//   y := smooth(1, if x > x_small then y1 else if x < (-x_small) then y2 else if abs(x_small) > 0.0 then (y2 - y1) * (-3.0 + (x / x_small) ^ 2.0) * x / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
 // end Modelica.Media.Common.smoothStep;
 // 
 // function Modelica.Media.Examples.IdealGasH2O.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.IdealGasH2O.Medium.ThermodynamicState\"
@@ -69,7 +69,7 @@ checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 //   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at temperature T\";
 // algorithm
-//   h := if T < data.Tlimit then (data.R * (T * (data.blow[1] + data.alow[2] * log(T) + T * (data.alow[3] + T * (0.5 * data.alow[4] + T * (0.3333333333333333 * data.alow[5] + T * (0.25 * data.alow[6] + 0.2 * data.alow[7] * T))))) - data.alow[1])) / T else (data.R * (T * (data.bhigh[1] + data.ahigh[2] * log(T) + T * (data.ahigh[3] + T * (0.5 * data.ahigh[4] + T * (0.3333333333333333 * data.ahigh[5] + T * (0.25 * data.ahigh[6] + 0.2 * data.ahigh[7] * T))))) - data.ahigh[1])) / T + if exclEnthForm then -data.Hf else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K then data.H0 else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_off else 0.0;
+//   h := (if T < data.Tlimit then data.R * (T * (data.blow[1] + data.alow[2] * log(T) + T * (data.alow[3] + T * (0.5 * data.alow[4] + T * (0.3333333333333333 * data.alow[5] + T * (0.25 * data.alow[6] + 0.2 * data.alow[7] * T))))) - data.alow[1]) / T else data.R * (T * (data.bhigh[1] + data.ahigh[2] * log(T) + T * (data.ahigh[3] + T * (0.5 * data.ahigh[4] + T * (0.3333333333333333 * data.ahigh[5] + T * (0.25 * data.ahigh[6] + 0.2 * data.ahigh[7] * T))))) - data.ahigh[1]) / T) + (if exclEnthForm then -data.Hf else 0.0) + (if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K then data.H0 else 0.0) + (if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_off else 0.0);
 // end Modelica.Media.Examples.IdealGasH2O.Medium.h_T;
 // 
 // function Modelica.Media.Examples.IdealGasH2O.Medium.isentropicEnthalpyApproximation \"approximate method of calculating h_is from upstream properties and downstream pressure\"
@@ -81,7 +81,7 @@ checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 //   output Real h_is(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"isentropic enthalpy\";
 //   protected Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1.0, max = 500000.0, start = 1.2, nominal = 1.2) = Modelica.Media.Examples.IdealGasH2O.Medium.isentropicExponent(state) \"Isentropic exponent\";
 // algorithm
-//   h_is := Modelica.Media.Examples.IdealGasH2O.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.81725291,549760.6476280135,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-0.00000734255737,0.00000000495504349,-0.000000000001336933246},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-0.0000006836830479999999,0.00000000009426468930000001,-0.00000000000000482238053},{-13842.86509,-7.97814851},461.5233290850878),state.T,exclEnthForm,refChoice,h_off) + (-1.0 + (p2 / state.p) ^ (-1.0 + gamma / gamma) * state.p * gamma) / (Modelica.Media.Examples.IdealGasH2O.Medium.density(state) * (-1.0 + gamma));
+//   h_is := Modelica.Media.Examples.IdealGasH2O.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\", 0.01801528, -13423382.81725291, 549760.6476280135, 1000.0, {-39479.6083, 575.573102, 0.931782653, 0.00722271286, -0.00000734255737, 0.00000000495504349, -0.000000000001336933246}, {-33039.7431, 17.24205775}, {1034972.096, -2412.698562, 4.64611078, 0.002291998307, -0.0000006836830479999999, 0.00000000009426468930000001, -0.00000000000000482238053}, {-13842.86509, -7.97814851}, 461.5233290850878), state.T, exclEnthForm, refChoice, h_off) + (-1.0 + (p2 / state.p) ^ ((-1.0 + gamma) / gamma)) * state.p * gamma / (Modelica.Media.Examples.IdealGasH2O.Medium.density(state) * (-1.0 + gamma));
 // end Modelica.Media.Examples.IdealGasH2O.Medium.isentropicEnthalpyApproximation;
 // 
 // function Modelica.Media.Examples.IdealGasH2O.Medium.isentropicExponent \"Return isentropic exponent\"
@@ -110,7 +110,7 @@ checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Specific entropy at temperature T\";
 // algorithm
-//   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + (-0.5 * data.alow[1]) / T ^ 2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.3333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + (-0.5 * data.ahigh[1]) / T ^ 2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.3333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
+//   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + -0.5 * data.alow[1] / T ^ 2.0 + (-data.alow[2]) / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.3333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + -0.5 * data.ahigh[1] / T ^ 2.0 + (-data.ahigh[2]) / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.3333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
 // end Modelica.Media.Examples.IdealGasH2O.Medium.s0_T;
 // 
 // function Modelica.Media.Examples.IdealGasH2O.Medium.setSmoothState \"Return thermodynamic state so that it smoothly approximates: if x > 0 then state_a else state_b\"
@@ -120,35 +120,35 @@ checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 //   input Real x_small(min = 0.0) \"Smooth transition in the region -x_small < x < x_small\";
 //   output Modelica.Media.Examples.IdealGasH2O.Medium.ThermodynamicState state \"Smooth thermodynamic state for all x (continuous and differentiable)\";
 // algorithm
-//   state := Modelica.Media.Examples.IdealGasH2O.Medium.ThermodynamicState(Modelica.Media.Common.smoothStep(x,state_a.p,state_b.p,x_small),Modelica.Media.Common.smoothStep(x,state_a.T,state_b.T,x_small));
+//   state := Modelica.Media.Examples.IdealGasH2O.Medium.ThermodynamicState(Modelica.Media.Common.smoothStep(x, state_a.p, state_b.p, x_small), Modelica.Media.Common.smoothStep(x, state_a.T, state_b.T, x_small));
 // end Modelica.Media.Examples.IdealGasH2O.Medium.setSmoothState;
 // 
 // function Modelica.Media.Examples.IdealGasH2O.Medium.specificEntropy \"Return specific entropy\"
 //   input Modelica.Media.Examples.IdealGasH2O.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
 // algorithm
-//   s := Modelica.Media.Examples.IdealGasH2O.Medium.s0_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.81725291,549760.6476280135,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-0.00000734255737,0.00000000495504349,-0.000000000001336933246},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-0.0000006836830479999999,0.00000000009426468930000001,-0.00000000000000482238053},{-13842.86509,-7.97814851},461.5233290850878),state.T) + -461.5233290850878 * log(state.p / 101325.0);
+//   s := Modelica.Media.Examples.IdealGasH2O.Medium.s0_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\", 0.01801528, -13423382.81725291, 549760.6476280135, 1000.0, {-39479.6083, 575.573102, 0.931782653, 0.00722271286, -0.00000734255737, 0.00000000495504349, -0.000000000001336933246}, {-33039.7431, 17.24205775}, {1034972.096, -2412.698562, 4.64611078, 0.002291998307, -0.0000006836830479999999, 0.00000000009426468930000001, -0.00000000000000482238053}, {-13842.86509, -7.97814851}, 461.5233290850878), state.T) + -461.5233290850878 * log(state.p / 101325.0);
 // end Modelica.Media.Examples.IdealGasH2O.Medium.specificEntropy;
 // 
 // function Modelica.Media.Examples.IdealGasH2O.Medium.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
 //   input Modelica.Media.Examples.IdealGasH2O.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
 // algorithm
-//   cp := Modelica.Media.Examples.IdealGasH2O.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.81725291,549760.6476280135,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-0.00000734255737,0.00000000495504349,-0.000000000001336933246},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-0.0000006836830479999999,0.00000000009426468930000001,-0.00000000000000482238053},{-13842.86509,-7.97814851},461.5233290850878),state.T);
+//   cp := Modelica.Media.Examples.IdealGasH2O.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\", 0.01801528, -13423382.81725291, 549760.6476280135, 1000.0, {-39479.6083, 575.573102, 0.931782653, 0.00722271286, -0.00000734255737, 0.00000000495504349, -0.000000000001336933246}, {-33039.7431, 17.24205775}, {1034972.096, -2412.698562, 4.64611078, 0.002291998307, -0.0000006836830479999999, 0.00000000009426468930000001, -0.00000000000000482238053}, {-13842.86509, -7.97814851}, 461.5233290850878), state.T);
 // end Modelica.Media.Examples.IdealGasH2O.Medium.specificHeatCapacityCp;
 // 
 // function Modelica.Media.Examples.IdealGasH2O.Medium.specificHeatCapacityCv \"Compute specific heat capacity at constant volume from temperature and gas data\"
 //   input Modelica.Media.Examples.IdealGasH2O.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
 // algorithm
-//   cv := Modelica.Media.Examples.IdealGasH2O.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.81725291,549760.6476280135,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-0.00000734255737,0.00000000495504349,-0.000000000001336933246},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-0.0000006836830479999999,0.00000000009426468930000001,-0.00000000000000482238053},{-13842.86509,-7.97814851},461.5233290850878),state.T) + -461.5233290850878;
+//   cv := Modelica.Media.Examples.IdealGasH2O.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\", 0.01801528, -13423382.81725291, 549760.6476280135, 1000.0, {-39479.6083, 575.573102, 0.931782653, 0.00722271286, -0.00000734255737, 0.00000000495504349, -0.000000000001336933246}, {-33039.7431, 17.24205775}, {1034972.096, -2412.698562, 4.64611078, 0.002291998307, -0.0000006836830479999999, 0.00000000009426468930000001, -0.00000000000000482238053}, {-13842.86509, -7.97814851}, 461.5233290850878), state.T) + -461.5233290850878;
 // end Modelica.Media.Examples.IdealGasH2O.Medium.specificHeatCapacityCv;
 // 
 // function Modelica.Media.Examples.IdealGasH2O.Medium.velocityOfSound \"Return velocity of sound\"
 //   input Modelica.Media.Examples.IdealGasH2O.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0.0, max = 100000.0, start = 1000.0, nominal = 1000.0) \"Velocity of sound\";
 // algorithm
-//   a := sqrt(max(0.0,(461.5233290850878 * state.T * Modelica.Media.Examples.IdealGasH2O.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.81725291,549760.6476280135,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-0.00000734255737,0.00000000495504349,-0.000000000001336933246},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-0.0000006836830479999999,0.00000000009426468930000001,-0.00000000000000482238053},{-13842.86509,-7.97814851},461.5233290850878),state.T)) / Modelica.Media.Examples.IdealGasH2O.Medium.specificHeatCapacityCv(state)));
+//   a := sqrt(max(0.0, 461.5233290850878 * state.T * Modelica.Media.Examples.IdealGasH2O.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\", 0.01801528, -13423382.81725291, 549760.6476280135, 1000.0, {-39479.6083, 575.573102, 0.931782653, 0.00722271286, -0.00000734255737, 0.00000000495504349, -0.000000000001336933246}, {-33039.7431, 17.24205775}, {1034972.096, -2412.698562, 4.64611078, 0.002291998307, -0.0000006836830479999999, 0.00000000009426468930000001, -0.00000000000000482238053}, {-13842.86509, -7.97814851}, 461.5233290850878), state.T) / Modelica.Media.Examples.IdealGasH2O.Medium.specificHeatCapacityCv(state)));
 // end Modelica.Media.Examples.IdealGasH2O.Medium.velocityOfSound;
 // 
 // function Modelica.Media.IdealGases.Common.DataRecord \"Automatically generated record constructor for Modelica.Media.IdealGases.Common.DataRecord\"
@@ -184,7 +184,7 @@ checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 //   Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0.0, max = 100000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.IdealGasH2O.Medium.velocityOfSound(state);
 //   Real beta = Modelica.Media.Examples.IdealGasH2O.Medium.isobaricExpansionCoefficient(state);
 //   Real gamma = Modelica.Media.Examples.IdealGasH2O.Medium.isothermalCompressibility(state);
-//   Real h_is(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = Modelica.Media.Examples.IdealGasH2O.Medium.isentropicEnthalpyApproximation(2.0,state,true,Modelica.Media.Examples.IdealGasH2O.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   Real h_is(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = Modelica.Media.Examples.IdealGasH2O.Medium.isentropicEnthalpyApproximation(2.0, state, true, Modelica.Media.Examples.IdealGasH2O.Medium.Choices.ReferenceEnthalpy.ZeroAt0K, 0.0);
 //   Real smoothState.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
 //   Real smoothState.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
 //   Real m_flow_ext;
@@ -196,7 +196,7 @@ checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 //   state2.p = 200000.0;
 //   state2.T = 500.0;
 //   m_flow_ext = time + -0.5;
-//   smoothState = Modelica.Media.Examples.IdealGasH2O.Medium.setSmoothState(m_flow_ext,state,state2,0.1);
+//   smoothState = Modelica.Media.Examples.IdealGasH2O.Medium.setSmoothState(m_flow_ext, state, state2, 0.1);
 //   der_p = der(smoothState.p);
 //   der_T = der(smoothState.T);
 // end Modelica.Media.Examples.IdealGasH2O;

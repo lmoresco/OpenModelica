@@ -25,6 +25,6 @@ end Color2;
 //   parameter Real blue = 0.6;
 //   Real green;
 // equation
-//   red + (blue + green) = 1.0;
+//   red + blue + green = 1.0;
 // end Color2;
 // endResult

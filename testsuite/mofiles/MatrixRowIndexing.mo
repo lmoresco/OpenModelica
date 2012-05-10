@@ -34,7 +34,7 @@ end MatrixRowIndexing;
 // Result:
 // function callMe
 //   input Real[:] a;
-//   output Real[size(a,1)] b;
+//   output Real[size(a, 1)] b;
 // algorithm
 //   b := a;
 // end callMe;
@@ -102,6 +102,6 @@ end MatrixRowIndexing;
 //   c[4] = 14.0;
 //   c[5] = 15.0;
 // algorithm
-//   d := {16.0,17.0,18.0,19.0,20.0};
+//   d := {16.0, 17.0, 18.0, 19.0, 20.0};
 // end MatrixRowIndexing;
 // endResult

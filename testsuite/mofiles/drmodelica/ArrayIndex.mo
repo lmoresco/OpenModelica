@@ -30,7 +30,7 @@ end ArrayIndex;
 //   Real B[2,2];
 //   Real c;
 // algorithm
-//   B := {{1.0,1.0},{1.0,1.0}};
+//   B := {{1.0, 1.0}, {1.0, 1.0}};
 //   B[2,1] := 8.0;
 //   c := A[1,1];
 // end ArrayIndex;

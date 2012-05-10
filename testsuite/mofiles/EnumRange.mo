@@ -47,7 +47,7 @@ end EnumRange;
 //   Real B[EnumRange.E2.f];
 // equation
 //   a = A[Package1.Package2.E.one] + A[Package1.Package2.E.two];
-//   b = B[EnumRange.E2.b] + (B[EnumRange.E2.c] + (B[EnumRange.E2.d] + B[EnumRange.E2.e]));
-//   c = C[Test.E3.x] + (C[Test.E3.y] + C[Test.E3.z]);
+//   b = B[EnumRange.E2.b] + B[EnumRange.E2.c] + B[EnumRange.E2.d] + B[EnumRange.E2.e];
+//   c = C[Test.E3.x] + C[Test.E3.y] + C[Test.E3.z];
 // end EnumRange;
 // endResult

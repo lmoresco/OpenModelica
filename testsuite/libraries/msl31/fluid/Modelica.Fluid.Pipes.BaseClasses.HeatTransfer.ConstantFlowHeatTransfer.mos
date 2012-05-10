@@ -67,7 +67,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfe
 //   input Real dimensions[1](quantity = \"Length\", unit = \"m\") \"Characteristic dimensions for fluid flow (diameter for pipe flow)\";
 //   input Real roughnesses[1](quantity = \"Length\", unit = \"m\", min = 0.0) \"Average heights of surface asperities\";
 // equation
-//   Q_flows[1] = alpha0 * (surfaceAreas[1] * ((heatPorts[1].T - Ts[1]) * nParallel));
+//   Q_flows[1] = alpha0 * surfaceAreas[1] * (heatPorts[1].T - Ts[1]) * nParallel;
 //   Q_flows[1] = heatPorts[1].Q_flow;
 //   heatPorts[1].Q_flow = 0.0;
 // end Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfer;

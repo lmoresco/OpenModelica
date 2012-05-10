@@ -19,13 +19,13 @@ getErrorString();
 //   output Boolean y \"Value of y at simulationStartTime\";
 //   protected Real t_last(quantity = \"Time\", unit = \"s\");
 //   protected Integer j;
-//   protected Integer n = size(table,1) \"Number of table points\";
+//   protected Integer n = size(table, 1) \"Number of table points\";
 // algorithm
-//   if size(table,1) == 0 then
+//   if size(table, 1) == 0 then
 //     index := 0;
 //     nextTime := -1e+60;
 //     y := startValue;
-//   elseif size(table,1) == 1 then
+//   elseif size(table, 1) == 1 then
 //     index := 1;
 //     if table[1] > simulationStartTime then
 //       nextTime := table[1];
@@ -37,7 +37,7 @@ getErrorString();
 //   else
 //     t_last := table[1];
 //     for i in 2:n loop
-//       assert( table[i] > t_last, \"Time values of table not strict monotonically increasing: table[\" + String(i + -1,0,true) + \"] = \" + String(table[i + -1],0,true,6) + \"table[\" + String(i,0,true) + \"] = \" + String(table[i],0,true,6));
+//       assert( table[i] > t_last, \"Time values of table not strict monotonically increasing: table[\" + String(i + -1, 0, true) + \"] = \" + String(table[i + -1], 0, true, 6) + \"table[\" + String(i, 0, true) + \"] = \" + String(table[i], 0, true, 6));
 //     end for;
 //     j := 1;
 //     y := startValue;
@@ -98,8 +98,8 @@ getErrorString();
 // initial equation
 //   pre(Pre1.u) = Pre1.pre_u_start;
 // initial algorithm
-//   (table2.index, table2.nextTime, table2.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({table2.table[1],table2.table[2],table2.table[3],table2.table[4]},time,table2.startValue);
-//   (table1.index, table1.nextTime, table1.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({table1.table[1],table1.table[2],table1.table[3],table1.table[4]},time,table1.startValue);
+//   (table2.index, table2.nextTime, table2.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({table2.table[1], table2.table[2], table2.table[3], table2.table[4]}, time, table2.startValue);
+//   (table1.index, table1.nextTime, table1.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({table1.table[1], table1.table[2], table1.table[3], table1.table[4]}, time, table1.startValue);
 // equation
 //   Not1.y = not Not1.u;
 //   And1.y = And1.u1 and And1.u2;

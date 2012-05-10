@@ -200,7 +200,7 @@ end Test;
 //   input Complex c2 "Complex number 2";
 //   output Complex c3 "= c1*c2";
 // algorithm
-//   c3 := Complex(c1.re * c2.re - c1.im * c2.im,c1.re * c2.im + c1.im * c2.re);
+//   c3 := Complex(c1.re * c2.re - c1.im * c2.im, c1.re * c2.im + c1.im * c2.re);
 // end Complex.'*'.multiply;
 // 
 // function Complex.'+' "Add two complex numbers"
@@ -208,14 +208,14 @@ end Test;
 //   input Complex c2 "Complex number 2";
 //   output Complex c3 "= c1 + c2";
 // algorithm
-//   c3 := Complex(c1.re + c2.re,c1.im + c2.im);
+//   c3 := Complex(c1.re + c2.re, c1.im + c2.im);
 // end Complex.'+';
 // 
 // function Complex.'-'.negate "Unary minus (multiply complex number by -1)"
 //   input Complex c1 "Complex number";
 //   output Complex c2 "= -c1";
 // algorithm
-//   c2 := Complex(-c1.re,-c1.im);
+//   c2 := Complex(-c1.re, -c1.im);
 // end Complex.'-'.negate;
 // 
 // function Complex.'-'.subtract "Subtract two complex numbers"
@@ -223,7 +223,7 @@ end Test;
 //   input Complex c2 "Complex number 2";
 //   output Complex c3 "= c1 - c2";
 // algorithm
-//   c3 := Complex(c1.re - c2.re,c1.im - c2.im);
+//   c3 := Complex(c1.re - c2.re, c1.im - c2.im);
 // end Complex.'-'.subtract;
 // 
 // function Complex.'/' "Divide two complex numbers"
@@ -231,7 +231,7 @@ end Test;
 //   input Complex c2 "Complex number 2";
 //   output Complex c3 "= c1/c2";
 // algorithm
-//   c3 := Complex((c1.re * c2.re + c1.im * c2.im) / (c2.re ^ 2.0 + c2.im ^ 2.0),(-c1.re * c2.im + c1.im * c2.re) / (c2.re ^ 2.0 + c2.im ^ 2.0));
+//   c3 := Complex((c1.re * c2.re + c1.im * c2.im) / (c2.re ^ 2.0 + c2.im ^ 2.0), ((-c1.re) * c2.im + c1.im * c2.re) / (c2.re ^ 2.0 + c2.im ^ 2.0));
 // end Complex.'/';
 // 
 // function Complex.'==' "Test whether two complex numbers are identical"
@@ -248,14 +248,14 @@ end Test;
 //   input Integer significantDigits = 6 "Number of significant digits that are shown";
 //   output String s = " ";
 // algorithm
-//   s := String(c.re,0,true,significantDigits);
+//   s := String(c.re, 0, true, significantDigits);
 //   if c.im <> 0.0 then
 //     if c.im > 0.0 then
 //       s := s + " + ";
 //     else
 //       s := s + " - ";
 //     end if;
-//     s := s + String(abs(c.im),0,true,significantDigits) + "*" + name;
+//     s := s + String(abs(c.im), 0, true, significantDigits) + "*" + name;
 //   end if;
 // end Complex.'String';
 // 
@@ -264,11 +264,11 @@ end Test;
 //   input Complex c2 "Complex exponent";
 //   output Complex c3 "= c1^c2";
 //   protected Real lnz = 0.5 * log(c1.re ^ 2.0 + c1.im ^ 2.0);
-//   protected Real phi = atan2(c1.im,c1.re);
+//   protected Real phi = atan2(c1.im, c1.re);
 //   protected Real re = lnz * c2.re - phi * c2.im;
 //   protected Real im = lnz * c2.im + phi * c2.re;
 // algorithm
-//   c3 := Complex(exp(re) * cos(im),exp(re) * sin(im));
+//   c3 := Complex(exp(re) * cos(im), exp(re) * sin(im));
 // end Complex.'^';
 // 
 // function Complex.'and' "Test whether two complex numbers are identical"
@@ -282,14 +282,14 @@ end Test;
 // function Complex.'constructor'.fromReal "Construct Complex from Real"
 //   input Real re "Real part of complex number";
 //   input Real im = 0.0 "Imaginary part of complex number";
-//   output Complex result = Complex(re,im) "Complex number";
+//   output Complex result = Complex(re, im) "Complex number";
 // end Complex.'constructor'.fromReal;
 // 
 // function Complex.'not' "not (multiply complex number by -1)"
 //   input Complex c1 "Complex number";
 //   output Complex c2 "= -c1";
 // algorithm
-//   c2 := Complex(-c1.re,-c1.im);
+//   c2 := Complex(-c1.re, -c1.im);
 // end Complex.'not';
 // 
 // class Test
@@ -313,15 +313,15 @@ end Test;
 // equation
 //   c1.im = 0.0;
 //   c1.re = 1.0;
-//   c2 = Complex.'+'(c1,Complex.'constructor'.fromReal(1.0,0.0));
+//   c2 = Complex.'+'(c1, Complex.'constructor'.fromReal(1.0, 0.0));
 //   c3 = Complex.'-'.negate(c2);
-//   c4 = Complex.'^'(c1,c2);
+//   c4 = Complex.'^'(c1, c2);
 //   c5 = Complex.'not'(c4);
-//   b = Complex.'and'(c1,c2);
-//   s = Complex.'String'(c1,"j",5);
-//   b2 = Complex.'=='(c4,Complex.'constructor'.fromReal(0.0,0.0));
-//   c6 = Complex.'*'.multiply(c5,c4);
-//   c7 = Complex.'-'.subtract(Complex.'+'(Complex.'*'.multiply(Complex.'*'.multiply(Complex.'/'(c6,c5),Complex.'^'(c4,c3)),Complex.'constructor'.fromReal(1.0,0.0)),c2),c1);
+//   b = Complex.'and'(c1, c2);
+//   s = Complex.'String'(c1, "j", 5);
+//   b2 = Complex.'=='(c4, Complex.'constructor'.fromReal(0.0, 0.0));
+//   c6 = Complex.'*'.multiply(c5, c4);
+//   c7 = Complex.'-'.subtract(Complex.'+'(Complex.'*'.multiply(Complex.'*'.multiply(Complex.'/'(c6, c5), Complex.'^'(c4, c3)), Complex.'constructor'.fromReal(1.0, 0.0)), c2), c1);
 // end Test;
 // [OperatorOverloadComplex.mo:169:4-169:21:writable] Error: Function argument im was not given by the function call, and does not have a default value.
 // 

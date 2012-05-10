@@ -84,7 +84,7 @@ end ComplexUser;
 //   Real w.re;
 //   Real w.im;
 // equation
-//   z = ComplexNumbers.Multiply(a,b);
-//   z = ComplexNumbers.Add(a,b);
+//   z = ComplexNumbers.Multiply(a, b);
+//   z = ComplexNumbers.Add(a, b);
 // end ComplexUser;
 // endResult

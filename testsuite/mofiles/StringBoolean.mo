@@ -27,6 +27,6 @@ end StringBoolean;
 //   s1 = "true";
 //   s2 = "false";
 //   b = true;
-//   s3 = String(b,0,true);
+//   s3 = String(b, 0, true);
 // end StringBoolean;
 // endResult

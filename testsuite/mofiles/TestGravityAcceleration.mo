@@ -118,7 +118,7 @@ end TestGravityAcceleration;
 // function Math.normalize "Return normalized vector such that length = 1Return normalized vector such that length = 1 and prevent zero-division for zero vector"
 //   input Real[:] v "Vector";
 //   input Real eps = 0.0000000000001 "if |v| < eps then result = v/eps";
-//   output Real[size(v,1)] result "Input vector v normalized to length=1";
+//   output Real[size(v, 1)] result "Input vector v normalized to length=1";
 // algorithm
 //   result := if Math.length(v) >= eps then v / Math.length(v) else v / eps;
 // end Math.normalize;
@@ -130,7 +130,7 @@ end TestGravityAcceleration;
 //   input Real mue(unit = "m3/s2") "Field constant of point gravity field, if gravityType=2";
 //   output Real[3] gravity "Gravity acceleration at point r, resolved in world frame";
 // algorithm
-//   gravity := if gravityType == Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Types.GravityTypes.PointGravity then {(-mue * r[1]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(-mue * r[2]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(-mue * r[3]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
+//   gravity := if gravityType == Types.GravityTypes.UniformGravity then {g[1], g[2], g[3]} else if gravityType == Types.GravityTypes.PointGravity then {(-mue) * r[1] / (Math.length({r[1], r[2], r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)), (-mue) * r[2] / (Math.length({r[1], r[2], r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)), (-mue) * r[3] / (Math.length({r[1], r[2], r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0, 0.0, 0.0};
 // end TestGravityAcceleration.w__gravityAcceleration;
 // 
 // class TestGravityAcceleration
@@ -144,6 +144,6 @@ end TestGravityAcceleration;
 //   Real gravity[2];
 //   Real gravity[3];
 // equation
-//   gravity = TestGravityAcceleration.w__gravityAcceleration({1.0,5.0,6.0},w.gravityType,Math.normalize({w.n[1],w.n[2],w.n[3]},0.0000000000001) * w.g,w.mue);
+//   gravity = TestGravityAcceleration.w__gravityAcceleration({1.0, 5.0, 6.0}, w.gravityType, Math.normalize({w.n[1], w.n[2], w.n[3]}, 0.0000000000001) * w.g, w.mue);
 // end TestGravityAcceleration;
 // endResult

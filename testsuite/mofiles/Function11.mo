@@ -41,6 +41,6 @@ end test;
 // equation
 //   x[1] = y[1];
 //   x[2] = y[2];
-//   b = equal({x[1],x[2]},{y[1],y[2]},0.000001);
+//   b = equal({x[1], x[2]}, {y[1], y[2]}, 0.000001);
 // end test;
 // endResult

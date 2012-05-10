@@ -18,7 +18,7 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller); getEr
 //   output Boolean result;
 // algorithm
 //   result := true;
-//   for i in 1:size(b,1) loop
+//   for i in 1:size(b, 1) loop
 //     result := result and b[i];
 //   end for;
 // end Modelica.StateGraph.Temporary.allTrue;
@@ -28,7 +28,7 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller); getEr
 //   output Boolean result;
 // algorithm
 //   result := false;
-//   for i in 1:size(b,1) loop
+//   for i in 1:size(b, 1) loop
 //     result := result or b[i];
 //   end for;
 // end Modelica.StateGraph.Temporary.anyTrue;
@@ -769,8 +769,8 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller); getEr
 //   Parallel1.split[2].set = Parallel1.inPort.set;
 //   Parallel1.join[1].reset = Parallel1.outPort.reset;
 //   Parallel1.join[2].reset = Parallel1.outPort.reset;
-//   Parallel1.inPort.occupied = Modelica.StateGraph.Temporary.anyTrue({Parallel1.split[1].occupied,Parallel1.split[2].occupied});
-//   Parallel1.outPort.available = Modelica.StateGraph.Temporary.allTrue({Parallel1.join[1].available,Parallel1.join[2].available});
+//   Parallel1.inPort.occupied = Modelica.StateGraph.Temporary.anyTrue({Parallel1.split[1].occupied, Parallel1.split[2].occupied});
+//   Parallel1.outPort.available = Modelica.StateGraph.Temporary.allTrue({Parallel1.join[1].available, Parallel1.join[2].available});
 //   Step7.stateGraphRoot.suspend = Step7.stateGraphRoot.subgraphStatePort.suspend;
 //   Step7.stateGraphRoot.resume = Step7.stateGraphRoot.subgraphStatePort.resume;
 //   Step7.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;

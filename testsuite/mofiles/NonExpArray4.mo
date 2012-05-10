@@ -15,7 +15,7 @@ end Array4;
 // Result:
 // class Array4
 //   parameter Integer p;
-//   Real y[1:p](start = fill(0.0,p));
+//   Real y[1:p](start = fill(0.0, p));
 // end Array4;
 // Warning: Parameter p has neither value nor start value, and is fixed during initialization (fixed=true)
 // 
