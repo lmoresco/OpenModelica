@@ -9144,7 +9144,10 @@ algorithm
         ret_0 = Flags.isSet(Flags.WRITE_TO_BUFFER);
         txt = fun_232(txt, ret_0, i_simCode, i_allEquations);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("}\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "}\n",
+                                    " saveAll();\n"
+                                }, true));
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("}"));
         txt = Tpl.popBlock(txt);
@@ -24917,7 +24920,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Nested array subscripting *should* have been handled by the routine creating the asub, but for some reason it was not: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4138, 11), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4139, 11), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -24956,7 +24959,7 @@ algorithm
         txt_6 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("ASUB_EASY_CASE "));
         ret_6 = ExpressionDump.printExpStr(i_exp);
         txt_6 = Tpl.writeStr(txt_6, ret_6);
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4167, 11), Tpl.textString(txt_6));
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4168, 11), Tpl.textString(txt_6));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -24999,7 +25002,7 @@ algorithm
         txt_12 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("OTHER_ASUB "));
         ret_12 = ExpressionDump.printExpStr(i_exp);
         txt_12 = Tpl.writeStr(txt_12, ret_12);
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4185, 11), Tpl.textString(txt_12));
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 4186, 11), Tpl.textString(txt_12));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_634;
@@ -31710,7 +31713,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 5310, 12), "algStmtTupleAssign failed");
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 5311, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
@@ -33889,28 +33892,35 @@ algorithm
         txt = Tpl.writeText(txt, a_zeroCrossingsCode);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " while(restart && !(iter++ > _dimZeroFunc))\n",
-                                    "{\n"
+                                    "\n",
+                                    "\n",
+                                    "\n",
+                                    "while(restart && !(iter++ > 15))\n",
+                                    "{\n",
+                                    "\n"
                                 }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(11));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("double h["));
         txt = helpvarlength(txt, i_simCode);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("];\n"));
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(8));
         txt = helpvarvector(txt, i_whenClauses, i_simCode);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "     _event_handling.setHelpVars(h);\n",
-                                    "    //iterate and handle all events inside the eventqueue\n",
-                                    "    restart=_event_handling.IterateEventQueue(_conditions1);\n",
-                                    "\n"
+                                    " _event_handling.setHelpVars(h);\n",
+                                    "//iterate and handle all events inside the eventqueue\n",
+                                    "restart=_event_handling.IterateEventQueue(_conditions1);\n"
                                 }, true));
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "       saveAll();\n",
                                     " }\n",
+                                    "\n",
                                     " saveConditions();\n",
                                     " resetTimeEvents();\n",
                                     "if(iter>_dimZeroFunc && restart ){\n",
-                                    " throw std::runtime_error(\"Number of event iteration steps exceeded. \");}\n"
+                                    " throw std::runtime_error(\"Number of event iteration steps exceeded. \" );}\n"
                                 }, true));
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("}"));
@@ -36099,7 +36109,7 @@ algorithm
         txt = Tpl.writeText(txt, a_varDecls);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " saveAll();\n",
+                                    "\n",
                                     "if(IContinous::RANKING) checkConditions(0,true);\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
