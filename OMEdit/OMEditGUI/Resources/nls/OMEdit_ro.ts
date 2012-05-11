@@ -1949,7 +1949,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotMainWindow.cpp" line="69"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Închidere</translation>
     </message>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotMainWindow.cpp" line="73"/>
@@ -1959,7 +1959,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</source>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotMainWindow.cpp" line="89"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Fișier</translation>
     </message>
     <message>
         <location filename="../../../../OMPlot/OMPlotGUI/PlotMainWindow.cpp" line="97"/>
