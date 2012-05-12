@@ -10695,7 +10695,7 @@ algorithm
         ret_12 = Flags.isSet(Flags.GEN_DEBUG_SYMBOLS);
         ret_13 = boolOr(ret_11, ret_12);
         txt = fun_264(txt, ret_13);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -lSimulationRuntimeC "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -lSimulationRuntimeC -ldl"));
         ret_14 = Config.acceptMetaModelicaGrammar();
         ret_15 = Flags.isSet(Flags.GEN_DEBUG_SYMBOLS);
         ret_16 = boolOr(ret_14, ret_15);
