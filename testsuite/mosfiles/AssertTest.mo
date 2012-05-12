@@ -8,14 +8,19 @@
 class AssertTest
   parameter Real lowlimit   = -5;
   parameter Real highlimit   =  5;
-  parameter Real x = 7;
+  Real x = 7;
 equation
   assert(x >= lowlimit and x <= highlimit, "Variable x out of limit");
 end AssertTest; 
 
 class AssertTestInst
-  AssertTest assertTest(lowlimit = -2, highlimit = 6, x = 5);
+  AssertTest assertTest(lowlimit = -2, highlimit = 6);
 end AssertTestInst;
+
+class AssertTestDuringInst
+equation
+  assert(false, "Testing assert during instantiation");
+end AssertTestDuringInst;
 
 // class AssertTestInst
 // parameter Real assertTest.lowlimit = -2;

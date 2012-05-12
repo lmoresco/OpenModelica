@@ -10,24 +10,23 @@
 // 
 
 loadFile("AssertTest2.mo");
-echo(false); // turns of output
+
 simulate(Test2,startTime = 0, stopTime=10, tolerance=1e-5); // 2 intervals == 3 values
-//getErrorString(); // simulation failed, check error string.
-size:=readSimulationResultSize("Test2_res.mat");
-res:=readSimulationResult("Test2_res.mat",{assertTest.x},size); 
-x := res[1,1];
-echo(true); // turns on output
-x;
+getErrorString(); // simulation failed, check error string.
+
 system("rm -rf Test2_* Test2.exe Test2.cpp Test2.makefile Test2.libs Test2.log output.log"); // remove tmp files.
+
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Test2_res.mat"
-// end SimulationResult;
-// true
-// 0.0
-// "Variable x out of limit
-// Simulation terminated at time 0
+//     resultFile = "Test2_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = "[AssertTest2.mo:13:3-13:70:writable] warning | Simulation call assert() at time 0.020000
+// Level : error
+// Message : Variable x out of limit
+// info    | model terminate | Simulation terminated at time 0.02
 // "
+// end SimulationResult;
+// ""
 // 0
 // endResult

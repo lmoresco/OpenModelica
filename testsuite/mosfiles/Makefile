@@ -19,6 +19,9 @@ ArrayFromRange.mos \
 ArrayReduce.mos \
 ArrayParameterSize.mos \
 ArraySlice.mos \
+AssertTest.mos \
+AssertTest1.mos \
+AssertTest2.mos \
 AsubCrefExpType.mos \
 ASubIfExp.mos \
 BooleanArray.mos \

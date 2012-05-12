@@ -8,7 +8,7 @@
 class AssertTest
   parameter Real lowlimit;
   parameter Real highlimit;
-  Real x = 5;
+  Real x = 10;
 equation
   assert(x >= lowlimit and x <= highlimit, "Variable x out of limit");
 end AssertTest;
