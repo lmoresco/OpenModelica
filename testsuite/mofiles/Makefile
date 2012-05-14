@@ -536,6 +536,8 @@ Reductions.mo \
 reinit.mo \
 ReinitArray.mo \
 ReinitInvalidType.mo \
+ReinitInvalidType2.mo \
+ReinitInvalidType3.mo \
 Rem.mo \
 ReturnError.mo \
 SampleError.mo \

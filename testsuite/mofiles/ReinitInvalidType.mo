@@ -15,7 +15,7 @@ end ReinitInvalidType;
 
 // Result:
 // Error processing file: ReinitInvalidType.mo
-// [ReinitInvalidType.mo:12:5-12:20:writable] Error: The first argument to reinit must be a subtype of Real in reinit of b.
+// [ReinitInvalidType.mo:12:5-12:20:writable] Error: The first argument to reinit must be a subtype of Real, but b has type Boolean.
 // Error: Error occurred while flattening model ReinitInvalidType
 // 
 // # Error encountered! Exiting...
