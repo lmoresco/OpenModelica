@@ -8,7 +8,7 @@ runScript("LoadCompilerSources.mos");
 loadFile("DumpTest.mo");getErrorString();
 
 echo(false);
-body:=Absyn.PARTS({},{},NONE());
+body:=Absyn.PARTS({},{},{},NONE());
 restr:=Absyn.R_FUNCTION(Absyn.FR_NORMAL_FUNCTION());
 prog:=Absyn.PROGRAM({Absyn.CLASS("dummyClass",true,true,true,restr,body,Absyn.dummyInfo)},Absyn.TOP(),Absyn.dummyTimeStamp);
 echo(true);
