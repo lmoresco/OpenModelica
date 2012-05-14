@@ -944,8 +944,8 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ":AlgLoopDefaultImplementation()\n",
                                     ",_residuals(NULL)\n",
-                                    ",_z(z)\n",
-                                    ",_zDot(zDot)\n",
+                                    ",__z(z)\n",
+                                    ",__zDot(zDot)\n",
                                     ",_event_handling(event_handling)\n"
                                 }, true));
         txt = alocateLinearSystem(txt, i_eq);
@@ -1040,8 +1040,8 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ":AlgLoopDefaultImplementation()\n",
                                     ",_residuals(NULL)\n",
-                                    ",_z(z)\n",
-                                    ",_zDot(zDot)\n",
+                                    ",__z(z)\n",
+                                    ",__zDot(zDot)\n",
                                     ",_event_handling(event_handling)\n"
                                 }, true));
         txt = alocateLinearSystem(txt, i_eq);
@@ -9896,9 +9896,9 @@ algorithm
                                     "  Functions _functions;\n",
                                     "  double         *_residuals;        ///< Auxillary variables\n",
                                     "  //states\n",
-                                    "  double* _z;\n",
+                                    "  double* __z;\n",
                                     "  //state derivatives\n",
-                                    "  double* _zDot;\n",
+                                    "  double* __zDot;\n",
                                     "  // A matrix\n",
                                     "  boost::multi_array<double,2> _A;\n",
                                     "  //b vector\n",
@@ -9965,9 +9965,9 @@ algorithm
                                     "  Functions _functions;\n",
                                     "  double         *_residuals;        ///< Auxillary variables\n",
                                     "  //states\n",
-                                    "  double* _z;\n",
+                                    "  double* __z;\n",
                                     "  //state derivatives\n",
-                                    "  double* _zDot;\n",
+                                    "  double* __zDot;\n",
                                     "  // A matrix\n",
                                     "  boost::multi_array<double,2> _A;\n",
                                     "  //b vector\n",
@@ -18484,7 +18484,7 @@ algorithm
         txt = numIntAlgvar(txt, a_modelInfo);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" +"));
         txt = numBoolAlgvar(txt, a_modelInfo);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")=_z["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")=__z["));
         txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]; "));
         txt = Tpl.popBlock(txt);
@@ -18526,7 +18526,7 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("v2("));
         txt = Tpl.writeStr(txt, intString(x_i4));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")=_zDot["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")=__zDot["));
         txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]; "));
         txt = Tpl.popBlock(txt);
@@ -18726,7 +18726,7 @@ algorithm
     case ( txt,
            SimCode.SIMVAR(index = i_index, name = i_name) :: rest )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_event_handling.save(_z["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_event_handling.save(__z["));
         txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("],\""));
         txt = cref(txt, i_name);
@@ -21638,7 +21638,7 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(144));
         txt = CallAlgloopParams(txt, i_modelInfo);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ",_z,_zDot,_event_handling\n",
+                                    ",__z,__zDot,_event_handling\n",
                                     ")\n"
                                 }, true));
         txt = Tpl.popBlock(txt);
@@ -21695,7 +21695,7 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(144));
         txt = CallAlgloopParams(txt, i_modelInfo);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ",_z,_zDot,_event_handling\n",
+                                    ",__z,__zDot,_event_handling\n",
                                     ")\n"
                                 }, true));
         txt = Tpl.popBlock(txt);
@@ -29447,7 +29447,7 @@ algorithm
            _ )
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_z["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("__z["));
         txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("] "));
         txt = Tpl.popBlock(txt);
@@ -29511,7 +29511,7 @@ algorithm
     case ( txt,
            SimCode.SIMVAR(index = i_index) )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_zDot["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("__zDot["));
         txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
       then txt;
@@ -33899,22 +33899,22 @@ algorithm
                                     "{\n",
                                     "\n"
                                 }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(11));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(5));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("double h["));
         txt = helpvarlength(txt, i_simCode);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("];\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(8));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
         txt = helpvarvector(txt, i_whenClauses, i_simCode);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " _event_handling.setHelpVars(h);\n",
-                                    "//iterate and handle all events inside the eventqueue\n",
-                                    "restart=_event_handling.IterateEventQueue(_conditions1);\n"
+                                    "   _event_handling.setHelpVars(h);\n",
+                                    "  //iterate and handle all events inside the eventqueue\n",
+                                    "  restart=_event_handling.IterateEventQueue(_conditions1);\n",
+                                    " saveAll();\n"
                                 }, true));
         txt = Tpl.popBlock(txt);
+        txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "       saveAll();\n",
                                     " }\n",
                                     "\n",
                                     " saveConditions();\n",
@@ -36814,7 +36814,7 @@ algorithm
            a_modelInfo )
       equation
         x_myindex = Tpl.getIteri_i0(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_z["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("__z["));
         txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]=variables("));
         txt = numAlgvars(txt, a_modelInfo);
@@ -36856,7 +36856,7 @@ algorithm
            SimCode.SIMVAR(index = i_index) :: rest )
       equation
         x_myindex = Tpl.getIteri_i0(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_zDot["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("__zDot["));
         txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]=variables2("));
         txt = Tpl.writeStr(txt, intString(x_myindex));
