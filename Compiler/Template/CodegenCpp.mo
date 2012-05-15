@@ -1434,7 +1434,7 @@ algorithm
       equation
         (l_expPart, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_eq_exp, SimCode.contextSimulationNonDiscrete, a_preExp, a_varDecls, a_simCode);
         txt = Tpl.writeText(txt, a_preExp);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_A["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("__A["));
         txt = Tpl.writeStr(txt, intString(i_row));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]["));
         txt = Tpl.writeStr(txt, intString(i_col));
@@ -1495,7 +1495,7 @@ algorithm
         x_i0 = Tpl.getIteri_i0(txt);
         (l_expPart, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_exp, SimCode.contextSimulationNonDiscrete, a_preExp, a_varDecls, a_simCode);
         txt = Tpl.writeText(txt, a_preExp);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_b["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("__b["));
         txt = Tpl.writeStr(txt, intString(x_i0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]="));
         txt = Tpl.writeText(txt, l_expPart);
@@ -7593,7 +7593,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "::giveAMatrix(double* A_matrix)\n",
                                     "{\n",
-                                    "     memcpy(A_matrix,_A.data(),_dim[0]*_dim[0]*sizeof(double));\n",
+                                    "     memcpy(A_matrix,__A.data(),_dim[0]*_dim[0]*sizeof(double));\n",
                                     "}"
                                 }, false));
         txt = Tpl.popBlock(txt);
@@ -7686,7 +7686,7 @@ algorithm
                                     "::giveRHS(double* doubleResiduals, int* intResiduals, bool* boolResiduals)\n",
                                     "{\n",
                                     "    if(doubleResiduals)\n",
-                                    "    memcpy(doubleResiduals,_b.data(),_dim[0]*sizeof(double));\n",
+                                    "    memcpy(doubleResiduals,__b.data(),_dim[0]*sizeof(double));\n",
                                     "}"
                                 }, false));
         txt = Tpl.popBlock(txt);
@@ -7778,13 +7778,13 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "::giveResiduals(double* doubleResiduals, int* intResiduals, bool* boolResiduals)\n",
                                     "{\n",
-                                    "    ublas::matrix<double> A=toMatrix(_dim[0],_dim[0],_A.data());\n",
+                                    "    ublas::matrix<double> A=toMatrix(_dim[0],_dim[0],__A.data());\n",
                                     "    double* doubleUnknowns = new double[_dim[0]];\n",
                                     "    int* intUnknowns = new int[_dim[1]];\n",
                                     "    bool* boolUnknowns = new bool[_dim[2]];\n",
                                     "    giveVars(doubleUnknowns,intUnknowns,boolUnknowns);\n",
                                     "    ublas::vector<double> x=toVector(_dim[0],doubleUnknowns);\n",
-                                    "    ublas::vector<double> b=toVector(_dim[0],_b.data());\n",
+                                    "    ublas::vector<double> b=toVector(_dim[0],__b.data());\n",
                                     "    b=ublas::prod(ublas::trans(A),x)-b;\n",
                                     "    if(doubleResiduals) std::copy(b.data().begin(), b.data().end(), doubleResiduals);\n",
                                     "}"
@@ -7989,7 +7989,7 @@ algorithm
       equation
         x_i0 = Tpl.getIteri_i0(txt);
         l_namestr = cref1(Tpl.emptyTxt, i_name, a_simCode);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_xd["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("__xd["));
         txt = Tpl.writeStr(txt, intString(x_i0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = "));
         txt = Tpl.writeText(txt, l_namestr);
@@ -8046,7 +8046,7 @@ algorithm
       equation
         (l_expPart, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_eq_exp, SimCode.contextSimulationNonDiscrete, a_preExp, a_varDecls, a_simCode);
         txt = Tpl.writeText(txt, a_preExp);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_A["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("__A["));
         txt = Tpl.writeStr(txt, intString(i_row));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]["));
         txt = Tpl.writeStr(txt, intString(i_col));
@@ -8107,7 +8107,7 @@ algorithm
         x_i0 = Tpl.getIteri_i0(txt);
         (l_expPart, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_exp, SimCode.contextSimulationNonDiscrete, a_preExp, a_varDecls, a_simCode);
         txt = Tpl.writeText(txt, a_preExp);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_b["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("__b["));
         txt = Tpl.writeStr(txt, intString(x_i0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]="));
         txt = Tpl.writeText(txt, l_expPart);
@@ -8844,8 +8844,8 @@ algorithm
                                     ";\n",
                                     "_dim[1] = 0;\n",
                                     "_dim[2] = 0;\n",
-                                    "fill_array(_A,0.0);\n",
-                                    "fill_array(_b,0.0);"
+                                    "fill_array(__A,0.0);\n",
+                                    "fill_array(__b,0.0);"
                                 }, false));
         txt = Tpl.popBlock(txt);
       then txt;
@@ -8888,14 +8888,14 @@ algorithm
         ret_1 = listLength(i_vars);
         l_size = Tpl.writeStr(Tpl.emptyTxt, intString(ret_1));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",_A(boost::extents["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",__A(boost::extents["));
         txt = Tpl.writeText(txt, l_size);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]["));
         txt = Tpl.writeText(txt, l_size);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("],boost::fortran_storage_order())\n"));
         txt = Tpl.popBlock(txt);
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",_b(boost::extents["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",__b(boost::extents["));
         txt = Tpl.writeText(txt, l_size);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("])"));
         txt = Tpl.popBlock(txt);
@@ -9900,9 +9900,9 @@ algorithm
                                     "  //state derivatives\n",
                                     "  double* __zDot;\n",
                                     "  // A matrix\n",
-                                    "  boost::multi_array<double,2> _A;\n",
+                                    "  boost::multi_array<double,2> __A;\n",
                                     "  //b vector\n",
-                                    "  boost::multi_array<double,1> _b;\n"
+                                    "  boost::multi_array<double,1> __b;\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(3));
         txt = Tpl.writeText(txt, a_algvars);
@@ -9969,9 +9969,9 @@ algorithm
                                     "  //state derivatives\n",
                                     "  double* __zDot;\n",
                                     "  // A matrix\n",
-                                    "  boost::multi_array<double,2> _A;\n",
+                                    "  boost::multi_array<double,2> __A;\n",
                                     "  //b vector\n",
-                                    "  boost::multi_array<double,1> _b;\n"
+                                    "  boost::multi_array<double,1> __b;\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(3));
         txt = Tpl.writeText(txt, a_algvars);
@@ -16931,7 +16931,7 @@ algorithm
     case ( txt,
            DAE.CREF_IDENT(ident = "xloc", subscriptLst = i_subscriptLst) )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_xd"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("__xd"));
         txt = subscriptsStr(txt, i_subscriptLst);
       then txt;
 
