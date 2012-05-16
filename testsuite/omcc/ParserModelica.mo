@@ -105,7 +105,7 @@ algorithm
    while (List.isEmpty(tokens1)==false) loop
 	   if (debug) then 
 	     print("\nTokens remaining:");
-	     print(intString(listLength(tokens)));   
+	     print(intString(listLength(tokens1)));   
      end if;
     // printAny("\nTokens remaining:");
 	  // printAny(intString(listLength(tokens))); 

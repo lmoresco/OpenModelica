@@ -47,14 +47,14 @@ algorithm
   	    System.stopTimer();
   	    tl = System.getTimerIntervalTime();
   	    print("\n Time Lexer:" + realString(tl));
-  	    //print(OMCCTypes.printTokens(tokens,""));
+  	    print(OMCCTypes.printTokens(tokens,""));
   	    print("\n Tokens processed:");
   	    print(intString(listLength(tokens)));
   	    // call the parser
   	    
   	    System.startTimer();
   	   // printAny("\nstarting parser");
-  	    (result,astTreeModelica) = ParserModelica.parse(tokens,filename,false);
+  	    (result,astTreeModelica) = ParserModelica.parse(tokens,filename,true);
   	     System.stopTimer();
        //  print(str::args_1);
         tp = System.getTimerIntervalTime();
@@ -68,7 +68,7 @@ algorithm
   	     //print(unparsed);
   	     print("\n" +Error.printMessagesStr());
           print("\nSUCCEED");
-  	     System.writeFile(filename + "UnParsed.mo",Dump.unparseStr(astTreeModelica,true));
+  	    // System.writeFile(filename + "UnParsed.mo",Dump.unparseStr(astTreeModelica,true));
   	     //printAny(unparsed);
          else
             //print(Error.getMessagesStr());
