@@ -35704,7 +35704,9 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
         (txt, a_preExp, a_varDecls) = daeExp(txt, i_exp, a_context, a_preExp, a_varDecls);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")-1"));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpASubIndex;
