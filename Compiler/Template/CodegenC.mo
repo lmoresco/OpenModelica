@@ -10702,7 +10702,7 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("LDFLAGS=-L\""));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc\" $(LIBSIMULATIONRUNTIMEC) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc\" $(LIBSIMULATIONRUNTIMEC) -linteractive "));
         txt = Tpl.writeText(txt, l_ParModelicaLibs);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, i_makefileParams_ldflags);
@@ -10750,7 +10750,7 @@ algorithm
         txt = Tpl.writeText(txt, l_libsPos1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeText(txt, l_libsPos2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) -linteractive "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) "));
         ret_24 = System.os();
         txt = fun_269(txt, ret_24);
         txt = Tpl.softNewLine(txt);
