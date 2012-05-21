@@ -1,4 +1,8 @@
-getInstallationDirectoryPath();
+// name: OMCC
+// status: correct
+// cflags: +g=MetaModelica +d=rml
+
+// getInstallationDirectoryPath();
 loadFile("Types.mo");
 loadFile("../../Compiler/FrontEnd/Absyn.mo");
 loadFile("../../Compiler/Util/Error.mo");
@@ -25,12 +29,10 @@ loadFile("ParserModelica.mo");
 loadFile("ParseTableModelica.mo");
 loadFile("Main.mo");
 
-// add your test files here 
-Main.main({"../../testsuite/omcc_test/Test1.mo","Modelica"});
+// add your test files here
 
+{Main.main({"../../testsuite/omcc_test/" + file,"Modelica"}) for file in {"Test1.mo","Test2.mo","Test3.mo","Test4.mo"}};
 /*
-// uncomment to run these test files
-Main.main({"../../testsuite/omcc_test/Test2.mo","Modelica"});
 Main.main({"../../testsuite/omcc_test/Test3.mo","Modelica"});
 Main.main({"../../testsuite/omcc_test/Test4.mo","Modelica"});
 Main.main({"../../testsuite/omcc_test/Test5.mo","Modelica"});
@@ -98,10 +100,10 @@ Main.main({"../../Examples/SimpleIntegrator.mo","Modelica"});
 Main.main({"../../Examples/Switch.mo","Modelica"});
 Main.main({"../../Examples/VanDerPol.mo","Modelica"});
 Main.main({"../../Examples/visualize_3D_BouncingBall.mo","Modelica"});
-*/
 
 // run this to test the full modelica grammar
 // Main.main({"../../testsuite/omcc_test/fulltest.mo","Modelica"});
+*/
 
 
 getErrorString();
