@@ -10475,12 +10475,12 @@ algorithm
 
     case ( txt,
            false )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -ldl"));
       then txt;
 
     case ( txt,
            _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -Wl,-no-whole-archive"));
       then txt;
   end matchcontinue;
 end fun_265;
@@ -10498,12 +10498,12 @@ algorithm
 
     case ( txt,
            false )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -ldl"));
       then txt;
 
     case ( txt,
            _ )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -Wl,-no-whole-archive"));
       then txt;
   end matchcontinue;
 end fun_266;
@@ -10691,12 +10691,13 @@ algorithm
         ret_12 = Flags.isSet(Flags.GEN_DEBUG_SYMBOLS);
         ret_13 = boolOr(ret_11, ret_12);
         txt = fun_264(txt, ret_13);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-lSimulationRuntimeC"));
-        ret_14 = stringEq(i_makefileParams_platform, "win32");
-        txt = fun_265(txt, ret_14);
-        ret_15 = Config.acceptMetaModelicaGrammar();
-        ret_16 = Flags.isSet(Flags.GEN_DEBUG_SYMBOLS);
-        ret_17 = boolOr(ret_15, ret_16);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-lSimulationRuntimeC "));
+        ret_14 = Config.acceptMetaModelicaGrammar();
+        ret_15 = Flags.isSet(Flags.GEN_DEBUG_SYMBOLS);
+        ret_16 = boolOr(ret_14, ret_15);
+        txt = fun_265(txt, ret_16);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        ret_17 = stringEq(i_makefileParams_platform, "win32");
         txt = fun_266(txt, ret_17);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("LDFLAGS=-L\""));
@@ -10749,7 +10750,7 @@ algorithm
         txt = Tpl.writeText(txt, l_libsPos1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeText(txt, l_libsPos2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) -linteractive $(LDFLAGS) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) -linteractive "));
         ret_24 = System.os();
         txt = fun_269(txt, ret_24);
         txt = Tpl.softNewLine(txt);
