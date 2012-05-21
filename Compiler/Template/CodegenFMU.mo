@@ -7259,14 +7259,12 @@ algorithm
 
     case ( txt,
            false )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-llapack"));
       then txt;
 
     case ( txt,
            _ )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-llapack-mingw"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv"));
       then txt;
   end matchcontinue;
 end fun_208;
@@ -7294,29 +7292,6 @@ algorithm
   end matchcontinue;
 end fun_209;
 
-protected function fun_210
-  input Tpl.Text in_txt;
-  input Boolean in_mArg;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_mArg)
-    local
-      Tpl.Text txt;
-
-    case ( txt,
-           false )
-      then txt;
-
-    case ( txt,
-           _ )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv"));
-      then txt;
-  end matchcontinue;
-end fun_210;
-
 public function fmuMakefile
   input Tpl.Text in_txt;
   input SimCode.SimCode in_a_simCode;
@@ -7327,7 +7302,7 @@ algorithm
   matchcontinue(in_txt, in_a_simCode)
     local
       Tpl.Text txt;
-      String i_makefileParams_senddatalibs;
+      String i_makefileParams_runtimelibs;
       String i_makefileParams_ldflags;
       list<String> i_makefileParams_includes;
       String i_makefileParams_cflags;
@@ -7342,7 +7317,6 @@ algorithm
       Option<SimCode.SimulationSettings> i_sopt;
       list<String> i_makefileParams_libs;
       String i_modelInfo_directory;
-      Boolean ret_8;
       Boolean ret_7;
       Boolean ret_6;
       Tpl.Text l_compilecmds;
@@ -7353,7 +7327,7 @@ algorithm
       Tpl.Text l_dirExtra;
 
     case ( txt,
-           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, platform = i_makefileParams_platform, omhome = i_makefileParams_omhome, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, cflags = i_makefileParams_cflags, includes = i_makefileParams_includes, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), simulationSettingsOpt = i_sopt, fileNamePrefix = i_fileNamePrefix) )
+           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, platform = i_makefileParams_platform, omhome = i_makefileParams_omhome, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, cflags = i_makefileParams_cflags, includes = i_makefileParams_includes, ldflags = i_makefileParams_ldflags, runtimelibs = i_makefileParams_runtimelibs), simulationSettingsOpt = i_sopt, fileNamePrefix = i_fileNamePrefix) )
       equation
         l_dirExtra = fun_199(Tpl.emptyTxt, i_modelInfo_directory);
         l_libsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
@@ -7410,33 +7384,29 @@ algorithm
         txt = lm_207(txt, i_makefileParams_includes);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("SUNDIALSLIBS=-lsundials_kinsol -lsundials_nvecserial "));
-        ret_6 = stringEq(i_makefileParams_platform, "win32");
-        txt = fun_208(txt, ret_6);
-        txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("LDFLAGS=-L\""));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc\" -lSimulationRuntimeC -linteractive "));
         txt = Tpl.writeStr(txt, i_makefileParams_ldflags);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = Tpl.writeStr(txt, i_makefileParams_senddatalibs);
+        txt = Tpl.writeStr(txt, i_makefileParams_runtimelibs);
+        txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " $(SUNDIALSLIBS)\n",
                                     "PERL=perl\n",
                                     "MAINFILE="
                                 }, false));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU"));
-        ret_7 = Config.acceptMetaModelicaGrammar();
-        txt = fun_209(txt, ret_7);
+        ret_6 = Config.acceptMetaModelicaGrammar();
+        txt = fun_208(txt, ret_6);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".c\n",
                                     "MAINOBJ="
                                 }, false));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU"));
-        ret_8 = Config.acceptMetaModelicaGrammar();
-        txt = fun_210(txt, ret_8);
+        ret_7 = Config.acceptMetaModelicaGrammar();
+        txt = fun_209(txt, ret_7);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".o\n",
                                     "\n",
