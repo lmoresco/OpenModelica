@@ -580,9 +580,17 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytoplasm.y3_node.V = nucleus.y3_node.V;
 // end BioChem_Examples_CircadianOscillator_Container;
 // "
-// ""
+// "[ContainerSimple.mo:177:9-177:51:writable] Warning: Connecting two signal sources while connecting cytoplasm.y5_node.V to nucleus.y5_node.V.
+// [ContainerSimple.mo:178:9-178:51:writable] Warning: Connecting two signal sources while connecting nucleus.y6_node.V to cytoplasm.y6_node.V.
+// [ContainerSimple.mo:179:9-179:51:writable] Warning: Connecting two signal sources while connecting cytoplasm.y2_node.V to nucleus.y2_node.V.
+// [ContainerSimple.mo:180:9-180:51:writable] Warning: Connecting two signal sources while connecting nucleus.y3_node.V to cytoplasm.y3_node.V.
+// "
 // "Check of BioChem_Examples_CircadianOscillator_Container completed successfully.
 // 
+// [ContainerSimple.mo:177:9-177:51:writable] Warning: Connecting two signal sources while connecting cytoplasm.y5_node.V to nucleus.y5_node.V.
+// [ContainerSimple.mo:178:9-178:51:writable] Warning: Connecting two signal sources while connecting nucleus.y6_node.V to cytoplasm.y6_node.V.
+// [ContainerSimple.mo:179:9-179:51:writable] Warning: Connecting two signal sources while connecting cytoplasm.y2_node.V to nucleus.y2_node.V.
+// [ContainerSimple.mo:180:9-180:51:writable] Warning: Connecting two signal sources while connecting nucleus.y3_node.V to cytoplasm.y3_node.V.
 // 
 // Class BioChem_Examples_CircadianOscillator_Container has 252 equation(s) and 252 variable(s).
 // 175 of these are trivial equation(s).
@@ -1844,9 +1852,17 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytoplasm.y3_node.V = nucleus.y3_node.V;
 // end BioChem_Examples_CircadianOscillator_Container;
 // "
-// ""
+// "[ContainerTotal.mo:867:9-867:145:writable] Warning: Connecting two signal sources while connecting cytoplasm.y5_node.V to nucleus.y5_node.V.
+// [ContainerTotal.mo:868:9-868:144:writable] Warning: Connecting two signal sources while connecting nucleus.y6_node.V to cytoplasm.y6_node.V.
+// [ContainerTotal.mo:869:9-869:144:writable] Warning: Connecting two signal sources while connecting cytoplasm.y2_node.V to nucleus.y2_node.V.
+// [ContainerTotal.mo:870:9-870:145:writable] Warning: Connecting two signal sources while connecting nucleus.y3_node.V to cytoplasm.y3_node.V.
+// "
 // "Check of BioChem_Examples_CircadianOscillator_Container completed successfully.
 // 
+// [ContainerTotal.mo:867:9-867:145:writable] Warning: Connecting two signal sources while connecting cytoplasm.y5_node.V to nucleus.y5_node.V.
+// [ContainerTotal.mo:868:9-868:144:writable] Warning: Connecting two signal sources while connecting nucleus.y6_node.V to cytoplasm.y6_node.V.
+// [ContainerTotal.mo:869:9-869:144:writable] Warning: Connecting two signal sources while connecting cytoplasm.y2_node.V to nucleus.y2_node.V.
+// [ContainerTotal.mo:870:9-870:145:writable] Warning: Connecting two signal sources while connecting nucleus.y3_node.V to cytoplasm.y3_node.V.
 // 
 // Class BioChem_Examples_CircadianOscillator_Container has 252 equation(s) and 252 variable(s).
 // 175 of these are trivial equation(s).
@@ -1977,9 +1993,11 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   Endoplasmic_Reticulum.CaER_node.V = Jpump.p1.V;
 // end BioChem_Examples_CaOscillations_Cytosol;
 // "
-// ""
+// "[CytosolTotal.mo:862:9-862:228:writable] Warning: Connecting two signal sources while connecting Ca_Cyt.n1.V to Endoplasmic_Reticulum.Ca_Cyt_node.V.
+// "
 // "Check of BioChem_Examples_CaOscillations_Cytosol completed successfully.
 // 
+// [CytosolTotal.mo:862:9-862:228:writable] Warning: Connecting two signal sources while connecting Ca_Cyt.n1.V to Endoplasmic_Reticulum.Ca_Cyt_node.V.
 // 
 // Class BioChem_Examples_CaOscillations_Cytosol has 60 equation(s) and 60 variable(s).
 // 41 of these are trivial equation(s).
@@ -2032,6 +2050,10 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.CircadianOscillator.Container completed successfully.
 // 
+// [package.mo:1090:7-1090:143:writable] Warning: Connecting two signal sources while connecting cytoplasm.y5_node.V to nucleus.y5_node.V.
+// [package.mo:1091:7-1091:142:writable] Warning: Connecting two signal sources while connecting nucleus.y6_node.V to cytoplasm.y6_node.V.
+// [package.mo:1092:7-1092:142:writable] Warning: Connecting two signal sources while connecting cytoplasm.y2_node.V to nucleus.y2_node.V.
+// [package.mo:1093:7-1093:143:writable] Warning: Connecting two signal sources while connecting nucleus.y3_node.V to cytoplasm.y3_node.V.
 // 
 // Class BioChem.Examples.CircadianOscillator.Container has 252 equation(s) and 252 variable(s).
 // 175 of these are trivial equation(s).
@@ -2060,6 +2082,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.CaOscillations.Cytosol completed successfully.
 // 
+// [package.mo:2199:7-2199:225:writable] Warning: Connecting two signal sources while connecting Ca_Cyt.n1.V to endoplasmicReticulum.Ca_Cyt_node.V.
 // 
 // Class BioChem.Examples.CaOscillations.Cytosol has 60 equation(s) and 60 variable(s).
 // 41 of these are trivial equation(s).
@@ -2074,7 +2097,22 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel completed successfully.
 // 
+// [package.mo:2455:11-2455:115:writable] Warning: Connecting two signal sources while connecting Ra_calc.n1.V to Ra_connector.V.
+// [package.mo:2671:11-2671:145:writable] Warning: Connecting two signal sources while connecting G_t.n1.V to U_idm_connector.V.
+// [package.mo:2672:11-2672:144:writable] Warning: Connecting two signal sources while connecting G_t.n1.V to U_idf_connector.V.
+// [package.mo:2673:11-2673:110:writable] Warning: Connecting two signal sources while connecting G_t.n1.V to G_connector.V.
 // [package.mo:2645:11-2645:119:writable] Warning: connect(G_p_connector, G_p_connector) connects the same connector instance! The connect equation will be ignored.
+// [package.mo:2565:11-2565:141:writable] Warning: Connecting two signal sources while connecting G_p.n1.V to E_connector.V.
+// [package.mo:2566:11-2566:109:writable] Warning: Connecting two signal sources while connecting G_p.n1.V to G_connector.V.
+// [package.mo:2567:11-2567:134:writable] Warning: Connecting two signal sources while connecting G_p_signal.n1.V to G_p_connector.V.
+// [package.mo:2568:11-2568:124:writable] Warning: Connecting two signal sources while connecting G_signal.n1.V to G_signal_connector.V.
+// [package.mo:2530:11-2530:123:writable] Warning: Connecting two signal sources while connecting I_signal.n1.V to I_signal_connector.V.
+// [package.mo:2531:11-2531:149:writable] Warning: Connecting two signal sources while connecting I_p_signal.n1.V to I_p_connector.V.
+// [package.mo:2532:11-2532:110:writable] Warning: Connecting two signal sources while connecting I_p.n1.V to I_connector.V.
+// [package.mo:2589:11-2589:152:writable] Warning: Connecting two signal sources while connecting I_connector.V to I_l.n1.V.
+// [package.mo:2626:11-2626:117:writable] Warning: Connecting two signal sources while connecting EGP_calc.n1.V to EGP_connector.V.
+// [package.mo:2504:11-2504:122:writable] Warning: Connecting two signal sources while connecting I_po_connector.V to I_po_signal.n1.V.
+// [package.mo:2507:11-2507:146:writable] Warning: Connecting two signal sources while connecting S_calc.n1.V to S_connector.V.
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel has 687 equation(s) and 687 variable(s).
 // 511 of these are trivial equation(s).

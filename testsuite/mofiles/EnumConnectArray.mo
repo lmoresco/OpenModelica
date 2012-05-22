@@ -9,7 +9,7 @@ type TComponents = enumeration (AA, BB, CC);
 
 block TBlock
   input Real[TComponents] In;
-  input Real[TComponents] Out; 
+  output Real[TComponents] Out; 
 end TBlock;
 
 block EnumConnectArray
@@ -24,15 +24,15 @@ end EnumConnectArray;
 //   input Real Block1.In[TComponents.AA];
 //   input Real Block1.In[TComponents.BB];
 //   input Real Block1.In[TComponents.CC];
-//   input Real Block1.Out[TComponents.AA];
-//   input Real Block1.Out[TComponents.BB];
-//   input Real Block1.Out[TComponents.CC];
+//   output Real Block1.Out[TComponents.AA];
+//   output Real Block1.Out[TComponents.BB];
+//   output Real Block1.Out[TComponents.CC];
 //   input Real Block2.In[TComponents.AA];
 //   input Real Block2.In[TComponents.BB];
 //   input Real Block2.In[TComponents.CC];
-//   input Real Block2.Out[TComponents.AA];
-//   input Real Block2.Out[TComponents.BB];
-//   input Real Block2.Out[TComponents.CC];
+//   output Real Block2.Out[TComponents.AA];
+//   output Real Block2.Out[TComponents.BB];
+//   output Real Block2.Out[TComponents.CC];
 // equation
 //   Block1.Out[TComponents.AA] = Block2.In[TComponents.AA];
 //   Block1.Out[TComponents.BB] = Block2.In[TComponents.BB];
