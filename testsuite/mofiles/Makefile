@@ -349,6 +349,7 @@ FunctionProtectedInput.mo \
 FunctionReturn.mo \
 FunctionSimple.mo \
 FunctionSimplex.mo \
+FunctionVariability.mo \
 FunctionWithEquation.mo \
 GetInstanceName.mo \
 GreaterThanEqual.mo \
