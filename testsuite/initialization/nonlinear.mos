@@ -1,5 +1,5 @@
 // name: nonlinear
-// keywords: initialization, nonlinear
+// keywords: initialization, nonlinear, kinsol
 // status: correct
 // cflags:
 // teardown_command: rm -rf initializationTests.nonlinear_* _initializationTests.nonlinear_* output.log
@@ -35,13 +35,13 @@ end initializationTests;
 ");
 getErrorString();
 
-simulate(initializationTests.nonlinear_03, startTime=0.0, stopTime=0.0);
+simulate(initializationTests.nonlinear_03, startTime=0.0, stopTime=0.0, simflags="-iom kinsol");
 readFile("output.log");
 val(x[1], 0);
 val(x[2], 0);
 val(x[3], 0);
 
-simulate(initializationTests.nonlinear_05, startTime=0.0, stopTime=0.0);
+simulate(initializationTests.nonlinear_05, startTime=0.0, stopTime=0.0, simflags="-iom kinsol");
 readFile("output.log");
 val(x[1], 0);
 val(x[2], 0);
@@ -54,7 +54,7 @@ val(x[5], 0);
 // ""
 // record SimulationResult
 //     resultFile = "initializationTests.nonlinear_03_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.nonlinear_03', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.nonlinear_03', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = '-iom kinsol'",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -63,7 +63,7 @@ val(x[5], 0);
 // 3.0
 // record SimulationResult
 //     resultFile = "initializationTests.nonlinear_05_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.nonlinear_05', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0, numberOfIntervals = 500, tolerance = 0.000001, method = 'dassl', fileNamePrefix = 'initializationTests.nonlinear_05', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = '-iom kinsol'",
 //     messages = ""
 // end SimulationResult;
 // ""

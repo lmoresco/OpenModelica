@@ -29640,10 +29640,10 @@ algorithm
     local
       Tpl.Text txt;
       Absyn.Path a_modelInfo_name;
-      Integer i_varInfo_numInitEquations;
+      Integer i_varInfo_numInitialEquations;
 
     case ( txt,
-           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numInitEquations = i_varInfo_numInitEquations)),
+           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numInitialEquations = i_varInfo_numInitialEquations)),
            a_modelInfo_name )
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
@@ -29655,7 +29655,7 @@ algorithm
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(3));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("return "));
-        txt = Tpl.writeStr(txt, intString(i_varInfo_numInitEquations));
+        txt = Tpl.writeStr(txt, intString(i_varInfo_numInitialEquations));
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(";\n"));
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" }"));
@@ -29739,10 +29739,10 @@ algorithm
     local
       Tpl.Text txt;
       Absyn.Path a_modelInfo_name;
-      Integer i_varInfo_numResiduals;
+      Integer i_varInfo_numInitialResiduals;
 
     case ( txt,
-           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numResiduals = i_varInfo_numResiduals)),
+           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numInitialResiduals = i_varInfo_numInitialResiduals)),
            a_modelInfo_name )
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
@@ -29754,7 +29754,7 @@ algorithm
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(3));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("return "));
-        txt = Tpl.writeStr(txt, intString(i_varInfo_numResiduals));
+        txt = Tpl.writeStr(txt, intString(i_varInfo_numInitialResiduals));
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(";\n"));
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" }"));

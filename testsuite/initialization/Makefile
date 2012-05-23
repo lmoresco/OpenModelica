@@ -36,7 +36,7 @@ test:
 	@$(TEST) $(TESTFILES)
 	
 # Cleans all files that are not listed as dependencies 
-clean :
+clean:
 	@echo $(DEPENDENCIES) | sed 's/ /\\|/g' > deps.tmp
 	@rm -f $(CLEAN)
 
@@ -52,7 +52,7 @@ getdeps:
 	@echo Dependency list saved in deps.txt.
 	@echo Copy the list from deps.txt and add it to the Makefile @DEPENDENCIES
 
-failingtest :
+failingtest:
 	@echo
 	@echo Running failing tests...
 	@echo

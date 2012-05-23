@@ -603,8 +603,9 @@ algorithm
       SimCode.DelayedExpression a_delayed;
       list<SimCode.Function> i_functions;
       Integer i_varInfo_numExternalObjects;
-      Integer i_varInfo_numResiduals;
-      Integer i_varInfo_numInitEquations;
+      Integer i_varInfo_numInitialResiduals;
+      Integer i_varInfo_numInitialAlgorithms;
+      Integer i_varInfo_numInitialEquations;
       Integer i_varInfo_numTimeEvents;
       Integer i_varInfo_numZeroCrossings;
       Integer i_varInfo_numStringAliasVars;
@@ -629,7 +630,7 @@ algorithm
       Integer ret_0;
 
     case ( txt,
-           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numStateVars = i_varInfo_numStateVars, numAlgVars = i_varInfo_numAlgVars, numIntAlgVars = i_varInfo_numIntAlgVars, numBoolAlgVars = i_varInfo_numBoolAlgVars, numStringAlgVars = i_varInfo_numStringAlgVars, numParams = i_varInfo_numParams, numIntParams = i_varInfo_numIntParams, numBoolParams = i_varInfo_numBoolParams, numStringParamVars = i_varInfo_numStringParamVars, numInVars = i_varInfo_numInVars, numOutVars = i_varInfo_numOutVars, numHelpVars = i_varInfo_numHelpVars, numAlgAliasVars = i_varInfo_numAlgAliasVars, numIntAliasVars = i_varInfo_numIntAliasVars, numBoolAliasVars = i_varInfo_numBoolAliasVars, numStringAliasVars = i_varInfo_numStringAliasVars, numZeroCrossings = i_varInfo_numZeroCrossings, numTimeEvents = i_varInfo_numTimeEvents, numInitEquations = i_varInfo_numInitEquations, numResiduals = i_varInfo_numResiduals, numExternalObjects = i_varInfo_numExternalObjects), name = i_name, directory = i_directory, functions = i_functions),
+           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numStateVars = i_varInfo_numStateVars, numAlgVars = i_varInfo_numAlgVars, numIntAlgVars = i_varInfo_numIntAlgVars, numBoolAlgVars = i_varInfo_numBoolAlgVars, numStringAlgVars = i_varInfo_numStringAlgVars, numParams = i_varInfo_numParams, numIntParams = i_varInfo_numIntParams, numBoolParams = i_varInfo_numBoolParams, numStringParamVars = i_varInfo_numStringParamVars, numInVars = i_varInfo_numInVars, numOutVars = i_varInfo_numOutVars, numHelpVars = i_varInfo_numHelpVars, numAlgAliasVars = i_varInfo_numAlgAliasVars, numIntAliasVars = i_varInfo_numIntAliasVars, numBoolAliasVars = i_varInfo_numBoolAliasVars, numStringAliasVars = i_varInfo_numStringAliasVars, numZeroCrossings = i_varInfo_numZeroCrossings, numTimeEvents = i_varInfo_numTimeEvents, numInitialEquations = i_varInfo_numInitialEquations, numInitialAlgorithms = i_varInfo_numInitialAlgorithms, numInitialResiduals = i_varInfo_numInitialResiduals, numExternalObjects = i_varInfo_numExternalObjects), name = i_name, directory = i_directory, functions = i_functions),
            a_fileNamePrefix,
            a_guid,
            a_allEquations,
@@ -752,12 +753,17 @@ algorithm
                                     ";\n",
                                     "data->modelData.nInitEquations = "
                                 }, false));
-        txt = Tpl.writeStr(txt, intString(i_varInfo_numInitEquations));
+        txt = Tpl.writeStr(txt, intString(i_varInfo_numInitialEquations));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ";\n",
-                                    "data->modelData.nResiduals = "
+                                    "data->modelData.nInitAlgorithms = "
                                 }, false));
-        txt = Tpl.writeStr(txt, intString(i_varInfo_numResiduals));
+        txt = Tpl.writeStr(txt, intString(i_varInfo_numInitialAlgorithms));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ";\n",
+                                    "data->modelData.nInitResiduals = "
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_varInfo_numInitialResiduals));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ";\n",
                                     "data->modelData.nExtObjs = "
@@ -3175,7 +3181,7 @@ algorithm
   (l_body, l_varDecls) := lm_96(l_body, a_residualEquations, l_varDecls);
   l_body := Tpl.popIter(l_body);
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                   "int initial_residual(DATA *data, double $P$_lambda, double* initialResiduals)\n",
+                                   "int initial_residual(DATA *data, double* initialResiduals)\n",
                                    "{\n",
                                    "  int i = 0;\n",
                                    "  state mem_state;\n"
@@ -5219,7 +5225,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Do not know what printf argument to give "));
         txt_0 = crefStr(txt_0, a_cr);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 1129, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 1130, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_143;
@@ -8289,7 +8295,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("No runtime support for this sort of array call: "));
         ret_1 = ExpressionDump.printExpStr(a_eqn_exp);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 1821, 14), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 1822, 14), Tpl.textString(txt_1));
       then (txt, a_varDecls);
   end matchcontinue;
 end fun_214;
@@ -10874,7 +10880,7 @@ algorithm
       Integer i_vi_numJacobianVars;
       list<SimCode.Function> i_functions;
       Integer i_vi_numExternalObjects;
-      Integer i_vi_numResiduals;
+      Integer i_vi_numInitialResiduals;
       Integer i_vi_numOutVars;
       Integer i_vi_numInVars;
       Integer i_vi_numTimeEvents;
@@ -10886,7 +10892,7 @@ algorithm
       String ret_0;
 
     case ( txt,
-           SimCode.SIMCODE(modelInfo = (i_modelInfo as SimCode.MODELINFO(functions = i_functions, varInfo = SimCode.VARINFO(numHelpVars = i_vi_numHelpVars, numZeroCrossings = i_vi_numZeroCrossings, numTimeEvents = i_vi_numTimeEvents, numInVars = i_vi_numInVars, numOutVars = i_vi_numOutVars, numResiduals = i_vi_numResiduals, numExternalObjects = i_vi_numExternalObjects, numJacobianVars = i_vi_numJacobianVars, numStateVars = i_vi_numStateVars, numAlgVars = i_vi_numAlgVars, numAlgAliasVars = i_vi_numAlgAliasVars, numParams = i_vi_numParams, numIntAlgVars = i_vi_numIntAlgVars, numIntAliasVars = i_vi_numIntAliasVars, numIntParams = i_vi_numIntParams, numStringAlgVars = i_vi_numStringAlgVars, numStringAliasVars = i_vi_numStringAliasVars, numStringParamVars = i_vi_numStringParamVars, numBoolAlgVars = i_vi_numBoolAlgVars, numBoolAliasVars = i_vi_numBoolAliasVars, numBoolParams = i_vi_numBoolParams), vars = SimCode.SIMVARS(stateVars = _), name = i_modelInfo_name)), simulationSettingsOpt = SOME(SimCode.SIMULATION_SETTINGS(startTime = i_s_startTime, stopTime = i_s_stopTime, stepSize = i_s_stepSize, tolerance = i_s_tolerance, method = i_s_method, outputFormat = i_s_outputFormat, variableFilter = i_s_variableFilter))),
+           SimCode.SIMCODE(modelInfo = (i_modelInfo as SimCode.MODELINFO(functions = i_functions, varInfo = SimCode.VARINFO(numHelpVars = i_vi_numHelpVars, numZeroCrossings = i_vi_numZeroCrossings, numTimeEvents = i_vi_numTimeEvents, numInVars = i_vi_numInVars, numOutVars = i_vi_numOutVars, numInitialResiduals = i_vi_numInitialResiduals, numExternalObjects = i_vi_numExternalObjects, numJacobianVars = i_vi_numJacobianVars, numStateVars = i_vi_numStateVars, numAlgVars = i_vi_numAlgVars, numAlgAliasVars = i_vi_numAlgAliasVars, numParams = i_vi_numParams, numIntAlgVars = i_vi_numIntAlgVars, numIntAliasVars = i_vi_numIntAliasVars, numIntParams = i_vi_numIntParams, numStringAlgVars = i_vi_numStringAlgVars, numStringAliasVars = i_vi_numStringAliasVars, numStringParamVars = i_vi_numStringParamVars, numBoolAlgVars = i_vi_numBoolAlgVars, numBoolAliasVars = i_vi_numBoolAliasVars, numBoolParams = i_vi_numBoolParams), vars = SimCode.SIMVARS(stateVars = _), name = i_modelInfo_name)), simulationSettingsOpt = SOME(SimCode.SIMULATION_SETTINGS(startTime = i_s_startTime, stopTime = i_s_stopTime, stepSize = i_s_stepSize, tolerance = i_s_tolerance, method = i_s_method, outputFormat = i_s_outputFormat, variableFilter = i_s_variableFilter))),
            a_guid )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
@@ -10958,7 +10964,7 @@ algorithm
                                     "\n",
                                     "numberOfResidualsForInitialization  = \""
                                 }, false));
-        txt = Tpl.writeStr(txt, intString(i_vi_numResiduals));
+        txt = Tpl.writeStr(txt, intString(i_vi_numInitialResiduals));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "\"  cmt_numberOfResidualsForInitialization  = \"NR:       number of residuals for initialialization function, OMC\"\n",
                                     "numberOfExternalObjects             = \""
@@ -11269,7 +11275,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("initial value of unknown type: "));
         ret_1 = ExpressionDump.printExpStr(i_initialValue);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2267, 14), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2268, 14), Tpl.textString(txt_1));
       then txt;
   end matchcontinue;
 end initVal;
@@ -11360,7 +11366,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("initial value of unknown type: "));
         ret_1 = ExpressionDump.printExpStr(i_initialValue);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2278, 14), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2279, 14), Tpl.textString(txt_1));
       then txt;
   end matchcontinue;
 end initValXml;
@@ -14415,7 +14421,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2821, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2822, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_366;
@@ -14535,7 +14541,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2829, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2830, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_370;
@@ -14583,13 +14589,13 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Expression types are unsupported as return arguments "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2838, 36), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2839, 36), Tpl.textString(txt_0));
       then txt;
 
     case ( txt,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2839, 14), "Unsupported return argument");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2840, 14), "Unsupported return argument");
       then txt;
   end matchcontinue;
 end extReturnType;
@@ -14690,7 +14696,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external C type "));
         ret_0 = ExpressionDump.typeString(i_type);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2858, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2859, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_373;
@@ -14919,7 +14925,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external F77 type "));
         ret_0 = ExpressionDump.typeString(i_type);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2877, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 2878, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_379;
@@ -18116,7 +18122,7 @@ algorithm
     case ( txt,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3214, 17), "Unknown variable");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3215, 17), "Unknown variable");
       then txt;
   end matchcontinue;
 end fun_464;
@@ -19740,7 +19746,7 @@ algorithm
            a_varInits,
            a_varFrees )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3429, 12), "Unknown local variable type");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3430, 12), "Unknown local variable type");
       then (txt, a_varDecls, a_varInits, a_varFrees);
   end matchcontinue;
 end varInit;
@@ -23406,7 +23412,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3888, 14), "ALG_STATEMENT NYI");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 3889, 14), "ALG_STATEMENT NYI");
       then (txt, a_varDecls);
   end matchcontinue;
 end fun_575;
@@ -24576,7 +24582,7 @@ algorithm
            _,
            a_varDecls )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4105, 12), "algStmtTupleAssign failed");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4106, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
@@ -27536,7 +27542,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown expression: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4624, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4625, 14), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExp;
@@ -27904,7 +27910,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Indexing non-array "));
         ret_1 = ExpressionDump.printExpStr(a_ecr);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4718, 28), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4719, 28), Tpl.textString(txt_1));
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
 end fun_663;
@@ -28316,7 +28322,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("daeExpCrefRhs2: UNHANDLED EXPRESSION: "));
         ret_1 = ExpressionDump.printExpStr(i_ecr);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4731, 11), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4732, 11), Tpl.textString(txt_1));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpCrefRhs2;
@@ -28351,7 +28357,7 @@ algorithm
     case ( txt,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4750, 22), "Non-constant dimension in simulation context");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4751, 22), "Non-constant dimension in simulation context");
       then txt;
   end matchcontinue;
 end fun_671;
@@ -28481,7 +28487,7 @@ algorithm
            _,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4752, 18), "Less subscripts that dimensions in indexing cref? That\'s odd!");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4753, 18), "Less subscripts that dimensions in indexing cref? That\'s odd!");
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
 end fun_674;
@@ -28516,7 +28522,7 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4738, 22), "Empty dimensions in indexing cref?");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4739, 22), "Empty dimensions in indexing cref?");
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -28536,7 +28542,7 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4753, 14), "Non-index subscript in indexing cref? That\'s odd!");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 4754, 14), "Non-index subscript in indexing cref? That\'s odd!");
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_675;
@@ -30938,7 +30944,7 @@ algorithm
            a_preExp,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5094, 34), "unary minus for non-real arrays not implemented");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5095, 34), "unary minus for non-real arrays not implemented");
       then (txt, a_preExp);
 
     case ( txt,
@@ -30946,7 +30952,7 @@ algorithm
            a_preExp,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5095, 14), "daeExpUnary:ERR");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5096, 14), "daeExpUnary:ERR");
       then (txt, a_preExp);
   end matchcontinue;
 end fun_715;
@@ -33477,7 +33483,7 @@ algorithm
         ret_6 = ExpressionDump.printExpStr(i_exp);
         txt_6 = Tpl.writeStr(txt_6, ret_6);
         txt_6 = Tpl.writeTok(txt_6, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5338, 11), Tpl.textString(txt_6));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5339, 11), Tpl.textString(txt_6));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -33521,7 +33527,7 @@ algorithm
         ret_8 = ExpressionDump.printExpStr(i_exp);
         txt_8 = Tpl.writeStr(txt_8, ret_8);
         txt_8 = Tpl.writeTok(txt_8, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5347, 11), Tpl.textString(txt_8));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5348, 11), Tpl.textString(txt_8));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -33547,7 +33553,7 @@ algorithm
         ret_10 = ExpressionDump.printExpStr(i_exp);
         txt_10 = Tpl.writeStr(txt_10, ret_10);
         txt_10 = Tpl.writeTok(txt_10, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5351, 11), Tpl.textString(txt_10));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5352, 11), Tpl.textString(txt_10));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -33800,7 +33806,7 @@ algorithm
         txt_27 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("vector() call does not have a C implementation "));
         ret_27 = ExpressionDump.printExpStr(i_call);
         txt_27 = Tpl.writeStr(txt_27, ret_27);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5436, 11), Tpl.textString(txt_27));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5437, 11), Tpl.textString(txt_27));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -35473,7 +35479,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Nested array subscripting *should* have been handled by the routine creating the asub, but for some reason it was not: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5746, 11), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5747, 11), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -35511,7 +35517,7 @@ algorithm
         txt_6 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("ASUB_EASY_CASE "));
         ret_6 = ExpressionDump.printExpStr(i_exp);
         txt_6 = Tpl.writeStr(txt_6, ret_6);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5776, 11), Tpl.textString(txt_6));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5777, 11), Tpl.textString(txt_6));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -35556,7 +35562,7 @@ algorithm
         txt_14 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("OTHER_ASUB "));
         ret_14 = ExpressionDump.printExpStr(i_exp);
         txt_14 = Tpl.writeStr(txt_14, ret_14);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5793, 11), Tpl.textString(txt_14));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5794, 11), Tpl.textString(txt_14));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_779;
@@ -35741,7 +35747,7 @@ algorithm
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
         txt_2 = Tpl.writeTok(txt_2, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5814, 11), Tpl.textString(txt_2));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5815, 11), Tpl.textString(txt_2));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpCallPre;
@@ -35961,7 +35967,7 @@ algorithm
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
         txt_2 = Tpl.writeTok(txt_2, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5841, 11), Tpl.textString(txt_2));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5842, 11), Tpl.textString(txt_2));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpCallStart;
@@ -37240,7 +37246,7 @@ algorithm
         txt_40 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Code generation does not support multiple iterators: "));
         ret_40 = ExpressionDump.printExpStr(i_exp);
         txt_40 = Tpl.writeStr(txt_40, ret_40);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5978, 14), Tpl.textString(txt_40));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 5979, 14), Tpl.textString(txt_40));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpReduction;
@@ -37527,7 +37533,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown switch: "));
         ret_1 = ExpressionDump.printExpStr(a_exp);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6026, 13), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6027, 13), Tpl.textString(txt_1));
       then (txt, a_varDeclsInner);
 
     case ( txt,
@@ -40251,7 +40257,7 @@ algorithm
         txt_2 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeShort:"));
         ret_2 = ExpressionDump.typeString(i_type);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6418, 14), Tpl.textString(txt_2));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6419, 14), Tpl.textString(txt_2));
       then txt;
   end matchcontinue;
 end expTypeShort;
@@ -41213,7 +41219,7 @@ algorithm
         txt_7 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeFromExpFlag:"));
         ret_7 = ExpressionDump.printExpStr(i_exp);
         txt_7 = Tpl.writeStr(txt_7, ret_7);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6569, 14), Tpl.textString(txt_7));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6570, 14), Tpl.textString(txt_7));
       then txt;
   end matchcontinue;
 end expTypeFromExpFlag;
@@ -41561,7 +41567,7 @@ algorithm
     case ( txt,
            DAE.DIM_UNKNOWN() )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6619, 39), "Unknown dimensions may not be part of generated code. This is most likely an error on the part of OpenModelica. Please submit a detailed bug-report.");
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6620, 39), "Unknown dimensions may not be part of generated code. This is most likely an error on the part of OpenModelica. Please submit a detailed bug-report.");
       then txt;
 
     case ( txt,
@@ -43108,7 +43114,7 @@ algorithm
         txt_16 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConst failed: "));
         ret_16 = ExpressionDump.printExpStr(i_lit);
         txt_16 = Tpl.writeStr(txt_16, ret_16);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6821, 14), Tpl.textString(txt_16));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6822, 14), Tpl.textString(txt_16));
       then txt;
   end matchcontinue;
 end fun_931;
@@ -43223,7 +43229,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstBoxedVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6839, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6840, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstBoxedVal;
@@ -43309,7 +43315,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstArrayVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6850, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("CodegenC.tpl", 6851, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstArrayVal;
@@ -44956,7 +44962,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeFixedAttribute(txt, a_isFixed);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue, a_initialValue);
+        txt = ScalarVariableTypeNominalAttribute(txt, a_nominalValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = ScalarVariableTypeRealMinAttribute(txt, a_minValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
@@ -45074,33 +45080,33 @@ algorithm
       Tpl.Text txt;
 
     case ( txt,
+           DAE.T_ENUMERATION(index = _) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("useStart=\"false\" start=\"0\""));
+      then txt;
+
+    case ( txt,
            DAE.T_INTEGER(varLst = _) )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("start=\"0\""));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("useStart=\"false\" start=\"0\""));
       then txt;
 
     case ( txt,
            DAE.T_REAL(varLst = _) )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("start=\"0\""));
-      then txt;
-
-    case ( txt,
-           DAE.T_ENUMERATION(index = _) )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("start=\"0\""));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("useStart=\"false\" start=\"0.0\""));
       then txt;
 
     case ( txt,
            DAE.T_BOOL(varLst = _) )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("start=\"0\""));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("useStart=\"false\" start=\"false\""));
       then txt;
 
     case ( txt,
            DAE.T_STRING(varLst = _) )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("start=\"\""));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("useStart=\"false\" start=\"\""));
       then txt;
 
     case ( txt,
@@ -45129,7 +45135,7 @@ algorithm
            SOME(i_exp),
            _ )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("start=\""));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("useStart=\"true\" start=\""));
         txt = initValXml(txt, i_exp);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
@@ -45159,7 +45165,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\""));
 end ScalarVariableTypeFixedAttribute;
 
-protected function fun_978
+public function ScalarVariableTypeNominalAttribute
   input Tpl.Text in_txt;
   input Option<DAE.Exp> in_a_nominalValue;
 
@@ -45174,7 +45180,7 @@ algorithm
     case ( txt,
            SOME(i_exp) )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("nominal=\""));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("useNominal=\"true\" nominal=\""));
         txt = initValXml(txt, i_exp);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
@@ -45182,26 +45188,16 @@ algorithm
     case ( txt,
            NONE() )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("nominal=\"1.0\""));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("useNominal=\"false\" nominal=\"1.0\""));
       then txt;
 
     case ( txt,
            _ )
       then txt;
   end matchcontinue;
-end fun_978;
-
-public function ScalarVariableTypeNominalAttribute
-  input Tpl.Text txt;
-  input Option<DAE.Exp> a_nominalValue;
-  input Option<DAE.Exp> a_startValue;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt := fun_978(txt, a_nominalValue);
 end ScalarVariableTypeNominalAttribute;
 
-protected function fun_980
+protected function fun_979
   input Tpl.Text in_txt;
   input String in_a_unit;
 
@@ -45225,7 +45221,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_980;
+end fun_979;
 
 public function ScalarVariableTypeUnitAttribute
   input Tpl.Text txt;
@@ -45235,11 +45231,11 @@ public function ScalarVariableTypeUnitAttribute
 protected
   Tpl.Text l_unit__;
 algorithm
-  l_unit__ := fun_980(Tpl.emptyTxt, a_unit);
+  l_unit__ := fun_979(Tpl.emptyTxt, a_unit);
   out_txt := Tpl.writeText(txt, l_unit__);
 end ScalarVariableTypeUnitAttribute;
 
-protected function fun_982
+protected function fun_981
   input Tpl.Text in_txt;
   input String in_a_displayUnit;
 
@@ -45263,7 +45259,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_982;
+end fun_981;
 
 public function ScalarVariableTypeDisplayUnitAttribute
   input Tpl.Text txt;
@@ -45273,7 +45269,7 @@ public function ScalarVariableTypeDisplayUnitAttribute
 protected
   Tpl.Text l_displayUnit__;
 algorithm
-  l_displayUnit__ := fun_982(Tpl.emptyTxt, a_displayUnit);
+  l_displayUnit__ := fun_981(Tpl.emptyTxt, a_displayUnit);
   out_txt := Tpl.writeText(txt, l_displayUnit__);
 end ScalarVariableTypeDisplayUnitAttribute;
 
@@ -45405,7 +45401,7 @@ algorithm
   end matchcontinue;
 end ScalarVariableTypeRealMaxAttribute;
 
-protected function fun_988
+protected function fun_987
   input Tpl.Text in_txt;
   input Integer in_mArg;
 
@@ -45434,7 +45430,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \"Array of temporaries\");"));
       then txt;
   end matchcontinue;
-end fun_988;
+end fun_987;
 
 public function addRootsTempArray
   input Tpl.Text txt;
@@ -45445,10 +45441,10 @@ protected
 algorithm
   System.tmpTickResetIndex(0, 2);
   ret_0 := System.tmpTickIndex(1);
-  out_txt := fun_988(txt, ret_0);
+  out_txt := fun_987(txt, ret_0);
 end addRootsTempArray;
 
-protected function fun_990
+protected function fun_989
   input Tpl.Text in_txt;
   input Boolean in_mArg;
   input Absyn.Info in_a_info;
@@ -45477,7 +45473,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("*/"));
       then txt;
   end matchcontinue;
-end fun_990;
+end fun_989;
 
 public function modelicaLine
   input Tpl.Text in_txt;
@@ -45506,12 +45502,12 @@ algorithm
         ret_0 = Config.acceptMetaModelicaGrammar();
         ret_1 = Flags.isSet(Flags.GEN_DEBUG_SYMBOLS);
         ret_2 = boolOr(ret_0, ret_1);
-        txt = fun_990(txt, ret_2, i_info);
+        txt = fun_989(txt, ret_2, i_info);
       then txt;
   end matchcontinue;
 end modelicaLine;
 
-protected function fun_992
+protected function fun_991
   input Tpl.Text in_txt;
   input Boolean in_mArg;
 
@@ -45532,7 +45528,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/*#endModelicaLine*/"));
       then txt;
   end matchcontinue;
-end fun_992;
+end fun_991;
 
 public function endModelicaLine
   input Tpl.Text txt;
@@ -45546,7 +45542,7 @@ algorithm
   ret_0 := Config.acceptMetaModelicaGrammar();
   ret_1 := Flags.isSet(Flags.GEN_DEBUG_SYMBOLS);
   ret_2 := boolOr(ret_0, ret_1);
-  out_txt := fun_992(txt, ret_2);
+  out_txt := fun_991(txt, ret_2);
 end endModelicaLine;
 
 end CodegenC;

@@ -2126,7 +2126,7 @@ algorithm
       Integer i_varInfo_numStringAlgVars;
       list<SimCode.Function> i_functions;
       Integer i_varInfo_numExternalObjects;
-      Integer i_varInfo_numResiduals;
+      Integer i_varInfo_numInitialResiduals;
       Integer i_varInfo_numInVars;
       Integer i_varInfo_numOutVars;
       Integer i_varInfo_numParams;
@@ -2158,7 +2158,7 @@ algorithm
       Integer ret_0;
 
     case ( txt,
-           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numHelpVars = i_varInfo_numHelpVars, numZeroCrossings = i_varInfo_numZeroCrossings, numTimeEvents = i_varInfo_numTimeEvents, numStateVars = i_varInfo_numStateVars, numAlgVars = i_varInfo_numAlgVars, numAlgAliasVars = i_varInfo_numAlgAliasVars, numParams = i_varInfo_numParams, numOutVars = i_varInfo_numOutVars, numInVars = i_varInfo_numInVars, numResiduals = i_varInfo_numResiduals, numExternalObjects = i_varInfo_numExternalObjects, numStringAlgVars = i_varInfo_numStringAlgVars, numStringAliasVars = i_varInfo_numStringAliasVars, numIntAlgVars = i_varInfo_numIntAlgVars, numIntAliasVars = i_varInfo_numIntAliasVars, numBoolAlgVars = i_varInfo_numBoolAlgVars, numBoolAliasVars = i_varInfo_numBoolAliasVars, numIntParams = i_varInfo_numIntParams, numBoolParams = i_varInfo_numBoolParams, numStringParamVars = i_varInfo_numStringParamVars), vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, aliasVars = i_vars_aliasVars, intAlgVars = i_vars_intAlgVars, intAliasVars = i_vars_intAliasVars, boolAlgVars = i_vars_boolAlgVars, boolAliasVars = i_vars_boolAliasVars, paramVars = i_vars_paramVars, intParamVars = i_vars_intParamVars, boolParamVars = i_vars_boolParamVars), functions = i_functions, name = i_name),
+           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numHelpVars = i_varInfo_numHelpVars, numZeroCrossings = i_varInfo_numZeroCrossings, numTimeEvents = i_varInfo_numTimeEvents, numStateVars = i_varInfo_numStateVars, numAlgVars = i_varInfo_numAlgVars, numAlgAliasVars = i_varInfo_numAlgAliasVars, numParams = i_varInfo_numParams, numOutVars = i_varInfo_numOutVars, numInVars = i_varInfo_numInVars, numInitialResiduals = i_varInfo_numInitialResiduals, numExternalObjects = i_varInfo_numExternalObjects, numStringAlgVars = i_varInfo_numStringAlgVars, numStringAliasVars = i_varInfo_numStringAliasVars, numIntAlgVars = i_varInfo_numIntAlgVars, numIntAliasVars = i_varInfo_numIntAliasVars, numBoolAlgVars = i_varInfo_numBoolAlgVars, numBoolAliasVars = i_varInfo_numBoolAliasVars, numIntParams = i_varInfo_numIntParams, numBoolParams = i_varInfo_numBoolParams, numStringParamVars = i_varInfo_numStringParamVars), vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, aliasVars = i_vars_aliasVars, intAlgVars = i_vars_intAlgVars, intAliasVars = i_vars_intAliasVars, boolAlgVars = i_vars_boolAlgVars, boolAliasVars = i_vars_boolAliasVars, paramVars = i_vars_paramVars, intParamVars = i_vars_intParamVars, boolParamVars = i_vars_boolParamVars), functions = i_functions, name = i_name),
            a_simCode )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
@@ -2212,7 +2212,7 @@ algorithm
                                     ",\n",
                                     "NR = "
                                 }, false));
-        txt = Tpl.writeStr(txt, intString(i_varInfo_numResiduals));
+        txt = Tpl.writeStr(txt, intString(i_varInfo_numInitialResiduals));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ",\n",
                                     "NEXT = "
