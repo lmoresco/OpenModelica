@@ -4009,7 +4009,7 @@ algorithm
            BackendDAE.ASSERT(source = DAE.SOURCE(info = i_info), condition = i_condition, message = i_message),
            a_simCode )
       equation
-        txt = assertCommon(txt, i_condition, i_message, SimCode.contextSimulationDiscrete, i_info, a_simCode);
+        txt = assertCommon(txt, i_condition, i_message, i_info, SimCode.contextSimulationDiscrete, a_simCode);
       then txt;
 
     case ( txt,
@@ -4138,20 +4138,20 @@ public function assertCommon
   input Tpl.Text txt;
   input DAE.Exp a_condition;
   input DAE.Exp a_message;
-  input SimCode.Context a_context;
   input Absyn.Info a_info;
+  input SimCode.Context a_context;
   input SimCode.SimCode a_simCode;
 
   output Tpl.Text out_txt;
 protected
   Tpl.Text l_msgVar;
-  Tpl.Text l_preExpMsg;
   Tpl.Text l_condVar;
+  Tpl.Text l_preExpMsg;
   Tpl.Text l_preExpCond;
 algorithm
   l_preExpCond := Tpl.emptyTxt;
-  (l_condVar, l_preExpCond) := daeExp(Tpl.emptyTxt, a_condition, a_context, l_preExpCond, a_simCode);
   l_preExpMsg := Tpl.emptyTxt;
+  (l_condVar, l_preExpCond) := daeExp(Tpl.emptyTxt, a_condition, a_context, l_preExpCond, a_simCode);
   (l_msgVar, l_preExpMsg) := daeExp(Tpl.emptyTxt, a_message, a_context, l_preExpMsg, a_simCode);
   out_txt := Tpl.writeText(txt, l_preExpCond);
   out_txt := Tpl.softNewLine(out_txt);
@@ -4161,12 +4161,10 @@ algorithm
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
   out_txt := Tpl.writeText(out_txt, l_preExpMsg);
   out_txt := Tpl.softNewLine(out_txt);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("omc_fileInfo info = {"));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("//"));
   out_txt := infoArgs(out_txt, a_info);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "};\n",
-                                       "MODELICA_ASSERT(info, "
-                                   }, false));
+  out_txt := Tpl.softNewLine(out_txt);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("throw new Exception("));
   out_txt := Tpl.writeText(out_txt, l_msgVar);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE(");\n"));
   out_txt := Tpl.popBlock(out_txt);
@@ -4775,7 +4773,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, c_localRepresentationArrayDefines);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "var startX = startStates; var startYB = startAlgebraicsBool; var startYI = startAlgebraicsInt;\n",
+                                       "var startX = startStates; var startY = startAlgebraics; var startYB = startAlgebraicsBool; var startYI = startAlgebraicsInt;\n",
                                        "int _i = 0;\n",
                                        "const double _lambda = 1.0;\n",
                                        "\n"
@@ -7228,6 +7226,9 @@ algorithm
       SimCode.Context a_context;
       SimCode.SimCode a_simCode;
       DAE.Statement i_stmt;
+      Absyn.Info i_info;
+      DAE.Exp i_msg;
+      DAE.Exp i_cond;
       DAE.Ident i_iter;
       DAE.Exp i_rng;
       Boolean i_iterIsArray;
@@ -7402,11 +7403,11 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.STMT_ASSERT(cond = _),
-           _,
-           _ )
+           DAE.STMT_ASSERT(source = DAE.SOURCE(info = i_info), cond = i_cond, msg = i_msg),
+           a_context,
+           a_simCode )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("STMT_ASSERT_NI"));
+        txt = assertCommon(txt, i_cond, i_msg, i_info, a_context, a_simCode);
       then txt;
 
     case ( txt,
