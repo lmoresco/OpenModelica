@@ -1,6 +1,7 @@
 TEST = ../rtest -v 
 
 TESTFILES = \
+singularJacobian.mos \
 minvalue.mos\
 gaspropreties.mos \
 nonlinear.mos \
@@ -14,7 +15,6 @@ nominal.mos \
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES = \
-singularJacobian.mos \
 
 # Dependency files that are not .mo .mos or Makefile
 # Add them here or they will be cleaned.
