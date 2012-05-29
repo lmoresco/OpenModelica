@@ -1,4 +1,5 @@
-OMC = ../rtest -v 
+OMC = ../rtest -v
+//OMC = ../../build/bin/omc +g=MetaModelica +d=rml 
 test:
 	@echo
 	@echo Running OMCCP...

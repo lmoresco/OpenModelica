@@ -40,27 +40,26 @@ algorithm
          print("\nParsing Modelica with file " + filename + "\n");
         
         // call the lexer
-  	    //tokens = LexerModelica.scanString("Hello",true); 
-  	    System.startTimer();
+  	   // System.startTimer();
   	   // printAny("\nstarting lexer");
   	   tokens = LexerModelica.scan(filename,false);
-  	    System.stopTimer();
-  	    tl = System.getTimerIntervalTime();
-  	    print("\n Time Lexer:" + realString(tl));
+  	   // System.stopTimer();
+  	   // tl = System.getTimerIntervalTime();
+  	   // print("\n Time Lexer:" + realString(tl));
   	    print(OMCCTypes.printTokens(tokens,""));
   	    print("\n Tokens processed:");
   	    print(intString(listLength(tokens)));
   	    // call the parser
   	    
-  	    System.startTimer();
+  	   // System.startTimer();
   	   // printAny("\nstarting parser");
   	    (result,astTreeModelica) = ParserModelica.parse(tokens,filename,true);
-  	     System.stopTimer();
+  	   //  System.stopTimer();
        //  print(str::args_1);
-        tp = System.getTimerIntervalTime();
-        print("\n Time Parser:" + realString(tp));
-        tt = tl+tp;
-        print("\n   TOTAL Time:" + realString(tt));
+       // tp = System.getTimerIntervalTime();
+      //  print("\n Time Parser:" + realString(tp));
+       // tt = tl+tp;
+       // print("\n   TOTAL Time:" + realString(tt));
         print("\n");
   	    // print the AST
   	    if (result) then

@@ -535,7 +535,7 @@ algorithm
            v2String::skString = skString; 
            v1String::skString = skString; 
            // build 
-           vClassDef = Absyn.PARTS({},{},SOME((v1String))); 
+           vClassDef = Absyn.PARTS({},{},{},SOME((v1String))); 
            // push Result 
            skClassDef= vClassDef::skClassDef; 
 
@@ -547,7 +547,7 @@ algorithm
            (info,skToken) = getInfo(skToken,mm_r2[act]); 
            skString = reduceStringStack(skString,mm_r2[act]); 
            // build 
-           vClassDef = Absyn.PARTS({},{},NONE()); 
+           vClassDef = Absyn.PARTS({},{},{},NONE()); 
            // push Result 
            skClassDef= vClassDef::skClassDef; 
 
@@ -560,7 +560,7 @@ algorithm
            v2String::skString = skString; 
            v1ClassParts::skClassParts = skClassParts; 
            // build 
-           vClassDef = Absyn.PARTS({},(v1ClassParts),NONE()); 
+           vClassDef = Absyn.PARTS({},{},(v1ClassParts),NONE()); 
            // push Result 
            skClassDef= vClassDef::skClassDef; 
 
@@ -574,7 +574,7 @@ algorithm
            v2ClassParts::skClassParts = skClassParts; 
            v1String::skString = skString; 
            // build 
-           vClassDef = Absyn.PARTS({},(v2ClassParts),SOME((v1String))); 
+           vClassDef = Absyn.PARTS({},{},(v2ClassParts),SOME((v1String))); 
            // push Result 
            skClassDef= vClassDef::skClassDef; 
 

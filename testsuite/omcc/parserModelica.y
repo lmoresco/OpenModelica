@@ -285,13 +285,13 @@ class                  : restriction IDENT classdef
                                  $$[Class] = Absyn.CLASS($3,v2Boolean,false,v1Boolean,$2[Restriction],$4[ClassDef],info); }          
 
 classdef             : string ENDCLASS  
-                          { $$[ClassDef] = Absyn.PARTS({},{},SOME($1)); } 
+                          { $$[ClassDef] = Absyn.PARTS({},{},{},SOME($1)); } 
                      |ENDCLASS  
-                          { $$[ClassDef] = Absyn.PARTS({},{},NONE()); } 
+                          { $$[ClassDef] = Absyn.PARTS({},{},{},NONE()); } 
                      |classparts ENDCLASS  
-                          { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); } 
+                          { $$[ClassDef] = Absyn.PARTS({},{},$1[ClassParts],NONE()); } 
                      | string classparts ENDCLASS 
-                          { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
+                          { $$[ClassDef] = Absyn.PARTS({},{},$2[ClassParts],SOME($1)); }
                      | classdefenumeration   
                           { $$[ClassDef] = $1[ClassDef]; };
                      | classdefderived   
