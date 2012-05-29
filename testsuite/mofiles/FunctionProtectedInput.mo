@@ -18,7 +18,7 @@ end FunctionProtectedInput;
 
 // Result:
 // Error processing file: FunctionProtectedInput.mo
-// [FunctionProtectedInput.mo:8:3-8:17:writable] Error: Invalid protected formal parameter inR, formal arguments must be public.
+// [FunctionProtectedInput.mo:8:3-8:17:writable] Error: Invalid protected variable inR, function variables that are input/output must be public.
 // [FunctionProtectedInput.mo:16:3-16:13:writable] Error: Class fn not found in scope FunctionProtectedInput (looking for a function or record).
 // Error: Error occurred while flattening model FunctionProtectedInput
 // 
