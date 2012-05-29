@@ -415,7 +415,7 @@ getExternalFunctionSpecification(TestPack.NoExt); getErrorString();
 // Evaluating: getErrorString()
 // ""
 // Evaluating: getExternalFunctionSpecification(TestPack.Ext)
-// "C","u","externFunc","x, y, z","",""}
+// {"C","u","externFunc","x, y, z","",""}
 // Evaluating: getErrorString()
 // ""
 // Evaluating: getExternalFunctionSpecification(TestPack.NoExt)
