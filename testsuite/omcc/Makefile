@@ -1,12 +1,20 @@
-OMC = ../rtest -v
-//OMC = ../../build/bin/omc +g=MetaModelica +d=rml 
+OMC = ../rtest
+TESTFLAG = -v
+BASEFLAG = -b 
 test:
 	@echo
 	@echo Running OMCCP...
 	@echo
 	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
-	@$(OMC) SCRIPT.mos 
-	
+	@echo
+	@echo Setting BaseLine...
+	@echo 
+	@$(OMC) $(BASEFLAG) SCRIPT.mos 
+	@$(OMC) $(TESTFLAG) SCRIPT.mos 
+
+
+        
+
 DEPENDENCIES = \
 *.mo \
 *.mos \

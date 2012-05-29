@@ -8,10 +8,7 @@
 
 2) In the terminal window go to the path /openmodelica/testsuite/omcc
 
-3) at present the code is tested with testing environment rtest, so you have to set the baseline(how many files you are going to test), at present you are running for 21 test cases 
-   so in the terminal type the following ../rtest -b SCRIPT.mos.
-
-4) every time you want to add a new test cases or uncomment the remaining testcases (i.e) before running make file you have to set the baseline by following step 3.
+3) at present the code is tested with testing environment rtest, and the baseline is added to makefile so no need to set baseline everytime you compile, it will be generated automatically by makefile
 
 4) Then type the command "make test" or "make" in the terminal window, the omccp will be compiled and ready to run
 
