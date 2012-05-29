@@ -7,3 +7,28 @@ type size = enumeration(Small, Medium, Large);
 model M "A class comment" parameter Integer i = 1; Real r = 4 if i > 0 "A component comment"; end M;
 model ReplaceableClass replaceable model M1 end M1; end ReplaceableClass;
 connector RealSignal replaceable type SignalType = Real; extends SignalType; end RealSignal;
+  
+
+connector RealInput = input Real;
+connector RealInput3 = flow constant input Real[3];
+connector RealConnect = stream Real;
+  
+package TestPack
+ function Ext
+   input Real x;
+   input Real y;
+   input Real z;
+   output Real u;
+   external "C" u = externFunc(x,y,z);
+ end Ext;
+ 
+ function NoExt
+   input Real x;
+   output Real y;
+ algorithm
+   y := x;
+ end NoExt; 
+ 
+end TestPack;
+
+

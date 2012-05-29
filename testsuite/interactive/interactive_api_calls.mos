@@ -53,6 +53,12 @@ getNthInitialEquation(Modelica.Mechanics.MultiBody.Parts.Body, 1); getErrorStrin
 getEquationCount(Modelica.Mechanics.MultiBody.Parts.Body); getErrorString();
 getNthEquation(Modelica.Mechanics.MultiBody.Parts.Body, 1); getErrorString();
 
+getShortDefinitionBaseClassInformation(RealInput); getErrorString();
+getShortDefinitionBaseClassInformation(RealInput3); getErrorString();
+getShortDefinitionBaseClassInformation(RealConnect); getErrorString();
+
+getExternalFunctionSpecification(TestPack.Ext); getErrorString();
+getExternalFunctionSpecification(TestPack.NoExt); getErrorString();
 
 // Result:
 // {true}
@@ -394,6 +400,26 @@ getNthEquation(Modelica.Mechanics.MultiBody.Parts.Body, 1); getErrorString();
 // </p>
 // </HTML>\"));
 // "
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getShortDefinitionBaseClassInformation(RealInput)
+// {Real,"","","unspecified","input",{}}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getShortDefinitionBaseClassInformation(RealInput3)
+// {Real,"flow","","constant","input",{3}}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getShortDefinitionBaseClassInformation(RealConnect)
+// {Real,"","stream","unspecified","unspecified",{}}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getExternalFunctionSpecification(TestPack.Ext)
+// "C","u","externFunc","x, y, z","",""}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getExternalFunctionSpecification(TestPack.NoExt)
+// {}
 // Evaluating: getErrorString()
 // ""
 // endResult
