@@ -1,0 +1,132 @@
+//name:        Modelica.Fluid.Examples.Tanks.TanksWithOverflow [version 3.1]
+//keyword:     fluid
+//status:      correct
+//teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+//
+// simulation
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+
+
+simulate(Modelica.Fluid.Examples.Tanks.TanksWithOverflow); getErrorString();
+
+// Result:
+// true
+// ""
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 25000.0, numberOfIntervals = 5000, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Fluid.Examples.Tanks.TanksWithOverflow', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = "Simulation failed for model: Modelica.Fluid.Examples.Tanks.TanksWithOverflow
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [Interfaces.mo:576:7-578:73:writable] Error: Variable Medium.X_default not found in scope Modelica.Fluid.Vessels.OpenTank
+// Error: Error occurred while flattening model Modelica.Fluid.Examples.Tanks.TanksWithOverflow
+// "
+// end SimulationResult;
+// ""
+// endResult

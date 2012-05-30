@@ -1,0 +1,28 @@
+//name:        Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation [version 3.1]
+//keyword:     fluid
+//status:      correct
+//teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+//
+// simulation
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+
+
+simulate(Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation); getErrorString();
+
+// Result:
+// true
+// ""
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 100.0, numberOfIntervals = 500, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = "Simulation failed for model: Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation
+// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"oxidane\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
+// .
+// [HeatExchanger.mo:178:7-180:70:writable] Error: Variable Medium_1.p_default not found in scope Modelica.Fluid.Examples.HeatExchanger.BaseClasses.BasicHX
+// Error: Error occurred while flattening model Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation
+// "
+// end SimulationResult;
+// ""
+// endResult

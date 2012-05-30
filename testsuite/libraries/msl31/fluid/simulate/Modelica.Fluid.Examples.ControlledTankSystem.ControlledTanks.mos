@@ -1,0 +1,29 @@
+//name:        Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks [version 3.1]
+//keyword:     fluid
+//status:      correct
+//teardown_command: rm -f *_init.xml *_records.c *.exe *.log *_res.mat *.c *.libs *.makefile *.o *.dll *.so *_functions.h *.h
+//
+// simulation
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+
+// adrpo: add missing stateGraphRoot inner class
+addComponent(stateGraphRoot, StateGraph.StateGraphRoot, Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); 
+
+simulate(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 900.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = "Simulation failed for model: Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks
+// [ControlledTankSystem.mo:9:5-15:26:writable] Error: Variable tank1.height not found in scope Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks
+// Error: Error occurred while flattening model Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks
+// "
+// end SimulationResult;
+// ""
+// endResult
