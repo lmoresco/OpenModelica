@@ -22,71 +22,51 @@ public function main
   ParserModelica.AstTree astTreeModelica;
   type Mcode_MCodeLst = list<Mcode.MCode>;
 algorithm
-  
-  
-  _ := matchcontinue (inStringLst)
+   _ := matchcontinue (inStringLst)
   local
       String ver_str,errstr,filename,parser,ast;
       list<String> args_1,args,chars;
-      String s,str,omhome,oldpath,newpath,unparsed;
+      String s,str;
       Boolean result; 
-      Real tl,tp,tt;
      case args as _::_
       equation
         {filename,parser} = Flags.new(args);
-        
-         "Modelica" = parser;
+           "Modelica" = parser;
          false=(0==stringLength(filename));
          print("\nParsing Modelica with file " + filename + "\n");
         
         // call the lexer
-  	   // System.startTimer();
-  	   // printAny("\nstarting lexer");
+  	   print("\nstarting lexer");
   	   tokens = LexerModelica.scan(filename,false);
-  	   // System.stopTimer();
-  	   // tl = System.getTimerIntervalTime();
-  	   // print("\n Time Lexer:" + realString(tl));
-  	    print(OMCCTypes.printTokens(tokens,""));
-  	    print("\n Tokens processed:");
-  	    print(intString(listLength(tokens)));
-  	    // call the parser
+  	   print("\n");
+  	   print(OMCCTypes.printTokens(tokens,""));
+  	   print("\n Tokens processed:");
+  	   print(intString(listLength(tokens)));
   	    
-  	   // System.startTimer();
-  	   // printAny("\nstarting parser");
+  	    
+  	    // call the parser
+  	     print("\nstarting parser");
   	    (result,astTreeModelica) = ParserModelica.parse(tokens,filename,true);
-  	   //  System.stopTimer();
-       //  print(str::args_1);
-       // tp = System.getTimerIntervalTime();
-      //  print("\n Time Parser:" + realString(tp));
-       // tt = tl+tp;
-       // print("\n   TOTAL Time:" + realString(tt));
-        print("\n");
-  	    // print the AST
+  	     print("\n");
+  	    
+  	    // printing  the AST
+  	    
   	    if (result) then
-  	     //unparsed = Dump.unparseStr(astTreeModelica,false);
-  	     //print(unparsed);
-  	     print("\n" +Error.printMessagesStr());
-          print("\nSUCCEED");
-  	    // System.writeFile(filename + "UnParsed.mo",Dump.unparseStr(astTreeModelica,true));
-  	     //printAny(unparsed);
-         else
-            //print(Error.getMessagesStr());
-            print("\n" +Error.printMessagesStr());
+             print("\nSUCCEED");
+  	    else
+          print("\n" +Error.printMessagesStr());
   	    end if;
-  	    // Run the machine for exercise 10 
-  	   
-	    
-	      
-  	    //printAny(astTreeModelica);        
+  	  
   	    print("\nargs:" + filename);
-       
-         printUsage();
-      then ();
+        printUsage();
+        then ();
+    
     case {}
       equation
         print("no args");
         printUsage();
      then ();  
+    
     case _
       equation
         print("\n**********Error*************");
@@ -135,6 +115,4 @@ algorithm
        outSymbolTable;
   end matchcontinue;
 end readSettings;
-
-
 end Main;
