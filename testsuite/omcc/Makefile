@@ -9,8 +9,10 @@ test:
 	@echo
 	@echo Setting BaseLine...
 	@echo 
-	@$(OMC) $(BASEFLAG) SCRIPT.mos 
 	@$(OMC) $(TESTFLAG) SCRIPT.mos 
+baseline:
+	@echo Setting BaseLine...
+	@$(OMC) $(BASEFLAG) SCRIPT.mos 
 
 
         

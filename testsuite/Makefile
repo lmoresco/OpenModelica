@@ -38,7 +38,8 @@ msl31mediasimulation.log \
 msl31fluid.log \
 siemens.log \
 hummod.log \
-ThermoSysPro.log
+ThermoSysPro.log \
+omcc.log
 
 SIMULATIONLOGS = \
 linearize.log \
@@ -202,6 +203,9 @@ PlanarMechanics.log: omc-diff
 	@echo $@ done
 TestMedia.log: omc-diff
 	$(MAKE) -C 3rdParty/TestMedia -f Makefile test > $@
+	@echo $@ done
+omcc.log: omc-diff
+	$(MAKE) -C omcc -f Makefile test > $@
 	@echo $@ done
 failingtest: omc-diff
 	cd mofiles; $(MAKE) -f Makefile failingtest; \
