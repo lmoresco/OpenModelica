@@ -2024,53 +2024,7 @@ algorithm
   end matchcontinue;
 end lm_60;
 
-public function dumpForEEquation
-  input Tpl.Text in_txt;
-  input SCode.EEquation in_a_for__equation;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_for__equation)
-    local
-      Tpl.Text txt;
-      SCode.Ident i_index;
-      Option<SCode.Comment> i_comment;
-      list<SCode.EEquation> i_eEquationLst;
-      Absyn.Exp i_range;
-      Tpl.Text l_cmt__str;
-      Tpl.Text l_eq__str;
-      Tpl.Text l_range__str;
-
-    case ( txt,
-           SCode.EQ_FOR(range = i_range, eEquationLst = i_eEquationLst, comment = i_comment, index = i_index) )
-      equation
-        l_range__str = AbsynDumpTpl.dumpExp(Tpl.emptyTxt, i_range);
-        l_eq__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_eq__str = lm_60(l_eq__str, i_eEquationLst);
-        l_eq__str = Tpl.popIter(l_eq__str);
-        l_cmt__str = dumpCommentOpt(Tpl.emptyTxt, i_comment);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("for "));
-        txt = Tpl.writeStr(txt, i_index);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" in "));
-        txt = Tpl.writeText(txt, l_range__str);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" loop"));
-        txt = Tpl.writeText(txt, l_cmt__str);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeText(txt, l_eq__str);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("end for;"));
-      then txt;
-
-    case ( txt,
-           _ )
-      then txt;
-  end matchcontinue;
-end dumpForEEquation;
-
-protected function lm_62
+protected function lm_61
   input Tpl.Text in_txt;
   input list<SCode.EEquation> in_items;
 
@@ -2092,16 +2046,81 @@ algorithm
       equation
         txt = dumpEEquation(txt, i_e);
         txt = Tpl.nextIter(txt);
-        txt = lm_62(txt, rest);
+        txt = lm_61(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_62(txt, rest);
+        txt = lm_61(txt, rest);
       then txt;
   end matchcontinue;
-end lm_62;
+end lm_61;
+
+public function dumpForEEquation
+  input Tpl.Text in_txt;
+  input SCode.EEquation in_a_for__equation;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_for__equation)
+    local
+      Tpl.Text txt;
+      SCode.Ident i_index;
+      Option<SCode.Comment> i_comment;
+      list<SCode.EEquation> i_eEquationLst;
+      Absyn.Exp i_range;
+      Tpl.Text l_cmt__str;
+      Tpl.Text l_eq__str;
+      Tpl.Text l_range__str;
+
+    case ( txt,
+           SCode.EQ_FOR(range = SOME(i_range), eEquationLst = i_eEquationLst, comment = i_comment, index = i_index) )
+      equation
+        l_range__str = AbsynDumpTpl.dumpExp(Tpl.emptyTxt, i_range);
+        l_eq__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        l_eq__str = lm_60(l_eq__str, i_eEquationLst);
+        l_eq__str = Tpl.popIter(l_eq__str);
+        l_cmt__str = dumpCommentOpt(Tpl.emptyTxt, i_comment);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("for "));
+        txt = Tpl.writeStr(txt, i_index);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" in "));
+        txt = Tpl.writeText(txt, l_range__str);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" loop"));
+        txt = Tpl.writeText(txt, l_cmt__str);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
+        txt = Tpl.writeText(txt, l_eq__str);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("end for;"));
+      then txt;
+
+    case ( txt,
+           SCode.EQ_FOR(eEquationLst = i_eEquationLst, comment = i_comment, index = i_index) )
+      equation
+        l_eq__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        l_eq__str = lm_61(l_eq__str, i_eEquationLst);
+        l_eq__str = Tpl.popIter(l_eq__str);
+        l_cmt__str = dumpCommentOpt(Tpl.emptyTxt, i_comment);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("for "));
+        txt = Tpl.writeStr(txt, i_index);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" loop"));
+        txt = Tpl.writeText(txt, l_cmt__str);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
+        txt = Tpl.writeText(txt, l_eq__str);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("end for;"));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end dumpForEEquation;
 
 protected function lm_63
   input Tpl.Text in_txt;
@@ -2138,6 +2157,39 @@ end lm_63;
 
 protected function lm_64
   input Tpl.Text in_txt;
+  input list<SCode.EEquation> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SCode.EEquation> rest;
+      SCode.EEquation i_e;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_e :: rest )
+      equation
+        txt = dumpEEquation(txt, i_e);
+        txt = Tpl.nextIter(txt);
+        txt = lm_64(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_64(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_64;
+
+protected function lm_65
+  input Tpl.Text in_txt;
   input list<tuple<Absyn.Exp, list<SCode.EEquation>>> in_items;
 
   output Tpl.Text out_txt;
@@ -2161,7 +2213,7 @@ algorithm
       equation
         l_else__cond__str = AbsynDumpTpl.dumpExp(Tpl.emptyTxt, i_else__cond);
         l_else__body__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_else__body__str = lm_63(l_else__body__str, i_else__body);
+        l_else__body__str = lm_64(l_else__body__str, i_else__body);
         l_else__body__str = Tpl.popIter(l_else__body__str);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("elsewhen "));
         txt = Tpl.writeText(txt, l_else__cond__str);
@@ -2170,16 +2222,16 @@ algorithm
         txt = Tpl.writeText(txt, l_else__body__str);
         txt = Tpl.popBlock(txt);
         txt = Tpl.nextIter(txt);
-        txt = lm_64(txt, rest);
+        txt = lm_65(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_64(txt, rest);
+        txt = lm_65(txt, rest);
       then txt;
   end matchcontinue;
-end lm_64;
+end lm_65;
 
 public function dumpWhenEEquation
   input Tpl.Text in_txt;
@@ -2205,10 +2257,10 @@ algorithm
       equation
         l_cond__str = AbsynDumpTpl.dumpExp(Tpl.emptyTxt, i_condition);
         l_body__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_body__str = lm_62(l_body__str, i_eEquationLst);
+        l_body__str = lm_63(l_body__str, i_eEquationLst);
         l_body__str = Tpl.popIter(l_body__str);
         l_else__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_else__str = lm_64(l_else__str, i_elseBranches);
+        l_else__str = lm_65(l_else__str, i_elseBranches);
         l_else__str = Tpl.popIter(l_else__str);
         l_cmt__str = dumpCommentOpt(Tpl.emptyTxt, i_comment);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("when "));
@@ -2231,7 +2283,7 @@ algorithm
   end matchcontinue;
 end dumpWhenEEquation;
 
-protected function lm_66
+protected function lm_67
   input Tpl.Text in_txt;
   input list<SCode.AlgorithmSection> in_items;
 
@@ -2253,16 +2305,16 @@ algorithm
       equation
         txt = dumpAlgorithmSection(txt, i_al);
         txt = Tpl.nextIter(txt);
-        txt = lm_66(txt, rest);
+        txt = lm_67(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_66(txt, rest);
+        txt = lm_67(txt, rest);
       then txt;
   end matchcontinue;
-end lm_66;
+end lm_67;
 
 public function dumpAlgorithmSections
   input Tpl.Text in_txt;
@@ -2291,7 +2343,7 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_66(txt, i_algorithms);
+        txt = lm_67(txt, i_algorithms);
         txt = Tpl.popIter(txt);
         txt = Tpl.popBlock(txt);
       then txt;
@@ -2322,7 +2374,7 @@ algorithm
   end matchcontinue;
 end dumpAlgorithmSection;
 
-protected function lm_69
+protected function lm_70
   input Tpl.Text in_txt;
   input list<SCode.Statement> in_items;
 
@@ -2344,16 +2396,16 @@ algorithm
       equation
         txt = dumpStatement(txt, i_s);
         txt = Tpl.nextIter(txt);
-        txt = lm_69(txt, rest);
+        txt = lm_70(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_69(txt, rest);
+        txt = lm_70(txt, rest);
       then txt;
   end matchcontinue;
-end lm_69;
+end lm_70;
 
 public function dumpStatements
   input Tpl.Text txt;
@@ -2362,7 +2414,7 @@ public function dumpStatements
   output Tpl.Text out_txt;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  out_txt := lm_69(out_txt, a_statements);
+  out_txt := lm_70(out_txt, a_statements);
   out_txt := Tpl.popIter(out_txt);
 end dumpStatements;
 
@@ -2519,7 +2571,7 @@ algorithm
   end matchcontinue;
 end dumpIfStatement;
 
-protected function lm_73
+protected function lm_74
   input Tpl.Text in_txt;
   input list<tuple<Absyn.Exp, list<SCode.Statement>>> in_items;
 
@@ -2551,16 +2603,16 @@ algorithm
         txt = Tpl.writeText(txt, l_body__str);
         txt = Tpl.popBlock(txt);
         txt = Tpl.nextIter(txt);
-        txt = lm_73(txt, rest);
+        txt = lm_74(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_73(txt, rest);
+        txt = lm_74(txt, rest);
       then txt;
   end matchcontinue;
-end lm_73;
+end lm_74;
 
 public function dumpElseIfStatements
   input Tpl.Text txt;
@@ -2569,11 +2621,11 @@ public function dumpElseIfStatements
   output Tpl.Text out_txt;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  out_txt := lm_73(out_txt, a_else__if);
+  out_txt := lm_74(out_txt, a_else__if);
   out_txt := Tpl.popIter(out_txt);
 end dumpElseIfStatements;
 
-protected function lm_75
+protected function lm_76
   input Tpl.Text in_txt;
   input Absyn.ForIterators in_items;
 
@@ -2595,16 +2647,16 @@ algorithm
       equation
         txt = AbsynDumpTpl.dumpForIterator(txt, i_i);
         txt = Tpl.nextIter(txt);
-        txt = lm_75(txt, rest);
+        txt = lm_76(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_75(txt, rest);
+        txt = lm_76(txt, rest);
       then txt;
   end matchcontinue;
-end lm_75;
+end lm_76;
 
 public function dumpForStatement
   input Tpl.Text in_txt;
@@ -2627,7 +2679,7 @@ algorithm
            SCode.ALG_FOR(iterators = i_iterators, forBody = i_forBody, comment = i_comment) )
       equation
         l_iter__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_iter__str = lm_75(l_iter__str, i_iterators);
+        l_iter__str = lm_76(l_iter__str, i_iterators);
         l_iter__str = Tpl.popIter(l_iter__str);
         l_body__str = dumpStatements(Tpl.emptyTxt, i_forBody);
         l_cmt__str = dumpCommentOpt(Tpl.emptyTxt, i_comment);
@@ -2688,7 +2740,7 @@ algorithm
   end matchcontinue;
 end dumpWhileStatement;
 
-protected function lm_78
+protected function lm_79
   input Tpl.Text in_txt;
   input list<tuple<Absyn.Exp, list<SCode.Statement>>> in_items;
 
@@ -2720,16 +2772,16 @@ algorithm
         txt = Tpl.writeText(txt, l_ew__body__str);
         txt = Tpl.popBlock(txt);
         txt = Tpl.nextIter(txt);
-        txt = lm_78(txt, rest);
+        txt = lm_79(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_78(txt, rest);
+        txt = lm_79(txt, rest);
       then txt;
   end matchcontinue;
-end lm_78;
+end lm_79;
 
 public function dumpWhenStatement
   input Tpl.Text in_txt;
@@ -2756,7 +2808,7 @@ algorithm
         l_when__cond__str = AbsynDumpTpl.dumpExp(Tpl.emptyTxt, i_when__cond);
         l_when__body__str = dumpStatements(Tpl.emptyTxt, i_when__body);
         l_elsewhen__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_elsewhen__str = lm_78(l_elsewhen__str, i_elsewhens);
+        l_elsewhen__str = lm_79(l_elsewhen__str, i_elsewhens);
         l_elsewhen__str = Tpl.popIter(l_elsewhen__str);
         l_cmt__str = dumpCommentOpt(Tpl.emptyTxt, i_comment);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("when "));
@@ -3046,7 +3098,7 @@ algorithm
   end matchcontinue;
 end dumpPartial;
 
-protected function fun_90
+protected function fun_91
   input Tpl.Text in_txt;
   input Boolean in_a_isExpandable;
 
@@ -3069,7 +3121,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("expandable connector"));
       then txt;
   end matchcontinue;
-end fun_90;
+end fun_91;
 
 public function dumpRestriction
   input Tpl.Text in_txt;
@@ -3117,7 +3169,7 @@ algorithm
     case ( txt,
            SCode.R_CONNECTOR(isExpandable = i_isExpandable) )
       equation
-        txt = fun_90(txt, i_isExpandable);
+        txt = fun_91(txt, i_isExpandable);
       then txt;
 
     case ( txt,
@@ -3249,7 +3301,7 @@ algorithm
   end matchcontinue;
 end dumpFunctionRestriction;
 
-protected function lm_93
+protected function lm_94
   input Tpl.Text in_txt;
   input list<SCode.SubMod> in_items;
 
@@ -3271,18 +3323,18 @@ algorithm
       equation
         txt = dumpSubModifier(txt, i_submod);
         txt = Tpl.nextIter(txt);
-        txt = lm_93(txt, rest);
+        txt = lm_94(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_93(txt, rest);
+        txt = lm_94(txt, rest);
       then txt;
   end matchcontinue;
-end lm_93;
+end lm_94;
 
-protected function fun_94
+protected function fun_95
   input Tpl.Text in_txt;
   input list<SCode.SubMod> in_a_subModLst;
 
@@ -3303,12 +3355,12 @@ algorithm
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_93(txt, i_subModLst);
+        txt = lm_94(txt, i_subModLst);
         txt = Tpl.popIter(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
       then txt;
   end matchcontinue;
-end fun_94;
+end fun_95;
 
 public function dumpModifier
   input Tpl.Text in_txt;
@@ -3329,7 +3381,7 @@ algorithm
            SCode.MOD(binding = i_binding, subModLst = i_subModLst) )
       equation
         l_binding__str = dumpModifierBinding(Tpl.emptyTxt, i_binding);
-        l_submod__str = fun_94(Tpl.emptyTxt, i_subModLst);
+        l_submod__str = fun_95(Tpl.emptyTxt, i_subModLst);
         txt = Tpl.writeText(txt, l_submod__str);
         txt = Tpl.writeText(txt, l_binding__str);
       then txt;
@@ -3706,7 +3758,7 @@ algorithm
   end matchcontinue;
 end dumpAnnotationOpt;
 
-protected function fun_108
+protected function fun_109
   input Tpl.Text in_txt;
   input SCode.Annotation in_a_annotation;
 
@@ -3731,9 +3783,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_108;
+end fun_109;
 
-protected function fun_109
+protected function fun_110
   input Tpl.Text in_txt;
   input Boolean in_mArg;
   input SCode.Annotation in_a_annotation;
@@ -3755,10 +3807,10 @@ algorithm
            _,
            a_annotation )
       equation
-        txt = fun_108(txt, a_annotation);
+        txt = fun_109(txt, a_annotation);
       then txt;
   end matchcontinue;
-end fun_109;
+end fun_110;
 
 public function dumpAnnotation
   input Tpl.Text txt;
@@ -3769,10 +3821,10 @@ protected
   Boolean ret_0;
 algorithm
   ret_0 := Config.showAnnotations();
-  out_txt := fun_109(txt, ret_0, a_annotation);
+  out_txt := fun_110(txt, ret_0, a_annotation);
 end dumpAnnotation;
 
-protected function fun_111
+protected function fun_112
   input Tpl.Text in_txt;
   input Tpl.Text in_a_annstr;
 
@@ -3795,7 +3847,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
       then txt;
   end matchcontinue;
-end fun_111;
+end fun_112;
 
 public function dumpAnnotationElement
   input Tpl.Text txt;
@@ -3806,7 +3858,7 @@ protected
   Tpl.Text l_annstr;
 algorithm
   l_annstr := dumpAnnotation(Tpl.emptyTxt, a_annotation);
-  out_txt := fun_111(txt, l_annstr);
+  out_txt := fun_112(txt, l_annstr);
 end dumpAnnotationElement;
 
 public function dumpExternalDeclOpt
@@ -3833,7 +3885,7 @@ algorithm
   end matchcontinue;
 end dumpExternalDeclOpt;
 
-protected function fun_114
+protected function fun_115
   input Tpl.Text in_txt;
   input Option<SCode.Ident> in_a_funcName;
 
@@ -3855,9 +3907,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_114;
+end fun_115;
 
-protected function lm_115
+protected function lm_116
   input Tpl.Text in_txt;
   input list<Absyn.Exp> in_items;
 
@@ -3879,18 +3931,18 @@ algorithm
       equation
         txt = AbsynDumpTpl.dumpExp(txt, i_arg);
         txt = Tpl.nextIter(txt);
-        txt = lm_115(txt, rest);
+        txt = lm_116(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_115(txt, rest);
+        txt = lm_116(txt, rest);
       then txt;
   end matchcontinue;
-end lm_115;
+end lm_116;
 
-protected function fun_116
+protected function fun_117
   input Tpl.Text in_txt;
   input Tpl.Text in_a_func__name__str;
   input Tpl.Text in_a_func__args__str;
@@ -3921,9 +3973,9 @@ algorithm
         txt = Tpl.popBlock(txt);
       then txt;
   end matchcontinue;
-end fun_116;
+end fun_117;
 
-protected function fun_117
+protected function fun_118
   input Tpl.Text in_txt;
   input Option<String> in_a_lang;
 
@@ -3949,9 +4001,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_117;
+end fun_118;
 
-protected function fun_118
+protected function fun_119
   input Tpl.Text in_txt;
   input Option<Absyn.ComponentRef> in_a_output__;
 
@@ -3976,7 +4028,7 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_118;
+end fun_119;
 
 public function dumpExternalDecl
   input Tpl.Text in_txt;
@@ -4001,13 +4053,13 @@ algorithm
     case ( txt,
            SCode.EXTERNALDECL(funcName = i_funcName, args = i_args, lang = i_lang, output_ = i_output__) )
       equation
-        l_func__name__str = fun_114(Tpl.emptyTxt, i_funcName);
+        l_func__name__str = fun_115(Tpl.emptyTxt, i_funcName);
         l_func__args__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_func__args__str = lm_115(l_func__args__str, i_args);
+        l_func__args__str = lm_116(l_func__args__str, i_args);
         l_func__args__str = Tpl.popIter(l_func__args__str);
-        l_func__str = fun_116(Tpl.emptyTxt, l_func__name__str, l_func__args__str);
-        l_lang__str = fun_117(Tpl.emptyTxt, i_lang);
-        l_output__str = fun_118(Tpl.emptyTxt, i_output__);
+        l_func__str = fun_117(Tpl.emptyTxt, l_func__name__str, l_func__args__str);
+        l_lang__str = fun_118(Tpl.emptyTxt, i_lang);
+        l_output__str = fun_119(Tpl.emptyTxt, i_output__);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("external"));
         txt = Tpl.writeText(txt, l_lang__str);
         txt = Tpl.writeText(txt, l_output__str);
@@ -4045,7 +4097,7 @@ algorithm
   end matchcontinue;
 end dumpCommentOpt;
 
-protected function lm_121
+protected function lm_122
   input Tpl.Text in_txt;
   input list<SCode.Annotation> in_items;
 
@@ -4067,18 +4119,18 @@ algorithm
       equation
         txt = dumpAnnotation(txt, i_ann);
         txt = Tpl.nextIter(txt);
-        txt = lm_121(txt, rest);
+        txt = lm_122(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_121(txt, rest);
+        txt = lm_122(txt, rest);
       then txt;
   end matchcontinue;
-end lm_121;
+end lm_122;
 
-protected function fun_122
+protected function fun_123
   input Tpl.Text in_txt;
   input SCode.Comment in_a_comment;
 
@@ -4109,7 +4161,7 @@ algorithm
            SCode.CLASS_COMMENT(annotations = i_annotations, comment = i_comment_1) )
       equation
         l_annl__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_annl__str = lm_121(l_annl__str, i_annotations);
+        l_annl__str = lm_122(l_annl__str, i_annotations);
         l_annl__str = Tpl.popIter(l_annl__str);
         l_cmt__str = dumpCommentOpt(Tpl.emptyTxt, i_comment_1);
         txt = Tpl.writeText(txt, l_cmt__str);
@@ -4120,9 +4172,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_122;
+end fun_123;
 
-protected function fun_123
+protected function fun_124
   input Tpl.Text in_txt;
   input Boolean in_mArg;
   input SCode.Comment in_a_comment;
@@ -4144,10 +4196,10 @@ algorithm
            _,
            a_comment )
       equation
-        txt = fun_122(txt, a_comment);
+        txt = fun_123(txt, a_comment);
       then txt;
   end matchcontinue;
-end fun_123;
+end fun_124;
 
 public function dumpComment
   input Tpl.Text txt;
@@ -4158,7 +4210,7 @@ protected
   Boolean ret_0;
 algorithm
   ret_0 := Config.showAnnotations();
-  out_txt := fun_123(txt, ret_0, a_comment);
+  out_txt := fun_124(txt, ret_0, a_comment);
 end dumpComment;
 
 public function dumpCommentStr
