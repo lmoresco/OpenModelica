@@ -1,6 +1,9 @@
 A full copy of Modelica Standard Library 3.2 build 10:
  http://www.modelica.org/libraries/Modelica
 
+Added by perost, 2012-06-07
+Modelica/Water/package.mo: Changed sat in WaterIF97_base.BaseProperties to be a
+modifier instead of a declaration, to avoid double declaration.
 
 Added by adrpo for hkiel 
 OpenModelica r11414
