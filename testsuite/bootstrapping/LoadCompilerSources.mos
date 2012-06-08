@@ -25,6 +25,7 @@ loadFile("../../Compiler/BackEnd/TaskGraphExt.mo");
 loadFile("../../Compiler/BackEnd/TaskGraph.mo");
 loadFile("../../Compiler/BackEnd/Uncertainties.mo");
 loadFile("../../Compiler/BackEnd/XMLDump.mo");
+loadFile("../../Compiler/BackEnd/OpenTURNS.mo");
 "FrontEnd";
 loadFile("../../Compiler/FrontEnd/AbsynDep.mo");
 loadFile("../../Compiler/FrontEnd/Absyn.mo");

@@ -1,0 +1,20 @@
+// name:     CantileverBeam
+// keywords: uncertainty, OpenTURNS, example
+// status:   correct
+// 
+// The CantileverBeam example for OpenTURNS connectivity.
+// 
+loadModel(Modelica, {"3.1"}); getErrorString();
+loadFile("TestModels/ThermoSysPro/package.mo");
+loadFile("TestModels/OpenTURNSTests.mo");
+buildOpenTURNSInterface(OpenTURNSTests.CantileverBeam,"CantileverBeam_MC-template.py");
+getErrorString();
+// Result:
+// true
+// ""
+// true
+// true
+// reached
+// "CantileverBeam_MC-template.py"
+// ""
+// endResult

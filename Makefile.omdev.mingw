@@ -48,6 +48,7 @@ settings:
 	@echo Using OMDev: $(OMDEV)
 	@echo Using Files: $(OMC_BUILD_FROM)
 	@echo Using Path : "$(PATH)"
+	which gcc
 
 omdev_extra_dlls:
 	echo Copying needed .dlls to the build/bin directory
