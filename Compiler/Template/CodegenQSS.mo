@@ -190,6 +190,8 @@ algorithm
       list<SimCode.SampleCondition> i_sampleConditions;
       list<list<SimCode.SimEqSystem>> i_odeEquations;
       SimCode.ModelInfo i_modelInfo;
+      Integer ret_13;
+      list<DAE.Exp> ret_12;
       Integer ret_11;
       BackendDAE.EquationArray ret_10;
       list<DAE.ComponentRef> ret_9;
@@ -261,7 +263,9 @@ algorithm
         ret_9 = BackendQSS.getAlgs(a_qssInfo);
         ret_10 = BackendQSS.getEqs(a_qssInfo);
         ret_11 = listLength(i_sampleConditions);
-        txt = generateDiscont(txt, i_zeroCrossings, ret_7, ret_8, ret_9, i_whenClauses, ret_10, ret_11);
+        ret_12 = BackendQSS.getZCExps(a_qssInfo);
+        ret_13 = BackendQSS.getZCOffset(a_qssInfo);
+        txt = generateDiscont(txt, i_zeroCrossings, ret_7, ret_8, ret_9, i_whenClauses, ret_10, ret_11, ret_12, ret_13);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("end "));
         txt = getName(txt, i_modelInfo);
@@ -1442,6 +1446,8 @@ end generateOdeEq;
 protected function lm_57
   input Tpl.Text in_txt;
   input list<BackendDAE.ZeroCrossing> in_items;
+  input Integer in_a_offset;
+  input list<DAE.Exp> in_a_zc__exps;
   input BackendDAE.EquationArray in_a_eqs;
   input list<DAE.ComponentRef> in_a_algs;
   input list<DAE.ComponentRef> in_a_disc;
@@ -1450,10 +1456,12 @@ protected function lm_57
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_items, in_a_eqs, in_a_algs, in_a_disc, in_a_states)
+  matchcontinue(in_txt, in_items, in_a_offset, in_a_zc__exps, in_a_eqs, in_a_algs, in_a_disc, in_a_states)
     local
       Tpl.Text txt;
       list<BackendDAE.ZeroCrossing> rest;
+      Integer a_offset;
+      list<DAE.Exp> a_zc__exps;
       BackendDAE.EquationArray a_eqs;
       list<DAE.ComponentRef> a_algs;
       list<DAE.ComponentRef> a_disc;
@@ -1465,29 +1473,35 @@ algorithm
            _,
            _,
            _,
+           _,
+           _,
            _ )
       then txt;
 
     case ( txt,
            i_zc :: rest,
+           a_offset,
+           a_zc__exps,
            a_eqs,
            a_algs,
            a_disc,
            a_states )
       equation
-        txt = generateOneZC(txt, i_zc, a_states, a_disc, a_algs, a_eqs);
+        txt = generateOneZC(txt, i_zc, a_states, a_disc, a_algs, a_eqs, a_zc__exps, a_offset);
         txt = Tpl.nextIter(txt);
-        txt = lm_57(txt, rest, a_eqs, a_algs, a_disc, a_states);
+        txt = lm_57(txt, rest, a_offset, a_zc__exps, a_eqs, a_algs, a_disc, a_states);
       then txt;
 
     case ( txt,
            _ :: rest,
+           a_offset,
+           a_zc__exps,
            a_eqs,
            a_algs,
            a_disc,
            a_states )
       equation
-        txt = lm_57(txt, rest, a_eqs, a_algs, a_disc, a_states);
+        txt = lm_57(txt, rest, a_offset, a_zc__exps, a_eqs, a_algs, a_disc, a_states);
       then txt;
   end matchcontinue;
 end lm_57;
@@ -1499,11 +1513,13 @@ public function generateZC
   input list<DAE.ComponentRef> a_disc;
   input list<DAE.ComponentRef> a_algs;
   input BackendDAE.EquationArray a_eqs;
+  input list<DAE.Exp> a_zc__exps;
+  input Integer a_offset;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  out_txt := lm_57(out_txt, a_zcs, a_eqs, a_algs, a_disc, a_states);
+  out_txt := lm_57(out_txt, a_zcs, a_offset, a_zc__exps, a_eqs, a_algs, a_disc, a_states);
   out_txt := Tpl.popIter(out_txt);
 end generateZC;
 
@@ -1526,17 +1542,21 @@ public function generateOneZC
   input list<DAE.ComponentRef> in_a_disc;
   input list<DAE.ComponentRef> in_a_algs;
   input BackendDAE.EquationArray in_a_eqs;
+  input list<DAE.Exp> in_a_zc__exps;
+  input Integer in_a_offset;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_zc, in_a_states, in_a_disc, in_a_algs, in_a_eqs)
+  matchcontinue(in_txt, in_a_zc, in_a_states, in_a_disc, in_a_algs, in_a_eqs, in_a_zc__exps, in_a_offset)
     local
       Tpl.Text txt;
       list<DAE.ComponentRef> a_states;
       list<DAE.ComponentRef> a_disc;
       list<DAE.ComponentRef> a_algs;
       BackendDAE.EquationArray a_eqs;
+      list<DAE.Exp> a_zc__exps;
+      Integer a_offset;
       list<Integer> i_occurEquLst;
       DAE.Exp i_relation__;
       String ret_6;
@@ -1552,7 +1572,9 @@ algorithm
            a_states,
            a_disc,
            a_algs,
-           a_eqs )
+           a_eqs,
+           a_zc__exps,
+           a_offset )
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("when "));
@@ -1561,7 +1583,7 @@ algorithm
         txt = Tpl.writeStr(txt, ret_1);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(" then\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        ret_2 = BackendQSS.generateHandler(a_eqs, i_occurEquLst, a_states, a_disc, a_algs, i_relation__, true);
+        ret_2 = BackendQSS.generateHandler(a_eqs, i_occurEquLst, a_states, a_disc, a_algs, i_relation__, true, a_zc__exps, a_offset);
         txt = Tpl.writeStr(txt, ret_2);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.popBlock(txt);
@@ -1572,7 +1594,7 @@ algorithm
         txt = Tpl.writeStr(txt, ret_5);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(" then\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        ret_6 = BackendQSS.generateHandler(a_eqs, i_occurEquLst, a_states, a_disc, a_algs, i_relation__, false);
+        ret_6 = BackendQSS.generateHandler(a_eqs, i_occurEquLst, a_states, a_disc, a_algs, i_relation__, false, a_zc__exps, a_offset);
         txt = Tpl.writeStr(txt, ret_6);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.popBlock(txt);
@@ -1581,6 +1603,8 @@ algorithm
       then txt;
 
     case ( txt,
+           _,
+           _,
            _,
            _,
            _,
@@ -1935,13 +1959,15 @@ public function generateDiscont
   input list<SimCode.SimWhenClause> a_whens;
   input BackendDAE.EquationArray a_eqs;
   input Integer a_nSamples;
+  input list<DAE.Exp> a_zc__exps;
+  input Integer a_offset;
 
   output Tpl.Text out_txt;
 protected
   list<SimCode.SimWhenClause> ret_1;
   list<SimCode.SimWhenClause> ret_0;
 algorithm
-  out_txt := generateZC(txt, a_zcs, a_states, a_disc, a_algs, a_eqs);
+  out_txt := generateZC(txt, a_zcs, a_states, a_disc, a_algs, a_eqs, a_zc__exps, a_offset);
   out_txt := Tpl.softNewLine(out_txt);
   ret_0 := BackendQSS.simpleWhens(a_whens);
   out_txt := Tpl.pushIter(out_txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
