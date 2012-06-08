@@ -345,6 +345,7 @@ FunctionEvalFail.mo \
 FunctionEvalSlice.mo \
 FunctionInvalidVar1.mo \
 FunctionInvalidVar2.mo \
+FunctionMultiReturn.mo \
 FunctionProtectedInput.mo \
 FunctionReturn.mo \
 FunctionSimple.mo \
