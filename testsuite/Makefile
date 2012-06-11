@@ -37,6 +37,7 @@ msl31media.log \
 msl31mediasimulation.log \
 msl31fluid.log \
 siemens.log \
+SiemensPower.log \
 hummod.log \
 ThermoSysPro.log \
 omcc.log
@@ -189,6 +190,9 @@ msl31fluid.log: omc-diff
 siemens.log: omc-diff
 	$(MAKE) -C 3rdParty/siemens -f Makefile test > $@
 	@echo $@ done
+SiemensPower.log: omc-diff
+	$(MAKE) -C 3rdParty/SiemensPower -f Makefile test > $@
+	@echo $@ done
 hummod.log: omc-diff
 	$(MAKE) -C 3rdParty/HumMod -f Makefile test > $@
 	@echo $@ done
@@ -255,5 +259,6 @@ clean_g_4:
 	$(MAKE) -C libraries/msl31 -f Makefile clean
 	$(MAKE) -C libraries/msl32 -f Makefile clean
 	$(MAKE) -C 3rdParty/siemens -f Makefile clean
+	$(MAKE) -C 3rdParty/SiemensPower -f Makefile clean
 	$(MAKE) -C fmi -f Makefile clean
 	$(MAKE) -C 3rdParty/PlanarMechanics -f Makefile clean
