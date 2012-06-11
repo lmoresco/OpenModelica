@@ -1,0 +1,4 @@
+loadModel(Modelica, {"3.1"}); getErrorString();
+simulate(Modelica.Electrical.Analog.Examples.CauerLowPassSC,stopTime=1); getErrorString();
+
+

@@ -1,0 +1,4 @@
+loadModel(Modelica,{"3.1"});
+simulate(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot,stopTime=0.01);
+
+

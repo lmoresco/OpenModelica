@@ -1,0 +1,4 @@
+loadModel(Modelica,{"3.1"});
+simulate(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic,stopTime=1);
+
+
