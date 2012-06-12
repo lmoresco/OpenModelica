@@ -21,7 +21,8 @@ streams.log \
 redeclare.log \
 fmi.log \
 PlanarMechanics.log \
-TestMedia.log 
+TestMedia.log \
+uncertainties.log 
 
 SLOWLOGS = \
 bootstrapping.log \
