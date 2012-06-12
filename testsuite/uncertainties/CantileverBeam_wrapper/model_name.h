@@ -1,0 +1,1 @@
+#define MODELNAMESTR "OpenTURNSTests.CantileverBeam"
