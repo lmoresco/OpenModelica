@@ -17,3 +17,6 @@ Several things needs to be generated:
   + gives WRAPPERNAME which is the name of the OpenModelica model followed by "_wrapper"
     so we don't conflict with OpenModelica model files
 
+BIG WARNING:
+  DO NOT USE THE OMDev msys to compile the wrapper!!!
+  Use the one installed by OpenTURNS: C:\msys\1.0
