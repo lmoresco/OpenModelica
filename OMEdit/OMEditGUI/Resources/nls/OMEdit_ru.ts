@@ -1166,7 +1166,7 @@ This is probably wrong because the component is decalred as %3.</oldsource>
         <location filename="../../mainwindow.cpp" line="148"/>
         <source>Documentation</source>
         <oldsource> Documentation</oldsource>
-        <translation>документация</translation>
+        <translation>Документация</translation>
     </message>
     <message>
         <location filename="../../mainwindow.cpp" line="157"/>
@@ -2470,7 +2470,7 @@ Created by Adeel Asghar and Sonia Tariq as part of their final thesis.</oldsourc
         <location filename="../../SimulationWidget.cpp" line="423"/>
         <source>Compiling Model.
 Please wait for a while.</source>
-        <translation>Модель компилируетс. Пожалуйста, подождите немного.</translation>
+        <translation>Модель компилируется. Пожалуйста, подождите немного.</translation>
     </message>
     <message>
         <location filename="../../SimulationWidget.cpp" line="428"/>
