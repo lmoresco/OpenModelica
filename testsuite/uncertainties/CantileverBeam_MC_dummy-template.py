@@ -1,0 +1,5 @@
+
+<%distributions%>
+<%correlationMatrix%>
+<%collectionDistributions%>
+<%inputDescriptions%>

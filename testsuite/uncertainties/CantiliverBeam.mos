@@ -7,13 +7,81 @@
 loadModel(Modelica, {"3.1"}); getErrorString();
 loadFile("TestModels/ThermoSysPro/package.mo");
 loadFile("TestModels/OpenTURNSTests.mo");
-buildOpenTURNSInterface(OpenTURNSTests.CantileverBeam,"CantileverBeam_MC-template.py");
+buildOpenTURNSInterface(OpenTURNSTests.CantileverBeam,"CantileverBeam_MC_dummy-template.py");
+readFile("CantileverBeam_MC_dummy-OpenTURNSTests.CantileverBeam.py");
+readFile("OpenTURNSTests.CantileverBeam_wrapper.xml");
 getErrorString();
 // Result:
 // true
 // ""
 // true
 // true
-// "CantileverBeam_MC-template.py"
+// "CantileverBeam_MC_dummy-template.py"
+// "
+// # 4 distributions from Modelica model
+// 
+// distributionI = Beta(2.5,4.0,310.0,450.0)
+// 
+// distributionL = Uniform(250.0,260.0)
+// 
+// distributionE = Beta(0.93,3.2,28000000.0,48000000.0)
+// 
+// distributionF = LogNormal(30000.0,9000.0,15000.0)
+// 
+// RS = CorrelationMatrix(4)
+// RS[0,1] = -0.2
+// # Initialization of the distribution collection:
+// collectionMarginals = DistributionCollection()
+// collectionMarginals.add(Distribution(distributionI,\"I\"))
+// collectionMarginals.add(Distribution(distributionL,\"L\"))
+// collectionMarginals.add(Distribution(distributionE,\"E\"))
+// collectionMarginals.add(Distribution(distributionF,\"F\"))
+// # input descriptions currently not used, set above
+// "
+// "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>
+// <!--
+// OpenTURNSTests.CantileverBeam.xml
+// -->
+// <!DOCTYPE wrapper SYSTEM \"wrapper.dtd\">
+// <wrapper>
+// <library>
+// 
+//  <!-- The path of the shared object -->
+//  <path>CantileverBeam_wrapper.dll</path>
+// 
+//  <!-- This section describes all exchanges data between the wrapper and the platform -->
+//  <description>
+// 
+//    <!-- Those variables are substituted in the files above -->
+//    <!-- The order of variables is the order of the arguments of the function -->
+//    <variable-list>
+//     <variable id=\"F\" type=\"in\" />
+//     <variable id=\"E\" type=\"in\" />
+//     <variable id=\"L\" type=\"in\" />
+//     <variable id=\"I\" type=\"in\" />
+//     <variable id=\"y\" type=\"out\" />
+//    </variable-list>
+// 
+//     <!-- The function that we try to execute through the wrapper -->
+//    <function provided=\"yes\">OpenTURNSTests.CantileverBeam_wrapper</function>
+//    <!-- the gradient is  defined  -->
+//    <gradient provided=\"no\"></gradient>
+//    <!--  the hessian is  defined  -->
+//    <hessian provided=\"no\"></hessian>
+//  </description>
+// 
+// </library>
+// <external-code>
+//   <!-- Those data are external to the platform (input files, etc.)-->
+//   <data></data>
+// 
+//   <wrap-mode type=\"static-link\" state=\"shared\">
+//     <in-data-transfer mode=\"arguments\" />
+//     <out-data-transfer mode=\"arguments\" />
+//   </wrap-mode>
+// 
+//   <command># no command</command>
+// </external-code>
+// </wrapper>"
 // ""
 // endResult
