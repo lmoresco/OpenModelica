@@ -47,6 +47,7 @@ loadFile("../../Compiler/FrontEnd/Dependency.mo");
 loadFile("../../Compiler/FrontEnd/DumpGraphviz.mo");
 loadFile("../../Compiler/FrontEnd/Dump.mo");
 loadFile("../../Compiler/FrontEnd/Env.mo");
+loadFile("../../Compiler/FrontEnd/EvalFunction.mo");
 loadFile("../../Compiler/FrontEnd/ExpandableConnectors.mo");
 loadFile("../../Compiler/FrontEnd/ExpressionDump.mo");
 loadFile("../../Compiler/FrontEnd/Expression.mo");
