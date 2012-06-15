@@ -10,7 +10,8 @@
 loadModel(Modelica, {"3.1"}); getErrorString();
 loadFile("ThermoSysPro/package.mo"); getErrorString();
 
-simulate(ThermoSysPro.Examples.SimpleExamples.TestDynamicWaterWaterExchanger, stopTime=1000);  getErrorString();
+simulate(ThermoSysPro.Examples.SimpleExamples.TestDynamicWaterWaterExchanger, stopTime=1000, simflags="-iim none -iif $OPENMODELICAHOME/../testsuite/3rdParty/ThermoSysPro/ThermoSysPro.Examples.SimpleExamples.TestDynamicWaterWaterExchanger.mat");
+getErrorString();
 
 res := OpenModelica.Scripting.compareSimulationResults(
 "ThermoSysPro.Examples.SimpleExamples.TestDynamicWaterWaterExchanger_res.mat",
@@ -60,16 +61,9 @@ res := OpenModelica.Scripting.compareSimulationResults(
 // [Degasifier.mo:100:71-100:73:writable] Warning: Treating .1 as 0.1. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // "
 // record SimulationResult
-//     resultFile = "",
-//     simulationOptions = "startTime = 0.0, stopTime = 1000.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'ThermoSysPro.Examples.SimpleExamples.TestDynamicWaterWaterExchanger', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
-//     messages = "Simulation execution failed for model: ThermoSysPro.Examples.SimpleExamples.TestDynamicWaterWaterExchanger
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 1 at time 0
-// warning | division by zero in partial equation: (echangeurAPlaques1D.hc[2] * echangeurAPlaques1D.hf[2]) / (echangeurAPlaques1D.hc[2] + (echangeurAPlaques1D.hf[2] + (echangeurAPlaques1D.hc[2] * (echangeurAPlaques1D.hf[2] * echangeurAPlaques1D.emetal)) / echangeurAPlaques1D.lambdam)) because echangeurAPlaques1D.hc[2] + (echangeurAPlaques1D.hf[2] + (echangeurAPlaques1D.hc[2] * (echangeurAPlaques1D.hf[2] * echangeurAPlaques1D.emetal)) / echangeurAPlaques1D.lambdam) == 0
-//         | [line] 6528 | [file] ThermoSysPro.Examples.SimpleExamples.TestDynamicWaterWaterExchanger.c
-// throw   | [line] 44 | [file] util/division.c
-//         | division by zero
-// "
+//     resultFile = "ThermoSysPro.Examples.SimpleExamples.TestDynamicWaterWaterExchanger_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1000.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'ThermoSysPro.Examples.SimpleExamples.TestDynamicWaterWaterExchanger', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = '-iim none -iif $OPENMODELICAHOME/../testsuite/3rdParty/ThermoSysPro/ThermoSysPro.Examples.SimpleExamples.TestDynamicWaterWaterExchanger.mat'",
+//     messages = ""
 // end SimulationResult;
 // "[Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
 // [Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
@@ -127,5 +121,5 @@ res := OpenModelica.Scripting.compareSimulationResults(
 // Warning: Alias variables echangeurAPlaques1D.Hcf[1] = puitsP1.C.h have start values 1000000.0 != 100000.0. Use value from echangeurAPlaques1D.Hcf[1].
 // 
 // "
-// "Error Open File!"
+// "Files Equal!"
 // endResult

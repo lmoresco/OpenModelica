@@ -63,13 +63,7 @@ res := OpenModelica.Scripting.compareSimulationResults(
 // record SimulationResult
 //     resultFile = "ThermoSysPro.Examples.SimpleExamples.TestDiaphragm_res.mat",
 //     simulationOptions = "startTime = 0.0, stopTime = 1000.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'ThermoSysPro.Examples.SimpleExamples.TestDiaphragm', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
-//     messages = "warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 2
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 2
-// info    | model terminate | Simulation terminated at time 2
-// "
+//     messages = ""
 // end SimulationResult;
 // "[Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
 // [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
@@ -89,5 +83,5 @@ res := OpenModelica.Scripting.compareSimulationResults(
 // Warning: Alias variables Diaphragm.h = SourceP1.C.h have start values 1000000.0 != 100000.0. Use value from Diaphragm.h.
 // 
 // "
-// "Files not Equal!"
+// "Files Equal!"
 // endResult
