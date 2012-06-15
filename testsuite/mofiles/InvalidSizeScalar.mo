@@ -12,7 +12,7 @@ end InvalidSizeScalar;
 
 // Result:
 // Error processing file: InvalidSizeScalar.mo
-// [InvalidSizeScalar.mo:10:3-10:19:writable] Error: Argument 1 of size(r) must be array expression
+// [InvalidSizeScalar.mo:10:3-10:19:writable] Error: The first argument of size(r) must be an array expression.
 // Error: Error occurred while flattening model InvalidSizeScalar
 // 
 // # Error encountered! Exiting...
