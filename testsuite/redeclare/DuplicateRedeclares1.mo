@@ -10,14 +10,15 @@ model M
 end M;
 
 model DuplicateRedeclares1
-  extends N(redeclare replaceable Real r = 1.5);
+  extends M(redeclare replaceable Real r = 1.5);
 
   redeclare replaceable Real r = 2.5;
 end DuplicateRedeclares1;
 
 // Result:
 // Error processing file: DuplicateRedeclares1.mo
-// [DuplicateRedeclares1.mo:13:3-13:48:writable] Error: Base class N not found in scope DuplicateRedeclares1
+// [DuplicateRedeclares1.mo:13:23-13:47:writable] Notification: From here:
+// [DuplicateRedeclares1.mo:15:3-15:37:writable] Error: r is already redeclared in this scope.
 // Error: Error occurred while flattening model DuplicateRedeclares1
 // 
 // # Error encountered! Exiting...

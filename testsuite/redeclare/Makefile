@@ -13,6 +13,8 @@ DuplicateRedeclares1.mo \
 DuplicateRedeclares2.mo \
 FinalRedeclareModifier.mo \
 FinalRedeclareModifier2.mo \
+NonexistentElementRedeclare1.mo \
+NonexistentElementRedeclare2.mo \
 Redeclare1.mo \
 Redeclare2.mo \
 Redeclare3.mo \
