@@ -1,0 +1,121 @@
+// name:     ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes.mos [simulation checking]
+// keywords: simulation ThermoSysPro.Examples.SimpleExamples
+// status: correct
+// teardown_command: rm -rf _ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes.* ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes_* ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes.exe ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes.cpp ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes.makefile ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes.libs ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes.log ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes.c ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes.o output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+loadFile("../ThermoSysPro/package.mo"); getErrorString();
+
+simulate(ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes, stopTime=200); getErrorString();
+
+res := OpenModelica.Scripting.compareSimulationResults(
+"ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes_res.mat",
+"ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes.mat",
+"ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes_diff.csv",
+0.01, 0.0001,
+{"dynamicExchanger.Ce.Q", "dynamicExchanger.T", "dynamicExchanger.P",
+ "dynamicExchanger1.Ce1.Q", "dynamicExchanger1.T", "dynamicExchanger1.P",
+ "dynamicExchanger2.Cs.Q", "dynamicExchanger2.T", "dynamicExchanger2.P"});
+
+// Result:
+// true
+// ""
+// true
+// "[GTCombustionChamber.mo:169:20-169:24:writable] Warning: Treating .001 as 0.001. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [GTCombustionChamber.mo:173:20-173:24:writable] Warning: Treating .001 as 0.001. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [GenericCombustion.mo:153:20-153:24:writable] Warning: Treating .001 as 0.001. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [GenericCombustion.mo:157:20-157:24:writable] Warning: Treating .001 as 0.001. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [GridFurnace.mo:85:20-85:23:writable] Warning: Treating .01 as 0.01. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [Pro_FlueGases.mo:4:40-4:42:writable] Warning: Treating .5 as 0.5. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [WBInternalHeatTransferCoefficient.mo:93:26-93:29:writable] Warning: Treating .12 as 0.12. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [WBInternalTwoPhaseFlowHeatTransferCoefficient.mo:92:24-92:27:writable] Warning: Treating .12 as 0.12. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CombustionTurbine.mo:12:18-12:21:writable] Warning: Treating .07 as 0.07. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [GTCICOBarilla.mo:7:28-7:35:writable] Warning: Treating .881225 as 0.881225. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [GasTurbine.mo:12:28-12:30:writable] Warning: Treating .9 as 0.9. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [AbsorptionRefrigeratorSystem.mo:4:25-4:32:writable] Warning: Treating .362979 as 0.362979. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:55:12-55:16:writable] Warning: Treating .011 as 0.011. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:58:9-58:12:writable] Warning: Treating .50 as 0.50. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:59:8-59:13:writable] Warning: Treating .2479 as 0.2479. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:60:8-60:13:writable] Warning: Treating .0297 as 0.0297. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:61:8-61:13:writable] Warning: Treating .2088 as 0.2088. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:62:8-62:13:writable] Warning: Treating .0017 as 0.0017. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:63:8-63:13:writable] Warning: Treating .0003 as 0.0003. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CHPEngineBarkantineSystem.mo:132:8-132:11:writable] Warning: Treating .25 as 0.25. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CHPEngineBarkantineSystem.mo:136:8-136:11:writable] Warning: Treating .75 as 0.75. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CHPEngineTriGenPredSystem.mo:147:8-147:11:writable] Warning: Treating .25 as 0.25. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CHPEngineTriGenPredSystem.mo:152:8-152:11:writable] Warning: Treating .75 as 0.75. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CHPEngineTrigenParamSystem.mo:147:8-147:11:writable] Warning: Treating .25 as 0.25. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CHPEngineTrigenParamSystem.mo:152:8-152:11:writable] Warning: Treating .75 as 0.75. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BaseIF97.mo:4589:34-4589:42:writable] Warning: Treating .5132047 as 0.5132047. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4090:22-4090:39:writable] Warning: Treating .0158271919734802 as 0.0158271919734802. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4090:53-4090:70:writable] Warning: Treating .0942738402188500 as 0.0942738402188500. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4091:30-4091:46:writable] Warning: Treating .155071987336585 as 0.155071987336585. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4091:60-4091:76:writable] Warning: Treating .188821573960182 as 0.188821573960182. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4092:46-4092:62:writable] Warning: Treating .199773405226859 as 0.199773405226859. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4093:29-4093:45:writable] Warning: Treating .224926465333340 as 0.224926465333340. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4094:17-4094:33:writable] Warning: Treating .242611071901408 as 0.242611071901408. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [Degasifier.mo:100:71-100:73:writable] Warning: Treating .1 as 0.1. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// "
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 200.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = "Simulation execution failed for model: ThermoSysPro.Examples.SimpleExamples.TestFlueGasesVolumes
+// "
+// end SimulationResult;
+// "[Connectors.mo:3:3-53:22:writable] Warning: Connector ThermoSysPro.FlueGases.Connectors.FlueGasesOutlet is not balanced: The number of potential variables (7) is not equal to the number of flow variables (0).
+// [Connectors.mo:55:3-105:21:writable] Warning: Connector ThermoSysPro.FlueGases.Connectors.FlueGasesInlet is not balanced: The number of potential variables (7) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-53:22:writable] Warning: Connector ThermoSysPro.FlueGases.Connectors.FlueGasesOutlet is not balanced: The number of potential variables (7) is not equal to the number of flow variables (0).
+// [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [Connectors.mo:55:3-105:21:writable] Warning: Connector ThermoSysPro.FlueGases.Connectors.FlueGasesInlet is not balanced: The number of potential variables (7) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-53:22:writable] Warning: Connector ThermoSysPro.FlueGases.Connectors.FlueGasesOutlet is not balanced: The number of potential variables (7) is not equal to the number of flow variables (0).
+// [Connectors.mo:55:3-105:21:writable] Warning: Connector ThermoSysPro.FlueGases.Connectors.FlueGasesInlet is not balanced: The number of potential variables (7) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-53:22:writable] Warning: Connector ThermoSysPro.FlueGases.Connectors.FlueGasesOutlet is not balanced: The number of potential variables (7) is not equal to the number of flow variables (0).
+// [Connectors.mo:55:3-105:21:writable] Warning: Connector ThermoSysPro.FlueGases.Connectors.FlueGasesInlet is not balanced: The number of potential variables (7) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-53:22:writable] Warning: Connector ThermoSysPro.FlueGases.Connectors.FlueGasesOutlet is not balanced: The number of potential variables (7) is not equal to the number of flow variables (0).
+// [Connectors.mo:55:3-105:21:writable] Warning: Connector ThermoSysPro.FlueGases.Connectors.FlueGasesInlet is not balanced: The number of potential variables (7) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-53:22:writable] Warning: Connector ThermoSysPro.FlueGases.Connectors.FlueGasesOutlet is not balanced: The number of potential variables (7) is not equal to the number of flow variables (0).
+// Warning: Alias variables dynamicExchanger.T = dynamicExchanger.Cs1.T have start values 500.0 != 300.0. Use value from dynamicExchanger.T.
+// 
+// Warning: Alias variables dynamicExchanger.T = dynamicExchanger.Cs2.T have start values 500.0 != 300.0. Use value from dynamicExchanger.T.
+// 
+// Warning: Alias variables dynamicExchanger.T = dynamicExchanger.Cs3.T have start values 500.0 != 300.0. Use value from dynamicExchanger.T.
+// 
+// Warning: Alias variables dynamicExchanger.T = dynamicExchanger.Cth.T have start values 500.0 != 300.0. Use value from dynamicExchanger.T.
+// 
+// Warning: Alias variables singularPressureLossFlueGases.T = singularPressureLossFlueGases.C2.T have start values 290.0 != 300.0. Use value from singularPressureLossFlueGases.T.
+// 
+// Warning: Alias variables singularPressureLossFlueGases1.T = singularPressureLossFlueGases1.C2.T have start values 290.0 != 300.0. Use value from singularPressureLossFlueGases1.T.
+// 
+// Warning: Alias variables singularPressureLossFlueGases2.T = singularPressureLossFlueGases2.C2.T have start values 290.0 != 300.0. Use value from singularPressureLossFlueGases2.T.
+// 
+// Warning: Alias variables Source_Fumees.T0 = singularPressureLossFlueGases1.T have start values 300.0 != 290.0. Use value from Source_Fumees.T0 because this is fixed.
+// 
+// Warning: Alias variables singularPressureLossFlueGases.T = staticFan.C1.T have start values 290.0 != 300.0. Use value from singularPressureLossFlueGases.T.
+// 
+// Warning: Alias variables staticFan.Q = singularPressureLossFlueGases.Q have start values 500.0 != 10.0. Use value from staticFan.Q.
+// 
+// Warning: Alias variables singularPressureLossFlueGases2.T = staticFan.C2.T have start values 290.0 != 300.0. Use value from singularPressureLossFlueGases2.T.
+// 
+// Warning: Alias variables staticFan.Q = singularPressureLossFlueGases2.Q have start values 500.0 != 10.0. Use value from staticFan.Q.
+// 
+// Warning: Alias variables dynamicExchanger.T = singularPressureLossFlueGases.T have start values 500.0 != 290.0. Use value from dynamicExchanger.T.
+// 
+// Warning: Alias variables singularPressureLossFlueGases2.T = Puits_Fumees.T have start values 290.0 != 300.0. Use value from singularPressureLossFlueGases2.T.
+// 
+// Warning: Alias variables dynamicExchanger.T = heatSource.C[1].T have start values 500.0 != 300.0. Use value from dynamicExchanger.T.
+// 
+// Warning: Alias variables Source_Fumees.Q0 = staticFan.Q have start values 11.0 != 500.0. Use value from Source_Fumees.Q0 because this is fixed.
+// 
+// "
+// "Error Open File!"
+// endResult

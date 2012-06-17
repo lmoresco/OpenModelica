@@ -107,8 +107,11 @@ sub make_test_specific_links {
     when ("./3rdParty/siemens") {
       make_link("ResultFiles");
     }
-    when ("./3rdParty/ThermoSysPro") {
-      make_link("ThermoSysPro");
+    when ("./3rdParty/ThermoSysPro/flattening") {
+      make_link("../ThermoSysPro");
+    }
+    when ("./3rdParty/ThermoSysPro/simulation") {
+      make_link("../ThermoSysPro");
       (my $test_name) = $test =~ /(.*)\.mos$/;
       make_link("$test_name.mat");
     }

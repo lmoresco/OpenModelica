@@ -1,0 +1,272 @@
+// name:     ThermoSysPro.Examples.SimpleExamples.TestJunctions3.mos [simulation checking]
+// keywords: simulation ThermoSysPro.Examples.SimpleExamples
+// status: correct
+// teardown_command: rm -rf _ThermoSysPro.Examples.SimpleExamples.TestJunctions3.* ThermoSysPro.Examples.SimpleExamples.TestJunctions3_* ThermoSysPro.Examples.SimpleExamples.TestJunctions3 ThermoSysPro.Examples.SimpleExamples.TestJunctions3.exe ThermoSysPro.Examples.SimpleExamples.TestJunctions3.cpp ThermoSysPro.Examples.SimpleExamples.TestJunctions3.makefile ThermoSysPro.Examples.SimpleExamples.TestJunctions3.libs ThermoSysPro.Examples.SimpleExamples.TestJunctions3.log ThermoSysPro.Examples.SimpleExamples.TestJunctions3.c ThermoSysPro.Examples.SimpleExamples.TestJunctions3.o output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+loadFile("../ThermoSysPro/package.mo"); getErrorString();
+
+simulate(ThermoSysPro.Examples.SimpleExamples.TestJunctions3, stopTime=10); getErrorString();
+
+res := OpenModelica.Scripting.compareSimulationResults(
+"ThermoSysPro.Examples.SimpleExamples.TestJunctions3_res.mat",
+"ThermoSysPro.Examples.SimpleExamples.TestJunctions3.mat",
+"ThermoSysPro.Examples.SimpleExamples.TestJunctions3_diff.csv",
+0.01, 0.0001,
+{"staticVolume.Ce4.Q", "staticVolume.Cs.Q",
+ "staticVolume1.Ce1.Q", "staticVolume1.Ce8.Q", "staticVolume1.Cs.Q",
+ "staticVolume2.Ce4.Q", "staticVolume2.Cs.Q"});
+
+// Result:
+// true
+// ""
+// true
+// "[GTCombustionChamber.mo:169:20-169:24:writable] Warning: Treating .001 as 0.001. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [GTCombustionChamber.mo:173:20-173:24:writable] Warning: Treating .001 as 0.001. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [GenericCombustion.mo:153:20-153:24:writable] Warning: Treating .001 as 0.001. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [GenericCombustion.mo:157:20-157:24:writable] Warning: Treating .001 as 0.001. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [GridFurnace.mo:85:20-85:23:writable] Warning: Treating .01 as 0.01. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [Pro_FlueGases.mo:4:40-4:42:writable] Warning: Treating .5 as 0.5. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [WBInternalHeatTransferCoefficient.mo:93:26-93:29:writable] Warning: Treating .12 as 0.12. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [WBInternalTwoPhaseFlowHeatTransferCoefficient.mo:92:24-92:27:writable] Warning: Treating .12 as 0.12. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CombustionTurbine.mo:12:18-12:21:writable] Warning: Treating .07 as 0.07. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [GTCICOBarilla.mo:7:28-7:35:writable] Warning: Treating .881225 as 0.881225. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [GasTurbine.mo:12:28-12:30:writable] Warning: Treating .9 as 0.9. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [AbsorptionRefrigeratorSystem.mo:4:25-4:32:writable] Warning: Treating .362979 as 0.362979. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:55:12-55:16:writable] Warning: Treating .011 as 0.011. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:58:9-58:12:writable] Warning: Treating .50 as 0.50. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:59:8-59:13:writable] Warning: Treating .2479 as 0.2479. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:60:8-60:13:writable] Warning: Treating .0297 as 0.0297. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:61:8-61:13:writable] Warning: Treating .2088 as 0.2088. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:62:8-62:13:writable] Warning: Treating .0017 as 0.0017. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BoilerSystem.mo:63:8-63:13:writable] Warning: Treating .0003 as 0.0003. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CHPEngineBarkantineSystem.mo:132:8-132:11:writable] Warning: Treating .25 as 0.25. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CHPEngineBarkantineSystem.mo:136:8-136:11:writable] Warning: Treating .75 as 0.75. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CHPEngineTriGenPredSystem.mo:147:8-147:11:writable] Warning: Treating .25 as 0.25. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CHPEngineTriGenPredSystem.mo:152:8-152:11:writable] Warning: Treating .75 as 0.75. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CHPEngineTrigenParamSystem.mo:147:8-147:11:writable] Warning: Treating .25 as 0.25. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [CHPEngineTrigenParamSystem.mo:152:8-152:11:writable] Warning: Treating .75 as 0.75. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [BaseIF97.mo:4589:34-4589:42:writable] Warning: Treating .5132047 as 0.5132047. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4090:22-4090:39:writable] Warning: Treating .0158271919734802 as 0.0158271919734802. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4090:53-4090:70:writable] Warning: Treating .0942738402188500 as 0.0942738402188500. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4091:30-4091:46:writable] Warning: Treating .155071987336585 as 0.155071987336585. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4091:60-4091:76:writable] Warning: Treating .188821573960182 as 0.188821573960182. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4092:46-4092:62:writable] Warning: Treating .199773405226859 as 0.199773405226859. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4093:29-4093:45:writable] Warning: Treating .224926465333340 as 0.224926465333340. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [IF97_packages.mo:4094:17-4094:33:writable] Warning: Treating .242611071901408 as 0.242611071901408. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [Degasifier.mo:100:71-100:73:writable] Warning: Treating .1 as 0.1. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// "
+// record SimulationResult
+//     resultFile = "ThermoSysPro.Examples.SimpleExamples.TestJunctions3_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'ThermoSysPro.Examples.SimpleExamples.TestJunctions3', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = "warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
+// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
+// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
+// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0.02
+// [Common.mo:102:5-105:41:writable] warning | Simulation call assert() at time 0.020000
+// Level : error
+// Message : Variable staticVolume2.pro.d out of limitth too low pressure
+// p = -9.02593e+007 Pa <= 611.657 Pa (triple point pressure)
+// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0.02
+// info    | model terminate | Simulation terminated at time 0.02
+// "
+// end SimulationResult;
+// "[Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
+// Warning: Alias variables sourceP.h = sourceP.C.h_vol have start values 1000000.0 != 100000.0. Use value from sourceP.h.
+// 
+// Warning: Alias variables sourceP1.h = sourceP1.C.h_vol have start values 1000000.0 != 100000.0. Use value from sourceP1.h.
+// 
+// Warning: Alias variables valve1.T = valve1.pro.T have start values 290.0 != 300.0. Use value from valve1.T.
+// 
+// Warning: Alias variables valve2.T = valve2.pro.T have start values 290.0 != 300.0. Use value from valve2.T.
+// 
+// Warning: Alias variables valve3.T = valve3.pro.T have start values 290.0 != 300.0. Use value from valve3.T.
+// 
+// Warning: Alias variables puitsP2.h = puitsP2.C.h_vol have start values 1000000.0 != 100000.0. Use value from puitsP2.h.
+// 
+// Warning: Alias variables pipe1.h = pipe1.C2.h have start values 1000000.0 != 100000.0. Use value from pipe1.h.
+// 
+// Warning: Alias variables pipe1.Q = pipe1.C2.Q have start values 100.0 != 500.0. Use value from pipe1.Q.
+// 
+// Warning: Alias variables pipe2.h = pipe2.C2.h have start values 1000000.0 != 100000.0. Use value from pipe2.h.
+// 
+// Warning: Alias variables pipe2.Q = pipe2.C2.Q have start values 100.0 != 500.0. Use value from pipe2.Q.
+// 
+// Warning: Alias variables staticVolume.P = staticVolume.Ce1.P have start values 1000000.0 != 100000.0. Use value from staticVolume.P.
+// 
+// Warning: Alias variables staticVolume.P = staticVolume.Ce2.P have start values 1000000.0 != 100000.0. Use value from staticVolume.P.
+// 
+// Warning: Alias variables staticVolume.P = staticVolume.Ce3.P have start values 1000000.0 != 100000.0. Use value from staticVolume.P.
+// 
+// Warning: Alias variables staticVolume.P = staticVolume.Ce4.P have start values 1000000.0 != 100000.0. Use value from staticVolume.P.
+// 
+// Warning: Alias variables staticVolume.P = staticVolume.Ce5.P have start values 1000000.0 != 100000.0. Use value from staticVolume.P.
+// 
+// Warning: Alias variables staticVolume.P = staticVolume.Ce6.P have start values 1000000.0 != 100000.0. Use value from staticVolume.P.
+// 
+// Warning: Alias variables staticVolume.P = staticVolume.Ce7.P have start values 1000000.0 != 100000.0. Use value from staticVolume.P.
+// 
+// Warning: Alias variables staticVolume.P = staticVolume.Ce8.P have start values 1000000.0 != 100000.0. Use value from staticVolume.P.
+// 
+// Warning: Alias variables staticVolume.P = staticVolume.Cs.P have start values 1000000.0 != 100000.0. Use value from staticVolume.P.
+// 
+// Warning: Alias variables staticVolume.h = staticVolume.Ce1.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume.h.
+// 
+// Warning: Alias variables staticVolume.h = staticVolume.Ce2.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume.h.
+// 
+// Warning: Alias variables staticVolume.h = staticVolume.Ce3.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume.h.
+// 
+// Warning: Alias variables staticVolume.h = staticVolume.Ce4.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume.h.
+// 
+// Warning: Alias variables staticVolume.h = staticVolume.Ce5.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume.h.
+// 
+// Warning: Alias variables staticVolume.h = staticVolume.Ce6.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume.h.
+// 
+// Warning: Alias variables staticVolume.h = staticVolume.Ce7.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume.h.
+// 
+// Warning: Alias variables staticVolume.h = staticVolume.Ce8.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume.h.
+// 
+// Warning: Alias variables staticVolume.h = staticVolume.Cs.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume.h.
+// 
+// Warning: Alias variables staticVolume1.P = staticVolume1.Ce1.P have start values 1000000.0 != 100000.0. Use value from staticVolume1.P.
+// 
+// Warning: Alias variables staticVolume1.P = staticVolume1.Ce2.P have start values 1000000.0 != 100000.0. Use value from staticVolume1.P.
+// 
+// Warning: Alias variables staticVolume1.P = staticVolume1.Ce3.P have start values 1000000.0 != 100000.0. Use value from staticVolume1.P.
+// 
+// Warning: Alias variables staticVolume1.P = staticVolume1.Ce4.P have start values 1000000.0 != 100000.0. Use value from staticVolume1.P.
+// 
+// Warning: Alias variables staticVolume1.P = staticVolume1.Ce5.P have start values 1000000.0 != 100000.0. Use value from staticVolume1.P.
+// 
+// Warning: Alias variables staticVolume1.P = staticVolume1.Ce6.P have start values 1000000.0 != 100000.0. Use value from staticVolume1.P.
+// 
+// Warning: Alias variables staticVolume1.P = staticVolume1.Ce7.P have start values 1000000.0 != 100000.0. Use value from staticVolume1.P.
+// 
+// Warning: Alias variables staticVolume1.P = staticVolume1.Ce8.P have start values 1000000.0 != 100000.0. Use value from staticVolume1.P.
+// 
+// Warning: Alias variables staticVolume1.P = staticVolume1.Cs.P have start values 1000000.0 != 100000.0. Use value from staticVolume1.P.
+// 
+// Warning: Alias variables staticVolume1.h = staticVolume1.Ce1.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume1.h.
+// 
+// Warning: Alias variables staticVolume1.h = staticVolume1.Ce2.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume1.h.
+// 
+// Warning: Alias variables staticVolume1.h = staticVolume1.Ce3.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume1.h.
+// 
+// Warning: Alias variables staticVolume1.h = staticVolume1.Ce4.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume1.h.
+// 
+// Warning: Alias variables staticVolume1.h = staticVolume1.Ce5.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume1.h.
+// 
+// Warning: Alias variables staticVolume1.h = staticVolume1.Ce6.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume1.h.
+// 
+// Warning: Alias variables staticVolume1.h = staticVolume1.Ce7.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume1.h.
+// 
+// Warning: Alias variables staticVolume1.h = staticVolume1.Ce8.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume1.h.
+// 
+// Warning: Alias variables staticVolume1.h = staticVolume1.Cs.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume1.h.
+// 
+// Warning: Alias variables staticVolume2.P = staticVolume2.Ce1.P have start values 1000000.0 != 100000.0. Use value from staticVolume2.P.
+// 
+// Warning: Alias variables staticVolume2.P = staticVolume2.Ce2.P have start values 1000000.0 != 100000.0. Use value from staticVolume2.P.
+// 
+// Warning: Alias variables staticVolume2.P = staticVolume2.Ce3.P have start values 1000000.0 != 100000.0. Use value from staticVolume2.P.
+// 
+// Warning: Alias variables staticVolume2.P = staticVolume2.Ce4.P have start values 1000000.0 != 100000.0. Use value from staticVolume2.P.
+// 
+// Warning: Alias variables staticVolume2.P = staticVolume2.Ce5.P have start values 1000000.0 != 100000.0. Use value from staticVolume2.P.
+// 
+// Warning: Alias variables staticVolume2.P = staticVolume2.Ce6.P have start values 1000000.0 != 100000.0. Use value from staticVolume2.P.
+// 
+// Warning: Alias variables staticVolume2.P = staticVolume2.Ce7.P have start values 1000000.0 != 100000.0. Use value from staticVolume2.P.
+// 
+// Warning: Alias variables staticVolume2.P = staticVolume2.Ce8.P have start values 1000000.0 != 100000.0. Use value from staticVolume2.P.
+// 
+// Warning: Alias variables staticVolume2.P = staticVolume2.Cs.P have start values 1000000.0 != 100000.0. Use value from staticVolume2.P.
+// 
+// Warning: Alias variables staticVolume2.h = staticVolume2.Ce1.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume2.h.
+// 
+// Warning: Alias variables staticVolume2.h = staticVolume2.Ce2.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume2.h.
+// 
+// Warning: Alias variables staticVolume2.h = staticVolume2.Ce3.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume2.h.
+// 
+// Warning: Alias variables staticVolume2.h = staticVolume2.Ce4.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume2.h.
+// 
+// Warning: Alias variables staticVolume2.h = staticVolume2.Ce5.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume2.h.
+// 
+// Warning: Alias variables staticVolume2.h = staticVolume2.Ce6.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume2.h.
+// 
+// Warning: Alias variables staticVolume2.h = staticVolume2.Ce7.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume2.h.
+// 
+// Warning: Alias variables staticVolume2.h = staticVolume2.Ce8.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume2.h.
+// 
+// Warning: Alias variables staticVolume2.h = staticVolume2.Cs.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume2.h.
+// 
+// Warning: Alias variables puitsP2.h = valve3.C2.h_vol have start values 1000000.0 != 100000.0. Use value from puitsP2.h.
+// 
+// Warning: Alias variables sourceP.h = pipe1.C1.h_vol have start values 1000000.0 != 100000.0. Use value from sourceP.h.
+// 
+// Warning: Alias variables sourceP.Q = pipe1.Q have start values 500.0 != 100.0. Use value from sourceP.Q.
+// 
+// Warning: Alias variables pipe1.h = sourceP.C.h have start values 1000000.0 != 100000.0. Use value from pipe1.h.
+// 
+// Warning: Alias variables sourceP1.h = pipe2.C1.h_vol have start values 1000000.0 != 100000.0. Use value from sourceP1.h.
+// 
+// Warning: Alias variables sourceP1.Q = pipe2.Q have start values 500.0 != 100.0. Use value from sourceP1.Q.
+// 
+// Warning: Alias variables pipe2.h = sourceP1.C.h have start values 1000000.0 != 100000.0. Use value from pipe2.h.
+// 
+// Warning: Alias variables staticVolume.P = pipe1.C2.P have start values 1000000.0 != 100000.0. Use value from staticVolume.P.
+// 
+// Warning: Alias variables staticVolume.h = pipe1.C2.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume.h.
+// 
+// Warning: Alias variables pipe1.h = staticVolume.Ce4.h have start values 1000000.0 != 100000.0. Use value from pipe1.h.
+// 
+// Warning: Alias variables staticVolume.P = valve1.C1.P have start values 1000000.0 != 100000.0. Use value from staticVolume.P.
+// 
+// Warning: Alias variables staticVolume.h = valve1.C1.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume.h.
+// 
+// Warning: Alias variables staticVolume1.P = valve3.C1.P have start values 1000000.0 != 100000.0. Use value from staticVolume1.P.
+// 
+// Warning: Alias variables staticVolume1.h = valve3.C1.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume1.h.
+// 
+// Warning: Alias variables staticVolume1.P = valve1.C2.P have start values 1000000.0 != 100000.0. Use value from staticVolume1.P.
+// 
+// Warning: Alias variables staticVolume1.h = valve1.C2.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume1.h.
+// 
+// Warning: Alias variables staticVolume1.P = valve2.C2.P have start values 1000000.0 != 100000.0. Use value from staticVolume1.P.
+// 
+// Warning: Alias variables staticVolume1.h = valve2.C2.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume1.h.
+// 
+// Warning: Alias variables staticVolume2.P = pipe2.C2.P have start values 1000000.0 != 100000.0. Use value from staticVolume2.P.
+// 
+// Warning: Alias variables staticVolume2.h = pipe2.C2.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume2.h.
+// 
+// Warning: Alias variables pipe2.h = staticVolume2.Ce4.h have start values 1000000.0 != 100000.0. Use value from pipe2.h.
+// 
+// Warning: Alias variables staticVolume2.P = valve2.C1.P have start values 1000000.0 != 100000.0. Use value from staticVolume2.P.
+// 
+// Warning: Alias variables staticVolume2.h = valve2.C1.h_vol have start values 1000000.0 != 100000.0. Use value from staticVolume2.h.
+// 
+// "
+// "Files not Equal!"
+// endResult

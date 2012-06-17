@@ -40,7 +40,8 @@ msl31fluid.log \
 siemens.log \
 SiemensPower.log \
 hummod.log \
-ThermoSysPro.log \
+ThermoSysPro_simulation.log \
+ThermoSysPro_inst_and_check.log \
 omcc.log
 
 SIMULATIONLOGS = \
@@ -197,8 +198,11 @@ SiemensPower.log: omc-diff
 hummod.log: omc-diff
 	$(MAKE) -C 3rdParty/HumMod -f Makefile test > $@
 	@echo $@ done
-ThermoSysPro.log: omc-diff
-	$(MAKE) -C 3rdParty/ThermoSysPro -f Makefile test > $@
+ThermoSysPro_simulation.log: omc-diff
+	$(MAKE) -C 3rdParty/ThermoSysPro/simulation -f Makefile test > $@
+	@echo $@ done
+ThermoSysPro_inst_and_check.log: omc-diff
+	$(MAKE) -C 3rdParty/ThermoSysPro/flattening -f Makefile test > $@
 	@echo $@ done
 fmi.log: omc-diff
 	$(MAKE) -C fmi -f Makefile test > $@
