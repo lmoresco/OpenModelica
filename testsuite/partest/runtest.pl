@@ -40,6 +40,7 @@ sub make_link {
   # Depending on how the path is given we need to use different rules for how
   # the symlink should be created.
   given($file) {
+    when (/\.\.\/(\w*)\/package.mo/)    { symlink("../" . $1, "../" . $1); }
     when (/\.\/(\w*)\/package.mo/)    { symlink("../" . $1, $1); }
     when (/\.\.\/([\w-]*)\//) { symlink("../" . $1, "../" . $1); }
     when (/^(\w*)\/(.*)/)     { symlink("../" . $1, $1); }
@@ -107,11 +108,7 @@ sub make_test_specific_links {
     when ("./3rdParty/siemens") {
       make_link("ResultFiles");
     }
-    when ("./3rdParty/ThermoSysPro/flattening") {
-      make_link("../ThermoSysPro");
-    }
     when ("./3rdParty/ThermoSysPro/simulation") {
-      make_link("../ThermoSysPro");
       (my $test_name) = $test =~ /(.*)\.mos$/;
       make_link("$test_name.mat");
     }
