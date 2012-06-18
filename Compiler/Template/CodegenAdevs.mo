@@ -1402,7 +1402,7 @@ algorithm
       then (txt, a_varDecls);
 
     case ( txt,
-           (i_eq2 as SimCode.SES_ALGORITHM(statements = _)) :: rest,
+           (i_eq2 as SimCode.SES_ALGORITHM(index = _)) :: rest,
            a_varDecls )
       equation
         (txt, a_varDecls) = equation_(txt, i_eq2, SimCode.contextSimulationDiscrete, a_varDecls);
@@ -1441,7 +1441,7 @@ algorithm
       then (txt, a_varDecls);
 
     case ( txt,
-           (i_eq2 as SimCode.SES_SIMPLE_ASSIGN(cref = _)) :: rest,
+           (i_eq2 as SimCode.SES_SIMPLE_ASSIGN(index = _)) :: rest,
            a_varDecls )
       equation
         (txt, a_varDecls) = equation_(txt, i_eq2, SimCode.contextOther, a_varDecls);
@@ -2473,7 +2473,7 @@ algorithm
       then (txt, a_varDecls);
 
     case ( txt,
-           (i_eq as SimCode.SES_SIMPLE_ASSIGN(cref = _)) :: rest,
+           (i_eq as SimCode.SES_SIMPLE_ASSIGN(index = _)) :: rest,
            a_varDecls )
       equation
         (txt, a_varDecls) = equation_(txt, i_eq, SimCode.contextOther, a_varDecls);
@@ -3373,7 +3373,7 @@ algorithm
       then (txt, a_varDecls);
 
     case ( txt,
-           (i_eq as SimCode.SES_SIMPLE_ASSIGN(cref = _)) :: rest,
+           (i_eq as SimCode.SES_SIMPLE_ASSIGN(index = _)) :: rest,
            a_varDecls )
       equation
         (txt, a_varDecls) = equation_(txt, i_eq, SimCode.contextOther, a_varDecls);
@@ -3412,7 +3412,7 @@ algorithm
       then (txt, a_varDecls);
 
     case ( txt,
-           (i_eq as SimCode.SES_ALGORITHM(statements = _)) :: rest,
+           (i_eq as SimCode.SES_ALGORITHM(index = _)) :: rest,
            a_varDecls )
       equation
         (txt, a_varDecls) = equation_(txt, i_eq, SimCode.contextOther, a_varDecls);
@@ -4008,7 +4008,7 @@ algorithm
       SimCode.SimEqSystem i_e;
 
     case ( txt,
-           (i_e as SimCode.SES_SIMPLE_ASSIGN(cref = _)),
+           (i_e as SimCode.SES_SIMPLE_ASSIGN(index = _)),
            a_context,
            a_varDecls )
       equation
@@ -4016,7 +4016,7 @@ algorithm
       then (txt, a_varDecls);
 
     case ( txt,
-           (i_e as SimCode.SES_ARRAY_CALL_ASSIGN(componentRef = _)),
+           (i_e as SimCode.SES_ARRAY_CALL_ASSIGN(index = _)),
            a_context,
            a_varDecls )
       equation
@@ -4024,7 +4024,7 @@ algorithm
       then (txt, a_varDecls);
 
     case ( txt,
-           (i_e as SimCode.SES_ALGORITHM(statements = _)),
+           (i_e as SimCode.SES_ALGORITHM(index = _)),
            a_context,
            a_varDecls )
       equation
@@ -4056,7 +4056,7 @@ algorithm
       then (txt, a_varDecls);
 
     case ( txt,
-           (i_e as SimCode.SES_WHEN(left = _)),
+           (i_e as SimCode.SES_WHEN(index = _)),
            a_context,
            a_varDecls )
       equation
@@ -34563,7 +34563,7 @@ algorithm
       Tpl.Text l_var;
 
     case ( txt,
-           SimCode.SES_RESIDUAL(exp = _),
+           SimCode.SES_RESIDUAL(index = _),
            a_preBuf,
            a_i0 )
       equation
@@ -34592,7 +34592,7 @@ algorithm
       then (txt, a_preBuf);
 
     case ( txt,
-           SimCode.SES_ARRAY_CALL_ASSIGN(componentRef = _),
+           SimCode.SES_ARRAY_CALL_ASSIGN(index = _),
            a_preBuf,
            a_i0 )
       equation
@@ -34602,7 +34602,7 @@ algorithm
       then (txt, a_preBuf);
 
     case ( txt,
-           SimCode.SES_ALGORITHM(statements = _),
+           SimCode.SES_ALGORITHM(index = _),
            a_preBuf,
            a_i0 )
       equation
@@ -34612,7 +34612,7 @@ algorithm
       then (txt, a_preBuf);
 
     case ( txt,
-           SimCode.SES_WHEN(left = _),
+           SimCode.SES_WHEN(index = _),
            a_preBuf,
            a_i0 )
       equation

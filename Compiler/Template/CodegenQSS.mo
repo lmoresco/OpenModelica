@@ -1352,7 +1352,7 @@ algorithm
       then (txt, a_funDecls, a_externalFuncs);
 
     case ( txt,
-           SimCode.SES_RESIDUAL(exp = _),
+           SimCode.SES_RESIDUAL(index = _),
            _,
            _,
            _,
@@ -1363,7 +1363,7 @@ algorithm
       then (txt, a_funDecls, a_externalFuncs);
 
     case ( txt,
-           SimCode.SES_ARRAY_CALL_ASSIGN(componentRef = _),
+           SimCode.SES_ARRAY_CALL_ASSIGN(index = _),
            _,
            _,
            _,
@@ -1396,7 +1396,7 @@ algorithm
       then (txt, a_funDecls, a_externalFuncs);
 
     case ( txt,
-           SimCode.SES_WHEN(left = _),
+           SimCode.SES_WHEN(index = _),
            _,
            _,
            _,
@@ -1407,7 +1407,7 @@ algorithm
       then (txt, a_funDecls, a_externalFuncs);
 
     case ( txt,
-           SimCode.SES_ALGORITHM(statements = _),
+           SimCode.SES_ALGORITHM(index = _),
            _,
            _,
            _,

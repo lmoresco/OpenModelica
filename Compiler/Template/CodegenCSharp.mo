@@ -4588,7 +4588,7 @@ algorithm
       then txt;
 
     case ( txt,
-           (i_saeq as SimCode.SES_SIMPLE_ASSIGN(cref = _)) :: rest,
+           (i_saeq as SimCode.SES_SIMPLE_ASSIGN(index = _)) :: rest,
            a_simCode )
       equation
         txt = equation_(txt, i_saeq, SimCode.contextOther, a_simCode);
@@ -4894,7 +4894,7 @@ algorithm
       then txt;
 
     case ( txt,
-           (i_saeq as SimCode.SES_SIMPLE_ASSIGN(cref = _)) :: rest,
+           (i_saeq as SimCode.SES_SIMPLE_ASSIGN(index = _)) :: rest,
            a_simCode )
       equation
         txt = equation_(txt, i_saeq, SimCode.contextOther, a_simCode);
@@ -5030,7 +5030,7 @@ algorithm
       then txt;
 
     case ( txt,
-           (i_saeq as SimCode.SES_SIMPLE_ASSIGN(cref = _)) :: rest,
+           (i_saeq as SimCode.SES_SIMPLE_ASSIGN(index = _)) :: rest,
            a_simCode )
       equation
         txt = equation_(txt, i_saeq, SimCode.contextOther, a_simCode);
@@ -6005,7 +6005,7 @@ algorithm
       then txt;
 
     case ( txt,
-           SimCode.SES_ARRAY_CALL_ASSIGN(componentRef = _),
+           SimCode.SES_ARRAY_CALL_ASSIGN(index = _),
            _,
            _ )
       equation

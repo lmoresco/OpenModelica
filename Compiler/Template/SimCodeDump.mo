@@ -520,7 +520,7 @@ algorithm
       then txt;
 
     case ( txt,
-           SimCode.SES_ARRAY_CALL_ASSIGN(componentRef = _),
+           SimCode.SES_ARRAY_CALL_ASSIGN(index = _),
            _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("SES_ARRAY_CALL_ASSIGN"));
