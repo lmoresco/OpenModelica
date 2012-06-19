@@ -1,0 +1,15 @@
+// name: ISO-8859-1
+// status: correct
+
+runScript("ISO-8859-1.mox");
+getErrorString();
+
+// Result:
+// "Failed"
+// "[ISO-8859-1.mox:2:1-2:4:writable] Error: The file was not encoded in UTF-8:
+//   "???".
+//   To change encoding when loading a file: loadFile(encoding="ISO-XXXX-YY").
+//   To change it in a package: add a file package.encoding at the top-level.
+//   Note: The Modelica Language Specification only allows files encoded in UTF-8.
+// "
+// endResult
