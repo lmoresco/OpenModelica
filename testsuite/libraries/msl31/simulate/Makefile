@@ -1,55 +1,13 @@
 TEST = ../../../rtest -v
 
 TESTFILES = \
-Modelica.Blocks.CombiTables.mos \
-Modelica.Blocks.Examples.BusUsage.mos \
-Modelica.Blocks.Examples.InverseModel.mos \
-Modelica.Blocks.Examples.LogicalNetwork1.mos \
-Modelica.Blocks.Examples.ShowLogicalSources.mos \
-Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.mos \
-Modelica.Electrical.Analog.Examples.CauerLowPassOPV.mos \
-Modelica.Electrical.Analog.Examples.CauerLowPassSC.mos \
-Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
-Modelica.Electrical.Analog.Examples.NandGate.mos \
-Modelica.Electrical.Machines.Examples.TransformerTestbench.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel.mos \
-Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a.mos \
-Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic.mos \
-Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic.mos \
-Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1.mos \
-Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.mos \
-Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.mos \
-Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.mos \
-Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint.mos \
-Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.mos \
-Modelica.Mechanics.MultiBody.Frames.mos \
-Modelica.Mechanics.Rotational.Examples.First.mos \
-Modelica.Mechanics.Rotational.Examples.FirstGrounded.mos \
-Modelica.Mechanics.Rotational.Examples.Friction.mos \
-Modelica.Mechanics.Rotational.Examples.Backlash.mos \
-Modelica.Mechanics.Rotational.Examples.LossyGearDemo1.mos \
-Modelica.Mechanics.Rotational.Examples.ElasticBearing.mos \
-Modelica.Mechanics.Rotational.Examples.RollingWheel.mos \
-Modelica.Mechanics.Translational.Examples.Accelerate.mos \
-Modelica.Mechanics.Translational.Examples.Brake.mos \
-Modelica.Mechanics.Translational.Examples.Damper.mos \
-Modelica.Mechanics.Translational.Examples.ElastoGap.mos \
-Modelica.Mechanics.Translational.Examples.Friction.mos \
-Modelica.Mechanics.Translational.Examples.Oscillator.mos \
-Modelica.Mechanics.Translational.Examples.Sensors.mos \
-Modelica.Mechanics.Translational.Examples.SignConvention.mos \
-Modelica.Mechanics.Translational.Examples.WhyArrows.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.OneMass.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.TwoMass.mos \
+Modelica.Thermal.HeatTransfer.Examples.Motor.mos \
 Modelica.Math.Matrices.norm.mos
 
 #compile time to large
@@ -91,14 +49,8 @@ Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot.mos \
 Modelica.Mechanics.Rotational.Examples.CoupledClutches.mos \
 Modelica.StateGraph.Examples.ControlledTanks.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.TwoMass.mos \
-Modelica.Thermal.HeatTransfer.Examples.Motor.mos \
 Modelica.Electrical.Machines.Examples.AIMC_DOL.mos \
 Modelica.Electrical.Machines.Examples.AIMS_Start.mos \
 Modelica.Electrical.Machines.Examples.AIMC_YD.mos \

@@ -60,25 +60,15 @@ res := OpenModelica.Scripting.compareSimulationResults(
 // [Degasifier.mo:100:71-100:73:writable] Warning: Treating .1 as 0.1. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // "
 // record SimulationResult
-//     resultFile = "",
+//     resultFile = "ThermoSysPro.Examples.SimpleExamples.TestWaterHammer_res.mat",
 //     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'ThermoSysPro.Examples.SimpleExamples.TestWaterHammer', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
-//     messages = "Simulation execution failed for model: ThermoSysPro.Examples.SimpleExamples.TestWaterHammer
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | Error solving nonlinear system SES_ALGORITHM 0 at time 0
-// warning | fxr = 1.#QNAN
-// warning | fxk = 0.062499
-// throw   | [line] 509 | [file] math-support/initialization.c
-//         | undefined error in NelderMeadOptimization
+//     messages = "warning | Error solving nonlinear system residualFunc47 (size 68) at time 0
+// warning | Error solving nonlinear system residualFunc47 (size 68) at time 0
+// warning | Error solving nonlinear system residualFunc47 (size 68) at time 0
+// warning | Error solving nonlinear system residualFunc47 (size 68) at time 0
+// warning | Error solving nonlinear system residualFunc47 (size 68) at time 0
+// warning | Error solving nonlinear system residualFunc47 (size 68) at time 0
+// info    | model terminate | Simulation terminated at time 0.02
 // "
 // end SimulationResult;
 // "[Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
@@ -105,5 +95,5 @@ res := OpenModelica.Scripting.compareSimulationResults(
 // Warning: Alias variables PSource1.h = volumeA.Ce1.h have start values 1000000.0 != 100000.0. Use value from PSource1.h.
 // 
 // "
-// "Error Open File!"
+// "Files Equal!"
 // endResult
