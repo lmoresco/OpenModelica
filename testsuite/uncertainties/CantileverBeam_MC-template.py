@@ -34,8 +34,8 @@ class modelePYTHON(OpenTURNSPythonFunction) :
 # Use that function defined in the script python
 # with the openturns library
 # Create a NumericalMathFunction from modelPYTHON
-deviation = NumericalMathFunction(modelePYTHON())
-
+deviation = NumericalMathFunction("<%wrapperName%>")
+#deviation = NumericalMathFunction(modelePYTHON());
 
 #######################
 ## Input random vector
@@ -63,7 +63,7 @@ inputDistribution = ComposedDistribution(collectionMarginals, Copula(copuleNorma
 # Give a description of each component of the input distribution
 <%inputDescriptions%>
 
-inputDistribution.setDescription(inputDescription)
+# inputDistribution.setDescription(inputDescription)
 
 # Create the input random vector
 inputRandomVector = RandomVector(inputDistribution)
@@ -132,7 +132,7 @@ print "###################"
 print "Random_sampling"
 print "###################"
 
-size1 = 10000
+size1 = 10
 output_Sample1 = outputVariableOfInterest.getNumericalSample(size1)
 outputMean = output_Sample1.computeMean()
 outputCovariance = output_Sample1.computeCovariance()

@@ -8,23 +8,21 @@
 loadModel(Modelica, {"3.1"}); getErrorString();
 loadFile("TestModels/ThermoSysPro/package.mo");
 loadFile("TestModels/OpenTURNSTests.mo");
-pyscript := buildOpenTURNSInterface(OpenTURNSTests.CantileverBeam,"CantileverBeam_MC_dummy-template.py");
-"read Python file";
-readFile("CantileverBeam_MC_dummy-OpenTURNSTests.CantileverBeam.py");
-"read XML file";
-readFile("CantileverBeam_wrapper.xml");
-"read Model_wrapper.c";
-readFile("CantileverBeam_wrapper.c");
-"read Model_wrapper.makefile";
-readFile("CantileverBeam_wrapper.makefile");
-"read Model_wrapper.log";
-readFile("CantileverBeam_wrapper.log");
-getErrorString();
+pyscript := buildOpenTURNSInterface(OpenTURNSTests.CantileverBeam,"CantileverBeam_MC-template.py"); getErrorString();
+//"read Python file";
+//readFile("CantileverBeam_MC_dummy-OpenTURNSTests.CantileverBeam.py");
+//"read XML file";
+//readFile("CantileverBeam_wrapper.xml");
+//"read Model_wrapper.c";
+//readFile("CantileverBeam_wrapper.c");
+//"read Model_wrapper.makefile";
+//readFile("CantileverBeam_wrapper.makefile");
+//"read Model_wrapper.log";
+//readFile("CantileverBeam_wrapper.log"); getErrorString();
 "run python script";
-otlog := runOpenTURNSPythonScript(pyscript);
+otlog := runOpenTURNSPythonScript(pyscript); getErrorString();
 "read OpenTurns output log";
-readFile(otlog);
-getErrorString();
+readFile(otlog); getErrorString();
 
 // Result:
 // true
