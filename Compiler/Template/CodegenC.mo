@@ -885,6 +885,7 @@ algorithm
         txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, intString(a_value));
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
       then txt;
 
     case ( txt,
