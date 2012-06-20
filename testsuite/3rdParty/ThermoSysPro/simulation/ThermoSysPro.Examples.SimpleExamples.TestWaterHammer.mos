@@ -68,6 +68,7 @@ res := OpenModelica.Scripting.compareSimulationResults(
 // warning | Error solving nonlinear system residualFunc291 (size 68) at time 0
 // warning | Error solving nonlinear system residualFunc291 (size 68) at time 0
 // warning | Error solving nonlinear system residualFunc291 (size 68) at time 0
+// warning | Error solving nonlinear system residualFunc291 (size 68) at time 0
 // info    | model terminate | Simulation terminated at time 0.02
 // "
 // end SimulationResult;
