@@ -413,7 +413,7 @@ algorithm
     case ( txt,
            SOME(i_exp) )
       equation
-        txt = CodegenC.initValXml(txt, i_exp);
+        txt = CodegenUtil.initValXml(txt, i_exp);
       then txt;
 
     case ( txt,
@@ -456,7 +456,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]:= "));
         txt = OptionInitial(txt, i_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" /* "));
-        txt = CodegenC.crefStr(txt, i_name);
+        txt = CodegenUtil.crefStr(txt, i_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" */;"));
       then txt;
 
@@ -492,7 +492,7 @@ algorithm
         ret_1 = intAdd(ret_0, 1);
         txt = Tpl.writeStr(txt, intString(ret_1));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("] is "));
-        txt = CodegenC.crefStr(txt, i_name);
+        txt = CodegenUtil.crefStr(txt, i_name);
       then txt;
 
     case ( txt,
@@ -530,7 +530,7 @@ algorithm
            SimCode.SIMVAR(name = i_name, initialValue = i_initialValue) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("parameter Real "));
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_1 = System.stringReplace(Tpl.textString(txt_0), ".", "_");
         txt = Tpl.writeStr(txt, ret_1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
@@ -2695,7 +2695,7 @@ algorithm
            SimCode.SIMVAR(name = i_name) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("extern double "));
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_1 = System.stringReplace(Tpl.textString(txt_0), ".", "_");
         txt = Tpl.writeStr(txt, ret_1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
@@ -2758,7 +2758,7 @@ algorithm
            SimCode.SIMVAR(name = i_name) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("extern double "));
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_1 = System.stringReplace(Tpl.textString(txt_0), ".", "_");
         txt = Tpl.writeStr(txt, ret_1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
@@ -2821,7 +2821,7 @@ algorithm
            SimCode.SIMVAR(name = i_name) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("extern double "));
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_1 = System.stringReplace(Tpl.textString(txt_0), ".", "_");
         txt = Tpl.writeStr(txt, ret_1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));

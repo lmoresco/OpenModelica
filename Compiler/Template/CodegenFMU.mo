@@ -370,7 +370,7 @@ algorithm
     case ( txt,
            SimCode.SIMVAR(name = i_name) )
       equation
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_1 = stringEq(Tpl.textString(txt_0), "$dummy");
         txt = fun_34(txt, ret_1);
       then txt;
@@ -1271,7 +1271,7 @@ algorithm
            a_simVar,
            a_name )
       equation
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, a_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, a_name);
         ret_1 = stringEq(Tpl.textString(txt_0), "der($dummy)");
         txt = fun_59(txt, ret_1, a_isFixed, a_initialValue, a_displayUnit, a_unit, a_type__, a_simVar);
       then txt;
@@ -1312,7 +1312,7 @@ algorithm
     case ( txt,
            (i_simVar as SimCode.SIMVAR(name = i_name, type_ = i_type__, unit = i_unit, displayUnit = i_displayUnit, initialValue = i_initialValue, isFixed = i_isFixed)) )
       equation
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_1 = stringEq(Tpl.textString(txt_0), "$dummy");
         txt = fun_60(txt, ret_1, i_isFixed, i_initialValue, i_displayUnit, i_unit, i_type__, i_simVar, i_name);
       then txt;
@@ -1385,7 +1385,7 @@ algorithm
         l_alias = getAliasVar(Tpl.emptyTxt, i_aliasvar);
         l_caus = getCausality(Tpl.emptyTxt, i_causality);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("name=\""));
-        txt_6 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_6 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_7 = System.stringReplace(Tpl.textString(txt_6), "$", "_D_");
         txt = Tpl.writeStr(txt, ret_7);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
@@ -2477,7 +2477,7 @@ algorithm
     case ( txt,
            SimCode.SIMVAR(name = i_name) :: rest )
       equation
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_1 = stringEq(Tpl.textString(txt_0), "$dummy");
         txt = fun_91(txt, ret_1, i_name);
         txt = Tpl.nextIter(txt);
@@ -2542,7 +2542,7 @@ algorithm
     case ( txt,
            SimCode.SIMVAR(name = i_name) :: rest )
       equation
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_1 = stringEq(Tpl.textString(txt_0), "der($dummy)");
         txt = fun_93(txt, ret_1, i_name);
         txt = Tpl.nextIter(txt);
@@ -2807,7 +2807,7 @@ algorithm
            DAE.CREF_QUAL(ident = "$DER", componentRef = i_componentRef) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("der_"));
-        txt = CodegenC.crefStr(txt, i_componentRef);
+        txt = CodegenUtil.crefStr(txt, i_componentRef);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_"));
       then txt;
 
@@ -2903,7 +2903,7 @@ algorithm
            a_description,
            a_name )
       equation
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, a_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, a_name);
         ret_1 = stringEq(Tpl.textString(txt_0), "der($dummy)");
         txt = fun_99(txt, ret_1, a_description, a_name);
       then txt;
@@ -2936,7 +2936,7 @@ algorithm
            SimCode.SIMVAR(comment = i_comment, name = i_name) )
       equation
         l_description = fun_98(Tpl.emptyTxt, i_comment);
-        txt_1 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_1 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_2 = stringEq(Tpl.textString(txt_1), "$dummy");
         txt = fun_100(txt, ret_2, l_description, i_name);
       then txt;
@@ -3969,7 +3969,7 @@ algorithm
            a_arrayName,
            a_name )
       equation
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, a_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, a_name);
         ret_1 = stringEq(Tpl.textString(txt_0), "der($dummy)");
         txt = fun_127(txt, ret_1, a_offset, a_index, a_arrayName);
       then txt;
@@ -4008,7 +4008,7 @@ algorithm
            a_arrayName,
            a_offset )
       equation
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_1 = stringEq(Tpl.textString(txt_0), "$dummy");
         txt = fun_128(txt, ret_1, a_offset, i_index, a_arrayName, i_name);
       then txt;
@@ -5996,7 +5996,7 @@ algorithm
            a_arrayName,
            a_name )
       equation
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, a_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, a_name);
         ret_1 = stringEq(Tpl.textString(txt_0), "der($dummy)");
         txt = fun_180(txt, ret_1, a_offset, a_index, a_arrayName, a_name);
       then txt;
@@ -6038,7 +6038,7 @@ algorithm
            a_offset )
       equation
         l_description = fun_179(Tpl.emptyTxt, i_comment);
-        txt_1 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_1 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_2 = stringEq(Tpl.textString(txt_1), "$dummy");
         txt = fun_181(txt, ret_2, a_offset, i_index, a_arrayName, i_name);
       then txt;
@@ -6340,7 +6340,7 @@ algorithm
            a_arrayName,
            a_name )
       equation
-        txt_0 = CodegenC.crefStr(Tpl.emptyTxt, a_name);
+        txt_0 = CodegenUtil.crefStr(Tpl.emptyTxt, a_name);
         ret_1 = stringEq(Tpl.textString(txt_0), "der($dummy)");
         txt = fun_189(txt, ret_1, a_offset, a_index, a_arrayName, a_name);
       then txt;
@@ -6382,7 +6382,7 @@ algorithm
            a_offset )
       equation
         l_description = fun_188(Tpl.emptyTxt, i_comment);
-        txt_1 = CodegenC.crefStr(Tpl.emptyTxt, i_name);
+        txt_1 = CodegenUtil.crefStr(Tpl.emptyTxt, i_name);
         ret_2 = stringEq(Tpl.textString(txt_1), "$dummy");
         txt = fun_190(txt, ret_2, a_offset, i_index, a_arrayName, i_name);
       then txt;

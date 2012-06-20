@@ -35,6 +35,242 @@ public import Algorithm;
 public import DAEUtil;
 public import Types;
 
+public function crefStr
+  input Tpl.Text in_txt;
+  input DAE.ComponentRef in_a_cr;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_cr)
+    local
+      Tpl.Text txt;
+      DAE.ComponentRef i_componentRef;
+      list<DAE.Subscript> i_subscriptLst;
+      DAE.Ident i_ident;
+
+    case ( txt,
+           DAE.CREF_IDENT(ident = i_ident, subscriptLst = i_subscriptLst) )
+      equation
+        txt = Tpl.writeStr(txt, i_ident);
+        txt = subscriptsStr(txt, i_subscriptLst);
+      then txt;
+
+    case ( txt,
+           DAE.CREF_QUAL(ident = "$DER", componentRef = i_componentRef) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("der("));
+        txt = crefStr(txt, i_componentRef);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then txt;
+
+    case ( txt,
+           DAE.CREF_QUAL(ident = i_ident, subscriptLst = i_subscriptLst, componentRef = i_componentRef) )
+      equation
+        txt = Tpl.writeStr(txt, i_ident);
+        txt = subscriptsStr(txt, i_subscriptLst);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("."));
+        txt = crefStr(txt, i_componentRef);
+      then txt;
+
+    case ( txt,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("CREF_NOT_IDENT_OR_QUAL"));
+      then txt;
+  end matchcontinue;
+end crefStr;
+
+protected function lm_28
+  input Tpl.Text in_txt;
+  input list<DAE.Subscript> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<DAE.Subscript> rest;
+      DAE.Subscript i_s;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_s :: rest )
+      equation
+        txt = subscriptStr(txt, i_s);
+        txt = Tpl.nextIter(txt);
+        txt = lm_28(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_28(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_28;
+
+public function subscriptsStr
+  input Tpl.Text in_txt;
+  input list<DAE.Subscript> in_a_subscripts;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_subscripts)
+    local
+      Tpl.Text txt;
+      list<DAE.Subscript> i_subscripts;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_subscripts )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_28(txt, i_subscripts);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then txt;
+  end matchcontinue;
+end subscriptsStr;
+
+public function subscriptStr
+  input Tpl.Text in_txt;
+  input DAE.Subscript in_a_subscript;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_subscript)
+    local
+      Tpl.Text txt;
+      Integer i_i;
+
+    case ( txt,
+           DAE.INDEX(exp = DAE.ICONST(integer = i_i)) )
+      equation
+        txt = Tpl.writeStr(txt, intString(i_i));
+      then txt;
+
+    case ( txt,
+           DAE.SLICE(exp = DAE.ICONST(integer = i_i)) )
+      equation
+        txt = Tpl.writeStr(txt, intString(i_i));
+      then txt;
+
+    case ( txt,
+           DAE.WHOLEDIM() )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("WHOLEDIM"));
+      then txt;
+
+    case ( txt,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("UNKNOWN_SUBSCRIPT"));
+      then txt;
+  end matchcontinue;
+end subscriptStr;
+
+protected function fun_31
+  input Tpl.Text in_txt;
+  input Boolean in_a_bool;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_bool)
+    local
+      Tpl.Text txt;
+
+    case ( txt,
+           false )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("false"));
+      then txt;
+
+    case ( txt,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("true"));
+      then txt;
+  end matchcontinue;
+end fun_31;
+
+public function initValXml
+  input Tpl.Text in_txt;
+  input DAE.Exp in_a_initialValue;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_initialValue)
+    local
+      Tpl.Text txt;
+      DAE.Exp i_initialValue;
+      Absyn.Path i_name;
+      Integer i_index;
+      Boolean i_bool;
+      String i_string;
+      Real i_real;
+      Integer i_integer;
+      Tpl.Text txt_1;
+      String ret_1;
+      String ret_0;
+
+    case ( txt,
+           DAE.ICONST(integer = i_integer) )
+      equation
+        txt = Tpl.writeStr(txt, intString(i_integer));
+      then txt;
+
+    case ( txt,
+           DAE.RCONST(real = i_real) )
+      equation
+        txt = Tpl.writeStr(txt, realString(i_real));
+      then txt;
+
+    case ( txt,
+           DAE.SCONST(string = i_string) )
+      equation
+        ret_0 = Util.escapeModelicaStringToXmlString(i_string);
+        txt = Tpl.writeStr(txt, ret_0);
+      then txt;
+
+    case ( txt,
+           DAE.BCONST(bool = i_bool) )
+      equation
+        txt = fun_31(txt, i_bool);
+      then txt;
+
+    case ( txt,
+           DAE.ENUM_LITERAL(index = i_index, name = i_name) )
+      equation
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" /*ENUM:"));
+        txt = dotPath(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("*/"));
+      then txt;
+
+    case ( txt,
+           i_initialValue )
+      equation
+        txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("initial value of unknown type: "));
+        ret_1 = ExpressionDump.printExpStr(i_initialValue);
+        txt_1 = Tpl.writeStr(txt_1, ret_1);
+        txt = error(txt, Tpl.sourceInfo("CodegenUtil.tpl", 89, 14), Tpl.textString(txt_1));
+      then txt;
+  end matchcontinue;
+end initValXml;
+
 public function dotPath
   input Tpl.Text in_txt;
   input Absyn.Path in_a_path;
@@ -74,5 +310,43 @@ algorithm
       then txt;
   end matchcontinue;
 end dotPath;
+
+public function error
+  input Tpl.Text txt;
+  input Absyn.Info a_srcInfo;
+  input String a_errMessage;
+
+  output Tpl.Text out_txt;
+protected
+  String ret_0;
+algorithm
+  Tpl.addSourceTemplateError(a_errMessage, a_srcInfo);
+  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                   "\n",
+                                   "#error \""
+                               }, false));
+  ret_0 := Error.infoStr(a_srcInfo);
+  out_txt := Tpl.writeStr(out_txt, ret_0);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING(" "));
+  out_txt := Tpl.writeStr(out_txt, a_errMessage);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\""));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_NEW_LINE());
+end error;
+
+public function errorMsg
+  input Tpl.Text txt;
+  input String a_errMessage;
+
+  output Tpl.Text out_txt;
+algorithm
+  Tpl.addTemplateError(a_errMessage);
+  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                   "\n",
+                                   "#error \""
+                               }, false));
+  out_txt := Tpl.writeStr(out_txt, a_errMessage);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\""));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_NEW_LINE());
+end errorMsg;
 
 end CodegenUtil;
