@@ -20,6 +20,7 @@ loadFile("../../Compiler/BackEnd/DAEQuery.mo");
 loadFile("../../Compiler/BackEnd/Derive.mo");
 loadFile("../../Compiler/BackEnd/ExpressionSolve.mo");
 loadFile("../../Compiler/BackEnd/PartFn.mo");
+loadFile("../../Compiler/BackEnd/MathematicaDump.mo");
 loadFile("../../Compiler/BackEnd/SimCode.mo");
 loadFile("../../Compiler/BackEnd/TaskGraphExt.mo");
 loadFile("../../Compiler/BackEnd/TaskGraph.mo");
