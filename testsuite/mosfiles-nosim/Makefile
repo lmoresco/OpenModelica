@@ -15,7 +15,6 @@ FinalTests.mos \
 FuncNamespace.mos \
 FunctionDefaultArg.mos \
 GroupImport.mos \
-iconv.mos \
 IntMulOverflow.mos IntPowOverflow.mos IntDivOverflow.mos IntAddSubOverflow.mos \
 ISO-8859-1.mos \
 LookupBuiltin.mos \
