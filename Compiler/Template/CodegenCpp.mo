@@ -522,7 +522,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("LDFLAGS=-L\""));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "/bin\" -L$(BOOST_LIBS) -L\"./\"\n",
+                                    "/bin\" -L$(BOOST_LIBS)\n",
                                     "\n",
                                     "MAINFILE="
                                 }, false));
@@ -543,7 +543,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(CXX) -shared -I. -o $(MODELICA_SYSTEM_LIB) $(MAINFILE) $(FUNCTIONFILE)  "));
         txt = algloopcppfilenames(txt, i_odeEquations, i_algebraicEquations, i_whenClauses, i_parameterEquations, i_simCode);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "     $(CFLAGS)  $(LDFLAGS) -lSystem -lMath -lModelicaExternalC -Wl,-Bstatic  -Wl,-Bdynamic\n",
+                                    "   -L\"..//Test//Base/\"    $(CFLAGS)  $(LDFLAGS) -lSystem -lMath -lModelicaExternalC -Wl,-Bstatic  -Wl,-Bdynamic\n",
                                     "\n"
                                 }, true));
       then txt;
