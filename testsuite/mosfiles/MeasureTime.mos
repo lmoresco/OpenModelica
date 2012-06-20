@@ -7,7 +7,7 @@ loadFile("MeasureTime.mo");
 simulate(MeasureTime.A,method="euler",measureTime=true);
 system("test -f MeasureTime.A_prof.html");
 system("test -f MeasureTime.A_prof.xml");
-system("test -f MeasureTime.A_prof.fun1006.svg");
+system("test -f MeasureTime.A_prof.fun3.svg");
 
 // Result:
 // true
