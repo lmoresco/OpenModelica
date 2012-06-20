@@ -9579,7 +9579,7 @@ algorithm
            a_modelInfo )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "#include \"Policies/TextFileWriter.h\"\n",
+                                    "#include \"policies/TextfileWriter.h\"\n",
                                     "typedef HistoryImpl<TextFileWriter,"
                                 }, false));
         txt = numAlgvars(txt, a_modelInfo);
@@ -9600,7 +9600,7 @@ algorithm
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "#include \"ReduceDAE/Interfaces/IReduceDAE.h\"\n",
-                                    "#include \"Policies/BufferReaderWriter.h\"\n",
+                                    "#include \"policies/BufferReaderWriter.h\"\n",
                                     "typedef HistoryImpl<BufferReaderWriter,"
                                 }, false));
         txt = numAlgvars(txt, a_modelInfo);
