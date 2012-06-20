@@ -114,6 +114,7 @@ loadFile("../../Compiler/Script/Interactive.mo");
 loadFile("../../Compiler/Script/Refactor.mo");
 "Template";
 loadFile("../../Compiler/Template/AbsynDumpTpl.mo");
+loadFile("../../Compiler/Template/CodegenUtil.mo");
 loadFile("../../Compiler/Template/CodegenC.mo");
 loadFile("../../Compiler/Template/CodegenAdevs.mo");
 loadFile("../../Compiler/Template/CodegenFMU.mo");
