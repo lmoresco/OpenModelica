@@ -150,6 +150,7 @@ loadFile("../../Compiler/Util/HashTable4.mo");
 loadFile("../../Compiler/Util/HashTable5.mo");
 // loadFile("../../Compiler/Util/HashTable6.mo");
 loadFile("../../Compiler/Util/HashTableCG.mo");
+loadFile("../../Compiler/Util/HashTableCrILst.mo");
 loadFile("../../Compiler/Util/HashTable.mo");
 loadFile("../../Compiler/Util/HashTableExpToIndex.mo");
 loadFile("../../Compiler/Util/HashTablePathToFunction.mo");
