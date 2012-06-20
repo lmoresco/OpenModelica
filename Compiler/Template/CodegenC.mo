@@ -1537,7 +1537,7 @@ algorithm
         txt = Tpl.writeStr(txt, intString(ret_0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(",\""));
         txt_1 = crefStr(Tpl.emptyTxt, i_var_name);
-        ret_2 = System.escapedString(Tpl.textString(txt_1));
+        ret_2 = System.escapedString(Tpl.textString(txt_1), true);
         txt = Tpl.writeStr(txt, ret_2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\",\""));
         ret_3 = Util.escapeModelicaStringToCString(i_var_comment);
