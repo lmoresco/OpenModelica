@@ -9703,8 +9703,8 @@ algorithm
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "#pragma once\n",
-                                    "#define BOOST_EXTENSION_ALGLOOPDEFAULTIMPL_DECL BOOST_EXTENSION_IMPORT_DECL\n",
-                                    "#define BOOST_EXTENSION_EVENTHANDLING_DECL BOOST_EXTENSION_IMPORT_DECL\n",
+                                    "#define BOOST_EXTENSION_ALGLOOPDEFAULTIMPL_DECL BOOST_EXTENSION_EXPORT_DECL\n",
+                                    "#define BOOST_EXTENSION_EVENTHANDLING_DECL BOOST_EXTENSION_EXPORT_DECL\n",
                                     "#include \"System/Interfaces/IDAESystem.h\"\n",
                                     "#include \"System/Implementation/AlgLoopDefaultImplementation.h\"\n",
                                     "#include \"System/Implementation/EventHandling.h\"\n",
