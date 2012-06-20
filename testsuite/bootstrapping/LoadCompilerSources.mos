@@ -24,6 +24,7 @@ loadFile("../../Compiler/BackEnd/SimCode.mo");
 loadFile("../../Compiler/BackEnd/TaskGraphExt.mo");
 loadFile("../../Compiler/BackEnd/TaskGraph.mo");
 loadFile("../../Compiler/BackEnd/Uncertainties.mo");
+loadFile("../../Compiler/BackEnd/MathematicaDump.mo");
 loadFile("../../Compiler/BackEnd/XMLDump.mo");
 loadFile("../../Compiler/BackEnd/OpenTURNS.mo");
 "FrontEnd";
