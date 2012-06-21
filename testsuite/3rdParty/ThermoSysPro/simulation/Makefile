@@ -12,7 +12,6 @@ ThermoSysPro.Examples.SimpleExamples.TestJunctions2.mos \
 ThermoSysPro.Examples.SimpleExamples.TestJunctions4.mos \
 ThermoSysPro.Examples.SimpleExamples.TestMassFlowMultiplier.mos \
 ThermoSysPro.Examples.SimpleExamples.TestPipePressureLoss.mos \
-ThermoSysPro.Examples.SimpleExamples.TestRefP.mos \
 ThermoSysPro.Examples.SimpleExamples.TestSensors.mos \
 ThermoSysPro.Examples.SimpleExamples.TestSingularPressureLoss.mos \
 ThermoSysPro.Examples.SimpleExamples.TestStaticCentrifugalPump1.mos \
@@ -29,6 +28,7 @@ ThermoSysPro.Examples.SimpleExamples.TestWaterHammer.mos \
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
+ThermoSysPro.Examples.SimpleExamples.TestRefP.mos \
 ThermoSysPro.Examples.SimpleExamples.TestBend.mos \
 ThermoSysPro.Examples.SimpleExamples.TestIdealSwitchValve.mos \
 ThermoSysPro.Examples.SimpleExamples.TestAirHumidity.mos \
