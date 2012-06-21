@@ -543,7 +543,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(CXX) -shared -I. -o $(MODELICA_SYSTEM_LIB) $(MAINFILE) $(FUNCTIONFILE)  "));
         txt = algloopcppfilenames(txt, i_odeEquations, i_algebraicEquations, i_whenClauses, i_parameterEquations, i_simCode);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "     $(CFLAGS)  $(LDFLAGS) -lSystem -lMath -lModelicaExternalC -Wl,-Bstatic  -Wl,-Bdynamic\n",
+                                    "     $(CFLAGS)  $(LDFLAGS) -lSystem  -lModelicaExternalC -Wl,-Bstatic  -Wl,-Bdynamic\n",
                                     "\n"
                                 }, true));
       then txt;
