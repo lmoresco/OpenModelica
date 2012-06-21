@@ -1,0 +1,25 @@
+// name:     WhenStatement1
+// keywords: when
+// status: correct
+// teardown_command: rm -rf WhenStat_* WhenStat WhenStat.exe WhenStat.cpp WhenStat.makefile WhenStat.libs WhenStat.log output.log
+// cflags: 	 +simCodeTarget=Cpp
+// 
+//  
+// Drmodelica: 9.1 When-Statements (p. 293)
+//  
+
+loadFile("WhenStatement1.mo");
+
+simulate(WhenStat, tolerance=1e-3, numberOfIntervals=400);
+echo(false); // turns of output
+
+
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "WhenStat_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 400, tolerance = 0.001, method = 'dassl', fileNamePrefix = 'WhenStat', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
+//     messages = ""
+// end SimulationResult;
+// endResult
