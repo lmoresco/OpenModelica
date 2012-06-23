@@ -1,4 +1,4 @@
-TEST = ../../../../rtest -b
+TEST = ../../../../rtest -v
 
 TESTFILES = \
 

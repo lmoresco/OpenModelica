@@ -18,16 +18,6 @@ simulate(Modelica.Fluid.Examples.BranchingDynamicPipes); getErrorString();
 //     resultFile = "",
 //     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Fluid.Examples.BranchingDynamicPipes', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = "Simulation failed for model: Modelica.Fluid.Examples.BranchingDynamicPipes
-// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"unknown\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
-// .
-// [package.mo:4075:7-4076:62:writable] Error: Type mismatch in binding casRegistryNumber = \"7732-18-5\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
-// .
-// [package.mo:4077:7-4078:68:writable] Error: Type mismatch in binding chemicalFormula = \"H2O\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
-// .
-// [package.mo:4079:7-4079:59:writable] Error: Type mismatch in binding structureFormula = \"unknown\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
-// .
-// [package.mo:4074:7-4074:79:writable] Error: Type mismatch in binding iupacName = \"unknown\", expected subtype of String, got type Internal error Types.unparseType: not implemented yet
-// .
 // [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
@@ -41,9 +31,194 @@ simulate(Modelica.Fluid.Examples.BranchingDynamicPipes); getErrorString();
 // 
 // [package.mo:4093:7-4094:50:writable] Warning: Variable boundary1.medium.Xi: Non-array modification 'if boundary1.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
-// [Air.mo:139:7-139:61:writable] Error: Illegal subscript [Water] for dimensions  in component <NO COMPONENT>
-// [Air.mo:139:7-139:61:writable] Error: Variable MMX[Water] not found in scope Modelica.Fluid.Sources.Boundary_pT.Medium.BaseProperties
-// Error: Error occurred while flattening model Modelica.Fluid.Examples.BranchingDynamicPipes
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[1].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[2].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[3].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[4].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[5].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [Incompressible.mo:302:7-302:72:writable] Error: No constant value for variable TinK in scope Modelica.Media.Incompressible.TableBased.h_T_der.
+// [Incompressible.mo:290:7-291:30:writable] Error: No constant value for variable TinK in scope Modelica.Media.Incompressible.TableBased.h_T.
+// [Incompressible.mo:315:7-319:83:writable] Error: No constant value for variable TinK in scope Modelica.Media.Incompressible.TableBased.h_pT.
+// [Pipes.mo:3110:11-3112:25:writable] Error: Failed to elaborate expression: Internal.m_flow_of_dp_fric(dp_grav_b - dp_grav_a, rho_a, rho_b, mu_a, mu_b, length, diameter, Re1, Re2, Delta) + m_flow_small
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[1].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[2].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[3].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[4].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[5].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[1].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[2].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[3].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[4].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe1.mediums.Xi: Non-array modification 'if pipe1.mediums[5].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if pipe2.mediums[1].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if pipe2.mediums[2].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if pipe2.mediums[3].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if pipe2.mediums[4].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if pipe2.mediums[5].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if pipe2.mediums[1].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if pipe2.mediums[2].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if pipe2.mediums[3].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if pipe2.mediums[4].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe2.mediums.Xi: Non-array modification 'if pipe2.mediums[5].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if pipe3.mediums[1].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if pipe3.mediums[2].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if pipe3.mediums[3].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if pipe3.mediums[4].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if pipe3.mediums[5].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if pipe3.mediums[1].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if pipe3.mediums[2].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if pipe3.mediums[3].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if pipe3.mediums[4].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe3.mediums.Xi: Non-array modification 'if pipe3.mediums[5].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if pipe4.mediums[1].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if pipe4.mediums[2].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if pipe4.mediums[3].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if pipe4.mediums[4].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if pipe4.mediums[5].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if pipe4.mediums[1].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if pipe4.mediums[2].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if pipe4.mediums[3].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if pipe4.mediums[4].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable pipe4.mediums.Xi: Non-array modification 'if pipe4.mediums[5].preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable boundary4.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable boundary4.medium.Xi: Non-array modification 'if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
 // "
 // end SimulationResult;
 // ""

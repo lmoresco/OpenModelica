@@ -21,8 +21,54 @@ simulate(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getError
 //     resultFile = "",
 //     simulationOptions = "startTime = 0.0, stopTime = 900.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = '', simflags = ''",
 //     messages = "Simulation failed for model: Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks
-// [ControlledTankSystem.mo:9:5-15:26:writable] Error: Variable tank1.height not found in scope Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks
-// Error: Error occurred while flattening model Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks
+// Warning: No corresponding 'inner' declaration found for component tankController.s1.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     .Modelica.Fluid.System system; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks. Referenced by 'outer' components: {tank1.heatTransfer.system, tank1.medium.system, tank1.system}
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component tankController.s2.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     .Modelica.Fluid.System system; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks. Referenced by 'outer' components: {tank1.heatTransfer.system, tank1.medium.system, tank1.system}
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component tankController.emptyTanks.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     .Modelica.Fluid.System system; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks. Referenced by 'outer' components: {tank1.heatTransfer.system, tank1.medium.system, tank1.system}
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component tankController.normal.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     .Modelica.Fluid.System system; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks. Referenced by 'outer' components: {tank1.heatTransfer.system, tank1.medium.system, tank1.system}
+//     .Modelica.StateGraph.Interfaces.CompositeStepState tankController.normal.stateGraphRoot; defined in scope: Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: Parameter stop.buttonTimeTable has neither value nor start value, and is fixed during initialization (fixed=true)
+// [Sources.mo:2842:7-2843:108:writable] Warning: Failed to deduce dimensions of table due to unknown dimensions of modifier stop.buttonTimeTable.
+// Warning: Parameter start.buttonTimeTable has neither value nor start value, and is fixed during initialization (fixed=true)
+// [Sources.mo:2842:7-2843:108:writable] Warning: Failed to deduce dimensions of table due to unknown dimensions of modifier start.buttonTimeTable.
+// Error: Too many equations, overdetermined system. The model has 511 equation(s) and 506 variable(s)
+// Error: Derivative of expression Modelica.StateGraph.Temporary.anyTrue({tankController.normal.suspend[1].reset}) or tankController.normal.outerState.subgraphStatePort.suspend is non-existent
+// Error: Derivative of expression Modelica.StateGraph.Temporary.anyTrue({tankController.normal.resume[1].set}) or tankController.normal.outerState.subgraphStatePort.resume is non-existent
+// Warning: Alias variables tank1.medium.T = tank1.medium.state.T have start values tank1.T_start != 300.0. Use value from tank1.medium.T.
+// 
+// Warning: Alias variables tank1.medium.p = tank1.medium.state.p have start values tank1.p_start != 100000.0. Use value from tank1.medium.p.
+// 
+// Warning: Alias variables tank1.medium.p = tank1.heatTransfer.states[1].p have start values tank1.p_start != 100000.0. Use value from tank1.medium.p.
+// 
+// Warning: Alias variables tank1.medium.T = tank1.heatTransfer.states[1].T have start values tank1.T_start != 300.0. Use value from tank1.medium.T.
+// 
+// Warning: Alias variables tank2.medium.T = tank2.medium.state.T have start values tank2.T_start != 300.0. Use value from tank2.medium.T.
+// 
+// Warning: Alias variables tank2.medium.p = tank2.medium.state.p have start values tank2.p_start != 100000.0. Use value from tank2.medium.p.
+// 
+// Warning: Alias variables tank2.medium.p = tank2.heatTransfer.states[1].p have start values tank2.p_start != 100000.0. Use value from tank2.medium.p.
+// 
+// Warning: Alias variables tank2.medium.T = tank2.heatTransfer.states[1].T have start values tank2.T_start != 300.0. Use value from tank2.medium.T.
+// 
 // "
 // end SimulationResult;
 // ""
