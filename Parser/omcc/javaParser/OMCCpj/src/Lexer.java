@@ -712,296 +712,289 @@ public class Lexer {
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (86) // #line 123 "lexerModelica.l"
-		:
-			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
-			act2 = TokenCode.CODE;
-			tok = new TOKEN(tokName[act2 - nameSpan], act2,
-					listReverse(buffer), info);
-			break;
-		case (87) // #line 124 "lexerModelica.l"
+		case (86) // #line 124 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.CODE_NAME;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (88) // #line 125 "lexerModelica.l"
+		case (87) // #line 125 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.CODE_EXP;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (89) // #line 126 "lexerModelica.l"
+		case (88) // #line 126 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.CODE_VAR;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (90) // #line 128 "lexerModelica.l"
+		case (89) // #line 128 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.PURE;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (91) // #line 129 "lexerModelica.l"
+		case (90) // #line 129 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.IMPURE;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (92) // #line 131 "lexerModelica.l"
+		case (91) // #line 131 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.PLUS_EW;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (93) // #line 132 "lexerModelica.l"
+		case (92) // #line 132 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.MINUS_EW;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (94) // #line 133 "lexerModelica.l"
+		case (93) // #line 133 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.STAR_EW;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (95) // #line 134 "lexerModelica.l"
+		case (94) // #line 134 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.SLASH_EW;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (96) // #line 135 "lexerModelica.l"
+		case (95) // #line 135 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.POWER_EW;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (97) // #line 137 "lexerModelica.l"
+		case (96) // #line 137 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.STAR;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (98) // #line 138 "lexerModelica.l"
+		case (97) // #line 138 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.MINUS;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (99) // #line 139 "lexerModelica.l"
+		case (98) // #line 139 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.PLUS;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (100) // #line 140 "lexerModelica.l"
+		case (99) // #line 140 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.LESSEQ;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (101) // #line 141 "lexerModelica.l"
+		case (100) // #line 141 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.LESSGT;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (102) // #line 142 "lexerModelica.l"
+		case (101) // #line 142 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.LESS;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (103) // #line 143 "lexerModelica.l"
+		case (102) // #line 143 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.GREATER;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (104) // #line 144 "lexerModelica.l"
+		case (103) // #line 144 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.GREATEREQ;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (105) // #line 146 "lexerModelica.l"
+		case (104) // #line 146 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.POWER;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (106) // #line 147 "lexerModelica.l"
+		case (105) // #line 147 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.SLASH;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (107) // #line 149 "lexerModelica.l"
+		case (106) // #line 149 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.AS;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (108) // #line 150 "lexerModelica.l"
+		case (107) // #line 150 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.CASE;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (109) // #line 151 "lexerModelica.l"
+		case (108) // #line 151 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.EQUALITY;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (110) // #line 152 "lexerModelica.l"
+		case (109) // #line 152 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.FAILURE;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (111) // #line 153 "lexerModelica.l"
+		case (110) // #line 153 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.GUARD;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (112) // #line 154 "lexerModelica.l"
+		case (111) // #line 154 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.LOCAL;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (113) // #line 155 "lexerModelica.l"
+		case (112) // #line 155 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.MATCH;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (114) // #line 156 "lexerModelica.l"
+		case (113) // #line 156 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.MATCHCONTINUE;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (115) // #line 157 "lexerModelica.l"
+		case (114) // #line 157 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.UNIONTYPE;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (116) // #line 158 "lexerModelica.l"
+		case (115) // #line 158 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.ALLWILD;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (117) // #line 159 "lexerModelica.l"
+		case (116) // #line 159 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.WILD;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (118) // #line 160 "lexerModelica.l"
+		case (117) // #line 160 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.SUBTYPEOF;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (119) // #line 161 "lexerModelica.l"
+		case (118) // #line 161 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.MOD;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (120) // #line 163 "lexerModelica.l"
+		case (119) // #line 163 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.STREAM;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (121) // #line 165 "lexerModelica.l"
+		case (120) // #line 165 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.DOT;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (122) // #line 167 "lexerModelica.l"
+		case (121) // #line 167 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.STRING;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (123) // #line 169 "lexerModelica.l"
+		case (122) // #line 169 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.IDENT;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (124) // #line 170 "lexerModelica.l"
+		case (123) // #line 170 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			act2 = TokenCode.UNSIGNED_INTEGER;
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (125) // #line 172 "lexerModelica.l"
+		case (124) // #line 172 "lexerModelica.l"
 		:
 			startSt = 7;
 			bufferRet = buffer;
 			tok = null;
 			break;
-		case (126) // #line 177 "lexerModelica.l"
+		case (125) // #line 177 "lexerModelica.l"
 		:
 			bufferRet = buffer;
 			tok = null;
 			break;
-		case (127) // #line 178 "lexerModelica.l"
+		case (126) // #line 178 "lexerModelica.l"
 		:
 			bufferRet = buffer;
 			tok = null;
 			break;
-		case (128) // #line 179 "lexerModelica.l"
+		case (127) // #line 179 "lexerModelica.l"
 		:
 			info = ""; // LexerModelica.getInfo(tb,mm_sPos,mm_linenr,fileNm);
 			startSt = 1;
@@ -1009,54 +1002,54 @@ public class Lexer {
 			tok = new TOKEN(tokName[act2 - nameSpan], act2,
 					listReverse(buffer), info);
 			break;
-		case (129) // #line 180 "lexerModelica.l"
+		case (128) // #line 180 "lexerModelica.l"
 		:
 			bufferRet = buffer;
 			tok = null;
 			break;
-		case (130) // #line 181 "lexerModelica.l"
+		case (129) // #line 181 "lexerModelica.l"
 		:
 			bufferRet = buffer;
 			tok = null;
 			break;
-		case (131) // #line 184 "lexerModelica.l"
+		case (130) // #line 184 "lexerModelica.l"
 		:
 			startSt = 3;
 			tok = null;
 			break;
-		case (132) // #line 189 "lexerModelica.l"
+		case (131) // #line 189 "lexerModelica.l"
 		:
 			startSt = 1;
 			tok = null;
 			break;
-		case (133) // #line 190 "lexerModelica.l"
+		case (132) // #line 190 "lexerModelica.l"
 		:
 			tok = null;
 			break;
-		case (134) // #line 191 "lexerModelica.l"
+		case (133) // #line 191 "lexerModelica.l"
 		:
 			tok = null;
 			break;
-		case (135) // #line 192 "lexerModelica.l"
+		case (134) // #line 192 "lexerModelica.l"
 		:
 			tok = null;
 			break;
-		case (136) // #line 199 "lexerModelica.l"
+		case (135) // #line 199 "lexerModelica.l"
 		:
 			startSt = 5;
 			bufferRet = buffer;
 			tok = null;
 			break;
-		case (137) // #line 205 "lexerModelica.l"
+		case (136) // #line 205 "lexerModelica.l"
 		:
 			startSt = 1;
 			tok = null;
 			break;
-		case (138) // #line 206 "lexerModelica.l"
+		case (137) // #line 206 "lexerModelica.l"
 		:
 			tok = null;
 			break;
-		case (139) // #line 211 "lexerModelica.l"
+		case (138) // #line 211 "lexerModelica.l"
 		:
 			tok = null;
 			break;

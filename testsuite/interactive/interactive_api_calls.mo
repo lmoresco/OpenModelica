@@ -28,6 +28,11 @@ package TestPack
  algorithm
    y := x;
  end NoExt; 
+
+model MyModel
+  Modelica.Electrical.Analog.Basic.Resistor r1;
+  Modelica.Electrical.Analog.Basic.Capacitor c1;
+end MyModel;
  
 end TestPack;
 

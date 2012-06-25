@@ -60,6 +60,35 @@ getShortDefinitionBaseClassInformation(RealConnect); getErrorString();
 getExternalFunctionSpecification(TestPack.Ext); getErrorString();
 getExternalFunctionSpecification(TestPack.NoExt); getErrorString();
 
+// adrpo test getNthComponentModification
+list(TestPack.MyModel); getErrorString();
+getNthComponentModification(TestPack.MyModel, 1); getErrorString();
+setComponentModifierValue(TestPack.MyModel, r1, $Code(=2)); getErrorString();
+list(TestPack.MyModel); getErrorString();
+getNthComponentModification(TestPack.MyModel, 1); getErrorString();
+setComponentModifierValue(TestPack.MyModel, r1.start, $Code(=2));  getErrorString();
+list(TestPack.MyModel); getErrorString(); 
+setComponentModifierValue(TestPack.MyModel, r1, $Code(=Resistor(R=2)));  getErrorString();
+list(TestPack.MyModel); getErrorString();
+getNthComponentModification(TestPack.MyModel, 1); getErrorString();
+setComponentModifierValue(TestPack.MyModel, r1.min, $Code(=10)); getErrorString();
+list(TestPack.MyModel); getErrorString();
+getComponentModifierNames(TestPack.MyModel, r1); getErrorString();
+getNthComponentModification(TestPack.MyModel, 1); getErrorString();
+getComponentModifierValue(TestPack.MyModel, r1); getErrorString();
+getComponentModifierValue(TestPack.MyModel, r1.start); getErrorString();
+getComponentModifierValue(TestPack.MyModel, r1.min); getErrorString();
+list(TestPack.MyModel); getErrorString();
+setComponentModifierValue(TestPack.MyModel, r1.min, $Code(())); getErrorString();
+list(TestPack.MyModel); getErrorString();
+setComponentModifierValue(TestPack.MyModel, r1, $Code(())); getErrorString();
+list(TestPack.MyModel); getErrorString();
+setComponentModifierValue(TestPack.MyModel, r1.start, $Code(())); getErrorString();
+list(TestPack.MyModel); getErrorString();
+
+// test codeToString($Code)
+codeToString($Code(=1+2)); getErrorString();
+
 // Result:
 // {true}
 // Evaluating: createModel(A)
@@ -420,6 +449,151 @@ getExternalFunctionSpecification(TestPack.NoExt); getErrorString();
 // ""
 // Evaluating: getExternalFunctionSpecification(TestPack.NoExt)
 // {}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: list(TestPack.MyModel)
+// "model MyModel
+//   Modelica.Electrical.Analog.Basic.Resistor r1;
+//   Modelica.Electrical.Analog.Basic.Capacitor c1;
+// end MyModel;
+// 
+// "
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getNthComponentModification(TestPack.MyModel, 1)
+// {$Code()}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: setComponentModifierValue(TestPack.MyModel, r1, $Code( = 2))
+// Ok
+// Evaluating: getErrorString()
+// ""
+// Evaluating: list(TestPack.MyModel)
+// "model MyModel
+//   Modelica.Electrical.Analog.Basic.Resistor r1 = 2;
+//   Modelica.Electrical.Analog.Basic.Capacitor c1;
+// end MyModel;
+// 
+// "
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getNthComponentModification(TestPack.MyModel, 1)
+// {$Code( = 2)}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: setComponentModifierValue(TestPack.MyModel, r1.start, $Code( = 2))
+// Ok
+// Evaluating: getErrorString()
+// ""
+// Evaluating: list(TestPack.MyModel)
+// "model MyModel
+//   Modelica.Electrical.Analog.Basic.Resistor r1(start = 2) = 2;
+//   Modelica.Electrical.Analog.Basic.Capacitor c1;
+// end MyModel;
+// 
+// "
+// Evaluating: getErrorString()
+// ""
+// Evaluating: setComponentModifierValue(TestPack.MyModel, r1, $Code( = Resistor(R = 2)))
+// Ok
+// Evaluating: getErrorString()
+// ""
+// Evaluating: list(TestPack.MyModel)
+// "model MyModel
+//   Modelica.Electrical.Analog.Basic.Resistor r1(start = 2) = Resistor(R = 2);
+//   Modelica.Electrical.Analog.Basic.Capacitor c1;
+// end MyModel;
+// 
+// "
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getNthComponentModification(TestPack.MyModel, 1)
+// {$Code((start = 2) = Resistor(R = 2))}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: setComponentModifierValue(TestPack.MyModel, r1.min, $Code( = 10))
+// Ok
+// Evaluating: getErrorString()
+// ""
+// Evaluating: list(TestPack.MyModel)
+// "model MyModel
+//   Modelica.Electrical.Analog.Basic.Resistor r1(start = 2, min = 10) = Resistor(R = 2);
+//   Modelica.Electrical.Analog.Basic.Capacitor c1;
+// end MyModel;
+// 
+// "
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getComponentModifierNames(TestPack.MyModel, r1)
+// {start, min}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getNthComponentModification(TestPack.MyModel, 1)
+// {$Code((start = 2, min = 10) = Resistor(R = 2))}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getComponentModifierValue(TestPack.MyModel, r1)
+// Resistor(R = 2)
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getComponentModifierValue(TestPack.MyModel, r1.start)
+//  = 2
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getComponentModifierValue(TestPack.MyModel, r1.min)
+//  = 10
+// Evaluating: getErrorString()
+// ""
+// Evaluating: list(TestPack.MyModel)
+// "model MyModel
+//   Modelica.Electrical.Analog.Basic.Resistor r1(start = 2, min = 10) = Resistor(R = 2);
+//   Modelica.Electrical.Analog.Basic.Capacitor c1;
+// end MyModel;
+// 
+// "
+// Evaluating: getErrorString()
+// ""
+// Evaluating: setComponentModifierValue(TestPack.MyModel, r1.min, $Code(()))
+// Ok
+// Evaluating: getErrorString()
+// ""
+// Evaluating: list(TestPack.MyModel)
+// "model MyModel
+//   Modelica.Electrical.Analog.Basic.Resistor r1(start = 2) = Resistor(R = 2);
+//   Modelica.Electrical.Analog.Basic.Capacitor c1;
+// end MyModel;
+// 
+// "
+// Evaluating: getErrorString()
+// ""
+// Evaluating: setComponentModifierValue(TestPack.MyModel, r1, $Code(()))
+// Ok
+// Evaluating: getErrorString()
+// ""
+// Evaluating: list(TestPack.MyModel)
+// "model MyModel
+//   Modelica.Electrical.Analog.Basic.Resistor r1(start = 2);
+//   Modelica.Electrical.Analog.Basic.Capacitor c1;
+// end MyModel;
+// 
+// "
+// Evaluating: getErrorString()
+// ""
+// Evaluating: setComponentModifierValue(TestPack.MyModel, r1.start, $Code(()))
+// Ok
+// Evaluating: getErrorString()
+// ""
+// Evaluating: list(TestPack.MyModel)
+// "model MyModel
+//   Modelica.Electrical.Analog.Basic.Resistor r1;
+//   Modelica.Electrical.Analog.Basic.Capacitor c1;
+// end MyModel;
+// 
+// "
+// Evaluating: getErrorString()
+// ""
+// Evaluating: codeToString($Code( = 1 + 2))
+// " = 1 + 2"
 // Evaluating: getErrorString()
 // ""
 // endResult

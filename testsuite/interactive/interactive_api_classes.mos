@@ -5,6 +5,8 @@
 //  Subset of the Graphical API.
 //
 
+setCommandLineOptions({"+d=showStatement"});
+
 // get the annotation version
 getAnnotationVersion();
 // set the annotation version
@@ -82,23 +84,42 @@ getClassNames(A);
 
 
 // Result:
+// {true}
+// Evaluating: getAnnotationVersion()
 // "3.x"
+// Evaluating: setAnnotationVersion("3.x")
 // true
+// Evaluating: createModel(A)
 // true
+// Evaluating: createModel(A.test)
 // true
+// Evaluating: createModel(test2)
 // true
+// Evaluating: addComponent(x, Integer, A.test)
 // true
+// Evaluating: addComponent(z, Real, A.test)
 // true
+// Evaluating: addComponent(y, Integer, test2)
 // true
+// Evaluating: updateComponent(x, Integer, A.test, binding = 33)
 // true
+// Evaluating: getErrorString()
 // ""
+// Evaluating: addClassAnnotation(A.test, annotate = Icon(extent = {{0,0},{100,100}}, graphics = {Line(points = {{0,0},{100,100}})}))
 // true
+// Evaluating: getErrorString()
 // ""
+// Evaluating: getIconAnnotation(A.test)
 // { annotation(Icon(extent = {{0,0},{100,100}}, graphics = {Line(points = {{0,0},{100,100}})})) }
+// Evaluating: getErrorString()
 // ""
+// Evaluating: addClassAnnotation(A.test, annotate = Icon(graphics = {Line(color = {127,127,127}, arrow = {Arrow.None,Arrow.Open}, points = {{-50,-50},{50,50},{100,0},{0,100}})}))
 // true
+// Evaluating: addClassAnnotation(A.test, annotate = Diagram(graphics = {Line(color = {127,127,127}, arrow = {Arrow.None,Arrow.Open}, points = {{-50,-50},{50,50},{100,0},{0,100}})}))
 // true
+// Evaluating: addClassAnnotation(A.test, annotate = Documentation(info = "<HTML>foo</HTML>", revisions = "1.0"))
 // true
+// Evaluating: list()
 // "model test2
 //   Integer y;
 // end test2;
@@ -111,38 +132,71 @@ getClassNames(A);
 // end A;
 // 
 // "
+// Evaluating: getErrorString()
 // ""
+// Evaluating: getIconAnnotation(A.test)
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true, {0.0, 0.0}, 0, {{-50, -50}, {50, 50}, {100, 0}, {0, 100}}, {127, 127, 127}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.Open}, 3, Smooth.None)}}
+// Evaluating: getErrorString()
 // ""
+// Evaluating: getDiagramAnnotation(A.test)
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true, {0.0, 0.0}, 0, {{-50, -50}, {50, 50}, {100, 0}, {0, 100}}, {127, 127, 127}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.Open}, 3, Smooth.None)}}
+// Evaluating: getErrorString()
 // ""
+// Evaluating: getDocumentationAnnotation(A.test)
 // {"<HTML>foo</HTML>","1.0"}
+// Evaluating: getErrorString()
 // ""
+// Evaluating: getComponentCount(A.test)
 // 2
+// Evaluating: getComponentCount(test2)
 // 1
+// Evaluating: getComponents(A.test)
 // {{Real,z,"", "public", false, false, false, false, "unspecified", "none", "unspecified",{}},{Integer,x,"", "public", false, false, false, false, "unspecified", "none", "unspecified",{}}}
+// Evaluating: addConnection(a.n, b.z, A.test)
 // Ok
+// Evaluating: addConnection(a.n[1], b.z[2], A.test)
 // Ok
+// Evaluating: getNthConnection(A.test, 1)
 // {a.n[1],b.z[2], ""}
+// Evaluating: getClassNames(A)
 // {test}
+// Evaluating: clear()
 // true
+// Evaluating: getAnnotationVersion()
 // "3.x"
+// Evaluating: setAnnotationVersion("2.x")
 // true
+// Evaluating: createModel(A)
 // true
+// Evaluating: createModel(A.test)
 // true
+// Evaluating: createModel(test2)
 // true
+// Evaluating: addComponent(x, Integer, A.test)
 // true
+// Evaluating: addComponent(z, Real, A.test)
 // true
+// Evaluating: addComponent(y, Integer, test2)
 // true
+// Evaluating: updateComponent(x, Integer, A.test, binding = 33)
 // true
+// Evaluating: getErrorString()
 // ""
+// Evaluating: addClassAnnotation(A.test, annotate = Icon(extent = {{0,0},{100,100}}, graphics = {Line(points = {{0,0},{100,100}})}))
 // true
+// Evaluating: getErrorString()
 // ""
+// Evaluating: getIconAnnotation(A.test)
 // { annotation(Icon(extent = {{0,0},{100,100}}, graphics = {Line(points = {{0,0},{100,100}})})) }
+// Evaluating: getErrorString()
 // ""
+// Evaluating: addClassAnnotation(A.test, annotate = Icon(graphics = {Line(color = {127,127,127}, arrow = {Arrow.None,Arrow.Open}, points = {{-50,-50},{50,50},{100,0},{0,100}})}))
 // true
+// Evaluating: addClassAnnotation(A.test, annotate = Diagram(graphics = {Line(color = {127,127,127}, arrow = {Arrow.None,Arrow.Open}, points = {{-50,-50},{50,50},{100,0},{0,100}})}))
 // true
+// Evaluating: addClassAnnotation(A.test, annotate = Documentation(info = "<HTML>foo</HTML>", revisions = "1.0"))
 // true
+// Evaluating: list()
 // "model test2
 //   Integer y;
 // end test2;
@@ -155,18 +209,32 @@ getClassNames(A);
 // end A;
 // 
 // "
+// Evaluating: getErrorString()
 // ""
+// Evaluating: getIconAnnotation(A.test)
 // {-10.0,-10.0,10.0,10.0,{Line(true, {{-50, -50}, {50, 50}, {100, 0}, {0, 100}}, {127, 127, 127}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.Open}, 3.0, false)}}
+// Evaluating: getErrorString()
 // ""
+// Evaluating: getDiagramAnnotation(A.test)
 // {-100.0,-100.0,100.0,100.0,{Line(true, {{-50, -50}, {50, 50}, {100, 0}, {0, 100}}, {127, 127, 127}, LinePattern.Solid, 0.25, {Arrow.None, Arrow.Open}, 3.0, false)}}
+// Evaluating: getErrorString()
 // ""
+// Evaluating: getDocumentationAnnotation(A.test)
 // {"<HTML>foo</HTML>","1.0"}
+// Evaluating: getErrorString()
 // ""
+// Evaluating: getComponentCount(A.test)
 // 2
+// Evaluating: getComponentCount(test2)
 // 1
+// Evaluating: getComponents(A.test)
 // {{Real,z,"", "public", false, false, false, false, "unspecified", "none", "unspecified",{}},{Integer,x,"", "public", false, false, false, false, "unspecified", "none", "unspecified",{}}}
+// Evaluating: addConnection(a.n, b.z, A.test)
 // Ok
+// Evaluating: addConnection(a.n[1], b.z[2], A.test)
 // Ok
+// Evaluating: getNthConnection(A.test, 1)
 // {a.n[1],b.z[2], ""}
+// Evaluating: getClassNames(A)
 // {test}
 // endResult

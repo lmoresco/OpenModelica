@@ -119,7 +119,6 @@ sescape        "\\\""
 ":" return COLON;
 ";" return SEMICOLON;
 
-"Code" return CODE;
 "$Code" return CODE;
 "$TypeName" return CODE_NAME;
 "$Exp" return CODE_EXP;

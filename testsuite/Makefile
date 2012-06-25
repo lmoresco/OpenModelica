@@ -54,7 +54,7 @@ msl221simulation.log  \
 msl31mediasimulation.log \
 msl31simulation.log
 
-.PHONY : all omc-diff failingtest test fast fast.logs $(FASTLOGS) $(SLOWLOGS) $(SIMULATIONLOGS) slow.logs
+.PHONY : all omc-diff failingtest test fast fast.logs $(FASTLOGS) $(SLOWLOGS) $(SIMULATIONLOGS) slow.logs threaded
 
 all : test
 
