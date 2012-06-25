@@ -89,6 +89,12 @@ list(TestPack.MyModel); getErrorString();
 // test codeToString($Code)
 codeToString($Code(=1+2)); getErrorString();
 
+// test MSL 3.2 Code issues [from Chris Paredis and Axel Reichwein at Georgia Institute of Technology] 
+loadModel(Modelica, {"3.2"}); getErrorString();
+getClassRestriction(Modelica.UsersGuide.Conventions.Documentation.Format.Code); getErrorString();
+getClassInformation(Modelica.UsersGuide.Conventions.Documentation.Format.Code); getErrorString();
+list(Modelica.UsersGuide.Conventions.Documentation.Format.Code); getErrorString();
+
 // Result:
 // {true}
 // Evaluating: createModel(A)
@@ -594,6 +600,76 @@ codeToString($Code(=1+2)); getErrorString();
 // ""
 // Evaluating: codeToString($Code( = 1 + 2))
 // " = 1 + 2"
+// Evaluating: getErrorString()
+// ""
+// Evaluating: loadModel(Modelica, {"3.2"})
+// true
+// Evaluating: getErrorString()
+// "Notification: Modelica language version set to 3.2 due to loading of MSL 3.2.
+// Warning: Requested package ModelicaServices of version 1.1, but this package was already loaded with version 1.0. You might experience problems if these versions are incompatible.
+// "
+// Evaluating: getClassRestriction(Modelica.UsersGuide.Conventions.Documentation.Format.Code)
+// "class"
+// Evaluating: getErrorString()
+// ""
+// Evaluating: getClassInformation(Modelica.UsersGuide.Conventions.Documentation.Format.Code)
+// {"class","Code","package.mo",{false,false,false},{"writable",535,9,586,17},{}}
+// Evaluating: getErrorString()
+// ""
+// Evaluating: list(Modelica.UsersGuide.Conventions.Documentation.Format.Code)
+// "class Code \"Code\"
+//   extends Modelica.Icons.Information;
+//   annotation(Documentation(info = \"<html>
+// 
+// <h4>Code</h4>
+// 
+// <p>
+// <a href=\\\"modelica://Modelica.UsersGuide.Conventions.ModelicaCode\\\">Modelica code</a> conventions of class and instance names,
+// parameters and variables are specified separately. In this section it is summarized how to refer to
+// Modelica code in the HTML documentation.
+// </p>
+// 
+// <ol>
+// <li> For constants, parameters and variables in code segments <code>&lt;code&gt;</code> and <code>&lt;/code&gt;</code>
+//      should to be used, e.g., <code><b>parameter</b> Modelica.SIunits.Time tStart \\\"Start time\\\"</code></li>
+// <li> Write multi or single line code segments using <code>&lt;pre&gt;</code> and <code>&lt;/pre&gt;</code>.</li>
+// <li> Multi line or single line code shall not be indented.</li>
+// <li> Inline code segments may be typeset with <code>&lt;code&gt;</code> and <code>&lt;/code&gt;</code>.</li>
+// <li> In code segements use bold to emphasize Modelica keywords.</li>
+// </ol>
+// 
+// <h5>Example 1</h5>
+// 
+// <pre>
+// &lt;pre&gt;
+// &lt;b&gt;connector&lt;/b&gt; Frame
+//    ...
+//    &lt;b&gt;flow&lt;/b&gt; SI.Force f[Woehrnschimmel1998] &lt;b&gt;annotation&lt;/b&gt;(unassignedMessage=\\\"...\\\");
+// &lt;b&gt;end&lt;/b&gt; Frame;
+// &lt;/pre&gt;</pre>
+// 
+// <p>appears as</p>
+// 
+// <pre>
+// <b>connector</b> Frame
+//    ...
+//    <b>flow</b> SI.Force f[Woehrnschimmel1998] <b>annotation</b>(unassignedMessage=\\\"...\\\");
+// <b>end</b> Frame;
+// </pre>
+// 
+// <h5>Example 2</h5>
+// 
+// <pre>&lt;pre&gt;
+// &lt;b&gt;parameter&lt;/b&gt; Modelica.SIunits.Conductance G=1 &quot;Conductance&quot;;&lt;/pre&gt;
+// </pre>
+// <p>appears as</p>
+// 
+// <pre>
+// <b>parameter</b> Modelica.SIunits.Conductance G=1 &quot;Conductance&quot;;</pre>
+// </html>\"));
+// end Code;
+// 
+// "
 // Evaluating: getErrorString()
 // ""
 // endResult
