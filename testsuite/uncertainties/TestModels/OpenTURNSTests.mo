@@ -31,13 +31,13 @@ package OpenTURNSTests
     connect(pipePressureLoss2.C2,mixer21.Ce1) annotation(Line(visible=true, origin={33.5485,16.5671}, points={{-12.4902,3.5007},{6.2451,3.5007},{6.2451,-7.0014}}, color={0,0,255}));
   end ArticleExpleThermoSysPro;
 
-  model CantileverBeam
+  model CantileverBeam "Model from here: http://doc.openturns.org/openturns-latest/html/ExamplesGuide/cid1.xhtml#cid1"
     parameter Distribution distributionE=Distribution("Beta", {0.93,3.2,28000000.0,48000000.0}, {"r","t","a","b"});
     parameter Distribution distributionF=Distribution("LogNormal", {30000,9000,15000}, {"mu","sigma","gamma"});
     parameter Distribution distributionL=Distribution("Uniform", {250,260}, {"a","b"});
     parameter Distribution distributionI=Distribution("Beta", {2.5,4.0,310.0,450.0}, {"r","t","a","b"});
     Real y(uncertain=Uncertainty.sought);
-    Real F(distribution=distributionF, uncertain=Uncertainty.given)=300;
+    parameter Real F(distribution=distributionF, uncertain=Uncertainty.given)=300;
     parameter Real E(distribution=distributionE, uncertain=Uncertainty.given)=3000000000.0;
     parameter Real L(distribution=distributionL, uncertain=Uncertainty.given)=250;
     parameter Real I(distribution=distributionI, uncertain=Uncertainty.given)=4e-06 annotation(Diagram(coordinateSystem(extent={{-148.5,-105.0},{148.5,105.0}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
@@ -46,7 +46,7 @@ package OpenTURNSTests
   algorithm 
     correlation:={Correlation(L, I, -0.2)};
   equation 
-    y=F*L^3/(3.0*E*I);
+    y=(F*L*L*L)/(3.0*E*I);
   end CantileverBeam;
 
   model TankPI
