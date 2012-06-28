@@ -90,7 +90,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 //   Continuing flattening by only considering the 'outer' component declaration.
 // 
 // Class Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce has 1112 equation(s) and 1119 variable(s).
-// 642 of these are trivial equation(s).
+// 618 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Mechanics.MultiBody.Types.RotationSequence completed successfully.
@@ -256,7 +256,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape has 37 equation(s) and 37 variable(s).
-// 13 of these are trivial equation(s).
+// 19 of these are trivial equation(s).
 // "
 // ""
 // true
@@ -464,7 +464,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape has 37 equation(s) and 37 variable(s).
-// 13 of these are trivial equation(s).
+// 19 of these are trivial equation(s).
 // "
 // ""
 // endResult

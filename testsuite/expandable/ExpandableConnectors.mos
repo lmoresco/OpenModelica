@@ -3791,7 +3791,7 @@ checkModel(QHP_Electrolytes_test_T2); getErrorString();
 // 
 // 
 // Class QHP_Electrolytes_test_T2 has 1551 equation(s) and 1551 variable(s).
-// 1379 of these are trivial equation(s).
+// 1375 of these are trivial equation(s).
 // "
 // ""
 // endResult
