@@ -12,7 +12,6 @@ loadFile("../ThermoSysPro/package.mo"); getErrorString();
 
 //instantiateModel(ThermoSysPro.Examples.SimpleExamples.TestDynamicOnePhaseFlowPipe); getErrorString();
 checkModel(ThermoSysPro.Examples.SimpleExamples.TestDynamicOnePhaseFlowPipe); getErrorString();
-simulate(ThermoSysPro.Examples.SimpleExamples.TestDynamicOnePhaseFlowPipe); getErrorString();
 
 // Result:
 // true
