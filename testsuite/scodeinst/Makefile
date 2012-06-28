@@ -48,6 +48,7 @@ func3.mo \
 func6.mo \
 func7.mo \
 func9.mo \
+function1.mo \
 ih1.mo \
 inst1.mo \
 inst2.mo \
