@@ -1,0 +1,176 @@
+TEST=RTEST_OMCFLAGS=+d=scodeInst ../rtest -v
+
+TESTFILES=\
+bindings1.mo \
+bindings2.mo \
+bindings3.mo \
+bindings4.mo \
+bindings5.mo \
+bindings7.mo \
+builtinmod2.mo \
+classextends1.mo \
+classextends2.mo \
+compfunc.mo \
+conn1.mo \
+conn2.mo \
+conngraph1.mo \
+const1.mo \
+const2.mo \
+const3.mo \
+const4.mo \
+const8.mo \
+const9.mo \
+const10.mo \
+const13.mo \
+const14.mo \
+const16.mo \
+dim1.mo \
+dim3.mo \
+dim7.mo \
+dim10.mo \
+dim13.mo \
+dim14.mo \
+dim16.mo \
+dim18.mo \
+enum1.mo \
+enum2.mo \
+eq1.mo \
+eq2.mo \
+eq3.mo \
+eq4.mo \
+eq5.mo \
+eq6.mo \
+eq7.mo \
+eq8.mo \
+eq9.mo \
+for3.mo \
+func3.mo \
+func6.mo \
+func7.mo \
+func9.mo \
+ih1.mo \
+inst1.mo \
+inst2.mo \
+inst3.mo \
+inst5.mo \
+inst6.mo \
+loop2.mo \
+loop3.mo \
+loop4.mo \
+mod1.mo \
+mod2.mo \
+mod3.mo \
+mod4.mo \
+mod5.mo \
+mod6.mo \
+mod7.mo \
+mod8.mo \
+mod10.mo \
+mod11.mo \
+redeclare1.mo \
+redeclare2.mo \
+redeclare4.mo \
+redeclare5.mo \
+redeclare6.mo \
+redeclare8.mo \
+redeclare9.mo \
+redeclare11.mo \
+type1.mo \
+type2.mo \
+type3.mo \
+type4.mo \
+type5.mo \
+
+# test that currently fail. Move up when fixed. 
+# Run make testfailing
+FAILINGTESTFILES=\
+arrfunc.mo \
+bindings6.mo \
+builtinmod.mo \
+cond1.mo \
+cond3.mo \
+cond2.mo \
+cond4.mo \
+conn3.mo \
+conn4.mo \
+conn5.mo \
+conn6.mo \
+conn7.mo \
+conn8.mo \
+conn9.mo \
+conn10.mo \
+conn11.mo \
+conngraph2.mo \
+const5.mo \
+const6.mo \
+const7.mo \
+const11.mo \
+const12.mo \
+const15.mo \
+const17.mo \
+dim2.mo \
+dim4.mo \
+dim5.mo \
+dim6.mo \
+dim12.mo \
+dim15.mo \
+dim17.mo \
+dim19.mo \
+enum3.mo \
+expconn1.mo \
+expconn2.mo \
+expconn3.mo \
+expconn4.mo \
+expconn5.mo \
+expconn6.mo \
+expconn7.mo \
+extends1.mo \
+extends2.mo \
+for1.mo \
+for2.mo \
+func1.mo \
+func2.mo \
+func4.mo \
+func5.mo \
+func7.mo \
+ih2.mo \
+ih3.mo \
+inst7.mo \
+inst4.mo \
+loop1.mo \
+mod9.mo \
+noretcall1.mo \
+redeclare3.mo \
+redeclare7.mo \
+redeclare10.mo \
+redeclare12.mo \
+when1.mo \
+
+# Dependency files that are not .mo .mos or Makefile
+# Add them here or they will be cleaned.
+DEPENDENCIES = \
+*.mo \
+*.mos \
+Makefile \
+CMakeLists.txt \
+ExternalFunction1_f.c \
+ExternalFunction2_f.c \
+ExternalFunction3-addmatrices.c \
+FlatParse.mof \
+SmallPlantModified.mof \
+VERSION.texi \
+addReal1_.c \
+drmodelica \
+modtest.info \
+modtest.texi \
+msl
+
+CLEAN = `ls | grep -w -v -f deps.tmp`
+
+.PHONY : test failingtest clean getdeps
+
+test :
+	@echo
+	@echo Running tests...
+	@echo
+	@$(TEST) $(TESTFILES)

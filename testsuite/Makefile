@@ -22,7 +22,8 @@ redeclare.log \
 fmi.log \
 PlanarMechanics.log \
 TestMedia.log \
-uncertainties.log 
+uncertainties.log \
+scodeinst.log
 
 SLOWLOGS = \
 bootstrapping.log \
@@ -215,6 +216,9 @@ TestMedia.log: omc-diff
 	@echo $@ done
 omcc.log: omc-diff
 	$(MAKE) -C omcc -f Makefile test > $@
+	@echo $@ done
+scodeinst.log: omc-diff
+	$(MAKE) -C scodeinst -f Makefile test > $@
 	@echo $@ done
 failingtest: omc-diff
 	cd mofiles; $(MAKE) -f Makefile failingtest; \
