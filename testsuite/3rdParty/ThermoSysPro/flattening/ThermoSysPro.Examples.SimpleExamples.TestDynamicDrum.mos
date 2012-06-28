@@ -5515,7 +5515,7 @@ checkModel(ThermoSysPro.Examples.SimpleExamples.TestDynamicDrum); getErrorString
 // [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
 // 
 // Class ThermoSysPro.Examples.SimpleExamples.TestDynamicDrum has 1457 equation(s) and 1457 variable(s).
-// 338 of these are trivial equation(s).
+// 410 of these are trivial equation(s).
 // "
 // ""
 // endResult

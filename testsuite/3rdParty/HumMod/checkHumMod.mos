@@ -220,7 +220,7 @@ checkModel(HumMod_HumMod_GolemEdition); getErrorString();
 // [HumModOMCTotal.mo:31303:9-31306:33:writable] Warning: connect(arty, arty) connects the same connector instance! The connect equation will be ignored.
 // 
 // Class HumMod_HumMod_GolemEdition has 28083 equation(s) and 28083 variable(s).
-// 24684 of these are trivial equation(s).
+// 24645 of these are trivial equation(s).
 // "
 // ""
 // endResult

@@ -144,7 +144,7 @@ simulate(TestMedia.TestModels.TestFlueGas); getErrorString();
 // [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // 
 // Class TestMedia.TestModels.TestFlueGas has 12 equation(s) and 12 variable(s).
-// 9 of these are trivial equation(s).
+// 2 of these are trivial equation(s).
 // "
 // ""
 // record SimulationResult

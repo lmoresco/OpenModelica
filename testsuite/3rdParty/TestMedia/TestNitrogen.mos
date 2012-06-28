@@ -112,7 +112,7 @@ simulate(TestMedia.TestModels.TestNitrogen); getErrorString();
 // 
 // 
 // Class TestMedia.TestModels.TestNitrogen has 6 equation(s) and 6 variable(s).
-// 3 of these are trivial equation(s).
+// 2 of these are trivial equation(s).
 // "
 // ""
 // record SimulationResult

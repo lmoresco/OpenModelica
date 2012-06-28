@@ -6109,7 +6109,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a has 3032 equation(s) and 3032 variable(s).
-// 2070 of these are trivial equation(s).
+// 1979 of these are trivial equation(s).
 // "
 // ""
 // endResult

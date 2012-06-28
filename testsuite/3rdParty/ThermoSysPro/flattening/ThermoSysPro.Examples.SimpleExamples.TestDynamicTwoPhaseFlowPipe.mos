@@ -5464,7 +5464,7 @@ checkModel(ThermoSysPro.Examples.SimpleExamples.TestDynamicTwoPhaseFlowPipe); ge
 // [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
 // 
 // Class ThermoSysPro.Examples.SimpleExamples.TestDynamicTwoPhaseFlowPipe has 1240 equation(s) and 1240 variable(s).
-// 237 of these are trivial equation(s).
+// 309 of these are trivial equation(s).
 // "
 // ""
 // endResult

@@ -3785,7 +3785,7 @@ checkModel(ThermoSysPro.Examples.SimpleExamples.TestWaterHammer); getErrorString
 // [Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
 // 
 // Class ThermoSysPro.Examples.SimpleExamples.TestWaterHammer has 355 equation(s) and 355 variable(s).
-// 81 of these are trivial equation(s).
+// 82 of these are trivial equation(s).
 // "
 // ""
 // endResult

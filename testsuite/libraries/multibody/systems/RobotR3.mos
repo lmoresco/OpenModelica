@@ -12710,7 +12710,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot has 4828 equation(s) and 4828 variable(s).
-// 3662 of these are trivial equation(s).
+// 3456 of these are trivial equation(s).
 // "
 // ""
 // endResult

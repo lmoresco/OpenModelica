@@ -4271,7 +4271,7 @@ getErrorString();
 // [_LoopsTotal.mo:2717:11-2717:36:writable] Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true), using available start value (start=1.0) as default value
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic has 2238 equation(s) and 2238 variable(s).
-// 1499 of these are trivial equation(s).
+// 1473 of these are trivial equation(s).
 // "
 // ""
 // endResult
