@@ -2285,8 +2285,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity has 1358 equation(s) and 1358 variable(s).
-// 788 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity has 1340 equation(s) and 1358 variable(s).
+// 764 of these are trivial equation(s).
 // "
 // ""
 // endResult

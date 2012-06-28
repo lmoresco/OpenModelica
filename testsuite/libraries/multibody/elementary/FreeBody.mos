@@ -3189,8 +3189,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody has 1770 equation(s) and 1770 variable(s).
-// 1135 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody has 1797 equation(s) and 1770 variable(s).
+// 1117 of these are trivial equation(s).
 // "
 // ""
 // endResult

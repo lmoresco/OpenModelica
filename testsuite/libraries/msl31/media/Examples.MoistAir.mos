@@ -478,7 +478,7 @@ checkModel(Modelica.Media.Examples.MoistAir); getErrorString();
 // [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // 
 // Class Modelica.Media.Examples.MoistAir has 40 equation(s) and 40 variable(s).
-// 8 of these are trivial equation(s).
+// 16 of these are trivial equation(s).
 // "
 // ""
 // endResult

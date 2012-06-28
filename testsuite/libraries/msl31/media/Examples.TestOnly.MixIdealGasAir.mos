@@ -450,7 +450,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 // 	first element is:  input ThermodynamicState state	second element is: input .Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.ThermodynamicState state	Modelica specification requires that elements are exactly identical.
 // 
 // Class Modelica.Media.Examples.TestOnly.MixIdealGasAir has 45 equation(s) and 45 variable(s).
-// 14 of these are trivial equation(s).
+// 18 of these are trivial equation(s).
 // "
 // ""
 // endResult

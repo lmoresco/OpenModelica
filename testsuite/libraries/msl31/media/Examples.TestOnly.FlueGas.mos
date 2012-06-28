@@ -337,7 +337,7 @@ checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 // 	first element is:  input ThermodynamicState state	second element is: input .Modelica.Media.Examples.TestOnly.FlueGas.Medium.ThermodynamicState state	Modelica specification requires that elements are exactly identical.
 // 
 // Class Modelica.Media.Examples.TestOnly.FlueGas has 43 equation(s) and 43 variable(s).
-// 14 of these are trivial equation(s).
+// 18 of these are trivial equation(s).
 // "
 // ""
 // endResult

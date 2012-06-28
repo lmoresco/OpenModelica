@@ -206,7 +206,7 @@ checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 // 
 // 
 // Class Modelica.Media.Examples.IdealGasH2O has 17 equation(s) and 17 variable(s).
-// 5 of these are trivial equation(s).
+// 7 of these are trivial equation(s).
 // "
 // ""
 // endResult

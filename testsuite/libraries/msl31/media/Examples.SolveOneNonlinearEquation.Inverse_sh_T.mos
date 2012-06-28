@@ -433,7 +433,7 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 // 
 // 
 // Class Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T has 6 equation(s) and 6 variable(s).
-// 0 of these are trivial equation(s).
+// 2 of these are trivial equation(s).
 // "
 // ""
 // endResult

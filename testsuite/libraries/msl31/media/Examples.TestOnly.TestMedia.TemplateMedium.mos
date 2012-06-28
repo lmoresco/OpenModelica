@@ -104,7 +104,7 @@ checkModel(Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium); getErrorS
 // 
 // 
 // Class Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium has 9 equation(s) and 9 variable(s).
-// 1 of these are trivial equation(s).
+// 2 of these are trivial equation(s).
 // "
 // ""
 // endResult
