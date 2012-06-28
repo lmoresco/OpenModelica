@@ -62,7 +62,7 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank); getErr
 // 
 // 
 // Class Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank has 6 equation(s) and 6 variable(s).
-// 2 of these are trivial equation(s).
+// 3 of these are trivial equation(s).
 // "
 // ""
 // endResult

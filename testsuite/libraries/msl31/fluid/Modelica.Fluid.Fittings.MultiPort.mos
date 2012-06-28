@@ -51,7 +51,7 @@ checkModel(Modelica.Fluid.Fittings.MultiPort); getErrorString();
 // 
 // 
 // Class Modelica.Fluid.Fittings.MultiPort has 4 equation(s) and 3 variable(s).
-// 3 of these are trivial equation(s).
+// 4 of these are trivial equation(s).
 // "
 // ""
 // endResult

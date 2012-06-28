@@ -2367,7 +2367,7 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutl
 // [AST_BatchPlant.mo:1159:11-1159:94:writable] Warning: If-equations are only partially supported. Ignoring   assert(noEvent(abs(m_flow_pos) <= 0.01),\"Attempt to fill tank while evaporating.\");
 // 
 // Class Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor has 97 equation(s) and 97 variable(s).
-// 58 of these are trivial equation(s).
+// 57 of these are trivial equation(s).
 // "
 // ""
 // endResult

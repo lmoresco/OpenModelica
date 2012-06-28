@@ -219,7 +219,7 @@ checkModel(Modelica.Fluid.Valves.ValveCompressible); getErrorString();
 //   Continuing flattening by only considering the 'outer' component declaration.
 // 
 // Class Modelica.Fluid.Valves.ValveCompressible has 18 equation(s) and 16 variable(s).
-// 6 of these are trivial equation(s).
+// 7 of these are trivial equation(s).
 // "
 // ""
 // endResult

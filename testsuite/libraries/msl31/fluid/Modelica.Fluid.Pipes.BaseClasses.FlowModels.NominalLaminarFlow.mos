@@ -153,7 +153,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow); getE
 //   Continuing flattening by only considering the 'outer' component declaration.
 // 
 // Class Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow has 12 equation(s) and 12 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // endResult

@@ -383,8 +383,8 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperatio
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
 // 
-// Class Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation has 130 equation(s) and 121 variable(s).
-// 84 of these are trivial equation(s).
+// Class Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation has 130 equation(s) and 127 variable(s).
+// 92 of these are trivial equation(s).
 // "
 // ""
 // endResult

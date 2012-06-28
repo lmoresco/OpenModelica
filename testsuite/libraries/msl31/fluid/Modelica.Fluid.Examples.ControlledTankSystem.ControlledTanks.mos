@@ -1868,8 +1868,8 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 // [Sources.mo:2842:7-2843:108:writable] Warning: Failed to deduce dimensions of table due to unknown dimensions of modifier stop.buttonTimeTable.
 // [Sources.mo:2842:7-2843:108:writable] Warning: Failed to deduce dimensions of table due to unknown dimensions of modifier start.buttonTimeTable.
 // 
-// Class Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks has 504 equation(s) and 499 variable(s).
-// 336 of these are trivial equation(s).
+// Class Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks has 505 equation(s) and 505 variable(s).
+// 332 of these are trivial equation(s).
 // "
 // ""
 // endResult
