@@ -194,7 +194,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Examples.Utilities.RealSwitch has 29 equation(s) and 29 variable(s).
-// 19 of these are trivial equation(s).
+// 15 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Examples.Utilities.Nand
@@ -749,7 +749,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed has 79 equation(s) and 79 variable(s).
-// 43 of these are trivial equation(s).
+// 44 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Sources.StepVoltage
@@ -781,7 +781,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sources.StepVoltage has 7 equation(s) and 7 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -822,7 +822,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sources.RampVoltage has 7 equation(s) and 7 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -873,7 +873,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sources.SineVoltage has 7 equation(s) and 7 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -933,7 +933,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sources.ExpSineVoltage has 7 equation(s) and 7 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -1277,7 +1277,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sources.StepCurrent has 7 equation(s) and 7 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -1318,7 +1318,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sources.RampCurrent has 7 equation(s) and 7 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -1369,7 +1369,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sources.SineCurrent has 7 equation(s) and 7 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -1429,7 +1429,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sources.ExpSineCurrent has 7 equation(s) and 7 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -5638,7 +5638,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '\"F/m\"' for array component, possibly due to missing 'each'.
 // 
 // 
-// Class Modelica.Electrical.Analog.Lines.M_OLine has 1266 equation(s) and 1330 variable(s).
+// Class Modelica.Electrical.Analog.Lines.M_OLine has 1330 equation(s) and 1330 variable(s).
 // 765 of these are trivial equation(s).
 // "
 // ""
@@ -6097,3 +6097,4 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // "
 // ""
 // endResult
+ 

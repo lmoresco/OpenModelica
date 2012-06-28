@@ -3179,7 +3179,7 @@ checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
 // [Nonlinear.mo:19:12-23:97:writable] Warning: If-equations are only partially supported. Ignoring   assert(limiter.u >= limiter.uMin + -0.01 * abs(limiter.uMin) and limiter.u <= limiter.uMax + 0.01 * abs(limiter.uMax),\"Limiter: During initialization the limits have been ignored.However, the result is that the input u is not within the required limits:  u = \" + String(limiter.u, 0, true, 6) + \", uMin = \" + String(limiter.uMin, 0, true, 6) + \", uMax = \" + String(limiter.uMax, 0, true, 6));
 // 
 // Class Modelica.Fluid.Examples.DrumBoiler.DrumBoiler has 142 equation(s) and 142 variable(s).
-// 88 of these are trivial equation(s).
+// 82 of these are trivial equation(s).
 // "
 // ""
 // endResult

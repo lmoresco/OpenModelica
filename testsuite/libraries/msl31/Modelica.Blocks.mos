@@ -44,7 +44,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // [Continuous.mo:1213:5-1215:50:writable] Warning: Failed to deduce dimensions of x_start due to unknown dimensions of modifier fill(0, nx).
 // 
 // Class Modelica.Blocks.Continuous.TransferFunction has 1 equation(s) and 3 variable(s).
-// 0 of these are trivial equation(s).
+// 1 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Continuous.StateSpace completed successfully.
@@ -117,7 +117,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // 
 // 
 // Class Modelica.Blocks.Examples.BusUsage has 14 equation(s) and 14 variable(s).
-// 8 of these are trivial equation(s).
+// 13 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Blocks.Examples.BusUsage_Utilities.Part
@@ -135,7 +135,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // 
 // 
 // Class Modelica.Blocks.Examples.BusUsage_Utilities.Part has 4 equation(s) and 4 variable(s).
-// 2 of these are trivial equation(s).
+// 4 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Tables.CombiTable1D completed successfully.

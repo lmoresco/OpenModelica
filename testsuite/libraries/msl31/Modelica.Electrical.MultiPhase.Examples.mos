@@ -777,7 +777,7 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.MultiPhase.Examples.TransformerYY has 281 equation(s) and 281 variable(s).
-// 211 of these are trivial equation(s).
+// 214 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -2181,7 +2181,7 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.MultiPhase.Examples.Rectifier has 218 equation(s) and 218 variable(s).
-// 147 of these are trivial equation(s).
+// 150 of these are trivial equation(s).
 // "
 // ""
 // endResult

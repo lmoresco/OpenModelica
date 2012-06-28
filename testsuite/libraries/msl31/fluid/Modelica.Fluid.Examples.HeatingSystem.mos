@@ -4844,7 +4844,7 @@ checkModel(Modelica.Fluid.Examples.HeatingSystem); getErrorString();
 // Error: Internal error Static.elabBuiltinFill2 failed in componentradiator
 // 
 // Class Modelica.Fluid.Examples.HeatingSystem has 579 equation(s) and 573 variable(s).
-// 368 of these are trivial equation(s).
+// 361 of these are trivial equation(s).
 // "
 // ""
 // endResult

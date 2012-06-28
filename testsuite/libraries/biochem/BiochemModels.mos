@@ -593,7 +593,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // [ContainerSimple.mo:180:9-180:51:writable] Warning: Connecting two signal sources while connecting nucleus.y3_node.V to cytoplasm.y3_node.V.
 // 
 // Class BioChem_Examples_CircadianOscillator_Container has 252 equation(s) and 252 variable(s).
-// 175 of these are trivial equation(s).
+// 180 of these are trivial equation(s).
 // "
 // ""
 // true
@@ -1325,7 +1325,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem_Examples_centralMetabolism_extra_cellular has 353 equation(s) and 353 variable(s).
-// 246 of these are trivial equation(s).
+// 249 of these are trivial equation(s).
 // "
 // ""
 // true
@@ -1865,7 +1865,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // [ContainerTotal.mo:870:9-870:145:writable] Warning: Connecting two signal sources while connecting nucleus.y3_node.V to cytoplasm.y3_node.V.
 // 
 // Class BioChem_Examples_CircadianOscillator_Container has 252 equation(s) and 252 variable(s).
-// 175 of these are trivial equation(s).
+// 180 of these are trivial equation(s).
 // "
 // ""
 // true
@@ -2000,7 +2000,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // [CytosolTotal.mo:862:9-862:228:writable] Warning: Connecting two signal sources while connecting Ca_Cyt.n1.V to Endoplasmic_Reticulum.Ca_Cyt_node.V.
 // 
 // Class BioChem_Examples_CaOscillations_Cytosol has 60 equation(s) and 60 variable(s).
-// 41 of these are trivial equation(s).
+// 44 of these are trivial equation(s).
 // "
 // ""
 // true
@@ -2013,28 +2013,28 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem.Examples.InsulinSignaling_Sedaghat has 141 equation(s) and 141 variable(s).
-// 95 of these are trivial equation(s).
+// 96 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.Glycolysis completed successfully.
 // 
 // 
 // Class BioChem.Examples.Glycolysis has 170 equation(s) and 170 variable(s).
-// 116 of these are trivial equation(s).
+// 117 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.EnzMM completed successfully.
 // 
 // 
 // Class BioChem.Examples.EnzMM has 22 equation(s) and 22 variable(s).
-// 16 of these are trivial equation(s).
+// 17 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.GMO.cell completed successfully.
 // 
 // 
 // Class BioChem.Examples.GMO.cell has 96 equation(s) and 96 variable(s).
-// 63 of these are trivial equation(s).
+// 65 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.centralMetabolism completed successfully.
@@ -2045,7 +2045,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem.Examples.centralMetabolism.cytosol has 320 equation(s) and 320 variable(s).
-// 213 of these are trivial equation(s).
+// 229 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CircadianOscillator.Container completed successfully.
@@ -2056,28 +2056,28 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // [package.mo:1093:7-1093:143:writable] Warning: Connecting two signal sources while connecting nucleus.y3_node.V to cytoplasm.y3_node.V.
 // 
 // Class BioChem.Examples.CircadianOscillator.Container has 252 equation(s) and 252 variable(s).
-// 175 of these are trivial equation(s).
+// 180 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CircadianOscillator.Nucleus completed successfully.
 // 
 // 
 // Class BioChem.Examples.CircadianOscillator.Nucleus has 99 equation(s) and 101 variable(s).
-// 68 of these are trivial equation(s).
+// 70 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CircadianOscillator.Cytoplasm completed successfully.
 // 
 // 
 // Class BioChem.Examples.CircadianOscillator.Cytoplasm has 140 equation(s) and 142 variable(s).
-// 96 of these are trivial equation(s).
+// 100 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CellDivison.cell completed successfully.
 // 
 // 
 // Class BioChem.Examples.CellDivison.cell has 148 equation(s) and 148 variable(s).
-// 99 of these are trivial equation(s).
+// 101 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CaOscillations.Cytosol completed successfully.
@@ -2085,14 +2085,14 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // [package.mo:2199:7-2199:225:writable] Warning: Connecting two signal sources while connecting Ca_Cyt.n1.V to endoplasmicReticulum.Ca_Cyt_node.V.
 // 
 // Class BioChem.Examples.CaOscillations.Cytosol has 60 equation(s) and 60 variable(s).
-// 41 of these are trivial equation(s).
+// 44 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CaOscillations.Endoplasmic_Reticulum completed successfully.
 // 
 // 
 // Class BioChem.Examples.CaOscillations.Endoplasmic_Reticulum has 34 equation(s) and 35 variable(s).
-// 22 of these are trivial equation(s).
+// 26 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel completed successfully.
@@ -2115,7 +2115,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // [package.mo:2507:11-2507:146:writable] Warning: Connecting two signal sources while connecting S_calc.n1.V to S_connector.V.
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel has 687 equation(s) and 687 variable(s).
-// 511 of these are trivial equation(s).
+// 530 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction completed successfully.
@@ -2171,42 +2171,42 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem.Examples.MassAction.UniUni has 745 equation(s) and 745 variable(s).
-// 572 of these are trivial equation(s).
+// 609 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.MassAction.UniBi completed successfully.
 // 
 // 
 // Class BioChem.Examples.MassAction.UniBi has 945 equation(s) and 945 variable(s).
-// 732 of these are trivial equation(s).
+// 769 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.MultiCompartments.GlucoseMetabolism completed successfully.
 // 
 // 
 // Class BioChem.Examples.MultiCompartments.GlucoseMetabolism has 385 equation(s) and 385 variable(s).
-// 267 of these are trivial equation(s).
+// 278 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.MultiCompartments.BigCompartmentReversible completed successfully.
 // 
 // 
 // Class BioChem.Examples.MultiCompartments.BigCompartmentReversible has 26 equation(s) and 26 variable(s).
-// 19 of these are trivial equation(s).
+// 20 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.MultiCompartments.BigCompartmentIrreversible completed successfully.
 // 
 // 
 // Class BioChem.Examples.MultiCompartments.BigCompartmentIrreversible has 26 equation(s) and 26 variable(s).
-// 19 of these are trivial equation(s).
+// 20 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.MultiCompartments.Utilities.TCA completed successfully.
 // 
 // 
 // Class BioChem.Examples.MultiCompartments.Utilities.TCA has 206 equation(s) and 206 variable(s).
-// 146 of these are trivial equation(s).
+// 155 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.MultiCompartments.Utilities.SmallCompartment completed successfully.

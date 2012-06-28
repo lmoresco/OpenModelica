@@ -4999,7 +4999,7 @@ checkModel(SiemensPower.Components.Pipes.Tests.TubeWithoutWall); getErrorString(
 // 
 // 
 // Class SiemensPower.Components.Pipes.Tests.TubeWithoutWall has 725 equation(s) and 725 variable(s).
-// 380 of these are trivial equation(s).
+// 382 of these are trivial equation(s).
 // "
 // ""
 // endResult

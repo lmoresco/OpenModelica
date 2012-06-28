@@ -3782,7 +3782,7 @@ checkModel(ThermoSysPro.Examples.SimpleExamples.TestDynamicCentrifugalPump2); ge
 // [Connectors.mo:86:3-126:18:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidOutlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
 // 
 // Class ThermoSysPro.Examples.SimpleExamples.TestDynamicCentrifugalPump2 has 320 equation(s) and 321 variable(s).
-// 168 of these are trivial equation(s).
+// 169 of these are trivial equation(s).
 // "
 // ""
 // endResult

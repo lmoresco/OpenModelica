@@ -3982,7 +3982,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 // 
 // 
 // Class Modelica.Fluid.Examples.Explanatory.MeasuringTemperature has 444 equation(s) and 444 variable(s).
-// 259 of these are trivial equation(s).
+// 266 of these are trivial equation(s).
 // "
 // ""
 // endResult

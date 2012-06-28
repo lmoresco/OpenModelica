@@ -962,7 +962,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour has 237 equation(s) and 237 variable(s).
-// 145 of these are trivial equation(s).
+// 147 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Blocks.Tables.CombiTable1Ds.tableInit
@@ -1476,7 +1476,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour has 150 equation(s) and 150 variable(s).
-// 85 of these are trivial equation(s).
+// 86 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData\"
@@ -2119,7 +2119,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke has 239 equation(s) and 239 variable(s).
-// 143 of these are trivial equation(s).
+// 145 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData\"
@@ -7744,7 +7744,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke has 508 equation(s) and 508 variable(s).
-// 260 of these are trivial equation(s).
+// 259 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData\"
@@ -8307,7 +8307,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.Components.SimpleSolenoid has 192 equation(s) and 192 variable(s).
-// 98 of these are trivial equation(s).
+// 97 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData\"
@@ -9089,7 +9089,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.Components.AdvancedSolenoid has 280 equation(s) and 280 variable(s).
-// 142 of these are trivial equation(s).
+// 140 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Magnetic.FluxTubes.Examples.Utilities.TranslatoryArmatureAndStopper
@@ -9216,7 +9216,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // end Modelica.Math.asin;
 // 
 // class Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign
-//   parameter Real rho_20(quantity = \"Resistivity\", unit = \"Ohm.m\") = 0.0000000178 \"Resistivity of conductor material at 20ï¿½C (default: Copper)\";
+//   parameter Real rho_20(quantity = \"Resistivity\", unit = \"Ohm.m\") = 0.0000000178 \"Resistivity of conductor material at 20�?¯�?¿�?½C (default: Copper)\";
 //   parameter Real alpha_20(quantity = \"LinearTemperatureCoefficient\", unit = \"1/K\") = 0.0039 \"Temperature coefficient of conductor material's resistivity at 20degC (default: Copper)\";
 //   parameter Real T_op(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Operating temperature of winding\";
 //   parameter Real h_w(quantity = \"Length\", unit = \"m\") \"Height of winding cross-section\";
@@ -9257,3 +9257,4 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // "
 // ""
 // endResult
+ 

@@ -491,8 +491,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Multiplexer completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Multiplexer has 124 equation(s) and 124 variable(s).
-// 73 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Multiplexer has 1036 equation(s) and 124 variable(s).
+// 649 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -715,8 +715,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.FlipFlop completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.FlipFlop has 71 equation(s) and 71 variable(s).
-// 43 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.FlipFlop has 583 equation(s) and 71 variable(s).
+// 379 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -1062,8 +1062,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.HalfAdder completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.HalfAdder has 202 equation(s) and 202 variable(s).
-// 182 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.HalfAdder has 394 equation(s) and 202 variable(s).
+// 342 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -2122,8 +2122,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.FullAdder completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.FullAdder has 613 equation(s) and 613 variable(s).
-// 502 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.FullAdder has 2637 equation(s) and 613 variable(s).
+// 1918 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -4441,8 +4441,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Adder4 completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Adder4 has 1617 equation(s) and 1617 variable(s).
-// 1472 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Adder4 has 3345 equation(s) and 1617 variable(s).
+// 2880 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -4943,8 +4943,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Counter3 completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Counter3 has 207 equation(s) and 207 variable(s).
-// 132 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Counter3 has 1783 equation(s) and 207 variable(s).
+// 1180 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -5656,8 +5656,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Counter completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Counter has 282 equation(s) and 282 variable(s).
-// 179 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Counter has 2410 equation(s) and 282 variable(s).
+// 1603 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.MUX4
@@ -5769,8 +5769,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Utilities.MUX4 completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Utilities.MUX4 has 44 equation(s) and 44 variable(s).
-// 18 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Utilities.MUX4 has 396 equation(s) and 44 variable(s).
+// 216 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.RS
@@ -5819,8 +5819,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Utilities.RS completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Utilities.RS has 15 equation(s) and 15 variable(s).
-// 7 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Utilities.RS has 127 equation(s) and 15 variable(s).
+// 81 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.RSFF
@@ -5902,8 +5902,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Utilities.RSFF completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Utilities.RSFF has 29 equation(s) and 29 variable(s).
-// 16 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Utilities.RSFF has 253 equation(s) and 29 variable(s).
+// 171 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.DFF
@@ -6002,8 +6002,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Utilities.DFF completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Utilities.DFF has 37 equation(s) and 37 variable(s).
-// 23 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Utilities.DFF has 325 equation(s) and 37 variable(s).
+// 225 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.JKFF
@@ -6161,8 +6161,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Utilities.JKFF completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Utilities.JKFF has 63 equation(s) and 63 variable(s).
-// 36 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Utilities.JKFF has 551 equation(s) and 63 variable(s).
+// 351 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -6438,8 +6438,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Utilities.HalfAdder completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Utilities.HalfAdder has 194 equation(s) and 194 variable(s).
-// 176 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Utilities.HalfAdder has 354 equation(s) and 194 variable(s).
+// 306 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -6994,8 +6994,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Utilities.FullAdder completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Utilities.FullAdder has 399 equation(s) and 399 variable(s).
-// 362 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Utilities.FullAdder has 807 equation(s) and 399 variable(s).
+// 693 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -8104,8 +8104,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Utilities.Adder completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Utilities.Adder has 807 equation(s) and 807 variable(s).
-// 734 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Utilities.Adder has 1695 equation(s) and 807 variable(s).
+// 1467 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.Counter3
@@ -8574,8 +8574,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Utilities.Counter3 completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Utilities.Counter3 has 201 equation(s) and 201 variable(s).
-// 127 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Utilities.Counter3 has 1761 equation(s) and 201 variable(s).
+// 1161 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.Counter
@@ -9047,8 +9047,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Examples.Utilities.Counter completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Examples.Utilities.Counter has 201 equation(s) and 201 variable(s).
-// 127 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Examples.Utilities.Counter has 1761 equation(s) and 201 variable(s).
+// 1161 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Delay.TransportDelay
@@ -9066,8 +9066,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Delay.TransportDelay completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Delay.TransportDelay has 2 equation(s) and 2 variable(s).
-// 0 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Delay.TransportDelay has 10 equation(s) and 2 variable(s).
+// 1 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Delay.InertialDelay
@@ -9231,8 +9231,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Basic.Not completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Basic.Not has 2 equation(s) and 2 variable(s).
-// 0 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Basic.Not has 18 equation(s) and 2 variable(s).
+// 9 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Basic.And
@@ -9252,8 +9252,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Basic.And completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Basic.And has 3 equation(s) and 3 variable(s).
-// 0 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Basic.And has 27 equation(s) and 3 variable(s).
+// 9 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Basic.Nand
@@ -9273,8 +9273,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Basic.Nand completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Basic.Nand has 3 equation(s) and 3 variable(s).
-// 0 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Basic.Nand has 27 equation(s) and 3 variable(s).
+// 9 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Basic.Or
@@ -9294,8 +9294,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Basic.Or completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Basic.Or has 3 equation(s) and 3 variable(s).
-// 0 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Basic.Or has 27 equation(s) and 3 variable(s).
+// 9 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Basic.Nor
@@ -9315,8 +9315,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Basic.Nor completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Basic.Nor has 3 equation(s) and 3 variable(s).
-// 0 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Basic.Nor has 27 equation(s) and 3 variable(s).
+// 9 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Basic.Xor
@@ -9336,8 +9336,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Basic.Xor completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Basic.Xor has 3 equation(s) and 3 variable(s).
-// 0 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Basic.Xor has 27 equation(s) and 3 variable(s).
+// 9 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Basic.Xnor
@@ -9357,8 +9357,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Basic.Xnor completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Basic.Xnor has 3 equation(s) and 3 variable(s).
-// 0 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Basic.Xnor has 27 equation(s) and 3 variable(s).
+// 9 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -9493,8 +9493,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Gates.InvGate completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Gates.InvGate has 92 equation(s) and 92 variable(s).
-// 83 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Gates.InvGate has 132 equation(s) and 92 variable(s).
+// 108 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -9636,8 +9636,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Gates.AndGate completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Gates.AndGate has 94 equation(s) and 94 variable(s).
-// 84 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Gates.AndGate has 150 equation(s) and 94 variable(s).
+// 126 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -9779,8 +9779,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Gates.NandGate completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Gates.NandGate has 94 equation(s) and 94 variable(s).
-// 84 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Gates.NandGate has 150 equation(s) and 94 variable(s).
+// 126 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -9922,8 +9922,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Gates.OrGate completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Gates.OrGate has 94 equation(s) and 94 variable(s).
-// 84 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Gates.OrGate has 150 equation(s) and 94 variable(s).
+// 126 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -10065,8 +10065,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Gates.NorGate completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Gates.NorGate has 94 equation(s) and 94 variable(s).
-// 84 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Gates.NorGate has 150 equation(s) and 94 variable(s).
+// 126 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -10208,8 +10208,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Gates.XorGate completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Gates.XorGate has 94 equation(s) and 94 variable(s).
-// 84 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Gates.XorGate has 150 equation(s) and 94 variable(s).
+// 126 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -10351,8 +10351,8 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Gates.XnorGate completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Gates.XnorGate has 94 equation(s) and 94 variable(s).
-// 84 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Gates.XnorGate has 150 equation(s) and 94 variable(s).
+// 126 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -10481,8 +10481,9 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // "Check of Modelica.Electrical.Digital.Gates.BufGate completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Digital.Gates.BufGate has 89 equation(s) and 89 variable(s).
-// 82 of these are trivial equation(s).
+// Class Modelica.Electrical.Digital.Gates.BufGate has 105 equation(s) and 89 variable(s).
+// 99 of these are trivial equation(s).
 // "
 // ""
 // endResult
+ 

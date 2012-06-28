@@ -3939,7 +3939,7 @@ checkModel(ThermoSysPro.Examples.SimpleExamples.TestJunctions3); getErrorString(
 // [Connectors.mo:3:3-42:17:writable] Warning: Connector ThermoSysPro.WaterSteam.Connectors.FluidInlet is not balanced: The number of potential variables (4) is not equal to the number of flow variables (0).
 // 
 // Class ThermoSysPro.Examples.SimpleExamples.TestJunctions3 has 431 equation(s) and 431 variable(s).
-// 278 of these are trivial equation(s).
+// 281 of these are trivial equation(s).
 // "
 // ""
 // endResult
