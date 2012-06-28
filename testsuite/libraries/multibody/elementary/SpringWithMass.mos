@@ -2378,7 +2378,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass has 1374 equation(s) and 1374 variable(s).
-// 820 of these are trivial equation(s).
+// 805 of these are trivial equation(s).
 // "
 // ""
 // endResult

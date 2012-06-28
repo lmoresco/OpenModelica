@@ -3530,7 +3530,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive has 2089 equation(s) and 2089 variable(s).
-// 1332 of these are trivial equation(s).
+// 1330 of these are trivial equation(s).
 // "
 // ""
 // endResult

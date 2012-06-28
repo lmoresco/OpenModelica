@@ -1449,7 +1449,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.World has 1054 equation(s) and 1054 variable(s).
-// 588 of these are trivial equation(s).
+// 621 of these are trivial equation(s).
 // "
 // ""
 // endResult

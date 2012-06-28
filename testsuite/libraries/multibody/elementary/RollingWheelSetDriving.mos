@@ -4740,7 +4740,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving has 2587 equation(s) and 2587 variable(s).
-// 1769 of these are trivial equation(s).
+// 1700 of these are trivial equation(s).
 // "
 // ""
 // endResult

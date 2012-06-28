@@ -4971,7 +4971,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling has 2677 equation(s) and 2677 variable(s).
-// 1852 of these are trivial equation(s).
+// 1784 of these are trivial equation(s).
 // "
 // ""
 // endResult
