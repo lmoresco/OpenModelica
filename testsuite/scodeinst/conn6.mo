@@ -1,6 +1,7 @@
 // name: conn6.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Connects not handled yet.
 //

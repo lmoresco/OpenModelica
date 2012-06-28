@@ -1,6 +1,7 @@
 // name: if1.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Expansion of if-equations not implemented.
 //

@@ -1,6 +1,7 @@
 // name: func2.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 
 

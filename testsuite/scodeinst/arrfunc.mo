@@ -1,6 +1,7 @@
 // name: arrfunc.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Function calls can't handle subscripts.
 //

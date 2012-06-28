@@ -1,6 +1,7 @@
 // name: for1.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Expansion of for equations not implemented yet.
 //

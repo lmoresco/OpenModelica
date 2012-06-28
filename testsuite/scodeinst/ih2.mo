@@ -1,6 +1,7 @@
 // name: ih2.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Bad prefixing of P1.i and P2.i (should be P.P1.i and P.P2.i).
 //

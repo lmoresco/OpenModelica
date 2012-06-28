@@ -1,6 +1,7 @@
 // name: cond2.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Seems like conditional components are a bit broken.
 //

@@ -1,6 +1,7 @@
 // name: const13.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 
 model A
@@ -32,6 +33,6 @@ end C;
 // class C
 //   Real y = a.B.y;
 // end C;
-// [const13.mo:19:3-19:17:writable] Error: No constant value for variable a.B.y in scope C.
+// [const13.mo:20:3-20:17:writable] Error: No constant value for variable a.B.y in scope C.
 // 
 // endResult

@@ -1,6 +1,7 @@
 // name: dim14.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 
 model A

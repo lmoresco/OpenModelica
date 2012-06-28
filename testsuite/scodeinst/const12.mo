@@ -1,6 +1,7 @@
 // name: const12.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Wrong binding on x.
 //

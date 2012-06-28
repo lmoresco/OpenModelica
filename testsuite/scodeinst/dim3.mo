@@ -1,6 +1,7 @@
 // name: dim3.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 
 
@@ -21,9 +22,9 @@ end A;
 // Found 0 components and 1 parameters.
 // Error processing file: dim3.mo
 // Warning: Parameter n has neither value nor start value, and is fixed during initialization (fixed=true)
-// [dim3.mo:9:3-9:24:writable] Error: Array dimension must be integer expression in n which has type Integer
+// [dim3.mo:10:3-10:24:writable] Error: Array dimension must be integer expression in n which has type Integer
 // Warning: Parameter n has neither value nor start value, and is fixed during initialization (fixed=true)
-// [dim3.mo:9:3-9:24:writable] Error: Array dimension must be integer expression in n which has type Integer
+// [dim3.mo:10:3-10:24:writable] Error: Array dimension must be integer expression in n which has type Integer
 // Error: Error occurred while flattening model A
 // 
 // # Error encountered! Exiting...

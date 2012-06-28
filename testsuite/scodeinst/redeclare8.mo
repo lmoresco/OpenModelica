@@ -1,6 +1,7 @@
 // name: redeclare8.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 
 model A

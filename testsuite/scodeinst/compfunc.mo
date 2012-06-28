@@ -1,6 +1,7 @@
 // name: compfunc.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 // teardown_command: rm -rf B_a____f*
 //
 

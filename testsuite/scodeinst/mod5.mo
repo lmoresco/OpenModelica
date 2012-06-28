@@ -1,6 +1,7 @@
 // name: mod5.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 
 
@@ -14,7 +15,7 @@ end B;
 
 // Result:
 // Error processing file: mod5.mo
-// [mod5.mo:12:7-12:14:writable] Error: Modified element y not found in class a
+// [mod5.mo:13:7-13:14:writable] Error: Modified element y not found in class a
 // 
 // Error: Error occurred while flattening model B
 // 

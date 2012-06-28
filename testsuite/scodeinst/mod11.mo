@@ -1,6 +1,7 @@
 // name: mod11.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 //
 
@@ -18,8 +19,8 @@ end C;
 
 // Result:
 // Error processing file: mod11.mo
-// [mod11.mo:16:7-16:12:writable] Notification: From here:
-// [mod11.mo:12:19-12:20:writable] Error: Trying to override final component x with modifier 3
+// [mod11.mo:17:7-17:12:writable] Notification: From here:
+// [mod11.mo:13:19-13:20:writable] Error: Trying to override final component x with modifier 3
 // 
 // Error: Error occurred while flattening model C
 // 

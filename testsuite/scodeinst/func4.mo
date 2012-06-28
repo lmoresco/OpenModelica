@@ -1,6 +1,7 @@
 // name: func4.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Should stream on function variables be allowed?
 //

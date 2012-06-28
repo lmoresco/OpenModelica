@@ -1,6 +1,7 @@
 // name: mod9.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // Class modifications not propagated.
 //

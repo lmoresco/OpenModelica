@@ -1,6 +1,7 @@
 // name: extends1.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Duplicate elements from extends not checked.
 //

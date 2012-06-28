@@ -1,6 +1,7 @@
 // name: func8.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Not all builtin functions have the correct number of arguments yet.
 //

@@ -1,6 +1,7 @@
 // name: loop1.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Not good enough error message.
 //

@@ -1,6 +1,7 @@
 // name: eq9.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 //
 

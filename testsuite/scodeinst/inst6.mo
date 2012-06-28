@@ -1,6 +1,7 @@
 // name: inst6.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 
 model M
@@ -10,7 +11,7 @@ end M;
 
 // Result:
 // Error processing file: inst6.mo
-// [inst6.mo:8:3-8:6:writable] Error: Invalid specialized class type 'package' for component p.
+// [inst6.mo:9:3-9:6:writable] Error: Invalid specialized class type 'package' for component p.
 // Error: Error occurred while flattening model M
 // 
 // # Error encountered! Exiting...

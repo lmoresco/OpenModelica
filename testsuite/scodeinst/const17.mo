@@ -1,6 +1,7 @@
 // name: const17.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: This test fails because SCodeLook.crefStripEnvPrefix strips A.B
 // from A.B.c, so SCodeInst can't find it since it's looking for only c.

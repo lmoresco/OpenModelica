@@ -1,6 +1,7 @@
 // name: dim19.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Bindings not subscripted.
 //

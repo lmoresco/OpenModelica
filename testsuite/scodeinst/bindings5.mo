@@ -1,6 +1,7 @@
 // name: bindings5.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 
 model N

@@ -1,6 +1,7 @@
 // name: const6.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Variability not yet propagated.
 //

@@ -1,6 +1,7 @@
 // name: redeclare10.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: ??
 //

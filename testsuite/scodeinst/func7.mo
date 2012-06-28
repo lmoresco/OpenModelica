@@ -1,6 +1,7 @@
 // name: func7.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 
 model A
@@ -17,7 +18,7 @@ end A;
 // Result:
 // SCodeInst.instFunction failed: f
 // Error processing file: func7.mo
-// [func7.mo:8:5-8:23:writable] Error: Invalid prefix inner on formal parameter x.
+// [func7.mo:9:5-9:23:writable] Error: Invalid prefix inner on formal parameter x.
 // Error: Error occurred while flattening model A
 // 
 // # Error encountered! Exiting...

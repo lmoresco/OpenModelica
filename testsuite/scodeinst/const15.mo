@@ -1,6 +1,7 @@
 // name: const15.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Class modifications are not applied, x should be 4.
 //

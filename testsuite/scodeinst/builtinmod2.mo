@@ -1,6 +1,7 @@
 // name: builtinmod2.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 
 
@@ -14,8 +15,8 @@ end B;
 
 // Result:
 // Error processing file: builtinmod2.mo
-// [builtinmod2.mo:12:15-12:26:writable] Notification: From here:
-// [builtinmod2.mo:8:16-8:27:writable] Error: Trying to override final component start with modifier 2.0
+// [builtinmod2.mo:13:15-13:26:writable] Notification: From here:
+// [builtinmod2.mo:9:16-9:27:writable] Error: Trying to override final component start with modifier 2.0
 // 
 // Error: Error occurred while flattening model B
 // 

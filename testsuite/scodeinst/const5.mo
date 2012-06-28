@@ -1,6 +1,7 @@
 // name: const5.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // Correct, but old instantiation goes into infinite loop.
 //

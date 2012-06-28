@@ -1,6 +1,7 @@
 // name: cond3.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Arrays of conditional components not handled.
 //

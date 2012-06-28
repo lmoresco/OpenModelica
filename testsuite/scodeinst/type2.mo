@@ -1,6 +1,7 @@
 // name: type2.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 
 

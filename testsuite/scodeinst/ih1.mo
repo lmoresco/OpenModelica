@@ -1,6 +1,7 @@
 // name: ih1.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 
 

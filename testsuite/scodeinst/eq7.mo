@@ -1,6 +1,7 @@
 // name: eq7.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 
 model A

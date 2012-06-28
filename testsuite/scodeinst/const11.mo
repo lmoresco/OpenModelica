@@ -1,6 +1,7 @@
 // name: const11.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Fails since package constants in classes which are not explicitly
 //             declared as packages are not instantiated.

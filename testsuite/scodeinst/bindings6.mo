@@ -1,6 +1,7 @@
 // name: bindings6.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 // FAILREASON: 'each' should not be allowed on non-array.
 //

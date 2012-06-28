@@ -1,4 +1,4 @@
-TEST=RTEST_OMCFLAGS=+d=scodeInst ../rtest -v
+TEST=../rtest -v
 
 TESTFILES=\
 bindings1.mo \

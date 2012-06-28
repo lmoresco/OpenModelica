@@ -1,6 +1,7 @@
 // name: noretcall1.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Expansion doesn't support nonret-calls yet.
 //

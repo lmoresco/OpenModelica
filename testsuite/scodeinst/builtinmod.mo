@@ -1,6 +1,7 @@
 // name: builtinmod.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Enumeration instance m is missing it's start value.
 //

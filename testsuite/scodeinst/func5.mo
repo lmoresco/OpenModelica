@@ -1,6 +1,7 @@
 // name: func5.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Better error message needed.
 //

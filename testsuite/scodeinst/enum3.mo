@@ -1,6 +1,7 @@
 // name: enum3.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Enumeration array dimensions not supported.
 //

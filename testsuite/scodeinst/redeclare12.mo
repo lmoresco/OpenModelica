@@ -1,6 +1,7 @@
 // name: redeclare12.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Redeclare modifiers not properly qualified.
 //

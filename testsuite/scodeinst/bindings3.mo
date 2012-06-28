@@ -1,6 +1,7 @@
 // name: bindings3.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 
 

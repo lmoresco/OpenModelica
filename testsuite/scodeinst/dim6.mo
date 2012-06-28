@@ -1,6 +1,7 @@
 // name: dim6.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Not good enough error message.
 // 

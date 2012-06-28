@@ -1,6 +1,7 @@
 // name: conn14.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Maybe no correct, see Modelica issue #768.
 //

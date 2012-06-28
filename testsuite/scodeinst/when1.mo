@@ -1,6 +1,7 @@
 // name: when1.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Expand of when equations not implemented.
 //

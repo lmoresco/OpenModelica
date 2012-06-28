@@ -1,6 +1,7 @@
-// name: conn1.mo
+// name: conn2.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 
 model A
@@ -16,7 +17,7 @@ end A;
 
 // Result:
 // Error processing file: conn2.mo
-// [conn2.mo:14:3-14:9:writable] Error: No viable alternative near token: connect
+// [conn2.mo:15:3-15:9:writable] Error: No viable alternative near token: connect
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

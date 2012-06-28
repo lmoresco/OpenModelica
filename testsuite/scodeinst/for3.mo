@@ -1,6 +1,7 @@
 // name: for3.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 
 model A
@@ -13,7 +14,7 @@ end A;
 
 // Result:
 // Error processing file: for3.mo
-// [for3.mo:9:3-11:10:writable] Error: Type error in for expression (1). Expected array got Integer.
+// [for3.mo:10:3-12:10:writable] Error: Type error in for expression (1). Expected array got Integer.
 // Error: Error occurred while flattening model A
 // 
 // # Error encountered! Exiting...

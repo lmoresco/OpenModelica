@@ -1,6 +1,7 @@
 // name: mod3.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 
 
@@ -15,7 +16,7 @@ end B;
 
 // Result:
 // Error processing file: mod3.mo
-// [mod3.mo:13:7-13:15:writable] Error: Subscripted modifier is illegal.
+// [mod3.mo:14:7-14:15:writable] Error: Subscripted modifier is illegal.
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

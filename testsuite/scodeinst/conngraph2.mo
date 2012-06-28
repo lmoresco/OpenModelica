@@ -1,6 +1,7 @@
 // name: conngraph2.mo
 // keywords:
 // status: correct
+// cflags:   +d=scodeInst
 //
 // FAILREASON: Overconstrained types not yet recognized as such.
 //

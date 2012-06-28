@@ -1,6 +1,7 @@
 // name: const14.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 // Correct, but old inst fails.
 //
@@ -39,8 +40,8 @@ end M;
 // 
 // Found 1 components and 0 parameters.
 // Error processing file: const14.mo
-// [const14.mo:20:9-20:38:writable] Error: Variable .B.A.B.j not found in scope A.B.A.B
-// [const14.mo:27:3-27:24:writable] Error: Variable A.B.A.B.i not found in scope M
+// [const14.mo:21:9-21:38:writable] Error: Variable .B.A.B.j not found in scope A.B.A.B
+// [const14.mo:28:3-28:24:writable] Error: Variable A.B.A.B.i not found in scope M
 // Error: Error occurred while flattening model M
 // 
 // # Error encountered! Exiting...

@@ -1,6 +1,7 @@
 // name: conn1.mo
 // keywords:
 // status: incorrect
+// cflags:   +d=scodeInst
 //
 
 model A
@@ -16,7 +17,7 @@ end A;
 
 // Result:
 // Error processing file: conn1.mo
-// [conn1.mo:14:3-14:18:writable] Error: Connect equations are not allowed in initial equation sections.
+// [conn1.mo:15:3-15:18:writable] Error: Connect equations are not allowed in initial equation sections.
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
