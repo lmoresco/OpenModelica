@@ -2,7 +2,7 @@ TEST = ../rtest -v
 
 TESTFILES = \
 WhenStatement1.mos \
-
+BouncingBall.mos \
 
 
 
