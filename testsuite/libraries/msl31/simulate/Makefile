@@ -30,7 +30,6 @@ Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.mos \
-Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.mos \
 Modelica.Mechanics.MultiBody.Frames.mos \
 Modelica.Mechanics.Rotational.Examples.First.mos \
@@ -105,6 +104,7 @@ Modelica.Electrical.Machines.Examples.AIMC_YD.mos \
 Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.mos \
 Modelica.Electrical.Machines.Examples.AIMC_Inverter.mos \
 RectifierOM.mos \
+Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint.mos \
 
 
 WRONGRESULTTEST = \
