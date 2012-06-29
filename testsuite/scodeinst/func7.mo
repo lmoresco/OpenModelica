@@ -16,7 +16,8 @@ model A
 end A;
 
 // Result:
-// SCodeInst.instFunction failed: f
+// SCodeInst.instFunction failed: f at position: [:0:0-0:0]
+// Failed to instantiate call to *regular* function: f(x) at position:[:0:0-0:0]!
 // Error processing file: func7.mo
 // [func7.mo:9:5-9:23:writable] Error: Invalid prefix inner on formal parameter x.
 // Error: Error occurred while flattening model A

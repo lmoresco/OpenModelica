@@ -21,7 +21,8 @@ model M
 end M;
 
 // Result:
-// SCodeInst.instFunction failed: f
+// SCodeInst.instFunction failed: f at position: [:0:0-0:0]
+// Failed to instantiate call to *regular* function: f(a) at position:[:0:0-0:0]!
 // Error processing file: func6.mo
 // [func6.mo:12:3-12:12:writable] Error: Invalid type A for function component a.
 // Error: Error occurred while flattening model M

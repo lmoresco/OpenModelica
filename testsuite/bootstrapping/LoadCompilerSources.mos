@@ -94,6 +94,7 @@ loadFile("../../Compiler/FrontEnd/SCode.mo");
 loadFile("../../Compiler/FrontEnd/SCodeCheck.mo");
 loadFile("../../Compiler/FrontEnd/SCodeUtil.mo");
 loadFile("../../Compiler/FrontEnd/Static.mo");
+loadFile("../../Compiler/FrontEnd/TypeCheck.mo");
 loadFile("../../Compiler/FrontEnd/Types.mo");
 loadFile("../../Compiler/FrontEnd/Typing.mo");
 loadFile("../../Compiler/FrontEnd/UnitAbsynBuilder.mo");
