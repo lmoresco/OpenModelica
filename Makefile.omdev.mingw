@@ -50,7 +50,7 @@ settings:
 	@echo Using Path : "$(PATH)"
 	which gcc
 
-omdev_extra_dlls: install-openturns
+omdev_extra_dlls: 
 	echo Copying needed .dlls to the build/bin directory
 	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
 	(cp -puf $(OMDEV)/lib/omniORB-4.1.6-msvc-10/bin/x86_win32/omniORB416_vc10_rt.dll $(builddir_bin)/)
