@@ -92,7 +92,6 @@ NonlinearMixed.mos \
 OneArgBaseFunction.mos \
 ParameterCycle.mos \
 ParameterModel.mos \
-Pendulum.mos \
 PolynomialEvaluatorA.mos PolynomialEvaluatorB.mos \
 PolynomialEvaluator1.mos PolynomialEvaluator2.mos PolynomialEvaluator3.mos \
 PreAndAliasedVar.mos \
@@ -145,6 +144,7 @@ TankPIDOPRI5.mos TanksConnectedPIDOPRI5.mos\
 SpaceProbe.mos \
 BouncingBallExamplesDOPRI5.mos \
 InitialConstantSection.mos \
+Pendulum.mos \
 
 # Dependency files that are not .mo .mos or Makefile
 # Add them here or they will be cleaned.
