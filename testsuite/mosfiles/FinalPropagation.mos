@@ -59,13 +59,7 @@ simulate(FinalPropagation); getErrorString();
 // When Clauses :
 // ===============
 // 
-// Array Equations :
-// ===============
-// Algorithms:
-// ===============
 // Constraints:
-// ===============
-// Complex Equations:
 // ===============
 // record SimulationResult
 //     resultFile = "FinalPropagation_res.mat",
