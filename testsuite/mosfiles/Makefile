@@ -42,7 +42,6 @@ dertest.mos  \
 DimConvert.mos \
 DiscreteVectorStateSpace.mos \
 DoubleWhenConflict.mos DoubleWhenSequential.mos \
-DummyDerMatching.mos  \
 EnumArray.mos \
 Epidemics1.mos \
 EquationCallIntegerArray.mos \
@@ -145,6 +144,7 @@ SpaceProbe.mos \
 BouncingBallExamplesDOPRI5.mos \
 InitialConstantSection.mos \
 Pendulum.mos \
+DummyDerMatching.mos  \
 
 # Dependency files that are not .mo .mos or Makefile
 # Add them here or they will be cleaned.
