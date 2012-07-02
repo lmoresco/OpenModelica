@@ -10,7 +10,6 @@ PlanarMechanicsForTesting.Examples.CounterSpin.mos \
 PlanarMechanicsForTesting.Examples.CraneCrab.mos \
 PlanarMechanicsForTesting.Examples.ControlledCraneCrab.mos \
 PlanarMechanicsForTesting.Examples.InvertedCraneCrab.mos \
-PlanarMechanicsForTesting.Examples.WheelBasedCranCrab.mos \
 PlanarMechanicsForTesting.Examples.PistonEngine.mos \
 PlanarMechanicsForTesting.Examples.TestDryFrictionWheel.mos \
 PlanarMechanicsForTesting.Examples.TestSlipBasedWheel.mos \
@@ -24,7 +23,7 @@ PlanarMechanicsForTesting.Examples.SimpleCarWithDifferentialGear.mos \
 FAILINGTESTFILES=  \
 PlanarMechanicsForTesting.Examples.PistonEngine_DynamicStateSelection.mos \
 PlanarMechanicsForTesting.Examples.KinematicLoop_DynamicStateSelection.mos \
-
+PlanarMechanicsForTesting.Examples.WheelBasedCranCrab.mos \
 
 # Dependency files that are not .mo .mos or Makefile
 # Add them here or they will be cleaned.
