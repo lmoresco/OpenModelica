@@ -43,7 +43,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.TranslatoryArmatureAnd
 instantiateModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorString();
 checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorString();
 
-// Result:
+ // Result:
 // true
 // ""
 // "function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData\"
@@ -9216,7 +9216,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // end Modelica.Math.asin;
 // 
 // class Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign
-//   parameter Real rho_20(quantity = \"Resistivity\", unit = \"Ohm.m\") = 0.0000000178 \"Resistivity of conductor material at 20Ã?Â¯Ã?Â¿Ã?Â½C (default: Copper)\";
+//   parameter Real rho_20(quantity = \"Resistivity\", unit = \"Ohm.m\") = 0.0000000178 \"Resistivity of conductor material at 20Â°C (default: Copper)\";
 //   parameter Real alpha_20(quantity = \"LinearTemperatureCoefficient\", unit = \"1/K\") = 0.0039 \"Temperature coefficient of conductor material's resistivity at 20degC (default: Copper)\";
 //   parameter Real T_op(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Operating temperature of winding\";
 //   parameter Real h_w(quantity = \"Length\", unit = \"m\") \"Height of winding cross-section\";
@@ -9257,4 +9257,3 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // "
 // ""
 // endResult
- 
