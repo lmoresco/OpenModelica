@@ -31,7 +31,7 @@ simulate(FinalPropagation); getErrorString();
 // 1:  $dummy:STATE(fixed = true )  type: Real  indx = -1
 // 
 // 
-// Equations (1)
+// Equations (1, 1)
 // =========
 // 1 : der($dummy) = 0.0
 // 
