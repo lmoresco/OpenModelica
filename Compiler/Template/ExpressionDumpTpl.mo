@@ -758,6 +758,7 @@ algorithm
     local
       Tpl.Text txt;
       DAE.ComponentRef i_componentRef;
+      Integer i_index;
       DAE.Ident i_ident;
       list<DAE.Subscript> i_subscriptLst;
       Tpl.Text l_cref__str;
@@ -769,6 +770,17 @@ algorithm
         l_sub__str = dumpSubscripts(Tpl.emptyTxt, i_subscriptLst);
         txt = Tpl.writeStr(txt, i_ident);
         txt = Tpl.writeText(txt, l_sub__str);
+      then txt;
+
+    case ( txt,
+           DAE.CREF_ITER(subscriptLst = i_subscriptLst, ident = i_ident, index = i_index) )
+      equation
+        l_sub__str = dumpSubscripts(Tpl.emptyTxt, i_subscriptLst);
+        txt = Tpl.writeStr(txt, i_ident);
+        txt = Tpl.writeText(txt, l_sub__str);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" /* iter index "));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" */"));
       then txt;
 
     case ( txt,
@@ -790,6 +802,8 @@ algorithm
 
     case ( txt,
            _ )
+      equation
+        txt = errorMsg(txt, "ExpressionDumpTpl.dumpCref: unknown cref");
       then txt;
   end matchcontinue;
 end dumpCref;

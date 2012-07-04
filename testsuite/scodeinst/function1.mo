@@ -48,8 +48,8 @@ end function1;
 //   z2 := {1};
 //   o := x + y;
 //   /* z := array_alloc(Real[integer(x), 2]) */;
-//   for r in 1:2 loop
-//     o := r;
+//   for r /* iter index 2 */ in 1:2 loop
+//     o := r /* iter index 2 */;
 //   end for;
 //   o := x;
 //   o := 3.4;
