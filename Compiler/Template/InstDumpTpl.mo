@@ -546,7 +546,8 @@ algorithm
       DAE.ComponentRef i_cref;
       DAE.Exp i_message;
       DAE.Exp i_condition;
-      String i_index;
+      Integer i_index;
+      String i_name;
       list<InstTypes.Equation> i_body;
       Option<DAE.Exp> i_range;
       DAE.Type i_indexType;
@@ -610,7 +611,7 @@ algorithm
       then txt;
 
     case ( txt,
-           InstTypes.FOR_EQUATION(indexType = i_indexType, range = i_range, body = i_body, index = i_index) )
+           InstTypes.FOR_EQUATION(indexType = i_indexType, range = i_range, body = i_body, name = i_name, index = i_index) )
       equation
         l_ty__str = ExpressionDumpTpl.dumpType(Tpl.emptyTxt, i_indexType);
         l_range__str = fun_21(Tpl.emptyTxt, i_range);
@@ -620,7 +621,10 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("for {"));
         txt = Tpl.writeText(txt, l_ty__str);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("} "));
-        txt = Tpl.writeStr(txt, i_index);
+        txt = Tpl.writeStr(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" /* index "));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" */"));
         txt = Tpl.writeText(txt, l_range__str);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(" loop\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
