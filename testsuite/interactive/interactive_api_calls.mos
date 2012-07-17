@@ -16,6 +16,9 @@ isType(A);                   getErrorString();
 isFunction(A);               getErrorString();
 isPackage(A);                getErrorString();
 isClass(A);                  getErrorString();
+isOperator(A);               getErrorString();
+isOperatorRecord(A);         getErrorString();
+isOperatorFunction(A);       getErrorString();
 
 loadFile("interactive_api_calls.mo"); getErrorString();
 isType(vector3D);            getErrorString();
@@ -130,6 +133,18 @@ list(Modelica.UsersGuide.Conventions.Documentation.Format.Code); getErrorString(
 // Evaluating: getErrorString()
 // ""
 // Evaluating: isClass(A)
+// false
+// Evaluating: getErrorString()
+// ""
+// Evaluating: isOperator(A)
+// false
+// Evaluating: getErrorString()
+// ""
+// Evaluating: isOperatorRecord(A)
+// false
+// Evaluating: getErrorString()
+// ""
+// Evaluating: isOperatorFunction(A)
 // false
 // Evaluating: getErrorString()
 // ""
