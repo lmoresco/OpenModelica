@@ -34,8 +34,8 @@ UTIL_HFILES = base_array.h boolean_array.h division.h omc_error.h index_spec.h i
 MATH_OBJS = bigden.o biglag.o dgesv_aux.o dogleg.o dpmpar.o enorm.o fdjac1.o hybrd.o hybrd1.o hybrj.o lsame.o nelmead.o newuoa.o newuob.o  qform.o  qrfac.o r1mpyq.o r1updt.o trsapp.o update.o 
 MATH_HFILES = blaswrap.h matrix.h
 
-SOLVER_OBJS = daux.o ddasrt.o ddassl.o dassl.o delay.o dlamch.o dlinpk.o events.o initialization.o initialization_data.o model_help.o solver_main.o kinsol_initialization.o newuoa_initialization.o simplex_initialization.o nelderMeadEx_initialization.o
-SOLVER_HFILES = dassl.h delay.h events.h initialization.h initialization_data.h model_help.h solver_main.h kinsol_initialization.h newuoa_initialization.h simplex_initialization.h nelderMeadEx_initialization.h
+SOLVER_OBJS = daux.o ddasrt.o ddassl.o dassl.o delay.o dlamch.o dlinpk.o events.o initialization.o initialization_data.o ipopt_initialization.o model_help.o solver_main.o kinsol_initialization.o newuoa_initialization.o simplex_initialization.o nelderMeadEx_initialization.o
+SOLVER_HFILES = dassl.h delay.h events.h initialization.h initialization_data.h ipopt_initialization.h model_help.h solver_main.h kinsol_initialization.h newuoa_initialization.h simplex_initialization.h nelderMeadEx_initialization.h
 
 RESULTS_OBJS = read_csv.o simulation_result_csv.o simulation_result_mat.o simulation_result_plt.o
 RESULTS_HFILES = read_csv.h simulation_result_csv.h simulation_result_mat.h simulation_result_plt.h
