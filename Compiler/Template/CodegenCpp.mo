@@ -605,8 +605,8 @@ algorithm
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "/include/omc/cpp/ModelicaConfic.inc\n",
-                                    "# Simulations use -O3 by default\n",
-                                    "SIM_OR_DYNLOAD_OPT_LEVEL=-O3\n",
+                                    "# Simulations use -O0 by default\n",
+                                    "SIM_OR_DYNLOAD_OPT_LEVEL=-O0\n",
                                     "CC="
                                 }, false));
         txt = Tpl.writeStr(txt, i_makefileParams_ccompiler);
