@@ -34893,21 +34893,24 @@ protected function fun_835
   input Tpl.Text in_txt;
   input SimCode.SimCode in_a_simCode;
   input Tpl.Text in_a_zeroCrossingsCode;
+  input Tpl.Text in_a_prexp;
   input Tpl.Text in_a_varDecls;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_simCode, in_a_zeroCrossingsCode, in_a_varDecls)
+  matchcontinue(in_txt, in_a_simCode, in_a_zeroCrossingsCode, in_a_prexp, in_a_varDecls)
     local
       Tpl.Text txt;
       Tpl.Text a_zeroCrossingsCode;
+      Tpl.Text a_prexp;
       Tpl.Text a_varDecls;
       Absyn.Path i_modelInfo_name;
 
     case ( txt,
            SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(name = i_modelInfo_name)),
            a_zeroCrossingsCode,
+           a_prexp,
            a_varDecls )
       equation
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
@@ -34920,6 +34923,8 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.writeText(txt, a_varDecls);
         txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeText(txt, a_prexp);
+        txt = Tpl.softNewLine(txt);
         txt = Tpl.writeText(txt, a_zeroCrossingsCode);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.popBlock(txt);
@@ -34928,6 +34933,7 @@ algorithm
       then txt;
 
     case ( txt,
+           _,
            _,
            _,
            _ )
@@ -34943,11 +34949,13 @@ public function giveZeroFunc1
   output Tpl.Text out_txt;
 protected
   Tpl.Text l_zeroCrossingsCode;
+  Tpl.Text l_prexp;
   Tpl.Text l_varDecls;
 algorithm
   l_varDecls := Tpl.emptyTxt;
-  (l_zeroCrossingsCode, l_varDecls) := giveZeroFunc2(Tpl.emptyTxt, a_zeroCrossings, l_varDecls, a_simCode);
-  out_txt := fun_835(txt, a_simCode, l_zeroCrossingsCode, l_varDecls);
+  l_prexp := Tpl.emptyTxt;
+  (l_zeroCrossingsCode, l_varDecls, l_prexp) := giveZeroFunc2(Tpl.emptyTxt, a_zeroCrossings, l_varDecls, l_prexp, a_simCode);
+  out_txt := fun_835(txt, a_simCode, l_zeroCrossingsCode, l_prexp, l_varDecls);
 end giveZeroFunc1;
 
 public function giveConditions
@@ -35053,17 +35061,20 @@ protected function lm_840
   input Tpl.Text in_txt;
   input list<BackendDAE.ZeroCrossing> in_items;
   input SimCode.SimCode in_a_simCode;
+  input Tpl.Text in_a_preExp;
   input Tpl.Text in_a_varDecls;
 
   output Tpl.Text out_txt;
+  output Tpl.Text out_a_preExp;
   output Tpl.Text out_a_varDecls;
 algorithm
-  (out_txt, out_a_varDecls) :=
-  matchcontinue(in_txt, in_items, in_a_simCode, in_a_varDecls)
+  (out_txt, out_a_preExp, out_a_varDecls) :=
+  matchcontinue(in_txt, in_items, in_a_simCode, in_a_preExp, in_a_varDecls)
     local
       Tpl.Text txt;
       list<BackendDAE.ZeroCrossing> rest;
       SimCode.SimCode a_simCode;
+      Tpl.Text a_preExp;
       Tpl.Text a_varDecls;
       Integer x_i0;
       DAE.Exp i_relation__;
@@ -35071,27 +35082,30 @@ algorithm
     case ( txt,
            {},
            _,
+           a_preExp,
            a_varDecls )
-      then (txt, a_varDecls);
+      then (txt, a_preExp, a_varDecls);
 
     case ( txt,
            BackendDAE.ZERO_CROSSING(relation_ = i_relation__) :: rest,
            a_simCode,
+           a_preExp,
            a_varDecls )
       equation
         x_i0 = Tpl.getIteri_i0(txt);
-        (txt, a_varDecls) = giveZeroFunc3(txt, x_i0, i_relation__, a_varDecls, a_simCode);
+        (txt, a_varDecls, a_preExp) = giveZeroFunc3(txt, x_i0, i_relation__, a_varDecls, a_preExp, a_simCode);
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls) = lm_840(txt, rest, a_simCode, a_varDecls);
-      then (txt, a_varDecls);
+        (txt, a_preExp, a_varDecls) = lm_840(txt, rest, a_simCode, a_preExp, a_varDecls);
+      then (txt, a_preExp, a_varDecls);
 
     case ( txt,
            _ :: rest,
            a_simCode,
+           a_preExp,
            a_varDecls )
       equation
-        (txt, a_varDecls) = lm_840(txt, rest, a_simCode, a_varDecls);
-      then (txt, a_varDecls);
+        (txt, a_preExp, a_varDecls) = lm_840(txt, rest, a_simCode, a_preExp, a_varDecls);
+      then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end lm_840;
 
@@ -35099,13 +35113,15 @@ public function giveZeroFunc2
   input Tpl.Text txt;
   input list<BackendDAE.ZeroCrossing> a_zeroCrossings;
   input Tpl.Text a_varDecls;
+  input Tpl.Text a_preExp;
   input SimCode.SimCode a_simCode;
 
   output Tpl.Text out_txt;
   output Tpl.Text out_a_varDecls;
+  output Tpl.Text out_a_preExp;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (out_txt, out_a_varDecls) := lm_840(out_txt, a_zeroCrossings, a_simCode, a_varDecls);
+  (out_txt, out_a_preExp, out_a_varDecls) := lm_840(out_txt, a_zeroCrossings, a_simCode, a_preExp, a_varDecls);
   out_txt := Tpl.popIter(out_txt);
 end giveZeroFunc2;
 
@@ -35274,22 +35290,22 @@ protected function fun_843
   input Tpl.Text in_txt;
   input DAE.Exp in_a_relation;
   input Integer in_a_index1;
-  input SimCode.SimCode in_a_simCode;
   input Tpl.Text in_a_varDecls;
   input Tpl.Text in_a_preExp;
+  input SimCode.SimCode in_a_simCode;
 
   output Tpl.Text out_txt;
   output Tpl.Text out_a_varDecls;
   output Tpl.Text out_a_preExp;
 algorithm
   (out_txt, out_a_varDecls, out_a_preExp) :=
-  matchcontinue(in_txt, in_a_relation, in_a_index1, in_a_simCode, in_a_varDecls, in_a_preExp)
+  matchcontinue(in_txt, in_a_relation, in_a_index1, in_a_varDecls, in_a_preExp, in_a_simCode)
     local
       Tpl.Text txt;
       Integer a_index1;
-      SimCode.SimCode a_simCode;
       Tpl.Text a_varDecls;
       Tpl.Text a_preExp;
+      SimCode.SimCode a_simCode;
       Integer i_zerocrossingIndex;
       DAE.Operator i_rel_operator;
       DAE.Exp i_exp2;
@@ -35300,9 +35316,9 @@ algorithm
     case ( txt,
            DAE.RELATION(index = i_zerocrossingIndex, exp1 = i_exp1, exp2 = i_exp2, operator = i_rel_operator),
            a_index1,
-           a_simCode,
            a_varDecls,
-           a_preExp )
+           a_preExp,
+           a_simCode )
       equation
         (l_e1, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_exp1, SimCode.contextOther, a_preExp, a_varDecls, a_simCode);
         (l_e2, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_exp2, SimCode.contextOther, a_preExp, a_varDecls, a_simCode);
@@ -35312,9 +35328,9 @@ algorithm
     case ( txt,
            _,
            _,
-           _,
            a_varDecls,
-           a_preExp )
+           a_preExp,
+           _ )
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
 end fun_843;
@@ -35324,15 +35340,14 @@ public function giveZeroFunc3
   input Integer a_index1;
   input DAE.Exp a_relation;
   input Tpl.Text a_varDecls;
+  input Tpl.Text a_preExp;
   input SimCode.SimCode a_simCode;
 
   output Tpl.Text out_txt;
   output Tpl.Text out_a_varDecls;
-protected
-  Tpl.Text l_preExp;
+  output Tpl.Text out_a_preExp;
 algorithm
-  l_preExp := Tpl.emptyTxt;
-  (out_txt, out_a_varDecls, l_preExp) := fun_843(txt, a_relation, a_index1, a_simCode, a_varDecls, l_preExp);
+  (out_txt, out_a_varDecls, out_a_preExp) := fun_843(txt, a_relation, a_index1, a_varDecls, a_preExp, a_simCode);
 end giveZeroFunc3;
 
 protected function lm_845
@@ -39501,7 +39516,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 6735, 14), "ALG_STATEMENT NYI");
+        txt = error(txt, Tpl.sourceInfo("CodegenCpp.tpl", 6737, 14), "ALG_STATEMENT NYI");
       then (txt, a_varDecls);
   end matchcontinue;
 end fun_946;
