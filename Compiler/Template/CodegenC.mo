@@ -5911,110 +5911,599 @@ end genVector;
 
 protected function lm_162
   input Tpl.Text in_txt;
-  input list<SimCode.SimEqSystem> in_items;
-  input Tpl.Text in_a_tmp;
-  input Tpl.Text in_a_varDecls;
+  input list<SimCode.JacobianMatrix> in_items;
 
   output Tpl.Text out_txt;
-  output Tpl.Text out_a_tmp;
-  output Tpl.Text out_a_varDecls;
 algorithm
-  (out_txt, out_a_tmp, out_a_varDecls) :=
-  matchcontinue(in_txt, in_items, in_a_tmp, in_a_varDecls)
+  out_txt :=
+  matchcontinue(in_txt, in_items)
     local
       Tpl.Text txt;
-      list<SimCode.SimEqSystem> rest;
-      Tpl.Text a_tmp;
-      Tpl.Text a_varDecls;
-      SimCode.SimEqSystem i_eq;
+      list<SimCode.JacobianMatrix> rest;
+      Integer x_index0;
+      String i_name;
 
     case ( txt,
-           {},
-           a_tmp,
-           a_varDecls )
-      then (txt, a_tmp, a_varDecls);
+           {} )
+      then txt;
 
     case ( txt,
-           i_eq :: rest,
-           a_tmp,
-           a_varDecls )
+           (_, _, i_name, _, _, _) :: rest )
       equation
-        (txt, a_varDecls, a_tmp) = equation_(txt, i_eq, SimCode.contextSimulationNonDiscrete, a_varDecls, a_tmp);
+        x_index0 = Tpl.getIteri_i0(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("const int INDEX_JAC_"));
+        txt = Tpl.writeStr(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
+        txt = Tpl.writeStr(txt, intString(x_index0));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
         txt = Tpl.nextIter(txt);
-        (txt, a_tmp, a_varDecls) = lm_162(txt, rest, a_tmp, a_varDecls);
-      then (txt, a_tmp, a_varDecls);
+        txt = lm_162(txt, rest);
+      then txt;
 
     case ( txt,
-           _ :: rest,
-           a_tmp,
-           a_varDecls )
+           _ :: rest )
       equation
-        (txt, a_tmp, a_varDecls) = lm_162(txt, rest, a_tmp, a_varDecls);
-      then (txt, a_tmp, a_varDecls);
+        txt = lm_162(txt, rest);
+      then txt;
   end matchcontinue;
 end lm_162;
 
-public function functionJac
+protected function lm_163
+  input Tpl.Text in_txt;
+  input list<SimCode.JacobianMatrix> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.JacobianMatrix> rest;
+      list<Integer> i_colorList;
+      list<list<Integer>> i_sparsepattern;
+      String i_name;
+      list<SimCode.SimVar> i_vars;
+      list<SimCode.JacobianColumn> i_mat;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           (i_mat, i_vars, i_name, i_sparsepattern, i_colorList, _) :: rest )
+      equation
+        txt = initialAnalyticJacobians(txt, i_mat, i_vars, i_name, i_sparsepattern, i_colorList);
+        txt = Tpl.nextIter(txt);
+        txt = lm_163(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_163(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_163;
+
+protected function lm_164
+  input Tpl.Text in_txt;
+  input list<SimCode.JacobianMatrix> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.JacobianMatrix> rest;
+      Integer i_maxColor;
+      list<Integer> i_colorList;
+      list<list<Integer>> i_sparsepattern;
+      String i_name;
+      list<SimCode.SimVar> i_vars;
+      list<SimCode.JacobianColumn> i_mat;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           (i_mat, i_vars, i_name, i_sparsepattern, i_colorList, i_maxColor) :: rest )
+      equation
+        txt = generateMatrix(txt, i_mat, i_vars, i_name, i_sparsepattern, i_colorList, i_maxColor);
+        txt = Tpl.nextIter(txt);
+        txt = lm_164(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_164(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_164;
+
+public function functionAnalyticJacobians
   input Tpl.Text txt;
-  input list<SimCode.SimEqSystem> a_jacEquations;
-  input list<SimCode.SimVar> a_tmpVars;
-  input String a_columnLength;
-  input String a_matrixName;
+  input list<SimCode.JacobianMatrix> a_JacobianMatrixes;
 
   output Tpl.Text out_txt;
 protected
-  Tpl.Text l_eqns__;
-  Tpl.Text l_tmp;
-  Tpl.Text l_varDecls;
+  Tpl.Text l_jacMats;
+  Tpl.Text l_initialjacMats;
+  Tpl.Text l_jacobianIndices;
 algorithm
-  l_varDecls := Tpl.emptyTxt;
-  l_tmp := Tpl.emptyTxt;
-  l_eqns__ := Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (l_eqns__, l_tmp, l_varDecls) := lm_162(l_eqns__, a_jacEquations, l_tmp, l_varDecls);
-  l_eqns__ := Tpl.popIter(l_eqns__);
-  out_txt := Tpl.writeText(txt, l_tmp);
+  l_jacobianIndices := Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+  l_jacobianIndices := lm_162(l_jacobianIndices, a_JacobianMatrixes);
+  l_jacobianIndices := Tpl.popIter(l_jacobianIndices);
+  l_initialjacMats := Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+  l_initialjacMats := lm_163(l_initialjacMats, a_JacobianMatrixes);
+  l_initialjacMats := Tpl.popIter(l_initialjacMats);
+  l_jacMats := Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+  l_jacMats := lm_164(l_jacMats, a_JacobianMatrixes);
+  l_jacMats := Tpl.popIter(l_jacMats);
+  out_txt := Tpl.writeText(txt, l_jacobianIndices);
   out_txt := Tpl.softNewLine(out_txt);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("int functionJac"));
-  out_txt := Tpl.writeStr(out_txt, a_matrixName);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "_column(DATA* data)\n",
-                                       "{\n",
-                                       "  state mem_state;\n"
-                                   }, true));
-  out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("int index = INDEX_JAC_"));
-  out_txt := Tpl.writeStr(out_txt, a_matrixName);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE(";\n"));
-  out_txt := Tpl.writeText(out_txt, l_varDecls);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_NEW_LINE());
+  out_txt := Tpl.writeText(out_txt, l_initialjacMats);
   out_txt := Tpl.softNewLine(out_txt);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE("mem_state = get_memory_state();\n"));
-  out_txt := Tpl.writeText(out_txt, l_eqns__);
-  out_txt := Tpl.softNewLine(out_txt);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "\n",
-                                       "int i;\n",
-                                       "if(DEBUG_FLAG(LOG_DEBUG))\n",
-                                       "{\n"
-                                   }, true));
-  out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("for(i=0;i<"));
-  out_txt := Tpl.writeStr(out_txt, a_columnLength);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       ";i++)\n",
-                                       "  printf(\"col: col[%d] = %f \\n\", i, data->simulationInfo.analyticJacobians[index].resultVars[i]);\n"
-                                   }, true));
-  out_txt := Tpl.popBlock(out_txt);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       " }\n",
-                                       "\n",
-                                       "restore_memory_state(mem_state);\n",
-                                       "return 0;\n"
-                                   }, true));
-  out_txt := Tpl.popBlock(out_txt);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("}"));
-end functionJac;
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_NEW_LINE());
+  out_txt := Tpl.writeText(out_txt, l_jacMats);
+end functionAnalyticJacobians;
 
-protected function lm_164
+protected function fun_166
+  input Tpl.Text in_txt;
+  input Integer in_a_index0;
+  input list<Integer> in_a_indexes;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_index0, in_a_indexes)
+    local
+      Tpl.Text txt;
+      list<Integer> a_indexes;
+      Integer i_index0;
+      Integer ret_2;
+      Integer ret_1;
+      Integer ret_0;
+
+    case ( txt,
+           (i_index0 as 0),
+           a_indexes )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("data->simulationInfo.analyticJacobians[index].sparsePattern.leadindex["));
+        txt = Tpl.writeStr(txt, intString(i_index0));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = "));
+        ret_0 = listLength(a_indexes);
+        txt = Tpl.writeStr(txt, intString(ret_0));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
+      then txt;
+
+    case ( txt,
+           i_index0,
+           a_indexes )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("data->simulationInfo.analyticJacobians[index].sparsePattern.leadindex["));
+        txt = Tpl.writeStr(txt, intString(i_index0));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = data->simulationInfo.analyticJacobians[index].sparsePattern.leadindex["));
+        ret_1 = intSub(i_index0, 1);
+        txt = Tpl.writeStr(txt, intString(ret_1));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] + "));
+        ret_2 = listLength(a_indexes);
+        txt = Tpl.writeStr(txt, intString(ret_2));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
+      then txt;
+  end matchcontinue;
+end fun_166;
+
+protected function lm_167
+  input Tpl.Text in_txt;
+  input list<list<Integer>> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<list<Integer>> rest;
+      Integer x_index0;
+      list<Integer> i_indexes;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_indexes :: rest )
+      equation
+        x_index0 = Tpl.getIteri_i0(txt);
+        txt = fun_166(txt, x_index0, i_indexes);
+        txt = Tpl.nextIter(txt);
+        txt = lm_167(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_167(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_167;
+
+protected function lm_168
+  input Tpl.Text in_txt;
+  input list<Integer> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<Integer> rest;
+      Integer x_index0;
+      Integer i_indexes;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_indexes :: rest )
+      equation
+        x_index0 = Tpl.getIteri_i0(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("data->simulationInfo.analyticJacobians[index].sparsePattern.index["));
+        txt = Tpl.writeStr(txt, intString(x_index0));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = "));
+        txt = Tpl.writeStr(txt, intString(i_indexes));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
+        txt = Tpl.nextIter(txt);
+        txt = lm_168(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_168(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_168;
+
+protected function lm_169
+  input Tpl.Text in_txt;
+  input list<Integer> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<Integer> rest;
+      Integer x_index0;
+      Integer i_indexes;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_indexes :: rest )
+      equation
+        x_index0 = Tpl.getIteri_i0(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("data->simulationInfo.analyticJacobians[index].sparsePattern.colorCols["));
+        txt = Tpl.writeStr(txt, intString(x_index0));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = "));
+        txt = Tpl.writeStr(txt, intString(i_indexes));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
+        txt = Tpl.nextIter(txt);
+        txt = lm_169(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_169(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_169;
+
+protected function lm_170
+  input Tpl.Text in_txt;
+  input list<SimCode.JacobianColumn> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.JacobianColumn> rest;
+      String i_indxColumn;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           (_, _, i_indxColumn) :: rest )
+      equation
+        txt = Tpl.writeStr(txt, i_indxColumn);
+        txt = Tpl.nextIter(txt);
+        txt = lm_170(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_170(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_170;
+
+protected function lm_171
+  input Tpl.Text in_txt;
+  input list<SimCode.JacobianColumn> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.JacobianColumn> rest;
+      list<SimCode.SimVar> i_vars;
+      Integer ret_0;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           (_, i_vars, _) :: rest )
+      equation
+        ret_0 = listLength(i_vars);
+        txt = Tpl.writeStr(txt, intString(ret_0));
+        txt = Tpl.nextIter(txt);
+        txt = lm_171(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_171(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_171;
+
+protected function fun_172
+  input Tpl.Text in_txt;
+  input list<Integer> in_a_colorList;
+  input list<SimCode.SimVar> in_a_seedVars;
+  input list<SimCode.JacobianColumn> in_a_jacobianColumn;
+  input list<list<Integer>> in_a_sparsepattern;
+  input String in_a_matrixname;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_colorList, in_a_seedVars, in_a_jacobianColumn, in_a_sparsepattern, in_a_matrixname)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> a_seedVars;
+      list<SimCode.JacobianColumn> a_jacobianColumn;
+      list<list<Integer>> a_sparsepattern;
+      String a_matrixname;
+      list<Integer> i_colorList;
+      Integer ret_11;
+      Tpl.Text l_index__;
+      Tpl.Text l_tmpvarsSize;
+      Tpl.Text l_indexColumn;
+      Integer ret_7;
+      Tpl.Text l_sp__size__index_1;
+      Tpl.Text l_colorArray;
+      list<Integer> ret_4;
+      Tpl.Text l_indexElems;
+      Tpl.Text l_leadindex;
+      Integer ret_1;
+      Tpl.Text l_sp__size__index;
+
+    case ( txt,
+           {},
+           _,
+           _,
+           _,
+           a_matrixname )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("int initialAnalyticJacobian"));
+        txt = Tpl.writeStr(txt, a_matrixname);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "(DATA* data)\n",
+                                    "{\n",
+                                    "  return 1;\n",
+                                    "}"
+                                }, false));
+      then txt;
+
+    case ( txt,
+           i_colorList,
+           a_seedVars,
+           a_jacobianColumn,
+           a_sparsepattern,
+           a_matrixname )
+      equation
+        ret_1 = List.lengthListElements(a_sparsepattern);
+        l_sp__size__index = Tpl.writeStr(Tpl.emptyTxt, intString(ret_1));
+        l_leadindex = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        l_leadindex = lm_167(l_leadindex, a_sparsepattern);
+        l_leadindex = Tpl.popIter(l_leadindex);
+        ret_4 = List.flatten(a_sparsepattern);
+        l_indexElems = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        l_indexElems = lm_168(l_indexElems, ret_4);
+        l_indexElems = Tpl.popIter(l_indexElems);
+        l_colorArray = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        l_colorArray = lm_169(l_colorArray, i_colorList);
+        l_colorArray = Tpl.popIter(l_colorArray);
+        ret_7 = List.lengthListElements(a_sparsepattern);
+        l_sp__size__index_1 = Tpl.writeStr(Tpl.emptyTxt, intString(ret_7));
+        l_indexColumn = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        l_indexColumn = lm_170(l_indexColumn, a_jacobianColumn);
+        l_indexColumn = Tpl.popIter(l_indexColumn);
+        l_tmpvarsSize = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        l_tmpvarsSize = lm_171(l_tmpvarsSize, a_jacobianColumn);
+        l_tmpvarsSize = Tpl.popIter(l_tmpvarsSize);
+        ret_11 = listLength(a_seedVars);
+        l_index__ = Tpl.writeStr(Tpl.emptyTxt, intString(ret_11));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("int initialAnalyticJacobian"));
+        txt = Tpl.writeStr(txt, a_matrixname);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "(DATA* data)\n",
+                                    "{\n"
+                                }, true));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("int index = INDEX_JAC_"));
+        txt = Tpl.writeStr(txt, a_matrixname);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ";\n",
+                                    "\n",
+                                    "data->simulationInfo.analyticJacobians[index].jacobianName = \'"
+                                }, false));
+        txt = Tpl.writeStr(txt, a_matrixname);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\';\n",
+                                    "data->simulationInfo.analyticJacobians[index].sizeCols = "
+                                }, false));
+        txt = Tpl.writeText(txt, l_index__);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ";\n",
+                                    "data->simulationInfo.analyticJacobians[index].sizeRows = "
+                                }, false));
+        txt = Tpl.writeText(txt, l_indexColumn);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ";\n",
+                                    "data->simulationInfo.analyticJacobians[index].seedVars = (modelica_real*) calloc("
+                                }, false));
+        txt = Tpl.writeText(txt, l_index__);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ",sizeof(modelica_real));\n",
+                                    "data->simulationInfo.analyticJacobians[index].resultVars = (modelica_real*) malloc("
+                                }, false));
+        txt = Tpl.writeText(txt, l_indexColumn);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "*sizeof(modelica_real));\n",
+                                    "data->simulationInfo.analyticJacobians[index].tmpVars = (modelica_real*) malloc("
+                                }, false));
+        txt = Tpl.writeText(txt, l_tmpvarsSize);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "*sizeof(modelica_real));\n",
+                                    "data->simulationInfo.analyticJacobians[index].sparsePattern.leadindex = (int*) malloc("
+                                }, false));
+        txt = Tpl.writeText(txt, l_index__);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "*sizeof(int));\n",
+                                    "data->simulationInfo.analyticJacobians[index].sparsePattern.index = (int*) malloc("
+                                }, false));
+        txt = Tpl.writeText(txt, l_sp__size__index_1);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "*sizeof(int));\n",
+                                    "data->simulationInfo.analyticJacobians[index].sparsePattern.colorCols = (int*) malloc("
+                                }, false));
+        txt = Tpl.writeText(txt, l_index__);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "*sizeof(int));\n",
+                                    "data->simulationInfo.analyticJacobians[index].jacobian = NULL;\n",
+                                    "\n",
+                                    "/* write leading index */\n"
+                                }, true));
+        txt = Tpl.writeText(txt, l_leadindex);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
+                                    "/* write index */\n"
+                                }, true));
+        txt = Tpl.writeText(txt, l_indexElems);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
+                                    "/* write color array */\n"
+                                }, true));
+        txt = Tpl.writeText(txt, l_colorArray);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
+                                    "return 0;\n"
+                                }, true));
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("}"));
+      then txt;
+  end matchcontinue;
+end fun_172;
+
+protected function fun_173
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_a_seedVars;
+  input list<SimCode.JacobianColumn> in_a_jacobianColumn;
+  input String in_a_matrixname;
+  input list<list<Integer>> in_a_sparsepattern;
+  input list<Integer> in_a_colorList;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_seedVars, in_a_jacobianColumn, in_a_matrixname, in_a_sparsepattern, in_a_colorList)
+    local
+      Tpl.Text txt;
+      list<SimCode.JacobianColumn> a_jacobianColumn;
+      String a_matrixname;
+      list<list<Integer>> a_sparsepattern;
+      list<Integer> a_colorList;
+      list<SimCode.SimVar> i_seedVars;
+
+    case ( txt,
+           {},
+           _,
+           a_matrixname,
+           _,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("int initialAnalyticJacobian"));
+        txt = Tpl.writeStr(txt, a_matrixname);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "(DATA* data)\n",
+                                    "{\n",
+                                    "  return 1;\n",
+                                    "}"
+                                }, false));
+      then txt;
+
+    case ( txt,
+           i_seedVars,
+           a_jacobianColumn,
+           a_matrixname,
+           a_sparsepattern,
+           a_colorList )
+      equation
+        txt = fun_172(txt, a_colorList, i_seedVars, a_jacobianColumn, a_sparsepattern, a_matrixname);
+      then txt;
+  end matchcontinue;
+end fun_173;
+
+public function initialAnalyticJacobians
+  input Tpl.Text txt;
+  input list<SimCode.JacobianColumn> a_jacobianColumn;
+  input list<SimCode.SimVar> a_seedVars;
+  input String a_matrixname;
+  input list<list<Integer>> a_sparsepattern;
+  input list<Integer> a_colorList;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt := fun_173(txt, a_seedVars, a_jacobianColumn, a_matrixname, a_sparsepattern, a_colorList);
+end initialAnalyticJacobians;
+
+protected function lm_175
   input Tpl.Text in_txt;
   input list<SimCode.JacobianColumn> in_items;
   input String in_a_matrixname;
@@ -6042,19 +6531,19 @@ algorithm
       equation
         txt = functionJac(txt, i_eqs, i_vars, i_indxColumn, a_matrixname);
         txt = Tpl.nextIter(txt);
-        txt = lm_164(txt, rest, a_matrixname);
+        txt = lm_175(txt, rest, a_matrixname);
       then txt;
 
     case ( txt,
            _ :: rest,
            a_matrixname )
       equation
-        txt = lm_164(txt, rest, a_matrixname);
+        txt = lm_175(txt, rest, a_matrixname);
       then txt;
   end matchcontinue;
-end lm_164;
+end lm_175;
 
-protected function lm_165
+protected function lm_176
   input Tpl.Text in_txt;
   input list<SimCode.JacobianColumn> in_items;
 
@@ -6076,18 +6565,18 @@ algorithm
       equation
         txt = Tpl.writeStr(txt, i_indxColumn);
         txt = Tpl.nextIter(txt);
-        txt = lm_165(txt, rest);
+        txt = lm_176(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_165(txt, rest);
+        txt = lm_176(txt, rest);
       then txt;
   end matchcontinue;
-end lm_165;
+end lm_176;
 
-protected function fun_166
+protected function fun_177
   input Tpl.Text in_txt;
   input list<Integer> in_a_colorList;
   input Integer in_a_maxColor;
@@ -6135,10 +6624,10 @@ algorithm
            a_matrixname )
       equation
         l_jacMats = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_jacMats = lm_164(l_jacMats, a_jacobianColumn, a_matrixname);
+        l_jacMats = lm_175(l_jacMats, a_jacobianColumn, a_matrixname);
         l_jacMats = Tpl.popIter(l_jacMats);
         l_indexColumn = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_indexColumn = lm_165(l_indexColumn, a_jacobianColumn);
+        l_indexColumn = lm_176(l_indexColumn, a_jacobianColumn);
         l_indexColumn = Tpl.popIter(l_indexColumn);
         ret_3 = listLength(a_seedVars);
         l_index__ = Tpl.writeStr(Tpl.emptyTxt, intString(ret_3));
@@ -6272,9 +6761,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("}"));
       then txt;
   end matchcontinue;
-end fun_166;
+end fun_177;
 
-protected function fun_167
+protected function fun_178
   input Tpl.Text in_txt;
   input list<SimCode.JacobianColumn> in_a_jacobianColumn;
   input list<SimCode.SimVar> in_a_seedVars;
@@ -6318,10 +6807,10 @@ algorithm
            a_colorList,
            a_maxColor )
       equation
-        txt = fun_166(txt, a_colorList, a_maxColor, a_seedVars, i_jacobianColumn, a_matrixname);
+        txt = fun_177(txt, a_colorList, a_maxColor, a_seedVars, i_jacobianColumn, a_matrixname);
       then txt;
   end matchcontinue;
-end fun_167;
+end fun_178;
 
 public function generateMatrix
   input Tpl.Text txt;
@@ -6334,618 +6823,113 @@ public function generateMatrix
 
   output Tpl.Text out_txt;
 algorithm
-  out_txt := fun_167(txt, a_jacobianColumn, a_seedVars, a_matrixname, a_colorList, a_maxColor);
+  out_txt := fun_178(txt, a_jacobianColumn, a_seedVars, a_matrixname, a_colorList, a_maxColor);
 end generateMatrix;
 
-protected function lm_169
+protected function lm_180
   input Tpl.Text in_txt;
-  input list<SimCode.JacobianMatrix> in_items;
+  input list<SimCode.SimEqSystem> in_items;
+  input Tpl.Text in_a_tmp;
+  input Tpl.Text in_a_varDecls;
 
   output Tpl.Text out_txt;
+  output Tpl.Text out_a_tmp;
+  output Tpl.Text out_a_varDecls;
 algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
+  (out_txt, out_a_tmp, out_a_varDecls) :=
+  matchcontinue(in_txt, in_items, in_a_tmp, in_a_varDecls)
     local
       Tpl.Text txt;
-      list<SimCode.JacobianMatrix> rest;
-      Integer x_index0;
-      String i_name;
+      list<SimCode.SimEqSystem> rest;
+      Tpl.Text a_tmp;
+      Tpl.Text a_varDecls;
+      SimCode.SimEqSystem i_eq;
 
     case ( txt,
-           {} )
-      then txt;
+           {},
+           a_tmp,
+           a_varDecls )
+      then (txt, a_tmp, a_varDecls);
 
     case ( txt,
-           (_, _, i_name, _, _, _) :: rest )
+           i_eq :: rest,
+           a_tmp,
+           a_varDecls )
       equation
-        x_index0 = Tpl.getIteri_i0(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define INDEX_JAC_"));
-        txt = Tpl.writeStr(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = Tpl.writeStr(txt, intString(x_index0));
+        (txt, a_varDecls, a_tmp) = equation_(txt, i_eq, SimCode.contextSimulationNonDiscrete, a_varDecls, a_tmp);
         txt = Tpl.nextIter(txt);
-        txt = lm_169(txt, rest);
-      then txt;
+        (txt, a_tmp, a_varDecls) = lm_180(txt, rest, a_tmp, a_varDecls);
+      then (txt, a_tmp, a_varDecls);
 
     case ( txt,
-           _ :: rest )
+           _ :: rest,
+           a_tmp,
+           a_varDecls )
       equation
-        txt = lm_169(txt, rest);
-      then txt;
+        (txt, a_tmp, a_varDecls) = lm_180(txt, rest, a_tmp, a_varDecls);
+      then (txt, a_tmp, a_varDecls);
   end matchcontinue;
-end lm_169;
+end lm_180;
 
-protected function lm_170
-  input Tpl.Text in_txt;
-  input list<SimCode.JacobianMatrix> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.JacobianMatrix> rest;
-      Integer x_index0;
-      list<Integer> i_colorList;
-      list<list<Integer>> i_sparsepattern;
-      String i_name;
-      list<SimCode.SimVar> i_vars;
-      list<SimCode.JacobianColumn> i_mat;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           (i_mat, i_vars, i_name, i_sparsepattern, i_colorList, _) :: rest )
-      equation
-        x_index0 = Tpl.getIteri_i0(txt);
-        txt = initialAnalyticJacobians(txt, x_index0, i_mat, i_vars, i_name, i_sparsepattern, i_colorList);
-        txt = Tpl.nextIter(txt);
-        txt = lm_170(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_170(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_170;
-
-protected function lm_171
-  input Tpl.Text in_txt;
-  input list<SimCode.JacobianMatrix> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.JacobianMatrix> rest;
-      Integer i_maxColor;
-      list<Integer> i_colorList;
-      list<list<Integer>> i_sparsepattern;
-      String i_name;
-      list<SimCode.SimVar> i_vars;
-      list<SimCode.JacobianColumn> i_mat;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           (i_mat, i_vars, i_name, i_sparsepattern, i_colorList, i_maxColor) :: rest )
-      equation
-        txt = generateMatrix(txt, i_mat, i_vars, i_name, i_sparsepattern, i_colorList, i_maxColor);
-        txt = Tpl.nextIter(txt);
-        txt = lm_171(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_171(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_171;
-
-public function functionAnalyticJacobians
+public function functionJac
   input Tpl.Text txt;
-  input list<SimCode.JacobianMatrix> a_JacobianMatrixes;
+  input list<SimCode.SimEqSystem> a_jacEquations;
+  input list<SimCode.SimVar> a_tmpVars;
+  input String a_columnLength;
+  input String a_matrixName;
 
   output Tpl.Text out_txt;
 protected
-  Tpl.Text l_jacMats;
-  Tpl.Text l_initialjacMats;
-  Tpl.Text l_jacobianIndices;
+  Tpl.Text l_eqns__;
+  Tpl.Text l_tmp;
+  Tpl.Text l_varDecls;
 algorithm
-  l_jacobianIndices := Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  l_jacobianIndices := lm_169(l_jacobianIndices, a_JacobianMatrixes);
-  l_jacobianIndices := Tpl.popIter(l_jacobianIndices);
-  l_initialjacMats := Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  l_initialjacMats := lm_170(l_initialjacMats, a_JacobianMatrixes);
-  l_initialjacMats := Tpl.popIter(l_initialjacMats);
-  l_jacMats := Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  l_jacMats := lm_171(l_jacMats, a_JacobianMatrixes);
-  l_jacMats := Tpl.popIter(l_jacMats);
-  out_txt := Tpl.writeText(txt, l_jacobianIndices);
+  l_varDecls := Tpl.emptyTxt;
+  l_tmp := Tpl.emptyTxt;
+  l_eqns__ := Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+  (l_eqns__, l_tmp, l_varDecls) := lm_180(l_eqns__, a_jacEquations, l_tmp, l_varDecls);
+  l_eqns__ := Tpl.popIter(l_eqns__);
+  out_txt := Tpl.writeText(txt, l_tmp);
   out_txt := Tpl.softNewLine(out_txt);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_NEW_LINE());
-  out_txt := Tpl.writeText(out_txt, l_initialjacMats);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("int functionJac"));
+  out_txt := Tpl.writeStr(out_txt, a_matrixName);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
+                                       "_column(DATA* data)\n",
+                                       "{\n",
+                                       "  state mem_state;\n"
+                                   }, true));
+  out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("int index = INDEX_JAC_"));
+  out_txt := Tpl.writeStr(out_txt, a_matrixName);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE(";\n"));
+  out_txt := Tpl.writeText(out_txt, l_varDecls);
   out_txt := Tpl.softNewLine(out_txt);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_NEW_LINE());
-  out_txt := Tpl.writeText(out_txt, l_jacMats);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_LINE("mem_state = get_memory_state();\n"));
+  out_txt := Tpl.writeText(out_txt, l_eqns__);
   out_txt := Tpl.softNewLine(out_txt);
-  out_txt := Tpl.writeTok(out_txt, Tpl.ST_NEW_LINE());
-end functionAnalyticJacobians;
-
-protected function fun_173
-  input Tpl.Text in_txt;
-  input Integer in_a_index0;
-  input list<Integer> in_a_indexes;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_index0, in_a_indexes)
-    local
-      Tpl.Text txt;
-      list<Integer> a_indexes;
-      Integer i_index0;
-      Integer ret_2;
-      Integer ret_1;
-      Integer ret_0;
-
-    case ( txt,
-           (i_index0 as 0),
-           a_indexes )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("data->simulationInfo.analyticJacobians[index].sparsePattern.leadindex["));
-        txt = Tpl.writeStr(txt, intString(i_index0));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = "));
-        ret_0 = listLength(a_indexes);
-        txt = Tpl.writeStr(txt, intString(ret_0));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
-      then txt;
-
-    case ( txt,
-           i_index0,
-           a_indexes )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("data->simulationInfo.analyticJacobians[index].sparsePattern.leadindex["));
-        txt = Tpl.writeStr(txt, intString(i_index0));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = data->simulationInfo.analyticJacobians[index].sparsePattern.leadindex["));
-        ret_1 = intSub(i_index0, 1);
-        txt = Tpl.writeStr(txt, intString(ret_1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] + "));
-        ret_2 = listLength(a_indexes);
-        txt = Tpl.writeStr(txt, intString(ret_2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
-      then txt;
-  end matchcontinue;
-end fun_173;
-
-protected function lm_174
-  input Tpl.Text in_txt;
-  input list<list<Integer>> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<list<Integer>> rest;
-      Integer x_index0;
-      list<Integer> i_indexes;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_indexes :: rest )
-      equation
-        x_index0 = Tpl.getIteri_i0(txt);
-        txt = fun_173(txt, x_index0, i_indexes);
-        txt = Tpl.nextIter(txt);
-        txt = lm_174(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_174(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_174;
-
-protected function lm_175
-  input Tpl.Text in_txt;
-  input list<Integer> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<Integer> rest;
-      Integer x_index0;
-      Integer i_indexes;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_indexes :: rest )
-      equation
-        x_index0 = Tpl.getIteri_i0(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("data->simulationInfo.analyticJacobians[index].sparsePattern.index["));
-        txt = Tpl.writeStr(txt, intString(x_index0));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = "));
-        txt = Tpl.writeStr(txt, intString(i_indexes));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
-        txt = Tpl.nextIter(txt);
-        txt = lm_175(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_175(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_175;
-
-protected function lm_176
-  input Tpl.Text in_txt;
-  input list<Integer> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<Integer> rest;
-      Integer x_index0;
-      Integer i_indexes;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_indexes :: rest )
-      equation
-        x_index0 = Tpl.getIteri_i0(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("data->simulationInfo.analyticJacobians[index].sparsePattern.colorCols["));
-        txt = Tpl.writeStr(txt, intString(x_index0));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = "));
-        txt = Tpl.writeStr(txt, intString(i_indexes));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
-        txt = Tpl.nextIter(txt);
-        txt = lm_176(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_176(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_176;
-
-protected function lm_177
-  input Tpl.Text in_txt;
-  input list<SimCode.JacobianColumn> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.JacobianColumn> rest;
-      String i_indxColumn;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           (_, _, i_indxColumn) :: rest )
-      equation
-        txt = Tpl.writeStr(txt, i_indxColumn);
-        txt = Tpl.nextIter(txt);
-        txt = lm_177(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_177(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_177;
-
-protected function lm_178
-  input Tpl.Text in_txt;
-  input list<SimCode.JacobianColumn> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.JacobianColumn> rest;
-      list<SimCode.SimVar> i_vars;
-      Integer ret_0;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           (_, i_vars, _) :: rest )
-      equation
-        ret_0 = listLength(i_vars);
-        txt = Tpl.writeStr(txt, intString(ret_0));
-        txt = Tpl.nextIter(txt);
-        txt = lm_178(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_178(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_178;
-
-protected function fun_179
-  input Tpl.Text in_txt;
-  input list<Integer> in_a_colorList;
-  input list<SimCode.SimVar> in_a_seedVars;
-  input list<SimCode.JacobianColumn> in_a_jacobianColumn;
-  input list<list<Integer>> in_a_sparsepattern;
-  input String in_a_matrixname;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_colorList, in_a_seedVars, in_a_jacobianColumn, in_a_sparsepattern, in_a_matrixname)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> a_seedVars;
-      list<SimCode.JacobianColumn> a_jacobianColumn;
-      list<list<Integer>> a_sparsepattern;
-      String a_matrixname;
-      list<Integer> i_colorList;
-      Integer ret_11;
-      Tpl.Text l_index__;
-      Tpl.Text l_tmpvarsSize;
-      Tpl.Text l_indexColumn;
-      Integer ret_7;
-      Tpl.Text l_sp__size__index_1;
-      Tpl.Text l_colorArray;
-      list<Integer> ret_4;
-      Tpl.Text l_indexElems;
-      Tpl.Text l_leadindex;
-      Integer ret_1;
-      Tpl.Text l_sp__size__index;
-
-    case ( txt,
-           {},
-           _,
-           _,
-           _,
-           a_matrixname )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("int initialAnalyticJacobian"));
-        txt = Tpl.writeStr(txt, a_matrixname);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "(DATA* data, int* index_jac)\n",
-                                    "{\n",
-                                    "  if(index_jac)\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("*index_jac = INDEX_JAC_"));
-        txt = Tpl.writeStr(txt, a_matrixname);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(";\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "  return 1;\n",
-                                    "}"
-                                }, false));
-      then txt;
-
-    case ( txt,
-           i_colorList,
-           a_seedVars,
-           a_jacobianColumn,
-           a_sparsepattern,
-           a_matrixname )
-      equation
-        ret_1 = List.lengthListElements(a_sparsepattern);
-        l_sp__size__index = Tpl.writeStr(Tpl.emptyTxt, intString(ret_1));
-        l_leadindex = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_leadindex = lm_174(l_leadindex, a_sparsepattern);
-        l_leadindex = Tpl.popIter(l_leadindex);
-        ret_4 = List.flatten(a_sparsepattern);
-        l_indexElems = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_indexElems = lm_175(l_indexElems, ret_4);
-        l_indexElems = Tpl.popIter(l_indexElems);
-        l_colorArray = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_colorArray = lm_176(l_colorArray, i_colorList);
-        l_colorArray = Tpl.popIter(l_colorArray);
-        ret_7 = List.lengthListElements(a_sparsepattern);
-        l_sp__size__index_1 = Tpl.writeStr(Tpl.emptyTxt, intString(ret_7));
-        l_indexColumn = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_indexColumn = lm_177(l_indexColumn, a_jacobianColumn);
-        l_indexColumn = Tpl.popIter(l_indexColumn);
-        l_tmpvarsSize = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_tmpvarsSize = lm_178(l_tmpvarsSize, a_jacobianColumn);
-        l_tmpvarsSize = Tpl.popIter(l_tmpvarsSize);
-        ret_11 = listLength(a_seedVars);
-        l_index__ = Tpl.writeStr(Tpl.emptyTxt, intString(ret_11));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("int initialAnalyticJacobian"));
-        txt = Tpl.writeStr(txt, a_matrixname);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "(DATA* data, int* index_jac)\n",
-                                    "{\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("int index = INDEX_JAC_"));
-        txt = Tpl.writeStr(txt, a_matrixname);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ";\n",
-                                    "if(index_jac)\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("*index_jac = INDEX_JAC_"));
-        txt = Tpl.writeStr(txt, a_matrixname);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(";\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("data->simulationInfo.analyticJacobians[index].jacobianName = \'"));
-        txt = Tpl.writeStr(txt, a_matrixname);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "\';\n",
-                                    "data->simulationInfo.analyticJacobians[index].sizeCols = "
-                                }, false));
-        txt = Tpl.writeText(txt, l_index__);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ";\n",
-                                    "data->simulationInfo.analyticJacobians[index].sizeRows = "
-                                }, false));
-        txt = Tpl.writeText(txt, l_indexColumn);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ";\n",
-                                    "data->simulationInfo.analyticJacobians[index].seedVars = (modelica_real*) calloc("
-                                }, false));
-        txt = Tpl.writeText(txt, l_index__);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ",sizeof(modelica_real));\n",
-                                    "data->simulationInfo.analyticJacobians[index].resultVars = (modelica_real*) malloc("
-                                }, false));
-        txt = Tpl.writeText(txt, l_indexColumn);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "*sizeof(modelica_real));\n",
-                                    "data->simulationInfo.analyticJacobians[index].tmpVars = (modelica_real*) malloc("
-                                }, false));
-        txt = Tpl.writeText(txt, l_tmpvarsSize);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "*sizeof(modelica_real));\n",
-                                    "data->simulationInfo.analyticJacobians[index].sparsePattern.leadindex = (int*) malloc("
-                                }, false));
-        txt = Tpl.writeText(txt, l_index__);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "*sizeof(int));\n",
-                                    "data->simulationInfo.analyticJacobians[index].sparsePattern.index = (int*) malloc("
-                                }, false));
-        txt = Tpl.writeText(txt, l_sp__size__index_1);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "*sizeof(int));\n",
-                                    "data->simulationInfo.analyticJacobians[index].sparsePattern.colorCols = (int*) malloc("
-                                }, false));
-        txt = Tpl.writeText(txt, l_index__);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "*sizeof(int));\n",
-                                    "data->simulationInfo.analyticJacobians[index].jacobian = NULL;\n",
-                                    "\n",
-                                    "/* write leading index */\n"
-                                }, true));
-        txt = Tpl.writeText(txt, l_leadindex);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/* write index */\n"));
-        txt = Tpl.writeText(txt, l_indexElems);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/* write color array */\n"));
-        txt = Tpl.writeText(txt, l_colorArray);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("return 0;\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("}"));
-      then txt;
-  end matchcontinue;
-end fun_179;
-
-protected function fun_180
-  input Tpl.Text in_txt;
-  input list<SimCode.SimVar> in_a_seedVars;
-  input list<SimCode.JacobianColumn> in_a_jacobianColumn;
-  input String in_a_matrixname;
-  input list<list<Integer>> in_a_sparsepattern;
-  input list<Integer> in_a_colorList;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_seedVars, in_a_jacobianColumn, in_a_matrixname, in_a_sparsepattern, in_a_colorList)
-    local
-      Tpl.Text txt;
-      list<SimCode.JacobianColumn> a_jacobianColumn;
-      String a_matrixname;
-      list<list<Integer>> a_sparsepattern;
-      list<Integer> a_colorList;
-      list<SimCode.SimVar> i_seedVars;
-
-    case ( txt,
-           {},
-           _,
-           a_matrixname,
-           _,
-           _ )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("int initialAnalyticJacobian"));
-        txt = Tpl.writeStr(txt, a_matrixname);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "(DATA* data, int* index_jac)\n",
-                                    "{\n",
-                                    "  if(index_jac)\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("*index_jac = INDEX_JAC_"));
-        txt = Tpl.writeStr(txt, a_matrixname);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(";\n"));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "  return 1;\n",
-                                    "}"
-                                }, false));
-      then txt;
-
-    case ( txt,
-           i_seedVars,
-           a_jacobianColumn,
-           a_matrixname,
-           a_sparsepattern,
-           a_colorList )
-      equation
-        txt = fun_179(txt, a_colorList, i_seedVars, a_jacobianColumn, a_sparsepattern, a_matrixname);
-      then txt;
-  end matchcontinue;
-end fun_180;
-
-public function initialAnalyticJacobians
-  input Tpl.Text txt;
-  input Integer a_indexJacobian;
-  input list<SimCode.JacobianColumn> a_jacobianColumn;
-  input list<SimCode.SimVar> a_seedVars;
-  input String a_matrixname;
-  input list<list<Integer>> a_sparsepattern;
-  input list<Integer> a_colorList;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt := fun_180(txt, a_seedVars, a_jacobianColumn, a_matrixname, a_sparsepattern, a_colorList);
-end initialAnalyticJacobians;
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
+                                       "\n",
+                                       "int i;\n",
+                                       "if(DEBUG_FLAG(LOG_DEBUG))\n",
+                                       "{\n"
+                                   }, true));
+  out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("for(i=0; i<"));
+  out_txt := Tpl.writeStr(out_txt, a_columnLength);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
+                                       "; i++)\n",
+                                       "  DEBUG_INFO2(LOG_DEBUG, \"col: col[%d] = %f\", i, data->simulationInfo.analyticJacobians[index].resultVars[i]);\n"
+                                   }, true));
+  out_txt := Tpl.popBlock(out_txt);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
+                                       "}\n",
+                                       "\n",
+                                       "restore_memory_state(mem_state);\n",
+                                       "return 0;\n"
+                                   }, true));
+  out_txt := Tpl.popBlock(out_txt);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("}"));
+end functionJac;
 
 protected function lm_182
   input Tpl.Text in_txt;
@@ -8590,7 +8574,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("No runtime support for this sort of array call: "));
         ret_1 = ExpressionDump.printExpStr(a_eqn_exp);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 1940, 14), Tpl.textString(txt_1));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 1927, 14), Tpl.textString(txt_1));
       then (txt, a_varDecls);
   end matchcontinue;
 end fun_223;
@@ -11579,7 +11563,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("initial value of unknown type: "));
         ret_1 = ExpressionDump.printExpStr(i_initialValue);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2387, 14), Tpl.textString(txt_1));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2374, 14), Tpl.textString(txt_1));
       then txt;
   end matchcontinue;
 end initVal;
@@ -14449,7 +14433,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2891, 14), Tpl.textString(txt_0));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2878, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_368;
@@ -14569,7 +14553,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2899, 14), Tpl.textString(txt_0));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2886, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_372;
@@ -14617,13 +14601,13 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Expression types are unsupported as return arguments "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2908, 36), Tpl.textString(txt_0));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2895, 36), Tpl.textString(txt_0));
       then txt;
 
     case ( txt,
            _ )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2909, 14), "Unsupported return argument");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2896, 14), "Unsupported return argument");
       then txt;
   end matchcontinue;
 end extReturnType;
@@ -14724,7 +14708,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external C type "));
         ret_0 = ExpressionDump.typeString(i_type);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2928, 14), Tpl.textString(txt_0));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2915, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_375;
@@ -14953,7 +14937,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external F77 type "));
         ret_0 = ExpressionDump.typeString(i_type);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2947, 14), Tpl.textString(txt_0));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 2934, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_381;
@@ -18150,7 +18134,7 @@ algorithm
     case ( txt,
            _ )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 3284, 17), "Unknown variable");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 3271, 17), "Unknown variable");
       then txt;
   end matchcontinue;
 end fun_466;
@@ -19775,7 +19759,7 @@ algorithm
            a_varInits,
            a_varFrees )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 3500, 12), "Unknown local variable type");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 3487, 12), "Unknown local variable type");
       then (txt, a_varDecls, a_varInits, a_varFrees);
   end matchcontinue;
 end varInit;
@@ -23441,7 +23425,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 3959, 14), "ALG_STATEMENT NYI");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 3946, 14), "ALG_STATEMENT NYI");
       then (txt, a_varDecls);
   end matchcontinue;
 end fun_577;
@@ -24611,7 +24595,7 @@ algorithm
            _,
            a_varDecls )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4176, 12), "algStmtTupleAssign failed");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4163, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
@@ -27576,7 +27560,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown expression: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4698, 14), Tpl.textString(txt_0));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4685, 14), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExp;
@@ -27944,7 +27928,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Indexing non-array "));
         ret_1 = ExpressionDump.printExpStr(a_ecr);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4792, 28), Tpl.textString(txt_1));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4779, 28), Tpl.textString(txt_1));
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
 end fun_665;
@@ -28356,7 +28340,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("daeExpCrefRhs2: UNHANDLED EXPRESSION: "));
         ret_1 = ExpressionDump.printExpStr(i_ecr);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4805, 11), Tpl.textString(txt_1));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4792, 11), Tpl.textString(txt_1));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpCrefRhs2;
@@ -28391,7 +28375,7 @@ algorithm
     case ( txt,
            _ )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4824, 22), "Non-constant dimension in simulation context");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4811, 22), "Non-constant dimension in simulation context");
       then txt;
   end matchcontinue;
 end fun_673;
@@ -28521,7 +28505,7 @@ algorithm
            _,
            _ )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4826, 18), "Less subscripts that dimensions in indexing cref? That\'s odd!");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4813, 18), "Less subscripts that dimensions in indexing cref? That\'s odd!");
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
 end fun_676;
@@ -28556,7 +28540,7 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4812, 22), "Empty dimensions in indexing cref?");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4799, 22), "Empty dimensions in indexing cref?");
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -28576,7 +28560,7 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4827, 14), "Non-index subscript in indexing cref? That\'s odd!");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 4814, 14), "Non-index subscript in indexing cref? That\'s odd!");
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_677;
@@ -30978,7 +30962,7 @@ algorithm
            a_preExp,
            _ )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5168, 34), "unary minus for non-real arrays not implemented");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5155, 34), "unary minus for non-real arrays not implemented");
       then (txt, a_preExp);
 
     case ( txt,
@@ -30986,7 +30970,7 @@ algorithm
            a_preExp,
            _ )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5169, 14), "daeExpUnary:ERR");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5156, 14), "daeExpUnary:ERR");
       then (txt, a_preExp);
   end matchcontinue;
 end fun_717;
@@ -33350,7 +33334,7 @@ algorithm
         ret_6 = ExpressionDump.printExpStr(i_exp);
         txt_6 = Tpl.writeStr(txt_6, ret_6);
         txt_6 = Tpl.writeTok(txt_6, Tpl.ST_STRING(")"));
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5376, 11), Tpl.textString(txt_6));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5363, 11), Tpl.textString(txt_6));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -33394,7 +33378,7 @@ algorithm
         ret_8 = ExpressionDump.printExpStr(i_exp);
         txt_8 = Tpl.writeStr(txt_8, ret_8);
         txt_8 = Tpl.writeTok(txt_8, Tpl.ST_STRING(")"));
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5385, 11), Tpl.textString(txt_8));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5372, 11), Tpl.textString(txt_8));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -33420,7 +33404,7 @@ algorithm
         ret_10 = ExpressionDump.printExpStr(i_exp);
         txt_10 = Tpl.writeStr(txt_10, ret_10);
         txt_10 = Tpl.writeTok(txt_10, Tpl.ST_STRING(")"));
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5389, 11), Tpl.textString(txt_10));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5376, 11), Tpl.textString(txt_10));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -33673,7 +33657,7 @@ algorithm
         txt_27 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("vector() call does not have a C implementation "));
         ret_27 = ExpressionDump.printExpStr(i_call);
         txt_27 = Tpl.writeStr(txt_27, ret_27);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5474, 11), Tpl.textString(txt_27));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5461, 11), Tpl.textString(txt_27));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -35346,7 +35330,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Nested array subscripting *should* have been handled by the routine creating the asub, but for some reason it was not: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5784, 11), Tpl.textString(txt_0));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5771, 11), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -35384,7 +35368,7 @@ algorithm
         txt_6 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("ASUB_EASY_CASE "));
         ret_6 = ExpressionDump.printExpStr(i_exp);
         txt_6 = Tpl.writeStr(txt_6, ret_6);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5814, 11), Tpl.textString(txt_6));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5801, 11), Tpl.textString(txt_6));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -35429,7 +35413,7 @@ algorithm
         txt_14 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("OTHER_ASUB "));
         ret_14 = ExpressionDump.printExpStr(i_exp);
         txt_14 = Tpl.writeStr(txt_14, ret_14);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5831, 11), Tpl.textString(txt_14));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5818, 11), Tpl.textString(txt_14));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_780;
@@ -35614,7 +35598,7 @@ algorithm
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
         txt_2 = Tpl.writeTok(txt_2, Tpl.ST_STRING(")"));
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5852, 11), Tpl.textString(txt_2));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5839, 11), Tpl.textString(txt_2));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpCallPre;
@@ -35835,7 +35819,7 @@ algorithm
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
         txt_2 = Tpl.writeTok(txt_2, Tpl.ST_STRING(")"));
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5879, 11), Tpl.textString(txt_2));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 5866, 11), Tpl.textString(txt_2));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpCallStart;
@@ -37114,7 +37098,7 @@ algorithm
         txt_40 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Code generation does not support multiple iterators: "));
         ret_40 = ExpressionDump.printExpStr(i_exp);
         txt_40 = Tpl.writeStr(txt_40, ret_40);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6016, 14), Tpl.textString(txt_40));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6003, 14), Tpl.textString(txt_40));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpReduction;
@@ -37401,7 +37385,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown switch: "));
         ret_1 = ExpressionDump.printExpStr(a_exp);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6064, 13), Tpl.textString(txt_1));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6051, 13), Tpl.textString(txt_1));
       then (txt, a_varDeclsInner);
 
     case ( txt,
@@ -40125,7 +40109,7 @@ algorithm
         txt_2 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeShort:"));
         ret_2 = ExpressionDump.typeString(i_type);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6456, 14), Tpl.textString(txt_2));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6443, 14), Tpl.textString(txt_2));
       then txt;
   end matchcontinue;
 end expTypeShort;
@@ -41087,7 +41071,7 @@ algorithm
         txt_7 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeFromExpFlag:"));
         ret_7 = ExpressionDump.printExpStr(i_exp);
         txt_7 = Tpl.writeStr(txt_7, ret_7);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6607, 14), Tpl.textString(txt_7));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6594, 14), Tpl.textString(txt_7));
       then txt;
   end matchcontinue;
 end expTypeFromExpFlag;
@@ -41435,7 +41419,7 @@ algorithm
     case ( txt,
            DAE.DIM_UNKNOWN() )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6657, 39), "Unknown dimensions may not be part of generated code. This is most likely an error on the part of OpenModelica. Please submit a detailed bug-report.");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6644, 39), "Unknown dimensions may not be part of generated code. This is most likely an error on the part of OpenModelica. Please submit a detailed bug-report.");
       then txt;
 
     case ( txt,
@@ -42982,7 +42966,7 @@ algorithm
         txt_16 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConst failed: "));
         ret_16 = ExpressionDump.printExpStr(i_lit);
         txt_16 = Tpl.writeStr(txt_16, ret_16);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6859, 14), Tpl.textString(txt_16));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6846, 14), Tpl.textString(txt_16));
       then txt;
   end matchcontinue;
 end fun_932;
@@ -43097,7 +43081,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstBoxedVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6877, 14), Tpl.textString(txt_0));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6864, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstBoxedVal;
@@ -43183,7 +43167,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstArrayVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6888, 14), Tpl.textString(txt_0));
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6875, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstArrayVal;
@@ -43570,7 +43554,7 @@ algorithm
            a_preBuf,
            a_eqnsDefines )
       equation
-        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6930, 17), "Unkown Equation Type in equationInfo1");
+        txt = CodegenUtil.error(txt, Tpl.sourceInfo("CodegenC.tpl", 6917, 17), "Unkown Equation Type in equationInfo1");
       then (txt, a_preBuf, a_eqnsDefines);
   end matchcontinue;
 end equationInfo1;
