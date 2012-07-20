@@ -3771,7 +3771,7 @@ getErrorString();
 //   wheelSet.wheelSetJoint.revolute.frame_b.r_0[1] = wheelSet.wheelSetJoint.revolute.frame_a.r_0[1];
 //   wheelSet.wheelSetJoint.revolute.frame_b.r_0[2] = wheelSet.wheelSetJoint.revolute.frame_a.r_0[2];
 //   wheelSet.wheelSetJoint.revolute.frame_b.r_0[3] = wheelSet.wheelSetJoint.revolute.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   wheelSet.wheelSetJoint.revolute.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({wheelSet.wheelSetJoint.revolute.e[1], wheelSet.wheelSetJoint.revolute.e[2], wheelSet.wheelSetJoint.revolute.e[3]}, wheelSet.wheelSetJoint.revolute.phi, wheelSet.wheelSetJoint.revolute.w);
 //   wheelSet.wheelSetJoint.revolute.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(wheelSet.wheelSetJoint.revolute.frame_a.R, wheelSet.wheelSetJoint.revolute.R_rel);
 //   wheelSet.wheelSetJoint.revolute.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(wheelSet.wheelSetJoint.revolute.R_rel, {wheelSet.wheelSetJoint.revolute.frame_b.f[1], wheelSet.wheelSetJoint.revolute.frame_b.f[2], wheelSet.wheelSetJoint.revolute.frame_b.f[3]});
@@ -3795,7 +3795,7 @@ getErrorString();
 //   wheelSet.wheelSetJoint.revolute1.frame_b.r_0[1] = wheelSet.wheelSetJoint.revolute1.frame_a.r_0[1];
 //   wheelSet.wheelSetJoint.revolute1.frame_b.r_0[2] = wheelSet.wheelSetJoint.revolute1.frame_a.r_0[2];
 //   wheelSet.wheelSetJoint.revolute1.frame_b.r_0[3] = wheelSet.wheelSetJoint.revolute1.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   wheelSet.wheelSetJoint.revolute1.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({wheelSet.wheelSetJoint.revolute1.e[1], wheelSet.wheelSetJoint.revolute1.e[2], wheelSet.wheelSetJoint.revolute1.e[3]}, wheelSet.wheelSetJoint.revolute1.phi, wheelSet.wheelSetJoint.revolute1.w);
 //   wheelSet.wheelSetJoint.revolute1.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(wheelSet.wheelSetJoint.revolute1.frame_a.R, wheelSet.wheelSetJoint.revolute1.R_rel);
 //   wheelSet.wheelSetJoint.revolute1.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(wheelSet.wheelSetJoint.revolute1.R_rel, {wheelSet.wheelSetJoint.revolute1.frame_b.f[1], wheelSet.wheelSetJoint.revolute1.frame_b.f[2], wheelSet.wheelSetJoint.revolute1.frame_b.f[3]});

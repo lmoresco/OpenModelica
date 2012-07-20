@@ -5111,7 +5111,7 @@ getErrorString();
 //   fixedRotation2.shape.Extra = fixedRotation2.shape.extra;
 //   assert(true,\"Neither connector frame_a nor frame_b of FixedRotation object is connected\");
 //   fixedRotation2.frame_b.r_0 = fixedRotation2.frame_a.r_0 + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation2.frame_a.R, {fixedRotation2.r[1], fixedRotation2.r[2], fixedRotation2.r[3]});
-//   if false then
+//   if true then
 //   fixedRotation2.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(fixedRotation2.frame_a.R, fixedRotation2.R_rel);
 //   {0.0, 0.0, 0.0} = fixedRotation2.frame_a.f + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation2.R_rel, {fixedRotation2.frame_b.f[1], fixedRotation2.frame_b.f[2], fixedRotation2.frame_b.f[3]});
 //   {0.0, 0.0, 0.0} = fixedRotation2.frame_a.t + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation2.R_rel, {fixedRotation2.frame_b.t[1], fixedRotation2.frame_b.t[2], fixedRotation2.frame_b.t[3]}) - {fixedRotation2.r[2] * fixedRotation2.frame_a.f[3] - fixedRotation2.r[3] * fixedRotation2.frame_a.f[2], fixedRotation2.r[3] * fixedRotation2.frame_a.f[1] - fixedRotation2.r[1] * fixedRotation2.frame_a.f[3], fixedRotation2.r[1] * fixedRotation2.frame_a.f[2] - fixedRotation2.r[2] * fixedRotation2.frame_a.f[1]};

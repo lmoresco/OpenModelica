@@ -3710,7 +3710,7 @@ getErrorString();
 //   r2.frame_b.r_0[1] = r2.frame_a.r_0[1];
 //   r2.frame_b.r_0[2] = r2.frame_a.r_0[2];
 //   r2.frame_b.r_0[3] = r2.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   r2.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({r2.e[1], r2.e[2], r2.e[3]}, r2.phi, r2.w);
 //   r2.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(r2.frame_a.R, r2.R_rel);
 //   r2.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(r2.R_rel, {r2.frame_b.f[1], r2.frame_b.f[2], r2.frame_b.f[3]});

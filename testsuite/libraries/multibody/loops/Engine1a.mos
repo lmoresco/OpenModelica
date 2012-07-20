@@ -4939,7 +4939,7 @@ getErrorString();
 //   Bearing.frame_b.r_0[1] = Bearing.frame_a.r_0[1];
 //   Bearing.frame_b.r_0[2] = Bearing.frame_a.r_0[2];
 //   Bearing.frame_b.r_0[3] = Bearing.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   Bearing.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({Bearing.e[1], Bearing.e[2], Bearing.e[3]}, Bearing.phi, Bearing.w);
 //   Bearing.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(Bearing.frame_a.R, Bearing.R_rel);
 //   Bearing.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(Bearing.R_rel, {Bearing.frame_b.f[1], Bearing.frame_b.f[2], Bearing.frame_b.f[3]});
