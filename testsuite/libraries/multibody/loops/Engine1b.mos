@@ -5042,10 +5042,17 @@ getErrorString();
 //   Bearing.frame_b.r_0[1] = Bearing.frame_a.r_0[1];
 //   Bearing.frame_b.r_0[2] = Bearing.frame_a.r_0[2];
 //   Bearing.frame_b.r_0[3] = Bearing.frame_a.r_0[3];
+//   if false then
 //   Bearing.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({Bearing.e[1], Bearing.e[2], Bearing.e[3]}, Bearing.phi, Bearing.w);
 //   Bearing.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(Bearing.frame_a.R, Bearing.R_rel);
 //   Bearing.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(Bearing.R_rel, {Bearing.frame_b.f[1], Bearing.frame_b.f[2], Bearing.frame_b.f[3]});
 //   Bearing.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(Bearing.R_rel, {Bearing.frame_b.t[1], Bearing.frame_b.t[2], Bearing.frame_b.t[3]});
+//   else
+//   Bearing.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{Bearing.e[1], Bearing.e[2], Bearing.e[3]}, Bearing.phi, Bearing.w);
+//   Bearing.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(Bearing.frame_b.R, Bearing.R_rel);
+//   Bearing.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(Bearing.R_rel, {Bearing.frame_a.f[1], Bearing.frame_a.f[2], Bearing.frame_a.f[3]});
+//   Bearing.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(Bearing.R_rel, {Bearing.frame_a.t[1], Bearing.frame_a.t[2], Bearing.frame_a.t[3]});
+//   end if;
 //   Bearing.tau = (-Bearing.frame_b.t[1]) * Bearing.e[1] + (-Bearing.frame_b.t[2]) * Bearing.e[2] + (-Bearing.frame_b.t[3]) * Bearing.e[3];
 //   Bearing.phi = Bearing.internalAxis.phi;
 //   Inertia.phi = Inertia.flange_a.phi;
@@ -5588,10 +5595,17 @@ getErrorString();
 //   B1.frame_b.r_0[1] = B1.frame_a.r_0[1];
 //   B1.frame_b.r_0[2] = B1.frame_a.r_0[2];
 //   B1.frame_b.r_0[3] = B1.frame_a.r_0[3];
+//   if true then
 //   B1.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({B1.e[1], B1.e[2], B1.e[3]}, B1.phi, B1.w);
 //   B1.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(B1.frame_a.R, B1.R_rel);
 //   B1.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(B1.R_rel, {B1.frame_b.f[1], B1.frame_b.f[2], B1.frame_b.f[3]});
 //   B1.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(B1.R_rel, {B1.frame_b.t[1], B1.frame_b.t[2], B1.frame_b.t[3]});
+//   else
+//   B1.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{B1.e[1], B1.e[2], B1.e[3]}, B1.phi, B1.w);
+//   B1.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(B1.frame_b.R, B1.R_rel);
+//   B1.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(B1.R_rel, {B1.frame_a.f[1], B1.frame_a.f[2], B1.frame_a.f[3]});
+//   B1.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(B1.R_rel, {B1.frame_a.t[1], B1.frame_a.t[2], B1.frame_a.t[3]});
+//   end if;
 //   B1.tau = (-B1.frame_b.t[1]) * B1.e[1] + (-B1.frame_b.t[2]) * B1.e[2] + (-B1.frame_b.t[3]) * B1.e[3];
 //   B1.phi = B1.internalAxis.phi;
 //   Cylinder.fixed.flange.s = Cylinder.fixed.s0;

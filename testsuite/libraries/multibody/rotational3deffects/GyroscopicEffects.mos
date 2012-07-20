@@ -4722,9 +4722,15 @@ getErrorString();
 //   fixedRotation1.shape.Extra = fixedRotation1.shape.extra;
 //   assert(true,\"Neither connector frame_a nor frame_b of FixedRotation object is connected\");
 //   fixedRotation1.frame_b.r_0 = fixedRotation1.frame_a.r_0 + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation1.frame_a.R, {fixedRotation1.r[1], fixedRotation1.r[2], fixedRotation1.r[3]});
+//   if true then
 //   fixedRotation1.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(fixedRotation1.frame_a.R, fixedRotation1.R_rel);
 //   {0.0, 0.0, 0.0} = fixedRotation1.frame_a.f + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation1.R_rel, {fixedRotation1.frame_b.f[1], fixedRotation1.frame_b.f[2], fixedRotation1.frame_b.f[3]});
 //   {0.0, 0.0, 0.0} = fixedRotation1.frame_a.t + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation1.R_rel, {fixedRotation1.frame_b.t[1], fixedRotation1.frame_b.t[2], fixedRotation1.frame_b.t[3]}) - {fixedRotation1.r[2] * fixedRotation1.frame_a.f[3] - fixedRotation1.r[3] * fixedRotation1.frame_a.f[2], fixedRotation1.r[3] * fixedRotation1.frame_a.f[1] - fixedRotation1.r[1] * fixedRotation1.frame_a.f[3], fixedRotation1.r[1] * fixedRotation1.frame_a.f[2] - fixedRotation1.r[2] * fixedRotation1.frame_a.f[1]};
+//   else
+//   fixedRotation1.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(fixedRotation1.frame_b.R, fixedRotation1.R_rel_inv);
+//   {0.0, 0.0, 0.0} = fixedRotation1.frame_b.f + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation1.R_rel_inv, {fixedRotation1.frame_a.f[1], fixedRotation1.frame_a.f[2], fixedRotation1.frame_a.f[3]});
+//   {0.0, 0.0, 0.0} = fixedRotation1.frame_b.t + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation1.R_rel_inv, {fixedRotation1.frame_a.t[1], fixedRotation1.frame_a.t[2], fixedRotation1.frame_a.t[3]}) + cross(Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation1.R_rel_inv, {fixedRotation1.r[1], fixedRotation1.r[2], fixedRotation1.r[3]}), {fixedRotation1.frame_b.f[1], fixedRotation1.frame_b.f[2], fixedRotation1.frame_b.f[3]});
+//   end if;
 //   revolute.fixed.flange.phi = revolute.fixed.phi0;
 //   revolute.constantTorque.tau = -revolute.constantTorque.flange.tau;
 //   revolute.constantTorque.tau = revolute.constantTorque.tau_constant;
@@ -4753,10 +4759,17 @@ getErrorString();
 //   revolute.frame_b.r_0[1] = revolute.frame_a.r_0[1];
 //   revolute.frame_b.r_0[2] = revolute.frame_a.r_0[2];
 //   revolute.frame_b.r_0[3] = revolute.frame_a.r_0[3];
+//   if true then
 //   revolute.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({revolute.e[1], revolute.e[2], revolute.e[3]}, revolute.phi, revolute.w);
 //   revolute.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(revolute.frame_a.R, revolute.R_rel);
 //   revolute.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(revolute.R_rel, {revolute.frame_b.f[1], revolute.frame_b.f[2], revolute.frame_b.f[3]});
 //   revolute.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(revolute.R_rel, {revolute.frame_b.t[1], revolute.frame_b.t[2], revolute.frame_b.t[3]});
+//   else
+//   revolute.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{revolute.e[1], revolute.e[2], revolute.e[3]}, revolute.phi, revolute.w);
+//   revolute.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(revolute.frame_b.R, revolute.R_rel);
+//   revolute.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(revolute.R_rel, {revolute.frame_a.f[1], revolute.frame_a.f[2], revolute.frame_a.f[3]});
+//   revolute.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(revolute.R_rel, {revolute.frame_a.t[1], revolute.frame_a.t[2], revolute.frame_a.t[3]});
+//   end if;
 //   revolute.tau = (-revolute.frame_b.t[1]) * revolute.e[1] + (-revolute.frame_b.t[2]) * revolute.e[2] + (-revolute.frame_b.t[3]) * revolute.e[3];
 //   revolute.phi = revolute.internalAxis.phi;
 //   fixedTranslation.shape.Form = 9.87e+25 + 1e+20 * Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape(fixedTranslation.shape.shapeType);
@@ -5098,9 +5111,15 @@ getErrorString();
 //   fixedRotation2.shape.Extra = fixedRotation2.shape.extra;
 //   assert(true,\"Neither connector frame_a nor frame_b of FixedRotation object is connected\");
 //   fixedRotation2.frame_b.r_0 = fixedRotation2.frame_a.r_0 + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation2.frame_a.R, {fixedRotation2.r[1], fixedRotation2.r[2], fixedRotation2.r[3]});
+//   if false then
 //   fixedRotation2.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(fixedRotation2.frame_a.R, fixedRotation2.R_rel);
 //   {0.0, 0.0, 0.0} = fixedRotation2.frame_a.f + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation2.R_rel, {fixedRotation2.frame_b.f[1], fixedRotation2.frame_b.f[2], fixedRotation2.frame_b.f[3]});
 //   {0.0, 0.0, 0.0} = fixedRotation2.frame_a.t + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation2.R_rel, {fixedRotation2.frame_b.t[1], fixedRotation2.frame_b.t[2], fixedRotation2.frame_b.t[3]}) - {fixedRotation2.r[2] * fixedRotation2.frame_a.f[3] - fixedRotation2.r[3] * fixedRotation2.frame_a.f[2], fixedRotation2.r[3] * fixedRotation2.frame_a.f[1] - fixedRotation2.r[1] * fixedRotation2.frame_a.f[3], fixedRotation2.r[1] * fixedRotation2.frame_a.f[2] - fixedRotation2.r[2] * fixedRotation2.frame_a.f[1]};
+//   else
+//   fixedRotation2.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(fixedRotation2.frame_b.R, fixedRotation2.R_rel_inv);
+//   {0.0, 0.0, 0.0} = fixedRotation2.frame_b.f + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation2.R_rel_inv, {fixedRotation2.frame_a.f[1], fixedRotation2.frame_a.f[2], fixedRotation2.frame_a.f[3]});
+//   {0.0, 0.0, 0.0} = fixedRotation2.frame_b.t + Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation2.R_rel_inv, {fixedRotation2.frame_a.t[1], fixedRotation2.frame_a.t[2], fixedRotation2.frame_a.t[3]}) + cross(Modelica.Mechanics.MultiBody.Frames.resolve1(fixedRotation2.R_rel_inv, {fixedRotation2.r[1], fixedRotation2.r[2], fixedRotation2.r[3]}), {fixedRotation2.frame_b.f[1], fixedRotation2.frame_b.f[2], fixedRotation2.frame_b.f[3]});
+//   end if;
 //   fixedTranslation1.shape.Form = 9.87e+25 + 1e+20 * Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape(fixedTranslation1.shape.shapeType);
 //   fixedTranslation1.shape.rxvisobj[1] = fixedTranslation1.shape.R.T[1,1] * fixedTranslation1.shape.e_x[1] + fixedTranslation1.shape.R.T[2,1] * fixedTranslation1.shape.e_x[2] + fixedTranslation1.shape.R.T[3,1] * fixedTranslation1.shape.e_x[3];
 //   fixedTranslation1.shape.rxvisobj[2] = fixedTranslation1.shape.R.T[1,2] * fixedTranslation1.shape.e_x[1] + fixedTranslation1.shape.R.T[2,2] * fixedTranslation1.shape.e_x[2] + fixedTranslation1.shape.R.T[3,2] * fixedTranslation1.shape.e_x[3];

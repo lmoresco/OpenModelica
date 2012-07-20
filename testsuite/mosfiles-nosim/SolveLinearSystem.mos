@@ -99,5 +99,6 @@ translateModel(SolveLinearSystem);getErrorString();
 // Error: Internal error createOdeSystem failed for {2, 3, 1:2, 1, 3} Size: 3 Jacobian Constant
 // Error: Internal error createEquationsForSystem1 failed
 // Error: Internal error Transformation from optimised DAE to simulation code structure failed
+// Error: Internal error ./Compiler/BackEnd/SimCode.mo: function createSimCode failed [Transformation from optimised DAE to simulation code structure failed]
 // "
 // endResult

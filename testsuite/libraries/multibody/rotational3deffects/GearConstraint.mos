@@ -3459,10 +3459,17 @@ getErrorString();
 //   gearConstraint.actuatedRevolute_a.frame_b.r_0[1] = gearConstraint.actuatedRevolute_a.frame_a.r_0[1];
 //   gearConstraint.actuatedRevolute_a.frame_b.r_0[2] = gearConstraint.actuatedRevolute_a.frame_a.r_0[2];
 //   gearConstraint.actuatedRevolute_a.frame_b.r_0[3] = gearConstraint.actuatedRevolute_a.frame_a.r_0[3];
+//   if true then
 //   gearConstraint.actuatedRevolute_a.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({gearConstraint.actuatedRevolute_a.e[1], gearConstraint.actuatedRevolute_a.e[2], gearConstraint.actuatedRevolute_a.e[3]}, gearConstraint.actuatedRevolute_a.phi, gearConstraint.actuatedRevolute_a.w);
 //   gearConstraint.actuatedRevolute_a.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(gearConstraint.actuatedRevolute_a.frame_a.R, gearConstraint.actuatedRevolute_a.R_rel);
 //   gearConstraint.actuatedRevolute_a.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(gearConstraint.actuatedRevolute_a.R_rel, {gearConstraint.actuatedRevolute_a.frame_b.f[1], gearConstraint.actuatedRevolute_a.frame_b.f[2], gearConstraint.actuatedRevolute_a.frame_b.f[3]});
 //   gearConstraint.actuatedRevolute_a.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(gearConstraint.actuatedRevolute_a.R_rel, {gearConstraint.actuatedRevolute_a.frame_b.t[1], gearConstraint.actuatedRevolute_a.frame_b.t[2], gearConstraint.actuatedRevolute_a.frame_b.t[3]});
+//   else
+//   gearConstraint.actuatedRevolute_a.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{gearConstraint.actuatedRevolute_a.e[1], gearConstraint.actuatedRevolute_a.e[2], gearConstraint.actuatedRevolute_a.e[3]}, gearConstraint.actuatedRevolute_a.phi, gearConstraint.actuatedRevolute_a.w);
+//   gearConstraint.actuatedRevolute_a.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(gearConstraint.actuatedRevolute_a.frame_b.R, gearConstraint.actuatedRevolute_a.R_rel);
+//   gearConstraint.actuatedRevolute_a.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(gearConstraint.actuatedRevolute_a.R_rel, {gearConstraint.actuatedRevolute_a.frame_a.f[1], gearConstraint.actuatedRevolute_a.frame_a.f[2], gearConstraint.actuatedRevolute_a.frame_a.f[3]});
+//   gearConstraint.actuatedRevolute_a.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(gearConstraint.actuatedRevolute_a.R_rel, {gearConstraint.actuatedRevolute_a.frame_a.t[1], gearConstraint.actuatedRevolute_a.frame_a.t[2], gearConstraint.actuatedRevolute_a.frame_a.t[3]});
+//   end if;
 //   gearConstraint.actuatedRevolute_a.tau = (-gearConstraint.actuatedRevolute_a.frame_b.t[1]) * gearConstraint.actuatedRevolute_a.e[1] + (-gearConstraint.actuatedRevolute_a.frame_b.t[2]) * gearConstraint.actuatedRevolute_a.e[2] + (-gearConstraint.actuatedRevolute_a.frame_b.t[3]) * gearConstraint.actuatedRevolute_a.e[3];
 //   gearConstraint.actuatedRevolute_a.phi = gearConstraint.actuatedRevolute_a.internalAxis.phi;
 //   gearConstraint.actuatedRevolute_b.fixed.flange.phi = gearConstraint.actuatedRevolute_b.fixed.phi0;
@@ -3476,10 +3483,17 @@ getErrorString();
 //   gearConstraint.actuatedRevolute_b.frame_b.r_0[1] = gearConstraint.actuatedRevolute_b.frame_a.r_0[1];
 //   gearConstraint.actuatedRevolute_b.frame_b.r_0[2] = gearConstraint.actuatedRevolute_b.frame_a.r_0[2];
 //   gearConstraint.actuatedRevolute_b.frame_b.r_0[3] = gearConstraint.actuatedRevolute_b.frame_a.r_0[3];
+//   if true then
 //   gearConstraint.actuatedRevolute_b.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({gearConstraint.actuatedRevolute_b.e[1], gearConstraint.actuatedRevolute_b.e[2], gearConstraint.actuatedRevolute_b.e[3]}, gearConstraint.actuatedRevolute_b.phi, gearConstraint.actuatedRevolute_b.w);
 //   gearConstraint.actuatedRevolute_b.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(gearConstraint.actuatedRevolute_b.frame_a.R, gearConstraint.actuatedRevolute_b.R_rel);
 //   gearConstraint.actuatedRevolute_b.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(gearConstraint.actuatedRevolute_b.R_rel, {gearConstraint.actuatedRevolute_b.frame_b.f[1], gearConstraint.actuatedRevolute_b.frame_b.f[2], gearConstraint.actuatedRevolute_b.frame_b.f[3]});
 //   gearConstraint.actuatedRevolute_b.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(gearConstraint.actuatedRevolute_b.R_rel, {gearConstraint.actuatedRevolute_b.frame_b.t[1], gearConstraint.actuatedRevolute_b.frame_b.t[2], gearConstraint.actuatedRevolute_b.frame_b.t[3]});
+//   else
+//   gearConstraint.actuatedRevolute_b.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{gearConstraint.actuatedRevolute_b.e[1], gearConstraint.actuatedRevolute_b.e[2], gearConstraint.actuatedRevolute_b.e[3]}, gearConstraint.actuatedRevolute_b.phi, gearConstraint.actuatedRevolute_b.w);
+//   gearConstraint.actuatedRevolute_b.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(gearConstraint.actuatedRevolute_b.frame_b.R, gearConstraint.actuatedRevolute_b.R_rel);
+//   gearConstraint.actuatedRevolute_b.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(gearConstraint.actuatedRevolute_b.R_rel, {gearConstraint.actuatedRevolute_b.frame_a.f[1], gearConstraint.actuatedRevolute_b.frame_a.f[2], gearConstraint.actuatedRevolute_b.frame_a.f[3]});
+//   gearConstraint.actuatedRevolute_b.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(gearConstraint.actuatedRevolute_b.R_rel, {gearConstraint.actuatedRevolute_b.frame_a.t[1], gearConstraint.actuatedRevolute_b.frame_a.t[2], gearConstraint.actuatedRevolute_b.frame_a.t[3]});
+//   end if;
 //   gearConstraint.actuatedRevolute_b.tau = (-gearConstraint.actuatedRevolute_b.frame_b.t[1]) * gearConstraint.actuatedRevolute_b.e[1] + (-gearConstraint.actuatedRevolute_b.frame_b.t[2]) * gearConstraint.actuatedRevolute_b.e[2] + (-gearConstraint.actuatedRevolute_b.frame_b.t[3]) * gearConstraint.actuatedRevolute_b.e[3];
 //   gearConstraint.actuatedRevolute_b.phi = gearConstraint.actuatedRevolute_b.internalAxis.phi;
 //   assert(true,\"Neither connector frame_a nor frame_b of FixedTranslation object is connected\");

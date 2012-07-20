@@ -3492,10 +3492,17 @@ getErrorString();
 //   revolute.frame_b.r_0[1] = revolute.frame_a.r_0[1];
 //   revolute.frame_b.r_0[2] = revolute.frame_a.r_0[2];
 //   revolute.frame_b.r_0[3] = revolute.frame_a.r_0[3];
+//   if true then
 //   revolute.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({revolute.e[1], revolute.e[2], revolute.e[3]}, revolute.phi, revolute.w);
 //   revolute.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(revolute.frame_a.R, revolute.R_rel);
 //   revolute.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(revolute.R_rel, {revolute.frame_b.f[1], revolute.frame_b.f[2], revolute.frame_b.f[3]});
 //   revolute.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(revolute.R_rel, {revolute.frame_b.t[1], revolute.frame_b.t[2], revolute.frame_b.t[3]});
+//   else
+//   revolute.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{revolute.e[1], revolute.e[2], revolute.e[3]}, revolute.phi, revolute.w);
+//   revolute.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(revolute.frame_b.R, revolute.R_rel);
+//   revolute.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(revolute.R_rel, {revolute.frame_a.f[1], revolute.frame_a.f[2], revolute.frame_a.f[3]});
+//   revolute.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(revolute.R_rel, {revolute.frame_a.t[1], revolute.frame_a.t[2], revolute.frame_a.t[3]});
+//   end if;
 //   revolute.tau = (-revolute.frame_b.t[1]) * revolute.e[1] + (-revolute.frame_b.t[2]) * revolute.e[2] + (-revolute.frame_b.t[3]) * revolute.e[3];
 //   revolute.phi = revolute.internalAxis.phi;
 //   assert(true,\"Connector frame_resolve must be connected at least once and frame_resolve.r_0/.R must be set\");
@@ -3654,10 +3661,17 @@ getErrorString();
 //   r1.frame_b.r_0[1] = r1.frame_a.r_0[1];
 //   r1.frame_b.r_0[2] = r1.frame_a.r_0[2];
 //   r1.frame_b.r_0[3] = r1.frame_a.r_0[3];
+//   if true then
 //   r1.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({r1.e[1], r1.e[2], r1.e[3]}, r1.phi, r1.w);
 //   r1.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(r1.frame_a.R, r1.R_rel);
 //   r1.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(r1.R_rel, {r1.frame_b.f[1], r1.frame_b.f[2], r1.frame_b.f[3]});
 //   r1.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(r1.R_rel, {r1.frame_b.t[1], r1.frame_b.t[2], r1.frame_b.t[3]});
+//   else
+//   r1.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{r1.e[1], r1.e[2], r1.e[3]}, r1.phi, r1.w);
+//   r1.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(r1.frame_b.R, r1.R_rel);
+//   r1.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(r1.R_rel, {r1.frame_a.f[1], r1.frame_a.f[2], r1.frame_a.f[3]});
+//   r1.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(r1.R_rel, {r1.frame_a.t[1], r1.frame_a.t[2], r1.frame_a.t[3]});
+//   end if;
 //   r1.tau = (-r1.frame_b.t[1]) * r1.e[1] + (-r1.frame_b.t[2]) * r1.e[2] + (-r1.frame_b.t[3]) * r1.e[3];
 //   r1.phi = r1.internalAxis.phi;
 //   position1.phi = position1.flange.phi - position1.phi_support;
@@ -3696,10 +3710,17 @@ getErrorString();
 //   r2.frame_b.r_0[1] = r2.frame_a.r_0[1];
 //   r2.frame_b.r_0[2] = r2.frame_a.r_0[2];
 //   r2.frame_b.r_0[3] = r2.frame_a.r_0[3];
+//   if false then
 //   r2.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({r2.e[1], r2.e[2], r2.e[3]}, r2.phi, r2.w);
 //   r2.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(r2.frame_a.R, r2.R_rel);
 //   r2.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(r2.R_rel, {r2.frame_b.f[1], r2.frame_b.f[2], r2.frame_b.f[3]});
 //   r2.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(r2.R_rel, {r2.frame_b.t[1], r2.frame_b.t[2], r2.frame_b.t[3]});
+//   else
+//   r2.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{r2.e[1], r2.e[2], r2.e[3]}, r2.phi, r2.w);
+//   r2.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(r2.frame_b.R, r2.R_rel);
+//   r2.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(r2.R_rel, {r2.frame_a.f[1], r2.frame_a.f[2], r2.frame_a.f[3]});
+//   r2.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(r2.R_rel, {r2.frame_a.t[1], r2.frame_a.t[2], r2.frame_a.t[3]});
+//   end if;
 //   r2.tau = (-r2.frame_b.t[1]) * r2.e[1] + (-r2.frame_b.t[2]) * r2.e[2] + (-r2.frame_b.t[3]) * r2.e[3];
 //   r2.phi = r2.internalAxis.phi;
 //   position2.phi = position2.flange.phi - position2.phi_support;

@@ -8411,10 +8411,17 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   mechanics.r1.frame_b.r_0[1] = mechanics.r1.frame_a.r_0[1];
 //   mechanics.r1.frame_b.r_0[2] = mechanics.r1.frame_a.r_0[2];
 //   mechanics.r1.frame_b.r_0[3] = mechanics.r1.frame_a.r_0[3];
+//   if false then
 //   mechanics.r1.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({mechanics.r1.e[1], mechanics.r1.e[2], mechanics.r1.e[3]}, mechanics.r1.phi, mechanics.r1.w);
 //   mechanics.r1.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(mechanics.r1.frame_a.R, mechanics.r1.R_rel);
 //   mechanics.r1.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r1.R_rel, {mechanics.r1.frame_b.f[1], mechanics.r1.frame_b.f[2], mechanics.r1.frame_b.f[3]});
 //   mechanics.r1.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r1.R_rel, {mechanics.r1.frame_b.t[1], mechanics.r1.frame_b.t[2], mechanics.r1.frame_b.t[3]});
+//   else
+//   mechanics.r1.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{mechanics.r1.e[1], mechanics.r1.e[2], mechanics.r1.e[3]}, mechanics.r1.phi, mechanics.r1.w);
+//   mechanics.r1.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(mechanics.r1.frame_b.R, mechanics.r1.R_rel);
+//   mechanics.r1.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r1.R_rel, {mechanics.r1.frame_a.f[1], mechanics.r1.frame_a.f[2], mechanics.r1.frame_a.f[3]});
+//   mechanics.r1.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r1.R_rel, {mechanics.r1.frame_a.t[1], mechanics.r1.frame_a.t[2], mechanics.r1.frame_a.t[3]});
+//   end if;
 //   mechanics.r1.tau = (-mechanics.r1.frame_b.t[1]) * mechanics.r1.e[1] + (-mechanics.r1.frame_b.t[2]) * mechanics.r1.e[2] + (-mechanics.r1.frame_b.t[3]) * mechanics.r1.e[3];
 //   mechanics.r1.phi = mechanics.r1.internalAxis.phi;
 //   mechanics.r2.fixed.flange.phi = mechanics.r2.fixed.phi0;
@@ -8441,10 +8448,17 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   mechanics.r2.frame_b.r_0[1] = mechanics.r2.frame_a.r_0[1];
 //   mechanics.r2.frame_b.r_0[2] = mechanics.r2.frame_a.r_0[2];
 //   mechanics.r2.frame_b.r_0[3] = mechanics.r2.frame_a.r_0[3];
+//   if false then
 //   mechanics.r2.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({mechanics.r2.e[1], mechanics.r2.e[2], mechanics.r2.e[3]}, mechanics.r2.phi, mechanics.r2.w);
 //   mechanics.r2.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(mechanics.r2.frame_a.R, mechanics.r2.R_rel);
 //   mechanics.r2.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r2.R_rel, {mechanics.r2.frame_b.f[1], mechanics.r2.frame_b.f[2], mechanics.r2.frame_b.f[3]});
 //   mechanics.r2.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r2.R_rel, {mechanics.r2.frame_b.t[1], mechanics.r2.frame_b.t[2], mechanics.r2.frame_b.t[3]});
+//   else
+//   mechanics.r2.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{mechanics.r2.e[1], mechanics.r2.e[2], mechanics.r2.e[3]}, mechanics.r2.phi, mechanics.r2.w);
+//   mechanics.r2.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(mechanics.r2.frame_b.R, mechanics.r2.R_rel);
+//   mechanics.r2.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r2.R_rel, {mechanics.r2.frame_a.f[1], mechanics.r2.frame_a.f[2], mechanics.r2.frame_a.f[3]});
+//   mechanics.r2.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r2.R_rel, {mechanics.r2.frame_a.t[1], mechanics.r2.frame_a.t[2], mechanics.r2.frame_a.t[3]});
+//   end if;
 //   mechanics.r2.tau = (-mechanics.r2.frame_b.t[1]) * mechanics.r2.e[1] + (-mechanics.r2.frame_b.t[2]) * mechanics.r2.e[2] + (-mechanics.r2.frame_b.t[3]) * mechanics.r2.e[3];
 //   mechanics.r2.phi = mechanics.r2.internalAxis.phi;
 //   mechanics.r3.fixed.flange.phi = mechanics.r3.fixed.phi0;
@@ -8471,10 +8485,17 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   mechanics.r3.frame_b.r_0[1] = mechanics.r3.frame_a.r_0[1];
 //   mechanics.r3.frame_b.r_0[2] = mechanics.r3.frame_a.r_0[2];
 //   mechanics.r3.frame_b.r_0[3] = mechanics.r3.frame_a.r_0[3];
+//   if false then
 //   mechanics.r3.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({mechanics.r3.e[1], mechanics.r3.e[2], mechanics.r3.e[3]}, mechanics.r3.phi, mechanics.r3.w);
 //   mechanics.r3.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(mechanics.r3.frame_a.R, mechanics.r3.R_rel);
 //   mechanics.r3.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r3.R_rel, {mechanics.r3.frame_b.f[1], mechanics.r3.frame_b.f[2], mechanics.r3.frame_b.f[3]});
 //   mechanics.r3.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r3.R_rel, {mechanics.r3.frame_b.t[1], mechanics.r3.frame_b.t[2], mechanics.r3.frame_b.t[3]});
+//   else
+//   mechanics.r3.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{mechanics.r3.e[1], mechanics.r3.e[2], mechanics.r3.e[3]}, mechanics.r3.phi, mechanics.r3.w);
+//   mechanics.r3.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(mechanics.r3.frame_b.R, mechanics.r3.R_rel);
+//   mechanics.r3.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r3.R_rel, {mechanics.r3.frame_a.f[1], mechanics.r3.frame_a.f[2], mechanics.r3.frame_a.f[3]});
+//   mechanics.r3.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r3.R_rel, {mechanics.r3.frame_a.t[1], mechanics.r3.frame_a.t[2], mechanics.r3.frame_a.t[3]});
+//   end if;
 //   mechanics.r3.tau = (-mechanics.r3.frame_b.t[1]) * mechanics.r3.e[1] + (-mechanics.r3.frame_b.t[2]) * mechanics.r3.e[2] + (-mechanics.r3.frame_b.t[3]) * mechanics.r3.e[3];
 //   mechanics.r3.phi = mechanics.r3.internalAxis.phi;
 //   mechanics.r4.fixed.flange.phi = mechanics.r4.fixed.phi0;
@@ -8501,10 +8522,17 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   mechanics.r4.frame_b.r_0[1] = mechanics.r4.frame_a.r_0[1];
 //   mechanics.r4.frame_b.r_0[2] = mechanics.r4.frame_a.r_0[2];
 //   mechanics.r4.frame_b.r_0[3] = mechanics.r4.frame_a.r_0[3];
+//   if false then
 //   mechanics.r4.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({mechanics.r4.e[1], mechanics.r4.e[2], mechanics.r4.e[3]}, mechanics.r4.phi, mechanics.r4.w);
 //   mechanics.r4.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(mechanics.r4.frame_a.R, mechanics.r4.R_rel);
 //   mechanics.r4.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r4.R_rel, {mechanics.r4.frame_b.f[1], mechanics.r4.frame_b.f[2], mechanics.r4.frame_b.f[3]});
 //   mechanics.r4.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r4.R_rel, {mechanics.r4.frame_b.t[1], mechanics.r4.frame_b.t[2], mechanics.r4.frame_b.t[3]});
+//   else
+//   mechanics.r4.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{mechanics.r4.e[1], mechanics.r4.e[2], mechanics.r4.e[3]}, mechanics.r4.phi, mechanics.r4.w);
+//   mechanics.r4.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(mechanics.r4.frame_b.R, mechanics.r4.R_rel);
+//   mechanics.r4.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r4.R_rel, {mechanics.r4.frame_a.f[1], mechanics.r4.frame_a.f[2], mechanics.r4.frame_a.f[3]});
+//   mechanics.r4.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r4.R_rel, {mechanics.r4.frame_a.t[1], mechanics.r4.frame_a.t[2], mechanics.r4.frame_a.t[3]});
+//   end if;
 //   mechanics.r4.tau = (-mechanics.r4.frame_b.t[1]) * mechanics.r4.e[1] + (-mechanics.r4.frame_b.t[2]) * mechanics.r4.e[2] + (-mechanics.r4.frame_b.t[3]) * mechanics.r4.e[3];
 //   mechanics.r4.phi = mechanics.r4.internalAxis.phi;
 //   mechanics.r5.fixed.flange.phi = mechanics.r5.fixed.phi0;
@@ -8531,10 +8559,17 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   mechanics.r5.frame_b.r_0[1] = mechanics.r5.frame_a.r_0[1];
 //   mechanics.r5.frame_b.r_0[2] = mechanics.r5.frame_a.r_0[2];
 //   mechanics.r5.frame_b.r_0[3] = mechanics.r5.frame_a.r_0[3];
+//   if false then
 //   mechanics.r5.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({mechanics.r5.e[1], mechanics.r5.e[2], mechanics.r5.e[3]}, mechanics.r5.phi, mechanics.r5.w);
 //   mechanics.r5.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(mechanics.r5.frame_a.R, mechanics.r5.R_rel);
 //   mechanics.r5.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r5.R_rel, {mechanics.r5.frame_b.f[1], mechanics.r5.frame_b.f[2], mechanics.r5.frame_b.f[3]});
 //   mechanics.r5.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r5.R_rel, {mechanics.r5.frame_b.t[1], mechanics.r5.frame_b.t[2], mechanics.r5.frame_b.t[3]});
+//   else
+//   mechanics.r5.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{mechanics.r5.e[1], mechanics.r5.e[2], mechanics.r5.e[3]}, mechanics.r5.phi, mechanics.r5.w);
+//   mechanics.r5.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(mechanics.r5.frame_b.R, mechanics.r5.R_rel);
+//   mechanics.r5.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r5.R_rel, {mechanics.r5.frame_a.f[1], mechanics.r5.frame_a.f[2], mechanics.r5.frame_a.f[3]});
+//   mechanics.r5.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r5.R_rel, {mechanics.r5.frame_a.t[1], mechanics.r5.frame_a.t[2], mechanics.r5.frame_a.t[3]});
+//   end if;
 //   mechanics.r5.tau = (-mechanics.r5.frame_b.t[1]) * mechanics.r5.e[1] + (-mechanics.r5.frame_b.t[2]) * mechanics.r5.e[2] + (-mechanics.r5.frame_b.t[3]) * mechanics.r5.e[3];
 //   mechanics.r5.phi = mechanics.r5.internalAxis.phi;
 //   mechanics.r6.fixed.flange.phi = mechanics.r6.fixed.phi0;
@@ -8561,10 +8596,17 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   mechanics.r6.frame_b.r_0[1] = mechanics.r6.frame_a.r_0[1];
 //   mechanics.r6.frame_b.r_0[2] = mechanics.r6.frame_a.r_0[2];
 //   mechanics.r6.frame_b.r_0[3] = mechanics.r6.frame_a.r_0[3];
+//   if false then
 //   mechanics.r6.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation({mechanics.r6.e[1], mechanics.r6.e[2], mechanics.r6.e[3]}, mechanics.r6.phi, mechanics.r6.w);
 //   mechanics.r6.frame_b.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(mechanics.r6.frame_a.R, mechanics.r6.R_rel);
 //   mechanics.r6.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r6.R_rel, {mechanics.r6.frame_b.f[1], mechanics.r6.frame_b.f[2], mechanics.r6.frame_b.f[3]});
 //   mechanics.r6.frame_a.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r6.R_rel, {mechanics.r6.frame_b.t[1], mechanics.r6.frame_b.t[2], mechanics.r6.frame_b.t[3]});
+//   else
+//   mechanics.r6.R_rel = Modelica.Mechanics.MultiBody.Frames.planarRotation(-{mechanics.r6.e[1], mechanics.r6.e[2], mechanics.r6.e[3]}, mechanics.r6.phi, mechanics.r6.w);
+//   mechanics.r6.frame_a.R = Modelica.Mechanics.MultiBody.Frames.absoluteRotation(mechanics.r6.frame_b.R, mechanics.r6.R_rel);
+//   mechanics.r6.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r6.R_rel, {mechanics.r6.frame_a.f[1], mechanics.r6.frame_a.f[2], mechanics.r6.frame_a.f[3]});
+//   mechanics.r6.frame_b.t = -Modelica.Mechanics.MultiBody.Frames.resolve1(mechanics.r6.R_rel, {mechanics.r6.frame_a.t[1], mechanics.r6.frame_a.t[2], mechanics.r6.frame_a.t[3]});
+//   end if;
 //   mechanics.r6.tau = (-mechanics.r6.frame_b.t[1]) * mechanics.r6.e[1] + (-mechanics.r6.frame_b.t[2]) * mechanics.r6.e[2] + (-mechanics.r6.frame_b.t[3]) * mechanics.r6.e[3];
 //   mechanics.r6.phi = mechanics.r6.internalAxis.phi;
 //   assert(true,\"Neither connector frame_a nor frame_b of FixedTranslation object is connected\");
@@ -12712,5 +12754,6 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 // Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot has 4828 equation(s) and 4828 variable(s).
 // 3456 of these are trivial equation(s).
 // "
-// ""
-// endResult
+// // ""
+// // endResult
+// 

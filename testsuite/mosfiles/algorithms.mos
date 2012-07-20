@@ -75,12 +75,13 @@ val(x4,1.0);
 //     messages = "Simulation failed for model: Alg4
 // Error: Internal error Inverse Algorithm needs to be solved for in   x := $_start(x);
 //   x := 1.0 + y;
-// . This is not implemented yet.
+// . This has not been implemented yet.
 // 
 // Error: Internal error SimCode.createSingleAlgorithmCode failed!
 // Error: Internal error createOdeSystem failed for Algorithm 0 {1}
 // Error: Internal error createEquationsForSystem1 failed
 // Error: Internal error Transformation from optimised DAE to simulation code structure failed
+// Error: Internal error ./Compiler/BackEnd/SimCode.mo: function createSimCode failed [Transformation from optimised DAE to simulation code structure failed]
 // "
 // end SimulationResult;
 // record SimulationResult
